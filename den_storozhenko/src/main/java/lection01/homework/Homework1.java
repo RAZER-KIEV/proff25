@@ -44,7 +44,12 @@ public class Homework1 {
         myArrayList.remove(0);
         myArrayList.remove(myArrayList.size()-1);*/
         myArrayList.add(0,5);
-
+        myArrayList.add(0,5);
+        //myArrayList.add(0, -11111);
+        //myArrayList.add(-1);
+        for (int i=0; i<myArrayList.size();i++){
+            System.out.print(myArrayList.get(i) + "\t");
+        }
         Iterator<Integer> integerIterator= myArrayList.iterator();
         while (integerIterator.hasNext()){
             System.out.print(integerIterator.next()+"\t");
