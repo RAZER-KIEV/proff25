@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.Random;
 
 
-
+//created by just1ce
 class ArrLinkList{
     static final int RANGE = 100000;
     public void testAddToStart(){
