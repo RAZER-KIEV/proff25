@@ -19,7 +19,7 @@ public class JavaFX extends Application {
         BorderPane pane = new BorderPane();
         pane.setTop(new TextField("test"));
         pane.setCenter(new TextArea("1\n2"));
-        pane.setLeft(new Label("PROST"));
+        pane.setLeft(new Label("PROST TEXT"));
         pane.setBottom(new Button("OK"));
         Scene scene = new Scene(pane, 600 ,400);
         stage.setTitle("Hello FX");
