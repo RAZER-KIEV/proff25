@@ -7,20 +7,20 @@ import java.util.Iterator;
  */
 public class Homework1 {
     public static void main(String[] args) {
-        //task1test();
-        ArrayLinkedListCompare arrLinkList = new ArrayLinkedListCompare();
+        task1test();
+        /*ArrayLinkedListCompare arrLinkList = new ArrayLinkedListCompare();
         arrLinkList.testAddToStart();
         arrLinkList.testAddToEnd();
         arrLinkList.testAddToMiddle();
         arrLinkList.testGetting();
         arrLinkList.testDeleteFromStart();
         arrLinkList.testIndexOf();
-    }
+*/    }
 
     static public void task1test(){
         MyArrayList<Integer> myArrayList= new MyArrayList<>(15);
 
-        for (int i=0; i<100;i++) {
+       /* for (int i=0; i<100;i++) {
             myArrayList.add(i*2);
         }
 
@@ -42,7 +42,8 @@ public class Homework1 {
         myArrayList.add(2, -11111);
 
         myArrayList.remove(0);
-        myArrayList.remove(myArrayList.size()-1);
+        myArrayList.remove(myArrayList.size()-1);*/
+        myArrayList.add(0,5);
 
         Iterator<Integer> integerIterator= myArrayList.iterator();
         while (integerIterator.hasNext()){
