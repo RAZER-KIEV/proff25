@@ -1,6 +1,7 @@
 package lection01.homework;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * Created by storo_000 on 24.05.2015.
@@ -58,12 +59,6 @@ class MyArrayList<E> implements Iterator<E>, Iterable<E> {
 
 
     public  boolean add(int index, E value){
-        if (currSize==0 && index==0){
-
-            data[index] = value;
-            currSize++;
-            return true;
-        }
         try{
             checkIndex(index);
         }
@@ -73,7 +68,7 @@ class MyArrayList<E> implements Iterator<E>, Iterable<E> {
         if (currSize==reservedSize){
             grow();
         }
-        int numMoved = currSize - index;
+        int numMoved = currSize - index - 1;
         System.arraycopy(data, index, data, index+1, numMoved);
         currSize++;
         data[index] = value;
