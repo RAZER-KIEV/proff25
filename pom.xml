@@ -11,7 +11,8 @@
 
     <modules>
         <module>proff25_examples</module>
-        <module>proff25_oleg_chumak</module>
+        <!-- -->
+        <module>oleg_chumak</module>
 
     </modules>
 
