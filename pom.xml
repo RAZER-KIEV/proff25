@@ -11,7 +11,7 @@
 
     <modules>
         <module>proff25_examples</module>
-
+        <module>roman_rudych</module>
     </modules>
 
     <properties>
