@@ -11,7 +11,8 @@
 
     <modules>
         <module>proff25_examples</module>
-        <!-- -->
+        <module>anton_lipskiy</module>
+
     </modules>
 
     <properties>
