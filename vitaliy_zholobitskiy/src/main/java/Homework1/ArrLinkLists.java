@@ -1,12 +1,10 @@
-package Homework.Homework1;
+package Homework1;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Random;
 
-/**
- * Created by storo_000 on 24.05.2015.
- */
+
 
 class ArrLinkList{
     static final int RANGE = 100000;
