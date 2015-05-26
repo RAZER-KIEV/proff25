@@ -7,6 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+
 public class ChannelEx {
     public static void main(String[] args) throws IOException {
         Path path = Paths.get("text.txt");//путь к файлу
