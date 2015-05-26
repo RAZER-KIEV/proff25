@@ -58,6 +58,12 @@ class MyArrayList<E> implements Iterator<E>, Iterable<E> {
 
 
     public  boolean add(int index, E value){
+        if (currSize==0 && index==0){
+
+            data[index] = value;
+            currSize++;
+            return true;
+        }
         try{
             checkIndex(index);
         }
@@ -67,7 +73,7 @@ class MyArrayList<E> implements Iterator<E>, Iterable<E> {
         if (currSize==reservedSize){
             grow();
         }
-        int numMoved = currSize - index - 1;
+        int numMoved = currSize - index;
         System.arraycopy(data, index, data, index+1, numMoved);
         currSize++;
         data[index] = value;
