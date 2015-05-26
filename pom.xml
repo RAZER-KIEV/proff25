@@ -11,6 +11,7 @@
 
     <modules>
         <module>proff25_examples</module>
+        <module>anton_lipskiy</module>
         <module>den_storozhenko</module>
     </modules>
 
