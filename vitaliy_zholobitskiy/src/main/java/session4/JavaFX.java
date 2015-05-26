@@ -27,7 +27,7 @@ public class JavaFX extends Application {
         borderPane.setTop(new TextField("Hello from GUI"));
         borderPane.setCenter(new Label("centre"));
         java.awt.Button b= new java.awt.Button("click me");
-        //b.set
+        //b.
         //b.setOnAction(new EventHandler<ActionEvent>() {
             //@Override
             //public void handle(ActionEvent event) {
