@@ -11,7 +11,7 @@
 
     <modules>
         <module>proff25_examples</module>
-
+        <module>den_storozhenko</module>
     </modules>
 
     <properties>
