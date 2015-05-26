@@ -1,4 +1,4 @@
-package session1;
+package main.java.session1;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
