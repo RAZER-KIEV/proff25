@@ -1,12 +1,13 @@
-package lection01.homework;
+package lection01.lab;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Random;
+
 /**
- * Created by storo_000 on 25.05.2015.
+ * Created by storo_000 on 26.05.2015.
  */
-public class ArrayLinkedListCompare {
+public class ListsCompare {
     private static final int RANGE = 100000;
     public void testAddToStart(){
         ArrayList<Integer> arrayList = new ArrayList<>();
