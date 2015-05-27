@@ -5,15 +5,16 @@ import java.util.LinkedList;
 
 /**
  * Created by Sveta on 5/21/2015.
- *
- * Сравнение двух списков ArrayList и LinkedList (производительность), по следующим пунктам:
- * - добавление в начало
- * - добавление в конец
- * - добавление в середину
- * - получение по индексу
- * - удаление из начала
- * - поиск елемента по индексу
- * - поиск елемента по значению.
+ *Сравнить время выполнения операции у ArrayList и LinkedList
+ - добавление в начало
+ - добавление в конец
+ - добавление в середину
+ - получение элемента по индексу
+ - удаление элемента из начала
+ - поиск элемента по значению
+
+ Класс задания: hw2.lab.ListsCompare
+ Класс теста: hw2.lab.ListsCompareTest
  *
  */
 public class ListsCompare {
@@ -63,6 +64,7 @@ public class ListsCompare {
         printResult(addTimeA, addTimeL);
 
         //add by index1
+
         timeOfStart = System.nanoTime();
         arrayList.add(100, 5);
         addTimeA = System.nanoTime() - timeOfStart;
@@ -74,13 +76,13 @@ public class ListsCompare {
         System.out.print("AddByIndex1:     ");
         printResult(addTimeA, addTimeL);
 
-        //add by index2
+        //get by index
         timeOfStart = System.nanoTime();
-        arrayList.add(8200, 5);
+        arrayList.get(98);
         addTimeA = System.nanoTime() - timeOfStart;
 
         timeOfStart = System.nanoTime();
-        linkedList.add(8200, 5);
+        linkedList.get(98);
         addTimeL = System.nanoTime() - timeOfStart;
 
         System.out.print("AddByIndex2:     ");

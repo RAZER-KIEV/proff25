@@ -4,56 +4,64 @@ import java.util.Iterator;
 import java.util.Objects;
 
 /**
- * Created by Sveta on 5/21/2015.
+ Написать собственную реализацию динамического массива MyArrayList.
+ Сделать параметризацию списка, параметр E.
+ Реализовать в списке интерфейсы Iterable.
+ Реализовать следующие методы
+ - void add(E value)
+ - E get(int index)
+ - boolean set(int index, E value)
+ - boolean add(int index, E value)
+ - int indexOf(E value)
+ - int size()
+ - E remove(int index)
+ - Iterator<E> iterator()
+
+ Класс теста MyArrayListTest
 
  */
 public class MyArrayList<E> implements Iterable {
 
     E[] list = (E[]) new Object[10];
-    int size;
+    int size = 0;
     int capacity = 10;
     int check;
 
 
-    public void add(Object value) {
-        checkElement(value);
+    public void add(E value) {
         checkCapacity(size + 1);
-        list[size + 1] = (E)value;
         size++;
+        list[size-1] = value;
+
         check++;
-
-
     }
 
 
-    public Object get(int index) {
+    public E get(int index) {
         checkIdx(index);
         return list[index];
     }
 
-
-
-    public boolean set(int index, Object value) {
+    public boolean set(int index, E value) {
         checkIdx(index);
         checkElement(value);
-        list[index] = (E)value;
+        list[index] = value;
         return true;
     }
 
-    public boolean add(int index, Object value) {
+    public boolean add(int index, E value) {
         checkIdx(index);
         checkCapacity(size + 1);
-        checkElement(value);
         check++;
         for (int i = size -1; i > index; i--) {
             list[i+1] = list[i];
         }
-        list[index] = (E) value;
+        list[index] = value;
         size++;
         return true;
     }
 
-    public int indexOf(Object value) {
+    public int indexOf(E value) {
         for (int i = 0; i < size; i++) {
             if (list[i] == value)
             {
@@ -67,8 +75,8 @@ public class MyArrayList<E> implements Iterable {
         return size;
     }
 
-    public Object remove(int index) {
-        E el = (E) get(index);
+    public E remove(int index) {
+        E el = get(index);
         checkIdx(index);
         check++;
         for (int i = index; i < size - 1; i++) {
@@ -100,7 +108,7 @@ public class MyArrayList<E> implements Iterable {
 
     }
 
-    private void checkElement(Object value) { // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    private void checkElement(E value) { // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         {
 
         }
@@ -142,5 +150,25 @@ public class MyArrayList<E> implements Iterable {
         }
     }
 
+}
 
+class MyArrayListTest {
+    public static void main(String[] args) {
+        MyArrayList<Integer> myList = new MyArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            myList.add(i);
+        }
+        System.out.println("Size must be 10: " + myList.size);
+        System.out.println("5 el must be 5: " + myList.get(5));
+        System.out.println("7 must be 7-th: " + myList.indexOf(7));
+
+        myList.set(5, 13);
+        System.out.println("5 el must be 13: " + myList.get(5));
+
+
+        myList.remove(5);
+        System.out.println("Size must be 9: " + myList.size);
+        System.out.println("5 el must be 6: " + myList.get(5));
+
+    }
 }
