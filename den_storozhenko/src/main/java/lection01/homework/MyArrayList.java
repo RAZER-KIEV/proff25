@@ -1,6 +1,7 @@
 package lection01.homework;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * Created by storo_000 on 24.05.2015.
