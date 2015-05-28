@@ -3,7 +3,7 @@ package hw2;
 import java.util.Iterator;
 
 /**
- * Created by ivan on 21.05.15.
+ * Created by george on 28.05.15.
  */
 public class MyArrayList<E> implements Iterable<E> {
 
