@@ -20,30 +20,32 @@ import java.io.FileInputStream;
  * Created by jax on 26.05.15.
  */
 public class JavaFX extends Application {
-
     @Override
     public void start(Stage stage) throws Exception {
+        javafx.scene.image.ImageView rootIcon = new javafx.scene.image.ImageView(new Image(new FileInputStream("folder2.png")));
+        TreeItem<String> root = new CheckBoxTreeItem<>("root", rootIcon);
+        TreeView<String> tree = new TreeView<>(root);
+        for (int i = 0; i < 5; i++) {
+            root.getChildren().add(new TreeItem<>("child-" + i));
+        }
+        root.setExpanded(true);
 
-        //TreeItem<String> root = new CheckBoxTreeItem<>("root",rootIcon);
-        //TreeView<String> tree = new TreeView<>(root);
-        //for(int i=0;i<3;i++){
-          //  root.getChildren().add(new TreeItem<>());
-        //}
         BorderPane pane = new BorderPane();
         TextField text = new TextField("text");
         pane.setTop(text);
-        pane.setCenter(new TextArea("1\n2"));
-        pane.setLeft(new Label("Просто текст"));
-        Button button = new Button("OK");
+        pane.setCenter(tree);
+        pane.setLeft(new Label("Просто какой то текст"));
+        Button button = new Button("Ok");
+//        button.setOnMouseClicked(mouseEvent -> text.appendText(button.getText()));
         button.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
-            public void handle(MouseEvent event) {
+            public void handle(MouseEvent mouseEvent) {
                 text.appendText(button.getText());
             }
         });
         pane.setBottom(button);
 
-        Scene scene = new Scene(pane,600,400);
+        Scene scene = new Scene(pane, 600, 400);
         stage.setTitle("Hello FX");
         stage.setScene(scene);
         stage.show();
