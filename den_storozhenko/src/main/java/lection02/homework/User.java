@@ -43,8 +43,6 @@ public class User {
                 u.date.equals(date) &&
                 u.raiting == raiting &&
                 u.sex == sex
-            //&&
-            //u.time == time
                 )
             return true;
         return false;
@@ -55,17 +53,6 @@ public class User {
         return login.hashCode() + password.hashCode() + date.hashCode() + Double.hashCode(raiting) + Character.hashCode(sex);//+time;
     }
 }
-  /*  @Override
-    public int compareTo(User user) {
-        if (time>user.time) return 1;
-        if (time<user.time) return -1;
-        return 0;
-    }*/
-
-/*@Override
-public String toString(){
-return "User "+login + ", password "+password+", time "+time+"\n";
-}*/
 class UserTest{
 
 }

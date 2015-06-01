@@ -18,7 +18,6 @@ public class Auth {
     }
 
     public boolean authenticate(){
-        //System.out.println("Print login and password: ");
         Scanner scanner = new Scanner(System.in);
         String log = scanner.next();
         String passw = scanner.next();
@@ -87,8 +86,7 @@ class User1{
         if (    login!=null &&
                 password!=null &&
                 u.login.equals(login) &&
-                u.password.equals(password) //&&
-            //u.time == time
+                u.password.equals(password)
                 )
             return true;
         return false;

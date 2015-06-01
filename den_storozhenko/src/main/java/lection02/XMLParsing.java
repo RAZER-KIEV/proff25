@@ -30,16 +30,7 @@ public class XMLParsing extends Application {
         BorderPane pane = new BorderPane();
         TextField text = new TextField("xml");
         Button button = new Button("Parse");
-        //pane.setTop(text);
-        //pane.setRight(button);
-        //text.setPrefColumnCount(47);
         FlowPane flowPane = new FlowPane(text,button);
-        //flowPane.setVgap(8);
-        //flowPane.setHgap(2);
-        //flowPane.setPrefWrapLength(1000);
-        //flowPane.setMaxWidth(1000);
-        //flowPane.getChildren().add(text);
-        //flowPane.getChildren().add(button);
         pane.setTop(flowPane);
 
         text.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -83,14 +74,8 @@ public class XMLParsing extends Application {
             }
         });
 
-
-
-        //stage.setWidth(600);
-        //stage.setHeight(400);
-
         Scene scene = new Scene(pane, 600, 400);
 
-        //Scene scene = new Scene(pane, 1000, 1000);
         stage.setTitle("Hello FX");
         stage.setScene(scene);
         stage.show();
