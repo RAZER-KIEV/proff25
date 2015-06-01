@@ -29,7 +29,12 @@ public class Freq {
 
  public String setTextFromFile(String fileName){
   Scanner scanner = new Scanner(fileName);
-  text = scanner.nextLine();
+     text = "";
+     while(scanner.hasNext())
+     {
+         text += scanner.nextLine();
+     }
+
   return text;
  }
 
