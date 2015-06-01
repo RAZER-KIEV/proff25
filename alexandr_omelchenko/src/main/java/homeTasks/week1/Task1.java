@@ -1,8 +1,6 @@
-package HT1;
+package homeTasks.week1;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.ListIterator;
 
 public class Task1 {
     public static void main(String[] args) {
