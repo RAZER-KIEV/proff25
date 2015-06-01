@@ -12,7 +12,7 @@ import java.util.Date;
  3. Дата регистрации
  4. Рейтинг (вещественное число)
  5. Пол
- Класс задания hw2.hash.User
+ Класс задания hw2.hash.User.
  */
 public class User {
     private String login;
