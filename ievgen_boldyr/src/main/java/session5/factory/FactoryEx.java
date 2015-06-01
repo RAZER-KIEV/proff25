@@ -5,6 +5,7 @@ public class FactoryEx {
         Car auto = FactoryEx.getInstance(TypesEnum.AUTO);
         Car truck = FactoryEx.getInstance(TypesEnum.TRUCK);
         Car excavator = FactoryEx.getInstance(TypesEnum.EXCAVATOR);
+        Car excVol = FactoryEx.getInstance(TypesEnum.EXCAVATOR, VolumeEnum.MEDIUM);
     }
 
     private static CreatorAuto creatorAuto = new CreatorAuto();
