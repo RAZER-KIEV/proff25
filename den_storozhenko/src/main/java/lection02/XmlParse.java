@@ -33,7 +33,7 @@ public class XmlParse {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Node node = document.getDocumentElement(); // корневой элемент
+        Node node = document.getDocumentElement(); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         recursDom(node);
     }
 
@@ -51,4 +51,4 @@ public class XmlParse {
             }
     }
 }
-//вывести в консоль структуру хмл-документа
+//РІС‹РІРµСЃС‚Рё РІ РєРѕРЅСЃРѕР»СЊ СЃС‚СЂСѓРєС‚СѓСЂСѓ С…РјР»-РґРѕРєСѓРјРµРЅС‚Р°
