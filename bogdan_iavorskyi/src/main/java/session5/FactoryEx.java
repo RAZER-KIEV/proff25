@@ -29,7 +29,7 @@ public class FactoryEx {
             creatorDigger.setBucket(bucketCapacity);
             return creatorDigger.create();
         }
-        return creatorAuto.create();
+        return getInstance(type);
     }
 
     private interface Creator {
