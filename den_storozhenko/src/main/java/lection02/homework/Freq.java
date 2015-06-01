@@ -125,10 +125,7 @@ public class Freq {
 class Main{
     public static void main(String[] args) throws FileNotFoundException {
         Freq freq = new Freq();
-        //System.out.println(freq.setTextFromFile("D:\\Univ\\3\\proff25\\den_storozhenko\\src\\main\\java\\lection02\\homework\\text.txt"));
-
         System.out.println(freq.generateRandomText(1000));
-        //freq.setTextFromFile("D:\\Univ\\3\\proff25\\den_storozhenko\\src\\main\\java\\lection02\\homework\\text.txt");
         System.out.println("RES: ");
         freq.printDesc();
     }

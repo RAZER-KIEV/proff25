@@ -8,17 +8,14 @@ import java.util.Random;
  */
 public class Parking {
     private ArrayList<Car> parkingPlaces;
-    //private int maxParkingSize;
 
     public Parking() {
         parkingPlaces = new ArrayList<>(100);
-        //maxParkingSize = 100;
     }
 
     public Parking(int places) {
         if (places > 0) {
             parkingPlaces = new ArrayList<>(places);
-            //maxParkingSize = places;
         }
         else
             throw new IllegalArgumentException();
