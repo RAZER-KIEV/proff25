@@ -2,8 +2,8 @@ package session5;
 
 public class FactoryEx {
     public static void main(String[] args) {
-        Car b = FactoryEx.getInstance("B");
-        Car c = FactoryEx.getInstance("C");
+        Car b = FactoryEx.getInstance("Auto");
+        Car c = FactoryEx.getInstance("Excavator", 200);
     }
 
     private static CreatorAuto creatorAuto = new CreatorAuto();
@@ -17,6 +17,13 @@ public class FactoryEx {
             return creatorTruck.create();
         }
         return creatorAuto.create();
+    }
+
+    public static Car getInstance(String type, double volume) {
+        if ("Excavator".equals(type)) {
+            return new CreatorExcavator(volume).create();
+        }
+        return getInstance(type);
     }
 
     private interface Creator {
@@ -37,6 +44,19 @@ public class FactoryEx {
         }
     }
 
+    private static class CreatorExcavator implements Creator {
+        private double volume;
+
+        public CreatorExcavator(double volume) {
+            this.volume = volume;
+        }
+
+        @Override
+        public Car create() {
+            return new Excavator(volume);
+        }
+    }
+
 
 }
 
@@ -51,4 +71,12 @@ class Auto extends Car {
 
 class Truck extends Car {
 
+}
+
+class Excavator extends Car {
+    private double volume;
+
+    public Excavator(double volume) {
+        this.volume = volume;
+    }
 }
