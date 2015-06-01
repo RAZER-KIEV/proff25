@@ -23,8 +23,12 @@ public class Freq {
 
  public String setTextFromConsole(){
   Scanner scanner = new Scanner(System.in);
-  text = scanner.nextLine();
-  return text;
+     text = "";
+     while(scanner.hasNext())
+     {
+         text += scanner.nextLine();
+     }
+     return  text;
  }
 
  public String setTextFromFile(String fileName){
