@@ -1,4 +1,4 @@
-package HomeWork;
+package HomeWork1.ListsCompare;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
