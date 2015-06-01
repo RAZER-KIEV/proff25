@@ -1,0 +1,23 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+         <group>
+<student><name>Aleksandr</name> <secondName>Aleksandrovich</secondName> <lastName>Omelchenko</lastName>
+        <rate>A</rate>
+        <miss>10</miss>
+        </student>
+<student><name>Ivan</name> <secondName>Ivanovich</secondName> <lastName>Ivanov</lastName>
+        <rate>C</rate>
+        <miss>15</miss>
+        </student>
+<student><name>Petr</name> <secondName>Petrovich</secondName> <lastName>Petrov</lastName>
+        <rate>B</rate>
+        <miss>10</miss>
+        </student>
+<student><name>Sidor</name> <secondName>Sidorovich</secondName> <lastName>Sidorov</lastName>
+        <rate>B</rate>
+        <miss>10</miss>
+        </student>
+<student><name>Nikolay</name> <secondName>Nikolaevich</secondName> <lastName>Nikolaev</lastName>
+        <rate>B</rate>
+        <miss>10</miss>
+    </student>
+</group>

@@ -1,4 +1,4 @@
-package home1;
+package hw2.lab;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -6,21 +6,20 @@ import java.util.LinkedList;
 /**
  * Created by george on 22.05.15.
  */
-public class LabWork1 {
+public class ListsCompare {
     public static void main(String[] args) {
 
-//        new LW1();
-        new LW1(10000);
+        new ListsCompareTest(10000);
 
     }
 
 
 }
 
-class LW1{
+class ListsCompareTest{
     ArrayList<Integer> ali;
     LinkedList<Integer> lli;
-        LW1(){
+    ListsCompareTest(){
             int elTo=10000;
             long startAliTest, endAliTest;
             //ArrayList
@@ -118,7 +117,7 @@ class LW1{
             endAliTest= System.nanoTime();
             System.out.println("LinkedList remove from start :       " + nanoToTime(endAliTest-startAliTest));
         }
-    LW1(int maxElement){
+    ListsCompareTest(int maxElement){
         int elTo=maxElement;
         long startAliTest, endAliTest;
         //ArrayList
