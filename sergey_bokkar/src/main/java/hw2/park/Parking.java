@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by Well on 28.05.2015.
+ * Created by Well on 28.05.2015..
  */
 public class Parking {
     Map<Integer, Car> parking = new HashMap<>();

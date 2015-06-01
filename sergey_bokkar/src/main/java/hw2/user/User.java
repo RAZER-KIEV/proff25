@@ -19,7 +19,7 @@ public class User {
     private int regDate;
     private int rate;
     private int sex;
-
+//
     public User (){};
 
     public User (String login, String pass, int regDate, int rate, int sex){

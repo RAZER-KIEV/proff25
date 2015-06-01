@@ -13,7 +13,7 @@ import java.util.*;
  - Set<String> getWordsByFrequencyLessThan(int frequency)
  - Set<String> getWordsByFrequencyMoreThan(int frequency)
  - void printAcs() - вывести все слова + частота по возрастанию частоты
- - void printDesc() - вывести все слова + частота по убыванию частоты
+ - void printDesc() - вывести все слова + частота по убыванию частоты.
  */
 public class Freq {
 
