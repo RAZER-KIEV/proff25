@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by viktoria on 01.06.15.
+ * Created by viktoria
  */
 public class Car {
     private Integer placeNumber;

@@ -1,4 +1,5 @@
 package hw2.park;
+/**/
 
 public class Main {
 
@@ -11,8 +12,7 @@ public class Main {
         System.out.println(places.leave(5));
         places.park(new Car());
         places.park(new Car());
-        //places.leave(20);
-
+        places.leave(20);
 
     }
 }

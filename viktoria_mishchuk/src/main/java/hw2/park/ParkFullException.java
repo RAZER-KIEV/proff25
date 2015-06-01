@@ -1,7 +1,7 @@
 package hw2.park;
 
 /**
- * Created by viktoria on 01.06.15.
+ * Created by viktoria
  */
 public class ParkFullException extends Exception {
 

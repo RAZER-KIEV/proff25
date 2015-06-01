@@ -14,7 +14,7 @@ import java.util.Set;
  * <p>
  * Классы задания:
  * hw2.park.Parking
- * hw2.park.Car
+ * hw2.park.Car.
  */
 public class Parking {
 
