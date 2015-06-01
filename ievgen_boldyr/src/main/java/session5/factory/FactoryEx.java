@@ -24,6 +24,16 @@ public class FactoryEx {
         return creatorAuto.create();
     }
 
+    public static Car getInstance(TypesEnum type, VolumeEnum volume) {
+        if (TypesEnum.EXCAVATOR == type) {
+            Car car = creatorExcavator.create();
+            Excavator excavator = (Excavator) car;
+            excavator.setVolume(volume);
+            return (Car) excavator;
+        }
+        return creatorExcavator.create();
+    }
+
     private interface Creator {
         Car create();
     }
@@ -62,4 +72,15 @@ class Truck extends Car {
 }
 
 class Excavator extends Car {
+    private VolumeEnum volume;
+
+    public Excavator(){}
+
+    public VolumeEnum getVolume() {
+        return volume;
+    }
+
+    public void setVolume(VolumeEnum volume) {
+        this.volume = volume;
+    }
 }
