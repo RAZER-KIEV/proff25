@@ -17,7 +17,10 @@ import java.util.*;
  * Created by just1ce on 28.05.2015.
  */
 public class Freq {
-    Map data= new HashMap< String, Integer>();
+    Map data;
+    public Freq(){
+        data= new HashMap< String, Integer>();
+    }
 
     public String setTextFromConsole(){
         data.clear();

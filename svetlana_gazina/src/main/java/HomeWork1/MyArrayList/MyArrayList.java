@@ -1,13 +1,13 @@
-package HomeWork;
+package HomeWork1.MyArrayList;
 
 import java.util.Iterator;
 import java.util.Objects;
 
 /**
- Написать собственную реализацию динамического массива MyArrayList.
- Сделать параметризацию списка, параметр E.
- Реализовать в списке интерфейсы Iterable.
- Реализовать следующие методы
+ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ MyArrayList.
+ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ E.
+ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ Iterable.
+ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
  - void add(E value)
  - E get(int index)
  - boolean set(int index, E value)
@@ -17,7 +17,7 @@ import java.util.Objects;
  - E remove(int index)
  - Iterator<E> iterator()
 
- Класс теста MyArrayListTest
+ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ MyArrayListTest
 
  */
 public class MyArrayList<E> implements Iterable {
