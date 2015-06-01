@@ -11,16 +11,19 @@
 
     <modules>
         <module>proff25_examples</module>
+        <module>aleksey_khalikov</module>
         <module>bogdan_iavorskyi</module>
         <module>roman_rudych</module>
         <module>alexandr_omelchenko</module>
         <module>anton_lipskiy</module>
         <module>vitaliy_zholobitskiy</module>
-        <module>andrey_dubinin</module>
+        <module>Andrey_Dubinin</module>
         <module>oleg_chumak</module>
         <module>den_storozhenko</module>
         <module>viktoria_mishchuk</module>
-        <module>evgeniy_lukashevich</module>
+        <module>evgeniy_fortuna</module>
+        <module>sviatoslav_ruzhitskiy</module>
+
     </modules>
 
     <properties>
