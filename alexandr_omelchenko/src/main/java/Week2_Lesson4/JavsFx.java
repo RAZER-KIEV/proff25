@@ -1,31 +1,26 @@
-package session4;
-
+package Week2_Lesson4;
 import javafx.application.Application;
 import javafx.event.EventHandler;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
-import javax.swing.text.html.ImageView;
 
 import java.io.FileInputStream;
 
 /**
- * Created by jax on 26.05.15.
+ * Created by HP on 26.05.2015.
  */
-public class JavaFX extends Application {
+public class JavsFx extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        javafx.scene.image.ImageView rootIcon = new javafx.scene.image.ImageView(new Image(new FileInputStream("folder2.png")));
+        ImageView rootIcon = new ImageView(new Image(new FileInputStream("folder2.png")));
         TreeItem<String> root = new CheckBoxTreeItem<>("root", rootIcon);
         TreeView<String> tree = new TreeView<>(root);
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 6; i++) {
             root.getChildren().add(new TreeItem<>("child-" + i));
         }
         root.setExpanded(true);
@@ -40,7 +35,7 @@ public class JavaFX extends Application {
         button.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                text.appendText(button.getText());
+                text.appendText(text.getText());
             }
         });
         pane.setBottom(button);
