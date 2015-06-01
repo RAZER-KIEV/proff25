@@ -10,34 +10,84 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import sun.reflect.generics.tree.Tree;
 
+import javax.swing.text.html.ImageView;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
+import java.awt.event.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.*;
+import java.util.List;
 
 /**
  * Created by just1ce on 26.05.2015.
  */
 public class JavaFX extends Application {
+
     @Override
     public void start(Stage primaryStage) throws Exception {
+
+        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+        dbFactory.setValidating(false);
+        DocumentBuilder dBuilder = null;
+        dBuilder = dbFactory.newDocumentBuilder();
+        Document doc = dBuilder.parse(new File("vitaliy_zholobitskiy//data.xml"));
+        Node node =doc.getDocumentElement();
+        node.normalize();
+        NodeList l= node.getChildNodes();
+        TreeItem<String> root1 = new CheckBoxTreeItem<>("root");
+        TreeView<String> tree = new TreeView<>(root1);
+       // for(int i=0;i<l.getLength();i++){
+           // if (l.item(i).getNodeType()==Node.ELEMENT_NODE) {
+               // TreeItem t1 =new TreeItem<>(root.getNodeName());
+                //tree.getChildren().add(t1);
+
+          //  }
+       // }
+        //recursDom(node, root1);
+
         BorderPane borderPane= new BorderPane();
-        borderPane.setTop(new TextField("Hello from GUI"));
-        borderPane.setCenter(new Label("centre"));
-        java.awt.Button b= new java.awt.Button("click me");
-        //b.
-        //b.setOnAction(new EventHandler<ActionEvent>() {
-            //@Override
-            //public void handle(ActionEvent event) {
-              //  System.out.println("Hello World!");
-           // }
-       // });
-        borderPane.setBottom(new Button("Click Me!"));
+        Button b= new Button("Read");
+        TextField textField= new TextField("");
+        borderPane.setTop(textField);
+        borderPane.setRight(b);
+        //TreeItem<String> root = new CheckBoxTreeItem<>("root");
+        //TreeView<String> tree = new TreeView<>(root);
+
+        borderPane.setCenter(tree);
+
+
         Scene scene= new Scene(borderPane,800,600);
         primaryStage.setScene(scene);
         primaryStage.show();
+    }
+    public static void recursDom(Node root, TreeItem t){
+
+        if (root.getNodeType()==Node.ELEMENT_NODE) {
+            TreeItem t1 =new TreeItem<>(root.getNodeName());
+            t.getChildren().add(t1);
+
+        }
+        NodeList nodeList = root.getChildNodes();
+        if (nodeList.getLength()==0){
+
+            //t.getChildren().add(new TreeItem<>(root.getNodeValue()));
+
+            //System.out.print(" "+root.getNodeValue());
+        }
+        else {
+            TreeItem t1 = new TreeItem<>(root.getNodeName());
+
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                recursDom(nodeList.item(i), t1);
+            }
+        }
     }
 
 
