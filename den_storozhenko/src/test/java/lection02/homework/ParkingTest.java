@@ -1,4 +1,4 @@
-package lection02;
+package lection02.homework;
 
 import lection02.homework.Car;
 import lection02.homework.ParkFullExeption;

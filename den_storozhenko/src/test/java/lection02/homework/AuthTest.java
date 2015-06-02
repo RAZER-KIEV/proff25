@@ -1,4 +1,4 @@
-package lection02;
+package lection02.homework;
 
 import lection02.homework.Auth;
 import lection02.homework.User1;
