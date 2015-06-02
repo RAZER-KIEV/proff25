@@ -1,4 +1,4 @@
-package session1;
+package main.session1;
 
 /**
  * Created by george on 18.05.15.

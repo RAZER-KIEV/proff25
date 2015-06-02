@@ -1,4 +1,4 @@
-package hw2.lab;
+package main.hw2.lab;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
