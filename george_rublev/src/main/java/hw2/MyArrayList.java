@@ -1,4 +1,4 @@
-package main.hw2;
+package hw2;
 
 import java.util.Iterator;
 

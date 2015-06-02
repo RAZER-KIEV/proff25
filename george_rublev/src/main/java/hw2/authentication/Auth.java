@@ -1,4 +1,4 @@
-package main.hw2.authentication;
+package hw2.authentication;
 
 import java.util.HashMap;
 import java.util.Map;

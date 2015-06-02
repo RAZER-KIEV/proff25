@@ -11,17 +11,17 @@ import static org.junit.Assert.assertEquals;
  * Date: 01.06.15
  */
 public class PersonTest {
-//    Person module;
-//
-//    @Before
-//    public void setUp() {
-//        module = new Person();
-//    }
-//
-//    @Test
-//    public void testEqualsLegal() {
-//        boolean actual = module.equals(new Person());
-//        boolean expected = true;
-//        assertEquals(expected, actual);
-//    }
+    Person module;
+
+    @Before
+    public void setUp() {
+        module = new Person();
+    }
+
+    @Test
+    public void testEqualsLegal() {
+        boolean actual = module.equals(new Person());
+        boolean expected = true;
+        assertEquals(expected, actual);
+    }
 }

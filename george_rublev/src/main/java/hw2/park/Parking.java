@@ -1,4 +1,4 @@
-package main.hw2.park;
+package hw2.park;
 
 
 import java.util.HashMap;

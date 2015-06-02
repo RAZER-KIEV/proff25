@@ -1,4 +1,4 @@
-package main.session3;
+package session3;
 
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;

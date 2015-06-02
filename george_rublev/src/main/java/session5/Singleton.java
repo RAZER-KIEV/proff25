@@ -1,4 +1,4 @@
-package main.session5;
+package session5;
 
 /**
  * Created by george on 01.06.15.

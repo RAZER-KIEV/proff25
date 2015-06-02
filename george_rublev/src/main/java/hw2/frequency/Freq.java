@@ -1,4 +1,4 @@
-package main.hw2.frequency;
+package hw2.frequency;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;

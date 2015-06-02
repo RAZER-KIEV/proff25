@@ -1,4 +1,4 @@
-package main.session4;
+package session4;
 
 import javafx.application.Application;
 import javafx.event.EventHandler;
