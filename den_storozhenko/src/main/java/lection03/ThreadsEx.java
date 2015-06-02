@@ -31,7 +31,7 @@ class Thread2 extends Threads{
 }
 class Printer{
     public synchronized void print(String line) throws InterruptedException {
-        System.out.println("[");
+        System.out.print("[");
         Thread.sleep(1);
         System.out.print(line);
         Thread.sleep(1);
