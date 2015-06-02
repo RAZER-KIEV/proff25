@@ -12,7 +12,7 @@ import java.util.Date;
  3. Дата регистрации
  4. Рейтинг (вещественное число)
  5. Пол
- Класс задания hw2.hash.User
+ Класс задания hw2.hash.User.
  */
 public class User {
     private String login;
@@ -35,7 +35,7 @@ public class User {
     @Override
     public boolean equals(Object obj){
 
-        if (obj instanceof User){
+        if (obj.getClass().equals(this.getClass())){
             User tmp = (User) obj;
             if (tmp.hashCode() == this.hashCode()){
                 return  true;
@@ -60,7 +60,7 @@ class Test{
         User user4 = new User("petya", "try", "23.08.2000",5.0, "male");
 
 
-        System.out.println(user1.hashCode());
+
         if (1690808401 == user1.hashCode()){
             System.out.println("Test done!");
         } else{
