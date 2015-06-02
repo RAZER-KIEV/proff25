@@ -7,18 +7,20 @@ import static org.junit.Assert.*;
 /**
  * Created by Taras on 01.06.2015.
  */
-public class PersonTest {
-    Person module;
+public class SingletonTest {
+    Singleton singleton;
 
     @Before
     public void setUp(){
-        module = new Person();
+        singleton = Singleton.getInstance();
     }
 
     @Test
-    public void testEqualsLegal() {
-        boolean actual = module.equals(new Person());
-        boolean expected = true;
+    public void testSingleton() {
+        Singleton actual = singleton;
+        Singleton expected = Singleton.getInstance();
         assertEquals(expected,actual);
     }
+
+
 }

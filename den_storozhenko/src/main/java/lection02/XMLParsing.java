@@ -19,10 +19,6 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 
-
-/**
- * Created by storo_000 on 26.05.2015.
- */
 public class XMLParsing extends Application {
     @Override
     public void start(Stage stage) throws Exception {
