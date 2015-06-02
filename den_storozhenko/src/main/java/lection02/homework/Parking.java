@@ -3,9 +3,6 @@ package lection02.homework;
 import java.util.ArrayList;
 import java.util.Random;
 
-/**
- * Created by storo_000 on 28.05.2015.
- */
 public class Parking {
     private ArrayList<Car> parkingPlaces;
 

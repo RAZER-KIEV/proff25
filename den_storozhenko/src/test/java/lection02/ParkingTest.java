@@ -9,6 +9,7 @@ import org.junit.Test;
 import java.util.Random;
 
 import static org.junit.Assert.*;
+
 public class ParkingTest {
     Parking parking;
 
@@ -43,12 +44,8 @@ public class ParkingTest {
         parking.park(car3);
         parking.park(car4);
         parking.park(car5);
-        //try {
+
         assertEquals(car1, parking.leave(0));
         assertEquals(car2, parking.leave(1));
-        //assertEquals(new IndexOutOfBoundsException(), parking.leave(5));
-        //}catch ( ex){
-
-        //}
     }
 }

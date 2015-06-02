@@ -14,9 +14,6 @@ import javafx.stage.Stage;
 import javax.swing.text.html.ImageView;
 import java.io.FileInputStream;
 
-/**
- * Created by storo_000 on 26.05.2015.
- */
 public class JavaFX extends Application {
     @Override
     public void start(Stage stage) throws Exception {
