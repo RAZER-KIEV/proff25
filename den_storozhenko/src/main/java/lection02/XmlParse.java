@@ -12,9 +12,6 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * Created by storo_000 on 25.05.2015.
- */
 public class XmlParse {
     public static void main(String[] args) {
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
