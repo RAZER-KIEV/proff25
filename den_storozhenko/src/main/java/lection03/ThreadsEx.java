@@ -17,18 +17,6 @@ class Thread1 extends Threads{
     }
 }
 
-class Thread2 extends Threads{
-
-    @Override
-    public void run() {
-        try {
-            for (int i=0;i<200;i++)
-                printer.print(Thread.currentThread().getName());
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-}
 class Printer{
     public synchronized void print(String line) throws InterruptedException {
         System.out.print("[");
@@ -42,7 +30,8 @@ class Printer{
 public class ThreadsEx{
     public static void main(String[] args) {
         new Thread1().start();
-        new Thread2().start();
+        new Thread1().start();
+        new Thread1().start();
 
     }
 }
