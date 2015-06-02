@@ -9,20 +9,27 @@ import java.util.Random;
 public class Parking {
     private ArrayList<Car> parkingPlaces;
 
+    public ArrayList<Car> getParkingPlaces() {
+        return parkingPlaces;
+    }
+
     public Parking() {
         parkingPlaces = new ArrayList<>(100);
+        for (int i=0; i<100; i++)
+            parkingPlaces.add(null);
     }
 
     public Parking(int places) {
         if (places > 0) {
             parkingPlaces = new ArrayList<>(places);
+            for (int i=0; i<places; i++)
+                parkingPlaces.add(null);
         }
         else
             throw new IllegalArgumentException();
     }
 
     public int park(Car car1) throws ParkFullExeption {
-
         for (int i=0;i<parkingPlaces.size();i++)
             if (parkingPlaces.get(i)==null)
             {
@@ -39,28 +46,4 @@ public class Parking {
     }
 }
 
-class ParkingTest{
-    public static void main(String[] args) throws ParkFullExeption {
-        Parking parking = new Parking(10);
-        parking.park(new Car(2));
-        parking.park(new Car(-1));
-        parking.park(new Car(1));
-        parking.leave(1);
-    }
-}
 
-class Car{
-    int number;
-
-    public  Car(){
-        number = new Random().nextInt();
-    }
-
-    public  Car(int n){
-        number =n;
-    }
-}
-
-class ParkFullExeption extends Exception{
-
-}
