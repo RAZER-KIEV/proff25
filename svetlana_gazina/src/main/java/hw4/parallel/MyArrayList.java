@@ -1,4 +1,4 @@
-package HomeWork3.parallel;
+package hw4.parallel;
 
 
 
