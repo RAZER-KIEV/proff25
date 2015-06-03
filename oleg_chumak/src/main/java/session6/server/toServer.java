@@ -14,20 +14,32 @@ public class toServer {
 
         SocketChannel channel = SocketChannel.open(new InetSocketAddress("127.0.0.1", 30003));
         ByteBuffer buffer = ByteBuffer.allocate(100);
-        System.out.println("Enter text");
-        Scanner scan = new Scanner(System.in);
-        String text = scan.next();
-        buffer.put(text.getBytes());
-        buffer.flip();
-        while (buffer.hasRemaining()) {
-            channel.write(buffer);
-        }
-        buffer.clear();
-        int readed;
-        while ((readed = channel.read(buffer)) > 0) {
-            String line = new String(buffer.array(), 0, readed);
-            System.out.print(line);
-            buffer.clear();
+
+        while (true) {
+            makeRequest(buffer, channel);
+            handleRequest(buffer, channel);
         }
     }
+
+        private static void makeRequest(ByteBuffer buffer, SocketChannel channel) throws IOException {
+        System.out.println("Enter text");
+            Scanner scan = new Scanner(System.in);
+            String text = scan.next();
+            buffer.put(text.getBytes());
+            buffer.flip();
+            while (buffer.hasRemaining()) {
+                channel.write(buffer);
+            }
+            buffer.clear();
+        }
+
+        private static void handleRequest(ByteBuffer buffer, SocketChannel channel) throws IOException {
+            int readed;
+            while ((readed = channel.read(buffer)) > 0) {
+                String line = new String(buffer.array(), 0, readed);
+                System.out.print(line);
+                buffer.clear();
+            }
+        }
+
 }
