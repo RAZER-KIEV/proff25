@@ -4,9 +4,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-/**
- * Created by storo_000 on 28.05.2015.
- */
 public class Freq {
     private Map<String, Integer> map;
 
