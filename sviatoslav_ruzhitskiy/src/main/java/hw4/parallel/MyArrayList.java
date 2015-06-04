@@ -12,10 +12,11 @@ import java.util.Iterator;
         private E[] mainmassForClone;
         private int capacity = 0;
         int cursize=0;
-        int index =-1;
+        public static int index =-1;
         public MyArrayList(){
             mainmass = (E[]) new Object[capacity];
         }
+
         public void incrArray(){
             mainmassForClone = mainmass.clone();
             capacity++;
@@ -72,16 +73,17 @@ import java.util.Iterator;
             return -1;
         }
         public int parallelIndexOf(E e){
-
-
-
-
-
-
-
-
-            return cursize;
-        }
+            ThreadGroup group = new ThreadGroup("SearchGroup");
+            int _25 =(int) (mainmass.length*0.25);
+            int _50 =(int) (mainmass.length*0.5);
+            int _75 = (int) ( mainmass.length*0.75);
+             // ThreadsMaker threadsMaker = new ThreadsMaker()
+            new Thread(group, new ThreadsMaker(0,_25,mainmass,e));
+            new Thread(group, new ThreadsMaker(_25,_50,mainmass,e));
+            new Thread(group, new ThreadsMaker(_50,_75,mainmass,e));
+            new Thread(group, new ThreadsMaker(_75,mainmass.length,mainmass,e));
+            return index;
+            }
 
         public int size(){
             return mainmass.length;
@@ -128,7 +130,7 @@ import java.util.Iterator;
     class MyArrayListTest{
         public static void main(String[] args) {
             MyArrayList<Integer> MALTest = new MyArrayList<>();
-            System.out.println("0 " + MALTest.size());
+           System.out.println("0 " + MALTest.size());
             MALTest.add(200);
             System.out.println("get: 200 " + MALTest.get(0));
             System.out.println("0 " + MALTest.indexOf(200));
@@ -144,41 +146,52 @@ import java.util.Iterator;
             System.out.println("105 "+index);
             MALTest.get(5000);
             MALTest.remove(0);
+            MALTest.parallelIndexOf(1050);
+
+
         }
     }
 class ThreadsMaker extends Thread{
     MyArrayList arrlist = new MyArrayList<>();
+    Object [] mass;
     int bigin;
     int end;
     Object value;
     ThreadsMaker thred;
     int index;
+   // ThreadGroup group;
     static Thread thread;
-    public ThreadsMaker(int bigin,int end, MyArrayList arlst, Object value){
+    public ThreadsMaker(int bigin,int end, Object [] mass , Object value){
         this.bigin = bigin;
         this.end = end;
-        arrlist=arlst;
+        this.mass = mass;
         this.value = value;
+        //this.group = group;
+        this.start();
+
 
     }
 
-     public void run(){
+     public void run() throws NullPointerException{
          thred = (ThreadsMaker) Thread.currentThread();
-         for(int i=bigin; i<=end; i++ )
-             for(int j=i; j<end;j++){
-                 if(arrlist.mainmass[j]!=null){
-                     if(arrlist.mainmass[j].equals(value)){
-                         index = j;
+        do {
+             for (int i = bigin; i <= end; i++){
+                       if (mass[i] != null) {
+                         if (mass[i].equals(value)) {
+                             index = i;
+                            // pushI(index);
+                             System.out.println("индекс найден потоком: " + thred.getName() + " index: " + i);
+                             getThreadGroup().interrupt();
 
-                         System.out.println("индекс найден потоком:"+thred + "index: "+j);
-
+                         }
                      }
                  }
-             }
-
+         } while(thread.isInterrupted());
 
     }
-    public void pushd(int index){
+    public void pushI(int index){
+        MyArrayList.index = index;
+        System.out.println("index pushed!" +index);
 
 
     }
