@@ -53,7 +53,7 @@ public class Parking {
     }
 
     private int findEmptyPlace() throws ParkFullException {
-        for(int i = 1; i <=10; i++ ){
+        for(int i = 1; i <=size; i++ ){
             if(parking.get(i) == null) return i;
         }
         throw new ParkFullException();
@@ -68,8 +68,7 @@ class Car{
         this.governmentalNumber = governmentalNumber;
     }
 
-    public Car() {
-    }
+    public Car() {}
 
     @Override
     public String toString(){
