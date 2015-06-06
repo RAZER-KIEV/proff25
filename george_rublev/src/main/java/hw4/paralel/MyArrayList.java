@@ -4,6 +4,7 @@ package hw4.paralel;
  import java.util.Iterator;
 
 
+
 public class MyArrayList<E> implements Iterable<E> {
 
     E[] arr;
@@ -72,7 +73,7 @@ public class MyArrayList<E> implements Iterable<E> {
         return findedIdex;
     }
 
-    class FindIndex implements Runnable{
+    class FindIndex extends Thread{
 
         E value;
         int start;
