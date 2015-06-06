@@ -1,8 +1,5 @@
 package lection02.homework;
 
-import lection02.homework.Car;
-import lection02.homework.ParkFullExeption;
-import lection02.homework.Parking;
 import org.junit.Before;
 import org.junit.Test;
 
