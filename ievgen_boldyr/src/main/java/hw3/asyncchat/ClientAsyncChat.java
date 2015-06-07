@@ -13,8 +13,10 @@ import java.util.Scanner;
 
 public class ClientAsyncChat {
 
+    static SocketChannel chanel;
+
     public static void main(String[] args) throws IOException {
-        SocketChannel chanel = SocketChannel.open(new InetSocketAddress("localhost", 30000));
+        chanel = SocketChannel.open(new InetSocketAddress("localhost", 30000));
         ByteBuffer buffer = ByteBuffer.allocate(128);
         Scanner scanner = new Scanner(System.in);
 
@@ -23,17 +25,7 @@ public class ClientAsyncChat {
             public void run() {
                 ByteBuffer buffer = ByteBuffer.allocate(128);
                 while (true) {
-                    try {
-                        int bytesRead;
-                        while ((bytesRead = chanel.read(buffer)) > 0) {
-                            buffer.flip();
-                            System.out.print("Server : ");
-                            System.out.println(new String(buffer.array(), 0, bytesRead));
-                            buffer.clear();
-                        }
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                    inputMessage(buffer);
                 }
             }
         });
@@ -42,12 +34,30 @@ public class ClientAsyncChat {
         String message;
         while (true) {
             message = scanner.nextLine();
-            buffer.put(message.getBytes());
-            while (buffer.hasRemaining()) {
+            sendMessage(message, buffer);
+        }
+    }
+
+    private static void sendMessage(String message, ByteBuffer buffer) throws IOException {
+        buffer.put(message.getBytes());
+        while (buffer.hasRemaining()) {
+            buffer.flip();
+            chanel.write(buffer);
+        }
+        buffer.clear();
+    }
+
+    private static void inputMessage(ByteBuffer buffer) {
+        try {
+            int bytesRead;
+            while ((bytesRead = chanel.read(buffer)) > 0) {
                 buffer.flip();
-                chanel.write(buffer);
+                System.out.print("Client : ");
+                System.out.println(new String(buffer.array(), 0, bytesRead));
+                buffer.clear();
             }
-            buffer.clear();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
