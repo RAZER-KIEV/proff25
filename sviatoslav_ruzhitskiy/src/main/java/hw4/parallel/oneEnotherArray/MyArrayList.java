@@ -6,33 +6,30 @@ import java.util.Random;
 /**
  * Created by ПК on 04.06.2015.
  */
-public class MyArrayList<E> extends ArrayList {
+public class MyArrayList<E> extends ArrayList<E> {
     public static int index= -1;
-    ArrayList<E> arrayList;
 
-    public MyArrayList() {
-        arrayList = new ArrayList<E>();
 
-    }
+
 
     public int parallelIndexOf(E e){
 
         ThreadGroup group = new ThreadGroup("SearchGroup");
-        int _25 =(int) (arrayList.size()*0.25);
-        int _50 =(int) (arrayList.size()*0.5);
-        int _75 = (int) (arrayList.size()*0.75);
+        int _25 =(int) (this.size()*0.25);
+        int _50 =(int) (this.size()*0.5);
+        int _75 = (int) (this.size()*0.75);
         // ThreadsMaker threadsMaker = new ThreadsMaker()
-        new Thread(group, new ThreadsMaker(0,_25, arrayList,e));
-        new Thread(group, new ThreadsMaker(_25,_50,arrayList,e));
-        new Thread(group, new ThreadsMaker(_50,_75,arrayList,e));
-        new Thread(group, new ThreadsMaker(_75,arrayList.size(),arrayList,e));
+        new Thread(group, new ThreadsMaker(0,_25, this,e));
+        new Thread(group, new ThreadsMaker(_25,_50,this,e));
+        new Thread(group, new ThreadsMaker(_50,_75,this,e));
+        new Thread(group, new ThreadsMaker(_75,this.size(),this,e));
         return index;
     }
 
 }
 class ThreadsMaker<E> extends Thread{
    // MyArrayList arrlist = new MyArrayList<>();
-   public ArrayList mass;
+   public MyArrayList mass;
     int bigin;
     int end;
     Object value;
@@ -40,7 +37,7 @@ class ThreadsMaker<E> extends Thread{
     int index;
     // ThreadGroup group;
     static Thread thread;
-    public <E> ThreadsMaker(int bigin,int end, ArrayList<E> arrayList, E value){
+    public <E> ThreadsMaker(int bigin,int end, MyArrayList<E> arrayList, E value){
        //ArrayList<E> mass= new ArrayList<E>();
         this.bigin = bigin;
         this.end = end;
