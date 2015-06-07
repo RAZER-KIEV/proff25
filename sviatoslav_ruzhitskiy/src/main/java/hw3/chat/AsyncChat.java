@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
+import java.net.SocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
@@ -28,28 +29,72 @@ import java.nio.channels.SocketChannel;
  * Created by ПК on 05.06.2015.
  */
 public class AsyncChat extends Application implements EventHandler {
-    public static void main(String[] args) throws IOException {
-       //Application.launch(AsyncChat.class, args);
 
-        int port=30056;
-        String ipAddress="127.0.0.1";
+    static ObservableList<String> messeges = FXCollections.observableArrayList("Привет!", "халоу", "как оно?");
+    static TextField tfPort;
+    static TextField tfIpAdress;
+    static SocketAddress localIP;
+    static SocketAddress remoteIP;
+    static boolean isConnected=false;
+    static SocketChannel socketChannel;
+    static ByteBuffer byteBuffer;
+    static TextField tfSetMess;
+
+    public static void main(String[] args) throws IOException {
+
+        // ObservableList<String> messeges = FXCollections.observableArrayList("Привет!", "халоу", "как оно?");
+        //Start()
+
+        ByteBuffer buffer3;
+        int port = 30069;
+        String ipAddress = "127.0.0.1";
+        boolean once = true;
 
         ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
         serverSocketChannel.socket().bind(new InetSocketAddress(port));
 
-        SocketChannel channel = SocketChannel.open(new InetSocketAddress(ipAddress, port));
-        ByteBuffer buffer = ByteBuffer.allocate(300);
 
 
+        //Server realize realize
+        while (true) {
+            socketChannel = serverSocketChannel.accept();
+            System.out.println("SERVER: while works!");
+
+            isConnected = socketChannel.isConnected();
+
+        if (isConnected) {
+            localIP = socketChannel.getLocalAddress();
+            remoteIP = socketChannel.getRemoteAddress();
+
+            byteBuffer = ByteBuffer.allocate(1000);
+            socketChannel.read(byteBuffer);
+            // ?? socketChannel.write(byteBuffer);
+            String inMessege = String.valueOf(byteBuffer.array());
+            System.out.println("resived messege: "+inMessege);
+            byteBuffer.clear();
+
+            if (isConnected && once) {
+                messeges.add(String.join("Connection established! with " + String.valueOf(remoteIP)));
+                System.out.println(localIP + ": Connection established! with - " + remoteIP);
+                byteBuffer.put("Connektion Established with ".getBytes());
+                socketChannel.write(byteBuffer);
+                byteBuffer.clear();
+                messeges.add("Connektion Established with ");
+
+                byteBuffer.put(String.valueOf(localIP).getBytes());
+                socketChannel.write(byteBuffer);
+                byteBuffer.clear();
+                once = false;
+            }
 
 
-
-
-
-
-
-        Application.launch(AsyncChat.class, args);
+            messeges.add(inMessege);
+            byteBuffer.clear();
+         }
+      }
+           
     }
+
     @Override
     public void start(Stage stage) throws Exception {
         stage.setTitle("Let's Chatting!");
@@ -62,13 +107,13 @@ public class AsyncChat extends Application implements EventHandler {
         dropShadow.setOffsetX(10);
         dropShadow.setOffsetY(10);
 
-        TextField tfIpAdress = new TextField("Set Partner IP.");
-        ;
+        tfIpAdress = new TextField("127.0.0.1");
+
         tfIpAdress.setPrefSize(200, 30);
         tfIpAdress.setEditable(true);
         tfIpAdress.setEffect(dropShadow);
 
-        TextField tfPort = new TextField("Set Partner port.");
+        tfPort = new TextField("30056");
         tfPort.setPrefSize(140, 30);
         tfPort.setEditable(true);
         tfPort.setEffect(dropShadow);
@@ -97,8 +142,9 @@ public class AsyncChat extends Application implements EventHandler {
         pane.setLayoutY(50);
 
 
-        ObservableList<String> messeges = FXCollections.observableArrayList(
+        messeges = FXCollections.observableArrayList(
                 "Привет!", "халоу", "как оно?");
+        messeges.add("tgnf");
         ListView<String> mainJournal = new ListView<String>(messeges);
         mainJournal.setOrientation(Orientation.VERTICAL);
         mainJournal.setEffect(dropShadow);
@@ -111,7 +157,7 @@ public class AsyncChat extends Application implements EventHandler {
         root.getChildren().add(pane);
 
 
-        TextField tfSetMess = new TextField(" ");
+        tfSetMess = new TextField("send Hello!");
         tfSetMess.setPrefSize(400, 80);
         tfSetMess.setLayoutX(10);
         tfSetMess.setLayoutY(465);
@@ -129,27 +175,64 @@ public class AsyncChat extends Application implements EventHandler {
 
 
         stage.show();
-    }
 
+    }
 
     @Override
     public void handle(Event event) {
-        String name=((Button)(event.getSource())).getText();
+        String name = ((Button) (event.getSource())).getText();
         System.out.println(name);
 
         switch (name) {
             case "Send!":
+                ByteBuffer buffer3 = ByteBuffer.allocate(1000);
 
-                //todo
+                String msg = tfSetMess.getText();
+                System.out.println(msg);
+                messeges.add(msg);
+                 // byteBuffer.clear();
+                buffer3.flip();
+                buffer3.put(msg.getBytes());
+                try {
+                    socketChannel.write(buffer3);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                buffer3.clear();
+                 //todo
                 System.out.println("send pressed");
                 break;
-            case  "Connect":
+            case "Connect":
 
-                //todo
+                   System.out.println("try conn");
+                 //String s =(tfPort.getText());
+                  // System.out.println(s);
+                 ///int port;
+                int port = Integer.parseInt(tfPort.getText());
+                System.out.println("port: " +port);
+                String ip = tfIpAdress.getText();
+                   System.out.println("IP: "+ip);
+                String connEsteblishReqest = "request connection";
+
+               try{
+                   SocketChannel socketChannel = SocketChannel.open(new InetSocketAddress(ip, port));
+                ByteBuffer buffer2 = ByteBuffer.allocate(1000);
+                isConnected = socketChannel.isConnected();
+                   System.out.println(isConnected);
+                //socketChannel.write(buffer);
+                buffer2.put(connEsteblishReqest.getBytes());
+                buffer2.flip();
+                messeges.add("add to ListView");
+                //buffer.put(String.valueOf(localIP).getBytes());
+
                 System.out.println("Connect pressed");
+                System.out.println("connected: " + isConnected);
+                  buffer2.clear();
+
                 break;
+               }catch (Exception e){
+                   System.out.println(e);
+               }
         }
- }
-
-
+    }
 }
