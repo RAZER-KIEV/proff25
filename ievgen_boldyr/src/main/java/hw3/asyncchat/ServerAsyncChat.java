@@ -32,8 +32,8 @@ public class ServerAsyncChat {
                             buffer.flip();
                             System.out.print("Client : ");
                             System.out.println(new String(buffer.array(), 0, bytesRead));
+                            buffer.clear();
                         }
-                        buffer.clear();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
