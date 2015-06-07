@@ -5,7 +5,6 @@ import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
-import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -29,8 +28,8 @@ public class ServerAsyncChat {
                 while (true) {
                     try {
                         int bytesRead;
-                        buffer.rewind();
                         while ((bytesRead = sc.read(buffer)) > 0) {
+                            buffer.flip();
                             System.out.print("Client : ");
                             System.out.println(new String(buffer.array(), 0, bytesRead));
                         }
@@ -48,10 +47,9 @@ public class ServerAsyncChat {
         String message;
         while (true) {
             message = scanner.nextLine();
-
             buffer.put(message.getBytes());
-            buffer.rewind();
             while (buffer.hasRemaining()) {
+                buffer.flip();
                 sc.write(buffer);
             }
             buffer.clear();

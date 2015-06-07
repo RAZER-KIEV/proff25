@@ -26,11 +26,11 @@ public class ClientAsyncChat {
                     try {
                         int bytesRead;
                         while ((bytesRead = chanel.read(buffer)) > 0) {
+                            buffer.flip();
                             System.out.print("Server : ");
                             System.out.println(new String(buffer.array(), 0, bytesRead));
                         }
                         buffer.clear();
-                        buffer.rewind();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -43,8 +43,8 @@ public class ClientAsyncChat {
         while (true) {
             message = scanner.nextLine();
             buffer.put(message.getBytes());
-            buffer.flip();
             while (buffer.hasRemaining()) {
+                buffer.flip();
                 chanel.write(buffer);
             }
             buffer.clear();
