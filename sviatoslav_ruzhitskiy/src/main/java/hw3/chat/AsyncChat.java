@@ -1,7 +1,5 @@
-package session4;
+package hw3.chat;
 
-import android.content.DialogInterface;
-import android.view.View;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -10,26 +8,48 @@ import javafx.event.EventHandler;
 import javafx.geometry.Orientation;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.DropShadow;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-import java.awt.*;
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.nio.ByteBuffer;
+import java.nio.channels.ServerSocketChannel;
+import java.nio.channels.SocketChannel;
 
 
-public class JavaFX extends Application implements EventHandler {
-    public static void main(String[] args) {
-        Application.launch(JavaFX.class, args);
+/**
+ * Created by ПК on 05.06.2015.
+ */
+public class AsyncChat extends Application implements EventHandler {
+    public static void main(String[] args) throws IOException {
+       //Application.launch(AsyncChat.class, args);
+
+        int port=30056;
+        String ipAddress="127.0.0.1";
+
+        ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
+        serverSocketChannel.socket().bind(new InetSocketAddress(port));
+
+        SocketChannel channel = SocketChannel.open(new InetSocketAddress(ipAddress, port));
+        ByteBuffer buffer = ByteBuffer.allocate(300);
+
+
+
+
+
+
+
+
+
+        Application.launch(AsyncChat.class, args);
     }
-
     @Override
     public void start(Stage stage) throws Exception {
         stage.setTitle("Let's Chatting!");
@@ -114,16 +134,22 @@ public class JavaFX extends Application implements EventHandler {
 
     @Override
     public void handle(Event event) {
-        String conn=event.getSource().toString();
-       String send;
-        System.out.println(event.getEventType().getName());
-        //switch (event.getTarget()) {
-            //case "Connect":
-                //.out.println("Connekt Pressed!!!");
+        String name=((Button)(event.getSource())).getText();
+        System.out.println(name);
 
+        switch (name) {
+            case "Send!":
 
+                //todo
+                System.out.println("send pressed");
+                break;
+            case  "Connect":
 
+                //todo
+                System.out.println("Connect pressed");
+                break;
         }
+ }
 
 
-    }
+}
