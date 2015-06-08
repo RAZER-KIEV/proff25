@@ -67,7 +67,7 @@ public class MyArrayList<E> {
             thread.start();
         }
 
-        // не розумію чому не працює
+        // не розумію чому не працює закоментований кусок коду
         while (!isFound && !checkForAllDead(threads)/*numberOfDeadThreadsLoosers != numberOfCores*/) {
             // waiting
         }
