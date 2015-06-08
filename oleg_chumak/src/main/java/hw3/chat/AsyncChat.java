@@ -122,7 +122,7 @@ public class AsyncChat extends Application {
         });
     }
 
-    private void process() {
+    public void process() {
         System.out.println("Процесс пошел");
     }
 
