@@ -8,11 +8,13 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException, ParkFullException {
 
-        //TestFreq t= new TestFreq();
-        //t.test();
-        //AuthTest test = new AuthTest();
-        //test.test();
-        //TestParking t= new TestParking();
+        TestFreq t2= new TestFreq();
+        t2.test();
+        AuthTest test = new AuthTest();
+        test.test();
+        ParkingTest t1= new ParkingTest();
+        t1.test();
+
         UserTest t = new UserTest();
         t.test();
     }

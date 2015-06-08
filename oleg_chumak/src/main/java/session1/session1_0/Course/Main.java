@@ -166,7 +166,6 @@ class Display {
         try {
             scanMain();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
