@@ -10,6 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import session6.Server;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -49,7 +50,11 @@ public class AsyncChat extends Application {
                 port = Integer.parseInt(portField.getText());
                 messageHistory.appendText("Hello! ^-^ \n");
                 try {
-                    process();
+                    try {
+                        process();
+                    } catch (InterruptedException e1) {
+                        e1.printStackTrace();
+                    }
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
@@ -59,10 +64,10 @@ public class AsyncChat extends Application {
         sendButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 txt = message.getText();
-                messageHistory.appendText(ip + ": " + txt + "\n");
+                messageHistory.appendText(ip + " 1: " + txt + "\n");
                 message.setText("");
                 if(text != null){
-                    messageHistory.appendText(ip + ": " + text + "\n");
+                    messageHistory.appendText(ip + " 2: " + text + "\n");
                 }
 
 
@@ -79,27 +84,65 @@ public class AsyncChat extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
-    public void process() throws IOException {
-        ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
-        serverSocketChannel.socket().bind(new InetSocketAddress(port));
-//        SocketChannel serverChannel = serverSocketChannel.accept();
-        ByteBuffer serverBuffer = ByteBuffer.allocate(50);
-        ByteBuffer clientBuffer = ByteBuffer.allocate(50);
-        SocketChannel clientChannel = SocketChannel.open(new InetSocketAddress(ip, port));
+    public void process() throws IOException, InterruptedException {
+        // For receiving
+        new Thread(){
+            @Override
+            public void run() {
+                ServerSocketChannel serverSocketChannel = null;
+                try {
+                    serverSocketChannel = ServerSocketChannel.open();
+                    serverSocketChannel.socket().bind(new InetSocketAddress(30000));
+                    SocketChannel serverChannel = serverSocketChannel.accept();
+                    ByteBuffer serverBuffer = ByteBuffer.allocate(50);
+                    while (!(serverBuffer.hasRemaining())) {
+                        try {
+                            serverSocketChannel.wait();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
 
-        clientBuffer.flip();
-        text = String.valueOf(clientChannel.write(clientBuffer));
-        clientBuffer.clear();
-        serverBuffer.put(txt.getBytes());
-        serverBuffer.flip();
-//        while (serverBuffer.hasRemaining()) {
-//            serverChannel.write(serverBuffer);
-//        }
-//        serverBuffer.rewind();
+                    serverBuffer.rewind();
+
+                    int bytesRead;
+                    bytesRead = serverChannel.read(serverBuffer);
+                    System.out.println(new String(serverBuffer.array(), 0, bytesRead));
 
 
+                    serverBuffer.clear();
+                    serverBuffer.put("You are".getBytes());
+                    serverBuffer.flip();
+                    while (serverBuffer.hasRemaining()) {
 
+                        serverChannel.write(serverBuffer);
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+        }.start();
+
+        // For sending
+        SocketChannel socketChannel = SocketChannel.open(new InetSocketAddress(ip, port));
+
+        ByteBuffer buffer = ByteBuffer.allocate(50);
+        buffer.put(txt.getBytes());
+
+        buffer.flip();
+        while (buffer.hasRemaining()) {
+            socketChannel.write(buffer);
+        }
+        buffer.rewind();
+
+        int intMessage;
+        intMessage = socketChannel.read(buffer);
+        text = String.valueOf(intMessage);
     }
+
+
 }
 
 class AsyncChatTest {
