@@ -14,7 +14,7 @@ import org.junit.Test;
 
  */
 
-public class MyArrauListTest {
+public class MyArrayListTest {
     MyArrayList<Integer> module;
 
     @Before
