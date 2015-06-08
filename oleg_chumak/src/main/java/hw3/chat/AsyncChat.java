@@ -145,7 +145,8 @@ public class AsyncChat extends Application {
 
         private void handle(SocketChannel channel) throws IOException {
             ByteBuffer buffer = ByteBuffer.allocate(100);
-            int readed; while (buffer.hasRemaining()) {
+            int readed;
+            while (buffer.hasRemaining()) {
                 readed = channel.read(buffer);
                 chatting.append(channel.getRemoteAddress() + " " + new String(buffer.array(), 0, readed) + "\n");
                 textArea.setText(chatting.toString());
