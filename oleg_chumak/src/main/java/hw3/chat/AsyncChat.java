@@ -154,3 +154,7 @@ public class AsyncChat extends Application {
         }
     }
 }
+class AsyncChatTest{
+
+
+}
