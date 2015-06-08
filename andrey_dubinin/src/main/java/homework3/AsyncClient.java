@@ -9,7 +9,7 @@ import java.util.Scanner;
 /**
  * Created by jax on 06.06.15.
  */
-public class Client {
+public class AsyncClient {
     public static void main(String[] args) {
         try {
             SocketChannel socketChannel = SocketChannel.open(new InetSocketAddress("127.0.0.1", 30000));
@@ -23,9 +23,6 @@ public class Client {
                          socketChannel.write(buffer);
                      }
                      buffer.clear();
-
-
-
 
                      int bytesRead;
                      while ((bytesRead = socketChannel.read(buffer)) > 0) {
