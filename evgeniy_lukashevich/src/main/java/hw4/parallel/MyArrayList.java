@@ -1,4 +1,4 @@
-package hw3;
+package hw4.parallel;
 
 import java.util.ArrayList;
 
@@ -81,6 +81,8 @@ public class MyArrayList<E> extends ArrayList<E> {
                             arr.idx = i;
                             arr.isInterrupted = true;
                         }
+                    } else{
+                        break;
                     }
                 }
             } else {
@@ -90,6 +92,8 @@ public class MyArrayList<E> extends ArrayList<E> {
                             arr.idx = i;
                             arr.isInterrupted = true;
                         }
+                    } else {
+                        break;
                     }
                 }
                 if (amountThread == numberThread){
@@ -99,6 +103,8 @@ public class MyArrayList<E> extends ArrayList<E> {
                                 arr.idx = i;
                                 arr.isInterrupted = true;
                             }
+                        } else {
+                            break;
                         }
                     }
                 }
@@ -114,6 +120,8 @@ public class MyArrayList<E> extends ArrayList<E> {
                             arr.idx = i;
                             arr.isInterrupted = true;
                         }
+                    } else {
+                        break;
                     }
                 }
             } else {
@@ -123,6 +131,8 @@ public class MyArrayList<E> extends ArrayList<E> {
                             arr.idx = i;
                             arr.isInterrupted = true;
                         }
+                    } else {
+                        break;
                     }
                 }
                 if (amountThread == numberThread){
@@ -132,6 +142,8 @@ public class MyArrayList<E> extends ArrayList<E> {
                                 arr.idx = i;
                                 arr.isInterrupted = true;
                             }
+                        } else {
+                            break;
                         }
                     }
                 }

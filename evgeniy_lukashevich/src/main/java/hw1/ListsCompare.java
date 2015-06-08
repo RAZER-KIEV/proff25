@@ -1,13 +1,21 @@
-package session02;
+package hw1;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
-    ��������� �������������� ������� ArrayList � LinkedList
+ * Created by lukashevich.e on 20.05.2015.
+ Сравнить время выполнения операции у ArrayList и LinkedList
+ - добавление в начало
+ - добавление в конец
+ - добавление в середину
+ - получение элемента по индексу
+ - удаление элемента из начала
+ - поиск элемента по значению
+
+ Класс задания: hw2.lab.ListsCompare
+ Класс теста: hw2.lab.ListsCompareTest
  */
-public class CompareArrayLinkedLists {
+public class ListsCompare {
     public static void main (String[] args) {
 
         long begin;
@@ -131,4 +139,8 @@ public class CompareArrayLinkedLists {
         System.out.println();
         System.out.println("Score: Arr " + scoreArr + "-" + scoreLink + " Linked");
     }
+}
+
+class ListsCompareTest {
+
 }
