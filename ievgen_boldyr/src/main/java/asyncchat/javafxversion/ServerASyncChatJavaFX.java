@@ -35,8 +35,8 @@ public class ServerASyncChatJavaFX extends Application {
         BorderPane primary = new BorderPane();
 
         BorderPane connection = new BorderPane();
-        Button connect = new Button("Start server");
-        connect.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        Button start = new Button("Start server");
+        start.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 Thread thread = new Thread(new Runnable() {
@@ -55,7 +55,7 @@ public class ServerASyncChatJavaFX extends Application {
                 thread.start();
             }
         });
-        connection.setCenter(connect);
+        connection.setCenter(start);
 
         BorderPane chat = new BorderPane();
         area = new TextArea();
