@@ -25,9 +25,8 @@ public class MyArrayList<E> extends ArrayList<E> {
     }
 
     public synchronized  int parallelIndexOf(E e) throws InterruptedException {
-        result = -1;
         if(size() == 0){
-            return result;
+            return -1;
         }
         else if(size() < 5){
             if(e == null){
