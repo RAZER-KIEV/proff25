@@ -33,6 +33,8 @@ public class AsyncChat extends Application {
     private SocketChannel socketClientChannel;
     TextArea messagesTextArea;
 
+    public void process() {};
+
     @Override
     public void start(Stage stage) throws Exception {
 
