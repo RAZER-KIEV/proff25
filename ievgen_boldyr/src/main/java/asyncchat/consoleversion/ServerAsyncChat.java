@@ -1,4 +1,4 @@
-package hw3.asyncchat;
+package asyncchat.consoleversion;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
