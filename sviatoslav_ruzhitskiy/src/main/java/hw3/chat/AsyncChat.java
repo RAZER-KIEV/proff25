@@ -19,7 +19,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
-import java.net.SocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
@@ -33,9 +32,6 @@ public class AsyncChat extends Application implements EventHandler {
     private ObservableList<String> messeges = FXCollections.observableArrayList("Привет!", "халоу", "как оно?");
     private TextField tfPort;
     private TextField tfIpAdress;
-    private SocketAddress localIP;
-    private SocketAddress remoteIP;
-    private boolean isConnected = false;
     private SocketChannel socketChannel;
     private ByteBuffer byteBuffer;
     private TextField tfSetMess;
@@ -132,7 +128,7 @@ public class AsyncChat extends Application implements EventHandler {
         class Server extends Thread {
             public void run() {
                 try {
-                    //StringBuilder sb = new StringBuilder();
+
                     ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
                     int randomPort = (int) (Math.random() * 30000 + 30000);
                     serverSocketChannel.socket().bind(new InetSocketAddress(randomPort));
@@ -148,7 +144,6 @@ public class AsyncChat extends Application implements EventHandler {
                             int readed =sChannel.read(byteBuffer);
                             String msg = new String(byteBuffer.array(),0,readed);
 
-                            //sb.append(sChannel.getRemoteAddress() + " " + new String(buffer.array(), 0, read) + "\n");
                             messeges.add(msg);
                             byteBuffer.clear();
                         }
