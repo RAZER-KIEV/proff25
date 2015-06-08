@@ -30,70 +30,20 @@ import java.nio.channels.SocketChannel;
  */
 public class AsyncChat extends Application implements EventHandler {
 
-    static ObservableList<String> messeges = FXCollections.observableArrayList("Привет!", "халоу", "как оно?");
-    static TextField tfPort;
-    static TextField tfIpAdress;
-    static SocketAddress localIP;
-    static SocketAddress remoteIP;
-    static boolean isConnected=false;
-    static SocketChannel socketChannel;
-    static ByteBuffer byteBuffer;
-    static TextField tfSetMess;
+    private ObservableList<String> messeges = FXCollections.observableArrayList("Привет!", "халоу", "как оно?");
+    private TextField tfPort;
+    private TextField tfIpAdress;
+    private SocketAddress localIP;
+    private SocketAddress remoteIP;
+    private boolean isConnected = false;
+    private SocketChannel socketChannel;
+    private ByteBuffer byteBuffer;
+    private TextField tfSetMess;
 
     public static void main(String[] args) throws IOException {
-
-        // ObservableList<String> messeges = FXCollections.observableArrayList("Привет!", "халоу", "как оно?");
-        //Start()
-
-        ByteBuffer buffer3;
-        int port = 30069;
-        String ipAddress = "127.0.0.1";
-        boolean once = true;
-
-        ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
-        serverSocketChannel.socket().bind(new InetSocketAddress(port));
-
-
-
-        //Server realize realize
-        while (true) {
-            socketChannel = serverSocketChannel.accept();
-            System.out.println("SERVER: while works!");
-
-            isConnected = socketChannel.isConnected();
-
-        if (isConnected) {
-            localIP = socketChannel.getLocalAddress();
-            remoteIP = socketChannel.getRemoteAddress();
-
-            byteBuffer = ByteBuffer.allocate(1000);
-            socketChannel.read(byteBuffer);
-            // ?? socketChannel.write(byteBuffer);
-            String inMessege = String.valueOf(byteBuffer.array());
-            System.out.println("resived messege: "+inMessege);
-            byteBuffer.clear();
-
-            if (isConnected && once) {
-                messeges.add(String.join("Connection established! with " + String.valueOf(remoteIP)));
-                System.out.println(localIP + ": Connection established! with - " + remoteIP);
-                byteBuffer.put("Connektion Established with ".getBytes());
-                socketChannel.write(byteBuffer);
-                byteBuffer.clear();
-                messeges.add("Connektion Established with ");
-
-                byteBuffer.put(String.valueOf(localIP).getBytes());
-                socketChannel.write(byteBuffer);
-                byteBuffer.clear();
-                once = false;
-            }
-
-
-            messeges.add(inMessege);
-            byteBuffer.clear();
-         }
-      }
-           
+        Application.launch();
     }
+
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -144,7 +94,7 @@ public class AsyncChat extends Application implements EventHandler {
 
         messeges = FXCollections.observableArrayList(
                 "Привет!", "халоу", "как оно?");
-        messeges.add("tgnf");
+
         ListView<String> mainJournal = new ListView<String>(messeges);
         mainJournal.setOrientation(Orientation.VERTICAL);
         mainJournal.setEffect(dropShadow);
@@ -176,7 +126,40 @@ public class AsyncChat extends Application implements EventHandler {
 
         stage.show();
 
+
+        class Server extends Thread {
+            public void run() {
+                try {
+                    //StringBuilder sb = new StringBuilder();
+                    ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
+                    int randomPort = (int) (Math.random() * 30000 + 30000);
+                    serverSocketChannel.socket().bind(new InetSocketAddress(randomPort));
+                    messeges.add(String.valueOf(randomPort));
+                    System.out.println("my port is: " + randomPort);
+                    ByteBuffer byteBuffer = ByteBuffer.allocate(200);
+                    while (true) {
+                        System.out.println("--Server wait for connection--1");
+                        SocketChannel sChannel = serverSocketChannel.accept();
+                        System.out.println("--Server wait for connection--2");
+                        while (byteBuffer.hasRemaining()) {
+
+                            int readed =sChannel.read(byteBuffer);
+                            String msg = new String(byteBuffer.array(),0,readed);
+
+                            //sb.append(sChannel.getRemoteAddress() + " " + new String(buffer.array(), 0, read) + "\n");
+                            messeges.add(msg);
+                            byteBuffer.clear();
+                        }
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        Server server = new Server();
+        server.start();
     }
+
 
     @Override
     public void handle(Event event) {
@@ -184,55 +167,35 @@ public class AsyncChat extends Application implements EventHandler {
         System.out.println(name);
 
         switch (name) {
-            case "Send!":
-                ByteBuffer buffer3 = ByteBuffer.allocate(1000);
-
-                String msg = tfSetMess.getText();
-                System.out.println(msg);
-                messeges.add(msg);
-                 // byteBuffer.clear();
-                buffer3.flip();
-                buffer3.put(msg.getBytes());
+            case "Connect":
                 try {
-                    socketChannel.write(buffer3);
-                } catch (IOException e) {
+                    socketChannel = SocketChannel.open(new InetSocketAddress(tfIpAdress.getText(), Integer.parseInt(tfPort.getText())));
+                    byteBuffer = ByteBuffer.allocate(200);
+                    messeges.add("conected: " + socketChannel.isConnected());
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
-                buffer3.clear();
-                 //todo
-                System.out.println("send pressed");
                 break;
-            case "Connect":
+            case "Send!":
+                try {
+                    byteBuffer = ByteBuffer.allocate(200);
+                    byteBuffer.put(tfSetMess.getText().getBytes());
+                    messeges.add(tfSetMess.getText());
+                    byteBuffer.flip();
+                    socketChannel.write(byteBuffer);
+                    tfSetMess.clear();
+                    byteBuffer.clear();
 
-                   System.out.println("try conn");
-                 //String s =(tfPort.getText());
-                  // System.out.println(s);
-                 ///int port;
-                int port = Integer.parseInt(tfPort.getText());
-                System.out.println("port: " +port);
-                String ip = tfIpAdress.getText();
-                   System.out.println("IP: "+ip);
-                String connEsteblishReqest = "request connection";
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
-               try{
-                   SocketChannel socketChannel = SocketChannel.open(new InetSocketAddress(ip, port));
-                ByteBuffer buffer2 = ByteBuffer.allocate(1000);
-                isConnected = socketChannel.isConnected();
-                   System.out.println(isConnected);
-                //socketChannel.write(buffer);
-                buffer2.put(connEsteblishReqest.getBytes());
-                buffer2.flip();
-                messeges.add("add to ListView");
-                //buffer.put(String.valueOf(localIP).getBytes());
-
-                System.out.println("Connect pressed");
-                System.out.println("connected: " + isConnected);
-                  buffer2.clear();
 
                 break;
-               }catch (Exception e){
-                   System.out.println(e);
-               }
         }
     }
+}
+class AsyncChatTest{
+
+
 }
