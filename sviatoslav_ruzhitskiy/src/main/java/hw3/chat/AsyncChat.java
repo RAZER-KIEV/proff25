@@ -40,6 +40,8 @@ public class AsyncChat extends Application implements EventHandler {
     private ByteBuffer byteBuffer;
     private TextField tfSetMess;
 
+    public void process(){}
+
     public static void main(String[] args) throws IOException {
         Application.launch();
     }
