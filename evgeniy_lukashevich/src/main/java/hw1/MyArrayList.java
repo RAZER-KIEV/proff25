@@ -1,30 +1,34 @@
-package session02;
+package hw1;
 
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * Created by lukashevich.e on 20.05.2015.
- *  �������� ����������� ���������� ������������� ������� MyArrayList. ������� �������������� ������, �������� E.
- ����������� � ������ ���������� Iterable. ����������� ��������� ������:
- - void add(E value)+
- - E get(int index)+
- - void set(int index, E value)+
- - void add(int index, E value)+
- - int indexOf(E value)+
- - int size()+
- - E remove(int index)+
- - Iterator<E> iterator()+
+ Написать собственную реализацию динамического массива MyArrayList.
+ Сделать параметризацию списка, параметр E.
+ Реализовать в списке интерфейсы Iterable.
+ Реализовать следующие методы
+ - void add(E value) - добавить элемент в конец списка
+ - E get(int index) - вернуть элемент по индексу
+ - boolean set(int index, E value) - установить новое значение элемента, переданного по индексу
+ - boolean add(int index, E value) - добавить элемент по переданному в метод индексу
+ - int indexOf(E value) - вернуть индекс переданного в метод элемента, если он отсутствует вернуть -1
+ - int size() - вернуть размер списка
+ - E remove(int index) - удалить элемент по индексу
+ - Iterator<E> iterator() - реализовать итератор по списку
+
+ Класс теста MyArrayListTest
+ * Created by lukashevich.e on 27.05.2015.
  */
 
-public class MyArrayList<E> implements Iterable<E>{
+public class MyArrayList<E> implements Iterable<E> {
 
-    public final static int DAFAULT_CAPACITY = 10;
+    public final static int DAFAULT_CAPACITY = 20;
     private E[] arr;
     private int size;
 
-    MyArrayList() {
+    public MyArrayList() {
         this(DAFAULT_CAPACITY);
     }
 
@@ -34,12 +38,6 @@ public class MyArrayList<E> implements Iterable<E>{
 
     public boolean isEmpty() {
         return size == 0;
-    }
-
-    private void checkIdx(int idx) {
-        if (idx < 0 || idx >= size) {
-            throw new ArrayIndexOutOfBoundsException(idx);
-        }
     }
 
     public void add(E el) {
@@ -55,10 +53,13 @@ public class MyArrayList<E> implements Iterable<E>{
         }
     }
 
-    public void add(int idx, E el) {
-        checkIdx(idx);
+    public boolean add(int idx, E el) {
+        if (idx < 0 || idx > size) {
+            return false;
+        }
         if (idx == size) {
             add(el);
+            return true;
         } else {
             if (size == arr.length) {
                 E[] tmp = (E[]) new Object[arr.length * 3 / 2 + 1];
@@ -74,22 +75,24 @@ public class MyArrayList<E> implements Iterable<E>{
                 size++;
             }
         }
+        return true;
     }
 
-    public void set(int idx, E el) {
-        checkIdx(idx);
+    public boolean set(int idx, E el) {
+        if (idx < 0 || idx > size) {
+            return false;
+        }
         arr[idx] = el;
+        return true;
     }
 
     public E get(int idx) {
-        checkIdx(idx);
         return arr[idx];
     }
 
     public E remove(int idx) {
-        checkIdx(idx);
         E res = arr[idx];
-        System.arraycopy(arr, idx + 1, arr, idx, size - idx+1);
+        System.arraycopy(arr, idx + 1, arr, idx, size - idx + 1);
         size--;
         return res;
     }
@@ -136,10 +139,10 @@ public class MyArrayList<E> implements Iterable<E>{
     @Override
     public int hashCode() {
         int hash = 37;
-        for (int i = 0; i < size; i++){
-            hash = hash*17 + arr[i].hashCode();
+        for (int i = 0; i < size; i++) {
+            hash = hash * 17 + arr[i].hashCode();
         }
-        hash = hash*17 + size;
+        hash = hash * 17 + size;
         return hash;
     }
 
@@ -175,12 +178,11 @@ public class MyArrayList<E> implements Iterable<E>{
             }
 
             @Override
-            public void remove(){
+            public void remove() {
                 checkHashCode();
                 if (!parser) {
                     throw new IllegalStateException();
                 } else {
-                    checkIdx(pos - 1);
                     System.arraycopy(arr, pos, arr, pos - 1, size - pos);
                     size--;
                     pos--;
@@ -192,31 +194,40 @@ public class MyArrayList<E> implements Iterable<E>{
     }
 
     public static void main (String[] args) {
-        MyArrayList<Integer> mal = new MyArrayList<>(20);
-        for (int i = 0; i < 20; i++){
-            mal.add((int)(Math.random()*100));
+        MyArrayList<Integer> mal = new MyArrayList<>();
+        for (int i = 0; i < 20; i++) {
+            mal.add((int) (Math.random() * 100));
         }
         System.out.println(mal);
-        System.out.println(mal.get(5));
-        mal.set(5, 555);
-        mal.add(12, 999);
+        System.out.println(mal.get(19));
+        System.out.println(mal.indexOf(mal.get(9)));
+        System.out.println(mal.size());
+        System.out.println(mal.add(0, 999));
+        System.out.println(mal.add(10, 999));
+        System.out.println(mal.add(22, 999));
         System.out.println(mal);
         System.out.println(mal.size());
-        System.out.println(mal.indexOf(999));
-        System.out.println(mal.remove(12));
-
+        System.out.println(mal.set(0, 1000));
+        System.out.println(mal.set(10, 1000));
+        System.out.println(mal.set(22, 1000));
         System.out.println(mal);
-        System.out.println(mal.remove(13));
+        System.out.println(mal.remove(0));
+        System.out.println(mal.remove(10));
         System.out.println(mal.size());
+        System.out.println(mal.remove(20));
         System.out.println(mal);
 
         Iterator<Integer> iter = mal.iterator();
-        while (iter.hasNext()) {
-            int el = iter.next();
-            if (el % 2 == 0) {
+        while (iter.hasNext()){
+            Integer i = iter.next();
+            if(i % 2 == 0){
                 iter.remove();
             }
         }
         System.out.println(mal);
     }
+}
+
+class MyArrayListTest {
+
 }
