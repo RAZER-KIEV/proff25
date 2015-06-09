@@ -21,15 +21,13 @@ import java.nio.channels.SocketChannel;
 
 /**
  * Написать чат, в котором можно отправлять и принимать сообщения в любом порядке.
- public void process()
-
+ public void process()...
  Класс задания hw3.chat.AsyncChat
  */
 public class AsyncChat extends Application {
 
     private TextArea textArea;
     private SocketChannel channel;
-//    private Label status;
     private ByteBuffer bufOut = ByteBuffer.allocate(100);
     private ByteBuffer bufInp = ByteBuffer.allocate(100);
 
@@ -87,7 +85,6 @@ public class AsyncChat extends Application {
                         e.printStackTrace();
                     }
                 }
-//                bufOut.clear();
             }
         });
 
@@ -123,7 +120,6 @@ public class AsyncChat extends Application {
 
 
         channel = SocketChannel.open(new InetSocketAddress("127.0.0.1", 30000));
-//        new SenderThread(bufOut, channel).start();
 
 
         class ServerThread extends Thread {
@@ -135,14 +131,11 @@ public class AsyncChat extends Application {
                     ByteBuffer bufInp = ByteBuffer.allocate(100);
                     while (true) {
                         SocketChannel socketChannelS = channel.accept();
-//                        int read;
-//                        while (buffer.hasRemaining()) {
+
                             int bytesRead;
                             while ((bytesRead = socketChannelS.read(bufInp)) > 0) {
                                 sb.append(socketChannelS.getRemoteAddress() + " " + new String(bufInp.array(), 0, bytesRead) + "\n");
                                 sendTextField.setText(sb.toString());
-//                                System.out.println(new String(bufInp.array(), 0, bytesRead));
-//                                bufInp.flip();
                                 bufInp.clear();
                             }
                     }
