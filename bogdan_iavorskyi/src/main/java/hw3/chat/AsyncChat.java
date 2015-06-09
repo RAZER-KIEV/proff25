@@ -33,6 +33,8 @@ public class AsyncChat extends Application {
     private SocketChannel socketClientChannel;
     TextArea messagesTextArea;
 
+    public void process() {};
+
     @Override
     public void start(Stage stage) throws Exception {
 
@@ -135,6 +137,7 @@ public class AsyncChat extends Application {
             int bytesRead;
             while ((bytesRead = socketChannel.read(buffer)) > 0) {
                 generateMessage(guestRole, new String(buffer.array(), 0, bytesRead));
+                buffer.clear();
             }
         } catch (IOException e) {
             e.printStackTrace();
