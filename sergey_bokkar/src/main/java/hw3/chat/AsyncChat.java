@@ -21,7 +21,7 @@ import java.nio.channels.SocketChannel;
 
 /**
  * Написать чат, в котором можно отправлять и принимать сообщения в любом порядке.
- public void process()...
+ public void process()... i
  Класс задания hw3.chat.AsyncChat
  */
 public class AsyncChat extends Application {
