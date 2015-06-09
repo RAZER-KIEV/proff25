@@ -1,4 +1,9 @@
 package hw4.parallel;
+
+import java.util.ConcurrentModificationException;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
 /**
  * Created by rrudych on 04.06.15.
  */
@@ -10,7 +15,7 @@ public class MyArrayList<E> {
     private int size;
 
     private int resultIdx = -1;
-    private volatile boolean hasFound;
+
 
     public MyArrayList() {
         arr = (E[]) new Object[DEFAULT_SIZE];
@@ -136,69 +141,120 @@ public class MyArrayList<E> {
 
     public int parallelIndexOf(E el) {
 
-        class ThreadFinder extends Thread {
+        class MainThreadFinder extends Thread {
 
-            int fromIdx;
-            int toIdx;
+            private volatile boolean hasFound;
 
-            public ThreadFinder(int from, int to) {
-                this.fromIdx = from;
-                this.toIdx = to;
+            public MainThreadFinder() {
                 this.start();
             }
-            public void run() {
-                if (el == null) {
-                    for (int i = fromIdx; i < toIdx; i++) {
-                        if(!hasFound) {
-                            if (get(i) == null) {
-                                resultIdx = i;
-                                hasFound = true;
+
+            class ThreadFinder extends Thread {
+
+                int fromIdx;
+                int toIdx;
+
+                public ThreadFinder(int from, int to) {
+                    this.fromIdx = from;
+                    this.toIdx = to;
+                    this.start();
+                }
+
+                @Override
+                public void run() {
+                    if (el == null) {
+                        for (int i = fromIdx; i < toIdx; i++) {
+                            if (!hasFound) {
+                                if (get(i) == null) {
+                                    resultIdx = i;
+                                    hasFound = true;
+                                    break;
+                                }
+                            } else break;
+                        }
+                    } else {
+                        for (int i = fromIdx; i < toIdx; i++) {
+                            if (!hasFound) {
+                                if (el.equals(arr[i])) {
+                                    resultIdx = i;
+                                    hasFound = true;
+                                    break;
+                                }
+                            } else {
                                 break;
                             }
-                        } else break;
-                    }
-                } else {
-                    for (int i = fromIdx; i < toIdx; i++) {
-                        if(!hasFound) {
-                            if (el.equals(arr[i])) {
-                                resultIdx = i;
-                                hasFound = true;
-                                break;
-                            }
-                        } else {
-                            break;
                         }
                     }
                 }
             }
-        }
 
-        if(size <10) {
-            if (el == null) {
-                for (int i = 0; i < size; i++) {
-                    if (get(i) == null) {
-                        return i;
+            @Override
+            public void run() {
+                if(size < 1000) {
+                    Thread th1 = new ThreadFinder(0, size);
+                    try {
+                        th1.join();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
-                }
-            } else {
-                for (int i = 0; i < size; i++) {
-                    if (el.equals(get(i))) {
-                        return i;
+                } else if(size < 10_000) {
+                    Thread th1 = new ThreadFinder(0, size/2);
+                    Thread th2 = new ThreadFinder(size/2, size);
+                    try {
+                        th1.join();
+                        th2.join();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                } else if(size < 100_000) {
+                    Thread th1 = new ThreadFinder(0, size/3);
+                    Thread th2 = new ThreadFinder(size/3, size*2/3);
+                    Thread th3 = new ThreadFinder(size*2/3, size);
+                    try {
+                        th1.join();
+                        th2.join();
+                        th3.join();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                } else if (size < 1_000_000) {
+                    Thread th1 = new ThreadFinder(0, size/4);
+                    Thread th2 = new ThreadFinder(size/4, size/2);
+                    Thread th3 = new ThreadFinder(size/2, size*3/4);
+                    Thread th4 = new ThreadFinder(size*3/4, size);
+                    try {
+                        th1.join();
+                        th2.join();
+                        th3.join();
+                        th4.join();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    Thread th1 = new ThreadFinder(0, size/5);
+                    Thread th2 = new ThreadFinder(size/5, size*2/5);
+                    Thread th3 = new ThreadFinder(size*2/5, size*3/5);
+                    Thread th4 = new ThreadFinder(size*3/5, size*4/5);
+                    Thread th5 = new ThreadFinder(size*4/5, size);
+                    try {
+                        th1.join();
+                        th2.join();
+                        th3.join();
+                        th4.join();
+                        th5.join();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
                 }
             }
-        } else {
-            Thread thread1 = new ThreadFinder(0, size/3);
-            Thread thread2 = new ThreadFinder(size/3, (size*2)/3);
-            Thread thread3 = new ThreadFinder((size*2)/3, size);
+        }
+
+            Thread thread1 = new MainThreadFinder();
             try {
                 thread1.join();
-                thread2.join();
-                thread3.join();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }
         return resultIdx;
     }
 }
