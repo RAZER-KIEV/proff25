@@ -101,11 +101,11 @@
 -->
         <!-- ORACLE JDBC driver -->
 
-               <dependency>
-                    <groupId>com.oracle</groupId>
-                    <artifactId>ojdbc14</artifactId>
-                    <version>10.2.0.5.0</version>
-                </dependency>
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc14</artifactId>
+            <version>10.2.0.5.0</version>
+        </dependency>
 
         <!-- H2 JDBC driver -->
         <dependency>
