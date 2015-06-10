@@ -62,7 +62,12 @@ public class UserJDBCManager {
         while (res.next()) {
             if(res.getString("NAME").equals(login)){
                 if (res.getString("PASSWORD").equals(pass)){
-                    return  new User(res.getInt("ID"), login, pass, res.getDate("REGISTRATION_DATE"));
+                    User usr = new User(res.getInt("ID"), login, pass, res.getDate("REGISTRATION_DATE"));
+                    ResultSet resSet = stmnt.executeQuery("SELECT * FROM USERS");
+                    while(resSet.next()){
+                        System.out.println(resSet.getString("NAME"));
+                    }
+                    return  usr;
                 }
             }
         }
