@@ -1,6 +1,8 @@
 package hw5.users;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 /**
@@ -26,6 +28,19 @@ public class UserJDBCManager {
             java.util.Date registration_date = res.getDate("REGISTRATION_DATE");
             System.out.printf("%15d%15s%15s%15s\n", id, name, password, registration_date.toString());
         }
+    }
+
+    public List<User> findAll() throws SQLException {
+        List<User> list = new ArrayList<>();
+        ResultSet res = stmnt.executeQuery("SELECT * FROM USERS");
+        while (res.next()) {
+            int id = res.getInt("ID");
+            String name = res.getString("NAME");
+            String password = res.getString("PASSWORD");
+            java.util.Date registration_date = res.getDate("REGISTRATION_DATE");
+            list.add(new User(id, name, password, registration_date));
+        }
+        return list;
     }
 
     public int create(User user){
