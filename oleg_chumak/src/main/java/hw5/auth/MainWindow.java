@@ -1,4 +1,4 @@
-package hw5.users;
+package hw5.auth;
 
 import java.sql.SQLException;
 
@@ -9,7 +9,6 @@ public class MainWindow {
     public static void main(String[] args) throws SQLException {
         UserJDBCManager man = new UserJDBCManager();
         man.printUsers();
-//        man.create(User.addUser());
-//        man.printUsers();
+        System.out.println(man.readByNamePass("Antonina", "aa"));
     }
 }
