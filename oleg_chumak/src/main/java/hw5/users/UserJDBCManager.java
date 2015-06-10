@@ -28,12 +28,17 @@ public class UserJDBCManager {
         }
     }
 
-    public void addUserToSheme(User user) throws SQLException {
-        PreparedStatement pstmnt = conn.prepareStatement("INSERT INTO USERS(ID, NAME, PASSWORD, REGISTRATION_DATE) VALUES (?, ?, ?, ?)");
-        pstmnt.setInt(1, user.getId());
-        pstmnt.setString(2, user.getName());
-        pstmnt.setString(3, user.getPassword());
-        pstmnt.setDate(4, Date.valueOf("2015-7-10"));
-        pstmnt.executeUpdate();
+    public int create(User user) {
+        try {
+            PreparedStatement pstmnt = conn.prepareStatement("INSERT INTO USERS(ID, NAME, PASSWORD, REGISTRATION_DATE) VALUES (?, ?, ?, ?)");
+            pstmnt.setInt(1, user.getId());
+            pstmnt.setString(2, user.getName());
+            pstmnt.setString(3, user.getPassword());
+            pstmnt.setDate(4, Date.valueOf("2015-7-10"));
+            pstmnt.executeUpdate();
+        } catch (SQLException sqlEx){
+            return 0;
+        }
+        return  1;
     }
 }

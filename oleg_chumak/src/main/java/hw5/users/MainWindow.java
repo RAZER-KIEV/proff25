@@ -9,7 +9,7 @@ public class MainWindow {
     public static void main(String[] args) throws SQLException {
         UserJDBCManager man = new UserJDBCManager();
         man.printUsers();
-        man.addUserToSheme(User.addUser());
+        man.create(User.addUser());
         man.printUsers();
     }
 }
