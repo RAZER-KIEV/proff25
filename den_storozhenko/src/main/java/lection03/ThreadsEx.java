@@ -37,3 +37,5 @@ public class ThreadsEx{
 }
 
 //2 потока 200 раз инфа о себе
+
+

@@ -1,6 +1,7 @@
 package hw3.chat;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -10,34 +11,36 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
-import session6.Server;
-
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.InetSocketAddress;
+import java.net.Socket;
 import java.nio.ByteBuffer;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
+import java.util.Scanner;
 
 /**
- * Created by Sveta on 6/3/2015.
+ * Created by Sveta on 8/3/2015.
  */
 public class AsyncChat extends Application {
-    String ip;
-    int port;
-    String text;
-    String txt;
+    private final TextArea messageHistory = new TextArea();
+    private String ip;
+    private int port;
+    private Boolean stopping = false;
+    private ServerSocketChannel serverSocketApp;
+    private SocketChannel socketChannelApp;
+    private Thread processThread;
+
     @Override
     public void start(Stage primaryStage) throws Exception {
 
         BorderPane pane = new BorderPane();
-        TextField message = new TextField();
-        TextField ipField = new TextField();
-        TextField portField = new TextField();
-        TextArea messageHistory = new TextArea();
+        final TextField message = new TextField();
+        final TextField ipField = new TextField();
+        final TextField portField = new TextField();
         Button sendButton = new Button();
         Button connect = new Button("Connect");
-
 
         sendButton.setPrefHeight(50);
         sendButton.setGraphic(new ImageView("http://www.energizesoftware.com/images/envelope.gif"));
@@ -46,31 +49,21 @@ public class AsyncChat extends Application {
 
         connect.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
+
                 ip = ipField.getText();
                 port = Integer.parseInt(portField.getText());
-                messageHistory.appendText("Hello! ^-^ \n");
-                try {
-                    try {
-                        process();
-                    } catch (InterruptedException e1) {
-                        e1.printStackTrace();
-                    }
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
 
+                process();
+
+                messageHistory.appendText("Connected: \n");
             }
         });
         sendButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                txt = message.getText();
-                messageHistory.appendText(ip + " 1: " + txt + "\n");
+                String txt = message.getText();
+                messageHistory.appendText("you: " + txt + "\n");
                 message.setText("");
-                if(text != null){
-                    messageHistory.appendText(ip + " 2: " + text + "\n");
-                }
-
-
+                send(txt);
             }
         });
 
@@ -83,65 +76,93 @@ public class AsyncChat extends Application {
         primaryStage.setTitle("ChattyCat");
         primaryStage.setScene(scene);
         primaryStage.show();
+
     }
-    public void process() throws IOException, InterruptedException {
+
+    @Override
+    public void stop(){
+        stopping = true;
+        try {
+            socketChannelApp.close();
+            serverSocketApp.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            processThread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void process() {
         // For receiving
-        new Thread(){
+        Runnable runnable = new Runnable(){
             @Override
             public void run() {
-                ServerSocketChannel serverSocketChannel = null;
-                try {
-                    serverSocketChannel = ServerSocketChannel.open();
-                    serverSocketChannel.socket().bind(new InetSocketAddress(30000));
-                    SocketChannel serverChannel = serverSocketChannel.accept();
-                    ByteBuffer serverBuffer = ByteBuffer.allocate(50);
-                    while (!(serverBuffer.hasRemaining())) {
-                        try {
-                            serverSocketChannel.wait();
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
+                // Create a Server socket channel.
+                try (ServerSocketChannel serverSocket = ServerSocketChannel.open()) {
+                    serverSocketApp = serverSocket;
+                    // Bind the server socket channel to the IP address and Port
+                    serverSocket.bind(new InetSocketAddress(port));
+
+                    while (true) {
+                        if (stopping){
+                            System.out.println("Stopped");
+                            return;
+                        }
+
+                        //Wait and Accept the client socket connection.
+                        try (SocketChannel socketChannel = serverSocket.accept()) {
+                            socketChannelApp = socketChannel;
+                            //Printing the address of the client.
+                            System.out.println("Obtained connection from: "+socketChannel.getRemoteAddress().toString());
+                            //Creating a reader for reading the content on the socket input stream.
+                            Scanner socketReader = new Scanner(socketChannel.socket().getInputStream());
+                            while(socketReader.hasNext()){
+                                if (stopping){
+                                    System.out.println("Stopped");
+                                    return;
+                                }
+
+                                //Reading the content of the socket input stream.
+                                String s = socketReader.nextLine();
+                                Platform.runLater(new Runnable() {
+                                    @Override
+                                    public void run(){
+                                        messageHistory.appendText("friend: " + s + "\n");
+                                    }
+                                });
+                            }
+                        } catch(IOException ex){
+                            ex.printStackTrace();
                         }
                     }
-
-                    serverBuffer.rewind();
-
-                    int bytesRead;
-                    bytesRead = serverChannel.read(serverBuffer);
-                    System.out.println(new String(serverBuffer.array(), 0, bytesRead));
-
-
-                    serverBuffer.clear();
-                    serverBuffer.put("You are".getBytes());
-                    serverBuffer.flip();
-                    while (serverBuffer.hasRemaining()) {
-
-                        serverChannel.write(serverBuffer);
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
                 }
-
             }
+        };
 
-        }.start();
-
-        // For sending
-        SocketChannel socketChannel = SocketChannel.open(new InetSocketAddress(ip, port));
-
-        ByteBuffer buffer = ByteBuffer.allocate(50);
-        buffer.put(txt.getBytes());
-
-        buffer.flip();
-        while (buffer.hasRemaining()) {
-            socketChannel.write(buffer);
-        }
-        buffer.rewind();
-
-        int intMessage;
-        intMessage = socketChannel.read(buffer);
-        text = String.valueOf(intMessage);
+        processThread = new Thread(runnable);
+        processThread.start();
     }
 
+    public void send(String s) {
+        //Create a client socket.
+        try(SocketChannel socketChannel = SocketChannel.open()){
+            //Bind the client socket to the server socket.
+            socketChannel.connect(new InetSocketAddress(ip, port));
+            //Writing to the socket channel.
+            PrintWriter writer = new PrintWriter(socketChannel.socket().getOutputStream(), true);
+            writer.println(s);
+
+        }catch(IOException ex){
+            ex.printStackTrace();
+        }
+    }
 
 }
 
