@@ -28,7 +28,7 @@ public class UserJDBCManager {
         }
     }
 
-    public int create(User user) {
+    public int create(User user){
         try {
             PreparedStatement pstmnt = conn.prepareStatement("INSERT INTO USERS(ID, NAME, PASSWORD, REGISTRATION_DATE) VALUES (?, ?, ?, ?)");
             pstmnt.setInt(1, user.getId());
