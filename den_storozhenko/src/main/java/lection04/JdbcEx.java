@@ -12,7 +12,8 @@ public class JdbcEx {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM EMPLOYEES");
             while (resultSet.next()){
-                System.out.printf("%20s%20s%20d%30tD\n", resultSet.getString("FIRST_NAME"), resultSet.getString("LAST_NAME"), resultSet.getInt("DEPARTMENT_ID"), resultSet.getDate("HIRE_DATE"));
+                System.out.printf("%20s%20s%20d%30tD\n", resultSet.getString("FIRST_NAME"), resultSet.getString("LAST_NAME"),
+                        resultSet.getInt("DEPARTMENT_ID"), resultSet.getDate("HIRE_DATE"));
             }
         } catch (SQLException e) {
             e.printStackTrace();

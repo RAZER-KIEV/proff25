@@ -1,4 +1,4 @@
-package lection01.homework;
+package hw4.parallel;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -10,7 +10,7 @@ class MyArrayList<E> implements Iterator<E>, Iterable<E> {
     private int currSize;
     private int reservedSize;
 
-    MyArrayList(int size){
+    public MyArrayList(int size){
         if (size>=0) {
             this.reservedSize = size;
             data = new Object[size];
@@ -21,7 +21,7 @@ class MyArrayList<E> implements Iterator<E>, Iterable<E> {
             throw new IllegalArgumentException();
     }
 
-    MyArrayList(){
+    public MyArrayList(){
         reservedSize = DEFAULT_SIZE;
         data = new Object[DEFAULT_SIZE];
         currIndex = 0;
@@ -54,7 +54,6 @@ class MyArrayList<E> implements Iterator<E>, Iterable<E> {
         return true;
     }
 
-
     public  boolean add(int index, E value){
         try{
             checkIndex(index);
@@ -82,6 +81,62 @@ class MyArrayList<E> implements Iterator<E>, Iterable<E> {
         for (int i=0;i<currSize;i++)
             if (data[i].equals(value))
                 return i;
+        return -1;
+    }
+
+    public synchronized int parallelIndexOf(E elem) throws InterruptedException {
+        if (size() == 0)
+            return -1;
+
+        class IndexSearcher extends Thread{
+            int from;
+            int to;
+            int resultIndex = -1;
+
+            public int getRes(){
+                return resultIndex;
+            }
+
+            public IndexSearcher(){
+                from = to = 0;
+            }
+
+            public IndexSearcher(int from, int to){
+                this.from = from;
+                this.to = to;
+            }
+
+            @Override
+            public void run(){
+                if (elem == null) {
+                    for (int i = from; i < to; i++) {
+                        if (data[i] == null) {
+                            resultIndex = i;
+                            break;
+                        }
+                    }
+                } else{
+                    for (int i=from;i<to;i++)
+                        if (data[i].equals(elem)){
+                            resultIndex = i;
+                            break;
+                        }
+                }
+            }
+        }
+        int i;
+        for (i=0;i<size()/10;i++){
+            IndexSearcher indexSearcher = new IndexSearcher(i*10,i*10+9);
+            indexSearcher.start();
+            indexSearcher.join();
+            if (indexSearcher.getRes()>=0)
+                return indexSearcher.getRes();
+        }
+        IndexSearcher indexSearcher = new IndexSearcher(i*10,i*10+size()%10);
+        indexSearcher.start();
+        indexSearcher.join();
+        if (indexSearcher.getRes()>=0)
+            return indexSearcher.getRes();
         return -1;
     }
 
