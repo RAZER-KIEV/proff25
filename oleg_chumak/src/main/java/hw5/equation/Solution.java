@@ -8,10 +8,10 @@ public class Solution {
     private int koef_a;
     private int koef_b;
     private int koef_c;
-    private int res_1;
-    private Integer res_2;
+    private double res_1;
+    private double res_2;
 
-    public Solution(int id, int koef_a, int koef_b, int koef_c, int res_1, Integer res_2) {
+    public Solution(int id, int koef_a, int koef_b, int koef_c, double res_1, double res_2) {
         this.id = id;
         this.koef_a = koef_a;
         this.koef_b = koef_b;
@@ -36,11 +36,11 @@ public class Solution {
         return koef_c;
     }
 
-    public int getRes_1() {
+    public double getRes_1() {
         return res_1;
     }
 
-    public Integer getRes_2() {
+    public double getRes_2() {
         return res_2;
     }
 }

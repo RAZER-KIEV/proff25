@@ -9,7 +9,6 @@ public class MainWindow {
     public static void main(String[] args) throws SQLException {
         SolutionJDBCManager man = new SolutionJDBCManager();
         man.qss.solve(2,6,4,5,1,6);
-        System.out.println( man.qss.list);
         man.pushAll(man.findAll());
     }
 }

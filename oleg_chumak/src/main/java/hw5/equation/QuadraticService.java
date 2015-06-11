@@ -17,23 +17,19 @@ public class QuadraticService {
             System.out.println("to much solutions");
         }
         else {
-//            System.out.println("1");
             for (int a = fromA; a <= toA; a++){
                 for (int b = fromB; b <= toB; b++){
                     for (int c = fromC; c <= toC; c++){
-                        int D = b*b-4*a*c;
-                        if (D<0) {
-                            System.out.println("0");}
+                        double D = b*b-4*a*c;
+                        if (D<0) {}
                         else   if (D==0)  {
-                            int  x1 = -b/(2*a);
-                            list.add(new Solution(number++, a, b, c, x1, null));
-                            System.out.println("1");
+                            double  x1 = -b/(2*a);
+                            list.add(new Solution(number++, a, b, c, x1, x1));
                         }
                         else {
-                            int x1 = (int) (-b + Math.sqrt(D)) / (2 * a);
-                            int x2 = (int) (-b - Math.sqrt(D)) / (2 * a);
+                            double x1 = (-b + Math.sqrt(D)) / (2 * a);
+                            double x2 = (-b - Math.sqrt(D)) / (2 * a);
                             list.add(new Solution(number++, a, b, c, x1, x2));
-                            System.out.println("2");
                         }
                     }
                 }
