@@ -4,6 +4,7 @@ import java.sql.*;
 import java.util.Locale;
 
 /**
+
  * Created by RAZER on 09.06.2015.
  */
 public class Jdbc {
