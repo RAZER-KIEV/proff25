@@ -24,6 +24,10 @@ public class SolutionJDBCManager {
         statement.executeUpdate("DELETE FROM EQUATIONS");
     }
 
+    public int create (Path path){
+        return 1;
+    }
+
     public int create(Solution solution) throws SQLException {
         String query = "SELECT * FROM EQUATIONS WHERE (KOEF_A='"+solution.getKoefA()+"' AND KOEF_B='"+solution.getKoefB()+
                 "' AND KOEF_C='"+solution.getKoefC()+"' AND RES_1='"+solution.getRes1()+"' AND RES_2='"+solution.getRes2()+"')";
