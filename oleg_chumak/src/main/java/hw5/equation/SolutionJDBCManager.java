@@ -13,13 +13,14 @@ public class SolutionJDBCManager {
     private Path path;
     QuadraticService qss = new QuadraticService();
     public Solution solution;
+    List<Solution> solutionList;
     public SolutionJDBCManager() throws SQLException {
         Locale.setDefault(Locale.ENGLISH);
         conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "hr", "hr");
         stmnt = conn.createStatement();
     }
 
-    public int create(Solution solution) throws SQLException {
+    public int creat(Solution solution) throws SQLException {
         try {
             PreparedStatement pstmnt = conn.prepareStatement("INSERT INTO EQUATION(ID, KOEF_A, KOEF_B, KOEF_C, RES_1, RES_2) VALUES (?, ?, ?, ?, ?, ?)");
             pstmnt.setInt(1, solution.getId());
@@ -66,7 +67,7 @@ public class SolutionJDBCManager {
 
     public void pushAll(List<Solution> list) throws SQLException {
         for (Solution sol : list){
-            System.out.println(this.create(sol));
+            System.out.println(creat(sol));
         }
     }
 }
