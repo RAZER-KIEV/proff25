@@ -5,26 +5,26 @@ import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
+import java.util.Scanner;
+
+
+
 
 
 public class Server{
     public static void main(String[] args) throws IOException {
         ServerSocketChannel channel = ServerSocketChannel.open();
-        channel.bind(new InetSocketAddress(30000));
-        ByteBuffer buffer = ByteBuffer.allocate(100);
-        //while (true) {
-            SocketChannel ss = channel.accept();
+        channel.bind(new InetSocketAddress(30001));
+        ByteBuffer buffer = ByteBuffer.allocate(1000);
+        SocketChannel ss;
+        while (true) {
+            ss = channel.accept();
             int bytesRead;
-            while ((bytesRead = ss.read(buffer)) > 0) {
+            while (buffer.hasRemaining()) {
+                bytesRead = ss.read(buffer);
                 System.out.println(new String(buffer.array(), 0, bytesRead));
+                buffer.clear();
             }
-            buffer.clear();
-
-            buffer.put("Hello from server".getBytes());
-            buffer.flip();
-            ss.write(buffer);
-
-            buffer.clear();
-        //}
+        }
     }
 }
