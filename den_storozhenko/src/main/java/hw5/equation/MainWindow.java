@@ -18,8 +18,9 @@ public class MainWindow {
             SolutionJDBCManager solutionJDBCManager = null;
             try {
                 solutionJDBCManager = new SolutionJDBCManager();
-                for (Solution solution : solutions)
-                    solutionJDBCManager.create(solution);
+                for (Solution solution : solutions) {
+                    //solutionJDBCManager.create(solution);
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
