@@ -19,7 +19,7 @@ public class MainWindow {
             try {
                 solutionJDBCManager = new SolutionJDBCManager();
                 for (Solution solution : solutions) {
-                    //solutionJDBCManager.create(solution);
+                    solutionJDBCManager.create(solution);
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
