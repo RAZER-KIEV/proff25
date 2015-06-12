@@ -173,6 +173,7 @@ public class AsyncChat extends Application {
 
 
         }
+    public void process() {}
 
 }
 

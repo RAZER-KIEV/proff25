@@ -1,9 +1,7 @@
 package hw3.chat;
 
 /**
- * Created by george on 03.06.15.
+ * Created by storo_000 on 11.06.2015.
  */
 public class AsyncChatTest {
-
 }
-
