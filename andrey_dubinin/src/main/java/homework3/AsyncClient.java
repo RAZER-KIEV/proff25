@@ -21,9 +21,9 @@ public class AsyncClient {
                      buffer.flip();
                      while (buffer.hasRemaining()) {
                          socketChannel.write(buffer);
-                     }
-                     buffer.clear();
 
+                         buffer.clear();
+                     }
                      int bytesRead;
                      while ((bytesRead = socketChannel.read(buffer)) > 0) {
                      System.out.println(new String(buffer.array(), 0, bytesRead));
