@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class MyArrayList<E> extends ArrayList<E> {
 
     //    Реализовать в классе MyArrayList метод
+
     //    public int parallelIndexOf(E e), выполняющий линейный многопоточный поиск в списке.
 
     private int result;

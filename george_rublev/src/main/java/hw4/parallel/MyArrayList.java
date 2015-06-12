@@ -1,4 +1,4 @@
-package hw4.paralel;
+package hw4.parallel;
 
 
  import java.util.Iterator;
