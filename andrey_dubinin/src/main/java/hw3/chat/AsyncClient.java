@@ -23,7 +23,6 @@ public class AsyncClient {
                      while (buffer.hasRemaining()) {
                          buffer.flip();
                          socketChannel.write(buffer);
-
                          buffer.clear();
                      }
                      int bytesRead;

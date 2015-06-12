@@ -16,6 +16,7 @@ public class AsyncChat {
             ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
             serverSocketChannel.socket().bind(new InetSocketAddress(30000));
             ByteBuffer buffer =ByteBuffer.allocate(3000);
+
             while (true){
                 SocketChannel socketChannel = serverSocketChannel.accept();
                 int bytesRead;
@@ -24,8 +25,18 @@ public class AsyncChat {
                     System.out.println(new String(buffer.array(), 0, bytesRead));
                     buffer.clear();
                 }
+                Scanner scanner = new Scanner(System.in);
+                String scan = scanner.nextLine();
+                buffer.put(scan.getBytes());
+
+                while (buffer.hasRemaining()) {
+                    buffer.flip();
+                    socketChannel.write(buffer);
+                    buffer.clear();
+                }
 
             }
+
         }catch (IOException e){
             e.printStackTrace();
         }
