@@ -29,7 +29,7 @@ import java.nio.channels.SocketChannel;
  */
 public class AsyncChat extends Application implements EventHandler {
 
-    private ObservableList<String> messeges = FXCollections.observableArrayList("Привет!", "халоу", "как оно?");
+    private ObservableList<String> messeges = FXCollections.observableArrayList("App Launched");
     private TextField tfPort;
     private TextField tfIpAdress;
     private SocketChannel socketChannel;
@@ -90,8 +90,8 @@ public class AsyncChat extends Application implements EventHandler {
         pane.setLayoutY(50);
 
 
-        messeges = FXCollections.observableArrayList(
-                "Привет!", "халоу", "как оно?");
+       // messeges = FXCollections.observableArrayList(
+               // "Привет!", "халоу", "как оно?");
 
         ListView<String> mainJournal = new ListView<String>(messeges);
         mainJournal.setOrientation(Orientation.VERTICAL);
@@ -132,13 +132,13 @@ public class AsyncChat extends Application implements EventHandler {
                     ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
                     int randomPort = (int) (Math.random() * 30000 + 30000);
                     serverSocketChannel.socket().bind(new InetSocketAddress(randomPort));
-                    messeges.add(String.valueOf(randomPort));
+                    messeges.add("my port is: "+String.valueOf(randomPort));
                     System.out.println("my port is: " + randomPort);
                     ByteBuffer byteBuffer = ByteBuffer.allocate(200);
                     while (true) {
                         System.out.println("--Server wait for connection--1");
                         SocketChannel sChannel = serverSocketChannel.accept();
-                        System.out.println("--Server wait for connection--2");
+                        System.out.println("--Server connected!--");
                         while (byteBuffer.hasRemaining()) {
 
                             int readed =sChannel.read(byteBuffer);
