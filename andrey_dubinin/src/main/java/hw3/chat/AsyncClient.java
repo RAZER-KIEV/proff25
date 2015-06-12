@@ -14,12 +14,14 @@ public class AsyncClient {
         try {
             SocketChannel socketChannel = SocketChannel.open(new InetSocketAddress("127.0.0.1", 30000));
             ByteBuffer buffer = ByteBuffer.allocate(300);
+            Scanner scanner = new Scanner(System.in);
                  while (true) {
-                     Scanner scanner = new Scanner(System.in);
+
                      String scan = scanner.nextLine();
                      buffer.put(scan.getBytes());
-                     buffer.flip();
+
                      while (buffer.hasRemaining()) {
+                         buffer.flip();
                          socketChannel.write(buffer);
 
                          buffer.clear();

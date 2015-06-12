@@ -18,23 +18,20 @@ public class AsyncChat {
             ByteBuffer buffer =ByteBuffer.allocate(3000);
             while (true){
                 SocketChannel socketChannel = serverSocketChannel.accept();
-                Scanner scanner = new Scanner(socketChannel);
-                StringBuilder sb =new StringBuilder();
-                while (scanner.hasNextLine()){
-                    sb.append(scanner.nextLine());
+                int bytesRead;
+                while ((bytesRead = socketChannel.read(buffer)) > 0) {
+                    buffer.flip();
+                    System.out.println(new String(buffer.array(), 0, bytesRead));
+                    buffer.clear();
                 }
-                System.out.println(sb.toString());
-                buffer.put("Wellcom to hell!!!".getBytes());
-                buffer.flip();
-                while (buffer.hasRemaining()) {
-                    socketChannel.write(buffer);
-                }
-                buffer.clear();
 
             }
         }catch (IOException e){
             e.printStackTrace();
         }
     }
+}
+class AsyncChatTest{
+
 }
 
