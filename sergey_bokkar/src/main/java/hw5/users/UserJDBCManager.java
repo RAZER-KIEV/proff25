@@ -11,7 +11,7 @@ import java.util.Locale;
  * все остальное
  * методами открыть соеденение, выполнить запрос и закрыть соеденение
  */
-public class UserJDBSManager {
+public class UserJDBCManager {
 
     private final String URL = "jdbc:oracle:thin:@localhost:1521:XE";
     private final String LOGIN = "hr";
