@@ -6,28 +6,17 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.control.TextFormatter;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
-import javafx.util.converter.FormatStringConverter;
-
-
 import java.io.IOException;
 
-/**
- * Created by storo_000 on 11.06.2015.
- */
-public class AsyncChat extends Application {
-    public void process(){
-        //new Thread(new NewServer()).start();
-    }
 
+public class AsyncChat extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -71,24 +60,45 @@ public class AsyncChat extends Application {
         connectButton.setOnMouseClicked(event -> {
             try {
                client[0] = new Client(ipText.getText(), Integer.parseInt(portText.getText()), messageText);
+                errorText.setText("Client created.");
             } catch (IOException e) {
-                //textArea.setText("IOS ex!");
+                errorText.setText("Client doesn't created.");
             }
         });
 
         sendMessageButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-
                 try {
                     if (client[0]!= null && client[0].isAvaible()) {
                         client[0].send();
                     } else{
-                        errorText.setText("Client isn't exist.");
+                        errorText.setText("Client doesn't exist.");
                     }
                     messageText.clear();
                 } catch (IOException e) {
                     e.printStackTrace();
+                }
+
+            }
+        });
+
+        messageText.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if (event.getCode().toString().equals("ENTER")) {
+                    try {
+                        if (client[0] != null && client[0].isAvaible()) {
+                            client[0].send();
+                        } else {
+                            errorText.setText("Client isn't exist.");
+                        }
+                        messageText.clear();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    errorText.setText(" ");
                 }
             }
         });
