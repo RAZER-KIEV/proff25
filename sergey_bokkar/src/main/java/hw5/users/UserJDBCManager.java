@@ -72,9 +72,7 @@ public class UserJDBCManager {
             res = stmt.executeUpdate("INSERT INTO users (USER_ID, USER_NAME, PASSWORD, DATE_REG) VALUES (USERS_SEQ.NEXTVAL, '"+
                     user.getName()+"', '"+user.getPass()+"', '"+user.getRegDate()+"'  )");
 
-                    //'"+user.getRegDate()+"'");
-
-            } catch (SQLException exp) {
+        } catch (SQLException exp) {
             exp.printStackTrace();
         }
 
