@@ -1,7 +1,5 @@
 package hw5.auth;
 
-import hw5.users.User;
-
 import java.util.List;
 
 /**
