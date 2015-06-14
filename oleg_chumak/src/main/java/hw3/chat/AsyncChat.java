@@ -132,7 +132,7 @@ public class AsyncChat extends Application {
         public void run() {
             try {
                 ServerSocketChannel ssChannel = ServerSocketChannel.open();
-                ssChannel.socket().bind(new InetSocketAddress(30001));
+                ssChannel.socket().bind(new InetSocketAddress(30000));
                 SocketChannel inputChannel = ssChannel.accept();
                 while(true){
                     handle(inputChannel);
@@ -154,8 +154,4 @@ public class AsyncChat extends Application {
             }
         }
     }
-}
-class AsyncChatTest{
-
-
 }
