@@ -1,4 +1,4 @@
-package hw3.chat;
+package hw4.parallel.chat;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -22,7 +22,7 @@ import java.util.Scanner;
  * Написать чат, в котором можно отправлять и принимать сообщения в любом порядке.
  * public void process()
  *
- * Класс задания hw3.chat.AsyncChat
+ * Класс задания AsyncChat
  * Класс теста hw3.chat.AsyncChatTest
  *
  * Created by george on 03.06.15.

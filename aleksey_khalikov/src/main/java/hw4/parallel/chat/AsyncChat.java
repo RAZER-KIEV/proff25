@@ -1,4 +1,4 @@
-package hw3.chat;
+package hw4.parallel.chat;
 
 import javafx.application.Application;
 import javafx.event.EventHandler;
@@ -23,27 +23,27 @@ import java.nio.channels.SocketChannel;
  */
 public class AsyncChat extends Application {
 
-    // текстовые поля
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
     TextField txtAddress = new TextField("127.0.0.1");
     TextField txtPort = new TextField("8189");
     TextArea txtHistory = new TextArea();
-    TextField txtSendText = new TextField("текст сообщения");
+    TextField txtSendText = new TextField("пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
 
-    // состояние подключения с сервером
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     boolean connect = false;
 
     @Override
     public void start(Stage stage) throws Exception {
-        stage.setTitle("Асинхронный чат");
+        stage.setTitle("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ");
 
-        // верхняя панель с вводом адреса, номера порта и кнопки подключить
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         Button btnConn = new Button("Connect");
 
         HBox hbox = new HBox(txtAddress, txtPort);
         BorderPane topPane = new BorderPane(hbox);
         topPane.setRight(btnConn);
 
-        // нижняя панель
+        // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         Button btnSend = new Button("Send");
         btnSend.setVisible(false);
 
@@ -87,7 +87,7 @@ public class AsyncChat extends Application {
     }
 
     public void sendMassege() throws IOException {
-        // метод отправки сообщения на сервер
+        // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 
         //txtHistory.appendText(txtSendText.getText());
         //txtHistory.appendText("\n");
@@ -103,10 +103,10 @@ public class AsyncChat extends Application {
 
     }
     public void connectToServer(){
-        // метод для установки соединения с сервером
+        // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         if(!connect){
             txtHistory.clear();
-            //txtHistory.appendText("Подключение установлено " + txtAddress.getText() + " : " + txtPort.getText() + "\n");
+            //txtHistory.appendText("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ " + txtAddress.getText() + " : " + txtPort.getText() + "\n");
             int numThread = 1;
             try {
                 ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
@@ -124,7 +124,7 @@ public class AsyncChat extends Application {
                 e.printStackTrace();
             }
         } else {
-            txtHistory.appendText("Соединение разорвано");
+            txtHistory.appendText("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
             connect = false;
         }
 
@@ -133,7 +133,7 @@ public class AsyncChat extends Application {
     }
 
     public class ServerThread implements Runnable{
-        // поток обработки нового соединения клиента с сервером
+        // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         private SocketChannel incoming;
         public ServerThread(SocketChannel name){
             this.incoming = name;

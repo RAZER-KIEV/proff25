@@ -1,4 +1,4 @@
-package hw3.chat;
+package hw4.parallel.chat;
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;

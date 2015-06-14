@@ -1,4 +1,4 @@
-package hw3.chat;
+package hw4.parallel.chat;
 
 /**
  * Created by bosyi on 08.06.15.
