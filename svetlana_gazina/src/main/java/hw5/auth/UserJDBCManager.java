@@ -1,48 +1,29 @@
-package hw5.users;
+package hw5.auth;
 
-import hw5.users.User;
+import hw5.users.*;
 
 import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 
-
 /**
- * Created by Sveta on 6/12/2015.
- *
- * Написать приложение, позволяющее добавлять нового пользователя и просматривать список существующих пользователей. Структура таблицы (id, имя, пароль, дата).
-
- Классы задания:
- MainWindow
- UserJDBCManager
- User
-
- В класс UserJDBCManager поместите все операции с базой данных. Желательно в методы этого классa передавать и возвращать объекты класса User
+ * Created by Sveta on 6/13/2015.
+ * * Написать приложение выполняющее аутентификацию пользователя на основе учётной записи созданнной в предыдущем задании.
+ * Если пользователь зарегистрирован, то выводим список зарегистрированных пользователей, если нет, выводим "Неправильный логин или пароль"
 
  public int create(User user)
  public List<User> findAll()
+ public User readByNamePass(String login, String pass)
+
+ Классы задания:
+ hw5.auth.MainWindow
+ hw5.auth.UserJDBCManager
+ hw5.auth.User
  */
 public class UserJDBCManager {
     int id = 0;
-    public static void main(String[] args) throws SQLException {
-        Locale.setDefault(Locale.ENGLISH);
-
-        java.sql.Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "hr", "hr");
-        Statement statement = conn.createStatement();
-        String sql = "CREATE TABLE USERS("
-                + "USER_ID NUMBER(5) NOT NULL, "
-                + "USERNAME VARCHAR(20) NOT NULL, "
-                + "PASSWORD VARCHAR(20) NOT NULL, "
-                + "REGISTRATION_DATE DATE NOT NULL, "
-                + "PRIMARY KEY (USER_ID)"
-                + ")";
-        System.out.println(sql);
-        int i = statement.executeUpdate(sql);
-        System.out.println(i);
-    }
-
-    public int create(User user) throws SQLException {
+    public int create(hw5.users.User user) throws SQLException {
 
         if(checked(user)){
             id++;
@@ -79,7 +60,7 @@ public class UserJDBCManager {
         return users;
     }
 
-    private boolean checked(User user) throws SQLException {
+    private boolean checked(hw5.users.User user) throws SQLException {
         String pass = user.getPassword();
         Locale.setDefault(Locale.ENGLISH);
 
@@ -94,4 +75,18 @@ public class UserJDBCManager {
         return true;
     }
 
+    public User readByNamePass(String login, String pass) throws SQLException {
+        Locale.setDefault(Locale.ENGLISH);
+
+        java.sql.Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "hr", "hr");
+        Statement statement = conn.createStatement();
+        ResultSet resultSet = statement.executeQuery( "SELECT username, password FROM users");
+        while(resultSet.next()){
+            if(resultSet.getString(1) == login && resultSet.getString(2) == pass){
+                return new User(login, pass);
+            }
+        }
+        System.out.println("Неправильный логин или пароль");
+        return null;
+    }
 }
