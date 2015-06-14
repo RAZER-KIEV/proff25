@@ -1,12 +1,6 @@
 package Homework2;
 
-import com.sun.corba.se.impl.encoding.OSFCodeSetRegistry;
-import javafx.util.Pair;
-import scala.Char;
-import sun.plugin2.applet.Applet2ClassLoaderCache;
 
-import javax.swing.*;
-import javax.swing.text.ChangedCharSetException;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
