@@ -183,8 +183,3 @@ class MyArrayList<E> implements Iterable<E>,
         }
     }
 }
-class MyArrayListTest{
-    public MyArrayListTest(){
-
-    }
-}
