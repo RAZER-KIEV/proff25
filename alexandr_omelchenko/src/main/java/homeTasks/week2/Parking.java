@@ -16,7 +16,6 @@ import java.util.HashMap;
 public class Parking {
     private HashMap<Integer, Car> parking = new HashMap<>();
     private int[] park = new int[100];
-    private int num;
     public int park(Car car) throws ParkFullException {
         for (int pl : park) {
             if (pl == 0) {
