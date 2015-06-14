@@ -1,8 +1,5 @@
 package hw5.finder;
 
-import java.io.File;
-import java.sql.Date;
-
 /**
  * Created by george on 11.06.15.
  */

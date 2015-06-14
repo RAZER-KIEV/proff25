@@ -9,7 +9,6 @@ import java.util.Locale;
  * Created by george on 11.06.15.
  */
 public class PathJDBCManager {
-//    FileService fss  = new FileService();
 
     public List<Path> list = new ArrayList<>();
     private Connection connect;
@@ -33,7 +32,4 @@ public class PathJDBCManager {
         }
     }
 
-//    public List<Path> findAll(){
-//        return fss.findAll(String.valueOf(fss.getPathList()));
-//    }
 }

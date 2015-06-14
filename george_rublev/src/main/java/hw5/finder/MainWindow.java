@@ -3,6 +3,7 @@ package hw5.finder;
 import java.util.List;
 
 /**
+ *
  * Created by george on 11.06.15.
  */
 public class MainWindow {

@@ -47,8 +47,7 @@ public class FileService {
                     pathList.add(
                             new Path(numberPath, String.valueOf(new Date(findedFile[i].lastModified())) ,findedFile[i].getPath())
                     );
-//                    System.out.println(numberPath+ "    "  +findedFile[i]+ "      " +new Date(findedFile[i].lastModified()));
-                    numberPath++;
+                  numberPath++;
                 }else if(findedFile[i].isDirectory()){
                     findAll(String.valueOf(findedFile[i]));
                 }
