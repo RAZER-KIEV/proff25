@@ -3,6 +3,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import java.util.List;
 import java.util.Locale;
 
 public class MainWindow {
@@ -28,7 +29,10 @@ public class MainWindow {
             manager.create(new User(13, "Leonardo","a44n73"));
             manager.create(new User(14, "Omelchenko","a44n73"));
             manager.create(new User(15, "Sokolov","a44n73"));*/
-            manager.findAll();
+         //   List<User> listik =manager.findAll();
+            User us=manager.readByNamePass("melchenko","a44n73");
+            System.out.println(us.toString());
+           // System.out.print(listik.toString());
             conn.close();}
 
         catch (SQLException e) {

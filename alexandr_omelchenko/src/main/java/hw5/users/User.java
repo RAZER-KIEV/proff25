@@ -5,12 +5,11 @@ public class User {
     private int id;
     private String name;
     private String password;
-
+    private Date date;
     public Date getDate() {
         return date;}
     public void setDate(Date date) {
         this.date = date;}
-    private Date date;
     public String getName() {
         return name;}
     public void setName(String name) {
@@ -45,4 +44,11 @@ public class User {
         this.date = date;}
 
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }

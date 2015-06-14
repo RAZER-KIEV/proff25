@@ -30,7 +30,7 @@ System.out.println("i= "+i);
         Statement stat = null;
         try {
             stat = conn.createStatement();
-        ResultSet rs = stat.executeQuery("Select * FROM USERS ");
+        ResultSet rs = stat.executeQuery("Select * FROM USERS");
         while (rs.next()) {
             int a=rs.getInt(1);
             String b=rs.getString(2);
@@ -40,8 +40,16 @@ System.out.println("i= "+i);
             list.add(temp);
         }
         }
-        catch (SQLException e) {
+    catch (SQLException e) {
                 e.printStackTrace();}
     return list;
+    }
+    public User readByNamePass(String login, String pass){
+       List<User> list= findAll();
+
+        for(User u: list){if(u.getName().equals(login)&&u.getPassword().equals(pass));
+            return u;}
+       System.out.println("Неправильный логин или пароль");
+        return null ;
     }
 }
