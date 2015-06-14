@@ -35,7 +35,6 @@ class  UserJDBCManager {
         Date date = Calendar.getInstance().getTime();
         String str = "INSERT INTO users_base (id, name, password, date_insert) VALUES (USER_BASE_SEQ.nextVal,'"
                 + user.name + "', '" + user.password + "', '" + sdf.format(date) + "')";
-        System.out.println(str);
         int rs = stmt.executeUpdate (str);
         return rs;
     }
