@@ -48,7 +48,7 @@ public class QuadraticService {
         }
 
         if(solutions.size() > 10000) {
-            System.out.println("Слишком большой диапазон");
+            System.out.println("Too much solutions!");
         }
         else {
             for (Solution solution: solutions){

@@ -48,6 +48,7 @@ public class SolutionJDBCManager {
         System.out.println(sql);
         int i = statement.executeUpdate(sql);
         System.out.println(i);
+        conn.close();
     }
     int id = 0;
     public int create(Solution solution) throws SQLException {
@@ -64,6 +65,8 @@ public class SolutionJDBCManager {
         statement.setInt(4, solution.getCoefficient_c());
         statement.setDouble(5, solution.getRoot_1());
         statement.setDouble(6, solution.getRoot_2());
+
+        conn.close();
         return 1;
 }
 
