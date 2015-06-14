@@ -3,9 +3,6 @@ package lection01.homework;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/**
- * Created by storo_000 on 24.05.2015.
- */
 class MyArrayList<E> implements Iterator<E>, Iterable<E> {
     private Object [] data;
     private static final int DEFAULT_SIZE = 10;

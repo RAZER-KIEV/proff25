@@ -28,28 +28,21 @@ import java.nio.channels.SocketChannel;
  * Created by ПК on 05.06.2015.
  */
 public class AsyncChat extends Application implements EventHandler {
+
+    private ObservableList<String> messeges = FXCollections.observableArrayList("App Launched");
+    private TextField tfPort;
+    private TextField tfIpAdress;
+    private SocketChannel socketChannel;
+    private ByteBuffer byteBuffer;
+    private TextField tfSetMess;
+
+    public void process(){}
+
     public static void main(String[] args) throws IOException {
-       //Application.launch(AsyncChat.class, args);
-
-        int port=30056;
-        String ipAddress="127.0.0.1";
-
-        ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
-        serverSocketChannel.socket().bind(new InetSocketAddress(port));
-
-        SocketChannel channel = SocketChannel.open(new InetSocketAddress(ipAddress, port));
-        ByteBuffer buffer = ByteBuffer.allocate(300);
-
-
-
-
-
-
-
-
-
-        Application.launch(AsyncChat.class, args);
+        Application.launch();
     }
+
+
     @Override
     public void start(Stage stage) throws Exception {
         stage.setTitle("Let's Chatting!");
@@ -62,13 +55,13 @@ public class AsyncChat extends Application implements EventHandler {
         dropShadow.setOffsetX(10);
         dropShadow.setOffsetY(10);
 
-        TextField tfIpAdress = new TextField("Set Partner IP.");
-        ;
+        tfIpAdress = new TextField("127.0.0.1");
+
         tfIpAdress.setPrefSize(200, 30);
         tfIpAdress.setEditable(true);
         tfIpAdress.setEffect(dropShadow);
 
-        TextField tfPort = new TextField("Set Partner port.");
+        tfPort = new TextField("30056");
         tfPort.setPrefSize(140, 30);
         tfPort.setEditable(true);
         tfPort.setEffect(dropShadow);
@@ -97,8 +90,9 @@ public class AsyncChat extends Application implements EventHandler {
         pane.setLayoutY(50);
 
 
-        ObservableList<String> messeges = FXCollections.observableArrayList(
-                "Привет!", "халоу", "как оно?");
+       // messeges = FXCollections.observableArrayList(
+               // "Привет!", "халоу", "как оно?");
+
         ListView<String> mainJournal = new ListView<String>(messeges);
         mainJournal.setOrientation(Orientation.VERTICAL);
         mainJournal.setEffect(dropShadow);
@@ -111,7 +105,7 @@ public class AsyncChat extends Application implements EventHandler {
         root.getChildren().add(pane);
 
 
-        TextField tfSetMess = new TextField(" ");
+        tfSetMess = new TextField("send Hello!");
         tfSetMess.setPrefSize(400, 80);
         tfSetMess.setLayoutX(10);
         tfSetMess.setLayoutY(465);
@@ -129,27 +123,76 @@ public class AsyncChat extends Application implements EventHandler {
 
 
         stage.show();
+
+
+        class Server extends Thread {
+            public void run() {
+                try {
+
+                    ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
+                    int randomPort = (int) (Math.random() * 30000 + 30000);
+                    serverSocketChannel.socket().bind(new InetSocketAddress(randomPort));
+                    messeges.add("my port is: "+String.valueOf(randomPort));
+                    System.out.println("my port is: " + randomPort);
+                    ByteBuffer byteBuffer = ByteBuffer.allocate(200);
+                    while (true) {
+                        System.out.println("--Server wait for connection--1");
+                        SocketChannel sChannel = serverSocketChannel.accept();
+                        System.out.println("--Server connected!--");
+                        while (byteBuffer.hasRemaining()) {
+
+                            int readed =sChannel.read(byteBuffer);
+                            String msg = new String(byteBuffer.array(),0,readed);
+
+                            messeges.add(msg);
+                            byteBuffer.clear();
+                        }
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        Server server = new Server();
+        server.start();
     }
 
 
     @Override
     public void handle(Event event) {
-        String name=((Button)(event.getSource())).getText();
+        String name = ((Button) (event.getSource())).getText();
         System.out.println(name);
 
         switch (name) {
-            case "Send!":
-
-                //todo
-                System.out.println("send pressed");
+            case "Connect":
+                try {
+                    socketChannel = SocketChannel.open(new InetSocketAddress(tfIpAdress.getText(), Integer.parseInt(tfPort.getText())));
+                    byteBuffer = ByteBuffer.allocate(200);
+                    messeges.add("conected: " + socketChannel.isConnected());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 break;
-            case  "Connect":
+            case "Send!":
+                try {
+                    byteBuffer = ByteBuffer.allocate(200);
+                    byteBuffer.put(tfSetMess.getText().getBytes());
+                    messeges.add(tfSetMess.getText());
+                    byteBuffer.flip();
+                    socketChannel.write(byteBuffer);
+                    tfSetMess.clear();
+                    byteBuffer.clear();
 
-                //todo
-                System.out.println("Connect pressed");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+
                 break;
         }
- }
+    }
+}
+class AsyncChatTest{
 
 
 }
