@@ -79,12 +79,12 @@ public class XmlFileToTreeView extends Application{
         primaryStage.show();
     }
 
-    private TreeItem<String> getItemsFromDocFull (org.w3c.dom.Node el, TreeItem<String> item) throws FileNotFoundException {
+    private TreeItem<String> getItemsFromDocFull (Node el, TreeItem<String> item) throws FileNotFoundException {
         TreeItem<String> root=null;
         if(!el.getNodeName().contains("#")) {
             if(el.getChildNodes().getLength() == 1) {
                 root = new CheckBoxTreeItem<>(el.getNodeName(),
-                        new ImageView(new javafx.scene.image.Image(new FileInputStream("folder2.png"))));
+                        new ImageView(new Image(new FileInputStream("folder2.png"))));
                 root.setExpanded(true);
                 root.getChildren().add(new CheckBoxTreeItem<>(el.getTextContent(),
                         new ImageView(new Image(new FileInputStream("/C:/text_resize.png")))));
@@ -92,7 +92,7 @@ public class XmlFileToTreeView extends Application{
 
             } else {
                 root = new CheckBoxTreeItem<>(el.getNodeName(),
-                        new ImageView(new javafx.scene.image.Image(new FileInputStream("folder2.png"))));
+                        new ImageView(new Image(new FileInputStream("folder2.png"))));
                 root.setExpanded(true);
                 item.getChildren().add(root);
             }
