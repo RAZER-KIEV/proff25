@@ -4,7 +4,6 @@ import java.sql.SQLException;
 
 /**
  * Написать приложение выполняющее аутентификацию пользователя на основе учётной записи созданнной в предыдущем задании. Если пользователь зарегистрирован, то выводим список зарегистрированных пользователей, если нет, выводим "Неправильный логин или пароль"
-
  public int create(User user)
  public List<User> findAll()
  public User readByNamePass(String login, String pass)
