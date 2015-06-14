@@ -19,7 +19,6 @@ public class User {
         setName(name);
         setPass(pass);
         setRegistrationDate(new Date());
-        //this(name, pass, new Date());
     }
 
     public User(String id, String name, String pass){
@@ -27,7 +26,6 @@ public class User {
         setName(name);
         setPass(pass);
         setRegistrationDate(new Date());
-        //this(name, pass, new Date());
     }
     public User(Long id, String name, String pass, Date date){
         setUserId(id);

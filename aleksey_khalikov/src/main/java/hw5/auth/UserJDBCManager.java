@@ -20,8 +20,6 @@ public class UserJDBCManager {
     private List<User> userList;
     private Statement base;
 
-
-
     UserJDBCManager() throws SQLException {
         userList = new List<User>() {
             private ArrayList<User> ulist = new ArrayList<>();
@@ -156,8 +154,7 @@ public class UserJDBCManager {
     public int create(User user) throws SQLException {
         String strQuery;
         base = getState();
-        // ResultSet nextUId;
-        //
+
         // SELECT USERS_SEQ.NEXTVAL FROM dual
         // SELECT USERS_SEQ.CURRVAL FROM dual
 
@@ -167,14 +164,6 @@ public class UserJDBCManager {
         do {
             nextUserId++;
         } while (rs.next());
-
-        /*
-        base.executeUpdate("SELECT USERS_SEQ.NEXTVAL FROM dual");
-        nextUId = base.getResultSet();
-        long nextUserId = nextUId.getLong(1);
-        */
-
-        //long nextUserId = base.executeUpdate("SELECT USERS_SEQ.NEXTVAL FROM dual");
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
         String df = dateFormat.format(user.getRegistrationDate());
@@ -196,12 +185,7 @@ public class UserJDBCManager {
         rs.next();
         do {
             System.out.println(" = iteration #" + i);
-            /*
-            userItem.setUserId(rs.getLong(1));
-            userItem.setName(rs.getString(2));
-            userItem.setPass(rs.getString(3));
-            userItem.setRegistrationDate(rs.getDate(4));
-            */
+
             long id = rs.getLong(1);
             String nm = rs.getString(2);
             String ps = rs.getString(3);

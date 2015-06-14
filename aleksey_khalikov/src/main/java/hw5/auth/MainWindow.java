@@ -38,8 +38,6 @@ public class MainWindow extends Application{
     private TextArea txtUsers;
     private Button btnGetList;
 
-
-
     @Override
     public void start(Stage primaryStage) throws Exception {
         Stage mainWindow = new Stage();
@@ -77,8 +75,6 @@ public class MainWindow extends Application{
 
         return new Scene(mainPane, 600, 400);
     }
-
-
 
     public BorderPane paneAddUser(){
         TextField txtUserID = new TextField();
@@ -200,7 +196,6 @@ public class MainWindow extends Application{
             }
             System.out.println(errMassage);
         }
-
     }
 
     public void login(String login, String pass){
@@ -222,8 +217,6 @@ public class MainWindow extends Application{
             } catch (SQLException elm) {
                 lblConnectStatus.setText(elm.getMessage());
             }
-
         }
     }
-
 }
