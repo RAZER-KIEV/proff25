@@ -1,6 +1,8 @@
-package session5;
+package session1;
 import org.junit.Before;
 import org.junit.Test;
+import session5.Singleton;
+
 import static org.junit.Assert.*;
 
 

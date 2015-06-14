@@ -1,6 +1,8 @@
-package session5;
+package session1;
 import org.junit.Before;
 import org.junit.Test;
+import session5.Person;
+
 import static org.junit.Assert.*;
 /**
  * Created by just1ce on 01.06.2015.

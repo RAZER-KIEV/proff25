@@ -1,4 +1,4 @@
-package Homework3;
+package hw4.parallel;
 
 
 
@@ -25,7 +25,7 @@ class MyArrayList<E> implements Iterable<E>,
         this.data = (E[]) new Object[lenght];
         this.length=lenght;
     }
-    MyArrayList() {
+    public MyArrayList() {
         this.data = (E[]) new Object[20];
         this.length=20;
     }
@@ -176,10 +176,15 @@ class MyArrayList<E> implements Iterable<E>,
         data = newArray;
     }
 
-    // �������� �������
+
     private void checkIndex(int index) {
         if (index < 0 || index >= this.count) {
             throw new IllegalArgumentException();
         }
+    }
+}
+class MyArrayListTest{
+    public MyArrayListTest(){
+
     }
 }
