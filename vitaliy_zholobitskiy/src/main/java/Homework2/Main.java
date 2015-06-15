@@ -15,7 +15,7 @@ public class Main {
         ParkingTest t1= new ParkingTest();
         t1.test();
 
-        UserTest t = new UserTest();
-        t.test();
+        //UserTest t = new UserTest();
+        //t.test();
     }
 }
