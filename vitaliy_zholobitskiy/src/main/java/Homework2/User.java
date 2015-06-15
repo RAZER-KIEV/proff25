@@ -65,7 +65,7 @@ public class User implements Comparable<User> {
         return "Login = " + login + " Pass = " + password+ " Registration = " + regdate+" Gender = "+gender+" Rate = "+rate+"\r\n";
     }
 }
-class UserTest{
+/*class UserTest{
     void test(){
         User user1= new User("qwerty","132","21.06.98",57.5,1);
         User user2= new User("qwerty1","1323","21.05.98",28.5,1);
@@ -82,4 +82,4 @@ class UserTest{
         System.out.println(user3.hashCode());
         System.out.println(user4.hashCode());
     }
-}
+}*/

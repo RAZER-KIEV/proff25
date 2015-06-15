@@ -1,7 +1,4 @@
 package hw5.auth;
-
-import hw5.users.*;
-
 import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
@@ -23,7 +20,7 @@ import java.util.Locale;
  */
 public class UserJDBCManager {
     int id = 0;
-    public int create(hw5.users.User user) throws SQLException {
+    public int create(User user) throws SQLException {
 
         if(checked(user)){
             id++;
@@ -60,7 +57,7 @@ public class UserJDBCManager {
         return users;
     }
 
-    private boolean checked(hw5.users.User user) throws SQLException {
+    private boolean checked(User user) throws SQLException {
         String pass = user.getPassword();
         Locale.setDefault(Locale.ENGLISH);
 
