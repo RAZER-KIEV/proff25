@@ -7,7 +7,7 @@ import java.util.Locale;
 
 
 public class UserJDBCManager {
-    Statement statement;
+    private Statement statement;
 
     public UserJDBCManager() throws SQLException {
         Locale.setDefault(Locale.ENGLISH);

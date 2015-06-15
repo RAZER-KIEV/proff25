@@ -17,8 +17,6 @@ public class MainWindow {
             String password = scanner.nextLine();
             System.out.println(userJDBCManager.create(new User(name,password,new Date(Calendar.getInstance().getTimeInMillis()))));
 
-            //userJDBCManager.delete("Petro");
-
             List<User> users= userJDBCManager.findAll();
 
             for (User user:users)
