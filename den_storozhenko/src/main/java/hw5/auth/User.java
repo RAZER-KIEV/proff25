@@ -3,9 +3,9 @@ package hw5.auth;
 import java.sql.Date;
 
 public class User {
-    String name;
-    String password;
-    Date  date;
+    private String name;
+    private String password;
+    private Date date;
 
     public String getName() {
         return name;
@@ -17,6 +17,18 @@ public class User {
 
     public Date  getDate() {
         return date;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public User(){
