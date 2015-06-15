@@ -8,7 +8,6 @@ import java.util.List;
  */
 public class MainWindow {
     public static void main(String[] args) {
-
         QuadraticService quadraticService = new QuadraticService();
         quadraticService.solve(1,300,1,20,2,7);
         List<Solution> solutions = quadraticService.getSolutionList();
