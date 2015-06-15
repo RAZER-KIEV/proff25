@@ -1,11 +1,9 @@
 package hw5.users;
 
-import oracle.sql.DATE;
-
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Locale;
+import java.util.Scanner;
 
 /**
  * * Написать приложение, позволяющее добавлять нового пользователя и просматривать список существующих пользователей. Структура таблицы (id, имя, пароль, дата).
@@ -17,6 +15,8 @@ public class MainWindow {
         User user1 = new User(001,"Sviatoslav","123abc","11-06-2015");
         UserJDBCManager userJDBCManager = new UserJDBCManager();
         userJDBCManager.create(user1);
+
+
 
 
 
