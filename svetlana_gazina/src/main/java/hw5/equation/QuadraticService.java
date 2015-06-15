@@ -40,7 +40,9 @@ public class QuadraticService {
                     discr = Math.sqrt((j * j) - (4 * i * k));
                     root1 = (-j + discr)/2 * i;
                     root2 = (-j - discr)/2 * i;
-                    solutions.add(new Solution(i, j, k, root1, root2));
+                    if (!Double.isNaN(root1) && !Double.isNaN(root2)) {
+                        solutions.add(new Solution(i, j, k, root1, root2));
+                    }
                 }
 
             }

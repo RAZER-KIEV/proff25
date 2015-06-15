@@ -41,32 +41,44 @@ public class SolutionJDBCManager {
                 + "coefficient_a NUMBER(5) NOT NULL, "
                 + "coefficient_b NUMBER(5) NOT NULL, "
                 + "coefficient_c NUMBER(5) NOT NULL, "
-                + "root_1 DOUBLE(5) NOT NULL, "
-                + "root_2 DOUBLE(5) NOT NULL, "
-                + "PRIMARY KEY (solution_id)"
-                + ")";
+                + "root_1 FLOAT(5) NOT NULL, "
+                + "root_2 FLOAT(5) NOT NULL, "
+                + "PRIMARY KEY (solution_id))";
         System.out.println(sql);
-        int i = statement.executeUpdate(sql);
-        System.out.println(i);
+        statement.execute(sql);
+        statement.close();
+        statement = conn.createStatement();
+        sql = "CREATE SEQUENCE entry_id_seq" +
+                "  START WITH 1" +
+                "  INCREMENT BY 1" +
+                "  CACHE 10000";
+        System.out.println(sql);
+        statement.execute(sql);
+
+        statement.close();
         conn.close();
     }
-    int id = 0;
+
     public int create(Solution solution) throws SQLException {
-        id++;
+
         Locale.setDefault(Locale.ENGLISH);
-        java.sql.Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "hr", "hr");
+        try (java.sql.Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "hr", "hr")) {
 
-        String sql = "INSERT INTO solutions(solution_id, coefficient_a, coefficient_b, coefficient_c, root_1, root_2) VALUES(?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO solutions(solution_id, coefficient_a, coefficient_b, coefficient_c, root_1, root_2) VALUES(entry_id_seq.nextval, ?, ?, ?, ?, ?)";
 
-        PreparedStatement statement = conn.prepareStatement(sql);
-        statement.setInt(1, id);
-        statement.setInt(2, solution.getCoefficient_a());
-        statement.setInt(3, solution.getCoefficient_b());
-        statement.setInt(4, solution.getCoefficient_c());
-        statement.setDouble(5, solution.getRoot_1());
-        statement.setDouble(6, solution.getRoot_2());
+            try(PreparedStatement statement = conn.prepareStatement(sql)) {
+                statement.setInt(1, solution.getCoefficient_a());
+                statement.setInt(2, solution.getCoefficient_b());
+                statement.setInt(3, solution.getCoefficient_c());
+                statement.setDouble(4, solution.getRoot_1());
+                statement.setDouble(5, solution.getRoot_2());
 
-        conn.close();
+                statement.execute();
+                statement.close();
+            }
+            conn.close();
+        }
+
         return 1;
 }
 
