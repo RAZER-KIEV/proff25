@@ -32,6 +32,6 @@ public class PathJDBCManager {
     }
 
     public List<Path> findAll(){
-        return fss.list;
+        return fss.findAll();
     }
 }
