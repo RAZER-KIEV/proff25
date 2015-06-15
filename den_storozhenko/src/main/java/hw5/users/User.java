@@ -1,7 +1,7 @@
 package hw5.users;
 
+
 import java.sql.Date;
-import java.util.Random;
 
 
 public class User {
