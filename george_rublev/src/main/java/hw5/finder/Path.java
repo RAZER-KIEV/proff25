@@ -1,6 +1,7 @@
 package hw5.finder;
 
 /**
+ *
  * Created by george on 11.06.15.
  */
 public class Path {
