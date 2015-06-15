@@ -61,7 +61,7 @@ public class UserJDBCManager {
                     if(list.get(i).getName().equals(login)&&list.get(i).getPassword()==pass){
                         System.out.println("Аунтентификация успешна");
                     }else {
-                        System.out.println("Облом");
+                        System.out.println("Облом ");
                     }
                 }
             }
