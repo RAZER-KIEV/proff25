@@ -13,13 +13,13 @@ public class MainWindow {
             Scanner scanner = new Scanner(System.in);
 
             FileService fileService = new FileService(scanner.nextLine());
-            List<Path> pathList = fileService.findAll();
-            for (Path path:pathList){
-                pathJDBCManager.create(path);
-            }
+            fileService.findAll();
 
-            for (Path path:pathJDBCManager.findAll())
+            List<Path> paths = pathJDBCManager.findAll();
+
+            for (Path path:paths){
                 System.out.println(path.getPath());
+            }
 
         } catch (SQLException e) {
             e.printStackTrace();

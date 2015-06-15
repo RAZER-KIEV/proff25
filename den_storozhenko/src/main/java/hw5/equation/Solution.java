@@ -1,8 +1,6 @@
 package hw5.equation;
 
-/**
- * Created by storo_000 on 11.06.2015.
- */
+
 public class Solution{
     private int koefA;
     private int koefB;
