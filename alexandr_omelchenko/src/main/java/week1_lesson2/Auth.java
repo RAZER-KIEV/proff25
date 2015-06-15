@@ -31,7 +31,7 @@ public class Auth {
 //Конец МЕЙНА
 
   public Set<User> users = new TreeSet<>(compPass);
-  //public Set<User> users = new HashSet<>();
+  //public Set<Users> users = new HashSet<>();
 
     public static Comparator<User> compPass = new Comparator<User>() {
         public int compare(User o1, User o2) {
@@ -87,12 +87,12 @@ public class Auth {
         }
         @Override
         public String toString(){
-            return "User{"+getLogin()+" "+getKey()+"}";
+            return "Users{"+getLogin()+" "+getKey()+"}";
         }
         @Override
         public int compareTo(User user) {
             return this.login.compareTo(user.login);
         }
     }
-//Конец User
+//Конец Users
 }

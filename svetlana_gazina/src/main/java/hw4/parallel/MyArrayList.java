@@ -29,61 +29,61 @@ public class MyArrayList<E> extends ArrayList<E> {
         }
 
         class MyRunnable implements Runnable {
-            private boolean odd;
-            private Integer result;
-            private boolean found;
+    private boolean odd;
+    private Integer result;
+    private boolean found;
 
-            public MyRunnable(boolean Odd){
-                odd = Odd;
-            }
+    public MyRunnable(boolean Odd){
+        odd = Odd;
+    }
 
-            public Integer getResult(){
-                return result;
-            }
+    public Integer getResult(){
+        return result;
+    }
 
-            @Override
-            public void run() {
-                int start = 0;
-                if (!odd){
-                    start = 1;
-                }
-
-                for (int i = start; i < size(); i+=2) {
-                    if(found){
-                        return;
-                    }
-
-                    if (element.equals(get(i))){
-                        result = i;
-                    }
-                }
-            }
+    @Override
+    public void run() {
+        int start = 0;
+        if (!odd){
+            start = 1;
         }
 
-        MyRunnable myRunnable = new MyRunnable(false);
-        MyRunnable myRunnable1 = new MyRunnable(true);
-        Thread thread1 = new Thread(myRunnable);
-        Thread thread2 = new Thread(myRunnable1);
-        thread1.start();
+        for (int i = start; i < size(); i+=2) {
+            if(found){
+                return;
+            }
+
+            if (element.equals(get(i))){
+                result = i;
+            }
+        }
+    }
+}
+
+ MyRunnable myRunnable = new MyRunnable(false);
+ MyRunnable myRunnable1 = new MyRunnable(true);
+ Thread thread1 = new Thread(myRunnable);
+ Thread thread2 = new Thread(myRunnable1);
+thread1.start();
         thread2.start();
 
         try {
-            thread1.join();
-            thread2.join();
+        thread1.join();
+        thread2.join();
         } catch (InterruptedException e) {
-            e.printStackTrace();
+        e.printStackTrace();
         }
 
         if (myRunnable.getResult() != null) {
-            return myRunnable.getResult();
+        return myRunnable.getResult();
         } else
-            if (myRunnable1.getResult() != null) {
-                return myRunnable1.getResult();
+        if (myRunnable1.getResult() != null) {
+        return myRunnable1.getResult();
         } else {
-                return -1;
-            }
-    }
-}
+        return -1;
+        }
+        }
+        }
 class MyArrayListTest {
 
 public static void main(String[] args) {
