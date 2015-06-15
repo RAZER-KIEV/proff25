@@ -2,10 +2,7 @@ package hw5.equation;
 
 import scala.Int;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -17,12 +14,14 @@ import java.util.Scanner;
 public class MainWindow {
   public static void main(String[] args) throws SQLException {
       Locale.setDefault(Locale.UK);
-      //SolutionJDBCManager solutionJDBCManager=new SolutionJDBCManager();
+
       QuadraticService quadraticService = new QuadraticService();
       quadraticService.solve(1, 1, -8, -8, 1, 12);
-     // quadraticService.setBoundariesAndSolve();
-      ArrayList<Solution> resArryaLst = quadraticService.getSolArrLst();
 
+      SolutionJDBCManager solutionJDBCManager=new SolutionJDBCManager();
+      System.out.println("try to select from DB to ArrayList!");
+
+      ArrayList<Solution> resArryaLst = (ArrayList<Solution>) solutionJDBCManager.findAll();
 
 
 
@@ -31,11 +30,11 @@ public class MainWindow {
 }
 class SolutionJDBCManager{
 
-    ArrayList<Solution> dbImport= new ArrayList<>();
-   // Connection conn = null;
+    ArrayList<Solution> dbImport;
+
     Statement stmt;
     Solution solution;
-    int counter = 0;
+
 
 
     public SolutionJDBCManager() throws SQLException {
@@ -49,44 +48,83 @@ class SolutionJDBCManager{
     }
 
     public int create(Solution solution) throws SQLException {
-        counter++;
+
         this.solution = solution;
+        int id = solution.getId();
         int constA = solution.getConstA();
         int constB = solution.getConstB();
         int constC = solution.getConstC();
         double x1 = solution.getX1();
         double x2 =solution.getX2();
         StringBuilder sb =new StringBuilder();
-        sb.append("INSERT INTO solutions VALUES(" + counter + "," + constA + "," + constB + "," + constC + "," + x1 + "," + x2 + ")");
+        sb.append("INSERT INTO solutions VALUES(" + id + "," + constA + "," + constB + "," + constC + "," + x1 + "," + x2 + ")");
         System.out.println(sb.toString());
-        String sqlReq =sb.toString();   //"INSERT INTO solutions VALUES(\"+counter+\",\"+constA+\",\"+constB+\",\"+constC+\",\"+x1+\",\"+x2+\")"
+        String sqlReq =sb.toString();
         int res = stmt.executeUpdate(sqlReq);
 
         return res;
     }
-    public List<Solution> findAll(){
+    public List<Solution> findAll() throws SQLException {
+        Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "hr", "hr");
+        System.out.println(conn);
+        stmt = conn.createStatement();
 
+        ArrayList<Solution> dbImport = new ArrayList<>();
+
+        ResultSet rs = stmt.executeQuery("SELECT * FROM solutions");
+
+
+
+        boolean rsnxt = rs.next();
+        while (rsnxt){
+           //rsnxt = rs.next();
+
+
+            int id = rs.getInt(1);
+            System.out.print("id:  " + id + ",  ");
+
+            int constA = rs.getInt(2);
+            System.out.print("Const A: " + constA + ",  ");
+
+            int constB = rs.getInt(3);
+            System.out.print("Const B: " + constB + ",  ");
+
+            int constC = rs.getInt(4);
+            System.out.print("Const C: " + constC + ",  ");
+
+            double x1 = rs.getDouble(5);
+            System.out.print("X1: " + x1 + ", ");
+
+            double x2 = rs.getDouble(6);
+            System.out.println("X2: " + x2 +", ");
+
+            Solution tmp = new Solution(id,constA,constB,constC,x1,x2);
+            dbImport.add(tmp);
+
+            rsnxt= rs.next();
+
+        }
 
        return  dbImport;
     }
-
-
-
-
 }
 class Solution{
+    private int id;
     private int constA;
     private int constB;
     private int constC;
     private double x1;
     private double x2;
-    //private int desc;
+
+    public int getId(){return id;}
     public int getConstA(){return constA;}
     public int getConstB(){return constB;}
     public int getConstC(){return constC;}
     public double getX1(){return x1;}
     public double getX2(){return x2;}
-    Solution(int constA,int constB,int constC, double x1, double x2){
+
+    Solution(int id,int constA,int constB,int constC, double x1, double x2){
+        this.id = id;
         this.constA = constA;
         this.constB = constB;
         this.constC = constC;
@@ -112,7 +150,7 @@ class QuadraticService{
     double desc;
 
     public void solve(int fromA, int toA, int fromB, int toB, int fromC, int toC) throws SQLException {
-        int solCout =0;
+        int solCout =1;
         ArrayList<Solution> solArrLst = new ArrayList<>();
         SolutionJDBCManager solutionJDBCManager = new SolutionJDBCManager();
 
@@ -129,8 +167,8 @@ class QuadraticService{
                         x1 = (-b + Math.sqrt(desc)) / (2 * a);
                         //X2 culc:
                         x2 = (-b - Math.sqrt(desc)) / (2 * a);
-                        System.out.println("Get Solution!: a = " + a + ", b = " + b + ", c = " + c + ", x1 = " + x1 + ", x2 = " + x2);
-                        Solution tmp = new Solution(a, b, c, x1, x2);
+                        System.out.println("Get Solution!: id = " +solCout +", a= " + a + ", b = " + b + ", c = " + c + ", x1 = " + x1 + ", x2 = " + x2);
+                        Solution tmp = new Solution(solCout,a, b, c, x1, x2);
                         solArrLst.add(tmp);
                         solutionJDBCManager.create(tmp);
                         solCout++;
@@ -138,18 +176,21 @@ class QuadraticService{
                     }
                     if (desc == 0) {
                         x1 = x2 = (-b / 2 * a);
-                        Solution tmp = new Solution(a, b, c, x1, x2);
+                        Solution tmp = new Solution(solCout,a, b, c, x1, x2);
                         solArrLst.add(tmp);
-                        System.out.println("Get Solution!: a = " + a + ", b = " + b + ", c = " + c + ", x1 = " + x1 + ", x2 = " + x2);
+                        System.out.println("Get Solution!: id= "+solCout+", a = " + a + ", b = " + b + ", c = " + c + ", x1 = " + x1 + ", x2 = " + x2);
                         solutionJDBCManager.create(tmp);
                         solCout++;
                     }
                     if (desc < 0) {
                         System.out.println("No real solutions!");
                     }
+                }else {
+                    System.out.println("It's very large diapason!");
                 }
             }
           }this.solArrLst = solArrLst;
+
             break;
         }
      }
@@ -183,8 +224,4 @@ class QuadraticService{
             ex.printStackTrace();
          }
     }
-
-
-
-
 }
