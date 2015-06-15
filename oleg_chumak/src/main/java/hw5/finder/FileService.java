@@ -20,6 +20,7 @@ public class FileService {
     private int number = 1;
     public File root = new File("//home/oleg/");
     public List<Path> findAll() {
+        addPath(new File("fileName"));
         return list;
     }
     public void addPath(File file){
