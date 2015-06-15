@@ -1,6 +1,6 @@
 package hw5.equation;
 
-import hw5.users.User;
+
 
 import java.sql.*;
 import java.util.LinkedList;
