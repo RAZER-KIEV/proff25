@@ -77,9 +77,6 @@ class SolutionJDBCManager{
 
         boolean rsnxt = rs.next();
         while (rsnxt){
-           //rsnxt = rs.next();
-
-
             int id = rs.getInt(1);
             System.out.print("id:  " + id + ",  ");
 
