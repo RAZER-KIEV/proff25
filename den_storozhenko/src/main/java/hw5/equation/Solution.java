@@ -19,6 +19,25 @@ public class Solution{
     }
 
 
+    public void setKoefA(int koefA) {
+        this.koefA = koefA;
+    }
+
+    public void setKoefB(int koefB) {
+        this.koefB = koefB;
+    }
+
+    public void setKoefC(int koefC) {
+        this.koefC = koefC;
+    }
+
+    public void setRes1(double res1) {
+        this.res1 = res1;
+    }
+
+    public void setRes2(double res2) {
+        this.res2 = res2;
+    }
 
     public int getKoefA() {
         return koefA;

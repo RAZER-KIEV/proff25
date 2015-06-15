@@ -1,7 +1,5 @@
 package hw5.finder;
 
-import hw5.users.User;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Calendar;

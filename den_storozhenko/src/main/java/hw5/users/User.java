@@ -3,9 +3,7 @@ package hw5.users;
 import java.sql.Date;
 import java.util.Random;
 
-/**
- * Created by storo_000 on 11.06.2015.
- */
+
 public class User {
     private String name;
     private String password;

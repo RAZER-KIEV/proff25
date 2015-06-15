@@ -1,15 +1,12 @@
 package hw5.equation;
 
-import hw5.finder.Path;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-/**
- * Created by storo_000 on 11.06.2015.
- */
+
 public class SolutionJDBCManager {
     private Statement statement;
 
@@ -27,17 +24,14 @@ public class SolutionJDBCManager {
     public int create(Solution solution) throws SQLException {
         String query = "SELECT * FROM EQUATIONS WHERE (KOEF_A='"+solution.getKoefA()+"' AND KOEF_B='"+solution.getKoefB()+
                 "' AND KOEF_C='"+solution.getKoefC()+"' AND RES_1='"+solution.getRes1()+"' AND RES_2='"+solution.getRes2()+"')";
-        //System.out.println(query);
         if (!statement.executeQuery(query).next()){
             query = "INSERT INTO EQUATIONS(EQUATION_ID,KOEF_A,KOEF_B,KOEF_C,RES_1,RES_2) VALUES (EQUATIONS_SEQ.NEXTVAL,"+
                     solution.getKoefA()+","+solution.getKoefB()+","+solution.getKoefC()+","+solution.getRes2()+","+
                     solution.getRes2()+")";
-            //System.out.println(query);
             statement.executeUpdate(query);
             return 1;
         }
         return -1;
-        //return -1;
     }
 
 

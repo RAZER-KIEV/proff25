@@ -7,8 +7,11 @@ import java.util.List;
  * Created by storo_000 on 11.06.2015.
  */
 public class QuadraticService {
-    List<Solution> solutionList;
+    private List<Solution> solutionList;
 
+    public void setSolutionList(List<Solution> solutionList) {
+        this.solutionList = solutionList;
+    }
 
     public QuadraticService() {
         solutionList = new ArrayList<>();

@@ -7,7 +7,7 @@ import java.util.List;
 public class FileService {
     private String searchedFileName;
     private String pathToSearch;
-    List<Path> paths;
+    private List<Path> paths;
 
     public FileService(String file) {
         this.searchedFileName = file;
