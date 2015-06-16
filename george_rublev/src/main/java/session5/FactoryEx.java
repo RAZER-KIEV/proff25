@@ -4,7 +4,10 @@ public class FactoryEx {
     public static void main(String[] args) {
         Car b = FactoryEx.getInstance("Auto");
         Car c = FactoryEx.getInstance("Excavator", 200);
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     }
 
     private static CreatorAuto creatorAuto = new CreatorAuto();
