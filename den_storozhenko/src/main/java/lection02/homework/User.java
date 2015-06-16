@@ -2,9 +2,6 @@ package lection02.homework;
 
 import java.util.Date;
 
-/**
- * Created by storo_000 on 28.05.2015.
- */
 public class User {
     private String login;
     private String password;
@@ -52,7 +49,4 @@ public class User {
     public int hashCode() {
         return login.hashCode() + password.hashCode() + date.hashCode() + Double.hashCode(raiting) + Character.hashCode(sex);//+time;
     }
-}
-class UserTest{
-
 }

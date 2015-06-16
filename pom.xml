@@ -12,6 +12,8 @@
     <modules>
         <module>proff25_examples</module>
         <module>aleksey_khalikov</module>
+        <module>nick_martyn</module>
+        <module>ievgen_boldyr</module>
         <module>bogdan_iavorskyi</module>
         <module>roman_rudych</module>
         <module>alexandr_omelchenko</module>
@@ -19,13 +21,15 @@
 
         <module>anton_lipskiy</module>
         <module>vitaliy_zholobitskiy</module>
-        <module>Andrey_Dubinin</module>
+        <module>andrey_dubinin</module>
         <module>oleg_chumak</module>
         <module>den_storozhenko</module>
         <module>viktoria_mishchuk</module>
         <module>evgeniy_fortuna</module>
         <module>sviatoslav_ruzhitskiy</module>
         <module>george_rublev</module>
+        <module>julia_brendel</module>
+        <module>svetlana_gazina</module>
 
     </modules>
 
@@ -80,7 +84,7 @@
 
         2) Set up maven
         // For Windows
-        set PATH=%PATH%;D:\Java\apache-maven-3.2.5\bin
+        set PATH=%PATH%;D:\JavaProf\apache-maven-3.2.2\bin
         // For Linux
         export PATH=$PATH:/home/user/install/apache-maven-3.2.1/bin
 
@@ -92,17 +96,17 @@
 
         5) Install driver into repo
         any other steps are not required, only step 5
-        D:\Java\apache-maven-3.2.5\bin\mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.2.0.5.0 -Dpackaging=jar -Dfile=ojdbc6.jar -DgeneratePom=true
+        mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.2.0.5.0 -Dpackaging=jar -Dfile=ojdbc6.jar -DgeneratePom=true
 
         6) Run maven build
 -->
         <!-- ORACLE JDBC driver -->
 
-        <!--       <dependency>
+               <dependency>
                     <groupId>com.oracle</groupId>
                     <artifactId>ojdbc14</artifactId>
                     <version>10.2.0.5.0</version>
-                </dependency>-->
+                </dependency>
 
         <!-- H2 JDBC driver -->
         <dependency>
