@@ -32,11 +32,14 @@ public class HiberConnect {
             throw  new HibernateException("Session does not created.");
     }
 
-    public void close(){
+    public void closeSession(){
         if (session!=null) {
             session.close();
         }
         log.info(session);
+    }
+
+    public void closeFactory(){
         factory.close();
     }
 
