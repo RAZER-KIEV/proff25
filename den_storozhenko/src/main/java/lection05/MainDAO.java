@@ -22,14 +22,20 @@ public class MainDAO {
         SessionFactory factory = cfg.buildSessionFactory(standardServiceRegistry);
         RegionHibernateDaoImpl regionHibernateDao = new RegionHibernateDaoImpl(factory);
 
-
+        /**
+         * read
+         */
         regionHibernateDao.read(2L).print();
-
+        /**
+         * create
+         */
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter name of region:");
         Region region = new Region(scanner.nextLine());
         System.out.println(regionHibernateDao.create(region));
-
+        /**
+         * update
+         */
         System.out.println("Enter new name of region:");
         region.setName(scanner.nextLine());
         regionHibernateDao.update(region);
