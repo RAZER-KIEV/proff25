@@ -1,7 +1,6 @@
 package hw5.auth;
 
-import hw5.users.*;
-import hw5.users.User;
+
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -27,18 +26,12 @@ public class MainWindow extends Application {
         Group root = new Group();
         Scene scene = new Scene(root, 800, 600, Color.LIGHTGREY);
 
-        Button btnAdd = new Button();
-        Button btnView = new Button();
-        btnAdd.setText("Добавить пользователя");
-        btnView.setText("Список пользователей");
-        btnAdd.setPrefSize(150, 35);
-        btnView.setPrefSize(150, 35);
-        btnAdd.setLayoutX(100);
-        btnAdd.setLayoutY(70);
-        btnView.setLayoutX(270);
-        btnView.setLayoutY(70);
-        root.getChildren().add(btnAdd);
-        root.getChildren().add(btnView);
+        Button btnAuth = new Button();
+        btnAuth.setText("Аутентификация");
+        btnAuth.setPrefSize(150, 35);
+        btnAuth.setLayoutX(100);
+        btnAuth.setLayoutY(70);
+        root.getChildren().add(btnAuth);
 
         TextField textFieldName = new TextField();
         textFieldName.setPrefSize(300, 35);
@@ -53,18 +46,17 @@ public class MainWindow extends Application {
         root.getChildren().add(textFieldSurmane);
 
 
-        btnView.setOnMouseClicked(event -> {
-            mainArea.clear();
-            hw5.users.UserJDBCManager userManager = new hw5.users.UserJDBCManager();
-            for (hw5.users.User user : userManager.findAll())
-                mainArea.setText(mainArea.getText() + "\n" + user.toString());
-
-        });
-
-        btnAdd.setOnMouseClicked(event -> {
-            hw5.users.UserJDBCManager userManager = new hw5.users.UserJDBCManager();
-            hw5.users.User user = new User(textFieldName.getText(), textFieldSurmane.getText());
-            userManager.create(user);
+        btnAuth.setOnMouseClicked(event -> {
+            UserJDBCManager userManager = new UserJDBCManager();
+            User user = null;
+            user = userManager.readByNamePass(textFieldName.getText(), textFieldSurmane.getText());
+            if (user != null) {
+                UserJDBCManager userManagerView = new UserJDBCManager();
+            for (User userView : userManagerView.findAll())
+                mainArea.setText(mainArea.getText() + "\n" + userView.toString());
+            } else {
+                mainArea.setText(mainArea.getText() + "\n" + "Неверный логин или пароль");
+            }
             textFieldName.clear();
             textFieldSurmane.clear();
         });
