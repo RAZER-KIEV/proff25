@@ -18,7 +18,7 @@ public class Region {
     @Id
     @Column(name="REGION_ID")
 
-    private int id;
+    private Long id;
 
     @Column(name = "REGION_NAME")
     private String name;
@@ -26,7 +26,7 @@ public class Region {
     public Region() {
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -34,11 +34,16 @@ public class Region {
         this.name = name;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
     public String getName() {
+        return name;
+    }
+
+    @Override
+    public String toString(){
         return name;
     }
 }
