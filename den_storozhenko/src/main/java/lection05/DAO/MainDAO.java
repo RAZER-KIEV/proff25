@@ -15,6 +15,8 @@ import java.util.Scanner;
  * добавить метод поиска региона по имени
  *
  * добавить метод получения регионов по диапазону ID
+ *
+ * вывести имена всех регионов порциями по 2 штуки
  */
 public class MainDAO {
     public static void main(String[] args) {
@@ -28,39 +30,47 @@ public class MainDAO {
 
         /**
          * read
-         */
+         *//*
         regionHibernateDao.read(2L).print();
-        /**
+        *//**
          * create
-         */
+         *//*
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter name of region:");
         Region region = new Region(scanner.nextLine());
         System.out.println(regionHibernateDao.create(region));
-        /**
+        *//**
          * update
-         */
+         *//*
         System.out.println("Enter new name of region:");
         region.setName(scanner.nextLine());
         regionHibernateDao.update(region);
-        /**
+        *//**
          * findAll
-         */
+         *//*
         for (Region concreteRegion:regionHibernateDao.findAll())
             concreteRegion.print();
-        /**
+        *//**
          * find(String name)
-         */
+         *//*
         System.out.println("Enter name finding region:");
         for (Region concreteRegion:regionHibernateDao.find(scanner.nextLine()))
             concreteRegion.print();
-        /**
+        *//**
          * findID(Long startID, Long finishID)
-         */
+         *//*
         System.out.println("Enter start and finish ID's:");
-        for (Region concreteRegion:regionHibernateDao.findID(scanner.nextLong(),scanner.nextLong()))
-            concreteRegion.print();
-
+        for (Region concreteRegion:regionHibernateDao.findID(scanner.nextLong(), scanner.nextLong()))
+            concreteRegion.print();*/
+        /**
+         * getNamesAllRegionsPorced()
+         */
+        Long count = regionHibernateDao.getCount();
+        for (int i=0;i<count;i+=2){
+            for (String str:regionHibernateDao.getNamesAllRegionsPorced(i,2)){
+                System.out.println(i+" "+str);
+            }
+        }
         factory.close();
     }
 }
