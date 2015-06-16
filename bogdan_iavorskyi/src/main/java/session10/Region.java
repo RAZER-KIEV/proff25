@@ -2,8 +2,8 @@ package session10;
 
 import javax.persistence.*;
 
-/**
- * Created by bosyi on 15.06.15.
+/*
+ *
  */
 @Entity
 @Table(name="REGIONS")
@@ -13,7 +13,7 @@ public class Region {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
     @Column(name = "REGION_ID")
 
-    private Integer id;
+    private int id;
 
     @Column(name = "REGION_NAME")
     private String regionName;
