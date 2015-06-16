@@ -45,7 +45,7 @@ public class User {
 
     @Override
     public String toString() {
-        return getUserId() + "    " + getName() + "     " + getPass() + "     " + getRegDate();
+        return getUserId() + "    " + getName() + "     " + getRegDate();
     }
 }
 
