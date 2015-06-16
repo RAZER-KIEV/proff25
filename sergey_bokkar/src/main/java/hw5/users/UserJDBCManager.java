@@ -63,7 +63,6 @@ public class UserJDBCManager {
 
 
     public int create(User user){
-        java.sql.Date currentDate = new java.sql.Date(new java.util.Date().getTime());
         connect();
         int res = 0;
         try {
@@ -78,5 +77,6 @@ public class UserJDBCManager {
 
         return res;
     }
+
 
 }

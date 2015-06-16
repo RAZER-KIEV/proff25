@@ -51,6 +51,23 @@ public class MainWindow extends Application {
         textFieldSurmane.setLayoutY(25);
         root.getChildren().add(textFieldSurmane);
 
+
+        btnView.setOnMouseClicked(event -> {
+            mainArea.clear();
+            UserJDBCManager userManager = new UserJDBCManager();
+            for (User user : userManager.findAll())
+                mainArea.setText(mainArea.getText() + "\n" + user.toString());
+
+        });
+
+        btnAdd.setOnMouseClicked(event -> {
+            UserJDBCManager userManager = new UserJDBCManager();
+            User user = new User(textFieldName.getText(), textFieldSurmane.getText());
+            userManager.create(user);
+            textFieldName.clear();
+            textFieldSurmane.clear();
+        });
+
         mainArea = new TextArea();
         mainArea.setPrefSize(760, 450);
         mainArea.setLayoutX(20);
