@@ -68,7 +68,7 @@ public class MainDAO {
         Long count = regionHibernateDao.getCount();
         for (int i=0;i<count;i+=2){
             for (String str:regionHibernateDao.getNamesAllRegionsPorced(i,2)){
-                System.out.println(i+" "+str);
+                System.out.println(str);
             }
         }
         factory.close();
