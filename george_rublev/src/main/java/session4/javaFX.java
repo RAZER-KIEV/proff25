@@ -32,6 +32,7 @@ public class javaFX extends Application {
         BorderPane pane = new BorderPane();
         final TextArea text = new TextArea("Text\n");
         pane.setCenter(tree);
+<<<<<<< Updated upstream
         pane.setTop(new TextArea("1\n2"));
 //        pane.setBottom(new Button("Ok"));
         Button button = new Button("ok");
@@ -41,6 +42,17 @@ public class javaFX extends Application {
                 text.appendText(" added\n");
             }
         });
+=======
+//        pane.setTop(new TextArea("1\n2"));
+//        pane.setBottom(new Button("Ok"));
+        Button button = new Button("ok");
+//        button.setOnMouseClicked(new EventHandler<MouseEvent>() {
+//            @Override
+//            public void handle(MouseEvent event) {
+//                text.appendText(" added\n");
+//            }
+//        });
+>>>>>>> Stashed changes
         pane.setBottom(button);
         pane.setLeft(new Label("new text"));
 

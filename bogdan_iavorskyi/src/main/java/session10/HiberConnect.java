@@ -31,6 +31,11 @@ public class HiberConnect {
         try {
             session = factory.openSession();
 
+            session.beginTransaction();
+            session.save(new Region("Antarktika"));
+            session.getTransaction().commit();
+
+
         } catch (HibernateException e) {
             log.error("Open session failed", e);
         } finally {
