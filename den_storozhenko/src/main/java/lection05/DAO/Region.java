@@ -1,4 +1,4 @@
-package lection05;
+package lection05.DAO;
 
 import javax.persistence.*;
 
