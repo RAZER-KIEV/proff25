@@ -5,11 +5,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import java.util.Locale;
 
-/**
- * Created by storo_000 on 16.06.2015.
- */
 public class RegionHibernateDaoImpl implements RegionDao {
     private static Logger log = Logger.getLogger(RegionHibernateDaoImpl.class);
     private SessionFactory factory;
