@@ -1,6 +1,6 @@
-package lection05;
+package lection05.hiberconnect;
 
-import org.hibernate.*;
+import org.hibernate.HibernateException;
 
 /**
  * hibernate save/update/delete

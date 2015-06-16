@@ -1,4 +1,4 @@
-package lection05;
+package lection05.hiberconnect;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

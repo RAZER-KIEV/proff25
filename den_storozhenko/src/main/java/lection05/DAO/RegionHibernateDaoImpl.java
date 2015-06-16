@@ -1,9 +1,11 @@
-package lection05;
+package lection05.DAO;
 
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+
+import java.util.List;
 
 
 public class RegionHibernateDaoImpl implements RegionDao {
@@ -77,5 +79,23 @@ public class RegionHibernateDaoImpl implements RegionDao {
             if (session!=null)
                 session.close();
         }
+    }
+
+    @Override
+    public List<Region> findAll() {
+        Session session = factory.openSession();
+        return session.createQuery("from Region").list();
+    }
+
+    @Override
+    public List<Region> find(String name) {
+        Session session = factory.openSession();
+        return session.createQuery("from Region r where r.name = '"+name+"'").list();
+    }
+
+    @Override
+    public List<Region> findID(Long startID, Long finishID) {
+        Session session = factory.openSession();
+        return session.createQuery("from Region r where r.id >= "+startID+" and r.id<="+finishID).list();
     }
 }

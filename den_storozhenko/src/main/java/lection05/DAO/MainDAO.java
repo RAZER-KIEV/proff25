@@ -1,4 +1,4 @@
-package lection05;
+package lection05.DAO;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
@@ -9,8 +9,12 @@ import java.util.Locale;
 import java.util.Scanner;
 
 /**
- * написать DAO Для регионов, CRUD
+ * написать DAO Для регионов, CRUD, findAll
  * пользователь вводит имя региона, создаем, сохраняем, потом новое, изменяем
+ *
+ * добавить метод поиска региона по имени
+ *
+ * добавить метод получения регионов по диапазону ID
  */
 public class MainDAO {
     public static void main(String[] args) {
@@ -39,6 +43,23 @@ public class MainDAO {
         System.out.println("Enter new name of region:");
         region.setName(scanner.nextLine());
         regionHibernateDao.update(region);
+        /**
+         * findAll
+         */
+        for (Region concreteRegion:regionHibernateDao.findAll())
+            concreteRegion.print();
+        /**
+         * find(String name)
+         */
+        System.out.println("Enter name finding region:");
+        for (Region concreteRegion:regionHibernateDao.find(scanner.nextLine()))
+            concreteRegion.print();
+        /**
+         * findID(Long startID, Long finishID)
+         */
+        System.out.println("Enter start and finish ID's:");
+        for (Region concreteRegion:regionHibernateDao.findID(scanner.nextLong(),scanner.nextLong()))
+            concreteRegion.print();
 
         factory.close();
     }
