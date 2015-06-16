@@ -1,10 +1,13 @@
-package lection05;
+package lection05.hiberconnect;
 
 import org.apache.log4j.Logger;
-import org.hibernate.*;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+
 import java.util.List;
 import java.util.Locale;
 
