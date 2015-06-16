@@ -39,6 +39,7 @@ public class HiberConnect {
             }
         }
         log.info(session);
+        factory.close();
     }
 }
 

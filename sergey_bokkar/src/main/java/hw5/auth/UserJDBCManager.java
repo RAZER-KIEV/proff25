@@ -1,7 +1,5 @@
 package hw5.auth;
 
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
