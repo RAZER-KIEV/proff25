@@ -18,8 +18,8 @@ public class Notebook {
     @Column(name = "serial")
     private String serial;
 
-    @Column(name = "vender")
-    private String vender;
+    @Column(name = "vendor")
+    private String vendor;
 
     @Column(name = "model")
     private String model;
@@ -32,10 +32,10 @@ public class Notebook {
 
     public Notebook(){}
 
-    public Notebook(String serial, String vender, String model, String manufactureDate,
+    public Notebook(String serial, String vendor, String model, String manufactureDate,
                     Double price){
         this.serial = serial;
-        this.vender = vender;
+        this.vendor = vendor;
         this.model = model;
         this.manufactureDate = manufactureDate;
         this.price = price;
@@ -45,8 +45,8 @@ public class Notebook {
         return serial;
     }
 
-    public String getVender() {
-        return vender;
+    public String getVendor() {
+        return vendor;
     }
 
     public String getModel() {
@@ -65,8 +65,8 @@ public class Notebook {
         return id;
     }
 
-    public void setVender(String vender) {
-        this.vender = vender;
+    public void setVendor(String vendor) {
+        this.vendor = vendor;
     }
 
     public void setSerial(String serial) {
@@ -87,7 +87,7 @@ public class Notebook {
 
     @Override
     public String toString() {
-        return getId() + "   " + getVender() + "   " + getModel() + "   " + getSerial() + "   " +
+        return getId() + "   " + getVendor() + "   " + getModel() + "   " + getSerial() + "   " +
                 getManufactureDate() + "   " + getPrice();
     }
 }
