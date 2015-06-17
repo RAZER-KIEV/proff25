@@ -15,18 +15,18 @@ public class ChannelEx {
         Path path = Paths.get("text.txt");
         //int size = path.
         //SeekableByteChannel channel = null;
-        try(SeekableByteChannel channel = Files.newByteChannel(path)) {
-            //channel = Files.newByteChannel(path);
-            ByteBuffer buffer = ByteBuffer.allocate(30);
-            //channel.position(0);//  Задаем позицию, с которой читаем их буфера
-            int readed;
-            while ((readed = channel.read(buffer)) > 0) {
-                String line = new String(buffer.array(), 0, readed);
-
-                System.out.print(line);
-                buffer.clear();
-            }
-            channel.read(buffer); // Через канал данные из файла поступают в буфер
+//        try(SeekableByteChannel channel = Files.newByteChannel(path)) {
+//            //channel = Files.newByteChannel(path);
+//            ByteBuffer buffer = ByteBuffer.allocate(30);
+//            //channel.position(0);//  Задаем позицию, с которой читаем их буфера
+//            int readed;
+//            while ((readed = channel.read(buffer)) > 0) {
+//                String line = new String(buffer.array(), 0, readed);
+//
+//                System.out.print(line);
+//                buffer.clear();
+//            }
+//            channel.read(buffer); // Через канал данные из файла поступают в буфер
             //Получаем данные в качестве массива байт
 //        String line = new String(buffer.array());
 //        String line2 = new String(buffer.array(),2,readed);
@@ -40,4 +40,4 @@ public class ChannelEx {
 //        }
     }
 
-}
+//}
