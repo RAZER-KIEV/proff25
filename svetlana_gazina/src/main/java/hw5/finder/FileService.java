@@ -7,14 +7,18 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.FileTime;
+import java.sql.SQLException;
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by Sveta on 6/13/2015.
  */
 public class FileService {
+    private Path path;
 
-    public Path getPath(String fileName, String extension) {
+    public Path getWayToPath(String fileName, String extension) {
         Path path = new Path();
         try{
             File temp = File.createTempFile(fileName, extension);
@@ -35,6 +39,11 @@ public class FileService {
         Date date = new Date(fileCreated.toMillis());
 
         return date;
+    }
+
+    public List<Path> findAll() throws SQLException {
+        PathJDBCManager manager = new PathJDBCManager();
+        return manager.findAll();
     }
 
 }
