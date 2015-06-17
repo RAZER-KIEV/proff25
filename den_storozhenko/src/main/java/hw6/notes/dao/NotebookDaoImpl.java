@@ -6,32 +6,27 @@ import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class NotebookDaoImpl implements NotebookDao {
-    private static Logger log = Logger.getLogger(NotebookDaoImpl.class);
     private static final int STEP_PORCED =2;
+    private static Logger log = Logger.getLogger(NotebookDaoImpl.class);
     private SessionFactory factory;
 
     public NotebookDaoImpl(){
+    }
 
+    public NotebookDaoImpl(SessionFactory factory){
+        this.factory = factory;
     }
 
     public SessionFactory getFactory() {
         return factory;
-
     }
 
     public void setFactory(SessionFactory factory) {
-
-        this.factory = factory;
-    }
-
-    public NotebookDaoImpl(SessionFactory factory){
         this.factory = factory;
     }
 

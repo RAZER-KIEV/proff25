@@ -1,6 +1,5 @@
 package hw6.notes.domain;
 
-
 import javax.persistence.*;
 import java.sql.Date;
 

@@ -1,25 +1,20 @@
 package hw6.notes.service;
 
-
 import hw6.notes.dao.NotebookDaoImpl;
 import hw6.notes.domain.Notebook;
 import org.hibernate.SessionFactory;
-
 import java.sql.Date;
 import java.util.List;
 
 public class NotebookServiceImpl implements NotebookService {
-    //private static Logger log = Logger.getLogger(NotebookServiceImpl.class);
     private NotebookDaoImpl notebookDao;
 
     public NotebookServiceImpl(){
-
     }
 
     public NotebookServiceImpl(SessionFactory factory) {
         notebookDao = new NotebookDaoImpl(factory);
     }
-
 
     public void createDao(SessionFactory factory) {
         notebookDao = new NotebookDaoImpl(factory);

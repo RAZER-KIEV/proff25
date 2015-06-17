@@ -1,10 +1,8 @@
 package hw6.notes.service;
 
 import hw6.notes.domain.Notebook;
-
 import java.sql.Date;
 import java.util.List;
-
 
 public interface NotebookService {
     Long add(Notebook notebook);

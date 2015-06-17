@@ -1,6 +1,5 @@
 package hw6.notes.view;
 
-
 import hw6.notes.domain.Notebook;
 import hw6.notes.service.NotebookServiceImpl;
 import hw6.notes.util.HibernateUtil;
@@ -60,24 +59,23 @@ public class Menu {
     }
 
     public void deleteNtb(Notebook notebook){
-
     }
+
     public void changePrice(Notebook notebook){
-
     }
-    public void changeSerialVendor(Notebook notebook){
 
+    public void changeSerialVendor(Notebook notebook) {
     }
+
     public void deleteByModel(){
-
     }
+
     public void showByVendor(){
-
     }
+
     public void showByPriceManufDate(){
-
     }
-    public void showBetweenPriceLtDateByVendor(){
 
+    public void showBetweenPriceLtDateByVendor(){
     }
 }
