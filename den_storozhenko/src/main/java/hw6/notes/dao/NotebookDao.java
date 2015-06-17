@@ -14,8 +14,8 @@ public interface NotebookDao {
     boolean delete(Notebook ntb);
     List getNotebooksPorced(int start, int size);
     List findAll();
-    List<Notebook> findByModel(String model);
-    List<Notebook> findByVendor(String vendor);
-    List<Notebook> findByPriceManufDate(Double price, Date date);
-    List<Notebook> findBetweenPriceLtDateByVendor(Double priceFrom, Double priceTo, Date date, String vendor);
+    List findByModel(String model);
+    List findByVendor(String vendor);
+    List findByPriceManufDate(Double price, Date date);
+    List findBetweenPriceLtDateByVendor(Double priceFrom, Double priceTo, Date date, String vendor);
 }
