@@ -10,4 +10,5 @@ public interface RegionDao {
     List<Region> findAll();
     List<Region> find(String name);
     List<Region> findID(Long startID, Long finishID);
+    List<String> getNamesAllRegionsPorced(int start, int size);
 }

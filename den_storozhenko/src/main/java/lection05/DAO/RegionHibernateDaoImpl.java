@@ -2,6 +2,7 @@ package lection05.DAO;
 
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -97,5 +98,20 @@ public class RegionHibernateDaoImpl implements RegionDao {
     public List<Region> findID(Long startID, Long finishID) {
         Session session = factory.openSession();
         return session.createQuery("from Region r where r.id >= "+startID+" and r.id<="+finishID).list();
+    }
+
+    @Override
+    public List<String> getNamesAllRegionsPorced(int start, int size) {
+        Session session = factory.openSession();
+        Query query = session.createQuery("select r.name from Region r");
+        query.setFirstResult(start);
+        query.setMaxResults(size);
+        return query.list();
+    }
+
+    public Long getCount(){
+        Session session = factory.openSession();
+        Query query = session.createQuery("select COUNT(r.id) from Region r");
+        return (Long)query.uniqueResult();
     }
 }

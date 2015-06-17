@@ -2259,3 +2259,1138 @@ Caused by: java.sql.SQLException: Invalid column name
 2015-06-16 20:37:37,711 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [reg_id_pk]
 2015-06-16 20:37:37,713 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
 2015-06-16 20:38:59,301 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-16 21:54:11,002 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-16 21:54:11,046 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-16 21:54:11,050 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-16 21:54:11,053 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-16 21:54:11,170 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: session10/hibernate.cfg.xml
+2015-06-16 21:54:11,170 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: session10/hibernate.cfg.xml
+2015-06-16 21:54:11,387 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-16 21:54:11,662 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-16 21:54:12,044 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-16 21:54:12,221 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-16 21:54:12,222 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-16 21:54:12,223 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-16 21:54:12,228 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-16 21:54:15,038 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-16 21:55:09,020 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-16 21:55:09,033 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-16 21:55:09,037 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-16 21:55:09,040 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-16 21:55:09,081 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: session10/hibernate.cfg.xml
+2015-06-16 21:55:09,081 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: session10/hibernate.cfg.xml
+2015-06-16 21:55:09,223 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-16 21:55:09,324 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-16 21:55:09,587 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-16 21:55:09,834 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-16 21:55:09,836 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-16 21:55:09,836 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-16 21:55:09,840 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-16 21:55:10,570 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-16 21:55:11,043 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-16 21:55:11,050 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-16 21:55:11,242 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-16 21:55:11,694 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-16 21:55:11,694 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-16 21:55:12,576 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-16 21:55:13,428 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.REGIONS
+2015-06-16 21:55:13,429 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [region_id, region_name]
+2015-06-16 21:55:13,429 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-16 21:55:13,430 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [reg_id_pk]
+2015-06-16 21:55:13,431 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-16 21:55:26,425 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-16 21:55:26,440 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-16 21:55:26,446 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-16 21:55:26,450 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-16 21:55:26,498 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: session10/hibernate.cfg.xml
+2015-06-16 21:55:26,499 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: session10/hibernate.cfg.xml
+2015-06-16 21:55:26,601 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-16 21:55:26,686 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-16 21:55:26,933 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-16 21:55:27,097 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-16 21:55:27,098 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-16 21:55:27,099 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-16 21:55:27,102 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-16 21:55:27,875 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-16 21:55:28,311 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-16 21:55:28,319 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-16 21:55:28,475 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-16 21:55:29,082 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-16 21:55:29,082 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-16 21:55:29,150 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-16 21:55:29,234 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.REGIONS
+2015-06-16 21:55:29,234 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [region_id, region_name]
+2015-06-16 21:55:29,234 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-16 21:55:29,234 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [reg_id_pk]
+2015-06-16 21:55:29,235 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-16 21:55:29,471 [main] ERROR org.hibernate.hql.internal.ast.ErrorCounter - line 1:14: expecting OPEN, found 'from'
+2015-06-16 21:55:29,472 [main] ERROR org.hibernate.hql.internal.ast.ErrorCounter - line 1:14: expecting OPEN, found 'from'
+line 1:14: expecting OPEN, found 'from'
+	at antlr.Parser.match(Parser.java:211)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.aggregate(HqlBaseParser.java:4840)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.identPrimary(HqlBaseParser.java:4372)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.primaryExpression(HqlBaseParser.java:980)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.atom(HqlBaseParser.java:3609)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.unaryExpression(HqlBaseParser.java:3387)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.multiplyExpression(HqlBaseParser.java:3259)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.additiveExpression(HqlBaseParser.java:2964)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.concatenation(HqlBaseParser.java:597)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.relationalExpression(HqlBaseParser.java:2730)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.equalityExpression(HqlBaseParser.java:2591)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.negatedExpression(HqlBaseParser.java:2555)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.logicalAndExpression(HqlBaseParser.java:2471)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.logicalOrExpression(HqlBaseParser.java:2436)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.expression(HqlBaseParser.java:2146)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.aliasedExpression(HqlBaseParser.java:2389)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectedPropertiesList(HqlBaseParser.java:1415)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectClause(HqlBaseParser.java:1325)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectFrom(HqlBaseParser.java:1062)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.queryRule(HqlBaseParser.java:731)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectStatement(HqlBaseParser.java:323)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.statement(HqlBaseParser.java:186)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:295)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:203)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:158)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:131)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:93)
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:167)
+	at org.hibernate.internal.AbstractSessionImpl.getHQLQueryPlan(AbstractSessionImpl.java:301)
+	at org.hibernate.internal.AbstractSessionImpl.createQuery(AbstractSessionImpl.java:236)
+	at org.hibernate.internal.SessionImpl.createQuery(SessionImpl.java:1800)
+	at lection05.DAO.RegionHibernateDaoImpl.getCount(RegionHibernateDaoImpl.java:114)
+	at lection05.DAO.MainDAO.main(MainDAO.java:68)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+2015-06-16 21:55:29,501 [main] WARN  org.hibernate.hql.internal.ast.HqlParser - HHH000203: processEqualityExpression() : No expression to process!
+2015-06-16 21:55:29,503 [main] ERROR org.hibernate.hql.internal.ast.ErrorCounter - line 1:19: unexpected token: lection05
+2015-06-16 21:55:29,504 [main] ERROR org.hibernate.hql.internal.ast.ErrorCounter - line 1:19: unexpected token: lection05
+line 1:19: unexpected token: lection05
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.aliasedExpression(HqlBaseParser.java:2416)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectedPropertiesList(HqlBaseParser.java:1415)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectClause(HqlBaseParser.java:1325)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectFrom(HqlBaseParser.java:1062)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.queryRule(HqlBaseParser.java:731)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectStatement(HqlBaseParser.java:323)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.statement(HqlBaseParser.java:186)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:295)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:203)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:158)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:131)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:93)
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:167)
+	at org.hibernate.internal.AbstractSessionImpl.getHQLQueryPlan(AbstractSessionImpl.java:301)
+	at org.hibernate.internal.AbstractSessionImpl.createQuery(AbstractSessionImpl.java:236)
+	at org.hibernate.internal.SessionImpl.createQuery(SessionImpl.java:1800)
+	at lection05.DAO.RegionHibernateDaoImpl.getCount(RegionHibernateDaoImpl.java:114)
+	at lection05.DAO.MainDAO.main(MainDAO.java:68)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+2015-06-16 21:56:12,512 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-16 21:56:12,524 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-16 21:56:12,527 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-16 21:56:12,530 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-16 21:56:12,568 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: session10/hibernate.cfg.xml
+2015-06-16 21:56:12,569 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: session10/hibernate.cfg.xml
+2015-06-16 21:56:12,687 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-16 21:56:12,822 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-16 21:56:13,022 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-16 21:56:13,212 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-16 21:56:13,213 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-16 21:56:13,214 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-16 21:56:13,217 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-16 21:56:14,026 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-16 21:56:14,446 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-16 21:56:14,463 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-16 21:56:14,622 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-16 21:56:15,070 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-16 21:56:15,070 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-16 21:56:15,119 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-16 21:56:15,188 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.REGIONS
+2015-06-16 21:56:15,188 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [region_id, region_name]
+2015-06-16 21:56:15,189 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-16 21:56:15,189 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [reg_id_pk]
+2015-06-16 21:56:15,189 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-16 21:56:16,218 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-16 21:57:12,962 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-16 21:57:12,977 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-16 21:57:12,981 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-16 21:57:12,987 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-16 21:57:13,042 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: session10/hibernate.cfg.xml
+2015-06-16 21:57:13,043 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: session10/hibernate.cfg.xml
+2015-06-16 21:57:13,120 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-16 21:57:13,229 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-16 21:57:13,488 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-16 21:57:13,671 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-16 21:57:13,672 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-16 21:57:13,673 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-16 21:57:13,676 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-16 21:57:14,594 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-16 21:57:14,943 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-16 21:57:14,952 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-16 21:57:15,063 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-16 21:57:15,414 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-16 21:57:15,414 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-16 21:57:15,577 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-16 21:57:15,677 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.REGIONS
+2015-06-16 21:57:15,677 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [region_id, region_name]
+2015-06-16 21:57:15,677 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-16 21:57:15,678 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [reg_id_pk]
+2015-06-16 21:57:15,678 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-16 21:57:16,263 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 13:14:07,690 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 13:14:07,722 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 13:14:07,736 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 13:14:07,741 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 13:14:07,798 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: session10/dao.hibernate.cfg.xml
+2015-06-17 13:14:07,798 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: session10/dao.hibernate.cfg.xml
+2015-06-17 13:14:07,930 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 13:14:08,196 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 13:14:08,884 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 13:14:09,469 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 13:14:09,470 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 13:14:09,471 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 13:14:09,474 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 13:14:11,843 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 13:14:12,462 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 13:14:12,470 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 13:14:12,610 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 13:14:13,154 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 13:14:13,154 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 13:14:14,291 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 13:14:15,498 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.REGIONS
+2015-06-17 13:14:15,498 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [region_id, region_name]
+2015-06-17 13:14:15,499 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 13:14:15,499 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [reg_id_pk]
+2015-06-17 13:14:15,500 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 13:14:16,407 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 13:15:31,610 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 13:15:31,642 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 13:15:31,653 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 13:15:31,661 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 13:15:31,750 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: lection05/dao.hibernate.cfg.xml
+2015-06-17 13:15:31,751 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: lection05/dao.hibernate.cfg.xml
+2015-06-17 13:15:31,886 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 13:15:32,095 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 13:15:32,600 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 13:15:32,958 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 13:15:32,959 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 13:15:32,959 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 13:15:32,961 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 13:15:33,661 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 13:15:34,575 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 13:15:34,586 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 13:15:35,016 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 13:15:35,623 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 13:15:35,623 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 13:15:35,716 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 13:15:35,836 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.REGIONS
+2015-06-17 13:15:35,836 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [region_id, region_name]
+2015-06-17 13:15:35,836 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 13:15:35,836 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [reg_id_pk]
+2015-06-17 13:15:35,837 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 13:15:36,489 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 13:54:39,845 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 13:54:39,856 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 13:54:39,859 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 13:54:39,862 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 13:54:39,901 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 13:54:39,904 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 13:54:39,998 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 13:54:40,070 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 13:54:40,295 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 13:54:40,714 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 13:54:40,715 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 13:54:40,716 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 13:54:40,719 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 13:54:41,863 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 13:54:42,108 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 13:54:42,114 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 13:54:42,173 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 13:54:42,551 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+2015-06-17 13:54:46,708 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: drop table NOTEBOOKS cascade constraints
+2015-06-17 13:54:46,708 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport - ORA-00942: table or view does not exist
+
+2015-06-17 13:54:53,548 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: create table NOTEBOOKS (NOTEBOOK_ID number(19,0) not null, DATE date, MODEL varchar2(255 char), PRICE double precision, SERIAL varchar2(255 char), VENDOR varchar2(255 char), primary key (NOTEBOOK_ID))
+2015-06-17 13:54:53,548 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport - ORA-00904: : invalid identifier
+
+2015-06-17 13:54:53,633 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+2015-06-17 13:54:54,800 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 928, SQLState: 42000
+2015-06-17 13:54:54,800 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - ORA-00928: missing SELECT keyword
+
+2015-06-17 13:54:54,802 [main] INFO  org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl - HHH000010: On release of batch it still contained JDBC statements
+2015-06-17 13:54:54,803 [main] ERROR hw6.notes.dao.NotebookDaoImpl - Transaction failed
+2015-06-17 13:54:54,923 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 1747, SQLState: 42000
+2015-06-17 13:54:54,924 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - ORA-01747: invalid user.table.column, table.column, or column specification
+
+2015-06-17 13:54:54,924 [main] INFO  org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl - HHH000010: On release of batch it still contained JDBC statements
+2015-06-17 13:54:54,924 [main] ERROR hw6.notes.dao.NotebookDaoImpl - Transaction failed
+2015-06-17 13:56:42,893 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 13:56:42,904 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 13:56:42,907 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 13:56:42,911 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 13:56:42,981 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 13:56:42,981 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 13:56:43,087 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 13:56:43,177 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 13:56:43,368 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 13:56:43,527 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 13:56:43,528 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 13:56:43,528 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 13:56:43,531 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 13:56:44,435 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 13:56:44,749 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 13:56:44,755 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 13:56:44,842 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 13:56:45,219 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+2015-06-17 13:56:47,382 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: create table NOTEBOOKS (NOTEBOOK_ID number(19,0) not null, DATE date, MODEL varchar2(255 char), PRICE double precision, SERIAL varchar2(255 char), VENDOR varchar2(255 char), primary key (NOTEBOOK_ID))
+2015-06-17 13:56:47,383 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport - ORA-00904: : invalid identifier
+
+2015-06-17 13:56:47,387 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+2015-06-17 13:56:47,676 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 928, SQLState: 42000
+2015-06-17 13:56:47,676 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - ORA-00928: missing SELECT keyword
+
+2015-06-17 13:56:47,677 [main] INFO  org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl - HHH000010: On release of batch it still contained JDBC statements
+2015-06-17 13:56:47,678 [main] ERROR hw6.notes.dao.NotebookDaoImpl - Transaction failed
+2015-06-17 13:56:47,687 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 1747, SQLState: 42000
+2015-06-17 13:56:47,687 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - ORA-01747: invalid user.table.column, table.column, or column specification
+
+2015-06-17 13:56:47,687 [main] INFO  org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl - HHH000010: On release of batch it still contained JDBC statements
+2015-06-17 13:56:47,687 [main] ERROR hw6.notes.dao.NotebookDaoImpl - Transaction failed
+2015-06-17 13:56:47,688 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 13:57:52,451 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 13:57:52,475 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 13:57:52,482 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 13:57:52,487 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 13:57:52,587 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 13:57:52,587 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 13:57:52,729 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 13:57:52,813 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 13:57:53,097 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 13:57:53,258 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 13:57:53,259 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 13:57:53,259 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 13:57:53,262 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 13:57:54,076 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 13:57:54,431 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 13:57:54,437 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 13:57:54,562 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 13:57:55,007 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 13:57:55,007 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 13:57:56,263 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 13:57:56,684 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: NOTEBOOKS
+2015-06-17 13:57:56,689 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: NOTEBOOKS
+2015-06-17 13:57:56,692 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: NOTEBOOKS
+2015-06-17 13:57:56,700 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: create table NOTEBOOKS (NOTEBOOK_ID number(19,0) not null, DATE date, MODEL varchar2(255 char), PRICE double precision, SERIAL varchar2(255 char), VENDOR varchar2(255 char), primary key (NOTEBOOK_ID))
+2015-06-17 13:57:56,700 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00904: : invalid identifier
+
+2015-06-17 13:57:56,701 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 13:57:56,930 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 928, SQLState: 42000
+2015-06-17 13:57:56,930 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - ORA-00928: missing SELECT keyword
+
+2015-06-17 13:57:56,931 [main] INFO  org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl - HHH000010: On release of batch it still contained JDBC statements
+2015-06-17 13:57:56,931 [main] ERROR hw6.notes.dao.NotebookDaoImpl - Transaction failed
+2015-06-17 13:57:56,941 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 1747, SQLState: 42000
+2015-06-17 13:57:56,941 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - ORA-01747: invalid user.table.column, table.column, or column specification
+
+2015-06-17 13:57:56,941 [main] INFO  org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl - HHH000010: On release of batch it still contained JDBC statements
+2015-06-17 13:57:56,942 [main] ERROR hw6.notes.dao.NotebookDaoImpl - Transaction failed
+2015-06-17 13:57:56,943 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 13:58:53,530 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 13:58:53,544 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 13:58:53,548 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 13:58:53,551 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 13:58:53,620 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 13:58:53,620 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 13:58:53,704 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 13:58:53,796 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 13:58:54,018 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 13:58:54,208 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 13:58:54,209 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 13:58:54,209 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 13:58:54,212 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 13:58:55,133 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 13:58:55,416 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 13:58:55,421 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 13:58:55,494 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 13:58:55,842 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 13:58:55,842 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 13:58:55,905 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 13:58:55,967 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: NOTEBOOKS
+2015-06-17 13:58:55,969 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: NOTEBOOKS
+2015-06-17 13:58:55,971 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: NOTEBOOKS
+2015-06-17 13:58:55,975 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: create table NOTEBOOKS (NOTEBOOK_ID number(19,0) not null, DATE date, MODEL varchar2(255 char), PRICE double precision, SERIAL varchar2(255 char), VENDOR varchar2(255 char), primary key (NOTEBOOK_ID))
+2015-06-17 13:58:55,975 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00904: : invalid identifier
+
+2015-06-17 13:58:55,975 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 13:58:56,175 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 928, SQLState: 42000
+2015-06-17 13:58:56,176 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - ORA-00928: missing SELECT keyword
+
+2015-06-17 13:58:56,177 [main] INFO  org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl - HHH000010: On release of batch it still contained JDBC statements
+2015-06-17 13:58:56,177 [main] ERROR hw6.notes.dao.NotebookDaoImpl - Transaction failed
+2015-06-17 13:58:56,181 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 14:03:28,506 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 14:03:28,517 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 14:03:28,521 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 14:03:28,524 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 14:03:28,592 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 14:03:28,592 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 14:03:28,678 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 14:03:28,754 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 14:03:28,998 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 14:03:29,166 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 14:03:29,167 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 14:03:29,167 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 14:03:29,170 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 14:03:30,109 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 14:03:30,394 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 14:03:30,399 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 14:03:30,464 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 14:03:30,822 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+2015-06-17 14:03:30,849 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: drop table NOTEBOOKS cascade constraints
+2015-06-17 14:03:30,849 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport - ORA-00942: table or view does not exist
+
+2015-06-17 14:03:30,869 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: create table NOTEBOOKS (NOTEBOOK_ID number(19,0) not null, DATE date, MODEL varchar2(255 char), PRICE double precision, SERIAL varchar2(255 char), VENDOR varchar2(255 char), primary key (NOTEBOOK_ID))
+2015-06-17 14:03:30,869 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport - ORA-00904: : invalid identifier
+
+2015-06-17 14:03:30,871 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+2015-06-17 14:03:31,124 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 928, SQLState: 42000
+2015-06-17 14:03:31,124 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - ORA-00928: missing SELECT keyword
+
+2015-06-17 14:03:31,125 [main] INFO  org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl - HHH000010: On release of batch it still contained JDBC statements
+2015-06-17 14:03:31,125 [main] ERROR hw6.notes.dao.NotebookDaoImpl - Transaction failed
+2015-06-17 14:03:31,129 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 14:07:46,454 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 14:07:46,466 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 14:07:46,470 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 14:07:46,473 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 14:07:46,508 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 14:07:46,509 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 14:07:46,584 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 14:07:46,660 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 14:07:46,961 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 14:07:47,402 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 14:07:47,403 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 14:07:47,403 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 14:07:47,406 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 14:07:48,498 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 14:07:48,716 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 14:07:48,722 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 14:07:48,809 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 14:07:49,225 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 14:07:49,226 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 14:07:49,309 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 14:07:54,373 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-17 14:07:54,373 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [serial, vendor, price, model, notebook_id, manufact_date]
+2015-06-17 14:07:54,373 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 14:07:54,374 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+2015-06-17 14:07:54,374 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 14:07:54,719 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 14:08:35,708 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 14:08:35,726 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 14:08:35,729 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 14:08:35,733 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 14:08:35,820 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 14:08:35,821 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 14:08:35,928 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 14:08:36,029 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 14:08:36,266 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 14:08:36,477 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 14:08:36,478 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 14:08:36,479 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 14:08:36,482 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 14:08:37,331 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 14:08:37,767 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 14:08:37,783 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 14:08:37,948 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 14:08:38,408 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 14:08:38,408 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 14:08:38,475 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 14:08:38,559 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-17 14:08:38,559 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [serial, vendor, price, model, notebook_id, manufact_date]
+2015-06-17 14:08:38,560 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 14:08:38,560 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+2015-06-17 14:08:38,560 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 14:08:38,824 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 14:09:50,649 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 14:09:50,660 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 14:09:50,663 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 14:09:50,666 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 14:09:50,729 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 14:09:50,729 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 14:09:50,818 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 14:09:50,903 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 14:09:51,126 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 14:09:51,284 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 14:09:51,284 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 14:09:51,285 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 14:09:51,287 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 14:09:52,041 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 14:09:52,362 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 14:09:52,371 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 14:09:52,481 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 14:09:52,932 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 14:09:52,932 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 14:09:52,981 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 14:09:53,052 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-17 14:09:53,053 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [serial, vendor, price, model, notebook_id, manufact_date]
+2015-06-17 14:09:53,053 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 14:09:53,053 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+2015-06-17 14:09:53,055 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: NTB_SEQ
+2015-06-17 14:09:53,072 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 14:09:53,299 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 14:10:45,020 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 14:10:45,033 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 14:10:45,037 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 14:10:45,040 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 14:10:45,086 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 14:10:45,086 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 14:10:45,177 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 14:10:45,278 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 14:10:45,487 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 14:10:45,686 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 14:10:45,687 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 14:10:45,688 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 14:10:45,692 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 14:10:46,210 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 14:10:46,663 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 14:10:46,670 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 14:10:46,893 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 14:10:47,429 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 14:10:47,429 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 14:10:47,497 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 14:10:47,578 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-17 14:10:47,578 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [serial, vendor, price, model, notebook_id, manufact_date]
+2015-06-17 14:10:47,579 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 14:10:47,579 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+2015-06-17 14:10:47,579 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 14:10:47,756 [main] ERROR hw6.notes.dao.NotebookDaoImpl - Transaction failed
+2015-06-17 14:10:47,759 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 14:11:03,215 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 14:11:03,230 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 14:11:03,233 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 14:11:03,237 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 14:11:03,290 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 14:11:03,291 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 14:11:03,372 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 14:11:03,459 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 14:11:03,727 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 14:11:03,913 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 14:11:03,914 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 14:11:03,914 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 14:11:03,917 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 14:11:04,440 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 14:11:04,850 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 14:11:04,859 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 14:11:05,074 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 14:11:05,637 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 14:11:05,637 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 14:11:05,699 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 14:11:05,770 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-17 14:11:05,770 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [serial, vendor, price, model, notebook_id, manufact_date]
+2015-06-17 14:11:05,770 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 14:11:05,771 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+2015-06-17 14:11:05,771 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 14:11:06,268 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 14:11:58,776 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 14:11:58,791 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 14:11:58,795 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 14:11:58,798 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 14:11:58,841 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 14:11:58,842 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 14:11:58,954 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 14:11:59,057 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 14:11:59,301 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 14:11:59,479 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 14:11:59,480 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 14:11:59,480 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 14:11:59,483 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 14:12:00,107 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 14:12:00,522 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 14:12:00,531 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 14:12:00,790 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 14:12:01,336 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 14:12:01,336 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 14:12:01,414 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 14:12:01,490 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-17 14:12:01,490 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [serial, vendor, price, model, notebook_id, manufact_date]
+2015-06-17 14:12:01,490 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 14:12:01,490 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+2015-06-17 14:12:01,491 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 14:12:01,730 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 14:13:34,411 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 14:13:34,423 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 14:13:34,426 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 14:13:34,429 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 14:13:34,464 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 14:13:34,464 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 14:13:34,590 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 14:13:34,700 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 14:13:34,918 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 14:13:35,096 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 14:13:35,096 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 14:13:35,097 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 14:13:35,099 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 14:13:35,866 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 14:13:36,267 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 14:13:36,276 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 14:13:36,372 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 14:13:36,815 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 14:13:36,815 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 14:13:36,871 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 14:13:36,946 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-17 14:13:36,947 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [serial, vendor, price, model, notebook_id, manufact_date]
+2015-06-17 14:13:36,947 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 14:13:36,947 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+2015-06-17 14:13:36,948 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 14:13:37,474 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 14:53:41,651 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 14:53:41,732 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 14:53:41,779 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 14:53:41,782 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 14:53:41,917 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 14:53:41,918 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 14:53:42,134 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 14:53:42,231 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 14:53:42,461 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 14:53:42,870 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 14:53:42,871 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 14:53:42,871 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 14:53:42,885 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 14:53:44,841 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 14:53:45,364 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 14:53:45,384 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 14:53:45,554 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 14:53:46,132 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 14:53:46,132 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 14:53:46,363 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 14:53:46,798 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-17 14:53:46,799 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [serial, vendor, price, model, notebook_id, manufact_date]
+2015-06-17 14:53:46,799 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 14:53:46,799 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+2015-06-17 14:53:46,799 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 14:53:47,519 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 15:01:03,455 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 15:01:03,467 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 15:01:03,472 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 15:01:03,475 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 15:01:03,549 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 15:01:03,550 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 15:01:03,647 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 15:01:03,735 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 15:01:03,973 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 15:01:04,161 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 15:01:04,162 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 15:01:04,163 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 15:01:04,167 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 15:01:05,967 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 15:01:06,213 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 15:01:06,218 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 15:01:06,279 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 15:01:06,636 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 15:01:06,636 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 15:01:08,751 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 15:01:09,656 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-17 15:01:09,656 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [serial, vendor, price, model, notebook_id, manufact_date]
+2015-06-17 15:01:09,657 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 15:01:09,657 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+2015-06-17 15:01:09,658 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 15:01:11,801 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 15:13:53,474 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 15:13:53,499 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 15:13:53,522 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 15:13:53,528 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 15:13:53,572 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 15:13:53,573 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 15:13:53,693 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 15:13:53,787 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 15:13:54,045 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 15:13:54,237 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 15:13:54,239 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 15:13:54,239 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 15:13:54,242 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 15:13:55,146 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 15:13:55,540 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 15:13:55,549 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 15:13:55,679 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 15:13:56,105 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 15:13:56,105 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 15:13:56,165 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 15:13:56,248 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-17 15:13:56,248 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [serial, vendor, price, model, notebook_id, manufact_date]
+2015-06-17 15:13:56,248 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 15:13:56,248 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+2015-06-17 15:13:56,249 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 15:13:56,752 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 15:32:20,091 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 15:32:20,102 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 15:32:20,106 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 15:32:20,109 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 15:32:20,151 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 15:32:20,151 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 15:32:20,281 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 15:32:20,403 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 15:32:20,563 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 15:32:20,737 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 15:32:20,738 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 15:32:20,738 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 15:32:20,742 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 15:32:21,959 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 15:32:22,212 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 15:32:22,217 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 15:32:22,280 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 15:32:22,671 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 15:32:22,671 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 15:32:22,813 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 15:32:23,135 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-17 15:32:23,136 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [serial, vendor, price, model, notebook_id, manufact_date]
+2015-06-17 15:32:23,136 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 15:32:23,136 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+2015-06-17 15:32:23,137 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 15:32:24,629 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 15:33:05,107 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 15:33:05,127 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 15:33:05,132 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 15:33:05,139 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 15:33:05,204 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 15:33:05,205 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 15:33:05,316 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 15:33:05,481 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 15:33:05,677 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 15:33:05,878 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 15:33:05,879 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 15:33:05,879 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 15:33:05,882 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 15:33:06,764 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 15:33:07,236 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 15:33:07,264 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 15:33:07,470 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 15:33:07,960 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 15:33:07,960 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 15:33:08,105 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 15:33:08,208 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-17 15:33:08,208 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [serial, vendor, price, model, notebook_id, manufact_date]
+2015-06-17 15:33:08,208 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 15:33:08,208 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+2015-06-17 15:33:08,209 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 15:33:08,906 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 15:34:38,719 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 15:34:38,738 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 15:34:38,742 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 15:34:38,746 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 15:34:38,789 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 15:34:38,789 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 15:34:38,912 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 15:34:39,058 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 15:34:39,238 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 15:34:39,435 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 15:34:39,436 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 15:34:39,436 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 15:34:39,439 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 15:34:40,040 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 15:34:40,559 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 15:34:40,570 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 15:34:40,674 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 15:34:41,258 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 15:34:41,258 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 15:34:41,336 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 15:34:41,405 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-17 15:34:41,406 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [serial, vendor, price, model, notebook_id, manufact_date]
+2015-06-17 15:34:41,406 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 15:34:41,406 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+2015-06-17 15:34:41,407 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 15:34:41,880 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 16:13:58,505 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 16:13:58,517 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 16:13:58,520 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 16:13:58,524 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 16:13:58,574 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 16:13:58,574 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 16:13:58,673 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 16:13:58,756 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 16:13:59,010 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 16:13:59,170 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 16:13:59,171 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 16:13:59,172 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 16:13:59,175 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 16:14:00,385 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 16:14:00,648 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 16:14:00,653 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 16:14:00,719 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 16:14:01,105 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 16:14:01,106 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 16:14:02,255 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 16:14:03,114 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-17 16:14:03,116 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [serial, vendor, price, model, notebook_id, manufact_date]
+2015-06-17 16:14:03,116 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 16:14:03,116 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+2015-06-17 16:14:03,118 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 16:14:42,081 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 16:14:42,104 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 16:14:42,110 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 16:14:42,116 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 16:14:42,159 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 16:14:42,159 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 16:14:42,262 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 16:14:42,366 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 16:14:42,599 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 16:14:42,786 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 16:14:42,786 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 16:14:42,787 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 16:14:42,790 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 16:14:43,420 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 16:14:43,942 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 16:14:43,953 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 16:14:44,122 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 16:14:44,640 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 16:14:44,640 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 16:14:44,726 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 16:14:44,801 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-17 16:14:44,802 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [serial, vendor, price, model, notebook_id, manufact_date]
+2015-06-17 16:14:44,802 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 16:14:44,802 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+2015-06-17 16:14:44,803 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 16:14:46,062 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 16:15:09,735 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 16:15:09,748 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 16:15:09,751 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 16:15:09,754 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 16:15:09,815 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 16:15:09,815 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 16:15:09,909 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 16:15:09,991 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 16:15:10,189 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 16:15:10,367 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 16:15:10,368 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 16:15:10,369 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 16:15:10,372 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 16:15:11,380 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 16:15:11,649 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 16:15:11,654 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 16:15:11,723 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 16:15:12,099 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 16:15:12,100 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 16:15:12,181 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 16:15:12,255 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-17 16:15:12,255 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [serial, vendor, price, model, notebook_id, manufact_date]
+2015-06-17 16:15:12,255 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 16:15:12,255 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+2015-06-17 16:15:12,256 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 16:15:12,801 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 16:17:26,791 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 16:17:26,814 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 16:17:26,818 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 16:17:26,829 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 16:17:26,870 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 16:17:26,870 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 16:17:26,963 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 16:17:27,087 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 16:17:27,331 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 16:17:27,541 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 16:17:27,543 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 16:17:27,543 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 16:17:27,550 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 16:17:28,712 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 16:17:29,005 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 16:17:29,012 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 16:17:29,128 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 16:17:29,504 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 16:17:29,504 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 16:17:29,557 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 16:17:29,657 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-17 16:17:29,657 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [serial, vendor, price, model, notebook_id, manufact_date]
+2015-06-17 16:17:29,657 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 16:17:29,658 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+2015-06-17 16:17:29,658 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 16:17:30,381 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 16:18:06,749 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 16:18:06,768 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 16:18:06,773 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 16:18:06,777 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 16:18:06,829 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 16:18:06,829 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 16:18:06,937 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 16:18:07,005 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 16:18:07,244 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 16:18:07,415 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 16:18:07,416 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 16:18:07,416 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 16:18:07,418 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 16:18:08,077 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 16:18:08,656 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 16:18:08,669 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 16:18:08,837 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 16:18:09,275 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 16:18:09,275 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 16:18:09,345 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 16:18:09,421 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-17 16:18:09,422 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [serial, vendor, price, model, notebook_id, manufact_date]
+2015-06-17 16:18:09,422 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 16:18:09,422 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+2015-06-17 16:18:09,422 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 16:18:09,836 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 16:18:36,367 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 16:18:36,387 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 16:18:36,391 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 16:18:36,396 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 16:18:36,445 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 16:18:36,446 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 16:18:36,562 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 16:18:36,718 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 16:18:36,889 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 16:18:37,066 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 16:18:37,067 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 16:18:37,067 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 16:18:37,069 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 16:18:37,760 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 16:18:38,227 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 16:18:38,273 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 16:18:38,382 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 16:18:38,835 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 16:18:38,835 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 16:18:38,907 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 16:18:38,982 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-17 16:18:38,982 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [serial, vendor, price, model, notebook_id, manufact_date]
+2015-06-17 16:18:38,982 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 16:18:38,982 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+2015-06-17 16:18:38,983 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 16:18:39,410 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 16:18:56,956 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 16:18:56,970 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 16:18:56,974 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 16:18:56,977 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 16:18:57,026 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 16:18:57,026 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 16:18:57,108 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 16:18:57,207 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 16:18:57,453 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 16:18:57,603 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 16:18:57,604 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 16:18:57,604 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 16:18:57,607 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 16:18:58,427 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 16:18:58,951 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 16:18:58,962 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 16:18:59,181 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 16:18:59,712 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 16:18:59,712 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 16:18:59,761 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 16:18:59,833 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-17 16:18:59,833 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [serial, vendor, price, model, notebook_id, manufact_date]
+2015-06-17 16:18:59,833 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 16:18:59,833 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+2015-06-17 16:18:59,834 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 16:19:00,560 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 16:29:35,561 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 16:29:35,578 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 16:29:35,581 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 16:29:35,584 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 16:29:35,621 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 16:29:35,622 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 16:29:35,743 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 16:29:35,817 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 16:29:36,069 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 16:29:36,256 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 16:29:36,257 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 16:29:36,257 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 16:29:36,260 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 16:29:37,096 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 16:29:37,473 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 16:29:37,481 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 16:29:37,614 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 16:29:38,179 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 16:29:38,179 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 16:29:38,239 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 16:29:38,318 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-17 16:29:38,318 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [serial, vendor, price, model, notebook_id, manufact_date]
+2015-06-17 16:29:38,318 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 16:29:38,318 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+2015-06-17 16:29:38,319 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 16:29:38,793 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 16:30:33,109 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 16:30:33,124 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 16:30:33,134 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 16:30:33,138 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 16:30:33,180 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 16:30:33,180 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 16:30:33,276 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 16:30:33,348 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 16:30:33,584 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 16:30:33,754 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 16:30:33,754 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 16:30:33,755 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 16:30:33,758 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 16:30:34,715 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 16:30:34,997 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 16:30:35,009 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 16:30:35,135 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 16:30:35,524 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 16:30:35,524 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 16:30:35,573 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 16:30:35,648 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-17 16:30:35,648 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [serial, vendor, price, model, notebook_id, manufact_date]
+2015-06-17 16:30:35,648 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 16:30:35,648 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+2015-06-17 16:30:35,649 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 16:30:36,157 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 16:31:51,719 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 16:31:51,732 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 16:31:51,735 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 16:31:51,738 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 16:31:51,771 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 16:31:51,771 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 16:31:51,880 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 16:31:52,023 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 16:31:52,204 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 16:31:52,384 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 16:31:52,385 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 16:31:52,385 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 16:31:52,388 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 16:31:53,128 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 16:31:53,553 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 16:31:53,567 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 16:31:53,701 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 16:31:54,272 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 16:31:54,272 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 16:31:54,343 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 16:31:54,433 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-17 16:31:54,433 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [serial, vendor, price, model, notebook_id, manufact_date]
+2015-06-17 16:31:54,433 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 16:31:54,434 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+2015-06-17 16:31:54,434 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 16:31:54,983 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 16:33:03,325 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 16:33:03,339 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 16:33:03,342 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 16:33:03,345 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 16:33:03,387 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 16:33:03,387 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 16:33:03,477 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 16:33:03,621 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 16:33:03,868 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 16:33:04,042 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 16:33:04,043 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 16:33:04,043 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 16:33:04,045 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 16:33:04,659 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 16:33:05,235 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 16:33:05,278 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 16:33:05,429 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 16:33:05,975 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 16:33:05,975 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 16:33:06,022 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 16:33:06,093 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-17 16:33:06,093 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [serial, vendor, price, model, notebook_id, manufact_date]
+2015-06-17 16:33:06,093 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 16:33:06,094 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+2015-06-17 16:33:06,094 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 16:33:06,467 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 16:34:44,316 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 16:34:44,326 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 16:34:44,329 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 16:34:44,332 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 16:34:44,389 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 16:34:44,389 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 16:34:44,484 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 16:34:44,552 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 16:34:44,774 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 16:34:44,935 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 16:34:44,936 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 16:34:44,936 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 16:34:44,939 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 16:34:45,759 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 16:34:46,157 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 16:34:46,166 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 16:34:46,259 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 16:34:46,789 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 16:34:46,790 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 16:34:46,968 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 16:34:47,052 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-17 16:34:47,053 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [serial, vendor, price, model, notebook_id, manufact_date]
+2015-06-17 16:34:47,053 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 16:34:47,053 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+2015-06-17 16:34:47,054 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 16:34:49,026 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 16:36:21,495 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 16:36:21,508 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 16:36:21,511 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 16:36:21,514 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 16:36:21,574 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 16:36:21,574 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 16:36:21,674 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 16:36:21,740 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 16:36:21,947 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 16:36:22,107 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 16:36:22,108 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 16:36:22,108 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 16:36:22,110 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 16:36:23,042 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 16:36:23,357 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 16:36:23,366 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 16:36:23,460 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 16:36:23,867 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 16:36:23,867 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 16:36:23,914 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 16:36:23,985 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-17 16:36:23,985 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [serial, vendor, price, model, notebook_id, manufact_date]
+2015-06-17 16:36:23,986 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 16:36:23,986 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+2015-06-17 16:36:23,986 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 16:36:24,353 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 17:23:48,355 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 17:23:48,368 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 17:23:48,372 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 17:23:48,375 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 17:23:48,412 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 17:23:48,412 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 17:23:48,530 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 17:23:48,625 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 17:23:48,874 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 17:23:49,042 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 17:23:49,043 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 17:23:49,044 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 17:23:49,047 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 17:23:50,225 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 17:23:50,570 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 17:23:50,575 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 17:23:50,641 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 17:23:51,057 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 17:23:51,057 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 17:23:53,979 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 17:23:55,483 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-17 17:23:55,483 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [serial, vendor, price, model, notebook_id, manufact_date]
+2015-06-17 17:23:55,484 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 17:23:55,484 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+2015-06-17 17:23:55,485 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 17:23:56,182 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 17:24:42,336 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-17 17:24:42,351 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-17 17:24:42,355 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-17 17:24:42,358 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-17 17:24:42,398 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw6/dao.notebook.cfg.xml
+2015-06-17 17:24:42,398 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw6/dao.notebook.cfg.xml
+2015-06-17 17:24:42,487 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-17 17:24:42,612 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-17 17:24:42,848 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-17 17:24:43,048 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-17 17:24:43,049 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=hr, password=****}
+2015-06-17 17:24:43,049 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-17 17:24:43,052 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-17 17:24:43,714 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-17 17:24:44,261 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-17 17:24:44,273 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-17 17:24:44,527 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-17 17:24:45,196 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-17 17:24:45,196 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-17 17:24:45,335 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-17 17:24:45,410 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-17 17:24:45,410 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [serial, vendor, price, model, notebook_id, manufact_date]
+2015-06-17 17:24:45,411 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-17 17:24:45,411 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: []
+2015-06-17 17:24:45,411 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-17 17:24:46,266 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]

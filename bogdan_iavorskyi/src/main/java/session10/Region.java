@@ -13,7 +13,7 @@ public class Region {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
     @Column(name = "REGION_ID")
 
-    private int id;
+    private Long id;
 
     @Column(name = "REGION_NAME")
     private String regionName;
@@ -31,5 +31,13 @@ public class Region {
 
     public String getRegionName() {
         return regionName;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
