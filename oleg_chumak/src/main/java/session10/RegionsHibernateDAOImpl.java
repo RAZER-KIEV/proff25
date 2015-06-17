@@ -80,6 +80,9 @@ public class RegionsHibernateDAOImpl implements RegionDao {
         }
     }
 
+    public RegionsHibernateDAOImpl() {
+    }
+
     @Override
     public List<Region> findAll() {
         Session session = factory.openSession();
