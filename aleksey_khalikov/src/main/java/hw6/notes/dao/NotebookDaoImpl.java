@@ -1,113 +1,96 @@
 package hw6.notes.dao;
 
 import hw6.notes.domain.Notebook;
-import hw6.notes.util.HibernateUtil;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import java.util.List;
 
 /**
- * Created by Well on 17.06.2015.
+ * Created by GFalcon on 17.06.15.
  */
 public class NotebookDaoImpl implements NotebookDao {
     private static Logger log = Logger.getLogger(NotebookDaoImpl.class);
     private SessionFactory factory;
 
-    public NotebookDaoImpl(){
-        HibernateUtil hu = new HibernateUtil();
-        this.factory = hu.connect();
-    }
-
     public NotebookDaoImpl(SessionFactory factory){
         this.factory = factory;
     }
 
-
     @Override
     public Long create(Notebook ntb) {
+        Long id = null;
         Session session = factory.openSession();
-        Long id;
         try {
-            session.beginTransaction();
+            session.getTransaction().begin();
             id = (Long)session.save(ntb);
             session.getTransaction().commit();
-            return id;
-        } catch (HibernateException e) {
-            log.error("Open session failed", e);
+        } catch (HibernateException e){
+            log.error("Create transaction error: " + e.getMessage());
             session.getTransaction().rollback();
         } finally {
-            if (session != null) {
-                session.close();
-            }
+            session.close();
         }
-        log.info(session);
-        return null;
+        return id;
     }
 
     @Override
-    public Notebook read(Long id) {
+    public Notebook read(Long ig) {
         Session session = factory.openSession();
         try {
-            session.beginTransaction();
-
-            return (Notebook) session.get(Notebook.class, id);
-        } catch (HibernateException e) {
-            log.error("Open session failed", e);
+            return (Notebook)session.get(Notebook.class, ig);
+        } catch (HibernateException e){
+            log.error("Read operation error: " + e.getMessage());
         } finally {
-            if (session != null) {
-                session.close();
-            }
+            session.close();
         }
-        log.info(session);
         return null;
     }
 
     @Override
     public boolean update(Notebook ntb) {
+        boolean res = false;
         Session session = factory.openSession();
         try {
-            session.beginTransaction();
+            session.getTransaction().begin();
             session.update(ntb);
             session.getTransaction().commit();
-            return true;
-        } catch (HibernateException e) {
-            log.error("Open session failed", e);
+            res = true;
+        } catch (HibernateException e){
+            log.error("Update error: " + e.getMessage());
             session.getTransaction().rollback();
         } finally {
-            if (session != null) {
-                session.close();
-            }
+            session.close();
         }
-        log.info(session);
-        return false;
+        return res;
     }
 
     @Override
     public boolean delete(Notebook ntb) {
+        boolean res = false;
         Session session = factory.openSession();
         try {
-            session.beginTransaction();
+            session.getTransaction().begin();
             session.delete(ntb);
             session.getTransaction().commit();
-            return true;
-        } catch (HibernateException e) {
-            log.error("Open session failed", e);
+            res = true;
+        } catch (HibernateException e){
+            log.error("Delete operation error: " + e.getMessage());
             session.getTransaction().rollback();
         } finally {
-            if (session != null) {
-                session.close();
-            }
+            session.close();
         }
-        log.info(session);
-        return false;
+        return res;
     }
 
     @Override
     public List<Notebook> findAll() {
         Session session = factory.openSession();
-        return session.createQuery("from Notebook t").list();
+        Query query = session.createQuery("from Notebook");
+        session.close();
+        return query.list();
     }
 }
