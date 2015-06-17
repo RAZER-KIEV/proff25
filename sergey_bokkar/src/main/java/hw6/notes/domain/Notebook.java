@@ -1,4 +1,4 @@
-package hw6.domain;
+package hw6.notes.domain;
 
 import javax.persistence.*;
 

@@ -1,6 +1,6 @@
-package hw6.dao;
+package hw6.notes.dao;
 
-import hw6.domain.Notebook;
+import hw6.notes.domain.Notebook;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
