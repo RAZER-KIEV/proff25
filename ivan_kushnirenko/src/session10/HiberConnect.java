@@ -1,4 +1,4 @@
-package lection05;
+package session10;
 
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
@@ -30,7 +30,8 @@ public class HiberConnect {
         Session session = null;
         try {
             session = factory.openSession();
-
+            Region region = (Region)session.get(Region.class,1L); // Получаем объект из бд
+            Long id = (Long)session.save(new Region());
         } catch (HibernateException e) {
             log.error("Open session failed", e);
         } finally {
@@ -39,6 +40,7 @@ public class HiberConnect {
             }
         }
         log.info(session);
+        factory.close();
     }
 }
 

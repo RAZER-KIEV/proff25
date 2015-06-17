@@ -1,4 +1,4 @@
-package session10;
+package lection05.hiberconnect;
 
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
@@ -11,22 +11,17 @@ import org.hibernate.cfg.Configuration;
 import java.util.List;
 import java.util.Locale;
 
-/**
- * Created with IntelliJ IDEA.
- * User: al1
- * Date: 20.09.14
- */
-public class HiberConnect {
 
+public class HiberConnect {
     private static Logger log = Logger.getLogger(HiberConnect.class);
     private SessionFactory factory;
     private Session session;
 
-    public HiberConnect() {
+    public HiberConnect(){
         Locale.setDefault(Locale.ENGLISH);
     }
 
-    public void openFactory() {
+    public void init(){
         Configuration cfg = new Configuration().configure("session10/hibernate.cfg.xml");
         StandardServiceRegistryBuilder sb = new StandardServiceRegistryBuilder();
         sb.applySettings(cfg.getProperties());
@@ -35,60 +30,69 @@ public class HiberConnect {
         log.info("Reference to SessionFactory " + factory);
     }
 
-    public void closeFactory() {
+    public void openSession(){
+        if ((session = factory.openSession())==null)
+            throw  new HibernateException("Session does not created.");
+    }
+
+    public void closeSession(){
+        if (session!=null) {
+            session.close();
+        }
+        log.info(session);
+    }
+
+    public void closeFactory(){
         factory.close();
     }
 
-    public void openSession() {
-        session = factory.openSession();
-    }
-
-    public void closeSession() {
-        session.close();
-    }
-
-    public void beginTransaction() {
+    public void beginTransaction(){
         session.beginTransaction();
     }
 
-    public void commitTransaction() {
+    public void commit(){
         session.getTransaction().commit();
     }
 
-    public void insert(String name) {
-        insert(new Region(name));
+    public void delete(Region region){
+        session.delete(region);
     }
 
-    public void insert(Region region) {
+    public void delete(Long id){
+        System.err.println(id);
+        session.delete((Region)session.get(Region.class,id));
+    }
+
+    public void delete(String name){
+        List<Region> regionList = session.createSQLQuery("SELECT * FROM REGIONS WHERE REGION_NAME='" + name + "'").addEntity(Region.class).list();
+        for (Region region:regionList){
+            session.delete(region);
+        }
+    }
+
+    public void save(String name){
+        session.save(new Region(name));
+    }
+
+    public void save(Region region){
         session.save(region);
     }
 
-    public void update(String currentName, String replaceName) {
-        List<Region> regions = session.createSQLQuery("SELECT * FROM REGIONS WHERE REGION_NAME = '"+currentName+"'").addEntity(Region.class).list();
-        for(Region region:regions) {
-            region.setRegionName(replaceName);
+    public void update(String what, String to){
+        List<Region> regionList = session.createSQLQuery("SELECT * FROM REGIONS WHERE REGION_NAME='"+what+"'").addEntity(Region.class).list();
+        for(Region region:regionList) {
+            region.setName(to);
             session.update(region);
         }
     }
 
-    public void update(Long id, String replaceName) {
-        update(id, new Region(replaceName));
-    }
-
-    public void update(Long id, Region region) {
-        region.setId(id);
+    public void update(Long id, String to){
+        Region region = (Region)session.get(Region.class,id);
+        region.setName(to);
         session.update(region);
     }
 
-    public void delete(String regionName) {
-        delete(new Region(regionName));
-    }
-
-    public void delete(Region region) {
-        session.delete(region);
-    }
-
-    /*public static void main(String[] args) {
+    /*public static void main(String[] args) throws InterruptedException {
         Locale.setDefault(Locale.ENGLISH);
         Configuration cfg = new Configuration().configure("session10/hibernate.cfg.xml");
         StandardServiceRegistryBuilder sb = new StandardServiceRegistryBuilder();
@@ -100,14 +104,12 @@ public class HiberConnect {
         Session session = null;
         try {
             session = factory.openSession();
-
             session.beginTransaction();
-            session.save(new Region("Antarktika"));
+
             session.getTransaction().commit();
-
-
         } catch (HibernateException e) {
             log.error("Open session failed", e);
+            session.getTransaction().rollback();
         } finally {
             if (session != null) {
                 session.close();
@@ -116,6 +118,5 @@ public class HiberConnect {
         log.info(session);
         factory.close();
     }*/
-
 }
 
