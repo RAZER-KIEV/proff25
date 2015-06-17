@@ -1,6 +1,7 @@
 package hw6.notes.dao;
 
 import hw6.notes.domain.Notebook;
+import hw6.notes.util.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -15,11 +16,15 @@ public class NotebookDaoImpl implements NotebookDao {
 
     private SessionFactory factory;
 
-    public NotebookDaoImpl(SessionFactory factory) {
-        this.factory = factory;
+    private HibernateUtil util = new HibernateUtil();
+
+    public SessionFactory getFactory() {
+        return factory;
     }
 
     public NotebookDaoImpl() {
+        util.createSessionFactory();
+        this.factory = util.getFactory();
     }
 
     @Override
