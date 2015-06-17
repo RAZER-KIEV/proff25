@@ -21,7 +21,7 @@ import java.util.Scanner;
 public class MainDAO {
     public static void main(String[] args) {
         Locale.setDefault(Locale.ENGLISH);
-        Configuration cfg = new Configuration().configure("session10/hibernate.cfg.xml");
+        Configuration cfg = new Configuration().configure("lection05/dao.hibernate.cfg.xml");
         StandardServiceRegistryBuilder sb = new StandardServiceRegistryBuilder();
         sb.applySettings(cfg.getProperties());
         StandardServiceRegistry standardServiceRegistry = sb.build();
@@ -66,8 +66,9 @@ public class MainDAO {
          * getNamesAllRegionsPorced()
          */
         Long count = regionHibernateDao.getCount();
-        for (int i=0;i<count;i+=2){
-            for (String str:regionHibernateDao.getNamesAllRegionsPorced(i,2)){
+        int step = 2;
+        for (int i=0;i<count;i+=step){
+            for (String str:regionHibernateDao.getNamesAllRegionsPorced(i,step)){
                 System.out.println(str);
             }
         }
