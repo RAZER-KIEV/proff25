@@ -34,9 +34,9 @@ public class QuadraticService {
         double discr;
         double root1;
         double root2;
-        for (int i = fromA; i < toA; i++) {
-            for (int j = fromB; j < toB; j++) {
-                for (int k = fromC; k < toC; k++) {
+        for (int i = fromA; i <= toA; i++) {
+            for (int j = fromB; j <= toB; j++) {
+                for (int k = fromC; k <= toC; k++) {
                     discr = Math.sqrt((j * j) - (4 * i * k));
                     root1 = (-j + discr)/2 * i;
                     root2 = (-j - discr)/2 * i;
