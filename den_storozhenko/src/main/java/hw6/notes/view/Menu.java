@@ -24,4 +24,14 @@ public class Menu {
 
         hibernateUtil.closeFactory();
     }
+
+    public void deleteNtb(Notebook notebook){
+
+    }
+    public void changePrice(Notebook notebook){
+
+    }
+    public void changeSerialVendor(Notebook notebook){
+
+    }
 }
