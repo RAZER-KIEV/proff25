@@ -75,4 +75,60 @@ public class NotebookServiceImpl implements NotebookService {
         }
         return notebooks;
     }
+
+    @Override
+    public void changePrice(Long id, double price) {
+        Session session = factory.openSession();
+        try {
+            session.beginTransaction();
+            Notebook notebook = (Notebook)session.createQuery("from Notebook n where n.id="+id).uniqueResult();
+            notebook.setPrice(price);
+            session.update(notebook);
+            session.getTransaction().commit();
+        }catch (HibernateException e){
+            log.error("Transaction failed");
+            session.getTransaction().rollback();
+        }finally {
+            if (session != null)
+                session.close();
+        }
+    }
+
+    @Override
+    public void changeSerialVendor(Long id, String serial, String vendor) {
+        Session session = factory.openSession();
+        try {
+            session.beginTransaction();
+            Notebook notebook = (Notebook)session.createQuery("from Notebook n where n.id="+id).uniqueResult();
+            notebook.setSerial(serial);
+            notebook.setVendor(vendor);
+            session.update(notebook);
+            session.getTransaction().commit();
+        }catch (HibernateException e){
+            log.error("Transaction failed");
+            session.getTransaction().rollback();
+        }finally {
+            if (session != null)
+                session.close();
+        }
+    }
+
+    @Override
+    public boolean delete(Long id) {
+        Session session = factory.openSession();
+        try {
+            session.beginTransaction();
+            Notebook notebook = (Notebook)session.createQuery("from Notebook n where n.id="+id).uniqueResult();
+            session.delete(notebook);
+            session.getTransaction().commit();
+            return true;
+        }catch (HibernateException e){
+            log.error("Transaction failed");
+            session.getTransaction().rollback();
+            return false;
+        }finally {
+            if (session != null)
+                session.close();
+        }
+    }
 }
