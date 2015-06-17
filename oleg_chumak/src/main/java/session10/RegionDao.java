@@ -14,4 +14,5 @@ public interface RegionDao {
     List<Region> findAll();
     List<Region> findByName(String name);
     List<Region> findById(Long firstId, Long lastId);
+    List<Region> findAllbyPortions(Long start, Long range);
 }
