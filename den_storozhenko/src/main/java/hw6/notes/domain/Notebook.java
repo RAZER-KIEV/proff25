@@ -55,7 +55,6 @@ public class Notebook {
     }
 
     public Long getId() {
-
         return id;
     }
 
