@@ -98,6 +98,6 @@ public class Notebook {
 
     @Override
     public String toString(){
-        return "\n" +serial+ ", " +vendor+ "," +model+ "," +date+ "," +price;
+        return "\n" +id+ ", " +serial+ ", " +vendor+ "," +model+ "," +date+ "," +price;
     }
 }
