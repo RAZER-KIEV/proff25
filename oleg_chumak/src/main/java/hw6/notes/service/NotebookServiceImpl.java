@@ -29,4 +29,24 @@ public class NotebookServiceImpl implements NotebookService {
     public List<Notebook> findAll() {
         return dao.findAll();
     }
+
+    @Override
+    public void changePrice(Long id, double price) {
+        Notebook note = dao.read(id);
+        note.setPrice(price);
+        dao.update(note);
+    }
+
+    @Override
+    public void changeSerialVendor(Long id, String serial, String vendor) {
+        Notebook note = dao.read(id);
+        note.setVendor(vendor);
+        note.setSerial(serial);
+        dao.update(note);
+    }
+
+    @Override
+    public boolean delete(Long id) {
+        return    dao.delete(dao.read(id));
+    }
 }
