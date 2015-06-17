@@ -31,7 +31,7 @@ public class Notebook {
     private String model;
 
     @Column(name = "MANUFACTURE_DATE")
-    private String date;
+    private Date date;
 
     @Column(name = "PRICE")
     private Long price;
@@ -40,7 +40,7 @@ public class Notebook {
     public Notebook() {
     }
 
-    public Notebook(Long serial, String vendor, String model, String date, Long price) {
+    public Notebook(Long serial, String vendor, String model, Date date, Long price) {
         this.serial = serial;
         this.vendor = vendor;
         this.model = model;
@@ -64,7 +64,7 @@ public class Notebook {
         return model;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
@@ -88,7 +88,7 @@ public class Notebook {
         this.model = model;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
@@ -98,6 +98,6 @@ public class Notebook {
 
     @Override
     public String toString(){
-        return "\n" +serial+ ", " +vendor+ "," +model+ "," +date+ "," +price;
+        return "\n" +id+ ", " +serial+ ", " +vendor+ "," +model+ "," +date+ "," +price;
     }
 }

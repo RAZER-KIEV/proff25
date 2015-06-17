@@ -1,7 +1,7 @@
 package hw6.notes.dao;
 
 import hw6.notes.domain.Notebook;
-import hw6.notes.util.HibernateUtil;
+import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -10,33 +10,40 @@ import org.hibernate.SessionFactory;
 import java.util.List;
 
 /**
- * Created by oleg on 17.06.15.
+ * Created by GFalcon on 17.06.15.
  */
 public class NotebookDaoImpl implements NotebookDao {
-
+    private static Logger log = Logger.getLogger(NotebookDaoImpl.class);
     private SessionFactory factory;
 
-    private HibernateUtil util = new HibernateUtil();
-
-    public SessionFactory getFactory() {
-        return factory;
-    }
-
-    public NotebookDaoImpl() {
-        util.createSessionFactory();
-        this.factory = util.getFactory();
+    public NotebookDaoImpl(SessionFactory factory){
+        this.factory = factory;
     }
 
     @Override
     public Long create(Notebook ntb) {
+        Long id = null;
         Session session = factory.openSession();
         try {
-            session.beginTransaction();
-            Long id = (Long)session.save(ntb);
+            session.getTransaction().begin();
+            id = (Long)session.save(ntb);
             session.getTransaction().commit();
-            return id;
-        } catch (HibernateException except){
+        } catch (HibernateException e){
+            log.error("Create transaction error: " + e.getMessage());
             session.getTransaction().rollback();
+        } finally {
+            session.close();
+        }
+        return id;
+    }
+
+    @Override
+    public Notebook read(Long ig) {
+        Session session = factory.openSession();
+        try {
+            return (Notebook)session.get(Notebook.class, ig);
+        } catch (HibernateException e){
+            log.error("Read operation error: " + e.getMessage());
         } finally {
             session.close();
         }
@@ -44,48 +51,46 @@ public class NotebookDaoImpl implements NotebookDao {
     }
 
     @Override
-    public Notebook read(Long ig) {
-        Session session = factory.openSession();
-        Notebook note = (Notebook) session.get(Notebook.class, ig);
-        return note;
-    }
-
-    @Override
     public boolean update(Notebook ntb) {
+        boolean res = false;
         Session session = factory.openSession();
         try {
-            session.beginTransaction();
+            session.getTransaction().begin();
             session.update(ntb);
             session.getTransaction().commit();
-            return  true;
-        } catch (HibernateException exc){
+            res = true;
+        } catch (HibernateException e){
+            log.error("Update error: " + e.getMessage());
             session.getTransaction().rollback();
-            return  false;
         } finally {
             session.close();
         }
+        return res;
     }
 
     @Override
     public boolean delete(Notebook ntb) {
+        boolean res = false;
         Session session = factory.openSession();
-        try{
-            session.beginTransaction();
+        try {
+            session.getTransaction().begin();
             session.delete(ntb);
             session.getTransaction().commit();
-            return true;
-        } catch (HibernateException except){
+            res = true;
+        } catch (HibernateException e){
+            log.error("Delete operation error: " + e.getMessage());
             session.getTransaction().rollback();
-            return  false;
         } finally {
             session.close();
         }
+        return res;
     }
 
     @Override
     public List<Notebook> findAll() {
         Session session = factory.openSession();
         Query query = session.createQuery("from Notebook");
+        session.close();
         return query.list();
     }
 }

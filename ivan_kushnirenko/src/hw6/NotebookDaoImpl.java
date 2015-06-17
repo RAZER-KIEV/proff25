@@ -5,13 +5,9 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import org.apache.log4j.Logger;
-import org.hibernate.boot.registry.StandardServiceRegistry;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.cfg.Configuration;
 
 /**
  * Created by ivan on 17.06.15.
@@ -21,22 +17,11 @@ public class NotebookDaoImpl implements NotebookDao{
     private static Logger log = Logger.getLogger(NotebookDaoImpl.class);
     private SessionFactory factory;
 
-    private void init(){
-        Configuration cfg = new Configuration()
-                .addAnnotatedClass(Notebook.class)
-                .configure("hw6/hibernate.cfg.xml");
-        StandardServiceRegistryBuilder sb = new StandardServiceRegistryBuilder();
-        sb.applySettings(cfg.getProperties());
-        StandardServiceRegistry standardServiceRegistry = sb.build();
-        factory = cfg.buildSessionFactory(standardServiceRegistry);
-        log.info("Reference to SessionFactory " + factory);
-    }
-
-
     @Override
     public Long create(Notebook ntb) {
         if (factory==null){
-            init();
+            factory = new HibernateUtil().createSessionFactory();
+            log.info("Reference to SessionFactory " + factory);
         }
         Session session = factory.openSession();
         Long id = null;
@@ -50,21 +35,20 @@ public class NotebookDaoImpl implements NotebookDao{
             e.printStackTrace();
             session.getTransaction().rollback(); // Он здесь нужен?
             session.close();
-            factory.close();
         } finally {
             if(session!=null){
                 session.close();
             }
         }
         log.info(session);
-        factory.close();
         return id;
     }
 
     @Override
     public Notebook read(Long id) {
         if(factory==null){
-            init();
+            factory = new HibernateUtil().createSessionFactory();
+            log.info("Reference to SessionFactory " + factory);
         }
         Session session = factory.openSession();
         try {
@@ -73,7 +57,6 @@ public class NotebookDaoImpl implements NotebookDao{
             log.error("READ FAILED.",e);
             e.printStackTrace();
             session.close();
-            factory.close();
         } finally {
             if(session!=null){
                 session.close();
@@ -85,7 +68,8 @@ public class NotebookDaoImpl implements NotebookDao{
     @Override
     public boolean update(Notebook ntb) {
         if (factory==null){
-            init();
+            factory = new HibernateUtil().createSessionFactory();
+            log.info("Reference to SessionFactory " + factory);
         }
         Session session = factory.openSession();
         try{
@@ -98,7 +82,6 @@ public class NotebookDaoImpl implements NotebookDao{
             e.printStackTrace();
             session.getTransaction().rollback();
             session.close();
-            factory.close();
             return false;
         } finally {
             if(session!=null){
@@ -110,7 +93,8 @@ public class NotebookDaoImpl implements NotebookDao{
     @Override
     public boolean delete(Notebook ntb) {
         if(factory==null){
-            init();
+            factory = new HibernateUtil().createSessionFactory();
+            log.info("Reference to SessionFactory " + factory);
         }
         Session session = factory.openSession();
         try{
@@ -123,7 +107,6 @@ public class NotebookDaoImpl implements NotebookDao{
             e.printStackTrace();
             session.getTransaction().rollback();
             session.close();
-            factory.close();
             return false;
         } finally {
             if (session!=null){
@@ -134,6 +117,10 @@ public class NotebookDaoImpl implements NotebookDao{
 
     @Override
     public List<Notebook> findAll() {
+        if (factory==null){
+            factory = new HibernateUtil().createSessionFactory();
+            log.info("Reference to SessionFactory " + factory);
+        }
         Session session = factory.openSession();
         Query query = session.createQuery("from hw6.Notebook");
         return query.list();
@@ -147,7 +134,6 @@ public class NotebookDaoImpl implements NotebookDao{
         nb1.setPrice(528);
         nb1.setManufactureDate(new Date(3915,3,21));
         NotebookDaoImpl nhdi = new NotebookDaoImpl();
-        nhdi.create(nb1);
         List<Notebook> notebooks = nhdi.findAll();
         System.out.println(notebooks);
         nhdi.factory.close();
