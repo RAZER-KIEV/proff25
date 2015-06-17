@@ -63,6 +63,7 @@ public class NotebookServiceImpl implements NotebookService {
         query.setFirstResult(start);
         query.setMaxResults(size);
         return query.list();
+
     }
 
     @Override
