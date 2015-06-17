@@ -20,6 +20,17 @@ public class Notebook {
     private Date manufactureDate;
     private Integer price;
 
+    public Notebook(){
+
+    }
+
+    public Notebook(Long serial, String vendor, String model, Date manufactureDate, Integer price){
+        this.serial=serial;
+        this.vendor=vendor;
+        this.model=model;
+        this.manufactureDate=manufactureDate;
+        this.price=price;
+    }
     @Id
     @SequenceGenerator(name = "sequence", sequenceName = "SEQ_REGIONS_ID",
             allocationSize = 1, initialValue = 1)
@@ -80,7 +91,7 @@ public class Notebook {
 
     @Override
     public String toString(){
-        return new String("Notebook id: "+id+" serial: "+serial+" vendor: "+vendor
-                +" model: "+model+" manufacture date: "+manufactureDate+" price: "+price);
+        return new String("Notebook id: "+id+"; serial: "+serial+"; vendor: "+vendor
+                +"; model: "+model+"; manufacture date: "+manufactureDate+"; price: "+price+".");
     }
 }
