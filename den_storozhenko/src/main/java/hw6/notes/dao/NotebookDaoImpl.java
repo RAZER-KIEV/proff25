@@ -18,6 +18,7 @@ public class NotebookDaoImpl implements NotebookDao {
 
     public SessionFactory getFactory() {
         return factory;
+
     }
 
     public void setFactory(SessionFactory factory) {
