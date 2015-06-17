@@ -17,6 +17,10 @@ public class NotebookServiceImpl implements NotebookService {
 
     private NotebookDaoImpl ndi;
 
+    public NotebookServiceImpl () {
+        this.ndi = new NotebookDaoImpl();
+    }
+
     public NotebookServiceImpl(NotebookDaoImpl ndi){
         this.ndi = ndi;
     }
