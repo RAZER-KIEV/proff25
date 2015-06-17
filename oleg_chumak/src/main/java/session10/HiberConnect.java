@@ -28,33 +28,34 @@ public class HiberConnect {
         StandardServiceRegistry standardServiceRegistry = sb.build();
         SessionFactory factory = cfg.buildSessionFactory(standardServiceRegistry);
         log.info("Reference to SessionFactory " + factory);
-        Session session = null;
-        Region reg = new Region();
-        reg.setName("Antarktida");
-        try {
-            session = factory.openSession();
-            session.beginTransaction();
-            session.save(reg);
-            session.getTransaction().commit();
-            session.beginTransaction();
-            Region region = (Region)session.get(Region.class, 5);
-            System.out.println(region.getName());
-            region.setName("Antarktika");
-            session.update(region);
-            session.getTransaction().commit();
-            session.beginTransaction();
-            Region region1 = (Region) session.get(Region.class, 5);
-            System.out.println(region1.getName());
-            session.getTransaction().commit();
-        } catch (HibernateException e) {
-            log.error("Open session failed", e);
-            session.getTransaction().rollback();
-        } finally {
-            if (session != null) {
-                session.close();
-            }
-        }
-        log.info(session);
+//        Session session = null;
+//        try {
+//            session = factory.openSession();
+//            session.beginTransaction();
+//            session.save(reg);
+//            session.getTransaction().commit();
+//            session.beginTransaction();
+//            Region region = (Region)session.get(Region.class, 5);
+//            System.out.println(region.getName());
+//            region.setName("Antarktika");
+//            session.update(region);
+//            session.getTransaction().commit();
+//            session.beginTransaction();
+//            Region region1 = (Region) session.get(Region.class, 5);
+//            System.out.println(region1.getName());
+//            session.getTransaction().commit();
+//        } catch (HibernateException e) {
+//            log.error("Open session failed", e);
+//            session.getTransaction().rollback();
+//        } finally {
+//            if (session != null) {
+//                session.close();
+//            }
+//        }
+//        log.info(session);
+        RegionsHibernateDAOImpl dao = new RegionsHibernateDAOImpl(factory);
+//        Region tmp = dao.read();
+        System.out.println(dao.findById(new Long(2), new Long(4)));
     }
 }
 
