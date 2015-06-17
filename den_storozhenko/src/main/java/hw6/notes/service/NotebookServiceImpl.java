@@ -3,7 +3,7 @@ package hw6.notes.service;
 import hw6.notes.dao.NotebookDaoImpl;
 import hw6.notes.domain.Notebook;
 import org.hibernate.SessionFactory;
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 public class NotebookServiceImpl implements NotebookService {

@@ -3,7 +3,7 @@ package hw6.notes.view;
 import hw6.notes.domain.Notebook;
 import hw6.notes.service.NotebookServiceImpl;
 import hw6.notes.util.HibernateUtil;
-import java.sql.Date;
+import java.util.Date;
 import java.util.Calendar;
 import java.util.Locale;
 
@@ -19,11 +19,6 @@ public class Menu {
          * add
          */
         //System.out.println(notebookService.add(notebook));
-        /**
-         * findAll
-         */
-        /*for (Notebook notebook1:notebookService.findAll())
-            notebook1.print();*/
         /**
          * delete
          */
@@ -43,18 +38,23 @@ public class Menu {
         /**
          * findByVendor
          */
-        /*for (Notebook notebook1:notebookService.findByVendor("Dell"))
-            notebook1.print();*/
+        for (Notebook notebook1:notebookService.findByVendor("Dell"))
+            notebook1.print();
         /**
          * findByPriceManufDate
          */
-        /*for (Notebook notebook1:notebookService.findByPriceManufDate(45000.,new Date(Calendar.getInstance().getTimeInMillis())))
-            notebook1.print();*/
+        for (Notebook notebook1:notebookService.findByPriceManufDate(45000.,new Date(Calendar.getInstance().getTimeInMillis())))
+            notebook1.print();
         /**
          * findBetweenPriceLtDateByVendor
          */
-        /*for (Notebook notebook1:notebookService.findBetweenPriceLtDateByVendor(39000.,50000.,new Date(2015,8,1),"Dell"))
-            notebook1.print();*/
+        for (Notebook notebook1:notebookService.findBetweenPriceLtDateByVendor(39000.,50000.,new Date(2015,8,1),"Dell"))
+            notebook1.print();
+        /**
+         * findAll
+         */
+        for (Notebook notebook1:notebookService.findAll())
+            notebook1.print();
         hibernateUtil.closeFactory();
     }
 

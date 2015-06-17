@@ -6,7 +6,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import java.sql.Date;
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -150,7 +150,7 @@ public class NotebookDaoImpl implements NotebookDao {
     public List<Notebook> findByPriceManufDate(Double price, Date date) {
         Session session = factory.openSession();
         Query query = session.createQuery("from Notebook n where n.manufacture_date=:m_date and n.price=:price");
-        query.setParameter("m_date",date);
+        query.setParameter("m_date",new java.sql.Date(date.getTime()));
         query.setParameter("price",price);
         List<Notebook> notebooks = query.list();
         if(session!=null)
@@ -163,7 +163,7 @@ public class NotebookDaoImpl implements NotebookDao {
         Session session = factory.openSession();
         Query query = session.createQuery("from Notebook n where n.manufacture_date<:m_date and n.price>:priceFrom and " +
                 "n.price<:priceTo and n.vendor=:vendor");
-        query.setParameter("m_date",date);
+        query.setParameter("m_date",new java.sql.Date(date.getTime()));
         query.setParameter("priceFrom",priceFrom);
         query.setParameter("priceTo",priceTo);
         query.setParameter("vendor",vendor);
