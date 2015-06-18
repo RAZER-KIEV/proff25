@@ -83,10 +83,8 @@ dao.commit();
     }
     @Override
     public Long create(Region region) {
-        Session session = factory.openSession();
         Long id = null;
         try {
-            session.beginTransaction();
             id = (Long) session.save(region);
             session.getTransaction().commit();
             return id;
@@ -97,13 +95,11 @@ dao.commit();
             if (session != null)
                 session.close();
         }
-        factory.close();
         return id;
     }
 
     @Override
     public Region read(Long id) {
-        Session session = factory.openSession();
         try {
             return (Region) session.get(Region.class, id);
         } catch (HibernateException e) {
@@ -113,14 +109,11 @@ dao.commit();
             if (session != null)
                 session.close();
         }
-        factory.close();
         return null;
     }
     @Override
     public Long update(Region region) {
-        Session session = factory.openSession();
         try{
-            session.beginTransaction();
             session.update(region);
             session.getTransaction().commit();
         }
@@ -131,7 +124,6 @@ dao.commit();
             if (session != null)
                 session.close();
         }
-        factory.close();
         return null;
     }
 
@@ -149,7 +141,6 @@ session.delete(region);
 
     @Override
     public List<Region> findAll() {
-        Session session = factory.openSession();
         try {
             List<Region> list = session.createQuery("from week5_lesson9.Region").list();
             return list;
@@ -157,16 +148,14 @@ session.delete(region);
             log.error("Transaction failed");
             session.getTransaction().rollback();
         } finally {
-            session.close();
-            if (factory != null)
-                factory.close();
+            if (session!=null)
+                session.close();
         }
         return null;
     }
 
     @Override
     public List<Region> findHonyGT(Long amount) {
-        Session session = factory.openSession();
         List<Region> rezlist=new ArrayList<>();
             try {
                 List<Region> list = session.createQuery("from week5_lesson9.Region").list();
@@ -176,17 +165,14 @@ session.delete(region);
                 log.error("Transaction failed");
                 session.getTransaction().rollback();
             } finally {
-                session.close();
-                if (factory != null)
-                    factory.close();
+                if (session!=null)
+                    session.close();
             }
             return null;                       }
     @Override
     public List<Region> findDiapazon(Long amount, Long last) {
-        Session session = factory.openSession();
         List<Region> rezlist=new ArrayList<>();
         try {
-            session.beginTransaction();
             List<Region> list = session.createQuery("from week5_lesson9.Region").list();
             for(Region reg: list){if(reg.getId()>=amount&&reg.getId()<=last) rezlist.add(reg);}
             return rezlist;
@@ -194,14 +180,12 @@ session.delete(region);
             log.error("Transaction failed");
             session.getTransaction().rollback();
         } finally {
-            session.close();
-            if (factory != null)
-                factory.close();
+            if (session!=null)
+                session.close();
         }
         return null;                                         }
     @Override //Вывести имена всех регионов порциями по 2 штуки
     public void printBy(int kol, int start){
-        Session session = factory.openSession();
         try{
             session.beginTransaction();
          //   Query query = (Query) session.createQuery("Select c.name from REGIONS c ");
@@ -212,9 +196,8 @@ session.delete(region);
             log.error("Transaction failed");
             session.getTransaction().rollback();
         } finally {
-            session.close();
-            if (factory != null)
-                factory.close();
+            if (session!=null)
+                session.close();
         }
     }
     }
