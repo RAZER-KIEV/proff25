@@ -1,7 +1,7 @@
 package hw6.notes.domain;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 
 /**
  * Created by oleg on 17.06.15.
