@@ -1,4 +1,6 @@
-package hw6.notes;
+package hw6.notes.dao;
+
+import hw6.notes.domain.Notebook;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package hw6.notes;
+package hw6.notes.domain;
 
 import javax.persistence.*;
 import java.util.Date;

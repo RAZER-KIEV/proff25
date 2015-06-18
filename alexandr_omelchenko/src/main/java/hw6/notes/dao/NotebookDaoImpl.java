@@ -1,5 +1,6 @@
-package hw6.notes;
+package hw6.notes.dao;
 
+import hw6.notes.domain.Notebook;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -7,7 +8,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
-import week5_lesson9.Region;
 import week_lesson10.RegionHiberDAOInterf;
 
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ import java.util.List;
 /**
  Создать DAO для таблицы ноутбуки
  Таблица ноутбуки имеет следующую структуру(id, serial, vendor, model, manufacture date, price)
- hw6.notes.domain.Notebook
+ Notebook
  hw6.notes.dao.NotebookDao
  Long create(Notebook ntb)
  Notebook read(Long ig)
@@ -108,12 +108,11 @@ public class NotebookDaoImpl implements NotebookDao {
   return false;
  }
 
-
  @Override
  public List findAll() {
   Session session = factory.openSession();
   List<Notebook>list = new ArrayList<>();
-  list =session.createQuery("from hw6.notes.Notebook").list();
+  list =session.createQuery("from hw6.notes.domain.Notebook").list();
   return list;
  }
 }
