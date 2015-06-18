@@ -1,10 +1,13 @@
-package lection05;
+package lection05.hiberconnect;
 
 import org.apache.log4j.Logger;
-import org.hibernate.*;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+
 import java.util.List;
 import java.util.Locale;
 
@@ -19,7 +22,7 @@ public class HiberConnect {
     }
 
     public void init(){
-        Configuration cfg = new Configuration().configure("session10/hibernate.cfg.xml");
+        Configuration cfg = new Configuration().configure("lection05/hibernate.cfg.xml");
         StandardServiceRegistryBuilder sb = new StandardServiceRegistryBuilder();
         sb.applySettings(cfg.getProperties());
         StandardServiceRegistry standardServiceRegistry = sb.build();
@@ -32,11 +35,14 @@ public class HiberConnect {
             throw  new HibernateException("Session does not created.");
     }
 
-    public void close(){
+    public void closeSession(){
         if (session!=null) {
             session.close();
         }
         log.info(session);
+    }
+
+    public void closeFactory(){
         factory.close();
     }
 

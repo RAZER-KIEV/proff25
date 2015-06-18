@@ -1,14 +1,13 @@
-package lection05;
+package lection05.hiberconnect;
 
 import org.hibernate.HibernateException;
 
 /**
- * Created by storo_000 on 16.06.2015.
+ * hibernate save/update/delete
  */
 public class MainHiber {
     public static void main(String[] args) {
         HiberConnect hiberConnect = new HiberConnect();
-
         try {
             hiberConnect.init();
             hiberConnect.openSession();
@@ -22,8 +21,8 @@ public class MainHiber {
             e.printStackTrace();
         }
         finally {
-            hiberConnect.close();
+            hiberConnect.closeSession();
+            hiberConnect.closeFactory();
         }
-
     }
 }
