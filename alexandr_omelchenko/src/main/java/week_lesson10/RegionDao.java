@@ -8,12 +8,20 @@ import java.util.List;
  * Created by HP on 16.06.2015.
  */
 public interface RegionDao {
-    public Long create(Region region);
-    public Region read(Region region);
-    public Long update(Region region);
-    public Long delete(Region region);
-    public List<Region> findAll();
-    public List<Region> findHonyGT(Long amount);
-    public List<Region> findDiapazon(Long amount, Long last);
-    public void printBy(int kol, int start);
+    //МЕТОДЫ
+    void initialize();
+    void openSession();
+    void closeSession();
+    void beginTransaction();
+    void commit();
+
+     Long create(Region region);
+     Region read(Long id);
+     Long update(Region region);
+     Long delete(Region region);
+     Long delete(Long id);
+     List<Region> findAll();
+     List<Region> findHonyGT(Long amount);
+     List<Region> findDiapazon(Long amount, Long last);
+     void printBy(int kol, int start);
 }
