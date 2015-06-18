@@ -12,8 +12,8 @@ import java.util.List;
 public class MainWindow {
     public static void main(String[] args) {
 
-        FileService fs = new FileService();
-        List<Path> allFile=fs.findAll("/home/george/proff25/");
+        FileService fs = new FileService("/home/george/proff25/");
+        List<Path> allFile=fs.findAll();
 
         fs.addToTable(allFile);
         PathJDBCManager manager = null;
