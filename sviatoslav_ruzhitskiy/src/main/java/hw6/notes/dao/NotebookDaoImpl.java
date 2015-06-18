@@ -13,6 +13,7 @@ public class NotebookDaoImpl implements NotebookDao {
     private static Logger log = Logger.getLogger(NotebookDaoImpl.class);
     private SessionFactory sessionFactory;
 
+
     public NotebookDaoImpl(){}
     public NotebookDaoImpl(SessionFactory sessionFactory){
         this.sessionFactory = sessionFactory;
@@ -104,7 +105,7 @@ public class NotebookDaoImpl implements NotebookDao {
     @Override
     public List<Notebook> findAll() {
         Session session = sessionFactory.openSession();
-        Query query = session.createQuery("from Notebook");
+        Query query = session.createQuery("from NOTEBOOKS");
         return query.list();
     }
 }
