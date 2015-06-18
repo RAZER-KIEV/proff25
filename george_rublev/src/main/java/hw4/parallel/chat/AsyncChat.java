@@ -10,9 +10,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
-import java.net.InetSocketAddress;
-import java.net.ServerSocket;
-import java.net.Socket;
+import java.net.*;
 import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
 import java.util.Scanner;
@@ -77,6 +75,7 @@ public class AsyncChat {
     class Server implements Runnable{
 
         private Socket incoming;
+        SocketAddress ip ;
 
         public Server(Socket incoming) {
             this.incoming=incoming;
@@ -86,6 +85,10 @@ public class AsyncChat {
         public void run() {
             Runnable rClient=new Client(incoming);
             try {
+//                ip = incoming.getRemoteSocketAddress();
+//                SocketAddress ipclient = ip;
+//                System.out.println(ip);
+//                Inet4Address ia = new Inet4Address();
                 InputStream in = incoming.getInputStream();
                 OutputStream outputStream = incoming.getOutputStream();
                 Scanner scanner = new Scanner(in);
