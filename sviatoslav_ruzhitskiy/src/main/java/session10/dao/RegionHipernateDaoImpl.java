@@ -1,5 +1,6 @@
 package session10.dao;
 
+import hw6.notes.dao.NotebookDaoImpl;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
@@ -14,7 +15,7 @@ import java.util.logging.Logger;
  * Created by RAZER on 16.06.2015.
  */
 public class RegionHipernateDaoImpl implements ReginDao {
-    private static Logger log = Logger.getLogger(String.valueOf(RegionHipernateDaoImpl.class));
+    //private static Logger log = Logger.getLogger(String.valueOf(RegionHipernateDaoImpl.class));
     private SessionFactory sessionFactory;
 
     public RegionHipernateDaoImpl(SessionFactory sfact){
