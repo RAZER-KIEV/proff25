@@ -6,7 +6,7 @@ package session5;
 public class Singleton {
 
     private static Singleton singleton;
-    private Singleton(){}
+    Singleton(){}
     public static synchronized Singleton getSingleton(){
         if(singleton == null){
             singleton = new Singleton();

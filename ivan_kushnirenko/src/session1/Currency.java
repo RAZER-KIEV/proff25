@@ -10,6 +10,7 @@ public class Currency {
         this.dayLimit = dayLimit;
         this.presence = presence;
     }
+
     private String name;
     private double course;
     private int dayLimit;
