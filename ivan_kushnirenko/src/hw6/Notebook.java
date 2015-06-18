@@ -1,13 +1,7 @@
 package hw6;
 
-import oracle.sql.DATE;
-
 import javax.persistence.*;
 import java.util.Date;
-
-/**
- * Created by ivan on 17.06.15.
- */
 
 @Entity
 @Table(name="NOTEBOOKS")
@@ -31,6 +25,7 @@ public class Notebook {
         this.manufactureDate=manufactureDate;
         this.price=price;
     }
+
     @Id
     @SequenceGenerator(name = "sequence", sequenceName = "SEQ_REGIONS_ID",
             allocationSize = 1, initialValue = 1)

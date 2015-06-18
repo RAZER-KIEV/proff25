@@ -1,9 +1,7 @@
 package hw6;
 
 import java.util.List;
-/**
- * Created by ivan on 17.06.15.
- */
+
 public interface NotebookDao {
 
     Long create(Notebook ntb);
