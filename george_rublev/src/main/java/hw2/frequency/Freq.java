@@ -9,7 +9,7 @@ import java.util.*;
  */
 public class Freq {
 
-    Map<String, Integer> data = new HashMap<>();
+    Map<String, Integer> data = new HashMap<String, Integer>();
 
     private String clear(String text) {
         char[] charArray ={ '!', '@', '#', '.', ',','$', '%', '^', '&', '*', '(', ')', '_', '-', '=','!', '`', '~', '/', '{','}','[',']',';',':','"','?','>','<'};
@@ -90,7 +90,7 @@ public class Freq {
 
     //получить слова по частоте
     public Set<String> getWordsByFrequency(int frequency){
-        Set<String> strings = new HashSet<>();
+        Set<String> strings = new HashSet<String>();
 
         for(Map.Entry<String, Integer> en : data.entrySet()) {
             if (en.getValue()==frequency)
@@ -101,7 +101,7 @@ public class Freq {
 
     //получить слова, частотой менее
     public Set<String> getWordsByFrequencyLessThan(int frequency){
-        Set<String> strings = new HashSet<>();
+        Set<String> strings = new HashSet<String>();
         for(Map.Entry<String, Integer> key : data.entrySet()) {
             if (key.getValue()<frequency)
                 strings.add(key.getKey());
@@ -111,7 +111,7 @@ public class Freq {
 
     //получить слова, частотой более чем
     public Set<String> getWordsByFrequencyMoreThan(int frequency){
-        Set<String> strings = new HashSet<>();
+        Set<String> strings = new HashSet<String>();
         for(Map.Entry<String, Integer> key : data.entrySet()) {
             if (key.getValue()>frequency)
                 strings.add(key.getKey());

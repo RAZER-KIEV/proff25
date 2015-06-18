@@ -14,6 +14,10 @@ public class Menu {
     void deleteNtb(Notebook notebook){}
     void changePrice(Notebook notebook){}
     void changeSerialVendor(Notebook notebook){}
+//    void deleteByModel()
+//    void showByVendor()
+//    void showByPriceManufDate()
+//    void showBetweenPriceLtDateByVendor()
 
 
 }
