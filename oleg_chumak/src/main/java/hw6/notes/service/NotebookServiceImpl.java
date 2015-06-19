@@ -2,9 +2,11 @@ package hw6.notes.service;
 
 import hw6.notes.dao.NotebookDaoImpl;
 import hw6.notes.domain.Notebook;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -48,5 +50,33 @@ public class NotebookServiceImpl implements NotebookService {
     @Override
     public boolean delete(Long id) {
         return    dao.delete(dao.read(id));
+    }
+
+    @Override
+    public boolean deleteByModel(String model) {
+        List<Notebook> list = dao.findByModel(model);
+        try {
+            for (Notebook note : list) {
+                dao.delete(note);
+            }
+        }catch (HibernateException except){
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public List<Notebook> findByVendor(String vendor) {
+        return dao.findByVendor(vendor);
+    }
+
+    @Override
+    public List<Notebook> findByPriceManufDate(Double price, Date date) {
+        return dao.findByPriceManufDate(price, date);
+    }
+
+    @Override
+    public List<Notebook> findBetweenPriceLtDateByVendor(Double priceFrom, Double priceTo, Date date, String vendor) {
+        return dao.findBetweenPriceLtDateByVendor(priceFrom, priceTo, date, vendor);
     }
 }

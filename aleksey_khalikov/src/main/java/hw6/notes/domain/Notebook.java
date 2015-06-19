@@ -28,7 +28,20 @@ public class Notebook {
     private Double price;
 
     public Notebook(){
+        this(null, null, null, null, null);
+    }
 
+    public Notebook(String serial, String vendor, String model, Date manufactureDate, Double price){
+        this(null, serial, vendor, model, manufactureDate, price);
+    }
+
+    public Notebook(Long id, String serial, String vendor, String model, Date manufactureDate, Double price){
+        setId(id);
+        setSerial(serial);
+        setVendor(vendor);
+        setModel(model);
+        setManufactureDate(manufactureDate);
+        setPrice(price);
     }
 
     public Long getId() {
