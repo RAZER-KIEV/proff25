@@ -72,7 +72,7 @@ public class NotebookDaoImpl implements NotebookDao {
         }catch (HibernateException hEx){
             System.out.println("Exception: Not saved!");
             log.error("Exception: Not saved!  "+hEx);
-            hEx.printStackTrace();
+            //hEx.printStackTrace();
         }finally {
             if (session != null) {
                 session.close();
@@ -105,7 +105,7 @@ public class NotebookDaoImpl implements NotebookDao {
     @Override
     public List<Notebook> findAll() {
         Session session = sessionFactory.openSession();
-        Query query = session.createQuery("from NOTEBOOKS");
+        Query query = session.createQuery("FROM Notebook");
         return query.list();
     }
 }

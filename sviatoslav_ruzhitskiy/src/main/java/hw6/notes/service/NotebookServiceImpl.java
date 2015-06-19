@@ -49,4 +49,71 @@ public class NotebookServiceImpl implements NotebookService{
         Query query = session.createQuery("from NOTEBOOKS");
         return query.list();
     }
+
+    @Override
+    public void changePrice(Long id, double price) {
+        Session session = sessionFactory.openSession();
+        //Long id = null;
+        try {
+            session.beginTransaction();
+            Notebook tmp  = (Notebook) session.load(Notebook.class, id);
+            tmp.setPrice(price);
+            session.flush();
+            session.getTransaction().commit();
+        }catch (HibernateException hEx){
+            System.out.println("Exception: Not changed!");
+            log.error("Exception: Not changed!  "+hEx);
+            hEx.printStackTrace();
+        }finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+
+    }
+
+    @Override
+    public void changeSerialVendor(Long id, String serial, String vendor) {
+        Session session = sessionFactory.openSession();
+        //Long id = null;
+        try {
+            session.beginTransaction();
+            Notebook tmp  = (Notebook) session.load(Notebook.class, id);
+            tmp.setSerial(serial);
+            tmp.setVendor(vendor);
+            session.flush();
+            session.getTransaction().commit();
+        }catch (HibernateException hEx){
+            System.out.println("Exception: Not changed!");
+            log.error("Exception: Not changed!  "+hEx);
+            hEx.printStackTrace();
+        }finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+
+    }
+
+    @Override
+    public boolean delete(Long id) {
+        Session session = sessionFactory.openSession();
+        boolean dlres = false;
+        try {
+            session.beginTransaction();
+            Notebook tmp = (Notebook)session.load(Notebook.class, id);
+            session.delete(tmp);
+            session.getTransaction().commit();
+            dlres = true;
+        }catch (HibernateException hEx){
+            System.out.println("Exception: Not deleted!");
+            log.error("Exception: Not deleted!  "+hEx);
+            hEx.printStackTrace();
+        }finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+        return dlres;
+    }
 }

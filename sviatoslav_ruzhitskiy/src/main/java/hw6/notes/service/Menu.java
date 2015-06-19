@@ -28,22 +28,23 @@ public class Menu {
                 Date date = cal.getTime();
                 //dateFormat.format(date);
                 //create Note:
-                Notebook notebook = new Notebook("assusz564","ASUS","Z564",date, Double.parseDouble("421"));
+                Notebook notebook = new Notebook((long) 2,"aszzsusz564","ASUS","Z564",date, Double.parseDouble("421"));
+        System.out.println(notebook);
                 Notebook notebook3= new Notebook("lenvoK55-40", "Lenovo", "K55", date,Double.parseDouble("390"));
 
         //CRUD test
             //creation:
-            Long id = notebookDao.create(notebook);
-            System.out.println("note created! id: "+id);
+            //Long id = notebookDao.create(notebook);
+            //System.out.println("note created! id: "+id);
             //reading:
-            Notebook notebook1 = notebookDao.read(id);
-            System.out.println("notebook readed!: "+notebook1);
+            //Notebook notebook1 = notebookDao.read(id);
+            //System.out.println("notebook readed!: "+notebook1+" end... ");
             //updating:
-            boolean updated = notebookDao.update(notebook3);
-            System.out.println("try to update: "+notebook3+" updated "+updated);
+            boolean updated = notebookDao.update(notebook);
+            System.out.println("try to update: "+notebook+" updated "+updated);
             // deleting
-            boolean deleted = notebookDao.delete(notebook);
-            System.out.println("deleted: "+deleted);
+           // boolean deleted = notebookDao.delete(notebook);
+            //System.out.println("deleted: "+deleted);
         //findAll test:
             List<Notebook> lst= notebookDao.findAll();
             for (Notebook cv:lst){
@@ -52,4 +53,8 @@ public class Menu {
 
 
     }
+    void deleteNtb(Notebook notebook){}
+    void changePrice(Notebook notebook){}
+    void changeSerialVendor(Notebook notebook){}
+
 }

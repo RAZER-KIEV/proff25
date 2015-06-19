@@ -10,5 +10,8 @@ import java.util.List;
 public interface NotebookService {
     Long add(Notebook notebook);
     List<Notebook> findAll();
+    void changePrice(Long id, double price);
+    void changeSerialVendor(Long id, String serial, String vendor);
+    boolean delete(Long id);
 
 }

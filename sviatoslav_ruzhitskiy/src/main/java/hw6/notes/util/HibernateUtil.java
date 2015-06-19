@@ -22,7 +22,7 @@ public class HibernateUtil {
 
     public SessionFactory connectToHib(){
         Locale.setDefault(Locale.ENGLISH);
-        Configuration cfg = new Configuration().configure("resources/session10/hibernate.cfg.xml");
+        Configuration cfg = new Configuration().configure("session10/hibernate.cfg.xml");
         StandardServiceRegistryBuilder sb = new StandardServiceRegistryBuilder();
         sb.applySettings(cfg.getProperties());
         StandardServiceRegistry standardServiceRegistry = sb.build();
