@@ -12,7 +12,7 @@ public class Parking {
     int placeNumber;
     int maxNum = 10;
 
-    Map<Integer, Car> carTreeMap = new HashMap<>();
+    Map<Integer, Car> carTreeMap = new HashMap<Integer, Car>();
 
     Parking(int maxNum){
 

@@ -40,4 +40,6 @@ public class User {
         String password = scanner.next();
         return new User(id, name, password, new java.util.Date());
     }
+
+
 }

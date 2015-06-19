@@ -13,8 +13,6 @@ public class QuadraticService {
     public void solve(int fromA, int toA, int fromB, int toB, int fromC, int toC){
         if (toA < fromA | toB < fromB | toC < fromC){
             System.out.println("incorrect number parametres");
-        } else if (((toA - fromA + 1) * (toB - fromB + 1) * (toC - fromC + 1) > 10000)){
-            System.out.println("to much solutions");
         }
         else {
             for (int a = fromA; a <= toA; a++){
