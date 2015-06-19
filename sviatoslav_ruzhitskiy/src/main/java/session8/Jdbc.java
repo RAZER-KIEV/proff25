@@ -13,7 +13,7 @@ public class Jdbc {
         Connection conn = null;
         try {
 
-            conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "hr", "hr");
+            conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.0.104:1521:XE", "hr", "hr");
             System.out.println(conn);
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM EMPLOYEES  ");

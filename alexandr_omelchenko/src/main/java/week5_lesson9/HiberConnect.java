@@ -7,8 +7,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
-
 import javax.persistence.*;
+import java.util.List;
 import java.util.Locale;
 @Entity
 public class HiberConnect {
@@ -26,13 +26,20 @@ public class HiberConnect {
         Session session = null;
         try {
             session = factory.openSession();
-            Region region =(Region)session.get(Region.class, 1L);
-            System.out.println(region.toString());
+
             session.beginTransaction();
+           // Long id =(Long)session.save(new Region("Antarktida"));
+         //   session.createSQLQuery("UPDATE regions SET REGION_NAME='Antarktika' WHERE REGION_NAME='Antarktida' ");
+            List<Region> regionList = session.createSQLQuery("SELECT * FROM REGIONS WHERE REGION_NAME='Antarktida' and REGION_ID=19").addEntity(Region.class).list();
+            for(Region reg:regionList) {
+               // reg.setName("Antarktida");
+             //   session.update(reg);
+                session.delete(reg);
+                  }
 
-            Long id =(Long)session.save(new Region("Антарктида"));
-            session.getTransaction().commit();
-
+                     session.getTransaction().commit();
+           // Region region =(Region)session.get(Region.class, 5L);
+          //  System.out.println(region.toString());
         } catch (HibernateException e) {
             log.error("Open session failed", e);
         } finally {

@@ -1,6 +1,7 @@
 package hw6.notes.dao;
 
 import hw6.notes.domain.Notebook;
+import hw6.notes.util.HibernateUtil;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -15,7 +16,10 @@ public class NotebookDaoImpl implements NotebookDao {
     private static Logger log = Logger.getLogger(NotebookDaoImpl.class);
     private SessionFactory factory;
 
-    public NotebookDaoImpl(){}
+    public NotebookDaoImpl(){
+        HibernateUtil hu = new HibernateUtil();
+        this.factory = hu.connect();
+    }
 
     public NotebookDaoImpl(SessionFactory factory){
         this.factory = factory;

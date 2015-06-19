@@ -1,7 +1,7 @@
 package hw6.notes.domain;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 
 /**
  * Created by oleg on 17.06.15.
@@ -22,7 +22,7 @@ public class Notebook {
     private Long id;
 
     @Column(name = "SERIAL")
-    private Long serial;
+    private String serial;
 
     @Column(name = "VENDOR")
     private String vendor;
@@ -31,16 +31,16 @@ public class Notebook {
     private String model;
 
     @Column(name = "MANUFACTURE_DATE")
-    private String date;
+    private Date date;
 
     @Column(name = "PRICE")
-    private Long price;
+    private Double price;
 
 
     public Notebook() {
     }
 
-    public Notebook(Long serial, String vendor, String model, String date, Long price) {
+    public Notebook(String serial, String vendor, String model, Date date, Double price) {
         this.serial = serial;
         this.vendor = vendor;
         this.model = model;
@@ -52,7 +52,7 @@ public class Notebook {
         return id;
     }
 
-    public Long getSerial() {
+    public String getSerial() {
         return serial;
     }
 
@@ -64,11 +64,11 @@ public class Notebook {
         return model;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public Long getPrice() {
+    public Double getPrice() {
         return price;
     }
 
@@ -76,7 +76,7 @@ public class Notebook {
         this.id = id;
     }
 
-    public void setSerial(Long serial) {
+    public void setSerial(String serial) {
         this.serial = serial;
     }
 
@@ -88,11 +88,11 @@ public class Notebook {
         this.model = model;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
-    public void setPrice(Long price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
