@@ -1,12 +1,16 @@
 package hw6.notes.service;
 
+import hw6.notes.dao.NotebookDaoImpl;
 import hw6.notes.domain.Notebook;
+import hw6.notes.util.HibernateUtil;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -16,10 +20,21 @@ public class NotebookServiceImpl implements NotebookService{
 
     private static Logger log = Logger.getLogger(NotebookServiceImpl.class);
     private SessionFactory sessionFactory;
+    private NotebookDaoImpl notebookDao;
 
-    public NotebookServiceImpl(){}
+    public NotebookServiceImpl(){
+        notebookDao = new NotebookDaoImpl();
+        sessionFactory= HibernateUtil.getInstance().getExistingSessionFactory();
+
+    }
+
     public NotebookServiceImpl(SessionFactory sf){
         sessionFactory=sf;
+    }
+    public NotebookServiceImpl(SessionFactory sf, NotebookDaoImpl notebookDao){
+        sessionFactory=sf;
+        this.notebookDao = notebookDao;
+
     }
 
     @Override
@@ -115,5 +130,31 @@ public class NotebookServiceImpl implements NotebookService{
             }
         }
         return dlres;
+    }
+
+    @Override
+    public boolean deleteByModel(String model) {
+         List <Notebook> bufflist = notebookDao.findByModel(model);
+         boolean dlres = false;
+        for(Notebook tmp : bufflist){
+           delete(tmp.getId());
+            dlres = true;
+        }
+      return dlres;
+    }
+
+    @Override
+    public List<Notebook> findByVendor(String vendor) {
+        return notebookDao.findByVendor(vendor);
+    }
+
+    @Override
+    public List<Notebook> findByPriceManufDate(Double price, Date date) {
+        return notebookDao.findByPriceManufDate(price, date);
+    }
+
+    @Override
+    public List<Notebook> findBetweenPriceLtDateByVendor(Double priceFrom, Double priceTo, Date date, String vendor) {
+        return notebookDao.findBetweenPriceLtDateByVendor(priceFrom,priceTo,date,vendor);
     }
 }
