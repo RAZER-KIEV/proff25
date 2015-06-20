@@ -27,9 +27,9 @@ public class Notebook {
     private String manufactureDate;
 
     @Column(name = "PRICE")
-    private int price;
+    private double price;
 
-    public Notebook(String serial, String vendor, String model, String manufactureDate, int price) {
+    public Notebook(String serial, String vendor, String model, String manufactureDate, double price) {
         this.serial = serial;
         this.vendor = vendor;
         this.model = model;
@@ -80,11 +80,11 @@ public class Notebook {
         this.manufactureDate = manufactureDate;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

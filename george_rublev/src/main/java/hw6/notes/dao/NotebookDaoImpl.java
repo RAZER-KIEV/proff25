@@ -62,11 +62,36 @@ public class NotebookDaoImpl implements NotebookDao {
 
     @Override
     public boolean update(Notebook ntb) {
+        session = factory.openSession();
+        Notebook notebook = null;
+        try{
+            session.beginTransaction();
+            session.update(ntb);
+//            session.delete(ntb);
+            session.getTransaction().commit();
+            return true;
+        }catch(HibernateException ex){
+            System.out.println("error when read notebook: "+ex);
+        }finally{
+            session.close();
+        }
         return false;
     }
 
     @Override
     public boolean delete(Notebook ntb) {
+        session = factory.openSession();
+        Notebook notebook = null;
+        try{
+            session.beginTransaction();
+            session.delete(ntb);
+            session.getTransaction().commit();
+            return true;
+        }catch(HibernateException ex){
+            System.out.println("error when read notebook: "+ex);
+        }finally{
+            session.close();
+        }
         return false;
     }
 

@@ -15,4 +15,7 @@ public interface NotebookService {
     List<Notebook> findByVendor(String vendor);
     List<Notebook> findByPriceManufDate(Double price, Date date);
     List<Notebook> findBetweenPriceLtDateByVendor(Double priceFrom, Double priceTo, Date date, String vendor);
+    void changePrice(Long id, double price);
+    void changeSerialVendor(Long id, String serial, String vendor);
+    boolean delete(Long id);
 }
