@@ -13,7 +13,7 @@ public class User {
     private int password;
     private String date;
 
-    User(String name, int id,int password,String date){
+    public User(String name, int id,int password,String date){
         this.name = name;
         this.id =id;
         this.password = password;

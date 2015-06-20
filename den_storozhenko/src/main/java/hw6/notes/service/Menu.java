@@ -2,9 +2,8 @@ package hw6.notes.service;
 
 import hw6.notes.domain.Notebook;
 import hw6.notes.util.HibernateUtil;
-
-import java.util.Calendar;
 import java.util.Date;
+import java.util.Calendar;
 import java.util.Locale;
 
 public class Menu {
