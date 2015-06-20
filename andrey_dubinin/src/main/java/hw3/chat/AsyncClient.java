@@ -16,7 +16,6 @@ public class AsyncClient {
             ByteBuffer buffer = ByteBuffer.allocate(300);
             Scanner scanner = new Scanner(System.in);
                  while (true) {
-
                      String scan = scanner.nextLine();
                      buffer.put(scan.getBytes());
 
