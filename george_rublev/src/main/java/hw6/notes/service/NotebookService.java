@@ -1,4 +1,4 @@
-package hw6.notes.dao;
+package hw6.notes.service;
 
 import hw6.notes.domain.Notebook;
 
@@ -6,16 +6,12 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by george on 19.06.15.
+ * Created by george on 20.06.15.
  */
-public interface NotebookDao {
-
-    Long create(Notebook ntb);
-    Notebook read(Long ig);
-    boolean update(Notebook ntb);
-    boolean delete(Notebook ntb);
-    List<Notebook> findAll();
-    List<Notebook> findByModel(String model);
+public interface NotebookService {
+    public Long add(Notebook notebook);
+    public List<Notebook> findAll();
+    boolean deleteByModel(String model);
     List<Notebook> findByVendor(String vendor);
     List<Notebook> findByPriceManufDate(Double price, Date date);
     List<Notebook> findBetweenPriceLtDateByVendor(Double priceFrom, Double priceTo, Date date, String vendor);
