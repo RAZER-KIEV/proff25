@@ -4,6 +4,7 @@ import hw6.notes.domain.Notebook;
 import org.apache.log4j.Logger;
 import org.hibernate.*;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -12,7 +13,7 @@ import java.util.List;
 public class NotebookDaoImpl implements NotebookDao {
     private static Logger log = Logger.getLogger(NotebookDaoImpl.class);
     private SessionFactory sessionFactory;
-
+    public SessionFactory getSessionFactory(){return sessionFactory;}
 
     public NotebookDaoImpl(){}
     public NotebookDaoImpl(SessionFactory sessionFactory){
@@ -106,6 +107,52 @@ public class NotebookDaoImpl implements NotebookDao {
     public List<Notebook> findAll() {
         Session session = sessionFactory.openSession();
         Query query = session.createQuery("FROM Notebook");
+        query.setFirstResult(1);
+        query.setMaxResults(2);
+        return query.list();
+    }
+
+    @Override
+    public List<Notebook> findByModel(String model) {
+        Session session = sessionFactory.openSession();
+        Query query = session.createQuery("FROM Notebook n when n.model =: model");
+        query.setParameter("model", model);
+        query.setFirstResult(1);
+        query.setMaxResults(2);
+        return query.list();
+    }
+
+    @Override
+    public List<Notebook> findByVendor(String vendor) {
+        Session session = sessionFactory.openSession();
+        Query query = session.createQuery("FROM Notebook n when n.vendor =: vendor");
+        query.setParameter("model", vendor);
+        query.setFirstResult(1);
+        query.setMaxResults(2);
+        return query.list();
+    }
+
+    @Override
+    public List<Notebook> findByPriceManufDate(Double price, Date date) {
+        Session session = sessionFactory.openSession();
+        Query query = session.createQuery("FROM Notebook n when n.manufacture_date =: date AND n.price = : price");
+        query.setParameter("date", new java.sql.Date(date.getTime()));
+        query.setParameter("price", price);
+        query.setFirstResult(1);
+        query.setMaxResults(2);
+        return query.list();
+    }
+
+    @Override
+    public List<Notebook> findBetweenPriceLtDateByVendor(Double priceFrom, Double priceTo, Date date, String vendor) {
+        Session session = sessionFactory.openSession();
+        Query query = session.createQuery("FROM Notebook n when n.manufacture_date =: date AND n.price <= : priceTo AND n.price >= priceFrom AND n.vendor =: vendor");
+        query.setParameter("date", new java.sql.Date(date.getTime()));
+        query.setParameter("priceFrom", priceFrom);
+        query.setParameter("priceTo", priceTo);
+        query.setParameter("vendor", vendor);
+        query.setFirstResult(1);
+        query.setMaxResults(2);
         return query.list();
     }
 }
