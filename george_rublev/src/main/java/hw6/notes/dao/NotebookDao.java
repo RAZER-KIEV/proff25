@@ -6,11 +6,12 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by ПК on 18.06.2015.
+ * Created by george on 19.06.15.
  */
 public interface NotebookDao {
+
     Long create(Notebook ntb);
-    Notebook read(Long id);
+    Notebook read(Long ig);
     boolean update(Notebook ntb);
     boolean delete(Notebook ntb);
     List<Notebook> findAll();
@@ -18,5 +19,4 @@ public interface NotebookDao {
     List<Notebook> findByVendor(String vendor);
     List<Notebook> findByPriceManufDate(Double price, Date date);
     List<Notebook> findBetweenPriceLtDateByVendor(Double priceFrom, Double priceTo, Date date, String vendor);
-
 }

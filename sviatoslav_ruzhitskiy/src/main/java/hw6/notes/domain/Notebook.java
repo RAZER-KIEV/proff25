@@ -28,7 +28,7 @@ public class Notebook {
 
     @Id
     @SequenceGenerator(name = "sequence", sequenceName = "SEQ_NOTEBOOKS_ID",
-            allocationSize = 1, initialValue = 5)
+            allocationSize = 1, initialValue = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
     @Column(name = "ID")
     private Long id;
@@ -51,6 +51,17 @@ public class Notebook {
         manufacture_date = m_date;
         price = prc;
     }
+    public Notebook(Long id, String ser, String vend, String mod, Date m_date, Double prc){
+        serial =ser;
+        vendor = vend;
+        model = mod;
+        manufacture_date = m_date;
+        price = prc;
+        this.id = id;
+    }
+
+    public Long getId(){return id;}
+
     public String getSerial(){return serial;}
     public void setSerial(String ser){serial =ser;}
 
@@ -66,5 +77,9 @@ public class Notebook {
     public Double getPrice(){return price;}
     public void setPrice(Double prc){price = prc;}
 
+    @Override
+    public String toString(){
+        return "\n" +id+ ", " +serial+ ", " +vendor+ "," +model+ "," +manufacture_date+ "," +price;
+    }
 
 }

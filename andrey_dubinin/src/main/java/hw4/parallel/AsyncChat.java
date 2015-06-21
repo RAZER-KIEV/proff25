@@ -1,4 +1,4 @@
-package hw3.chat;
+package hw4.parallel;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -16,32 +16,25 @@ public class AsyncChat {
             ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
             serverSocketChannel.socket().bind(new InetSocketAddress(30000));
             ByteBuffer buffer =ByteBuffer.allocate(3000);
-
             while (true){
                 SocketChannel socketChannel = serverSocketChannel.accept();
-                int bytesRead;
-                while ((bytesRead = socketChannel.read(buffer)) > 0) {
-                    buffer.flip();
-                    System.out.println(new String(buffer.array(), 0, bytesRead));
-                    buffer.clear();
+                Scanner scanner = new Scanner(socketChannel);
+                StringBuilder sb =new StringBuilder();
+                while (scanner.hasNextLine()){
+                    sb.append(scanner.nextLine());
                 }
-                Scanner scanner = new Scanner(System.in);
-                String scan = scanner.nextLine();
-                buffer.put(scan.getBytes());
-
+                System.out.println(sb.toString());
+                buffer.put("Wellcom to hell!!!".getBytes());
+                buffer.flip();
                 while (buffer.hasRemaining()) {
-                    buffer.flip();
                     socketChannel.write(buffer);
-                    buffer.clear();
                 }
-            }
+                buffer.clear();
 
+            }
         }catch (IOException e){
             e.printStackTrace();
         }
     }
-}
-class AsyncChatTest{
-
 }
 
