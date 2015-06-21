@@ -34,7 +34,6 @@ public class AsyncChat {
                     socketChannel.write(buffer);
                     buffer.clear();
                 }
-
             }
 
         }catch (IOException e){

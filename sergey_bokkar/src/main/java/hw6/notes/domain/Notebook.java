@@ -1,6 +1,8 @@
 package hw6.notes.domain;
 
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by Well on 17.06.2015.
@@ -18,24 +20,24 @@ public class Notebook {
     @Column(name = "serial")
     private String serial;
 
-    @Column(name = "vender")
-    private String vender;
+    @Column(name = "vendor")
+    private String vendor;
 
     @Column(name = "model")
     private String model;
 
     @Column(name = "manufacture_date")
-    private String manufactureDate;
+    private Date manufactureDate;
 
     @Column(name = "price")
     private Double price;
 
     public Notebook(){}
 
-    public Notebook(String serial, String vender, String model, String manufactureDate,
+    public Notebook(String serial, String vendor, String model, Date manufactureDate,
                     Double price){
         this.serial = serial;
-        this.vender = vender;
+        this.vendor = vendor;
         this.model = model;
         this.manufactureDate = manufactureDate;
         this.price = price;
@@ -45,16 +47,23 @@ public class Notebook {
         return serial;
     }
 
-    public String getVender() {
-        return vender;
+    public String getVendor() {
+        return vendor;
     }
 
     public String getModel() {
         return model;
     }
 
-    public String getManufactureDate() {
+    public Date getManufactureDate() {
         return manufactureDate;
+    }
+
+    public String getManufactureDateByPrint(Date manufactureDate){
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
+        String date = dateFormat.format(manufactureDate);
+        return date;
     }
 
     public Double getPrice() {
@@ -65,8 +74,8 @@ public class Notebook {
         return id;
     }
 
-    public void setVender(String vender) {
-        this.vender = vender;
+    public void setVendor(String vendor) {
+        this.vendor = vendor;
     }
 
     public void setSerial(String serial) {
@@ -77,7 +86,7 @@ public class Notebook {
         this.model = model;
     }
 
-    public void setManufactureDate(String manufactureDate) {
+    public void setManufactureDate(Date manufactureDate) {
         this.manufactureDate = manufactureDate;
     }
 
@@ -87,7 +96,7 @@ public class Notebook {
 
     @Override
     public String toString() {
-        return getId() + "   " + getVender() + "   " + getModel() + "   " + getSerial() + "   " +
-                getManufactureDate() + "   " + getPrice();
+        return getId() + "   " + getVendor() + "   " + getModel() + "   " + getSerial() + "   " +
+                getManufactureDateByPrint(manufactureDate) + "   " + getPrice();
     }
 }

@@ -1,32 +1,33 @@
 package hw6.notes.dao;
 
 import hw6.notes.domain.Notebook;
+import hw6.notes.domain.Notebook;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 
-
 public class NotebookDaoImpl implements NotebookDao {
+    private static final int STEP_PORCED =2;
     private static Logger log = Logger.getLogger(NotebookDaoImpl.class);
     private SessionFactory factory;
 
     public NotebookDaoImpl(){
+    }
 
+    public NotebookDaoImpl(SessionFactory factory){
+        this.factory = factory;
     }
 
     public SessionFactory getFactory() {
         return factory;
-
     }
 
     public void setFactory(SessionFactory factory) {
-
-        this.factory = factory;
-    }
-
-    public NotebookDaoImpl(SessionFactory factory){
         this.factory = factory;
     }
 
@@ -99,9 +100,77 @@ public class NotebookDaoImpl implements NotebookDao {
         }
     }
 
+    private Long getCount(){
+        Session session = factory.openSession();
+        Query query = session.createQuery("select COUNT(n.id) from Notebook n");
+        return (Long)query.uniqueResult();
+    }
+
+    @Override
+    public List<Notebook> getNotebooksPorced(int start, int size) {
+        Session session = factory.openSession();
+        Query query = session.createQuery("from Notebook");
+        query.setFirstResult(start);
+        query.setMaxResults(size);
+        return query.list();
+    }
+
     @Override
     public List findAll() {
+        List<Notebook> notebooks = new ArrayList<>();
+        Long count = getCount();
+        for (int i=0;i<count;i+=STEP_PORCED){
+            notebooks.addAll(getNotebooksPorced(i,STEP_PORCED));
+        }
+        return notebooks;
+    }
+
+    @Override
+    public List<Notebook> findByModel(String model) {
         Session session = factory.openSession();
-        return session.createQuery("from Notebook").list();
+        Query query = session.createQuery("from Notebook n where n.model=:model");
+        query.setParameter("model",model);
+        List<Notebook> notebooks = query.list();
+        if(session!=null)
+            session.close();
+        return notebooks;
+    }
+
+    @Override
+    public List<Notebook> findByVendor(String vendor) {
+        Session session = factory.openSession();
+        Query query = session.createQuery("from Notebook n where n.vendor=:vendor");
+        query.setParameter("vendor",vendor);
+        List<Notebook> notebooks = query.list();
+        if(session!=null)
+            session.close();
+        return notebooks;
+    }
+
+    @Override
+    public List<Notebook> findByPriceManufDate(Double price, Date date) {
+        Session session = factory.openSession();
+        Query query = session.createQuery("from Notebook n where n.manufacture_date=:m_date and n.price=:price");
+        query.setParameter("m_date",new java.sql.Date(date.getTime()));
+        query.setParameter("price",price);
+        List<Notebook> notebooks = query.list();
+        if(session!=null)
+            session.close();
+        return notebooks;
+    }
+
+    @Override
+    public List<Notebook> findBetweenPriceLtDateByVendor(Double priceFrom, Double priceTo, Date date, String vendor) {
+        Session session = factory.openSession();
+        Query query = session.createQuery("from Notebook n where n.manufacture_date<:m_date and n.price>:priceFrom and " +
+                "n.price<:priceTo and n.vendor=:vendor");
+        query.setParameter("m_date",new java.sql.Date(date.getTime()));
+        query.setParameter("priceFrom",priceFrom);
+        query.setParameter("priceTo",priceTo);
+        query.setParameter("vendor",vendor);
+        List<Notebook> notebooks = query.list();
+        if(session!=null)
+            session.close();
+        return notebooks;
     }
 }

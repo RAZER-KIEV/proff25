@@ -12,7 +12,8 @@ public class JDBC {
         Statement stat = conn.createStatement();
 
         //setCountry(stat);
-         updtCountry(stat);
+       //  updtCountry(stat);
+            updtName(stat);
             conn.close();}
 
         catch (SQLException e) {
@@ -31,5 +32,8 @@ public class JDBC {
     }
     public static void updtCountry(Statement stat) throws SQLException {
         stat.executeUpdate("UPDATE countries SET country_id='UA' WHERE country_id='UU' ");
+    }
+    public static void updtName(Statement stat) throws SQLException {
+        stat.executeUpdate("UPDATE countries SET country_name='Great Ukraine' WHERE country_id='UA' ");
     }
 }

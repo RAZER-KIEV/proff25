@@ -9,13 +9,13 @@ import java.util.NoSuchElementException;
  * Created by oleg on 25.05.15.
  */
     public class ArrayList<E> implements Iterable<E> {
-        //    java.util.ArrayList;
+        //    java.hw6.notes.util.ArrayList;
         private int size;
         private int counter;
         private E[] work;
         private static final int DEFAULE_CAPACIEY = 10;
 
-//        java.util.ArrayList
+//        java.hw6.notes.util.ArrayList
         public ArrayList(int capacity) {
             work = (E[]) new Object[capacity];
         }

@@ -10,7 +10,7 @@ import java.util.List;
 public class UserJDBCManager {
     Connection conn;
     Statement stmt;
-    UserJDBCManager() {
+   public UserJDBCManager() {
         try {
             this.conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "hr", "hr");
             this.stmt = conn.createStatement();
@@ -19,7 +19,7 @@ public class UserJDBCManager {
         }
     }
 
-    public int create(User user){
+    public int create(User user) {
         try {
             PreparedStatement stat = conn.prepareStatement("INSERT INTO Users VALUES(?,?,?,?)");
             int id =user.getId();

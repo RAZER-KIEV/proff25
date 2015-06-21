@@ -10,7 +10,7 @@ public class MainWindow {
         Locale.setDefault(Locale.ENGLISH);
         UserJDBCManager accounts = new UserJDBCManager();
        // User user = new User("Pepsi",3,8765,"13.06.2015");
-
+       // accounts.create(user);
         accounts.readByNamePass("Pepsi",8765);
     }
 }

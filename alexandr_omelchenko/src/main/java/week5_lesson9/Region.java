@@ -6,29 +6,26 @@ import javax.persistence.*;
 @Table(name="REGIONS")
 public class Region {
     @Id
-    @Column(name="REGION_ID")
     @SequenceGenerator(name="sequence", sequenceName="SEQ_REGIONS_ID", allocationSize=1, initialValue =5)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="sequence")
-    private Long REGION_ID;
+    @Column(name ="REGION_ID")
+    private Long id;
+
+    @Column(name = "REGION_NAME")
     private String name;
 
-    public Region(){
-        name="defoult";
-    }
-    public Region(String region){
-        name=region;
-    }
+    public Region(){name="defoult";}
+    public Region(String region){name=region;}
 
     @Override
     public String toString() {
         return "Regions{" +
                 "name='" + name + '\'' +
-                '}';
-    }
-    public Long getREGION_ID() {
-        return REGION_ID;}
-    public void setREGION_ID(Long REGION_ID) {
-        this.REGION_ID = REGION_ID;}
+                '}';}
+    public Long getId() {
+        return id;}
+    public void setId(Long Id) {
+        this.id = Id;}
     public String getName() {
         return name;}
     public void setName(String name) {
