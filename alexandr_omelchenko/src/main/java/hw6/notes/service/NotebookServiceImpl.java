@@ -21,4 +21,26 @@ private NotebookDaoImpl noteDAO;
     public List findAll() {
         return noteDAO.findAll();}
 
+    @Override
+    public void changePrice(Long id, double price) {
+        Notebook note = noteDAO.read(id);
+        note.setPrice(price);
+        noteDAO.update(note);
+    }
+
+    @Override
+    public void changeSerialVendor(Long id, String serial, String vendor) {
+        Notebook note = noteDAO.read(id);
+        note.setSerial(serial);
+        note.setVendor(vendor);
+        noteDAO.update(note);
+    }
+
+    @Override
+    public boolean delete(Long id) {
+        Notebook note = noteDAO.read(id);
+        noteDAO.delete(note);
+        return false;
+    }
+
 }

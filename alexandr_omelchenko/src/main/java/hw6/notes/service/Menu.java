@@ -11,7 +11,9 @@ public class Menu {
         HibernateUtil hiberUtil = new HibernateUtil();
         hiberUtil.initialize();
         NotebookServiceImpl noteServise = new NotebookServiceImpl(hiberUtil.getFactory());
-noteServise.add(new Notebook());
+        noteServise.changePrice(21L, 900.99);
+noteServise.changeSerialVendor(5L, "1290-Me", "Ivanov");
+
 hiberUtil.factoryClose();
 
     }
