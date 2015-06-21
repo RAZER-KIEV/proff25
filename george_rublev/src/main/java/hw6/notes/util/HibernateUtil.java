@@ -15,7 +15,7 @@ public class HibernateUtil {
     }
 
     public void createSessionFactory(){
-        Configuration cfg = new Configuration().configure("hw6/dao.notes.cfg.xml");
+        Configuration cfg = new Configuration().configure("hw6.notes/hibernate.cfg.xml");
         StandardServiceRegistryBuilder sb = new StandardServiceRegistryBuilder();
         sb.applySettings(cfg.getProperties());
         StandardServiceRegistry standardServiceRegistry = sb.build();

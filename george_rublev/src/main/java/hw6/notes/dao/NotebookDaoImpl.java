@@ -5,8 +5,12 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import javax.management.Query;
+import javax.persistence.EntityManager;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Queue;
 import java.util.logging.Logger;
 
 /**
@@ -97,26 +101,52 @@ public class NotebookDaoImpl implements NotebookDao {
 
     @Override
     public List<Notebook> findAll() {
-        return null;
+        session = factory.openSession();
+        List<Notebook> data = (List<Notebook>) session.createQuery("from Notebook").list();
+        return data;
     }
 
     @Override
     public List<Notebook> findByModel(String model) {
-        return null;
+        session = factory.openSession();
+        List<Notebook> data = (List<Notebook>) session.createFilter(Notebook.class,model);
+        return data;
     }
 
     @Override
     public List<Notebook> findByVendor(String vendor) {
-        return null;
+        session = factory.openSession();
+        List<Notebook> data = (List<Notebook>) session.createFilter(Notebook.class,vendor);
+        return data;
     }
 
     @Override
     public List<Notebook> findByPriceManufDate(Double price, Date date) {
-        return null;
+        session = factory.openSession();
+        List<Notebook> data = (List<Notebook>) session.createFilter(Notebook.class, String.valueOf(price));
+        List<Notebook> buf = new ArrayList<Notebook>();
+        for(Notebook note : data){
+            if(note.getManufactureDate().equals(date)){
+                buf.add(note);
+            }
+        }
+        return buf;
     }
 
     @Override
     public List<Notebook> findBetweenPriceLtDateByVendor(Double priceFrom, Double priceTo, Date date, String vendor) {
-        return null;
+        session = factory.openSession();
+        List<Notebook> data = (List<Notebook>) session.createFilter(Notebook.class, vendor);
+        List<Notebook> buf = new ArrayList<Notebook>();
+        for(Notebook note : data){
+            if(priceFrom<note.getPrice()&&note.getPrice()<priceTo){
+                if(note.getManufactureDate().equals(date)){
+                    buf.add(note);
+                }
+            }
+        }
+        return buf;
     }
+
+
 }
