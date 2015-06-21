@@ -12,9 +12,8 @@ public class Menu {
         hiberUtil.initialize();
         NotebookServiceImpl noteServise = new NotebookServiceImpl(hiberUtil.getFactory());
         noteServise.changePrice(21L, 900.99);
-noteServise.changeSerialVendor(5L, "1290-Me", "Ivanov");
-
-hiberUtil.factoryClose();
+        noteServise.changeSerialVendor(5L, "1290-Me", "Ivanov");
+        hiberUtil.factoryClose();
 
     }
 }
