@@ -1,6 +1,7 @@
 package hw6.notes.dao;
 
 import hw6.notes.domain.Notebook;
+import org.hibernate.SessionFactory;
 
 import java.util.List;
 
@@ -9,7 +10,7 @@ import java.util.List;
  */
 public interface NotebookDao {
     //МЕТОДЫ
-    void initialize();
+    SessionFactory initialize();
 
     Long create(Notebook ntb);
     Notebook read(Long ig);

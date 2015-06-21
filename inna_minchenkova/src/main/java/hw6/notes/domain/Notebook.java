@@ -1,24 +1,22 @@
 package hw6.notes.domain;
 
+/**
+ * Created by Inna on 19.06.2015.
+ */
+
 import javax.persistence.*;
 import java.util.Date;
 
-/*
- * Таблица ноутбуки имеет следующую структуру
- * (id, serial, vendor, model, manufacture date, price)
- */
-
+@Table(name= "NOTEBOOKS")
 @Entity
-@Table(name="NOTEBOOKS")
 public class Notebook {
-
     @Id
     @SequenceGenerator(name = "sequence", sequenceName = "SEQ_NOTEBOOK_ID", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
-    @Column(name = "NOTEBOOK_ID")
+    @GeneratedValue (strategy = GenerationType.SEQUENCE, generator = "sequence")
+    @Column (name = "NOTEBOOK_ID")
     private Long id;
 
-    @Column(name = "NOTEBOOK_SERIALNUMBER")
+    @Column (name = "NOTEBOOK_SERIALNUMBER")
     private String serialNumber;
 
     @Column(name = "NOTEBOOK_VENDOR")
@@ -28,19 +26,20 @@ public class Notebook {
     private String model;
 
     @Column(name = "NOTEBOOK_MANUFACTUREDATE")
-    private Date manufactureDate;
+    private Date maufactureDate;
 
     @Column(name = "NOTEBOOK_PRICE")
     private Double price;
 
-    public Notebook() {
+    public Notebook(){
+
     }
 
-    public Notebook(String serialNumber, String vendor, String model, Date manufactureDate, Double price) {
+    public Notebook(String serialNumber, String vendor, String model, Date maufactureDate, Double price) {
         this.serialNumber = serialNumber;
         this.vendor = vendor;
         this.model = model;
-        this.manufactureDate = manufactureDate;
+        this.maufactureDate = maufactureDate;
         this.price = price;
     }
 
@@ -76,12 +75,12 @@ public class Notebook {
         this.model = model;
     }
 
-    public Date getManufactureDate() {
-        return manufactureDate;
+    public Date getMaufactureDate() {
+        return maufactureDate;
     }
 
-    public void setManufactureDate(Date manufactureDate) {
-        this.manufactureDate = manufactureDate;
+    public void setMaufactureDate(Date maufactureDate) {
+        this.maufactureDate = maufactureDate;
     }
 
     public Double getPrice() {
@@ -90,5 +89,16 @@ public class Notebook {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Notebook{" +
+                "serialNumber='" + serialNumber + '\'' +
+                ", vendor='" + vendor + '\'' +
+                ", model='" + model + '\'' +
+                ", maufactureDate=" + maufactureDate +
+                ", price=" + price +
+                '}';
     }
 }

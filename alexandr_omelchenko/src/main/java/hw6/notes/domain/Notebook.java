@@ -8,7 +8,7 @@ import java.util.Date;
 @Table(name="NOTEBOOKS")
 public class Notebook {
     @Id
-    @SequenceGenerator(name="sequence", sequenceName="SEQ_ID", allocationSize=1, initialValue =5)
+    @SequenceGenerator(name="sequence", sequenceName="ID", allocationSize=1, initialValue =2)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="sequence")
     @Column(name ="ID")
     private Long id;
@@ -26,14 +26,14 @@ public class Notebook {
         serial="defoult";
         vendor="Ivan";
         model="defoult";
-        date=new Date(115, 12, 5);
+        date=new Date(115, 1, 1);
         price=1000.00;
     }
     public Notebook(String serial, Double price){
         this.serial=serial;
         this.vendor="Ivan";
         this.model="brandNew";
-        this.date=new Date(115, 12, 5);
+        this.date=new Date(115, 1, 1);
         this.price=price;
     }
     public Notebook(String serial, String vendor, String model, Date date, Double price){
