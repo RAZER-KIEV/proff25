@@ -1,15 +1,12 @@
 package session10.dao;
 
-import hw6.notes.dao.NotebookDaoImpl;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import session10.Region;
 import org.hibernate.Session;
-import session6.tcpclient.Client;
 
 import java.util.List;
-import java.util.logging.Logger;
 
 /**
  * Created by RAZER on 16.06.2015.

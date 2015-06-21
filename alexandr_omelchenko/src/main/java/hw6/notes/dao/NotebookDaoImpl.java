@@ -8,35 +8,47 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
-import week_lesson10.RegionHiberDAOInterf;
 
 import java.util.ArrayList;
 import java.util.List;
-/**
- Создать DAO для таблицы ноутбуки
- Таблица ноутбуки имеет следующую структуру(id, serial, vendor, model, manufacture date, price)
- Notebook
- hw6.notes.dao.NotebookDao
- Long create(Notebook ntb)
- Notebook read(Long ig)
- boolean update(Notebook ntb)
- boolean delete(Notebook ntb)
- List findAll()
- hw6.notes.dao.NotebookDaoImpl
- */
 
 public class NotebookDaoImpl implements NotebookDao {
+ public static void main(String[] args) {
+  NotebookDaoImpl note = new NotebookDaoImpl();
+  note.initialize();
+  //note.create(new Notebook());
+  List list =note.findAll();
+  System.out.println(list.toString());
+ // Session session = note.factory.openSession();
+  //Notebook noteb = (Notebook) session.get(Notebook.class, 5L);
+  //session.close();
+  //noteb.setModel("pavilion");
+//note.update(noteb);
+  //note.delete(noteb);
+  note.factory.close();
+ }
+
  private SessionFactory factory;
- private static Logger log = Logger.getLogger(RegionHiberDAOInterf.class);
+ private static Logger log;
+
+public NotebookDaoImpl(){
+ factory=null;
+ log = Logger.getLogger(NotebookDaoImpl.class);
+}
+ public NotebookDaoImpl(SessionFactory factory){
+  this.factory=factory;
+  log = Logger.getLogger(NotebookDaoImpl.class);
+ }
 
  @Override
- public void initialize(){
+ public SessionFactory initialize(){
   Configuration cfg = new Configuration().configure("session10/hibernate.cfg.xml");
   StandardServiceRegistryBuilder sb = new StandardServiceRegistryBuilder();
   sb.applySettings(cfg.getProperties());
   StandardServiceRegistry standardServiceRegistry = sb.build();
   factory = cfg.buildSessionFactory(standardServiceRegistry);
   log.info("Reference to SessionFactory " + factory);
+ return factory;
  }
  @Override
  public Long create(Notebook ntb) {
