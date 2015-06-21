@@ -30,6 +30,9 @@ public class NotebookDaoImpl implements NotebookDao {
     private static org.apache.log4j.Logger log = org.apache.log4j.Logger.getLogger(HiberConnect.class);
     private SessionFactory factory;
 
+    public NotebookDaoImpl() {
+    }
+
     public NotebookDaoImpl(SessionFactory factory) {
         this.factory = factory;
     }
