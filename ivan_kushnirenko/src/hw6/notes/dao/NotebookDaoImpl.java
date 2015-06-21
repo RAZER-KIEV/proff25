@@ -1,14 +1,19 @@
-package hw6;
+package hw6.notes.dao;
 
+
+import hw6.notes.domain.Notebook;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import java.util.List;
 import java.util.Date;
+import hw6.notes.util.HibernateUtil;
+
 import org.apache.log4j.Logger;
 
-public class NotebookDaoImpl implements NotebookDao{
+public class NotebookDaoImpl implements NotebookDao {
+
 
     private static Logger log = Logger.getLogger(NotebookDaoImpl.class);
     private SessionFactory factory;
@@ -21,17 +26,17 @@ public class NotebookDaoImpl implements NotebookDao{
     }
 
     @Override
-    public Long create(Notebook ntb) {
+    public Long create(Notebook notebook) {
         checkFactory();
         Session session = factory.openSession();
         Long id = null;
         try{
             session.beginTransaction();
-            id = (Long)session.save(ntb);
+            id = (Long)session.save(notebook);
             session.getTransaction().commit();
             return id;
         } catch (HibernateException e){
-            log.error("TRANSACTION FAILED.",e);
+            log.error("ERROR: Cannot create new notebook - TRANSACTION FAILED.",e);
             e.printStackTrace();
             session.getTransaction().rollback();
         } finally {
@@ -42,15 +47,14 @@ public class NotebookDaoImpl implements NotebookDao{
         log.info(session);
         return id;
     }
-
     @Override
-    public Notebook read(Long id) {
+    public Notebook read(Long ig) {
         checkFactory();
         Session session = factory.openSession();
         try {
-            return (Notebook)session.get(Notebook.class,id);
+            return (Notebook)session.get(Notebook.class,ig);
         } catch (HibernateException e){
-            log.error("READ FAILED.",e);
+            log.error("ERROR: Cannot read notebook by id: "+ig+". READ FAILED.",e);
             e.printStackTrace();
         } finally {
             if(session!=null){
@@ -60,19 +64,18 @@ public class NotebookDaoImpl implements NotebookDao{
         log.info(session);
         return null;
     }
-
     @Override
-    public boolean update(Notebook ntb) {
+    public boolean update(Notebook notebook) {
         checkFactory();
         Session session = factory.openSession();
         try{
             session.beginTransaction();
-            session.update(ntb);
+            session.update(notebook);
             session.getTransaction().commit();
             log.info(session);
             return true;
         }catch (HibernateException e){
-            log.error("UPDATE FAILED.",e);
+            log.error("ERROR: Cannot update notebook: "+notebook+". UPDATE FAILED.",e);
             e.printStackTrace();
             session.getTransaction().rollback();
             return false;
@@ -82,18 +85,17 @@ public class NotebookDaoImpl implements NotebookDao{
             }
         }
     }
-
     @Override
-    public boolean delete(Notebook ntb) {
+    public boolean delete(Notebook notebook) {
         checkFactory();
         Session session = factory.openSession();
         try{
             session.beginTransaction();
-            session.delete(ntb);
+            session.delete(notebook);
             session.getTransaction().commit();
             return true;
         }catch (HibernateException e){
-            log.error("DELETE FAILED.", e);
+            log.error("ERROR: Cannot delete notebook: "+notebook+". DELETE FAILED.", e);
             e.printStackTrace();
             session.getTransaction().rollback();
             return false;
@@ -103,45 +105,42 @@ public class NotebookDaoImpl implements NotebookDao{
             }
         }
     }
-
     @Override
     public List<Notebook> findAll() {
         checkFactory();
         Session session = factory.openSession();
-        Query query = session.createQuery("from hw6.Notebook");
+        Query query = session.createQuery("from hw6.notes.domain.Notebook");
         return query.list();
     }
-
-    public int deleteByModel(String model) {
+    @Override
+    public List<Notebook> findByModel(String model) {
         checkFactory();
         Session session = factory.openSession();
+        List<Notebook> notebooks = null;
         try {
-            Query query = session.createQuery("from hw6.Notebook n where n.model='"+model+"'");
-            List<Notebook> notebooks = query.list();
-            for (Notebook n : notebooks) {
-                delete(n);
-            }
-            log.info(session);
-            return notebooks.size();
+            Query query = session.createQuery("from hw6.notes.domain.Notebook n where n.model=:model");
+            query.setParameter("model",model);
+            notebooks = query.list();
         } catch (HibernateException e){
-            log.error("OPERATION 'delete by model' FAILED.", e);
+            log.error("ERROR: operation 'find by model' FAILED.", e);
             e.printStackTrace();
-            return -1;
         } finally {
-            if(session!=null){
+            if (session!=null){
                 session.close();
             }
         }
+        return notebooks;
     }
-
-    public List<Notebook> readByVendor(String vendor) {
+    @Override
+    public List<Notebook> findByVendor(String vendor) {
         checkFactory();
         Session session = factory.openSession();
         try {
-            Query query = session.createQuery("from hw6.Notebook n where n.vendor='"+vendor+"'");
+            Query query = session.createQuery("from hw6.notes.domain.Notebook n where n.vendor=:vendor");
+            query.setParameter("vendor", vendor);/// Тут корячил, осторожно!
             return query.list();
         } catch (HibernateException e){
-            log.error("ERORR: read by vendor failed.",e);
+            log.error("ERORR: operation 'find by vendor' FAILED.",e);
             e.printStackTrace();
         } finally {
             if(session!=null){
@@ -151,16 +150,17 @@ public class NotebookDaoImpl implements NotebookDao{
         log.info(session);
         return null;
     }
-
-    public List<Notebook> readByPriceAndDate(Integer price, Date date) {
+    @Override
+    public List<Notebook> findByPriceManufDate(Double price, Date date) {
         checkFactory();
         Session session = factory.openSession();
         try {
-            Query query = session.createQuery("from hw6.Notebook n where n.price='"+
-                    price+"' AND n.manufactureDate like '"+date+"'");
+            Query query = session.createQuery("from hw6.notes.domain.Notebook n where n.manufactureDate=:mDate and n.price=:price");
+            query.setParameter("mDate",new java.util.Date(date.getTime()));
+            query.setParameter("price", price);
             return query.list();
         } catch (HibernateException e){
-            log.error("ERORR: read by price and date failed.",e);
+            log.error("ERORR: operation 'find by price and date' FAILED.",e);
             e.printStackTrace();
         } finally {
             if(session!=null){
@@ -169,16 +169,39 @@ public class NotebookDaoImpl implements NotebookDao{
         }
         log.info(session);
         return null;
+    }
+    @Override
+    public List<Notebook> findBetweenPriceLtDateByVendor (Double priceFrom, Double priceTo, Date date, String vendor){
+        checkFactory();
+        Session session = factory.openSession();
+        List<Notebook> result = null;
+        try {
+            Query query = session.createQuery("from hw6.notes.domain.Notebook n where n.price>:minPrice and n.price<:maxPrice and n.vendor=:vendor and " +
+                    "n.manufactureDate<:mDate"); // and n.manufactureDate<:mDate and n.price<:maxPrice " +
+//            "and n.vendor=:vendor")
+            query.setParameter("minPrice",priceFrom);
+            query.setParameter("maxPrice",priceTo);
+            query.setParameter("mDate",new java.util.Date(date.getTime()));
+            query.setParameter("vendor",vendor);
+            result=query.list();
+        } catch (HibernateException e){
+            log.error("ERROR: operation 'find by price range, manufacture date and vendor' FAILED.");
+            e.printStackTrace();
+        } finally {
+            if(session!=null){
+                session.close();
+            }
+        }
+        return result;
     }
 
     public static void main(String[] args) {
-        NotebookDaoImpl notebookDao = new NotebookDaoImpl();
+//        NotebookDaoImpl notebookDao = new NotebookDaoImpl();
 //        Notebook n = new Notebook();
 //        n.setId(11L);
-
 //        System.out.println(notebookDao.read("Asus"));
-        System.out.println(notebookDao.readByPriceAndDate(620,new Date(115,2,12)));
-
+//        System.out.println(notebookDao.findBetweenPriceLtDateByVendor(430D, 830D, new Date(115, 5, 21), "DELL_Shop"));
+//        System.out.println(notebookDao.readByVendor("DELL_Shop"));
 //        System.out.println(notebookDao.delete(n));
 //        notebookDao.factory.close();
     }
