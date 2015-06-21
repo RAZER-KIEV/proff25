@@ -27,8 +27,10 @@ public class NotebookDaoImpl implements NotebookDao {
   //note.delete(noteb);
   note.factory.close();
  }
+
  private SessionFactory factory;
  private static Logger log;
+
 public NotebookDaoImpl(){
  factory=null;
  log = Logger.getLogger(NotebookDaoImpl.class);
@@ -39,13 +41,14 @@ public NotebookDaoImpl(){
  }
 
  @Override
- public void initialize(){
+ public SessionFactory initialize(){
   Configuration cfg = new Configuration().configure("session10/hibernate.cfg.xml");
   StandardServiceRegistryBuilder sb = new StandardServiceRegistryBuilder();
   sb.applySettings(cfg.getProperties());
   StandardServiceRegistry standardServiceRegistry = sb.build();
   factory = cfg.buildSessionFactory(standardServiceRegistry);
   log.info("Reference to SessionFactory " + factory);
+ return factory;
  }
  @Override
  public Long create(Notebook ntb) {
