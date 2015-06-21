@@ -13,6 +13,7 @@ import java.util.Locale;
 /**
  * Created by viktoria
  * Project:.hw6.notes.util
+ *
  */
 public class HibernateUtil {
     private static Logger log = Logger.getLogger(HiberConnect.class);

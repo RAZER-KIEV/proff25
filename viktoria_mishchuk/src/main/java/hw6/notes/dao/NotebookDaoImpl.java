@@ -10,6 +10,7 @@ import java.util.List;
 /**
  * Created by viktoria
  * Project:.hw6.notes.dao
+ *
  */
 public class NotebookDaoImpl implements NotebookDao{
     private static Logger log = Logger.getLogger(NotebookDao.class);

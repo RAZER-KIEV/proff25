@@ -8,6 +8,7 @@ import java.util.Locale;
 /**
  * Created by viktoria
  * Project:.hw6.notes.service
+ *
  */
 public class Menu {
 
