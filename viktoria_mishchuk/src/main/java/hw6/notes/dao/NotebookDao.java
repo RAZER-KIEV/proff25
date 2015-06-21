@@ -13,7 +13,6 @@ import java.util.List;
  * dao      hw6.notes.dao.NotebookDao
  * Long create(Notebook ntb), Notebook read(Long ig), boolean update(Notebook ntb), boolean delete(Notebook ntb), List findAll()
  * hw6.notes.dao.NotebookDaoImpl
- *
  */
 public interface NotebookDao {
     Long create(Notebook ntb);

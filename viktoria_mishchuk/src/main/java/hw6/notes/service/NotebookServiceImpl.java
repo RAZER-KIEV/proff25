@@ -28,7 +28,7 @@ public class NotebookServiceImpl implements NotebookService{
 
     @Override
     public Long add(Notebook notebook){
-        return (Long)notebookDao.create(notebook);
+        return notebookDao.create(notebook);
     }
 
     @Override

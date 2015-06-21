@@ -7,7 +7,6 @@ import java.util.Date;
 /**
  * Created by viktoria
  * Project:.hw6.notes
- *
  * Создать DAO для таблицы ноутбуки
  Таблица ноутбуки имеет следующую структуру (id, serial, vendor, model, manufacture date, price)
  */

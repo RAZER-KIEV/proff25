@@ -16,7 +16,7 @@ import java.util.Locale;
  *
  */
 public class HibernateUtil {
-    private static Logger log = Logger.getLogger(HiberConnect.class);
+    private static Logger log = Logger.getLogger(HibernateUtil.class);
     SessionFactory factory;
 
     public HibernateUtil(){
