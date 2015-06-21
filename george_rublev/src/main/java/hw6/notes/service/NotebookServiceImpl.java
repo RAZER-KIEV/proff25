@@ -46,17 +46,17 @@ public class NotebookServiceImpl implements NotebookService{
 
     @Override
     public List<Notebook> findByVendor(String vendor) {
-        return null;
+        return notes.findByVendor(vendor);
     }
 
     @Override
     public List<Notebook> findByPriceManufDate(Double price, Date date) {
-        return null;
+        return notes.findByPriceManufDate(price,date);
     }
 
     @Override
     public List<Notebook> findBetweenPriceLtDateByVendor(Double priceFrom, Double priceTo, Date date, String vendor) {
-        return null;
+        return notes.findBetweenPriceLtDateByVendor(priceFrom,priceTo,date,vendor);
     }
 
     @Override
@@ -77,6 +77,7 @@ public class NotebookServiceImpl implements NotebookService{
 
     @Override
     public boolean delete(Long id) {
-        return false;
+        Notebook notebook = notes.read(id);
+       return notes.delete(notebook);
     }
 }
