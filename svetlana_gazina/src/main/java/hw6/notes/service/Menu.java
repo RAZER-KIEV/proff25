@@ -15,15 +15,37 @@ import java.util.Locale;
  */
 public class Menu {
     public static void main(String[] args) {
+        SessionFactory factory = Menu.getFactory();
+        NotebookServiceImpl ndService = new NotebookServiceImpl(factory);
+        Notebook notebook = new Notebook(new BigDecimal(12400), "ASUS", "ASP348567", "Slim", new Date(12-10-2014));
+        ndService.add(notebook);
+
+    }
+    public void deleteNtb(Notebook notebook){
+        SessionFactory factory = Menu.getFactory();
+        NotebookServiceImpl ndService = new NotebookServiceImpl(factory);
+        ndService.delete(notebook.getId());
+    }
+    public void changePrice(Notebook notebook){
+        SessionFactory factory = Menu.getFactory();
+        NotebookServiceImpl ndService = new NotebookServiceImpl(factory);
+        ndService.changePrice(notebook.getId(),notebook.getPrice().doubleValue());
+
+    }
+    public void changeSerialVendor(Notebook notebook){
+        SessionFactory factory = Menu.getFactory();
+        NotebookServiceImpl ndService = new NotebookServiceImpl(factory);
+        ndService.changeSerialVendor(notebook.getId(),notebook.getSerial(), notebook.getVendor());
+
+    }
+    public static SessionFactory getFactory(){
         Locale.setDefault(Locale.ENGLISH);
         Configuration cfg = new Configuration().configure("session10/hibernate.cfg.xml");
         StandardServiceRegistryBuilder sb = new StandardServiceRegistryBuilder();
         sb.applySettings(cfg.getProperties());
         StandardServiceRegistry standardServiceRegistry = sb.build();
         SessionFactory factory = cfg.buildSessionFactory(standardServiceRegistry);
-        NotebookServiceImpl ndService = new NotebookServiceImpl(factory);
-        Notebook notebook = new Notebook(new BigDecimal(12400), "ASUS", "ASP348567", "Slim", new Date(12-10-2014));
-        ndService.add(notebook);
+        return factory;
 
     }
 }
