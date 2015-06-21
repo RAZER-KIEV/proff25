@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * public int parallelIndexOf(E e), выполняющий линейный многопоточный поиск в списке.
  */
 
-// MyArrayList is wrapper under java.util.ArrayList with extra int parallelIndexOf(E value) method
+// MyArrayList is wrapper under java.hw6.notes.util.ArrayList with extra int parallelIndexOf(E value) method
 public class MyArrayList<E> {
 
     private ArrayList<E> dataArray;

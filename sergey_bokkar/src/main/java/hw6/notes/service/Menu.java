@@ -1,6 +1,6 @@
 package hw6.notes.service;
 
-import hw6.notes.dao.NotebookDaoImpl;
+import hw6.notes.domain.Notebook;
 import hw6.notes.domain.Notebook;
 
 /**

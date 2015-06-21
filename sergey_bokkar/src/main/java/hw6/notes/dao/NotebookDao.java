@@ -1,6 +1,7 @@
 package hw6.notes.dao;
 
 import hw6.notes.domain.Notebook;
+import hw6.notes.domain.Notebook;
 
 import java.util.List;
 
