@@ -3,7 +3,7 @@ package hw6.notes.service;
 import hw6.notes.dao.NotebookDaoImpl;
 import hw6.notes.domain.Notebook;
 
-//
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -55,5 +55,32 @@ public class NotebookServiceImpl implements NotebookService {
             return true;
         }
          return false;
+    }
+
+    @Override
+    public boolean deleteByModel(String model) {
+       if (model != null) {List<Notebook> ntbList = ndi.findByModel(model);
+        for(int i = 0; i < ntbList.size(); i++){
+            Notebook ntb = ntbList.get(i);
+            ndi.delete(ntb);
+        }
+           return true;
+       }
+        return false;
+    }
+
+    @Override
+    public List<Notebook> findByVendor(String vendor) {
+        return ndi.findByVendor(vendor);
+    }
+
+    @Override
+    public List<Notebook> findByPriceManufDate(Double price, Date date) {
+        return ndi.findByPriceManufDate(price, date);
+    }
+
+    @Override
+    public List<Notebook> findBetweenPriceLtDateByVendor(Double priceFrom, Double priceTo, Date date, String vendor) {
+        return ndi.findBetweenPriceLtDateByVendor(priceFrom, priceTo, date, vendor);
     }
 }
