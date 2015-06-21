@@ -47,22 +47,27 @@ private NotebookDaoImpl noteDAO;
 
     @Override
     public boolean deleteByModel(String model) {
-        return false;
+        boolean rez=false;
+        List<Notebook> list =noteDAO.findByModel(model);
+        for(Notebook nbk: list ){
+            noteDAO.delete(nbk); rez=true;}
+        return true;
     }
 
     @Override
     public List findByVendor(String vendor) {
-        return null;
+        List<Notebook>list =noteDAO.findByVendor(vendor);
+        return list;
     }
-
     @Override
     public List findByPriceManufDate(Double price, Date date) {
+        List<Notebook>list = noteDAO.findByPriceManufDate(price, date);
         return null;
     }
 
     @Override
     public List findBetweenPriceLtDateByVendor(Double priceFrom, Double priceTo, Date date, String vendor) {
-        return null;
+        List<Notebook>list=noteDAO.findBetweenPriceLtDateByVendor(priceFrom, priceTo, date, vendor);
+        return list;
     }
-
 }
