@@ -36,17 +36,14 @@ public class MainWindow {
     //todo
 }
 class PathJDBCManager{
-    Connection conn = null;
-    Statement stmt;
-    Path user;
-    ArrayList<Path> pathList;
-    //int result;
-    String searchedFile;
-   // public String fromUtiltoSQL(java.sql.Date sDate){}
+    private Connection conn = null;
+    private Statement stmt;
+    private Path user;
+    private ArrayList<Path> pathList;
+    private String searchedFile;
 
-    public void setSearchedFile(String filename){
-        searchedFile = filename;
-    }
+   // public void setSearchedFile(String filename){
+   //     searchedFile = filename;}
     public void setList(List<Path> lst ){
      pathList = (ArrayList<Path>) lst;
     }
@@ -64,7 +61,7 @@ class PathJDBCManager{
     public int create(Path user) throws SQLException {
        int id = user.getId();
         String path = user.getPath();
-       Date date = user.getCreationDate();
+       Date date = user.getDate();
         System.out.println(date);
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-YYYY");
         String sDate = dateFormat.format(date);
@@ -86,17 +83,17 @@ class PathJDBCManager{
 }
 class Path{
     //prepare object to SQL
-    int id;
-    String path;
-    Date creationDate;
-    public  Path(int id,String path,Date creationDate){
+    private int id;
+    private String path;
+    private Date date;
+    public  Path(int id,String path,Date date){
         this.id = id;
         this.path = path;
-        this.creationDate = creationDate;
+        this.date = date;
     }
     public int getId(){return id;}
     public String getPath(){return path;}
-    public Date getCreationDate(){return creationDate;}
+    public Date getDate(){return date;}
 
 //todo
 }
@@ -105,35 +102,23 @@ class FileService {
     FileSystem fileSystem;
     String searchedFile;
     int id;
-
-    public List<Path> getList(){return pathList;}
-
     public void setSerchedFile(String fName){
         searchedFile = fName;
     }
-   // public void addPath(java.nio.file.Path path) {
-      //todo  pathList.add()
-    //}
-
     public List<Path> findAll() throws IOException {
         id=0;
-        pathList = new ArrayList<Path>();
+        pathList = new ArrayList<>();
         fileSystem = FileSystems.getDefault();
-        /*final java.nio.file.Path path = */
         Files.walkFileTree(fileSystem.getPath("\\Users\\RAZER\\workspace"),
                 new SimpleFileVisitor<java.nio.file.Path>() {
                     @Override
                     public FileVisitResult visitFile(java.nio.file.Path path, BasicFileAttributes attrs) {
-                        //System.out.println(" path = " + path);
                         String tmp = String.valueOf(path.getFileName());
                         if(tmp.equals(searchedFile)){
                             System.out.println(" path = " + path);
                            Path resalt = new Path(++id, path.toString(),new Date(Calendar.getInstance().getTimeInMillis()) );
                             pathList.add(resalt);
                         }
-
-
-
                         return FileVisitResult.CONTINUE;
                     }
                 });

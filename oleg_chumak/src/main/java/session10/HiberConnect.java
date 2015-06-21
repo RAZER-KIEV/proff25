@@ -27,7 +27,6 @@ public class HiberConnect {
         sb.applySettings(cfg.getProperties());
         StandardServiceRegistry standardServiceRegistry = sb.build();
         SessionFactory factory = cfg.buildSessionFactory(standardServiceRegistry);
-        log.info("Reference to SessionFactory " + factory);
 //        Session session = null;
 //        try {
 //            session = factory.openSession();
@@ -54,8 +53,14 @@ public class HiberConnect {
 //        }
 //        log.info(session);
         RegionsHibernateDAOImpl dao = new RegionsHibernateDAOImpl(factory);
-//        Region tmp = dao.read();
-        System.out.println(dao.findById(new Long(2), new Long(4)));
+//        Region tmp = dao.read(new Long(2));
+//        tmp.setName("America");
+//        dao.update(tmp);
+//        Region temp = dao.read(new Long(1));
+//                dao.delete(temp);
+//        System.out.println(dao.findAll());
+//        dao.findAllbyPortions(new Long(2));
+//        System.out.println(dao.findById(new Long(2), new Long(4)));
     }
 }
 

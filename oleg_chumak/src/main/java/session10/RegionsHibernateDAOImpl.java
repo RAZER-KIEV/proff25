@@ -1,17 +1,20 @@
 package session10;
 
 
+import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by oleg on 16.06.15.
  */
 public class RegionsHibernateDAOImpl implements RegionDao {
+    private static Logger log = Logger.getLogger(HiberConnect.class);
 
     private SessionFactory factory;
 
@@ -70,10 +73,14 @@ public class RegionsHibernateDAOImpl implements RegionDao {
             session.delete(region);
             session.getTransaction().commit();
         } catch (HibernateException except){
-            session.getTransaction().rollback();
+                        log.error("Open session failed", except);
+//            session.getTransaction().rollback();
         } finally {
             session.close();
         }
+    }
+
+    public RegionsHibernateDAOImpl() {
     }
 
     @Override
@@ -96,5 +103,18 @@ public class RegionsHibernateDAOImpl implements RegionDao {
         Query query = session.createQuery("from Region c where " +
                 "(c.id >= "+firstId+" and c.id <= "+lastId+")");
         return query.list();
+    }
+
+    @Override
+    public List<Region> findAllbyPortions(Long start, Long range) {
+        List<Region> list = new ArrayList<>();
+        Session session = factory.openSession();
+        String qu = "select count(id) from Region";
+        Query query = session.createQuery(qu);
+        Long size = (Long)query.uniqueResult();
+//            for (Long i = start; i <= iterations; i++){
+//                list.add(read(i));
+//            }
+        return null;
     }
 }

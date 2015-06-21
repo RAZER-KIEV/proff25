@@ -25,14 +25,13 @@ public class javaFX extends Application {
         TreeView<String> tree = new TreeView<String>(root);
 
         for(int i =0;i<5;i++){
-            root.getChildren().add(new TreeItem<>("child-"+i));
+            root.getChildren().add(new TreeItem<String>("child-"+i));
         }
         root.setExpanded(true);
 
         BorderPane pane = new BorderPane();
         final TextArea text = new TextArea("Text\n");
         pane.setCenter(tree);
-<<<<<<< Updated upstream
         pane.setTop(new TextArea("1\n2"));
 //        pane.setBottom(new Button("Ok"));
         Button button = new Button("ok");
@@ -42,17 +41,15 @@ public class javaFX extends Application {
                 text.appendText(" added\n");
             }
         });
-=======
 //        pane.setTop(new TextArea("1\n2"));
 //        pane.setBottom(new Button("Ok"));
-        Button button = new Button("ok");
+//        Button button = new Button("ok");
 //        button.setOnMouseClicked(new EventHandler<MouseEvent>() {
 //            @Override
 //            public void handle(MouseEvent event) {
 //                text.appendText(" added\n");
 //            }
 //        });
->>>>>>> Stashed changes
         pane.setBottom(button);
         pane.setLeft(new Label("new text"));
 
