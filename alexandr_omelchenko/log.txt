@@ -5872,3 +5872,98 @@ Caused by: java.sql.SQLSyntaxErrorException: ORA-00936: missing expression
 2015-06-22 14:50:45,802 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [reg_id_pk]
 2015-06-22 14:50:45,803 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
 2015-06-22 14:50:47,752 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-22 15:42:03,444 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-22 15:42:03,472 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-22 15:42:03,476 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-22 15:42:03,480 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-22 15:42:03,541 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: session10/hibernate.cfg.xml
+2015-06-22 15:42:03,541 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: session10/hibernate.cfg.xml
+2015-06-22 15:42:03,798 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-22 15:42:04,003 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-22 15:42:04,227 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-22 15:42:04,455 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-22 15:42:04,457 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=HR, password=****}
+2015-06-22 15:42:04,457 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-22 15:42:04,460 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-22 15:42:06,555 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-22 15:42:06,931 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-22 15:42:06,947 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-22 15:42:06,973 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-22 15:42:06,981 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-22 15:42:07,083 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-22 15:42:07,478 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-22 15:42:07,478 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-22 15:42:07,531 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-22 15:42:07,624 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-22 15:42:07,624 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [manufacture_date, price, vendor, model, id, serial_num]
+2015-06-22 15:42:07,624 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-22 15:42:07,624 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [notebooks_pk]
+2015-06-22 15:42:07,672 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.REGIONS
+2015-06-22 15:42:07,673 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [region_id, region_name]
+2015-06-22 15:42:07,673 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-22 15:42:07,673 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [reg_id_pk]
+2015-06-22 15:42:07,674 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-22 15:42:07,690 [main] INFO  hw6.notes.dao.NotebookDaoImpl - Reference to SessionFactory org.hibernate.internal.SessionFactoryImpl@539d019
+2015-06-22 16:14:17,210 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-22 16:14:17,231 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-22 16:14:17,238 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-22 16:14:17,242 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-22 16:14:17,389 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: session10/hibernate.cfg.xml
+2015-06-22 16:14:17,389 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: session10/hibernate.cfg.xml
+2015-06-22 16:14:17,537 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-22 16:14:17,755 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-22 16:14:18,333 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-22 16:14:19,005 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-22 16:14:19,006 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=HR, password=****}
+2015-06-22 16:14:19,006 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-22 16:14:19,010 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-22 16:14:21,680 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-22 16:14:22,132 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-22 16:14:22,150 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-22 16:14:22,193 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-22 16:14:22,225 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-22 16:14:22,514 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-22 16:14:23,154 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-22 16:14:23,155 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-22 16:14:23,319 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-22 16:14:23,451 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-22 16:14:23,451 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [manufacture_date, price, vendor, model, id, serial_num]
+2015-06-22 16:14:23,452 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-22 16:14:23,452 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [notebooks_pk]
+2015-06-22 16:14:23,470 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.REGIONS
+2015-06-22 16:14:23,470 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [region_id, region_name]
+2015-06-22 16:14:23,470 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-22 16:14:23,472 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [reg_id_pk]
+2015-06-22 16:14:23,473 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-22 16:16:37,613 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-22 16:16:37,631 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-22 16:16:37,682 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-22 16:16:37,688 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-22 16:16:37,819 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: session10/hibernate.cfg.xml
+2015-06-22 16:16:37,820 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: session10/hibernate.cfg.xml
+2015-06-22 16:16:38,080 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-22 16:16:38,306 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-22 16:16:38,550 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-22 16:16:38,886 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-22 16:16:38,886 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=HR, password=****}
+2015-06-22 16:16:38,887 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-22 16:16:38,890 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-22 16:16:42,560 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-22 16:16:42,923 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-22 16:16:42,945 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-22 16:16:42,971 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-22 16:16:42,986 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-22 16:16:43,133 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-22 16:16:43,598 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-22 16:16:43,598 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-22 16:16:43,699 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-22 16:16:43,804 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.NOTEBOOKS
+2015-06-22 16:16:43,804 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [manufacture_date, price, vendor, model, id, serial_num]
+2015-06-22 16:16:43,804 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-22 16:16:43,804 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [notebooks_pk]
+2015-06-22 16:16:43,868 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: HR.REGIONS
+2015-06-22 16:16:43,869 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [region_id, region_name]
+2015-06-22 16:16:43,869 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-22 16:16:43,869 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [reg_id_pk]
+2015-06-22 16:16:43,870 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-22 16:16:44,518 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]

@@ -142,7 +142,7 @@ public NotebookDaoImpl(){
  public List findByVendor(String vendor) {
   Session session = factory.openSession();
   List<Notebook>list = new ArrayList<>();
-  list =session.createQuery("from Notebook n where n.vendor = '"+vendor+"'").list();
+  list =session.createQuery("from hw6.notes.domain.Notebook n where n.vendor = '"+vendor+"'").list();
   if (session!=null){
    session.close();}
   return list;
@@ -151,7 +151,7 @@ public NotebookDaoImpl(){
  public List findByPriceManufDate(Double price, Date date) {
   Session session = factory.openSession();
   List<Notebook>list;
-  Query query = session.createQuery("from Notebook n where n.price=:price and n.manufacture_date=:date ");
+  Query query = session.createQuery("from hw6.notes.domain.Notebook n where n.price=:price and n.manufacture_date=:date ");
   //query.setParameter("sqldate",new java.sql.Date(date.getTime()));
   query.setParameter("date", date);
   query.setParameter("price", price);
@@ -161,23 +161,12 @@ public NotebookDaoImpl(){
    session.close();}
   return list;
  }
- /* @Override
- public List<Notebook> findByPriceManufDate(Double price, Date date) {
-  Session session = factory.openSession();
-  Query query = session.createQuery("from Notebook n where n.manufacture_date=:m_date and n.price=:price");
-  query.setParameter("m_date",new java.sql.Date(date.getTime()));
-  query.setParameter("price",price);
-  List<Notebook> notebooks = query.list();
-  if(session!=null)
-   session.close();
-  return notebooks;
- }*/
  //- Получить ноутбуки по цене в указанном диапазоне, меньше указанной даты выпуска и указанного производителя
  @Override
  public List findBetweenPriceLtDateByVendor(Double priceFrom, Double priceTo, Date date, String vendor) {
   Session session = factory.openSession();
   List<Notebook>list;
-  Query query =session.createQuery("from Notebook n where n.price >:priceFrom and n.price<:priceTo and n.manufacture_date < :date and n.vendor=:vendor");
+  Query query =session.createQuery("from hw6.notes.domain.Notebook n where n.price >:priceFrom and n.price<:priceTo and n.manufacture_date < :date and n.vendor=:vendor");
   query.setParameter("priceFrom", priceFrom);
   query.setParameter("priceTo", priceTo);
   query.setParameter("date", date);
