@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by Роман on 21.06.2015.
  */
-public class NotebookServiceImpl implements NotebookServide {
+public class NotebookServiceImpl implements NotebookService {
     private SessionFactory factory;
     private NotebookDaoImpl notebookDao;
     @Override
