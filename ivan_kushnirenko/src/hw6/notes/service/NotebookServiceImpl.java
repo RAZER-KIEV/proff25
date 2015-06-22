@@ -14,12 +14,16 @@ import org.hibernate.HibernateException;
  */
 public class NotebookServiceImpl implements NotebookService {
 
-    private NotebookDaoImpl nbDaoImpl;
     private static  Logger log = Logger.getLogger(NotebookServiceImpl.class);
-     /*
-       List findBetweenPriceLtDateByVendor(Double priceFrom, Double priceTo, Date date, String vendor)
+    private NotebookDaoImpl nbDaoImpl;
 
-    */
+    public NotebookDaoImpl getNbDaoImpl() {
+        return nbDaoImpl;
+    }
+    public void setNbDaoImpl(NotebookDaoImpl nbDaoImpl) {
+        this.nbDaoImpl = nbDaoImpl;
+    }
+
     @Override
     public Long add(Notebook notebook) {
         checkNotebookDaoImpl();
@@ -127,10 +131,7 @@ public class NotebookServiceImpl implements NotebookService {
     }
 
     public static void main(String[] args) throws Exception{
-//      NotebookServiceImpl notebookService = new NotebookServiceImpl();
-//      notebookService.printNotebooks(notebookService.showAllNotebooks());
-//      System.out.println(notebookService.addNotebook(67838344L, "LENOVO_SHOP", "LENOVO", new Date(),new Integer(515)));
-//      System.out.println(notebookService.getByPriceWithVendorAndDate(400, 810, new Date(115, 5, 21), "DELL_Shop"));
+
     }
 
     private void printNotebooks(List<Notebook> notebooks){
