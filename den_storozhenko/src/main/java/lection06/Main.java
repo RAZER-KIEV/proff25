@@ -16,6 +16,7 @@ public class Main {
         hibernateUtil.createSessionFactory();
         SessionFactory sessionFactory = hibernateUtil.getFactory();
 
+
         Person person1 = new Person("Ivanov");
         Person person2 = new Person("Petrov");
         Person person3 = new Person("Sidorov");
