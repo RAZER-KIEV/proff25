@@ -16,7 +16,15 @@ public class NotebookDaoImpl implements NotebookDao {
 
 
     private static Logger log = Logger.getLogger(NotebookDaoImpl.class);
+
     private SessionFactory factory;
+
+    public SessionFactory getFactory() {
+        return factory;
+    }
+    public void setFactory(SessionFactory factory) {
+        this.factory = factory;
+    }
 
     private void checkFactory(){
         if (factory==null){
@@ -196,13 +204,6 @@ public class NotebookDaoImpl implements NotebookDao {
     }
 
     public static void main(String[] args) {
-//        NotebookDaoImpl notebookDao = new NotebookDaoImpl();
-//        Notebook n = new Notebook();
-//        n.setId(11L);
-//        System.out.println(notebookDao.read("Asus"));
-//        System.out.println(notebookDao.findBetweenPriceLtDateByVendor(430D, 830D, new Date(115, 5, 21), "DELL_Shop"));
-//        System.out.println(notebookDao.readByVendor("DELL_Shop"));
-//        System.out.println(notebookDao.delete(n));
-//        notebookDao.factory.close();
+
     }
 }
