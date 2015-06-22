@@ -1,8 +1,9 @@
 package hw6.notes.view;
 
 import hw6.notes.domain.Notebook;
-import hw6.notes.service.NotebookServiceImpl;
 import hw6.notes.util.HibernateUtil;
+import hw6.notes.service.NotebookServiceImpl;
+
 import java.util.Date;
 import java.util.Calendar;
 import java.util.Locale;

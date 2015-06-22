@@ -53,11 +53,6 @@ public class UserJDBCManager{
                     user.getName() + "', '" +
                     user.getPassword() + "', '" +
                     user.getDate() + "')");
-//            pstmnt.setInt(1, user.getId());
-//            pstmnt.setString(2, user.getName());
-//            pstmnt.setString(3, user.getPassword());
-//            pstmnt.setDate(4, Date.valueOf("2015-7-10"));
-//            pstmnt.executeUpdate();
         } catch (SQLException sqlEx){
             return 0;
         }

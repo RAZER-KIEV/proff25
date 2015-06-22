@@ -1,36 +1,41 @@
-package hw6;
-
-import oracle.sql.DATE;
+package hw6.notes.domain;
 
 import javax.persistence.*;
 import java.util.Date;
-
-/**
- * Created by ivan on 17.06.15.
- */
+import java.util.DoubleSummaryStatistics;
 
 @Entity
 @Table(name="NOTEBOOKS")
 public class Notebook {
 
     private Long id;
-    private Long serial;
+    private String serial;
     private String vendor;
     private String model;
     private Date manufactureDate;
-    private Integer price;
+    private Double price;
 
     public Notebook(){
 
     }
 
-    public Notebook(Long serial, String vendor, String model, Date manufactureDate, Integer price){
+    public Notebook(String serial, String vendor, String model, Date manufactureDate, Double price){
         this.serial=serial;
         this.vendor=vendor;
         this.model=model;
         this.manufactureDate=manufactureDate;
         this.price=price;
     }
+
+    public Notebook(Notebook notebook){
+        this.id=notebook.id;
+        this.serial=notebook.serial;
+        this.vendor=notebook.vendor;
+        this.model=notebook.model;
+        this.manufactureDate=notebook.manufactureDate;
+        this.price=notebook.price;
+    }
+
     @Id
     @SequenceGenerator(name = "sequence", sequenceName = "SEQ_REGIONS_ID",
             allocationSize = 1, initialValue = 1)
@@ -45,11 +50,11 @@ public class Notebook {
     }
 
     @Column(name="SERIAL")
-    public Long getSerial() {
+    public String getSerial() {
         return serial;
     }
 
-    public void setSerial(Long serial) {
+    public void setSerial(String serial) {
         this.serial = serial;
     }
 
@@ -81,11 +86,11 @@ public class Notebook {
     }
 
     @Column(name="PRICE")
-    public Integer getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 

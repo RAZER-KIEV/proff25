@@ -20,7 +20,7 @@ public class SQL {
 //        while ( res.next()) {
 //            String first_name = res.getString("FIRST_NAME");
 //            String last_name = res.getString("LAST_NAME");
-//            java.util.Date hire_date = res.getDate("HIRE_DATE");
+//            java.hw6.notes.util.Date hire_date = res.getDate("HIRE_DATE");
 //            Long department_id = res.getLong("DEPARTMENT_ID");
 //            System.out.println(/*"%15s%15s%20d\n", */first_name + " " + last_name + " " + hire_date.toString() + " " + department_id);
 //        }
