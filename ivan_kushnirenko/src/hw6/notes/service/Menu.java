@@ -1,118 +1,168 @@
-package hw6.notes.service;/**
+package hw6.notes.service;
+
+/**
  * Created by ivan on 17.06.15.
  */
 
-import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
-import java.awt.*;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import hw6.notes.domain.Notebook;
 
-public class Menu extends Application {
+public class Menu {
 
- private NotebookServiceImpl nbsi;
+    private NotebookServiceImpl nbsi;
 
- public NotebookServiceImpl getNbsi() {
-  return nbsi;
- }
-
- public void setNbsi(NotebookServiceImpl nbsi) {
-  this.nbsi = nbsi;
- }
-
-/*
-main()
-
-void deleteByModel()
-void showByVendor()
-void showByPriceManufDate()
-void showBetweenPriceLtDateByVendor()
-     */
-   private void checkNotebookServiceImpl(){
-      if(nbsi==null){
-         nbsi=new NotebookServiceImpl();
-      }
-   }
-
-   public void deleteNtb(Notebook notebook){
-       checkNotebookServiceImpl();
-       nbsi.delete(notebook.getId());
-   }
-
-    void changePrice(Notebook notebook){
-        checkNotebookServiceImpl();
-        nbsi.changePrice(notebook.getId(),notebook.getPrice());
+    public NotebookServiceImpl getNbsi() {
+        return nbsi;
     }
 
-    void changeSerialVendor(Notebook notebook){
-        checkNotebookServiceImpl();
-        nbsi.changeSerialVendor(notebook.getId(),notebook.getSerial(),notebook.getVendor());
+    public void setNbsi(NotebookServiceImpl nbsi) {
+        this.nbsi = nbsi;
     }
 
-    void deleteByModel(){
+    private void checkNotebookServiceImpl() {
+        if (nbsi == null) {
+            nbsi = new NotebookServiceImpl();
+        }
+    }
+
+    private static String getData(String sout) {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String gettedData = "";
+        System.out.println(sout);
+        while (gettedData.length() == 0) {
+            try {
+                gettedData = br.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            if (gettedData.length() == 0) {
+                System.out.println("Input parametr must be non-empty!");
+                System.out.println("Re-type parametr:");
+            }
+        }
+        return gettedData;
+    }
+
+    private Notebook createNotebook() {
+        String serial = getData("Please, type serial of your notebook here: ");
+        String vendor = getData("Please, type vendor of your notebook here: ");
+        String model = getData("Please, type model of your notebook here: ");
+        String stringDate = getData("Please, type manufacture date of your notebook  in format yyyy.MM.dd here: ");
+        Date manufDate = null;
+        try {
+            manufDate = new SimpleDateFormat("yyyy.MM.dd").parse(stringDate);
+        } catch (ParseException e) {
+            System.out.println("");
+            e.printStackTrace();
+        }
+        Double price = null;
+        try {
+            price = Double.parseDouble(getData("Please, type price of your notebook here (Remember, price must be in the Double type!): "));
+        } catch (NumberFormatException e) {
+            System.out.println("");
+            e.printStackTrace();
+        }
+        return new Notebook(serial, vendor, model, manufDate, price);
+    }
+
+    public void addNotedook() {
         checkNotebookServiceImpl();
-        System.out.println("Please, type model here:");
-        String model="";
+        nbsi.add(createNotebook());
+    }
+
+    public void deleteNtb(Notebook notebook) {
+        checkNotebookServiceImpl();
+        nbsi.delete(notebook.getId());
+    }
+
+    void changePrice(Notebook notebook) {
+        checkNotebookServiceImpl();
+        nbsi.changePrice(notebook.getId(), notebook.getPrice());
+    }
+
+    void changeSerialVendor(Notebook notebook) {
+        checkNotebookServiceImpl();
+        nbsi.changeSerialVendor(notebook.getId(), notebook.getSerial(), notebook.getVendor());
+    }
+
+    void deleteByModel() {
+        checkNotebookServiceImpl();
+        String model = getData("Please, type the model of notebooks here: ");
         nbsi.deleteByModel(model);
     }
 
-    void showByVendor(){
-
-    }
-    void showByPriceManufDate(){
-
-    }
-    void showBetweenPriceLtDateByVendor(){
-
+    void showByVendor() {
+        checkNotebookServiceImpl();
+        nbsi.findByVendor(getData("Please, type the vendor of notebooks here: "));
     }
 
-    public static void main(String[] args)
-    {
-        launch(args);
+    void showByPriceManufDate() {
+        String stringDate = getData("Please, type manufacture date of your notebook  in format yyyy.MM.dd here: ");
+        Date manufDate = null;
+        try {
+            manufDate = new SimpleDateFormat("yyyy.MM.dd").parse(stringDate);
+        } catch (ParseException e) {
+            System.out.println("");
+            e.printStackTrace();
+        }
+        Double price = null;
+        try {
+            price = Double.parseDouble(getData("Please, type price of your notebook here (Remember, price must be in the Double type!): "));
+        } catch (NumberFormatException e) {
+            System.out.println("");
+            e.printStackTrace();
+        }
+        checkNotebookServiceImpl();
+        nbsi.findByPriceManufDate(price, manufDate);
     }
-    @Override
-    public void start(Stage primaryStage) {
-//        primaryStage.setResizable(false);
-//
-//        BorderPane borderPane = new BorderPane();
-//
-//        Scene scene = new Scene(borderPane, 600, 400);
-//        primaryStage.setTitle("`NOTEBOOK`shop by ivan");
-//        primaryStage.setScene(scene);
-//        primaryStage.show();
-//
-//        TextArea outputInfo = new TextArea();
-//        outputInfo.setEditable(false);
-//        borderPane.setLeft(outputInfo);
-//
-//
-////        TextField ipText = new TextField("localhost");
-//        TextField portText = new TextField("30000");
-//        Button connectButton = new Button("Connect");
-//        FlowPane connect = new FlowPane(ipText, portText, connectButton);
-//        borderPane.setTop(connect);
-//
-//        TextArea chatText = new TextArea();
-//        chatText.setEditable(false);
-//        borderPane.setCenter(chatText);
-//
-//        TextField messageText = new TextField();
-//        Button sendMessageButton = new Button("Send");
-//
-//        Text errorText = new Text(" ");
-//        errorText.setFill(Color.RED);
-//        FlowPane message = new FlowPane(messageText,sendMessageButton, errorText);
-//        borderPane.setBottom(message);
 
+    void showBetweenPriceLtDateByVendor() {
+        String vendor = getData("Please, type vendor of your notebook here: ");
+        String stringDate = getData("Please, type manufacture date of your notebook  in format yyyy.MM.dd here: ");
+        Date date = null;
+        try {
+            date = new SimpleDateFormat("yyyy.MM.dd").parse(stringDate);
+        } catch (ParseException e) {
+            System.out.println("");
+            e.printStackTrace();
+        }
+        Double priceFrom = null;
+        try {
+            priceFrom = Double.parseDouble(getData("Please, type priceFrom of your notebooks here (Remember, price must be in the Double type!): "));
+        } catch (NumberFormatException e) {
+            System.out.println("");
+            e.printStackTrace();
+        }
+        Double priceTo = null;
+        try {
+            priceTo = Double.parseDouble(getData("Please, type priceTo of your notebooks here (Remember, price must be in the Double type!): "));
+        } catch (NumberFormatException e) {
+            System.out.println("");
+            e.printStackTrace();
+        }
+        checkNotebookServiceImpl();
+        nbsi.findBetweenPriceLtDateByVendor(priceFrom, priceTo, date, vendor);
+    }
+
+    public static void main(String[] args) {
+        Double price = null;
+        label:
+        try {
+            price = Double.parseDouble(getData("Please, type price of your notebook here (Remember, price must be in the Double type!): "));
+            System.out.println("Price is: "+price);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            System.out.println("ERROR: typed data is not requested format.");
+            String message = getData("Do you want to set up parameter manufacture date?[Y/N]: ");
+            if (message.equals("y")){
+                break label;
+            }
+        }
     }
 }
