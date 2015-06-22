@@ -1,5 +1,7 @@
 package hw6.notes.domain;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -18,22 +20,26 @@ public class Notebook {
     private String vendor;
     @Column(name = "MODEL")
     private String model;
+
+    @Temporal(TemporalType.DATE)
     @Column(name = "MANUFACTURE_DATE")
+    //@Type(type="timestamp")
     private Date date;
+
     @Column(name = "PRICE")
     private Double price;
     public Notebook(){
         serial="defoult";
         vendor="Ivan";
         model="defoult";
-        date=new Date(115, 1, 1);
+        date=new Date(115, 0, 1);
         price=1000.00;
     }
     public Notebook(String serial, Double price){
         this.serial=serial;
         this.vendor="Ivan";
         this.model="brandNew";
-        this.date=new Date(115, 1, 1);
+        this.date=new Date(115, 0, 1);
         this.price=price;
     }
     public Notebook(String serial, String vendor, String model, Date date, Double price){

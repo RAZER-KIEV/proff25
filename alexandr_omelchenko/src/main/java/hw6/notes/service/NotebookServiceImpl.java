@@ -2,6 +2,8 @@ package hw6.notes.service;
 import hw6.notes.dao.NotebookDaoImpl;
 import hw6.notes.domain.Notebook;
 import org.hibernate.SessionFactory;
+
+import java.util.Date;
 import java.util.List;
 /**
 
@@ -43,4 +45,29 @@ private NotebookDaoImpl noteDAO;
         return false;
     }
 
+    @Override
+    public boolean deleteByModel(String model) {
+        boolean rez=false;
+        List<Notebook> list =noteDAO.findByModel(model);
+        for(Notebook nbk: list ){
+            noteDAO.delete(nbk); rez=true;}
+        return true;
+    }
+
+    @Override
+    public List findByVendor(String vendor) {
+        List<Notebook>list =noteDAO.findByVendor(vendor);
+        return list;
+    }
+    @Override
+    public List findByPriceManufDate(Double price, Date date) {
+        List<Notebook>list = noteDAO.findByPriceManufDate(price, date);
+        return null;
+    }
+
+    @Override
+    public List findBetweenPriceLtDateByVendor(Double priceFrom, Double priceTo, Date date, String vendor) {
+        List<Notebook>list=noteDAO.findBetweenPriceLtDateByVendor(priceFrom, priceTo, date, vendor);
+        return list;
+    }
 }

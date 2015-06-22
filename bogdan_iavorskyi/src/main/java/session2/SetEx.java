@@ -15,11 +15,11 @@ public class SetEx {
 
     public static void main(String[] args) {
 
-        /*users.add(new User("bosyi","qwerty",30));
-        users.add(new User("name","qwerty1",15));
-        users.add(new User("killer","qwefdrty",30));
-        users.add(new User("master","qwerty_111",60));
-        users.add(new User("bosyi1","qweqwe",15));
+        /*hw5.add(new User("bosyi","qwerty",30));
+        hw5.add(new User("name","qwerty1",15));
+        hw5.add(new User("killer","qwefdrty",30));
+        hw5.add(new User("master","qwerty_111",60));
+        hw5.add(new User("bosyi1","qweqwe",15));
 
         System.out.println(isAutenticated("bosyi", "qwerty"));
         System.out.println(isAutenticated("fewfew","dewdw"));*/
