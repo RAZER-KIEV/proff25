@@ -5,6 +5,7 @@ import hw6.notes.domain.Notebook;
 import org.hibernate.SessionFactory;
 
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -67,5 +68,36 @@ public class NotebookServiceImpl implements NotebookService{
     public boolean delete(Long id) {
         NotebookDaoImpl ndDao = new NotebookDaoImpl(factory);
         return ndDao.delete(ndDao.read(id));
+    }
+
+    @Override
+    public boolean deleteByModel(String model) {
+        NotebookDaoImpl ndDao = new NotebookDaoImpl(factory);
+        boolean result = true;
+        for(Notebook nd: ndDao.findByModel(model))
+        {
+            result = result && ndDao.delete(nd);
+        }
+
+        return result;
+    }
+
+    @Override
+    public List<Notebook> findByVendor(String vendor) {
+        NotebookDaoImpl ndDao = new NotebookDaoImpl(factory);
+
+        return ndDao.findByVendor(vendor);
+    }
+
+    @Override
+    public List<Notebook> findByPriceManufDate(Double price, Date date) {
+        NotebookDaoImpl ndDao = new NotebookDaoImpl(factory);
+        return ndDao.findByPriceManufDate(price, date);
+    }
+
+    @Override
+    public List<Notebook> findBetweenPriceLtDateByVendor(Double priceFrom, Double priceTo, Date date, String vendor) {
+        NotebookDaoImpl ndDao = new NotebookDaoImpl(factory);
+        return ndDao.findBetweenPriceLtDateByVendor(priceFrom, priceTo, date, vendor);
     }
 }
