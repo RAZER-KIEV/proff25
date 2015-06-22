@@ -100,7 +100,7 @@ public class NotebookDaoImpl implements NotebookDao {
         boolean dlres = false;
         try {
             session.beginTransaction();
-            session.delete(sid,ntb);                                             //Query query = session.createQuery("delete FRom Notebook n where n.id =:id");
+            session.delete(sid, ntb);                                             //Query query = session.createQuery("delete FRom Notebook n where n.id =:id");
             //query.setParameter("id", id);
             session.getTransaction().commit();
             dlres = true;
@@ -149,7 +149,7 @@ public class NotebookDaoImpl implements NotebookDao {
     public List<Notebook> findByPriceManufDate(Double price, Date date) {
         Session session = sessionFactory.openSession();
         Query query = session.createQuery("FROM Notebook n where n.manufacture_date>=:date AND n.price<=:price");
-        query.setParameter("date", dateSet());
+        query.setParameter("date", date);
         query.setParameter("price", price);
         //query.setFirstResult(1);
         // query.setMaxResults(2);
@@ -159,8 +159,8 @@ public class NotebookDaoImpl implements NotebookDao {
     @Override
     public List<Notebook> findBetweenPriceLtDateByVendor(Double priceFrom, Double priceTo, Date date, String vendor) {
         Session session = sessionFactory.openSession();
-        Query query = session.createQuery("FROM Notebook n where n.manufacture_date>=:date AND n.price<=:priceTo AND n.price>=priceFrom AND n.vendor=:vendor");
-        query.setParameter("date", dateSet());
+        Query query = session.createQuery("FROM Notebook n where n.manufacture_date>=:date AND n.price<=:priceTo AND n.price>=:priceFrom AND n.vendor=:vendor");
+        query.setParameter("date", date);
         query.setParameter("priceFrom", priceFrom);
         query.setParameter("priceTo", priceTo);
         query.setParameter("vendor", vendor);
@@ -168,6 +168,13 @@ public class NotebookDaoImpl implements NotebookDao {
         //query.setMaxResults(2);
         return query.list();
     }
+    public Date dateSet(int year, int month, int day){
+        Calendar cal = Calendar.getInstance();
+        cal.set(year, month, day);
+        Date date = cal.getTime();
+        return date;
+    }
+
     public Date dateSet(){
         Calendar cal = Calendar.getInstance();
         int year, month,day;
