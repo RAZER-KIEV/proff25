@@ -1,9 +1,7 @@
 package session6;
 
 /**
- * Created with IntelliJ IDEA.
- * User: al1
- * Date: 23.02.15
+
  */
 public class PrinterTask {
 

@@ -10,9 +10,9 @@ import java.util.Locale;
  * Написать приложение, позволяющее добавлять нового пользователя и просматривать
  * список существующих пользователей. Структура таблицы (id, имя, пароль, дата).
  * Классы задания:
- * hw5.users.MainWindow
- * hw5.users.UserJDBCManager
- * hw5.users.User
+ * hw5.hw5.MainWindow
+ * hw5.hw5.UserJDBCManager
+ * hw5.hw5.User
  * В класс UserJDBCManager поместите все операции с базой данных.
  * Желательно в методы этого класс передовать и возвращать объекты класса User
  * public int create(User user)
@@ -53,11 +53,6 @@ public class UserJDBCManager{
                     user.getName() + "', '" +
                     user.getPassword() + "', '" +
                     user.getDate() + "')");
-//            pstmnt.setInt(1, user.getId());
-//            pstmnt.setString(2, user.getName());
-//            pstmnt.setString(3, user.getPassword());
-//            pstmnt.setDate(4, Date.valueOf("2015-7-10"));
-//            pstmnt.executeUpdate();
         } catch (SQLException sqlEx){
             return 0;
         }

@@ -47,7 +47,7 @@ class UserJDBCManager{
         String userPass = user.getPass();
         String userRegDate = user.getDate();
         StringBuilder sb =new StringBuilder();
-        sb.append("INSERT INTO users (userid,username,pass,regdate) VALUES (");
+        sb.append("INSERT INTO hw5 (userid,username,pass,regdate) VALUES (");
         sb.append(userId + ",'" + userName + "','" + userPass + "','" + userRegDate + "')");
         String reqestSQL = sb.toString();
         System.out.println(reqestSQL);

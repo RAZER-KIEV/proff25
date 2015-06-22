@@ -28,10 +28,10 @@ public class Auth {
         }
       System.out.println(auth.authorization("men1", "k1"));
     }
-//Конец МЕЙНА
+//пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 
   public Set<User> users = new TreeSet<>(compPass);
-  //public Set<Users> users = new HashSet<>();
+  //public Set<Users> hw5 = new HashSet<>();
 
     public static Comparator<User> compPass = new Comparator<User>() {
         public int compare(User o1, User o2) {
@@ -44,7 +44,7 @@ public class Auth {
         User us = new User(l, k);
         return users.contains(us);
     }
-    //НАЧАЛО Юзера
+    //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     class User implements Comparable<User> {
         private String login;
         private String key;
@@ -94,5 +94,5 @@ public class Auth {
             return this.login.compareTo(user.login);
         }
     }
-//Конец Users
+//пїЅпїЅпїЅпїЅпїЅ Users
 }
