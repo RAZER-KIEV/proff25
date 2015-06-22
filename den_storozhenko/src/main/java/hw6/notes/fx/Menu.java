@@ -11,16 +11,11 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.util.Callback;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -41,71 +36,6 @@ public class Menu extends Application{
 
     public void close(){
         hibernateUtil.closeFactory();
-    }
-    public void main() {
-
-        Notebook notebook = new Notebook("28-19-31","ASUS","A481",new Date(2001,6,21),16000.);
-        /**
-         * add
-         */
-        //System.out.println(notebookService.add(notebook));
-        /**
-         * delete
-         */
-        //System.out.println(notebookService.delete(2L));
-        /**
-         * changePrice
-         */
-        //notebookService.changePrice(4L, 30000);
-        /**
-         * changeSerialVendor
-         */
-        //notebookService.changeSerialVendor(4L,"AA-AA-AA","Asus");
-        /**
-         * deleteByModel
-         */
-        //System.out.println(notebookService.deleteByModel("ASPIRE"));
-        /**
-         * findByVendor
-         */
-        for (Notebook notebook1:notebookService.findByVendor("Dell"))
-            notebook1.print();
-        /**
-         * findByPriceManufDate
-         */
-        for (Notebook notebook1:notebookService.findByPriceManufDate(45000.,new Date(Calendar.getInstance().getTimeInMillis())))
-            notebook1.print();
-        /**
-         * findBetweenPriceLtDateByVendor
-         */
-        for (Notebook notebook1:notebookService.findBetweenPriceLtDateByVendor(39000.,50000.,new Date(2015,8,1),"Dell"))
-            notebook1.print();
-        /**
-         * findAll
-         */
-        for (Notebook notebook1:notebookService.findAll())
-            notebook1.print();
-    }
-
-    public void deleteNtb(Notebook notebook){
-    }
-
-    public void changePrice(Notebook notebook){
-    }
-
-    public void changeSerialVendor(Notebook notebook) {
-    }
-
-    public void deleteByModel(){
-    }
-
-    public void showByVendor(){
-    }
-
-    public void showByPriceManufDate(){
-    }
-
-    public void showBetweenPriceLtDateByVendor(){
     }
 
     @Override
@@ -130,10 +60,9 @@ public class Menu extends Application{
             @Override
             public void handle(ActionEvent event) {
                 Stage stage = new Stage();
-                stage.initModality(Modality.APPLICATION_MODAL);
                 stage.setTitle("Find by vendor");
                 stage.setMinWidth(300);
-                stage.setMinHeight(80);
+                stage.setMinHeight(100);
                 Button okButton = new Button("OK");
                 TextField vendor = new TextField();
                 Label label = new Label("Enter name of vendor");
@@ -165,7 +94,6 @@ public class Menu extends Application{
             @Override
             public void handle(ActionEvent event) {
                 Stage stage = new Stage();
-                stage.initModality(Modality.APPLICATION_MODAL);
                 stage.setTitle("Find by price and date");
                 stage.setMinWidth(300);
                 stage.setMinHeight(100);
@@ -178,7 +106,7 @@ public class Menu extends Application{
                 Label labelPrice = new Label("Enter price");
                 labelPrice.setMinWidth(150);
                 TextField date = new TextField();
-                date.setMinWidth(140);
+                date.setMinWidth(150);
                 date.setPromptText("Enter date");
                 Label labelDate = new Label("Enter date");
                 labelDate.setMinWidth(150);
@@ -208,13 +136,12 @@ public class Menu extends Application{
                 stage.showAndWait();
             }
         });
-        Button buttonfindBetweenPriceLtDateByVendor = new Button("Find beetwen price");
+        Button buttonfindBetweenPriceLtDateByVendor = new Button("Find between price");
         buttonfindBetweenPriceLtDateByVendor.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 Stage stage = new Stage();
-                stage.initModality(Modality.APPLICATION_MODAL);
-                stage.setTitle("Find by price and date");
+                stage.setTitle("Find between price, date and vendor");
                 stage.setMinWidth(300);
                 stage.setMinHeight(100);
                 stage.setResizable(false);
@@ -231,12 +158,12 @@ public class Menu extends Application{
                 Label labelFinishPrice = new Label("Start price");
                 labelFinishPrice.setMinWidth(150);
                 TextField date = new TextField();
-                date.setMinWidth(140);
+                date.setMinWidth(150);
                 date.setPromptText("Enter date");
                 Label labelDate = new Label("Enter date");
                 labelDate.setMinWidth(150);
                 TextField vendor = new TextField();
-                vendor.setMinWidth(140);
+                vendor.setMinWidth(150);
                 vendor.setPromptText("Enter vendor");
                 Label labelVendor = new Label("Enter vendor");
                 labelVendor.setMinWidth(150);
