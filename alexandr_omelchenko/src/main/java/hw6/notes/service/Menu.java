@@ -1,6 +1,5 @@
 package hw6.notes.service;
 
-import hw6.notes.domain.Notebook;
 import hw6.notes.util.HibernateUtil;
 
 /**
@@ -14,6 +13,17 @@ public class Menu {
         noteServise.changePrice(21L, 900.99);
         noteServise.changeSerialVendor(5L, "1290-Me", "Ivanov");
         hiberUtil.factoryClose();
+    }
+    void deleteByModel(){
+
+    }
+    void showByVendor(){
+
+    }
+    void showByPriceManufDate(){
+
+    }
+    void showBetweenPriceLtDateByVendor(){
 
     }
 }
