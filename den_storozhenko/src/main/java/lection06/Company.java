@@ -17,7 +17,7 @@ public class Company {
     private String name;
     @Column(name = "CASH")
     private Integer cash;
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "company", cascade = CascadeType.ALL)
     private Set<Person> persons = new HashSet<>();
 
     public Company(){
