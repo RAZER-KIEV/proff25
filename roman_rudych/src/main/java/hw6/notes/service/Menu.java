@@ -5,6 +5,7 @@ import hw6.notes.domain.Notebook;
 import hw6.notes.dao.NotebookDaoImpl;
 import hw6.notes.util.HibirnateUtil;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -45,9 +46,10 @@ public class Menu extends Application {
         Scene scene = new Scene(root, 520, 600, Color.BISQUE);
         primaryStage.setScene(scene);
         primaryStage.show();
-//        primaryStage.setOnCloseRequest(event -> {
-//
-//        });
+        primaryStage.setOnCloseRequest(event -> {
+            Platform.exit();
+            System.exit(0);
+        });
         Button btnAdd = new Button("Add");
 
         MenuButton btnDelete = new MenuButton("Delete");
@@ -438,7 +440,7 @@ public class Menu extends Application {
         VBox result = new VBox();
         result.setAlignment(Pos.CENTER);
         result.setSpacing(2);
-        result.setPadding(new Insets(10,0,15,0));
+        result.setPadding(new Insets(10, 0, 15, 0));
         result.getChildren().addAll(nodeOne, nodeTwo);
         return result;
     }
