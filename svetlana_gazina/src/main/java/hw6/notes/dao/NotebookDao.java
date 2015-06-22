@@ -2,6 +2,7 @@ package hw6.notes.dao;
 
 import hw6.notes.domain.Notebook;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -13,4 +14,8 @@ public interface NotebookDao {
     public boolean update(Notebook ntb);
     public boolean delete(Notebook ntb);
     public List<Notebook> findAll();
+    public List<Notebook> findByModel(String model);
+    public List<Notebook> findByVendor(String vendor);
+    public List<Notebook> findByPriceManufDate(Double price, Date date);
+    public List<Notebook> findBetweenPriceLtDateByVendor(Double priceFrom, Double priceTo, Date date, String vendor);
 }

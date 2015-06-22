@@ -7,7 +7,9 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
 import java.math.BigDecimal;
+import java.util.Comparator;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 /**
@@ -37,6 +39,51 @@ public class Menu {
         NotebookServiceImpl ndService = new NotebookServiceImpl(factory);
         ndService.changeSerialVendor(notebook.getId(),notebook.getSerial(), notebook.getVendor());
 
+    }
+    public void deleteByModel(String model){
+        SessionFactory factory = Menu.getFactory();
+        NotebookServiceImpl ndService = new NotebookServiceImpl(factory);
+        ndService.deleteByModel(model);
+    }
+    public void showByVendor(){
+        SessionFactory factory = Menu.getFactory();
+        NotebookServiceImpl ndService = new NotebookServiceImpl(factory);
+        List<Notebook> notebooks = ndService.findAll();
+        List<String> vendors = null;
+        for(Notebook nb: notebooks){
+           vendors.add(nb.getVendor());
+        }
+        vendors.sort(Comparator.<String>naturalOrder());
+        for(String vendor: vendors)
+        {
+            for(Notebook nb: notebooks){
+                if(nb.getVendor() == vendor){
+                    System.out.println(nb);
+                }
+            }
+        }
+
+
+    }
+    public void showByPriceManufDate(Double price, Date date){
+        SessionFactory factory = Menu.getFactory();
+        NotebookServiceImpl ndService = new NotebookServiceImpl(factory);
+        List<Notebook> notebooks = ndService.findByPriceManufDate(price, date);
+
+        for(Notebook nb: notebooks){
+            System.out.println(nb);
+
+        }
+    }
+    public void showBetweenPriceLtDateByVendor(Double priceFrom, Double PriceTo, Date date, String vendor){
+        SessionFactory factory = Menu.getFactory();
+        NotebookServiceImpl ndService = new NotebookServiceImpl(factory);
+        List<Notebook> notebooks = ndService.findBetweenPriceLtDateByVendor(priceFrom, PriceTo, date, vendor);
+
+        for(Notebook nb: notebooks){
+            System.out.println(nb);
+
+        }
     }
     public static SessionFactory getFactory(){
         Locale.setDefault(Locale.ENGLISH);
