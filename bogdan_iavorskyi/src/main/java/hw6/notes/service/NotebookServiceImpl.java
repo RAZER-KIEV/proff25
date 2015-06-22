@@ -36,4 +36,32 @@ public class NotebookServiceImpl implements NotebookService {
             factory.close();
         }
     }
+
+    @Override
+    public void changePrice(Long id, double price) {
+        Notebook notebook = dao.read(id);
+        if (notebook == null)
+            return;
+        notebook.setPrice(new Double(price));
+        dao.update(notebook);
+    }
+
+    @Override
+    public void changeSerialVendor(Long id, String serial, String vendor) {
+        Notebook notebook = dao.read(id);
+        if (notebook == null)
+            return;
+        notebook.setVendor(vendor);
+        notebook.setSerialNumber(serial);
+        dao.update(notebook);
+    }
+
+    @Override
+    public boolean delete(Long id) {
+        Notebook notebook = dao.read(id);
+        if (notebook == null) {
+            return false;
+        }
+        return dao.delete(notebook);
+    }
 }

@@ -12,22 +12,22 @@ package session2;//package session2;
 //        Auth auth = new Auth();
 ////        System.out.println(auth.checkUser("Us","ww"));
 ////        System.out.println(auth.checkUser("www","sss"));
-////        TreeSet<User> users = new TreeSet<>();
-////        users.add(new User())
+////        TreeSet<User> hw5 = new TreeSet<>();
+////        hw5.add(new User())
 //        System.out.println();
 //    }
-////        private Set<User> users = new HashSet<>();
-//TreeSet<User> users = new TreeSet<>();
+////        private Set<User> hw5 = new HashSet<>();
+//TreeSet<User> hw5 = new TreeSet<>();
 //    public Auth(){
-//        users.add(new User("Us","ww"));
-//        users.add(new User("Us1","ww2"));
+//        hw5.add(new User("Us","ww"));
+//        hw5.add(new User("Us1","ww2"));
 //    }
 //
 //        public boolean checkUser(String login, String passwrd) {
-////            if(users.contains(login) && users.contains(passwrd)) {
+////            if(hw5.contains(login) && hw5.contains(passwrd)) {
 ////                return true;
 ////            }
-//            for(User user : users){
+//            for(User user : hw5){
 ////                if(user.getPas().equals(login) && user.getPas().equals(passwrd)){
 ////                    return true;
 ////                }
