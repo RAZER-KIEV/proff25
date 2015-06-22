@@ -39,16 +39,10 @@ public class Menu extends Application implements EventHandler {
 
     private ObservableList<Notebook> olNotebooks = FXCollections.observableArrayList();
 
-    private Button btnShowTable;
-    private Button tfIpAdress;
-    private SocketChannel socketChannel;
-    private ByteBuffer byteBuffer;
-    private TextField tfSetMess;
-
+    private TextField tfDateSet,tfIdSet,tfSetPriceTo,tfSetPriceFrom,tfSetMess;
 
 
     public static void main(String[] args) {Application.launch();}
-
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -56,7 +50,7 @@ public class Menu extends Application implements EventHandler {
         stage.setTitle("Notebooks Manage");
 
         Group root = new Group();
-        Scene scene = new Scene(root, 525, 800, Color.GREENYELLOW);
+        Scene scene = new Scene(root, 525, 680, Color.GREENYELLOW);
         stage.setScene(scene);
 
         final DropShadow dropShadow = new DropShadow();
@@ -99,6 +93,15 @@ public class Menu extends Application implements EventHandler {
         btnShowByModel.setLayoutY(510);
         btnShowByModel.setEffect(dropShadow);
         root.getChildren().add(btnShowByModel);
+
+
+        Button findBetweenPriceLtDateByVendor= new Button("Btwn Prc, LtDate, Vendor");
+        findBetweenPriceLtDateByVendor.setOnAction(this);
+        findBetweenPriceLtDateByVendor.setPrefSize(200, 30);
+        findBetweenPriceLtDateByVendor.setLayoutX(10);
+        findBetweenPriceLtDateByVendor.setLayoutY(600);
+        findBetweenPriceLtDateByVendor.setEffect(dropShadow);
+        root.getChildren().add(findBetweenPriceLtDateByVendor);
 
 
 
@@ -155,18 +158,61 @@ public class Menu extends Application implements EventHandler {
         table.setPrefSize(500, 400);
         table.setLayoutX(10);
         table.setLayoutY(50);
-        table.getColumns().addAll(idCol,vendorCol,modelCol,serialCol,priceCol,manufacture_dateCol);
+        table.getColumns().addAll(idCol, vendorCol, modelCol, serialCol, priceCol, manufacture_dateCol);
         table.setItems(olNotebooks);
         pane.setCenter(table);
         root.getChildren().add(pane);
 
-        tfSetMess = new TextField("");
+        tfSetMess = new TextField();
         tfSetMess.setPrefSize(500, 35);
         tfSetMess.setLayoutX(10);
         tfSetMess.setLayoutY(465);
         tfSetMess.setEditable(true);
         tfSetMess.setEffect(dropShadow);
         root.getChildren().add(tfSetMess);
+
+        tfSetPriceFrom = new TextField();
+        tfSetPriceFrom.setPrefSize(100, 35);
+        tfSetPriceFrom.setLayoutX(10);
+        tfSetPriceFrom.setLayoutY(550);
+        tfSetPriceFrom.setPromptText("Price from");
+        tfSetPriceFrom.setEditable(true);
+        tfSetPriceFrom.setEffect(dropShadow);
+        root.getChildren().add(tfSetPriceFrom);
+
+
+        tfSetPriceTo = new TextField();
+        tfSetPriceTo.setPrefSize(100, 35);
+        tfSetPriceTo.setLayoutX(130);
+        tfSetPriceTo.setLayoutY(550);
+        tfSetPriceTo.setPromptText("Price to");
+        tfSetPriceTo.setEditable(true);
+        tfSetPriceTo.setEffect(dropShadow);
+        root.getChildren().add(tfSetPriceTo);
+
+        tfDateSet = new TextField();
+        tfDateSet.setPrefSize(200, 35);
+        tfDateSet.setLayoutX(250);
+        tfDateSet.setLayoutY(550);
+        tfDateSet.setPromptText("Set date Like \"2015,12,31\" ");
+        tfDateSet.setEditable(true);
+        tfDateSet.setEffect(dropShadow);
+        root.getChildren().add(tfDateSet);
+
+        tfIdSet = new TextField();
+        tfIdSet.setPrefSize(50, 35);
+        tfIdSet.setLayoutX(460);
+        tfIdSet.setLayoutY(550);
+        tfIdSet.setPromptText("Set ID");
+        tfIdSet.setEditable(true);
+        tfIdSet.setEffect(dropShadow);
+        root.getChildren().add(tfIdSet);
+
+
+
+
+
+
 
        /* Button btnSend = new Button("Send!");
         btnSend.setOnAction(this);
@@ -190,6 +236,11 @@ public class Menu extends Application implements EventHandler {
         String name = ((Button) (event.getSource())).getText();
         System.out.println(name);
         List<Notebook> reslist = null;
+        String sDate;
+        String [] splited;
+        Date date;
+        Double sPriseTo,sPriseFrom;
+        String vendor;
 
 
         switch (name) {
@@ -224,17 +275,37 @@ public class Menu extends Application implements EventHandler {
                 break;
             case "Show by Price and Manuf.Date":
                 olNotebooks.clear();
-                messeges.add("Set price in console");
-                String sprice = tfSetMess.getText();
-                reslist = notebookDao.findByPriceManufDate(getRandomPrice(),getRandomDate());
+                sDate = tfDateSet.getText();
+                splited = sDate.split(",");
+                System.out.println(splited);
+
+                date = notebookDao.dateSet(Integer.parseInt(splited[0]), Integer.parseInt(splited[1]), Integer.parseInt(splited[2]));
+                System.out.println(date);
+                sPriseTo = Double.parseDouble(tfSetPriceTo.getText());
+                reslist = notebookDao.findByPriceManufDate(sPriseTo,date);
                 for (Notebook ntb:reslist){
-                    messeges.add(ntb.toString());
                     olNotebooks.add(ntb);
                 }
                 break;
             case "Delete All":
                 olNotebooks.clear();
                 notebookDao.deleteAll();
+                break;
+            case "Btwn Prc, LtDate, Vendor":
+                olNotebooks.clear();
+                sDate = tfDateSet.getText();
+                splited = sDate.split(",");
+                System.out.println(splited);
+                vendor = tfSetMess.getText();
+
+                date = notebookDao.dateSet(Integer.parseInt(splited[0]), Integer.parseInt(splited[1]), Integer.parseInt(splited[2]));
+                System.out.println(date);
+                sPriseTo = Double.parseDouble(tfSetPriceTo.getText());
+                sPriseFrom = Double.parseDouble(tfSetPriceFrom.getText());
+                reslist = notebookDao.findBetweenPriceLtDateByVendor(sPriseFrom, sPriseTo, date, vendor);
+                for (Notebook ntb:reslist){
+                    olNotebooks.add(ntb);
+                }
                 break;
 
 
