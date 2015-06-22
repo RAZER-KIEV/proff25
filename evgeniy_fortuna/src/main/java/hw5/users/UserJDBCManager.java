@@ -1,5 +1,7 @@
 package hw5.users;
 
+import hw5.users.User;
+
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
