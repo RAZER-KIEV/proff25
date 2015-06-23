@@ -10,7 +10,7 @@ import java.util.Locale;
 /**
  * Created by Роман on 18.06.2015.
  */
-public class HibirnateUtil {
+public class HibernateUtil {
 
     private static final SessionFactory sessionFactory;
 

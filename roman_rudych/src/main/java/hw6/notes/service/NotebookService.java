@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by Роман on 21.06.2015.
  */
-interface NotebookServide {
+interface NotebookService {
     Long add(Notebook notebook);
     List findAll();
     void changePrice(Long id, double price);
