@@ -298,8 +298,8 @@ public class Menu extends Application {
             @Override
             public void handle(MouseEvent event) {
                 service.changeSerialVendor(new Long(idTextField.getText()),
-                        serial.getText(),
-                        vendor.getText());
+                        serialTextField.getText(),
+                        vendorTextField.getText());
             }
         });
         buttonPane.getChildren().add(changeButton);

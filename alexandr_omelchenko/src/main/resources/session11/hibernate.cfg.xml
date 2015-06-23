@@ -6,17 +6,15 @@
     <session-factory>
         <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
         <property name="connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
-        <property name="connection.username">hr</property>
-        <property name="connection.password">hr</property>
+        <property name="connection.username">company</property>
+        <property name="connection.password">company</property>
         <property name="connection.pool_size">1</property>
         <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
         <property name="current_session_context_class">thread</property>
         <!--<property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>-->
         <property name="show_sql">true</property>
         <property name="hbm2ddl.auto">update</property>
-        <mapping class="session10.Region"/>
-        <mapping class="session11.Firm.Company"/>
-        <mapping class="session11.Firm.Person"/>
-        <!--<mapping class="Notebook"/>-->
+        <mapping class="week6_lesson11.Emploee"/>
+        <mapping class="week6_lesson11.Company"/>
     </session-factory>
 </hibernate-configuration>
