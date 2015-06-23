@@ -26,6 +26,10 @@ public class Notebook {
     private Date manufacture_date;
     @Column (name = "price")
     private Double price;
+
+    public Notebook(){
+
+    }
     public Notebook(String serial,String vendor,String model, Date manufacture_date,Double price){
         this.serial = serial;
         this.vendor = vendor;
