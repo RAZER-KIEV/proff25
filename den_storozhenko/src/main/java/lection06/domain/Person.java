@@ -1,4 +1,4 @@
-package lection06;
+package lection06.domain;
 
 import javax.persistence.*;
 
@@ -46,5 +46,9 @@ public class Person {
 
     public void setCompany(Company company) {
         this.company = company;
+    }
+
+    public void print(){
+        System.out.println(id+" "+name+" "+company.getName());
     }
 }

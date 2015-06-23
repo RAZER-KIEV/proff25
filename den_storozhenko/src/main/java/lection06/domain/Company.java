@@ -1,4 +1,4 @@
-package lection06;
+package lection06.domain;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -58,5 +58,9 @@ public class Company {
 
     public Set<Person> getPersons() {
         return persons;
+    }
+
+    public void print(){
+        System.out.println(id+" "+name+" "+cash);
     }
 }
