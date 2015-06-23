@@ -1,16 +1,22 @@
 package lection06;
 
+import lection06.domain.Company;
+import lection06.domain.Person;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
  * Создать Компанию и Сотрудников
  * в 1 компании много сотрудников
  * добавить сотрудников в компании
+ *
+ *
+ * получить всех сотрудников указанной компании
+ * получить сотрудников из всех компаний
+ * вывести компании у которых работает более Х людей
  */
 public class Main {
     public static void main(String[] args) {
@@ -57,7 +63,7 @@ public class Main {
         person4.setCompany(company2);
         person5.setCompany(company1);
 
-        /*Set<Person> personSet1 = new HashSet<>();
+        Set<Person> personSet1 = new HashSet<>();
         personSet1.add(person2);
         personSet1.add(person3);
         personSet1.add(person5);
@@ -68,7 +74,7 @@ public class Main {
         company2.setPersons(personSet2);
 
         company1.setPersons(personSet1);
-        company2.setPersons(personSet2);*/
+        company2.setPersons(personSet2);
 
         session.beginTransaction();
         session.update(person1);

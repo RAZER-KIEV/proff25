@@ -201,7 +201,7 @@ public class Menu extends Application{
 
         borderPane.setTop(new FlowPane(buttonFindAll,buttonfindByVendor,buttonfindByPriceManufDate,buttonfindBetweenPriceLtDateByVendor));
 
-        primaryStage.setResizable(false);
+        //primaryStage.setResizable(false);
         primaryStage.setTitle("Notebook service");
         primaryStage.setScene(scene);
         primaryStage.show();

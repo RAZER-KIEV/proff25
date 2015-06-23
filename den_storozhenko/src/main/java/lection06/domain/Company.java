@@ -1,4 +1,4 @@
-package lection06;
+package lection06.domain;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -17,7 +17,7 @@ public class Company {
     private String name;
     @Column(name = "CASH")
     private Integer cash;
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "company", cascade = CascadeType.ALL)
+    @OneToMany
     private Set<Person> persons = new HashSet<>();
 
     public Company(){
@@ -58,5 +58,9 @@ public class Company {
 
     public Set<Person> getPersons() {
         return persons;
+    }
+
+    public void print(){
+        System.out.println(id+" "+name+" "+cash);
     }
 }
