@@ -19,7 +19,7 @@ public class Menu {
         Date date = new Date();
         java.sql.Date dataTime = new java.sql.Date(date.getTime());
       //  Notebook asus = new Notebook("122","Asus","q12",dataTime,200);
-        Notebook acer = new Notebook("9876543","Acer","qwerty",dataTime,150);
+        Notebook acer = new Notebook("9876543","Acer","qwerty",dataTime,150.2);
         NotebookDaoImpl ntb = new NotebookDaoImpl(factory);
         NotebookServiceImpl nsi=new NotebookServiceImpl();
         hibernateUtil.openeSession(factory);

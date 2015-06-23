@@ -1,6 +1,7 @@
 package hw6.notes.service;
 import hw6.notes.dao.NotebookDaoImpl;
 import hw6.notes.domain.Notebook;
+import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 
 import java.util.Date;
@@ -41,8 +42,7 @@ private NotebookDaoImpl noteDAO;
     @Override
     public boolean delete(Long id) {
         Notebook note = noteDAO.read(id);
-        noteDAO.delete(note);
-        return false;
+        return noteDAO.delete(note);
     }
 
     @Override

@@ -9,6 +9,7 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -151,6 +152,7 @@ public NotebookDaoImpl(){
  public List findByPriceManufDate(Double price, Date date) {
   Session session = factory.openSession();
   List<Notebook>list;
+ //Date d = new LocalDate().get;
   Query query = session.createQuery("from hw6.notes.domain.Notebook n where n.price=:price and n.manufacture_date=:date ");
   //query.setParameter("sqldate",new java.sql.Date(date.getTime()));
   query.setParameter("date", date);

@@ -1,14 +1,22 @@
 package lection06;
 
+import lection06.domain.Company;
+import lection06.domain.Person;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
- * Created by storo_000 on 22.06.2015.
+ * Создать Компанию и Сотрудников
+ * в 1 компании много сотрудников
+ * добавить сотрудников в компании
+ *
+ *
+ * получить всех сотрудников указанной компании
+ * получить сотрудников из всех компаний
+ * вывести компании у которых работает более Х людей
  */
 public class Main {
     public static void main(String[] args) {

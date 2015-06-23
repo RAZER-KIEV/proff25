@@ -18,6 +18,10 @@ public class NotebookDaoImpl implements NotebookDao{
     private static Logger log = Logger.getLogger(NotebookDaoImpl.class);
     private SessionFactory factory;
 
+    public NotebookDaoImpl(){
+
+    }
+
     public NotebookDaoImpl(SessionFactory factory){
         this.factory = factory;
     }
@@ -128,7 +132,7 @@ public class NotebookDaoImpl implements NotebookDao{
     public List<Notebook> findByPriceManufDate(Double price, Date date) {
         Session session = factory.openSession();
         try{
-            Query query = session.createQuery("from hw6.notes.domain.Notebook n where n.price=price and n.manufacture_date=date");
+            Query query = session.createQuery("from hw6.notes.domain.Notebook n where n.price=:price and n.manufacture_date=:date");
             return query.list();
         }catch (HibernateException e){
             log.error("Error");
