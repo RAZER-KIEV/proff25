@@ -1,7 +1,6 @@
-package ht1;
+package hw1;
 
 import java.util.*;
-import java.util.concurrent.SynchronousQueue;
 
 /**
  * Created by ivan on 21.05.15.

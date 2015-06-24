@@ -28,7 +28,7 @@ public class NotebookDaoImpl implements NotebookDao {
 
     private void checkFactory(){
         if (factory==null){
-            factory = new HibernateUtil().createSessionFactory();
+            factory = new hw6.notes.util.HibernateUtil().createSessionFactory();
             log.info("Reference to SessionFactory " + factory);
         }
     }
