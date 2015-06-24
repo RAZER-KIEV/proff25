@@ -18,7 +18,7 @@ public class Store {
     private Double price;
     @ManyToOne
     private Notebook notebook;
-    @OneToMany(mappedBy = "store")
+    @OneToMany(mappedBy = "store",cascade = CascadeType.ALL)
     private Set<Sales> salesSet = new HashSet<>();
 
     public Store(){

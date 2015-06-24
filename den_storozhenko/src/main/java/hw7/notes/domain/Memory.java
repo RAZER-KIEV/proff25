@@ -8,15 +8,15 @@ import java.util.Set;
 @Table(name = "MEMORIES")
 public class Memory {
     @Id
-    @SequenceGenerator(name = "sequence", sequenceName = "MEMORIES_SEQ", initialValue = 1, allocationSize = 1)
+    @SequenceGenerator(name = "sequence", sequenceName = "MEM_SEQ", initialValue = 1, allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
     @Column(name = "MEMORY_ID")
     private Long id;
     @Column(name = "VENDOR")
     private String vendor;
-    @Column(name = "SIZE")
+    @Column(name = "MEM_SIZE")
     private Long size;
-    @OneToMany(mappedBy = "memory")
+    @OneToMany(mappedBy = "memory",cascade = CascadeType.ALL)
     private Set<Notebook> notebookSet = new HashSet<>();
 
     public Memory(){
@@ -59,6 +59,6 @@ public class Memory {
     }
 
     public void print(){
-        System.out.println(id+" "+vendor+" "+size);
+        System.out.print(id+" "+vendor+" "+size);
     }
 }

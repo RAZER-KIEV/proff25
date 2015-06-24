@@ -1,5 +1,7 @@
 package hw7.notes.domain;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.HashSet;
@@ -18,12 +20,13 @@ public class Notebook {
     @Column(name = "MODEL")
     private String model;
     @Column(name = "MANUFACT_DATE")
+    @Temporal(TemporalType.DATE)
     private Date manufactureDate;
     @ManyToOne
     private CPU cpu;
     @ManyToOne
     private Memory memory;
-    @OneToMany(mappedBy = "notebook")
+    @OneToMany(mappedBy = "notebook",cascade = CascadeType.ALL)
     private Set<Store> storeSet = new HashSet<>();
 
     public Notebook(){
@@ -95,9 +98,10 @@ public class Notebook {
     }
 
     public void print(){
-        System.out.print("Notebook: "+id+" "+vendor.getName()+" "+vendor+" "+model+" "+
+        System.out.print("Notebook: "+id+" "+vendor.getName()+" "+model+" "+
                 manufactureDate.getYear()+"/"+manufactureDate.getMonth()+"/"+manufactureDate.getDay()+" ");
         cpu.print();
         memory.print();
+        System.out.println();
     }
 }

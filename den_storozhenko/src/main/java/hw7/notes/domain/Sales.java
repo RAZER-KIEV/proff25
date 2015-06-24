@@ -1,5 +1,7 @@
 package hw7.notes.domain;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -13,7 +15,8 @@ public class Sales {
     private Long id;
     @ManyToOne
     private Store store;
-    @Column(name = "DATE")
+    @Column(name = "SALE_DATE")
+    @Temporal(TemporalType.DATE)
     private Date date;
     @Column(name = "COUNT")
     private Long count;
