@@ -10,6 +10,9 @@ import java.util.List;
  */
 public interface CompanyDao {
     List<Employee> getEmplFromAllComp();
+
+    List getCompWhereMoreThanEmpl(Long count);
+
     Long create(Company company);
     Company read(Long ig);
     boolean update(Company company);

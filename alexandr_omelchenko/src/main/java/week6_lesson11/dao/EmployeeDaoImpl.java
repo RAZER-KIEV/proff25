@@ -21,8 +21,6 @@ public class EmployeeDaoImpl implements EmployeeDao {
 public void factoryClose(){
     factory.close();
 }
-
-
    // -Получить всех сотрудников указанной Company
     @Override
     public List getEmplFromCompany(Company company) {
