@@ -16,7 +16,7 @@ public class CPU {
     private Long frequency;
     @Column(name = "MODEL")
     private String model;
-    @OneToMany(mappedBy = "cpu")
+    @OneToMany(mappedBy = "cpu",cascade = CascadeType.ALL)
     private Set<Notebook> notebookSet = new HashSet<>();
 
     public CPU(){
@@ -59,6 +59,6 @@ public class CPU {
     }
 
     public void print(){
-        System.out.println(id+" "+model+" "+frequency);
+        System.out.print(id+" "+model+" "+frequency+" ");
     }
 }

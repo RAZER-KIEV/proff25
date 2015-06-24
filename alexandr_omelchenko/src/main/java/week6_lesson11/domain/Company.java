@@ -11,9 +11,9 @@ import java.util.Set;
 public class Company {
 
     @OneToMany(
+            cascade = CascadeType.ALL, // каскадирование
             fetch = FetchType.EAGER,// подргужать все сразу
-            mappedBy = "company",  // включить двунаправленность
-            cascade = CascadeType.ALL // каскадирование
+            mappedBy = "company"  // включить двунаправленность
     )
     private Set<Employee> employees = new HashSet<>();
     public Company() {
