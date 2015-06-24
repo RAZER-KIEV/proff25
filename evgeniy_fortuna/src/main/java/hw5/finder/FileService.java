@@ -1,91 +1,37 @@
 package hw5.finder;
 
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.sql.Date;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
-/**
- * Написать приложение, осуществляющее поиск файла в файловой системе с сохранением результата в таблице базы данных.
- * Структура таблицы (id, дата, путь)
- *
- * Классы задания:
- * hw5.finder.MainWindow
- * hw5.finder.PathJDBCManager
- * hw5.finder.Path
- * hw5.finder.FileService
- */
-
-public class FileService extends Thread implements ActionListener {
-
-    private File[] files;
-
-    private JTextField file;
-    private JTextField directory;
-
+public class FileService {
+    public List<Path> list = new ArrayList<>();
     private String fileName;
-    private String startDirectory;
 
-    PathJDBCManager jdbcManager;
-    Path path;
-
-    public FileService(JTextField file, JTextField directory) {
-        this.file = file;
-        this.directory = directory;
-        jdbcManager = new PathJDBCManager();
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 
-    public FileService(String file, String directory) {
-        fileName = file;
-        startDirectory = directory;
-        jdbcManager = new PathJDBCManager();
+    private int number = 1;
+    public File root = new File("//home/oleg/idea");
+    public List<Path> findAll() {
+        addPath(root);
+        return list;
     }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        ThreadGroup group = new ThreadGroup("FindGroup");
-        fileName = file.getText();
-        startDirectory = directory.getText();
-        Thread thread = new Thread(group, new FileService(fileName, startDirectory));
-        thread.start();
-
-        while (group.activeCount() > 0) {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException exc) {
-                exc.printStackTrace();
-            }
-        }
-    }
-
-    @Override
-    public void run() {
-        File start = new File(startDirectory);
-        if (start.isDirectory() && !start.isHidden()) {
-            files = start.listFiles();
-            for (File file : files) {
-                if (file.isDirectory()) {
-                    Thread findThread = new Thread(new FileService(fileName, file.getPath()));
-                    findThread.start();
-                } else if (file.isFile() && !file.isHidden()) {
-                    if (file.getName().equals(fileName)) {
-                        this.path = new Path(file.getPath(), new Date());
-                        addPath(this.path);
+    public void addPath(File file){
+        File[] files = file.listFiles();
+        if (files != null) {
+            for (File f : files) {
+                if (f.isDirectory()) {
+                    addPath(f);
+                } else if (f.isFile()) {
+                    if (f.getName().equals(fileName)) {
+                        list.add(new Path(number++, new Date(Calendar.getInstance().getTimeInMillis()), f.getPath()));
                     }
                 }
             }
         }
     }
-
-    public int create() { return 0; }
-
-    public List<Path> find() { return null; }
-
-    private synchronized void addPath(Path path) {
-        jdbcManager.create(path);
-    }
 }
-
