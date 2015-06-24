@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public interface NotebookService {
-    Long receive(Notebook note, int amount, double price);
+    Long receive(Long id, int amount, double price);
     Long sale(Long storeId, int amount);
     Long createCPU(CPU cpu);
     Long createMemory(Memory memory);
@@ -16,7 +16,7 @@ public interface NotebookService {
     boolean updateMemory(Memory memory);
     boolean updateVendor(Vendor vendor);
     boolean updateNotebook(Notebook notebook);
-    boolean removeFromStore(Long id, int amount);
+    boolean removeFromStore(Store store, int amount);
     List getNotebooksByPortion(int size);
     List getNotebooksGtAmount(int amount);
     List getNotebooksByCpuVendor(Vendor cpuVendor);

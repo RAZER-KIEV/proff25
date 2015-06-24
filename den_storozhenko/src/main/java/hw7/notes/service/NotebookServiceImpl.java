@@ -53,7 +53,8 @@ public class NotebookServiceImpl implements NotebookService {
     }
 
     @Override
-    public Long receive(Notebook note, int amount, double price) {
+    public Long receive(Long id, int amount, double price) {
+        Notebook note = notebookDao.read(id);
         return storeDao.create(new Store(note, (long) amount,price));
     }
 
@@ -107,8 +108,7 @@ public class NotebookServiceImpl implements NotebookService {
     }
 
     @Override
-    public boolean removeFromStore(Long id, int amount) {
-        Store store = storeDao.read(id);
+    public boolean removeFromStore(Store store, int amount) {
         store.setCount(store.getCount() - amount);
         return storeDao.update(store);
     }
