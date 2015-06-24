@@ -1,4 +1,4 @@
-package week6_lesson11;
+package week6_lesson11.view;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import week6_lesson11.dao.CompanyDaoImpl;

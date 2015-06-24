@@ -1,4 +1,4 @@
-package week6_lesson11;
+package week6_lesson11.view;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
