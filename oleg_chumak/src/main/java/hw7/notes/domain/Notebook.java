@@ -10,7 +10,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "NOTEBOOK")
-public class NoteBook {
+public class Notebook {
 
     @SequenceGenerator(name = "sequence", sequenceName = "SEQ_NOTEBOOK_ID", allocationSize = 1, initialValue = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
@@ -34,7 +34,7 @@ public class NoteBook {
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     private Memory memory;
 
-    public NoteBook(Vendor vendor, String model, Date date, CPU cpu, Memory memory) {
+    public Notebook(Vendor vendor, String model, Date date, CPU cpu, Memory memory) {
         this.vendor = vendor;
         this.model = model;
         this.date = date;
@@ -42,7 +42,7 @@ public class NoteBook {
         this.memory = memory;
     }
 
-    public NoteBook() {
+    public Notebook() {
     }
 
     public Vendor getVendor() {
@@ -91,7 +91,7 @@ public class NoteBook {
 
     @Override
     public String toString() {
-        return "NoteBook{" +
+        return "Notebook{" +
                 "id=" + id +
                 ", vendor=" + vendor +
                 ", model='" + model + '\'' +

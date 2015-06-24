@@ -19,7 +19,7 @@ public class Store {
     private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
-    private NoteBook noteBook;
+    private Notebook noteBook;
 
     @Column(name = "AMOUNT")
     private Long amount;
@@ -27,7 +27,7 @@ public class Store {
     @Column(name = "PRICE")
     private Long price;
 
-    public Store(NoteBook noteBook, Long amount, Long price) {
+    public Store(Notebook noteBook, Long amount, Long price) {
         this.noteBook = noteBook;
         this.amount = amount;
         this.price = price;
@@ -36,11 +36,11 @@ public class Store {
     public Store() {
     }
 
-    public NoteBook getNoteBook() {
+    public Notebook getNotebook() {
         return noteBook;
     }
 
-    public void setNoteBook(NoteBook noteBook) {
+    public void setNotebook(Notebook noteBook) {
         this.noteBook = noteBook;
     }
 
