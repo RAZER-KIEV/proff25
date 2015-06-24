@@ -14,7 +14,7 @@ public class Vendor {
     private Long id;
     @Column(name = "NAME")
     private String name;
-    @OneToMany(mappedBy = "vendor")
+    @OneToMany(mappedBy = "vendor",cascade = CascadeType.ALL)
     private Set<Notebook> notebookSet = new HashSet<>();
 
     public Vendor(){
