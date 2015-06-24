@@ -6,15 +6,10 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import week6_lesson11.domain.Company;
 import week6_lesson11.domain.Employee;
-import week6_lesson11.util.HiberUtil;
 
 import java.util.ArrayList;
 import java.util.List;
 /**
- TASK.1
- РЕализовать следующие функции
- -Получить всех сотрудников указанной Company
- -Получить сотрудников из всех компаний
  */
 public class CompanyDaoImpl implements CompanyDao {
 SessionFactory factory;
@@ -26,6 +21,8 @@ SessionFactory factory;
     public void factoryClose(){
         factory.close();
     }
+
+    //-Получить сотрудников из всех компаний
     @Override
     public List getEmplFromAllComp() {
         Session session =factory.openSession();
@@ -36,6 +33,20 @@ SessionFactory factory;
         return  returnList;
     }
 
+
+    @Override
+    public List getCompWhereMoreThanEmpl(Long count) {
+        Session session =factory.openSession();
+        //Select c.name, count(c.name) group by c.name having
+List list = new ArrayList<>();
+        Query query = session.createQuery("SELECT c.name, count(c.name) FROM Company c join c.employees e group by c.name having count(c.name) >:count ");
+        query.setParameter("count", count);
+        list= query.list();
+        List <String> returnList = new ArrayList<>();
+        for(Object object: list)
+        {Object[] obj=(Object[])object;  String tempEmp = (String)obj[0]; returnList.add(tempEmp);}
+        return  returnList;
+    }
     @Override
     public Long create(Company company) {
         Session session = factory.openSession();
