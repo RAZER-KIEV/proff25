@@ -9589,3 +9589,134 @@ line 1:18: unexpected token: c
 2015-06-23 21:56:02,154 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004111]
 2015-06-23 21:56:02,155 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
 2015-06-23 21:56:03,664 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-24 18:27:18,768 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-24 18:27:19,494 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-24 18:27:19,500 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-24 18:27:19,506 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-24 18:27:19,544 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7\notebooks.cfg.xml
+2015-06-24 18:27:19,545 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7\notebooks.cfg.xml
+2015-06-24 18:27:19,763 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-24 18:27:20,094 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-24 18:27:20,313 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-24 18:27:20,610 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-24 18:27:20,611 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Denst, password=****}
+2015-06-24 18:27:20,612 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-24 18:27:20,615 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-24 18:27:38,873 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-24 18:27:54,695 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-24 18:27:54,709 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-24 18:27:54,712 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-24 18:27:54,716 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-24 18:27:54,758 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7\notebooks.cfg.xml
+2015-06-24 18:27:54,758 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7\notebooks.cfg.xml
+2015-06-24 18:27:54,880 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-24 18:27:55,857 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-24 18:27:56,029 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-24 18:27:56,270 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-24 18:27:56,271 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Denst, password=****}
+2015-06-24 18:27:56,272 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-24 18:27:56,276 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-24 18:27:57,297 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-24 18:27:57,981 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-24 18:27:57,987 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-24 18:27:58,069 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-24 18:27:58,714 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-24 18:27:58,714 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-24 18:28:11,501 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-24 18:28:11,807 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: MEMORIES
+2015-06-24 18:28:11,812 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: NOTEBOOKS_2
+2015-06-24 18:28:11,815 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: PROCESSORS
+2015-06-24 18:28:11,849 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: SALES
+2015-06-24 18:28:11,864 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: STORES
+2015-06-24 18:28:11,911 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: VENDORS
+2015-06-24 18:28:11,913 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: VENDORS_NOTEBOOKS_2
+2015-06-24 18:28:11,916 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: MEMORIES
+2015-06-24 18:28:11,919 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: NOTEBOOKS_2
+2015-06-24 18:28:11,922 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: PROCESSORS
+2015-06-24 18:28:11,925 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: SALES
+2015-06-24 18:28:11,927 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: STORES
+2015-06-24 18:28:11,930 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: VENDORS
+2015-06-24 18:28:11,933 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: VENDORS_NOTEBOOKS_2
+2015-06-24 18:28:11,935 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: MEMORIES
+2015-06-24 18:28:11,938 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: NOTEBOOKS_2
+2015-06-24 18:28:11,941 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: PROCESSORS
+2015-06-24 18:28:11,943 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: SALES
+2015-06-24 18:28:11,946 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: STORES
+2015-06-24 18:28:11,948 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: VENDORS
+2015-06-24 18:28:11,949 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: VENDORS_NOTEBOOKS_2
+2015-06-24 18:28:11,952 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: MEMORIES_SEQ
+2015-06-24 18:28:11,955 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: NOTEBOOKS2_SEQ
+2015-06-24 18:28:11,958 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: PROCESSORS_SEQ
+2015-06-24 18:28:11,960 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: SALES_SEQ
+2015-06-24 18:28:11,963 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: STORES_SEQ
+2015-06-24 18:28:11,964 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: VENDORS_SEQ
+2015-06-24 18:28:14,279 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: create table MEMORIES (MEMORY_ID number(19,0) not null, SIZE number(19,0), VENDOR varchar2(255 char), primary key (MEMORY_ID))
+2015-06-24 18:28:14,280 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00904: : invalid identifier
+
+2015-06-24 18:28:18,688 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: create table SALES (SALE_ID number(19,0) not null, COUNT number(19,0), DATE timestamp, store_STORE_ID number(19,0), primary key (SALE_ID))
+2015-06-24 18:28:18,688 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00904: : invalid identifier
+
+2015-06-24 18:28:20,946 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: alter table NOTEBOOKS_2 add constraint FK_scmrkle4kdaq6dpmf761i43e3 foreign key (memory_MEMORY_ID) references MEMORIES
+2015-06-24 18:28:20,946 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00942: table or view does not exist
+
+2015-06-24 18:28:21,068 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: alter table SALES add constraint FK_jdgvvku1bij83u1p6bo4fs01h foreign key (store_STORE_ID) references STORES
+2015-06-24 18:28:21,069 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00942: table or view does not exist
+
+2015-06-24 18:28:21,804 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-24 18:28:21,831 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-24 18:32:45,368 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-24 18:32:45,383 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-24 18:32:45,387 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-24 18:32:45,391 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-24 18:32:45,425 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7\notebooks.cfg.xml
+2015-06-24 18:32:45,425 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7\notebooks.cfg.xml
+2015-06-24 18:32:45,525 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-24 18:32:45,648 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-24 18:32:45,995 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-24 18:32:46,293 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-24 18:32:46,293 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Denst, password=****}
+2015-06-24 18:32:46,294 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-24 18:32:46,297 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-24 18:32:47,076 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-24 18:32:47,312 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-24 18:32:47,317 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-24 18:32:47,407 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-24 18:32:47,927 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-24 18:32:47,927 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-24 18:32:48,003 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-24 18:32:48,111 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: MEMORIES
+2015-06-24 18:32:49,473 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.NOTEBOOKS_2
+2015-06-24 18:32:49,474 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-06-24 18:32:49,474 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j]
+2015-06-24 18:32:49,475 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004147]
+2015-06-24 18:32:49,760 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.PROCESSORS
+2015-06-24 18:32:49,760 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [processor_id, model, frequency]
+2015-06-24 18:32:49,760 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-24 18:32:49,760 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004149]
+2015-06-24 18:32:49,762 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: SALES
+2015-06-24 18:32:50,023 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.STORES
+2015-06-24 18:32:50,023 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-06-24 18:32:50,023 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-06-24 18:32:50,023 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004151]
+2015-06-24 18:32:50,224 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.VENDORS
+2015-06-24 18:32:50,224 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-06-24 18:32:50,224 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-24 18:32:50,224 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004153]
+2015-06-24 18:32:50,227 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: MEMORIES
+2015-06-24 18:32:50,230 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: SALES
+2015-06-24 18:32:50,233 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: MEMORIES
+2015-06-24 18:32:50,236 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: SALES
+2015-06-24 18:32:50,250 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: create table MEMORIES (MEMORY_ID number(19,0) not null, SIZE number(19,0), VENDOR varchar2(255 char), primary key (MEMORY_ID))
+2015-06-24 18:32:50,250 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00904: : invalid identifier
+
+2015-06-24 18:32:50,253 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: create table SALES (SALE_ID number(19,0) not null, COUNT number(19,0), DATE timestamp, store_STORE_ID number(19,0), primary key (SALE_ID))
+2015-06-24 18:32:50,253 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00904: : invalid identifier
+
+2015-06-24 18:32:50,256 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: alter table NOTEBOOKS_2 add constraint FK_scmrkle4kdaq6dpmf761i43e3 foreign key (memory_MEMORY_ID) references MEMORIES
+2015-06-24 18:32:50,256 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00942: table or view does not exist
+
+2015-06-24 18:32:50,258 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: alter table SALES add constraint FK_jdgvvku1bij83u1p6bo4fs01h foreign key (store_STORE_ID) references STORES
+2015-06-24 18:32:50,258 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00942: table or view does not exist
+
+2015-06-24 18:32:50,258 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-24 18:32:50,272 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
