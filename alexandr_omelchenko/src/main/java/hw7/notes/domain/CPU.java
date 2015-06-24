@@ -14,7 +14,6 @@ public class CPU {
      private Long frequency;
     @Column(name ="MODEL")
      private String model;
-
     private Vendor vendor;//класс
 
 //Getters&Setters

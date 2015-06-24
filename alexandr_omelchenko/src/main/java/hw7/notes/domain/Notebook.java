@@ -23,7 +23,6 @@ public class Notebook {
     private String model;
     @Column(name ="DATE")
     private Date date;
-
     private Vendor vendor;//класс
     private CPU processor;//класс
     private Memory ram;//класс
