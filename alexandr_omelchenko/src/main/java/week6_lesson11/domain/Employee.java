@@ -1,38 +1,29 @@
-package week6_lesson11;
-
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.boot.registry.StandardServiceRegistry;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.cfg.Configuration;
+package week6_lesson11.domain;
 
 import javax.persistence.*;
-
 /**
  * Created by HP on 22.06.2015.
  */
 @Entity
-@Table(name="Emploee")
-public class Emploee {
+@Table(name="Employee")
+public class Employee {
     @ManyToOne
+
     private Company company;
 
-    public Emploee() {
+    public Employee() {
         name = "Ivanov" ;
     }
-    public Emploee(String name) {
+    public Employee(String name) {
         this.name = name;
     }
     @Id
     @SequenceGenerator(name="sequence", sequenceName="ID", allocationSize=1, initialValue =0)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="sequence")
-
     @Column(name ="ID")
     private Long id;
     @Column(name ="NAME")
     private String name;
-
     public Long getId() {
         return id;
     }
@@ -52,4 +43,11 @@ public class Emploee {
         this.company = company;
     }
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "name='" + name + '\'' +
+                ", id=" + id +
+                '}';
+    }
 }

@@ -16,5 +16,7 @@
         <property name="hbm2ddl.auto">update</property>
         <mapping class="session10.Region"/>
         <mapping class="hw6.notes.domain.Notebook"/>
-    </session-factory>
+        <mapping class="session11.Emploee"/>
+        <mapping class="session11.Company"/>
+        </session-factory>
 </hibernate-configuration>
