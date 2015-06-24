@@ -1,7 +1,6 @@
 package hw6.notes.util;
 
 import org.apache.log4j.Logger;
-import org.hibernate.Hibernate;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -14,11 +13,19 @@ import java.util.Locale;
  */
 public class HibernateUtil {
 
+   private static HibernateUtil instance;
+
     private SessionFactory sessionFactory;
 
     private static Logger log = Logger.getLogger(HibernateUtil.class);
 
-    public HibernateUtil(){}
+    public static HibernateUtil getInstance(){
+        if (instance == null){
+            return new HibernateUtil();
+        } return instance;
+    }
+
+    private HibernateUtil(){}
 
     public SessionFactory connectToHib(){
         Locale.setDefault(Locale.ENGLISH);

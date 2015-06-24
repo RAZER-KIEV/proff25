@@ -15,6 +15,14 @@
         <property name="show_sql">true</property>
         <property name="hbm2ddl.auto">update</property>
         <mapping class="session10.Region"/>
-        <mapping class="hw6.notes.domain.Notebook"/>
+        <mapping class="session11.Firm.Company"/>
+        <mapping class="session11.Firm.Person"/>
+        <mapping class="hw7.notes.domain.CPU"/>
+        <mapping class="hw7.notes.domain.Memory"/>
+        <mapping class="hw7.notes.domain.Notebook"/>
+        <mapping class="hw7.notes.domain.Sales"/>
+        <mapping class="hw7.notes.domain.Store"/>
+        <mapping class="hw7.notes.domain.Vendor"/>
+        <!--<mapping class="Notebook"/>-->
     </session-factory>
 </hibernate-configuration>

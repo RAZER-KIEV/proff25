@@ -1,12 +1,15 @@
 package hw6.notes.dao;
 
 import hw6.notes.domain.Notebook;
+import hw6.notes.domain.Notebook;
 import hw6.notes.util.HibernateUtil;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -109,5 +112,51 @@ public class NotebookDaoImpl implements NotebookDao {
     public List<Notebook> findAll() {
         Session session = factory.openSession();
         return session.createQuery("from Notebook t").list();
+    }
+
+    @Override
+    public List<Notebook> findByModel(String model) {
+        Session session = factory.openSession();
+        Query query = session.createQuery("from Notebook n where n.model=:model");
+        query.setParameter("model",model);
+        return query.list();
+    }
+
+    @Override
+    public List<Notebook> findByVendor(String vendor) {
+        Session session = factory.openSession();
+        Query query = session.createQuery("from Notebook n where n.vendor=:vendor");
+        query.setParameter("vendor",vendor);
+        if (session != null)
+            session.close();
+        log.info(session);
+        return query.list();
+    }
+
+    @Override
+    public List<Notebook> findByPriceManufDate(Double price, Date date) {
+        Session session = factory.openSession();
+        Query query = session.createQuery("from Notebook n where n.price=:price and n.manufacture_date=:date");
+        query.setParameter("price", price);
+        query.setParameter("date",date);
+        if (session != null)
+            session.close();
+        log.info(session);
+        return query.list();
+    }
+
+    @Override
+    public List<Notebook> findBetweenPriceLtDateByVendor(Double priceFrom, Double priceTo, Date date, String vendor) {
+        Session session = factory.openSession();
+        Query query = session.createQuery("from Notebook n where n.manufacture_date<:date and n.price>:priceFrom and " +
+                "n.price<:priceTo and n.vendor=:vendor");
+        query.setParameter("vendor",vendor);
+        query.setParameter("priceTo", priceTo);
+        query.setParameter("priceFrom", priceFrom);
+        query.setParameter("date",date);
+        if (session != null)
+            session.close();
+        log.info(session);
+        return query.list();
     }
 }

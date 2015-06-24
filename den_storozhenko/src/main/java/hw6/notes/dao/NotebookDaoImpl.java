@@ -1,6 +1,7 @@
 package hw6.notes.dao;
 
 import hw6.notes.domain.Notebook;
+import hw6.notes.domain.Notebook;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
@@ -149,7 +150,7 @@ public class NotebookDaoImpl implements NotebookDao {
     @Override
     public List<Notebook> findByPriceManufDate(Double price, Date date) {
         Session session = factory.openSession();
-        Query query = session.createQuery("from Notebook n where n.manufacture_date=:m_date and n.price=:price");
+        Query query = session.createQuery("from Notebook n where n.manufactureDate=:m_date and n.price=:price");
         query.setParameter("m_date",new java.sql.Date(date.getTime()));
         query.setParameter("price",price);
         List<Notebook> notebooks = query.list();
@@ -161,7 +162,7 @@ public class NotebookDaoImpl implements NotebookDao {
     @Override
     public List<Notebook> findBetweenPriceLtDateByVendor(Double priceFrom, Double priceTo, Date date, String vendor) {
         Session session = factory.openSession();
-        Query query = session.createQuery("from Notebook n where n.manufacture_date<:m_date and n.price>:priceFrom and " +
+        Query query = session.createQuery("from Notebook n where n.manufactureDate<:m_date and n.price>:priceFrom and " +
                 "n.price<:priceTo and n.vendor=:vendor");
         query.setParameter("m_date",new java.sql.Date(date.getTime()));
         query.setParameter("priceFrom",priceFrom);

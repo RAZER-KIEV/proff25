@@ -1,11 +1,8 @@
 package hw6.notes.service;
 
 import hw6.notes.domain.Notebook;
-import hw6.notes.service.NotebookService;
-import hw6.notes.service.NotebookServiceImpl;
 
 import java.sql.Date;
-import java.util.Calendar;
 
 /**
  * Created by oleg on 17.06.15.

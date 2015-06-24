@@ -1,6 +1,7 @@
 package hw6.notes.util;
 
 import hw6.notes.domain.Notebook;
+import hw6.notes.domain.Notebook;
 import org.apache.log4j.Logger;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;

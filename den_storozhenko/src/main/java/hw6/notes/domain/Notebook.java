@@ -18,7 +18,7 @@ public class Notebook {
     @Column(name = "MODEL")
     private String model;
     @Column(name = "MANUFACT_DATE")
-    private Date manufacture_date;
+    private Date manufactureDate;
     @Column(name = "PRICE")
     private Double price;
 
@@ -29,7 +29,7 @@ public class Notebook {
         this.serial = serial;
         this.vendor = vendor;
         this.model = model;
-        this.manufacture_date = manufacture_date;
+        this.manufactureDate = manufacture_date;
         this.price = price;
     }
 
@@ -45,8 +45,8 @@ public class Notebook {
         this.model = model;
     }
 
-    public void setManufacture_date(Date manufacture_date) {
-        this.manufacture_date = manufacture_date;
+    public void setManufactureDate(Date manufacture_date) {
+        this.manufactureDate = manufacture_date;
     }
 
     public void setPrice(Double price) {
@@ -69,8 +69,8 @@ public class Notebook {
         return model;
     }
 
-    public Date getManufacture_date() {
-        return manufacture_date;
+    public Date getManufactureDate() {
+        return manufactureDate;
     }
 
     public Double getPrice() {
@@ -78,6 +78,7 @@ public class Notebook {
     }
 
     public void print(){
-        System.out.println("Notebook: "+id+" "+serial+" "+vendor+" "+model+" "+manufacture_date+" "+price);
+        System.out.println("Notebook: "+id+" "+serial+" "+vendor+" "+model+" "+
+                manufactureDate.getYear()+"/"+manufactureDate.getMonth()+"/"+manufactureDate.getDay()+" "+price);
     }
 }
