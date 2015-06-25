@@ -3,7 +3,7 @@ package hw7.notes.domain;
 import javax.persistence.*;
 import java.util.Date;
 @Entity
-@Table(name = "Stores")
+@Table(name = "Sales")
 public class Sales {
     @Id
     @SequenceGenerator(name="sequence", sequenceName="ID", allocationSize=1, initialValue =0)
@@ -13,7 +13,7 @@ public class Sales {
     @Column(name ="DATE_SALE")
      private Date saleDate;
     @Column(name ="COUNT")
-     private Long count;
+     private Integer count;
     private Store store;//класс
 
 //Getters&Setters
@@ -29,10 +29,10 @@ public class Sales {
     public void setSaleDate(Date saleDate) {
         this.saleDate = saleDate;
     }
-    public Long getCount() {
+    public Integer getCount() {
         return count;
     }
-    public void setCount(Long count) {
+    public void setCount(Integer count) {
         this.count = count;
     }
     public Store getStore() {
@@ -45,20 +45,20 @@ public class Sales {
 //Конструктора
     public Sales() {
         saleDate=new Date();
-        count=10L;
+        count=100;
         store=null;
     }
     public Sales(Date saleDate) {
         this.saleDate = saleDate;
-        count=10L;
+        count=100;
         store=null;
     }
-    public Sales(Date saleDate, Long count) {
+    public Sales(Date saleDate, Integer count) {
         this.saleDate = saleDate;
         this.count = count;
         store=null;
     }
-    public Sales(Date saleDate, Long count, Store store) {
+    public Sales(Date saleDate, Integer count, Store store) {
         this.saleDate = saleDate;
         this.count = count;
         this.store = store;
