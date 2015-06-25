@@ -1,11 +1,11 @@
 package week6_lesson11.dao;
 
-import session7_8.Employees;
+
 import week6_lesson11.domain.Company;
 import week6_lesson11.domain.Employee;
 
 import java.util.List;
-import java.util.Set;
+
 
 /**
  TASK.1
@@ -14,7 +14,7 @@ import java.util.Set;
  -Получить сотрудников из всех компаний
  */
 public interface EmployeeDao {
- List<Employees> getEmplFromCompany(Company comp);
+ List<Employee> getEmplFromCompany(Company comp);
 
  Long create(Employee employee);
 
