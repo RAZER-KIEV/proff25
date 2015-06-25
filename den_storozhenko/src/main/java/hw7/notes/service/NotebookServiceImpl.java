@@ -125,12 +125,22 @@ public class NotebookServiceImpl implements NotebookService {
 
     @Override
     public List<Notebook> getNotebooksByCpuVendor(Vendor cpuVendor) {
-        return notebookDao.getNotebooksByCpuVendor(cpuVendor);
+        return storeDao.getNotebooksByCpuVendor(cpuVendor);
     }
 
     @Override
-    public List getNotebooksFromStore() {
+    public List<Notebook> getNotebooksFromStore() {
         return storeDao.getNotebooksFromStore();
+    }
+
+    @Override
+    public Map getNotebooksStorePresent() {
+        return null;
+    }
+
+    @Override
+    public Map<Notebook, Integer> getSalesByDays() {
+        return null;
     }
 
 }

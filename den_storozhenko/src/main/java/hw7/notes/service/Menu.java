@@ -36,7 +36,7 @@ public class Menu {
         }
         System.out.println();
 
-        System.out.println(notebookService.receive(notebook, 5, 15600.));
+        //System.out.println(notebookService.receive(notebook, 5, 15600.));
         System.out.println(notebookService.sale(2L, 2));
 
 
