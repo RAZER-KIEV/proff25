@@ -1,4 +1,4 @@
-package hw7.notes.view;
+package hw7.notes.service;
 
 import hw7.notes.dao.CPUDaoImpl;
 import hw7.notes.domain.CPU;
