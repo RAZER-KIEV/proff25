@@ -129,8 +129,13 @@ public class NotebookServiceImpl implements NotebookService {
     }
 
     @Override
-    public List getNotebooksFromStore() {
+    public List<Notebook> getNotebooksFromStore() {
         return storeDao.getNotebooksFromStore();
+    }
+
+    @Override
+    public List<Notebook> getNotebooksStorePresent() {
+        return null;
     }
 
     @Override
