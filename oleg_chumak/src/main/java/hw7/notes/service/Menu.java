@@ -15,13 +15,6 @@ import java.util.Locale;
  */
 public class Menu {
     public static void main(String[] args) {
-        Long a = new Long(2);
-        Long b = new Long (3);
-        if (a > b){
-            System.out.println("aaa");
-        }
-        else {
-            System.out.println("bbb");
-        }
+
     }
 }

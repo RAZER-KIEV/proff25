@@ -1,9 +1,6 @@
 package hw7.notes.service;
 
-import hw7.notes.domain.CPU;
-import hw7.notes.domain.Memory;
-import hw7.notes.domain.Notebook;
-import hw7.notes.domain.Vendor;
+import hw7.notes.domain.*;
 
 import java.util.List;
 import java.util.Map;
@@ -25,4 +22,9 @@ public interface NotebookService {
     Long createMemory(Memory memory);
     Long createVendor(Vendor vendor);
     Long createNote(Notebook notebook);
+    boolean updateCPU(CPU cpu);
+    boolean updateMemory(Memory memory);
+    boolean updateVendor(Vendor vendor);
+    boolean updateNotebook(Notebook notebook);
+    boolean removeFromStore(Store store, int amount);
 }

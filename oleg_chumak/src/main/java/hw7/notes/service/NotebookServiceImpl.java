@@ -127,4 +127,30 @@ public class NotebookServiceImpl implements NotebookService {
     public Long createNote(Notebook notebook) {
         return notebookDao.create(notebook);
     }
+
+    @Override
+    public boolean updateCPU(CPU cpu) {
+        return cpuDao.update(cpu);
+    }
+
+    @Override
+    public boolean updateMemory(Memory memory) {
+        return memoryDao.update(memory);
+    }
+
+    @Override
+    public boolean updateVendor(Vendor vendor) {
+        return vendorDao.update(vendor);
+    }
+
+    @Override
+    public boolean updateNotebook(Notebook notebook) {
+        return notebookDao.update(notebook);
+    }
+
+    @Override
+    public boolean removeFromStore(Store store, int amount) {
+        store.setAmount(new Long(amount));
+        return storeDao.update(store);
+    }
 }
