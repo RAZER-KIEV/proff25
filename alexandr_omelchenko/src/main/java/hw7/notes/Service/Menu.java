@@ -1,7 +1,7 @@
-package hw7.notes.view;
+package hw7.notes.Service;
 
 /**
- * Created by oleg on 24.06.15.
+ * Created by HP on 25.06.2015.
  */
 public class Menu {
     public static void main(String[] args) {

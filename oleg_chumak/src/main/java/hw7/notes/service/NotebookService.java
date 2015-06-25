@@ -1,6 +1,6 @@
 package hw7.notes.service;
 
-import hw7.notes.domain.Vendor;
+import hw7.notes.domain.*;
 
 import java.util.List;
 import java.util.Map;
@@ -15,4 +15,16 @@ public interface NotebookService {
     List getNotebooksFromStore();
     List getNotebooksStorePresent();
     Map getSalesByDays();
+    Long receive(Notebook note, int amount, double price);
+    Long receive(Long id, int amount, double price);
+    Long sale(Long storeId, int amount);
+    Long createCPU(CPU cpu);
+    Long createMemory(Memory memory);
+    Long createVendor(Vendor vendor);
+    Long createNote(Notebook notebook);
+    boolean updateCPU(CPU cpu);
+    boolean updateMemory(Memory memory);
+    boolean updateVendor(Vendor vendor);
+    boolean updateNotebook(Notebook notebook);
+    boolean removeFromStore(Store store, int amount);
 }

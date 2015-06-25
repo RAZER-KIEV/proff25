@@ -11,14 +11,13 @@ import javax.persistence.*;
 @Table(name = "CPU")
 public class CPU {
 
+    @Id
     @SequenceGenerator(name = "sequence", sequenceName = "SEQ_CPU_ID", allocationSize = 1, initialValue = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
-
-    @Id
     @Column(name="ID")
     private Long id;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Vendor vendor;
 
     @Column(name = "FREQUENCY")

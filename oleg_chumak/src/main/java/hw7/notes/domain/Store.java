@@ -11,14 +11,13 @@ import java.util.Locale;
 @Table(name = "STORE")
 public class Store {
 
+    @Id
     @SequenceGenerator(name = "sequence", sequenceName = "SEQ_STORE_ID", allocationSize = 1, initialValue = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
-
-    @Id
     @Column(name="ID")
     private Long id;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Notebook noteBook;
 
     @Column(name = "AMOUNT")
