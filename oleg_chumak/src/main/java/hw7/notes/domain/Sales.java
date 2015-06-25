@@ -7,26 +7,23 @@ import java.util.Date;
  * Created by oleg on 24.06.15.
  * Продажи(склад ноутбуков, дата продажи, количество)
  */
-
 @Entity
-@Table(name = "SALES")
+@Table(name = "NOTE_SALES")
 public class Sales {
-
 
     @Id
     @SequenceGenerator(name = "sequence", sequenceName = "SEQ_SALES_ID", allocationSize = 1, initialValue = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
-
-    @Column(name="ID")
+    @Column(name="SALES_ID")
     private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Store store;
 
-    @Column(name = "DATE")
+    @Column(name = "SALES_DATE")
     private Date date;
 
-    @Column(name = "AMOUNT")
+    @Column(name = "SALES_AMOUNT")
     private Long amount;
 
     public Sales() {
