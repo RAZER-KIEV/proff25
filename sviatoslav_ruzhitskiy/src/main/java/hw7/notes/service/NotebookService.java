@@ -8,4 +8,7 @@ import hw7.notes.domain.Notebook;
 public interface NotebookService {
     Long receive(Long id, int amount, double price);
     Long sale(Long storeId, int amount);
+    void deleteNtb(Notebook notebook);
+    void changePrice(Notebook notebook);
+    void changeSerialVendor(Notebook notebook);
 }

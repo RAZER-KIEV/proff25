@@ -50,4 +50,21 @@ public class NotebookServiceImpl implements NotebookService{
 
         return id;
     }
+
+    @Override
+    public void deleteNtb(Notebook notebook) {
+        menu.getNotebookDao().delete(notebook);
+
+    }
+
+    @Override
+    public void changePrice(Notebook notebook) {
+        menu.getNotebookDao().update(notebook);
+
+    }
+
+    @Override
+    public void changeSerialVendor(Notebook notebook) {
+        menu.getNotebookDao().update(notebook);
+    }
 }

@@ -83,3 +83,37 @@ hw7.notes.service.NotebookServiceImpl
 view
 hw7.notes.service.Menu
 main()
+
+
+
+Добавить в приложение ноутбуков следующие функции:
+- Удалить ноутбук по id
+- Изменить цену ноутбука по id
+- Изменить серийный номер и производителя по id
+
+ domain
+    hw6.notes.domain.Notebook
+ dao
+    hw6.notes.dao.NotebookDao
+        Long create(Notebook notebook)
+        Notebook read(Long ig)
+        boolean update(Notebook notebook)
+        boolean delete(Notebook notebook)
+        List<Notebook> findAll()
+    hw6.notes.dao.NotebookDaoImpl
+ util
+    hw6.notes.util.HibernateUtil
+ service
+    hw6.notes.service.NotebookService
+        Long add(Notebook notebook)
+        List<Notebook> findAll()
+        void changePrice(Long id, double price)
+        void changeSerialVendor(Long id, String serial, String vendor)
+        boolean delete(Long id)
+ hw6.notes.service.NotebookServiceImpl
+ view
+    hw6.notes.service.Menu
+        main()
+        void deleteNtb(Notebook notebook)
+        void changePrice(Notebook notebook)
+        void changeSerialVendor(Notebook notebook)
