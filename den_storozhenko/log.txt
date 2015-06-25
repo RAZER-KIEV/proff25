@@ -11298,3 +11298,794 @@ line 1:18: unexpected token: c
 2015-06-24 23:03:52,077 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004429]
 2015-06-24 23:03:52,078 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
 2015-06-24 23:03:52,777 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 01:56:45,711 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-26 01:56:45,769 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-26 01:56:45,773 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-26 01:56:45,777 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-26 01:56:45,856 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7\notebooks.cfg.xml
+2015-06-26 01:56:45,857 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7\notebooks.cfg.xml
+2015-06-26 01:56:46,080 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-26 01:56:46,393 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-26 01:56:46,749 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-26 01:56:47,100 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 01:56:47,101 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=conn, password=****}
+2015-06-26 01:56:47,102 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-26 01:56:47,104 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-26 01:56:52,790 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-26 01:56:53,787 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-26 01:56:53,793 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-26 01:56:53,904 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-26 01:56:54,505 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-26 01:56:54,505 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-26 01:56:57,546 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-26 01:57:05,642 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-06-26 01:57:05,642 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor, mem_size]
+2015-06-26 01:57:05,643 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 01:57:05,643 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004419]
+2015-06-26 01:57:09,177 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-06-26 01:57:09,178 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-06-26 01:57:09,178 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-06-26 01:57:09,179 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004421]
+2015-06-26 01:57:09,421 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-06-26 01:57:09,421 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [processor_id, model, frequency]
+2015-06-26 01:57:09,421 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 01:57:09,421 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004423]
+2015-06-26 01:57:09,603 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-06-26 01:57:09,603 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-06-26 01:57:09,603 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-06-26 01:57:09,604 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004425]
+2015-06-26 01:57:09,846 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-06-26 01:57:09,846 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-06-26 01:57:09,846 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-06-26 01:57:09,846 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004427]
+2015-06-26 01:57:10,206 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-06-26 01:57:10,206 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-06-26 01:57:10,206 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 01:57:10,206 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004429]
+2015-06-26 01:57:10,208 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-26 01:57:11,380 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 979, SQLState: 42000
+2015-06-26 01:57:11,381 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - ORA-00979: not a GROUP BY expression
+
+2015-06-26 01:58:26,121 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-26 01:58:26,133 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-26 01:58:26,137 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-26 01:58:26,140 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-26 01:58:26,252 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7\notebooks.cfg.xml
+2015-06-26 01:58:26,253 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7\notebooks.cfg.xml
+2015-06-26 01:58:26,383 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-26 01:58:26,616 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-26 01:58:26,812 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-26 01:58:27,016 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 01:58:27,017 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=conn, password=****}
+2015-06-26 01:58:27,018 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-26 01:58:27,021 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-26 01:58:28,052 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-26 01:58:28,511 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-26 01:58:28,520 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-26 01:58:28,613 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-26 01:58:29,259 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-26 01:58:29,260 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-26 01:58:29,318 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-26 01:58:29,466 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-06-26 01:58:29,466 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor, mem_size]
+2015-06-26 01:58:29,467 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 01:58:29,467 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004419]
+2015-06-26 01:58:29,485 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-06-26 01:58:29,485 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-06-26 01:58:29,485 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-06-26 01:58:29,485 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004421]
+2015-06-26 01:58:29,501 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-06-26 01:58:29,501 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [processor_id, model, frequency]
+2015-06-26 01:58:29,501 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 01:58:29,501 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004423]
+2015-06-26 01:58:29,516 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-06-26 01:58:29,517 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-06-26 01:58:29,517 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-06-26 01:58:29,517 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004425]
+2015-06-26 01:58:29,532 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-06-26 01:58:29,532 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-06-26 01:58:29,532 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-06-26 01:58:29,532 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004427]
+2015-06-26 01:58:29,546 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-06-26 01:58:29,547 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-06-26 01:58:29,547 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 01:58:29,547 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004429]
+2015-06-26 01:58:29,548 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-26 01:59:14,791 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-26 01:59:14,813 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-26 01:59:14,818 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-26 01:59:14,822 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-26 01:59:14,912 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7\notebooks.cfg.xml
+2015-06-26 01:59:14,914 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7\notebooks.cfg.xml
+2015-06-26 01:59:15,007 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-26 01:59:15,147 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-26 01:59:15,365 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-26 01:59:15,541 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 01:59:15,542 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=conn, password=****}
+2015-06-26 01:59:15,542 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-26 01:59:15,545 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-26 01:59:16,399 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-26 01:59:16,948 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-26 01:59:16,957 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-26 01:59:17,115 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-26 01:59:17,612 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-26 01:59:17,612 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-26 01:59:17,681 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-26 01:59:17,830 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-06-26 01:59:17,830 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor, mem_size]
+2015-06-26 01:59:17,831 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 01:59:17,831 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004419]
+2015-06-26 01:59:17,852 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-06-26 01:59:17,852 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-06-26 01:59:17,852 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-06-26 01:59:17,852 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004421]
+2015-06-26 01:59:17,875 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-06-26 01:59:17,876 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [processor_id, model, frequency]
+2015-06-26 01:59:17,876 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 01:59:17,876 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004423]
+2015-06-26 01:59:17,905 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-06-26 01:59:17,906 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-06-26 01:59:17,906 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-06-26 01:59:17,906 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004425]
+2015-06-26 01:59:17,921 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-06-26 01:59:17,921 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-06-26 01:59:17,921 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-06-26 01:59:17,921 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004427]
+2015-06-26 01:59:17,935 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-06-26 01:59:17,935 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-06-26 01:59:17,935 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 01:59:17,935 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004429]
+2015-06-26 01:59:17,936 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-26 01:59:18,240 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 01:59:49,814 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-26 01:59:49,838 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-26 01:59:49,843 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-26 01:59:49,847 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-26 01:59:49,895 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7\notebooks.cfg.xml
+2015-06-26 01:59:49,895 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7\notebooks.cfg.xml
+2015-06-26 01:59:50,003 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-26 01:59:50,095 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-26 01:59:50,362 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-26 01:59:50,564 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 01:59:50,566 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=conn, password=****}
+2015-06-26 01:59:50,566 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-26 01:59:50,570 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-26 01:59:51,627 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-26 01:59:52,021 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-26 01:59:52,028 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-26 01:59:52,118 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-26 01:59:52,683 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-26 01:59:52,683 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-26 01:59:52,742 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-26 01:59:52,925 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-06-26 01:59:52,926 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor, mem_size]
+2015-06-26 01:59:52,926 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 01:59:52,926 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004419]
+2015-06-26 01:59:52,947 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-06-26 01:59:52,947 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-06-26 01:59:52,947 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-06-26 01:59:52,947 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004421]
+2015-06-26 01:59:52,964 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-06-26 01:59:52,964 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [processor_id, model, frequency]
+2015-06-26 01:59:52,965 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 01:59:52,965 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004423]
+2015-06-26 01:59:52,981 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-06-26 01:59:52,981 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-06-26 01:59:52,981 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-06-26 01:59:52,982 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004425]
+2015-06-26 01:59:53,003 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-06-26 01:59:53,003 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-06-26 01:59:53,004 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-06-26 01:59:53,004 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004427]
+2015-06-26 01:59:53,020 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-06-26 01:59:53,021 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-06-26 01:59:53,021 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 01:59:53,021 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004429]
+2015-06-26 01:59:53,023 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-26 01:59:53,446 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 02:00:43,816 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-26 02:00:43,828 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-26 02:00:43,831 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-26 02:00:43,835 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-26 02:00:43,920 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7\notebooks.cfg.xml
+2015-06-26 02:00:43,920 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7\notebooks.cfg.xml
+2015-06-26 02:00:44,028 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-26 02:00:44,108 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-26 02:00:44,379 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-26 02:00:44,551 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 02:00:44,553 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=conn, password=****}
+2015-06-26 02:00:44,553 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-26 02:00:44,557 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-26 02:00:45,665 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-26 02:00:46,060 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-26 02:00:46,066 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-26 02:00:46,171 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-26 02:00:46,779 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-26 02:00:46,779 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-26 02:00:46,857 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-26 02:00:47,001 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-06-26 02:00:47,001 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor, mem_size]
+2015-06-26 02:00:47,002 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:00:47,002 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004419]
+2015-06-26 02:00:47,017 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-06-26 02:00:47,018 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-06-26 02:00:47,018 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-06-26 02:00:47,018 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004421]
+2015-06-26 02:00:47,033 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-06-26 02:00:47,033 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [processor_id, model, frequency]
+2015-06-26 02:00:47,033 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:00:47,033 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004423]
+2015-06-26 02:00:47,047 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-06-26 02:00:47,047 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-06-26 02:00:47,047 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-06-26 02:00:47,047 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004425]
+2015-06-26 02:00:47,063 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-06-26 02:00:47,063 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-06-26 02:00:47,063 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-06-26 02:00:47,063 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004427]
+2015-06-26 02:00:47,079 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-06-26 02:00:47,079 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-06-26 02:00:47,079 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:00:47,079 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004429]
+2015-06-26 02:00:47,080 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-26 02:00:47,365 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 02:07:16,096 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-26 02:07:16,121 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-26 02:07:16,126 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-26 02:07:16,129 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-26 02:07:16,169 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7\notebooks.cfg.xml
+2015-06-26 02:07:16,169 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7\notebooks.cfg.xml
+2015-06-26 02:07:16,280 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-26 02:07:16,371 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-26 02:07:16,618 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-26 02:07:16,795 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 02:07:16,796 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=conn, password=****}
+2015-06-26 02:07:16,796 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-26 02:07:16,799 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-26 02:07:17,673 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-26 02:07:18,268 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-26 02:07:18,276 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-26 02:07:18,461 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-26 02:07:19,013 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-26 02:07:19,014 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-26 02:07:19,076 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-26 02:07:19,213 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-06-26 02:07:19,213 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor, mem_size]
+2015-06-26 02:07:19,214 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:07:19,214 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004419]
+2015-06-26 02:07:19,233 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-06-26 02:07:19,233 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-06-26 02:07:19,233 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-06-26 02:07:19,233 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004421]
+2015-06-26 02:07:19,247 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-06-26 02:07:19,247 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [processor_id, model, frequency]
+2015-06-26 02:07:19,248 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:07:19,248 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004423]
+2015-06-26 02:07:19,263 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-06-26 02:07:19,264 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-06-26 02:07:19,264 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-06-26 02:07:19,264 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004425]
+2015-06-26 02:07:19,281 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-06-26 02:07:19,281 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-06-26 02:07:19,281 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-06-26 02:07:19,281 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004427]
+2015-06-26 02:07:19,299 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-06-26 02:07:19,299 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-06-26 02:07:19,299 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:07:19,299 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004429]
+2015-06-26 02:07:19,300 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-26 02:07:20,516 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 02:08:05,975 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-26 02:08:05,991 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-26 02:08:05,996 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-26 02:08:05,999 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-26 02:08:06,042 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7\notebooks.cfg.xml
+2015-06-26 02:08:06,043 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7\notebooks.cfg.xml
+2015-06-26 02:08:06,136 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-26 02:08:06,285 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-26 02:08:06,646 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-26 02:08:07,024 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 02:08:07,025 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=conn, password=****}
+2015-06-26 02:08:07,025 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-26 02:08:07,031 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-26 02:08:09,329 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-26 02:08:10,190 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-26 02:08:10,215 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-26 02:08:10,221 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-26 02:08:10,226 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-26 02:08:10,250 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-26 02:08:10,267 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-26 02:08:10,297 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7\notebooks.cfg.xml
+2015-06-26 02:08:10,297 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7\notebooks.cfg.xml
+2015-06-26 02:08:10,451 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-26 02:08:10,709 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-26 02:08:10,736 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-26 02:08:11,020 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-26 02:08:11,407 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 02:08:11,408 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=conn, password=****}
+2015-06-26 02:08:11,409 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-26 02:08:11,413 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-26 02:08:11,955 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-26 02:08:11,956 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-26 02:08:12,023 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-26 02:08:12,265 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-06-26 02:08:12,265 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor, mem_size]
+2015-06-26 02:08:12,266 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:08:12,266 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004419]
+2015-06-26 02:08:12,287 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-26 02:08:12,296 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-06-26 02:08:12,296 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-06-26 02:08:12,296 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-06-26 02:08:12,296 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004421]
+2015-06-26 02:08:12,316 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-06-26 02:08:12,316 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [processor_id, model, frequency]
+2015-06-26 02:08:12,316 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:08:12,317 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004423]
+2015-06-26 02:08:12,357 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-06-26 02:08:12,357 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-06-26 02:08:12,358 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-06-26 02:08:12,358 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004425]
+2015-06-26 02:08:12,378 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-06-26 02:08:12,378 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-06-26 02:08:12,378 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-06-26 02:08:12,378 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004427]
+2015-06-26 02:08:12,396 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-06-26 02:08:12,397 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-06-26 02:08:12,397 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:08:12,397 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004429]
+2015-06-26 02:08:12,399 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-26 02:08:13,307 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-26 02:08:13,382 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-26 02:08:13,935 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-26 02:08:14,575 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 979, SQLState: 42000
+2015-06-26 02:08:14,576 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - ORA-00979: not a GROUP BY expression
+
+2015-06-26 02:08:15,156 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-26 02:08:15,156 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-26 02:08:15,202 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-26 02:08:15,336 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-06-26 02:08:15,336 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor, mem_size]
+2015-06-26 02:08:15,336 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:08:15,336 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004419]
+2015-06-26 02:08:15,353 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-06-26 02:08:15,353 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-06-26 02:08:15,354 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-06-26 02:08:15,354 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004421]
+2015-06-26 02:08:15,368 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-06-26 02:08:15,369 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [processor_id, model, frequency]
+2015-06-26 02:08:15,370 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:08:15,370 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004423]
+2015-06-26 02:08:15,386 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-06-26 02:08:15,386 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-06-26 02:08:15,386 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-06-26 02:08:15,386 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004425]
+2015-06-26 02:08:15,404 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-06-26 02:08:15,404 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-06-26 02:08:15,405 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-06-26 02:08:15,405 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004427]
+2015-06-26 02:08:15,419 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-06-26 02:08:15,419 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-06-26 02:08:15,419 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:08:15,419 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004429]
+2015-06-26 02:08:15,420 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-26 02:08:15,980 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 979, SQLState: 42000
+2015-06-26 02:08:15,980 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - ORA-00979: not a GROUP BY expression
+
+2015-06-26 02:09:28,997 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-26 02:09:29,024 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-26 02:09:29,036 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-26 02:09:29,042 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-26 02:09:29,131 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7\notebooks.cfg.xml
+2015-06-26 02:09:29,132 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7\notebooks.cfg.xml
+2015-06-26 02:09:29,248 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-26 02:09:29,388 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-26 02:09:29,642 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-26 02:09:29,835 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 02:09:29,836 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=conn, password=****}
+2015-06-26 02:09:29,837 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-26 02:09:29,854 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-26 02:09:30,961 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-26 02:09:31,351 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-26 02:09:31,357 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-26 02:09:31,448 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-26 02:09:32,239 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-26 02:09:32,239 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-26 02:09:32,281 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-26 02:09:32,408 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-06-26 02:09:32,408 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor, mem_size]
+2015-06-26 02:09:32,408 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:09:32,408 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004419]
+2015-06-26 02:09:32,424 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-06-26 02:09:32,424 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-06-26 02:09:32,425 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-06-26 02:09:32,425 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004421]
+2015-06-26 02:09:32,439 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-06-26 02:09:32,439 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [processor_id, model, frequency]
+2015-06-26 02:09:32,439 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:09:32,439 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004423]
+2015-06-26 02:09:32,455 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-06-26 02:09:32,456 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-06-26 02:09:32,456 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-06-26 02:09:32,456 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004425]
+2015-06-26 02:09:32,474 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-06-26 02:09:32,475 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-06-26 02:09:32,475 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-06-26 02:09:32,475 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004427]
+2015-06-26 02:09:32,491 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-06-26 02:09:32,492 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-06-26 02:09:32,492 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:09:32,492 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004429]
+2015-06-26 02:09:32,493 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-26 02:09:55,158 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-26 02:09:55,187 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-26 02:09:55,191 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-26 02:09:55,196 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-26 02:09:55,272 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7\notebooks.cfg.xml
+2015-06-26 02:09:55,272 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7\notebooks.cfg.xml
+2015-06-26 02:09:55,420 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-26 02:09:55,536 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-26 02:09:55,816 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-26 02:09:56,006 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 02:09:56,007 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=conn, password=****}
+2015-06-26 02:09:56,008 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-26 02:09:56,011 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-26 02:09:56,965 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-26 02:09:57,519 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-26 02:09:57,532 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-26 02:09:57,727 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-26 02:09:58,409 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-26 02:09:58,409 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-26 02:09:58,462 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-26 02:09:58,599 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-06-26 02:09:58,599 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor, mem_size]
+2015-06-26 02:09:58,599 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:09:58,599 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004419]
+2015-06-26 02:09:58,615 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-06-26 02:09:58,615 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-06-26 02:09:58,615 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-06-26 02:09:58,615 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004421]
+2015-06-26 02:09:58,632 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-06-26 02:09:58,633 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [processor_id, model, frequency]
+2015-06-26 02:09:58,633 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:09:58,633 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004423]
+2015-06-26 02:09:58,652 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-06-26 02:09:58,652 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-06-26 02:09:58,652 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-06-26 02:09:58,652 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004425]
+2015-06-26 02:09:58,674 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-06-26 02:09:58,674 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-06-26 02:09:58,674 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-06-26 02:09:58,675 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004427]
+2015-06-26 02:09:58,691 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-06-26 02:09:58,692 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-06-26 02:09:58,692 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:09:58,692 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004429]
+2015-06-26 02:09:58,693 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-26 02:09:59,247 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 02:12:28,468 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-26 02:12:28,485 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-26 02:12:28,489 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-26 02:12:28,500 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-26 02:12:28,552 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7\notebooks.cfg.xml
+2015-06-26 02:12:28,552 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7\notebooks.cfg.xml
+2015-06-26 02:12:28,656 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-26 02:12:28,759 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-26 02:12:28,986 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-26 02:12:29,178 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 02:12:29,180 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=conn, password=****}
+2015-06-26 02:12:29,180 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-26 02:12:29,185 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-26 02:12:30,388 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-26 02:12:31,008 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-26 02:12:31,019 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-26 02:12:31,126 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-26 02:12:31,956 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-26 02:12:31,956 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-26 02:12:32,025 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-26 02:12:32,253 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-06-26 02:12:32,253 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor, mem_size]
+2015-06-26 02:12:32,253 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:12:32,253 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004419]
+2015-06-26 02:12:32,276 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-06-26 02:12:32,276 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-06-26 02:12:32,276 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-06-26 02:12:32,277 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004421]
+2015-06-26 02:12:32,296 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-06-26 02:12:32,298 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [processor_id, model, frequency]
+2015-06-26 02:12:32,298 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:12:32,298 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004423]
+2015-06-26 02:12:32,317 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-06-26 02:12:32,318 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-06-26 02:12:32,318 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-06-26 02:12:32,318 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004425]
+2015-06-26 02:12:32,339 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-06-26 02:12:32,339 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-06-26 02:12:32,339 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-06-26 02:12:32,339 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004427]
+2015-06-26 02:12:32,356 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-06-26 02:12:32,357 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-06-26 02:12:32,357 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:12:32,357 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004429]
+2015-06-26 02:12:32,358 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-26 02:12:32,893 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 02:14:04,840 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-26 02:14:04,862 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-26 02:14:04,868 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-26 02:14:04,872 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-26 02:14:04,943 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7\notebooks.cfg.xml
+2015-06-26 02:14:04,943 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7\notebooks.cfg.xml
+2015-06-26 02:14:12,779 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-26 02:14:12,791 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-26 02:14:12,796 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-26 02:14:12,799 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-26 02:14:12,841 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7\notebooks.cfg.xml
+2015-06-26 02:14:12,842 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7\notebooks.cfg.xml
+2015-06-26 02:14:12,964 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-26 02:14:13,066 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-26 02:14:13,307 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-26 02:14:13,501 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 02:14:13,502 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=conn, password=****}
+2015-06-26 02:14:13,503 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-26 02:14:13,506 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-26 02:14:14,513 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-26 02:14:15,015 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-26 02:14:15,021 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-26 02:14:15,112 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-26 02:14:15,649 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-26 02:14:15,649 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-26 02:14:15,690 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-26 02:14:15,820 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-06-26 02:14:15,821 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor, mem_size]
+2015-06-26 02:14:15,821 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:14:15,821 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004419]
+2015-06-26 02:14:15,841 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-06-26 02:14:15,842 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-06-26 02:14:15,842 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-06-26 02:14:15,842 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004421]
+2015-06-26 02:14:15,864 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-06-26 02:14:15,865 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [processor_id, model, frequency]
+2015-06-26 02:14:15,865 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:14:15,865 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004423]
+2015-06-26 02:14:15,890 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-06-26 02:14:15,890 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-06-26 02:14:15,890 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-06-26 02:14:15,890 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004425]
+2015-06-26 02:14:15,913 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-06-26 02:14:15,913 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-06-26 02:14:15,913 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-06-26 02:14:15,913 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004427]
+2015-06-26 02:14:15,930 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-06-26 02:14:15,930 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-06-26 02:14:15,930 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:14:15,930 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004429]
+2015-06-26 02:14:15,932 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-26 02:14:16,398 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 02:17:27,262 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-26 02:17:27,291 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-26 02:17:27,296 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-26 02:17:27,303 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-26 02:17:27,458 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7\notebooks.cfg.xml
+2015-06-26 02:17:27,459 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7\notebooks.cfg.xml
+2015-06-26 02:17:27,689 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-26 02:17:27,774 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-26 02:17:28,299 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-26 02:17:28,503 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 02:17:28,504 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=conn, password=****}
+2015-06-26 02:17:28,504 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-26 02:17:28,523 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-26 02:17:29,025 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-26 02:17:29,346 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-26 02:17:29,354 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-26 02:17:29,469 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-26 02:17:30,062 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-26 02:17:30,062 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-26 02:17:30,104 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-26 02:17:30,231 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-06-26 02:17:30,231 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor, mem_size]
+2015-06-26 02:17:30,231 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:17:30,232 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004419]
+2015-06-26 02:17:30,247 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-06-26 02:17:30,247 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-06-26 02:17:30,247 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-06-26 02:17:30,247 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004421]
+2015-06-26 02:17:30,260 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-06-26 02:17:30,261 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [processor_id, model, frequency]
+2015-06-26 02:17:30,261 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:17:30,261 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004423]
+2015-06-26 02:17:30,278 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-06-26 02:17:30,278 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-06-26 02:17:30,279 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-06-26 02:17:30,279 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004425]
+2015-06-26 02:17:30,298 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-06-26 02:17:30,298 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-06-26 02:17:30,298 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-06-26 02:17:30,299 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004427]
+2015-06-26 02:17:30,315 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-06-26 02:17:30,316 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-06-26 02:17:30,316 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:17:30,316 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004429]
+2015-06-26 02:17:30,318 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-26 02:17:30,991 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 02:18:37,852 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-26 02:18:37,867 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-26 02:18:37,872 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-26 02:18:37,876 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-26 02:18:37,965 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7\notebooks.cfg.xml
+2015-06-26 02:18:37,966 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7\notebooks.cfg.xml
+2015-06-26 02:18:38,069 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-26 02:18:38,169 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-26 02:18:38,427 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-26 02:18:38,607 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 02:18:38,608 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=conn, password=****}
+2015-06-26 02:18:38,609 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-26 02:18:38,612 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-26 02:18:39,789 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-26 02:18:40,176 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-26 02:18:40,182 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-26 02:18:40,276 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-26 02:18:40,831 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-26 02:18:40,831 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-26 02:18:40,889 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-26 02:18:41,019 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-06-26 02:18:41,020 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor, mem_size]
+2015-06-26 02:18:41,020 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:18:41,020 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004419]
+2015-06-26 02:18:41,039 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-06-26 02:18:41,039 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-06-26 02:18:41,040 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-06-26 02:18:41,040 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004421]
+2015-06-26 02:18:41,058 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-06-26 02:18:41,058 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [processor_id, model, frequency]
+2015-06-26 02:18:41,058 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:18:41,058 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004423]
+2015-06-26 02:18:41,073 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-06-26 02:18:41,073 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-06-26 02:18:41,073 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-06-26 02:18:41,073 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004425]
+2015-06-26 02:18:41,091 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-06-26 02:18:41,092 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-06-26 02:18:41,092 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-06-26 02:18:41,092 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004427]
+2015-06-26 02:18:41,109 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-06-26 02:18:41,110 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-06-26 02:18:41,110 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:18:41,110 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004429]
+2015-06-26 02:18:41,111 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-26 02:20:23,910 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-26 02:20:23,926 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-26 02:20:23,931 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-26 02:20:23,934 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-26 02:20:23,991 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7\notebooks.cfg.xml
+2015-06-26 02:20:23,993 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7\notebooks.cfg.xml
+2015-06-26 02:20:24,092 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-26 02:20:24,186 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-26 02:20:24,413 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-26 02:20:24,590 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 02:20:24,592 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=conn, password=****}
+2015-06-26 02:20:24,592 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-26 02:20:24,597 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-26 02:20:25,719 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-26 02:20:26,129 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-26 02:20:26,136 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-26 02:20:26,225 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-26 02:20:26,723 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-26 02:20:26,723 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-26 02:20:26,766 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-26 02:20:26,897 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-06-26 02:20:26,897 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor, mem_size]
+2015-06-26 02:20:26,898 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:20:26,898 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004419]
+2015-06-26 02:20:26,914 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-06-26 02:20:26,914 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-06-26 02:20:26,915 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-06-26 02:20:26,915 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004421]
+2015-06-26 02:20:26,929 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-06-26 02:20:26,930 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [processor_id, model, frequency]
+2015-06-26 02:20:26,930 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:20:26,930 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004423]
+2015-06-26 02:20:26,948 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-06-26 02:20:26,948 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-06-26 02:20:26,948 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-06-26 02:20:26,948 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004425]
+2015-06-26 02:20:26,965 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-06-26 02:20:26,965 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-06-26 02:20:26,965 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-06-26 02:20:26,966 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004427]
+2015-06-26 02:20:26,980 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-06-26 02:20:26,980 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-06-26 02:20:26,981 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:20:26,981 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004429]
+2015-06-26 02:20:26,982 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-26 02:20:28,818 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 02:26:57,287 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-26 02:26:57,328 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-26 02:26:57,404 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-26 02:26:57,412 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-26 02:26:57,596 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7\notebooks.cfg.xml
+2015-06-26 02:26:57,596 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7\notebooks.cfg.xml
+2015-06-26 02:26:57,810 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-26 02:26:57,996 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-26 02:26:58,380 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-26 02:26:59,278 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 02:26:59,279 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=conn, password=****}
+2015-06-26 02:26:59,284 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-26 02:26:59,303 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-26 02:27:00,554 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-26 02:27:01,010 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-26 02:27:01,019 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-26 02:27:01,151 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-26 02:27:01,773 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-26 02:27:01,773 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-26 02:27:01,822 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-26 02:27:01,993 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-06-26 02:27:01,994 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor, mem_size]
+2015-06-26 02:27:01,994 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:27:01,994 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004419]
+2015-06-26 02:27:02,013 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-06-26 02:27:02,013 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-06-26 02:27:02,013 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-06-26 02:27:02,013 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004421]
+2015-06-26 02:27:02,032 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-06-26 02:27:02,032 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [processor_id, model, frequency]
+2015-06-26 02:27:02,032 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:27:02,033 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004423]
+2015-06-26 02:27:02,047 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-06-26 02:27:02,048 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-06-26 02:27:02,048 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-06-26 02:27:02,048 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004425]
+2015-06-26 02:27:02,062 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-06-26 02:27:02,062 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-06-26 02:27:02,062 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-06-26 02:27:02,063 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004427]
+2015-06-26 02:27:02,078 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-06-26 02:27:02,078 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-06-26 02:27:02,078 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:27:02,078 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004429]
+2015-06-26 02:27:02,080 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-26 02:27:03,308 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 02:28:16,178 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-26 02:28:16,195 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-26 02:28:16,201 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-26 02:28:16,206 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-26 02:28:16,240 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7\notebooks.cfg.xml
+2015-06-26 02:28:16,241 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7\notebooks.cfg.xml
+2015-06-26 02:28:16,318 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-26 02:28:16,414 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-26 02:28:16,656 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-26 02:28:16,843 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 02:28:16,844 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=conn, password=****}
+2015-06-26 02:28:16,844 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-26 02:28:16,847 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-26 02:28:17,484 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-26 02:28:17,834 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-26 02:28:17,844 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-26 02:28:18,058 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-26 02:28:19,459 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-26 02:28:19,459 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-26 02:28:19,694 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-26 02:28:19,837 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-06-26 02:28:19,837 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor, mem_size]
+2015-06-26 02:28:19,837 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:28:19,838 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004419]
+2015-06-26 02:28:19,857 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-06-26 02:28:19,858 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-06-26 02:28:19,858 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-06-26 02:28:19,858 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004421]
+2015-06-26 02:28:19,878 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-06-26 02:28:19,878 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [processor_id, model, frequency]
+2015-06-26 02:28:19,878 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:28:19,879 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004423]
+2015-06-26 02:28:19,896 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-06-26 02:28:19,897 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-06-26 02:28:19,897 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-06-26 02:28:19,897 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004425]
+2015-06-26 02:28:19,922 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-06-26 02:28:19,922 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-06-26 02:28:19,922 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-06-26 02:28:19,923 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004427]
+2015-06-26 02:28:19,942 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-06-26 02:28:19,942 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-06-26 02:28:19,942 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-26 02:28:19,942 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004429]
+2015-06-26 02:28:19,944 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-26 02:28:20,458 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]

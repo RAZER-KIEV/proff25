@@ -58,10 +58,16 @@ public class NotebookServiceImpl implements NotebookService {
         return storeDao.create(new Store(note, (long) amount,price));
     }
 
+    public Vendor getVendorById(Long id){
+        return vendorDao.read(id);
+    }
 
     @Override
     public Long sale(Long storeId, int amount) {
         Store store = storeDao.read(storeId);
+        if (store.getCount()<amount) {
+            return -1L;
+        }
         store.setCount(store.getCount()-amount);
         storeDao.update(store);
         return salesDao.create(new Sales(store, new Date(Calendar.getInstance().getTimeInMillis()),(long)amount));
@@ -134,9 +140,9 @@ public class NotebookServiceImpl implements NotebookService {
     }
 
     @Override
-    public Map getNotebooksStorePresent() {
-        return null;
-    }
+    public Map<Vendor, List<Notebook>> getNotebooksStorePresent() {
+        return storeDao.getNotebooksStorePresent();
+     }
 
     @Override
     public Map<Notebook, Integer> getSalesByDays() {
