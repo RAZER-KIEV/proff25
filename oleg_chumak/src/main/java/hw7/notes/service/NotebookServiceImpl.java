@@ -17,12 +17,17 @@ import java.util.Map;
  */
 public class NotebookServiceImpl implements NotebookService {
 
-    private NotebookDaoImpl notebookDao;
-    private VendorDaoImpl vendorDao;
-    private CPUDaoImpl cpuDao;
-    private MemoryDaoImpl memoryDao;
-    private StoreDaoImpl storeDao;
-    private SalesDaoImpl salesDao;
+    public NotebookDaoImpl notebookDao;
+    public VendorDaoImpl vendorDao;
+    public CPUDaoImpl cpuDao;
+    public MemoryDaoImpl memoryDao;
+    public StoreDaoImpl storeDao;
+    public SalesDaoImpl salesDao;
+    private SessionFactory factory;
+
+    public SessionFactory getFactory() {
+        return factory;
+    }
 
     public NotebookServiceImpl(NotebookDaoImpl notebookDao, VendorDaoImpl vendorDao, CPUDaoImpl cpuDao, MemoryDaoImpl memoryDao, StoreDaoImpl storeDao, SalesDaoImpl salesDao) {
         this.notebookDao = notebookDao;
@@ -36,11 +41,11 @@ public class NotebookServiceImpl implements NotebookService {
     public NotebookServiceImpl() {
 
         Locale.setDefault(Locale.ENGLISH);
-        Configuration cfg = new Configuration().configure("session10/hibernate.cfg.xml");
+        Configuration cfg = new Configuration().configure("hw7/hibernate.cfg.xml");
         StandardServiceRegistryBuilder sb = new StandardServiceRegistryBuilder();
         sb.applySettings(cfg.getProperties());
         StandardServiceRegistry standardServiceRegistry = sb.build();
-        SessionFactory factory = cfg.buildSessionFactory(standardServiceRegistry);
+        factory = cfg.buildSessionFactory(standardServiceRegistry);
         notebookDao = new NotebookDaoImpl(factory);
         vendorDao = new VendorDaoImpl(factory);
         cpuDao = new CPUDaoImpl(factory);
@@ -150,7 +155,7 @@ public class NotebookServiceImpl implements NotebookService {
 
     @Override
     public boolean removeFromStore(Store store, int amount) {
-        store.setAmount(new Long(amount));
+        store.setAmount(store.getAmount() - new Long(amount));
         return storeDao.update(store);
     }
 }
