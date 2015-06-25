@@ -20,26 +20,27 @@ public class Menu {
         NotebookServiceImpl notebookService = new NotebookServiceImpl(sessionFactory);
         notebookService.createDao();
 
-
-
-        Vendor vendor = new Vendor("Dell");
-        notebookService.createVendor(vendor);
+        /*Vendor vendor = new Vendor("Dell");
+        notebookService.createVendor(vendor);*/
+        /*Vendor vendor = notebookService.getVendorById(7L);
         CPU cpu = new CPU(250000L, "AMD");
         notebookService.createCPU(cpu);
         Memory memory = new Memory(4000L, "NVIDIA");
         notebookService.createMemory(memory);
-        Notebook notebook = new Notebook(vendor, "N5010", new SimpleDateFormat("dd.MM.yyyy").parse("20.06.2010"), cpu, memory);
-        notebookService.createNotebook(notebook);
+        Notebook notebook = new Notebook(vendor, "H1293", new SimpleDateFormat("dd.MM.yyyy").parse("20.06.2010"), cpu, memory);
+        Long id = notebookService.createNotebook(notebook);*/
 
-        for(Notebook notebook1:notebookService.getNotebooksByPortion(8)) {
+        /*for(Notebook notebook1:notebookService.getNotebooksByPortion(8)) {
             notebook1.print();
         }
-        System.out.println();
-
-        //System.out.println(notebookService.receive(notebook, 5, 15600.));
-        System.out.println(notebookService.sale(2L, 2));
+        System.out.println();*/
 
 
+
+        //System.out.println(notebookService.receive(id, 5, 15600.));
+        //System.out.println(notebookService.sale(2L, 2));
+
+        notebookService.getNotebooksStorePresent();
 
 
         sessionFactory.close();

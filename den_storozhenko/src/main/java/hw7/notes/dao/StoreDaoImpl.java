@@ -8,8 +8,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class StoreDaoImpl implements StoreDao {
     private static final int STEP_PORCED =10;
@@ -132,19 +131,28 @@ public class StoreDaoImpl implements StoreDao {
         return stores;
     }
 
-    @Override
-    public List<Notebook> getNotebooksByPortion(int size) {
+    private List<Notebook> getNotesPorced(int start, int size){
         Session session = factory.openSession();
         try {
             Query query = session.createQuery("select n from Store s, Notebook n where s.notebook=n");
+            query.setFirstResult(start);
             query.setMaxResults(size);
-            query.setFirstResult(0);
             return query.list();
         }finally {
             if (session!=null){
                 session.close();
             }
         }
+    }
+
+    @Override
+    public List<Notebook> getNotebooksByPortion(int size) {
+        List<Notebook> notebooks = new ArrayList<>();
+        Long count = getCount();
+        for (int i=0;i<count;i+=size){
+            notebooks.addAll(getNotesPorced(i, size));
+        }
+        return notebooks;
     }
 
     @Override
@@ -181,6 +189,30 @@ public class StoreDaoImpl implements StoreDao {
             Query query = session.createQuery("select n from Store s, Notebook n, Vendor v where s.notebook=n and n.vendor=v and v.name=:name");
             query.setParameter("name",cpuVendor.getName());
             return query.list();
+        }finally {
+            if (session!=null){
+                session.close();
+            }
+        }
+    }
+
+    @Override
+    public Map<Vendor, List<Notebook>> getNotebooksStorePresent() {
+        Session session = factory.openSession();
+        try {
+            Query query = session.createQuery("select v from Store s, Notebook n, Vendor v where s.notebook=n and n.vendor=v");
+            List res = query.list();
+            Set<Vendor> setVendor = new HashSet<>();
+            for (Iterator iter = res.iterator(); iter.hasNext();) {
+                setVendor.add((Vendor) iter.next());
+            }
+            Map<Vendor,List<Notebook>> longListMap = new HashMap<>();
+            for (Vendor vendor:setVendor){
+                Query query1 = session.createQuery("select n from Store s join s.notebook n join n.vendor v where v.id=:id");
+                query1.setParameter("id", vendor.getId());
+                longListMap.put(vendor,query1.list());
+            }
+            return longListMap;
         }finally {
             if (session!=null){
                 session.close();

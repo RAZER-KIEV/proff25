@@ -4,6 +4,7 @@ import hw7.notes.domain.Store;
 import hw7.notes.domain.Vendor;
 
 import java.util.List;
+import java.util.Map;
 
 public interface StoreDao {
     Long create(Store store);
@@ -16,4 +17,5 @@ public interface StoreDao {
     List getNotebooksFromStore();
     List getNotebooksGtAmount(int amount);
     List getNotebooksByCpuVendor(Vendor cpuVendor);
+    Map getNotebooksStorePresent();
 }
