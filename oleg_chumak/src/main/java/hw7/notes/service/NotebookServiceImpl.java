@@ -85,6 +85,11 @@ public class NotebookServiceImpl implements NotebookService {
     }
 
     @Override
+    public Long receive(Long id, int amount, double price) {
+        return storeDao.create(new Store(notebookDao.read(id), new Long(amount), new Long((int)price)));
+    }
+
+    @Override
     public Long sale(Long storeId, int amount) {
         Store currentStore = storeDao.read(storeId);
         Long tmp;

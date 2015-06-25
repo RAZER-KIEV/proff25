@@ -19,6 +19,7 @@ public interface NotebookService {
     List getNotebooksStorePresent();
     Map getSalesByDays();
     Long receive(Notebook note, int amount, double price);
+    Long receive(Long id, int amount, double price);
     Long sale(Long storeId, int amount);
     Long createCPU(CPU cpu);
     Long createMemory(Memory memory);
