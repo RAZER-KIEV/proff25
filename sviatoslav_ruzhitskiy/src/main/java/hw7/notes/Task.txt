@@ -76,7 +76,7 @@ hw7.notes.dao.MemoryDaoImpl
 hw7.notes.dao.StoreDaoImpl
 hw7.notes.dao.SalesDaoImpl
 service
-hw7.notes.service.NotebookService
+hw7.notes.service.NotebookServiceImpl
 Long receive(Notebook note, int amount, double price)
 Long sale(Long storeId, int amount)
 hw7.notes.service.NotebookServiceImpl

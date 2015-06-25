@@ -20,7 +20,7 @@ public class Menu {
     //public static Notebook getNotebook(){return notebook;}
 
     private Logger log = Logger.getLogger(Menu.class);
-    private NotebookService notebookService;
+    private NotebookServiceImpl notebookService;
     private SessionFactory factory;
     private NotebookDaoImpl notebookDao;
     private CPUDaoImpl cpuDao;
@@ -50,7 +50,7 @@ public class Menu {
         StandardServiceRegistry standardServiceRegistry = sb.build();
         factory = cfg.buildSessionFactory(standardServiceRegistry);
         log.info("Reference to SessionFactory " + factory);
-        notebookService = new NotebookService();
+        notebookService = new NotebookServiceImpl();
         notebookDao= new NotebookDaoImpl(factory);
         cpuDao = new CPUDaoImpl(factory);
         memoryDao = new MemoryDaoImpl(factory);
@@ -60,7 +60,7 @@ public class Menu {
 
 
     }
-    public NotebookService getNotebookService() {
+    public NotebookServiceImpl getNotebookService() {
         return notebookService;
     }
     public SessionFactory getSessionFactory(){
