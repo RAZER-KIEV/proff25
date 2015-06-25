@@ -130,18 +130,4 @@ public class NotebookDaoImpl implements NotebookDao {
         }
         return notebooks;
     }
-
-    @Override
-    public List<Notebook> getNotebooksByCpuVendor(Vendor cpuVendor) {
-        Session session = factory.openSession();
-        try {
-            Query query = session.createQuery("select n from Notebook n, Vendor v where n.vendor=v and v.name=:name");
-            query.setParameter("name",cpuVendor.getName());
-            return query.list();
-        }finally {
-            if (session!=null){
-                session.close();
-            }
-        }
-    }
 }

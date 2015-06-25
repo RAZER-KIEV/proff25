@@ -2,6 +2,7 @@ package hw7.notes.dao;
 
 import hw7.notes.domain.Notebook;
 import hw7.notes.domain.Store;
+import hw7.notes.domain.Vendor;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -165,6 +166,20 @@ public class StoreDaoImpl implements StoreDao {
         try {
             Query query = session.createQuery("select n from Store s, Notebook n where s.notebook=n and s.count>:cnt");
             query.setParameter("cnt",amount);
+            return query.list();
+        }finally {
+            if (session!=null){
+                session.close();
+            }
+        }
+    }
+
+    @Override
+    public List<Notebook> getNotebooksByCpuVendor(Vendor cpuVendor) {
+        Session session = factory.openSession();
+        try {
+            Query query = session.createQuery("select n from Store s, Notebook n, Vendor v where s.notebook=n and n.vendor=v and v.name=:name");
+            query.setParameter("name",cpuVendor.getName());
             return query.list();
         }finally {
             if (session!=null){

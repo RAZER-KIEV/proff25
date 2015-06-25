@@ -12,10 +12,9 @@ import javax.persistence.*;
 public class Vendor {
 
 
+    @Id
     @SequenceGenerator(name = "sequence", sequenceName = "SEQ_VENDOR_ID", allocationSize = 1, initialValue = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
-
-    @Id
     @Column(name="ID")
     private Long id;
 
