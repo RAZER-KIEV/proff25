@@ -208,7 +208,7 @@ public class StoreDaoImpl implements StoreDao {
             }
             Map<Vendor,List<Notebook>> longListMap = new HashMap<>();
             for (Vendor vendor:setVendor){
-                Query query1 = session.createQuery("select n from Notebook n join n.vendor v where v.id=:id");
+                Query query1 = session.createQuery("select n from Store s join s.notebook n join n.vendor v where v.id=:id");
                 query1.setParameter("id", vendor.getId());
                 longListMap.put(vendor,query1.list());
             }
