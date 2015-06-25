@@ -1,15 +1,15 @@
 package hw6.notes.dao;
-
 import hw6.notes.domain.Notebook;
-import oracle.sql.TIMESTAMP;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
-import javax.management.Query;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -18,13 +18,12 @@ public class NotebookDaoImpl implements NotebookDao {
  public static void main(String[] args) {
   NotebookDaoImpl note = new NotebookDaoImpl();
  note.initialize();
- note.create(new Notebook());
-//Notebook noteB =note.read(24L);
-  Date date =new Date(115, 0, 1);
-  TIMESTAMP time = new TIMESTAMP();
+ //note.create(new Notebook());
+Notebook noteB =note.read(24L);
+  Date date =noteB.getDate();
  List list = note.findByPriceManufDate(900.99, date);
- // List lister = note.findBetweenPriceLtDateByVendor(900., 1000., date, "Ivan");
- // System.out.println(list.toString());
+ // List list = note.findBetweenPriceLtDateByVendor(900., 1000., date, "Ivan");
+//  System.out.println(list.toString());
 //  System.out.println(noteB.getDate());
   note.factory.close();
  }
@@ -133,8 +132,9 @@ public NotebookDaoImpl(){
  @Override
  public List findByModel(String model) {
   Session session = factory.openSession();
-  List<Notebook>list = new ArrayList<>();
+  List<Notebook>list;
   list =session.createQuery("from Notebook n where n.model = '"+model+"'").list();
+
   if (session!=null){
    session.close();}
   return list;
@@ -143,32 +143,34 @@ public NotebookDaoImpl(){
  public List findByVendor(String vendor) {
   Session session = factory.openSession();
   List<Notebook>list = new ArrayList<>();
-  list =session.createQuery("from Notebook n where n.vendor = '"+vendor+"'").list();
+  list =session.createQuery("from hw6.notes.domain.Notebook n where n.vendor = '"+vendor+"'").list();
   if (session!=null){
    session.close();}
   return list;
  }
- //@Override
+@Override
  public List findByPriceManufDate(Double price, Date date) {
   Session session = factory.openSession();
-Date dat = new java.sql.Date(date.getTime());
-  TIMESTAMP time = new TIMESTAMP();
-  List<Notebook>list = new ArrayList<>();
-  System.out.println("завис");
-  list =session.createQuery("from Notebook n where n.price = '"+price+"' and n.manufacture_date = '"+time+"'").list();
-  //select mo from MyObject mo where year(mo.date) = year(:date) and month(mo.date) = month(:date) and day(mo.date) = day(:date);
+  List<Notebook>list;
+  Query query = session.createQuery("from hw6.notes.domain.Notebook n where n.price=:price and n.date=:sqldate ");
+  query.setParameter("sqldate",new java.sql.Date(date.getTime()));
+  query.setParameter("price", price);
+  list = query.list();
   if (session!=null){
    session.close();}
-  System.out.println("розвис");
   return list;
  }
  //- Получить ноутбуки по цене в указанном диапазоне, меньше указанной даты выпуска и указанного производителя
  @Override
  public List findBetweenPriceLtDateByVendor(Double priceFrom, Double priceTo, Date date, String vendor) {
   Session session = factory.openSession();
-  List<Notebook>list = new ArrayList<>();
-  list =session.createQuery("from Notebook n where n.price between '"+priceFrom+"' and '"+priceTo+"' and n.manufacture_date = '"+date+"' " +
-          "and n.vendor='"+vendor+"'").list();
+  List<Notebook>list;
+  Query query =session.createQuery("from hw6.notes.domain.Notebook n where n.price >:priceFrom and n.price<:priceTo and n.date < :date and n.vendor=:vendor");
+  query.setParameter("priceFrom", priceFrom);
+  query.setParameter("priceTo", priceTo);
+  query.setParameter("date", new java.sql.Date(date.getTime()));
+  query.setParameter("vendor", vendor);
+  list = query.list();
   if (session!=null){
    session.close();}
   return list;

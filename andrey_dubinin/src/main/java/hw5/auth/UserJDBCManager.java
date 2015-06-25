@@ -24,11 +24,11 @@ public class UserJDBCManager {
             PreparedStatement stat = conn.prepareStatement("INSERT INTO Users VALUES(?,?,?,?)");
             int id =user.getId();
             String name =user.getName();
-            int pass= user.getPassword();
+            String pass= user.getPassword();
             String date = user.getDate();
             stat.setInt(1,id);
             stat.setString(2, name);
-            stat.setInt(3, pass);
+            stat.setString(3, pass);
             stat.setString(4, date);
             stat.executeUpdate();
         } catch (SQLException e) {
@@ -44,7 +44,7 @@ public class UserJDBCManager {
             while(rs.next()){
                 int id = rs.getInt("ID");
                 String name = rs.getString("NAME");
-                int pass = rs.getInt("PASSWORD");
+                String pass = rs.getString("PASSWORD");
                 String date = rs.getString("DATE_CREATE");
                 list.add(new User(name,id,pass,date));
 
@@ -54,7 +54,7 @@ public class UserJDBCManager {
         }
         return list;
     }
-    public User readByNamePass(String login,int pass){
+    public User readByNamePass(String login,String pass){
         List<User> list=new ArrayList<>(findAll());
             for(int i =0;i<list.size();i++){
                 if(list.get(i).getName().equals(login)){

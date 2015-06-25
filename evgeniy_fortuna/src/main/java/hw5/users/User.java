@@ -9,9 +9,9 @@ import javafx.beans.property.StringProperty;
  * Структура таблицы (id, имя, пароль, дата).
 
  Классы задания:
- hw5.users.MainWindow
- hw5.users.UserJDBCManager
- hw5.users.User
+ MainWindow
+ UserJDBCManager
+ User
 
  * В класс UserJDBCManager поместите все операции с базой данных.
  * Желательно в методы этого класс передовать и возвращать объекты класса User

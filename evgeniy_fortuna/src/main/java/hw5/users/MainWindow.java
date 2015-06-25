@@ -1,7 +1,6 @@
 package hw5.users;
 
 import javafx.application.Application;
-import javafx.beans.InvalidationListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
@@ -23,9 +22,9 @@ import java.util.List;
  * список существующих пользователей. Структура таблицы (id, имя, пароль, дата).
 
  Классы задания:
- hw5.users.MainWindow
- hw5.users.UserJDBCManager
- hw5.users.User
+ MainWindow
+ UserJDBCManager
+ User
  */
 public class MainWindow extends Application {
     private Scene scene;

@@ -17,6 +17,7 @@ public class HibernateUtil {
     }
 
     public void createSessionFactory() {
+        System.out.println("1");
         Configuration cfg = new Configuration().configure("session10/hibernate.cfg.xml");
         StandardServiceRegistryBuilder sb = new StandardServiceRegistryBuilder();
         sb.applySettings(cfg.getProperties());
