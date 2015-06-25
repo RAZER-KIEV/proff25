@@ -14,7 +14,13 @@ import java.util.Set;
     @Table(name="COMPANY")
     public class Company {
 
-        @SequenceGenerator(name = "sequence", sequenceName = "SEQ_COMPANY_ID", allocationSize = 1, initialValue = 1)
+    public Company(String name, Long money, Set<Person> person) {
+        this.name = name;
+        this.money = money;
+        this.person = person;
+    }
+
+    @SequenceGenerator(name = "sequence", sequenceName = "SEQ_COMPANY_ID", allocationSize = 1, initialValue = 1)
         @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
 
         @Id
@@ -27,7 +33,7 @@ import java.util.Set;
         @Column(name = "MONEY")
         private Long money;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "company", cascade = CascadeType.ALL)
     private Set<Person> person = new HashSet<>();
 
     public Company(String name, Long money) {
@@ -64,5 +70,13 @@ import java.util.Set;
 
     public void addPerson(Person person){
         this.person.add(person);
+    }
+
+    @Override
+    public String toString() {
+        return "Company{" +
+                "name='" + name + '\'' +
+                ", money=" + money +
+                '}';
     }
 }
