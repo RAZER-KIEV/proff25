@@ -12,14 +12,14 @@ import java.util.Date;
 @Table(name = "NOTEBOOK")
 public class Notebook {
 
-    @SequenceGenerator(name = "sequence", sequenceName = "SEQ_NOTEBOOK_ID", allocationSize = 1, initialValue = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
 
     @Id
+    @SequenceGenerator(name = "sequence", sequenceName = "SEQ_NOTEBOOK_ID", allocationSize = 1, initialValue = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
     @Column(name="ID")
     private Long id;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Vendor vendor;
 
     @Column(name = "MODEL")
@@ -28,10 +28,10 @@ public class Notebook {
     @Column(name = "DATE")
     private Date date;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private CPU cpu;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Memory memory;
 
     public Notebook(Vendor vendor, String model, Date date, CPU cpu, Memory memory) {
