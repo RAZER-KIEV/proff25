@@ -32,10 +32,11 @@ public class NotebookServiceImpl implements NotebookService{
          return date;
      }
     @Override
-    public Long receive(Notebook note, int amount, double price){
-        Store store = new Store(note,amount,price);
-        Long id = storeDao.create(store);
-        return id;
+    public Long receive(Long id, int amount, double price){
+        Notebook notebook = menu.getNotebookDao().read(id);
+        Store store = new Store(notebook,amount,price);
+        Long id2 = storeDao.create(store);
+        return id2;
     }
     @Override
     public Long sale(Long storeId, int amount){
