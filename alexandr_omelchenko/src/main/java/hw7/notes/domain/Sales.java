@@ -3,7 +3,7 @@ package hw7.notes.domain;
 import javax.persistence.*;
 import java.util.Date;
 @Entity
-@Table(name = "Stores")
+@Table(name = "Sales")
 public class Sales {
     @Id
     @SequenceGenerator(name="sequence", sequenceName="ID", allocationSize=1, initialValue =0)
