@@ -13,7 +13,8 @@ public class Store {
         initialValue = 1, allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
     private Long id;
-    @ManyToOne
+
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE })
     private Notebook notebook;
 
     private Integer quantity;
@@ -26,8 +27,19 @@ public class Store {
         this.quantity= quantity;
         this.price=price;
     }
-    public Long getId(){return id;}
-    public Notebook getNotebook() {return notebook;}
-    public Integer getQuantity(){return quantity;}
-    public Double getPrice(){return price;}
+    public Long getId(){
+        return id;
+    }
+    public Notebook getNotebook() {
+        return notebook;
+    }
+    public Integer getQuantity() {
+        return quantity;
+    }
+    public void setQuantity(Integer qu){
+        quantity = qu;
+    }
+    public Double getPrice(){
+        return price;
+    }
 }
