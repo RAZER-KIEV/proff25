@@ -10,8 +10,8 @@ public class Store {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="sequence")
     @Column(name ="ID")
      private Long id;
-    @Column(name ="Count_nb")
-     private Long count;
+    @Column(name ="COUNT_NB")
+     private Integer count;
     @Column(name ="Price")
      private Double price;
     private Notebook nb;//класс
@@ -23,10 +23,10 @@ public class Store {
     public void setId(Long id) {
         this.id = id;
     }
-    public Long getCount() {
+    public Integer getCount() {
         return count;
     }
-    public void setCount(Long count) {
+    public void setCount(Integer count) {
         this.count = count;
     }
     public Double getPrice() {
@@ -44,26 +44,25 @@ public class Store {
 
 //Конструктора
     public Store() {
-        count=100L;
+        count=100;
         price=1000.00;
         nb=null;
     }
-    public Store(Long count) {
+    public Store(Integer count) {
         this.count = count;
         price=1000.00;
         nb=null;
     }
-    public Store(Double price, Long count) {
+    public Store(Integer count, Double price) {
+        this.count = count;
         this.price = price;
-        this.count = count;
         nb=null;
     }
-    public Store(Long count, Double price, Notebook nb) {
+    public Store(Notebook nb, Integer count, Double price) {
         this.count = count;
         this.price = price;
         this.nb = nb;
     }
-
     @Override
     public String toString() {
         return "Store{" +

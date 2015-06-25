@@ -1,14 +1,10 @@
 package hw7.notes.Service;
 
-import hw7.notes.dao.CPUDaoImpl;
-import hw7.notes.dao.MemoryDaoImpl;
-import hw7.notes.dao.NotebookDaoImpl;
-import hw7.notes.dao.VendorDaoImpl;
-import hw7.notes.domain.CPU;
-import hw7.notes.domain.Memory;
-import hw7.notes.domain.Notebook;
-import hw7.notes.domain.Vendor;
+import hw7.notes.dao.*;
+import hw7.notes.domain.*;
 import org.hibernate.SessionFactory;
+
+import java.util.Date;
 /**
  Создать процессор
  Создать память
@@ -55,11 +51,15 @@ public class NotebookServiceImpl implements NotebookService {
     @Override
 
     public Long receive(Notebook note, int amount, double price) {
-        return null;
+        StoreDaoImpl storDao = new StoreDaoImpl(factory);
+        return storDao.create( new Store(note, amount, price));
     }
-
     @Override
     public Long sale(Long storeId, int amount) {
-        return null;
+        StoreDaoImpl storDao = new StoreDaoImpl(factory);
+        Store store=storDao.read(storeId);
+
+        SalesDaoImpl saleDao = new SalesDaoImpl(factory);
+        return saleDao.create(new Sales(new Date(), amount, store));
     }
 }
