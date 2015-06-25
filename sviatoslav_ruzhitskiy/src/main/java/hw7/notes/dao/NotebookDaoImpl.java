@@ -16,6 +16,8 @@ public class NotebookDaoImpl implements NotebookDao{
     private SessionFactory sessionFactory;
     Notebook notebook;
 
+    public NotebookDaoImpl(){}
+
     public NotebookDaoImpl(SessionFactory sf){
         sessionFactory = sf;
     }
