@@ -86,34 +86,41 @@ main()
 
 
 
-Добавить в приложение ноутбуков следующие функции:
-- Удалить ноутбук по id
-- Изменить цену ноутбука по id
-- Изменить серийный номер и производителя по id
+3. Добавить в приложение ноутбуков следующие функции
+Изменить процессор
+Изменить память
+Изменить имя производителя
+Изменить тип ноутбука
+Списать со склад ноутбуки (ключ, количество)
 
- domain
-    hw6.notes.domain.Notebook
- dao
-    hw6.notes.dao.NotebookDao
-        Long create(Notebook notebook)
-        Notebook read(Long ig)
-        boolean update(Notebook notebook)
-        boolean delete(Notebook notebook)
-        List<Notebook> findAll()
-    hw6.notes.dao.NotebookDaoImpl
- util
-    hw6.notes.util.HibernateUtil
- service
-    hw6.notes.service.NotebookService
-        Long add(Notebook notebook)
-        List<Notebook> findAll()
-        void changePrice(Long id, double price)
-        void changeSerialVendor(Long id, String serial, String vendor)
-        boolean delete(Long id)
- hw6.notes.service.NotebookServiceImpl
- view
-    hw6.notes.service.Menu
-        main()
-        void deleteNtb(Notebook notebook)
-        void changePrice(Notebook notebook)
-        void changeSerialVendor(Notebook notebook)
+domain
+hw7.notes.domain.Notebook
+hw7.notes.domain.Vendor
+hw7.notes.domain.CPU
+hw7.notes.domain.Memory
+hw7.notes.domain.Store
+hw7.notes.domain.Sales
+dao
+hw7.notes.dao.NotebookDao
+hw7.notes.dao.VendorDao
+hw7.notes.dao.CPUDao
+hw7.notes.dao.MemoryDao
+hw7.notes.dao.StoreDao
+hw7.notes.dao.SalesDao
+hw7.notes.dao.NotebookDaoImpl
+hw7.notes.dao.VendorDaoImpl
+hw7.notes.dao.CPUDaoImpl
+hw7.notes.dao.MemoryDaoImpl
+hw7.notes.dao.StoreDaoImpl
+hw7.notes.dao.SalesDaoImpl
+service
+hw7.notes.service.NotebookService
+boolean updateCPU(CPU cpu)
+boolean updateMemory(Memory memory)
+boolean updateVendor(Vendor vendor)
+boolean updateNotebook(Notebook notebook)
+boolean removeFromStore(Store store, int amount)
+hw7.notes.service.NotebookServiceImpl
+view
+hw7.notes.service.Menu
+main()

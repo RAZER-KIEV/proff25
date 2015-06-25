@@ -2,9 +2,7 @@ package hw7.notes.service;
 
 import hw7.notes.dao.SalesDaoImpl;
 import hw7.notes.dao.StoreDaoImpl;
-import hw7.notes.domain.Notebook;
-import hw7.notes.domain.Sales;
-import hw7.notes.domain.Store;
+import hw7.notes.domain.*;
 import org.hibernate.SessionFactory;
 
 import java.util.Calendar;
@@ -52,19 +50,32 @@ public class NotebookServiceImpl implements NotebookService{
     }
 
     @Override
-    public void deleteNtb(Notebook notebook) {
-        menu.getNotebookDao().delete(notebook);
-
+    public boolean updateCPU(CPU cpu) {
+        return menu.getCpuDao().update(cpu);
     }
 
     @Override
-    public void changePrice(Notebook notebook) {
-        menu.getNotebookDao().update(notebook);
-
+    public boolean updateMemory(Memory memory) {
+        return menu.getMemoryDao().update(memory);
     }
 
     @Override
-    public void changeSerialVendor(Notebook notebook) {
-        menu.getNotebookDao().update(notebook);
+    public boolean updateVendor(Vendor vendor) {
+        return menu.getVendorDao().update(vendor);
     }
+
+    @Override
+    public boolean updateNotebook(Notebook notebook) {
+        return menu.getNotebookDao().update(notebook);
+    }
+
+    @Override
+    public boolean removeFromStore(Store store, int amount) {
+
+        Integer newQuant = store.getQuantity()-amount;
+        store.setQuantity(newQuant);
+        return menu.getStoreDao().update(store);
+    }
+
+
 }
