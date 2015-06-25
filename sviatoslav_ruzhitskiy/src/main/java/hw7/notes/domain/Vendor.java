@@ -1,7 +1,6 @@
-package nw7.notes.domain;
+package hw7.notes.domain;
 
 import javax.persistence.*;
-import java.util.Locale;
 
 /**
  * Created by ПК on 25.06.2015.

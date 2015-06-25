@@ -1,8 +1,7 @@
-package nw7.notes.domain;
+package hw7.notes.domain;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.Locale;
 
 /**
  * 1. Создать сущности для базы данных "Магазин ноутбуков":
