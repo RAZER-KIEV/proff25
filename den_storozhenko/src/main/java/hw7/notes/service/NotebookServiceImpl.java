@@ -133,4 +133,9 @@ public class NotebookServiceImpl implements NotebookService {
         return storeDao.getNotebooksFromStore();
     }
 
+    @Override
+    public Map<Notebook, Integer> getSalesByDays() {
+        return null;
+    }
+
 }
