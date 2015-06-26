@@ -2,6 +2,9 @@ package hw7.notes.domain;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  1. Создать сущности для базы данных "Магазин ноутбуков":
  Тип ноутбука(производитель, модель, дата производства, процессор, память)
@@ -12,7 +15,7 @@ import java.util.Date;
  Продажи(склад ноутбуков, дата продажи, количество)
  */
 @Entity
-@Table(name = "Notebooks")
+@Table(name = "Notebook")
 public class Notebook {
     @Id
     @SequenceGenerator(name="sequence", sequenceName="ID", allocationSize=1, initialValue =0)
@@ -23,9 +26,16 @@ public class Notebook {
     private String model;
     @Column(name ="DATE")
     private Date date;
+    @ManyToOne
     private Vendor vendor;//класс
+    @OneToOne
     private CPU processor;//класс
+    @OneToOne
     private Memory ram;//класс
+    @OneToMany(cascade = CascadeType.ALL, // каскадирование
+            fetch = FetchType.EAGER,// подргужать все сразу
+            mappedBy = "Notebook" )  // включить двунаправленность
+    private Set<Store> storeSet = new HashSet<>();
 
 //Getters&Setters
     public Long getId() {
@@ -64,7 +74,14 @@ public class Notebook {
     public void setProcessor(CPU processor) {
         this.processor = processor;
     }
-//Конструктора
+    public Set<Store> getStoreSet() {
+        return storeSet;
+    }
+    public void setStoreSet(Set<Store> storeSet) {
+        this.storeSet = storeSet;
+    }
+
+    //Конструктора
     public Notebook() {
         model = "model";
         date = new Date();
@@ -85,6 +102,14 @@ public class Notebook {
         this.vendor = vendor;
         this.processor = processor;
         this.ram = ram;
+    }
+    public Notebook(String model, Date date, Vendor vendor, CPU processor, Memory ram, Set<Store> storeSet) {
+        this.model = model;
+        this.date = date;
+        this.vendor = vendor;
+        this.processor = processor;
+        this.ram = ram;
+        this.storeSet = storeSet;
     }
 
     @Override
