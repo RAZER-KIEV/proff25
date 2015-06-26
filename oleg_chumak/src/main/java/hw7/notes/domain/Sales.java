@@ -1,6 +1,8 @@
 package hw7.notes.domain;
 
 import javax.persistence.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -73,6 +75,18 @@ public class Sales {
 
         this.store = store;
         this.date = date;
+        this.amount = amount;
+    }
+
+
+    public Sales(Store store, String date, Long amount) {
+
+        this.store = store;
+        try {
+            this.date = new SimpleDateFormat("dd.MM.yyyy").parse(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         this.amount = amount;
     }
 }

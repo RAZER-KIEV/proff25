@@ -21,8 +21,9 @@ import java.util.Locale;
 public class Menu {
     public static void main(String[] args) {
         NotebookServiceImpl service = new NotebookServiceImpl();
+        Vendor vendor = service.vendorDao.read(new Long(5));
 //        Notebook note = service.notebookDao.read(new Long(2));
-        service.receive(new Long(8), 20, new Long(750));
-        service.sale(new Long(2), 15);
+//        service.receive(new Long(8), 20, new Long(750));
+//        service.sale(new Long(2), 15);
     }
 }

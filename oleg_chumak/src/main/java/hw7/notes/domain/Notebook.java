@@ -1,6 +1,8 @@
 package hw7.notes.domain;
 
 import javax.persistence.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -41,6 +43,20 @@ public class Notebook {
         this.cpu = cpu;
         this.memory = memory;
     }
+
+
+    public Notebook(Vendor vendor, String model, String date, CPU cpu, Memory memory) {
+        this.vendor = vendor;
+        this.model = model;
+        try {
+            this.date = new SimpleDateFormat("dd.MM.yyyy").parse(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        this.cpu = cpu;
+        this.memory = memory;
+    }
+
 
     public Notebook() {
     }
