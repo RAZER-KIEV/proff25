@@ -1,6 +1,7 @@
 package hw7.notes.domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -22,8 +23,8 @@ public class Memory {
     @Column(name = "MEMORY_SIZE")
     private int size;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private Set notebookSet;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "memory", cascade = CascadeType.ALL)
+    private Set<Notebook> notebookSet = new HashSet<>();
 
     public Memory() {
     }

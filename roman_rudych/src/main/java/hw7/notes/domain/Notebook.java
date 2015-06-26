@@ -3,6 +3,7 @@ package hw7.notes.domain;
 import javax.persistence.Entity;
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -17,7 +18,7 @@ public class Notebook {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
     private long id;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "Vendor", cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Vendor vendor;
 
     @Column(name = "NOTEBOOK_MODEL")
@@ -26,14 +27,14 @@ public class Notebook {
     @Column(name = "MANUF_DATE")
     private Date manufactureDate;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "Notebook", cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private CPU cpu;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "Notebook", cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Memory memory;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private Set store;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "notebookType", cascade = CascadeType.ALL)
+    private Set<Store> store = new HashSet<>();
 
     public Notebook() {
     }

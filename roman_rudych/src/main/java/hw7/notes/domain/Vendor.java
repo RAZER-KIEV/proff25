@@ -1,6 +1,7 @@
 package hw7.notes.domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -19,8 +20,8 @@ public class Vendor {
     @Column(name = "VENDOR_NAME")
     private String name;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private Set notebooksSet;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "vendor", cascade = CascadeType.ALL)
+    private Set<Notebook> notebooksSet = new HashSet<>();
 
     public Vendor() {
     }
