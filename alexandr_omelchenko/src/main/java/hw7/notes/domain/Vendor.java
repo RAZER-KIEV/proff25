@@ -1,10 +1,13 @@
 package hw7.notes.domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Table(name = "Vendors")
+@Table(name = "Vendor")
 public class Vendor {
+
     @Id
     @SequenceGenerator(name="sequence", sequenceName="ID", allocationSize=1, initialValue =0)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="sequence")
@@ -12,8 +15,23 @@ public class Vendor {
     private Long id;
     @Column(name ="NAME")
     private String name;
-    //Getters&Setters
 
+    @OneToMany(cascade = CascadeType.ALL, // каскадирование
+            fetch = FetchType.EAGER,// подргужать все сразу
+            mappedBy = "Vendor" )  // включить двунаправленность
+    private Set<Notebook> noteSet = new HashSet<>();
+
+    @OneToMany(cascade = CascadeType.ALL, // каскадирование
+            fetch = FetchType.EAGER,// подргужать все сразу
+            mappedBy = "Vendor" )  // включить двунаправленность
+    private Set<CPU> cpuSet = new HashSet<>();
+
+    @OneToMany(cascade = CascadeType.ALL, // каскадирование
+            fetch = FetchType.EAGER,// подргужать все сразу
+            mappedBy = "Vendor" )  // включить двунаправленность
+    private Set<Memory> ramSet = new HashSet<>();
+
+    //Getters&Setters
     public Long getId() {
         return id;
     }
@@ -26,12 +44,37 @@ public class Vendor {
     public void setName(String name) {
         this.name = name;
     }
+    public Set<Notebook> getNoteSet() {
+        return noteSet;
+    }
+    public void setNoteSet(Set<Notebook> noteSet) {
+        this.noteSet = noteSet;
+    }
+    public Set<CPU> getCpuSet() {
+        return cpuSet;
+    }
+    public void setCpuSet(Set<CPU> cpuSet) {
+        this.cpuSet = cpuSet;
+    }
+    public Set<Memory> getRamSet() {
+        return ramSet;
+    }
+    public void setRamSet(Set<Memory> ramSet) {
+        this.ramSet = ramSet;
+    }
+
     //Конструктора
     public Vendor() {
         name = "nameVendor";
     }
     public Vendor(String name) {
         this.name = name;
+    }
+    public Vendor(String name, Set<Notebook> noteSet, Set<CPU> cpuSet, Set<Memory> ramSet) {
+        this.name = name;
+        this.noteSet = noteSet;
+        this.cpuSet = cpuSet;
+        this.ramSet = ramSet;
     }
 
     @Override

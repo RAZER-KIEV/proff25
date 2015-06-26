@@ -3,7 +3,6 @@ package hw7.notes.service;
 import hw7.notes.dao.*;
 import hw7.notes.dao.NotebookDaoImpl;
 import hw7.notes.domain.*;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import java.util.Date;

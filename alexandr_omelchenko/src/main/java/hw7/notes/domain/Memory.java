@@ -5,6 +5,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "Memory")
 public class Memory {
+
     @Id
     @SequenceGenerator(name="sequence", sequenceName="ID", allocationSize=1, initialValue =0)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="sequence")
@@ -12,8 +13,11 @@ public class Memory {
      private Long id;
     @Column(name ="RAM_SIZE")
      private Long ramSize;
-    private Vendor vendor;//класс
 
+    @ManyToOne
+    private Vendor vendor;//класс
+    @OneToOne
+    private Notebook note;//класс
 //Getters&Setters
     public Long getId() {
         return id;
@@ -33,8 +37,14 @@ public class Memory {
     public void setVendor(Vendor vendor) {
         this.vendor = vendor;
     }
+    public Notebook getNote() {
+        return note;
+    }
+    public void setNote(Notebook note) {
+        this.note = note;
+    }
 
-//Конструктора
+    //Конструктора
     public Memory() {
         ramSize=2048L;
         vendor=null;
@@ -46,6 +56,11 @@ public class Memory {
     public Memory(Long ramSize, Vendor vendor) {
         this.ramSize = ramSize;
         this.vendor = vendor;
+    }
+    public Memory(Long ramSize, Vendor vendor, Notebook note) {
+        this.ramSize = ramSize;
+        this.vendor = vendor;
+        this.note = note;
     }
 
     @Override
