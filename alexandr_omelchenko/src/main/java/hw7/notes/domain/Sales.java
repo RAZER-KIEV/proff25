@@ -15,7 +15,8 @@ public class Sales {
     @Column(name ="COUNT")
      private Integer count;
     private Store store;//класс
-
+    @ManyToOne
+    private Store stor;
 //Getters&Setters
     public Long getId() {
         return id;
@@ -41,8 +42,14 @@ public class Sales {
     public void setStore(Store store) {
         this.store = store;
     }
+    public Store getStor() {
+        return stor;
+    }
+    public void setStor(Store stor) {
+        this.stor = stor;
+    }
 
-//Конструктора
+    //Конструктора
     public Sales() {
         saleDate=new Date();
         count=100;
@@ -62,6 +69,12 @@ public class Sales {
         this.saleDate = saleDate;
         this.count = count;
         this.store = store;
+    }
+    public Sales(Date saleDate, Integer count, Store store, Store stor) {
+        this.saleDate = saleDate;
+        this.count = count;
+        this.store = store;
+        this.stor = stor;
     }
 
     @Override

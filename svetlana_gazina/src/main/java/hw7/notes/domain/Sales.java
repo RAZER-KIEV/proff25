@@ -22,4 +22,44 @@ public class Sales {
     Date dateOfSale;
     Integer amount;
 
+    public Sales() {
+    }
+
+    public Sales(Store store, Date dateOfSale, Integer amount) {
+        this.store = store;
+        this.dateOfSale = dateOfSale;
+        this.amount = amount;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public Store getStore() {
+        return store;
+    }
+
+    public void setStore(Store store) {
+        this.store = store;
+    }
+
+    public Date getDateOfSale() {
+        return dateOfSale;
+    }
+
+    public void setDateOfSale(Date dateOfSale) {
+        this.dateOfSale = dateOfSale;
+    }
+
+    public Integer getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Integer amount) {
+        this.amount = amount;
+    }
 }

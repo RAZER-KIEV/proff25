@@ -2,7 +2,6 @@ package hw6.notes.service;
 
 import hw6.notes.util.HibernateUtil;
 import java.util.Date;
-
 /**
  * Created by HP on 20.06.2015.
  */
