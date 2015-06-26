@@ -31,13 +31,13 @@ public class Notebook {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE })
     private Vendor vendor;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE })
     private CPU cpu;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE })
     private Memory memory;
 
     private String model;
@@ -57,7 +57,8 @@ public class Notebook {
         return id;
     }
     public Vendor getVendor(){
-       return vendor;
+
+        return vendor;
     }
     public CPU getCPU(){
         return cpu;
@@ -70,5 +71,8 @@ public class Notebook {
     }
     public Date getManuf_date(){
         return manuf_date;
+    }
+    public String toString(){
+        return "NOTEBOOK. id: "+getId()+"; CPU: "+getCPU()+"; Memory: "+getMemory()+"; Model: "+getModel()+"; manuf_date: "+getManuf_date();
     }
 }

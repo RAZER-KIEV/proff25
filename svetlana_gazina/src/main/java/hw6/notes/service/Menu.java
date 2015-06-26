@@ -72,7 +72,6 @@ public class Menu {
 
         for(Notebook nb: notebooks){
             System.out.println(nb);
-
         }
     }
     public void showBetweenPriceLtDateByVendor(Double priceFrom, Double PriceTo, Date date, String vendor){
@@ -82,7 +81,6 @@ public class Menu {
 
         for(Notebook nb: notebooks){
             System.out.println(nb);
-
         }
     }
     public static SessionFactory getFactory(){

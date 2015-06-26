@@ -10,14 +10,13 @@ import javax.persistence.*;
 @Table(name = "MEMORY")
 public class Memory {
 
+    @Id
     @SequenceGenerator(name = "sequence", sequenceName = "SEQ_MEMORY_ID", allocationSize = 1, initialValue = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
-
-    @Id
     @Column(name="ID")
     private Long id;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Vendor vendor;
 
     @Column(name = "CAPACITY")

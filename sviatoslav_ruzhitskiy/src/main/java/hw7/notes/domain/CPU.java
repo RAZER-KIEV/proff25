@@ -40,4 +40,7 @@ public class CPU {
     public String getCpuModel() {
         return cpuModel;
     }
+    public String toString(){
+        return "CPU. id-> "+id+"; freq-> "+frequency+" CPU_vendor -> "+cpuVendor+"  Model -> "+cpuModel;
+    }
 }

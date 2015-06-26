@@ -11,5 +11,4 @@ public interface NotebookDao {
     boolean delete(Notebook notebook);
     List getNotebooksPorced(int start, int size);
     List findAll();
-    List getNotebooksByCpuVendor(Vendor cpuVendor);
 }

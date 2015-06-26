@@ -6,8 +6,8 @@
     <session-factory>
         <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
         <property name="connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
-        <property name="connection.username">hr</property>
-        <property name="connection.password">hr</property>
+        <property name="connection.username">myDB</property>
+        <property name="connection.password">88</property>
         <property name="connection.pool_size">1</property>
         <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
         <property name="current_session_context_class">thread</property>
@@ -18,5 +18,14 @@
         <!--<mapping class="hw6.notes.domain.Notebook"/>-->
         <mapping class="session11.Emploee"/>
         <mapping class="session11.Company"/>
+        <mapping class="hw7.notes.domain.CPU"/>
+        <mapping class="hw7.notes.domain.Memory"/>
+        <mapping class="hw7.notes.domain.Notebook"/>
+        <mapping class="hw7.notes.domain.Vendor"/>
+        <mapping class="hw7.notes.domain.Sales"/>
+        <mapping class="hw7.notes.domain.Store"/>
+
+
+
         </session-factory>
 </hibernate-configuration>
