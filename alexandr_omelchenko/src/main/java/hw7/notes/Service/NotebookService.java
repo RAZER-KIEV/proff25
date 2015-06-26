@@ -1,4 +1,4 @@
-package hw7.notes.Service;
+package hw7.notes.service;
 
 import hw7.notes.domain.CPU;
 import hw7.notes.domain.Memory;
@@ -20,4 +20,3 @@ public interface NotebookService {
     Long receive(Notebook note, int amount, double price);
     Long sale(Long storeId, int amount);
 }
-

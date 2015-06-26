@@ -1,4 +1,4 @@
-package hw7.notes.Service;
+package hw7.notes.service;
 
 import hw7.notes.dao.*;
 import hw7.notes.domain.*;
