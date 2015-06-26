@@ -18,4 +18,36 @@ public class Memory {
     @ManyToOne
     private Vendor vendor;
     private Integer capacity;
+
+    public Memory() {
+    }
+
+    public Memory(Vendor vendor, Integer capacity) {
+        this.vendor = vendor;
+        this.capacity = capacity;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public Vendor getVendor() {
+        return vendor;
+    }
+
+    public void setVendor(Vendor vendor) {
+        this.vendor = vendor;
+    }
+
+    public Integer getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(Integer capacity) {
+        this.capacity = capacity;
+    }
 }
