@@ -6,6 +6,6 @@ import hw7.notes.domain.Notebook;
  * Created by Sveta on 6/26/2015.
  */
 public interface NotebookService {
-    Long receive(Notebook note, int amount, double price);
+    Long receive(Long noteId, int amount, double price);
     boolean sale(Long storeId, int amount);
 }
