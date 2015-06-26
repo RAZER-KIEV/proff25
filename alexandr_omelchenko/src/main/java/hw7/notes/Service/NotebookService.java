@@ -17,6 +17,6 @@ public interface NotebookService {
     Long create(Memory memory);
     Long create(Vendor vendor);
     Long create(Notebook notebook);
-    Long receive(Notebook note, int amount, double price);
+    Long receive(Long id, int amount, double price);
     Long sale(Long storeId, int amount);
 }

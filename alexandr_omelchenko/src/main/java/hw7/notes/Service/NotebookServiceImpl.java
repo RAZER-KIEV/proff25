@@ -50,8 +50,9 @@ public class NotebookServiceImpl implements NotebookService {
         return nbDao.create(notebook);
     }
     @Override
-
-    public Long receive(Notebook note, int amount, double price) {
+    public Long receive(Long id, int amount, double price) {
+        NotebookDaoImpl nbDao = new NotebookDaoImpl(factory);
+        Notebook note = nbDao.read(id);
         StoreDaoImpl storDao = new StoreDaoImpl(factory);
         return storDao.create( new Store(note, amount, price));
     }
