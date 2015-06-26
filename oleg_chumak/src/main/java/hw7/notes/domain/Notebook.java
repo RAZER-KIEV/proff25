@@ -1,6 +1,8 @@
 package hw7.notes.domain;
 
 import javax.persistence.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -9,12 +11,12 @@ import java.util.Date;
  */
 
 @Entity
-@Table(name = "NOTEBOOK")
+@Table(name = "NOTE")
 public class Notebook {
 
 
     @Id
-    @SequenceGenerator(name = "sequence", sequenceName = "SEQ_NOTEBOOK_ID", allocationSize = 1, initialValue = 1)
+    @SequenceGenerator(name = "sequence", sequenceName = "SEQ_NOTE_ID", allocationSize = 1, initialValue = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
     @Column(name="ID")
     private Long id;
@@ -25,7 +27,7 @@ public class Notebook {
     @Column(name = "MODEL")
     private String model;
 
-    @Column(name = "DATE")
+    @Column(name = "PRODUCTION_DATE")
     private Date date;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -41,6 +43,20 @@ public class Notebook {
         this.cpu = cpu;
         this.memory = memory;
     }
+
+
+    public Notebook(Vendor vendor, String model, String date, CPU cpu, Memory memory) {
+        this.vendor = vendor;
+        this.model = model;
+        try {
+            this.date = new SimpleDateFormat("dd.MM.yyyy").parse(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        this.cpu = cpu;
+        this.memory = memory;
+    }
+
 
     public Notebook() {
     }

@@ -1,9 +1,6 @@
-package hw7.notes.Service;
+package hw7.notes.service;
 
-import hw7.notes.domain.CPU;
-import hw7.notes.domain.Memory;
-import hw7.notes.domain.Notebook;
-import hw7.notes.domain.Vendor;
+import hw7.notes.domain.*;
 
 /**
  Создать процессор
@@ -18,6 +15,11 @@ public interface NotebookService {
     Long create(Memory memory);
     Long create(Vendor vendor);
     Long create(Notebook notebook);
-    Long receive(Notebook note, int amount, double price);
+    Long receive(Long id, int amount, double price);
     Long sale(Long storeId, int amount);
+    boolean updateCPU(CPU cpu);
+    boolean updateMemory(Memory memory);
+    boolean updateVendor(Vendor vendor);
+    boolean updateNotebook(Notebook notebook);
+    boolean removeFromStore(Store store, int amount);
 }
