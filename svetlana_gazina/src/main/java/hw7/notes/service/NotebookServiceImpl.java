@@ -30,11 +30,12 @@ public class NotebookServiceImpl implements NotebookService {
     }
 
     @Override
-    public boolean sale(Long storeId, int amount) {
+    public Long sale(Long storeId, int amount) {
         StoreDaoImpl storeDao = new StoreDaoImpl();
         Store store = storeDao.read(storeId);
         int am = store.getAmount();
         store.setAmount(am - amount);
-        return storeDao.update(store);
+        storeDao.update(store);
+        return storeId;
     }
 }

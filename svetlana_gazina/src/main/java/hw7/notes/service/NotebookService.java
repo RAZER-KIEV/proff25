@@ -7,5 +7,5 @@ import hw7.notes.domain.Notebook;
  */
 public interface NotebookService {
     Long receive(Long noteId, int amount, double price);
-    boolean sale(Long storeId, int amount);
+    Long sale(Long storeId, int amount);
 }
