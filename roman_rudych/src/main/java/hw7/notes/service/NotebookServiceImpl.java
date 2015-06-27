@@ -83,9 +83,8 @@ public class NotebookServiceImpl implements NotebookService {
     }
 
     @Override
-    public boolean removeFromStore(Long id, int amount) {
+    public boolean removeFromStore(Store store, int amount) {
         StoreDaoImpl storeDao = new StoreDaoImpl(factory);
-        Store store = storeDao.read(id);
         int balance = store.getNotebooksQuantity() - amount;
         if(balance <=0) {
             store.setNotebooksQuantity(0);
@@ -93,6 +92,12 @@ public class NotebookServiceImpl implements NotebookService {
             store.setNotebooksQuantity(balance);
         }
         return storeDao.update(store);
+    }
+
+    @Override
+    public Store getStore(Long id) {
+        StoreDaoImpl storeDao = new StoreDaoImpl(factory);
+        return storeDao.read(id);
     }
 
     public void endSession() {

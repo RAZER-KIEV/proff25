@@ -53,7 +53,7 @@ public class Menu {
         notebook.setVendor(new Vendor("ASUS"));
         service.updateNotebook(notebook);
 
-        service.removeFromStore(1L, 10000);
+        service.removeFromStore(service.getStore(1L), 10000);
 
         service.endSession();
 

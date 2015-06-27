@@ -13,5 +13,6 @@ public interface NotebookService {
     boolean updateMemory(Memory memory);
     boolean updateVendor(Vendor vendor);
     boolean updateNotebook(Notebook notebook);
-    boolean removeFromStore(Long id, int amount);
+    boolean removeFromStore(Store store, int amount);
+    Store getStore(Long id);
 }
