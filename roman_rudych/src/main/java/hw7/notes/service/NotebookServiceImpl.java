@@ -1,9 +1,7 @@
 package hw7.notes.service;
 
 import hw7.notes.dao.*;
-import hw7.notes.domain.Notebook;
-import hw7.notes.domain.Sales;
-import hw7.notes.domain.Store;
+import hw7.notes.domain.*;
 import hw7.notes.util.HibernateUtil;
 import org.hibernate.SessionFactory;
 
@@ -18,6 +16,12 @@ import java.util.Date;
  Создать тип ноутбука
  Принять на склад партию ноутбуков (тип ноутбука, количество, цена)
  Продать указанное количество ноутбуков со склада(id склада, количество)
+ 3. Добавить в приложение ноутбуков следующие функции
+ Изменить процессор
+ Изменить память
+ Изменить имя производителя
+ Изменить тип ноутбука
+ Списать со склад ноутбуки (ключ, количество)
  */
 public class NotebookServiceImpl implements NotebookService {
 
@@ -54,7 +58,44 @@ public class NotebookServiceImpl implements NotebookService {
         return notebookDao.create(notebook);
     }
 
-    public SessionFactory getFactory() {
-        return this.factory;
+    @Override
+    public boolean updateCPU(CPU cpu) {
+        CPUDaoImpl cpuDao = new CPUDaoImpl(factory);
+        return cpuDao.update(cpu);
+    }
+
+    @Override
+    public boolean updateMemory(Memory memory) {
+        MemoryDaoImpl memoryDao = new MemoryDaoImpl(factory);
+        return memoryDao.update(memory);
+    }
+
+    @Override
+    public boolean updateVendor(Vendor vendor) {
+        VendorDaoImpl vendorDao = new VendorDaoImpl(factory);
+        return vendorDao.delete(vendor);
+    }
+
+    @Override
+    public boolean updateNotebook(Notebook notebook) {
+        NotebookDaoImpl notebookDao = new NotebookDaoImpl(factory);
+        return notebookDao.update(notebook);
+    }
+
+    @Override
+    public boolean removeFromStore(Long id, int amount) {
+        StoreDaoImpl storeDao = new StoreDaoImpl(factory);
+        Store store = storeDao.read(id);
+        int balance = store.getNotebooksQuantity() - amount;
+        if(balance <=0) {
+            store.setNotebooksQuantity(0);
+        } else {
+            store.setNotebooksQuantity(balance);
+        }
+        return storeDao.update(store);
+    }
+
+    public void endSession() {
+        factory.close();
     }
 }

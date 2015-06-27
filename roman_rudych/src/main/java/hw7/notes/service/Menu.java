@@ -19,10 +19,18 @@ import java.util.Date;
  Создать тип ноутбука
  Принять на склад партию ноутбуков (тип ноутбука, количество, цена)
  Продать указанное количество ноутбуков со склада(id склада, количество)
+ 3. Добавить в приложение ноутбуков следующие функции
+ Изменить процессор
+ Изменить память
+ Изменить имя производителя
+ Изменить тип ноутбука
+ Списать со склад ноутбуки (ключ, количество)
  */
 public class Menu {
 
     public static void main(String[] args) {
+
+        //Task1
         CPU cpu = new CPU("Intel", 3000, "super Core");
         Memory memory = new Memory("ScanDisk", 4);
         Vendor vendor = new Vendor("Sony");
@@ -31,7 +39,24 @@ public class Menu {
         service.add(notebook);
         System.out.println(service.receive(1L, 1000, 1999.99));
         System.out.println(service.sale(1L, 500));
-        service.getFactory().close();
+
+        //Task2
+        cpu.setModel("Double Core II");
+        service.updateCPU(cpu);
+
+        memory.setSize(8);
+        service.updateMemory(memory);
+
+        vendor.setName("Dell");
+        service.updateVendor(vendor);
+
+        notebook.setVendor(new Vendor("ASUS"));
+        service.updateNotebook(notebook);
+
+        service.removeFromStore(1L, 10000);
+
+        service.endSession();
+
 
     }
 }
