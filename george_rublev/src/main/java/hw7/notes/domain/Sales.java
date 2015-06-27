@@ -32,6 +32,9 @@ public class Sales {
 
     }
 
+    public Sales() {
+    }
+
     public Long getId() {
         return id;
     }
