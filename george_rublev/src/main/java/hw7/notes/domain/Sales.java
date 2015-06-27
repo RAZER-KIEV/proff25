@@ -28,8 +28,11 @@ public class Sales {
     @Column(name = "COUNT")
     private Long count;
 
-    public Sales(){
+    public Sales(Store store, Date date, long amount){
 
+    }
+
+    public Sales() {
     }
 
     public Long getId() {

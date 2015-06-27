@@ -16,19 +16,37 @@ public class Memory {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    private Long id;
 
     @Column(name = "MANUFACTURER")
     private String manufacturer;
 
     @Column(name = "VALUE")
     private String value;
+    public Memory(String value, String manufacturer) {
+        this.value = value;
+        this.manufacturer = manufacturer;
+    }
 
-    public String getId() {
+    public Memory() {
+
+    }
+
+    public Memory(Long id, String vendor, Long size) {
+        this.id = id;
+        this.manufacturer = manufacturer;
+        this.value = value;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
+    }
+
+    public void print(){
+        System.out.print(id+" "+manufacturer+" "+value);
     }
 }

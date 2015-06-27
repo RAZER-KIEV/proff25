@@ -36,6 +36,17 @@ public class CPU {
     public CPU() {
     }
 
+    public CPU(String frequency, String model) {
+        this.frequency = frequency;
+        this.model = model;
+    }
+
+    public CPU(Long id, String frequency, String model) {
+        this.id = id;
+        this.frequency = frequency;
+        this.model = model;
+    }
+
     public Long getId() {
         return id;
     }
@@ -66,5 +77,9 @@ public class CPU {
 
     public void setModel(String model) {
         this.model = model;
+    }
+
+    public void print(){
+        System.out.print(id+" "+model+" "+frequency+" ");
     }
 }
