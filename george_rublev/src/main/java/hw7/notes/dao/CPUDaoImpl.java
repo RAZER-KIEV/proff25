@@ -83,7 +83,7 @@ public class CPUDaoImpl implements CPUDao {
     }
 
     @Override
-    public boolean delete(Object cpu) {
+    public boolean delete(CPU cpu) {
         Session session = factory.openSession();
         try {
             session.beginTransaction();

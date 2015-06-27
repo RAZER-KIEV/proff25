@@ -46,7 +46,7 @@ public class NotebookServiceImpl implements NotebookService {
         for (Vendor vendor:vendorDao.findAll())
             vendorDao.delete(vendor);
         for (Object cpu:cpuDao.findAll())
-            cpuDao.delete(cpu);
+            cpuDao.delete((CPU) cpu);
         for (Memory memory:memoryDao.findAll())
             memoryDao.delete(memory);
         for (Store store:storeDao.findAll())
