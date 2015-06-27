@@ -88,4 +88,12 @@ public class Notebook {
     public void setMemory(Memory memory) {
         this.memory = memory;
     }
+
+    public void print(){
+        System.out.print("Notebook: "+id+" "+vendor.getName()+" "+model+" "+
+                manufactureDate.getYear()+"/"+manufactureDate.getMonth()+"/"+manufactureDate.getDay()+" ");
+        cpu.print();
+        memory.print();
+        System.out.println();
+    }
 }

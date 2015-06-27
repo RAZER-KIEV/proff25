@@ -16,10 +16,23 @@ public class Vendor {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    private Long id;
 
     @Column(name = "NAME")
     private String name;
+
+    public Vendor(){
+
+    }
+
+    public Vendor(String name) {
+        this.name = name;
+    }
+
+    public Vendor(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
     public Set<Notebook> getNotebookSet() {
         return notebookSet;
@@ -29,11 +42,15 @@ public class Vendor {
         this.notebookSet = notebookSet;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
     }
 }
