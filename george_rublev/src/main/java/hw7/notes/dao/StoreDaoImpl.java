@@ -7,8 +7,11 @@ import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-
 import java.util.*;
+
+/**
+ * Created by george on 27.06.15.
+ */
 
 public class StoreDaoImpl implements StoreDao {
     private static final int STEP_PORCED =10;
