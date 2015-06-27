@@ -28,6 +28,10 @@ public class Memory {
         this.manufacturer = manufacturer;
     }
 
+    public Memory() {
+
+    }
+
     public Memory(Long id, String vendor, Long size) {
         this.id = id;
         this.manufacturer = manufacturer;
