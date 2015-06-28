@@ -18,60 +18,60 @@ import java.util.List;
  Продать указанное количество ноутбуков со склада(id склада, количество)
  */
 public class NotebookServiceImpl implements NotebookService {
-    private HibernateUtil hibernateUtil;
+    private HibernateUtil hibernateSessionFactory;
     private SessionFactory factory;
 
     public NotebookServiceImpl(){
-        hibernateUtil = new HibernateUtil();
+        hibernateSessionFactory = new HibernateUtil();
     }
 
     public Long createCPU(CPU cpu){
-        factory = hibernateUtil.create();
+        factory = hibernateSessionFactory.create();
         CPUDaoImpl cpuDao = new CPUDaoImpl(factory);
         Long id = cpuDao.create(cpu);
-        hibernateUtil.close(factory);
+        hibernateSessionFactory.close(factory);
         return id;
     }
 
     public Long createMemory(Memory memory){
-        factory = hibernateUtil.create();
+        factory = hibernateSessionFactory.create();
         MemoryDaoImpl memoryDao = new MemoryDaoImpl(factory);
         Long id = memoryDao.create(memory);
-        hibernateUtil.close(factory);
+        hibernateSessionFactory.close(factory);
         return id;
     }
 
     public Long createVendor(Vendor vendor){
-        factory = hibernateUtil.create();
+        factory = hibernateSessionFactory.create();
         VendorDaoImpl vendorDao = new VendorDaoImpl(factory);
         Long id = vendorDao.create(vendor);
-        hibernateUtil.close(factory);
+        hibernateSessionFactory.close(factory);
         return id;
     }
 
     public Long createNotebook(Notebook notebook){
-        factory = hibernateUtil.create();
+        factory = hibernateSessionFactory.create();
         NotebookDaoImpl notebookDao = new NotebookDaoImpl(factory);
         Long id = notebookDao.create(notebook);
-        hibernateUtil.close(factory);
+        hibernateSessionFactory.close(factory);
         return id;
     }
 
     @Override
     public Long receive(Long noteId, int amount, double price) {
-        factory = hibernateUtil.create();
+        factory = hibernateSessionFactory.create();
         NotebookDaoImpl notebookDao = new NotebookDaoImpl(factory);
         Notebook note = notebookDao.read(noteId);
         Store receipt = new Store(note, amount, price);
         StoreDaoImpl storeDao = new StoreDaoImpl(factory);
         Long id = storeDao.create(receipt);
-        hibernateUtil.close(factory);
+        hibernateSessionFactory.close(factory);
         return id;
     }
 
     @Override
     public Long sale(Long storeId, int amount) {
-        factory = hibernateUtil.create();
+        factory = hibernateSessionFactory.create();
         StoreDaoImpl storeDao = new StoreDaoImpl(factory);
         Store store = storeDao.read(storeId);
 
@@ -85,15 +85,66 @@ public class NotebookServiceImpl implements NotebookService {
         Sales sale = new Sales(store, amount);
         SalesDaoImpl salesDao = new SalesDaoImpl(factory);
         Long id = salesDao.create(sale);
-        hibernateUtil.close(factory);
+        hibernateSessionFactory.close(factory);
         return id;
     }
 
+    @Override
+    public boolean updateCPU(CPU cpu) {
+        boolean result;
+        factory = hibernateSessionFactory.create();
+        CPUDaoImpl cpuDao = new CPUDaoImpl(factory);
+        result = cpuDao.update(cpu);
+        hibernateSessionFactory.close(factory);
+        return result;
+    }
+
+    @Override
+    public boolean updateMemory(Memory memory) {
+        boolean result;
+        factory = hibernateSessionFactory.create();
+        MemoryDaoImpl memoryDao = new MemoryDaoImpl(factory);
+        result = memoryDao.update(memory);
+        hibernateSessionFactory.close(factory);
+        return result;
+    }
+
+    @Override
+    public boolean updateVendor(Vendor vendor) {
+        boolean result;
+        factory = hibernateSessionFactory.create();
+        VendorDaoImpl vendorDao = new VendorDaoImpl(factory);
+        result = vendorDao.update(vendor);
+        hibernateSessionFactory.close(factory);
+        return result;
+    }
+
+    @Override
+    public boolean updateNotebook(Notebook notebook) {
+        boolean result;
+        factory = hibernateSessionFactory.create();
+        NotebookDaoImpl notebookDao = new NotebookDaoImpl(factory);
+        result = notebookDao.update(notebook);
+        hibernateSessionFactory.close(factory);
+        return result;
+    }
+
+    @Override
+    public boolean removeFromStore(Store store, int amount) {
+        boolean result = false;
+        store.setAmount(store.getAmount() - amount);
+        factory = hibernateSessionFactory.create();
+        StoreDaoImpl storeDao = new StoreDaoImpl(factory);
+        result = storeDao.update(store);
+        hibernateSessionFactory.close(factory);
+        return result;
+    }
+
     public List<Vendor> getVendorsList(){
-        factory = hibernateUtil.create();
+        factory = hibernateSessionFactory.create();
         VendorDaoImpl vendorDao = new VendorDaoImpl(factory);
         List<Vendor> vendors = vendorDao.findAll();
-        hibernateUtil.close(factory);
+        hibernateSessionFactory.close(factory);
         return vendors;
     }
 }

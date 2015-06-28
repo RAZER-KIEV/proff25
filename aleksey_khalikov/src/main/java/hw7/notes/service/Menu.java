@@ -22,7 +22,18 @@ public class Menu {
     public static void main(String[] args){
         boolean nextIteration = true;
         while (nextIteration){
-            printConsoleMenu();
+            System.out.println("Menu:");
+            System.out.println("1. Create CPU");
+            System.out.println("2. Create memory");
+            System.out.println("3. Create vendor");
+            System.out.println("4. Create noutbook");
+            System.out.println("5. To take to the warehouse party laptops");
+            System.out.println("6. To sell a specified number of laptops from stock");
+            System.out.println("7. Edit database...");
+            System.out.println("8. Generate reports...");
+            System.out.println("0. exit");
+            System.out.println();
+            System.out.println("Enter the number of the menu item:");
             int itemMenu = getIntegerFromConsole();
             if(itemMenu < 0 || itemMenu > 6){
                 System.out.println("Please input correct number of the menu item");
@@ -37,30 +48,63 @@ public class Menu {
                     case (4): createNoutbook(); break;
                     case (5): receiveStore(); break;
                     case (6): saleFromStore(); break;
+                    case (7): viewEditMenu(); break;
+                    case (8): viewReportsMenu(); break;
                 }
             }
             printSeparator();
         }
     }
 
-    public static void printConsoleMenu(){
-
-        System.out.println("Menu:");
-        System.out.println("1. Create CPU");
-        System.out.println("2. Create memory");
-        System.out.println("3. Create vendor");
-        System.out.println("4. Create noutbook");
-        System.out.println("5. To take to the warehouse party laptops");
-        System.out.println("6. To sell a specified number of laptops from stock");
-        System.out.println("0. exit");
-        System.out.println();
-        System.out.println("Enter the number of the menu item:");
-    }
-
     public static void printSeparator(){
         System.out.println();
         System.out.println("====================================================");
         System.out.println();
+    }
+
+    public static void viewEditMenu() {
+        boolean nextIteration = true;
+        while (nextIteration) {
+            System.out.println("1. Update CPU");
+            System.out.println("2. Update Memory");
+            System.out.println("3. Update Vendor");
+            System.out.println("4. Update Notebook");
+            System.out.println("5. Remove Notebooks from store");
+            System.out.println("0. Go back to main menu");
+            System.out.println();
+            System.out.println("Enter the number of the menu item:");
+            int itemMenu = getIntegerFromConsole();
+            if (itemMenu < 0 || itemMenu > 6) {
+                System.out.println("Please input correct number of the menu item");
+            } else {
+                switch (itemMenu) {
+                    case (0):
+                        System.out.println("I'll be back >:-[");
+                        nextIteration = false;
+                        break;
+                    case (1):
+                        updateCPU();
+                        break;
+                    case (2):
+                        updateMemory();
+                        break;
+                    case (3):
+                        updateVendor();
+                        break;
+                    case (4):
+                        updateNotebook();
+                        break;
+                    case (5):
+                        removeFromStore();
+                        break;
+                }
+            }
+            printSeparator();
+        }
+    }
+
+    public static void viewReportsMenu(){
+
     }
 
     public static void createCPU(){
@@ -90,6 +134,26 @@ public class Menu {
     }
 
     public static void saleFromStore(){
+
+    }
+
+    public static void updateCPU(){
+
+    }
+
+    public static void updateMemory(){
+
+    }
+
+    public static void updateVendor(){
+
+    }
+
+    public static void updateNotebook(){
+
+    }
+
+    public static void removeFromStore(){
 
     }
 
