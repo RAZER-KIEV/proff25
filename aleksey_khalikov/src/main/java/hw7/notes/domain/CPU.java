@@ -21,11 +21,11 @@ public class CPU {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY,
-            cascade = {CascadeType.DETACH,
+            cascade = {CascadeType.REFRESH,
                     CascadeType.MERGE,
                     CascadeType.PERSIST,
-                    CascadeType.REFRESH})
-    @Column(name = "VENDOR")
+                    CascadeType.DETACH})
+  //  @Column(name = "VENDOR")
     private Vendor vendor;
 
     @Column(name = "FREQUENCY")

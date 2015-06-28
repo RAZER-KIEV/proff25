@@ -48,6 +48,11 @@ public class Vendor {
     private Set<Memory> memorySet;
 
     public Vendor(){
+        this("");
+    }
+
+    public Vendor(String name){
+        this.name = name;
         notebookSet = new HashSet<Notebook>();
         cpuSet = new HashSet<CPU>();
         memorySet = new HashSet<Memory>();

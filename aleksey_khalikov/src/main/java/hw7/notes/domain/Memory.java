@@ -25,10 +25,10 @@ public class Memory {
                     CascadeType.MERGE,
                     CascadeType.PERSIST,
                     CascadeType.REFRESH})
-    @Column(name = "VENDOR")
+//    @Column(name = "VENDOR")
     private Vendor vendor;
 
-    @Column(name = "SIZE")
+    @Column(name = "MSIZE")
     private Double size;
 
     @OneToMany(mappedBy = "memory",
