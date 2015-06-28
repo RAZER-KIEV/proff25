@@ -58,9 +58,11 @@ public class NotebookServiceImpl implements NotebookService {
     }
 
     @Override
-    public Long receive(Notebook note, int amount, double price) {
-        Store receipt = new Store(note, amount, price);
+    public Long receive(Long noteId, int amount, double price) {
         factory = hibernateUtil.create();
+        NotebookDaoImpl notebookDao = new NotebookDaoImpl(factory);
+        Notebook note = notebookDao.read(noteId);
+        Store receipt = new Store(note, amount, price);
         StoreDaoImpl storeDao = new StoreDaoImpl(factory);
         Long id = storeDao.create(receipt);
         hibernateUtil.close(factory);
