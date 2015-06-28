@@ -1,10 +1,9 @@
-package hw7.notes.view;
+package hw7.notes.service;
 
 import hw7.notes.domain.Vendor;
-import hw7.notes.service.NotebookServiceImpl;
 
-import java.util.Scanner;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * Created by GFalcon on 25.06.15.
