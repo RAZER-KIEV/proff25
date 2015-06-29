@@ -28,13 +28,13 @@ public class Notebook {
     private Date date;
     @ManyToOne
     private Vendor vendor;//класс
-    @OneToOne
+    @ManyToOne
     private CPU processor;//класс
-    @OneToOne
+    @ManyToOne
     private Memory ram;//класс
     @OneToMany(cascade = CascadeType.ALL, // каскадирование
             fetch = FetchType.EAGER,// подргужать все сразу
-            mappedBy = "Notebook" )  // включить двунаправленность
+            mappedBy = "nb" )  // включить двунаправленность
     private Set<Store> storeSet = new HashSet<>();
 
 //Getters&Setters

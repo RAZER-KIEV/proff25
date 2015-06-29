@@ -1,6 +1,8 @@
 package hw7.notes.domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "Memory")
@@ -16,8 +18,11 @@ public class Memory {
 
     @ManyToOne
     private Vendor vendor;//класс
-    @OneToOne
-    private Notebook note;//класс
+    @OneToMany(cascade = CascadeType.ALL, // каскадирование
+            fetch = FetchType.EAGER,// подргужать все сразу
+            mappedBy = "ram" )  // включить двунаправленность
+    private Set<Notebook> noteSet = new HashSet<>();
+
 //Getters&Setters
     public Long getId() {
         return id;
@@ -37,11 +42,11 @@ public class Memory {
     public void setVendor(Vendor vendor) {
         this.vendor = vendor;
     }
-    public Notebook getNote() {
-        return note;
+    public Set<Notebook> getNoteSet() {
+        return noteSet;
     }
-    public void setNote(Notebook note) {
-        this.note = note;
+    public void setNoteSet(Set<Notebook> noteSet) {
+        this.noteSet = noteSet;
     }
 
     //Конструктора
@@ -57,12 +62,15 @@ public class Memory {
         this.ramSize = ramSize;
         this.vendor = vendor;
     }
-    public Memory(Long ramSize, Vendor vendor, Notebook note) {
+    public Memory(Long ramSize, Vendor vendor, Set noteSet) {
         this.ramSize = ramSize;
         this.vendor = vendor;
-        this.note = note;
+        this.noteSet = noteSet;
     }
 
+    public void addNoteBook(Notebook note) {
+        noteSet.add(note);
+    }
     @Override
     public String toString() {
         return "Memory{" +
