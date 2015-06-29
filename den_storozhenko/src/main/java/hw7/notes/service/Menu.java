@@ -30,6 +30,7 @@ public class Menu {
         NotebookServiceImpl notebookService = new NotebookServiceImpl(notebookDao, vendorDao, cpuDao, memoryDao, storeDao, salesDao);
 
 
+
         sessionFactory.close();
     }
 }
