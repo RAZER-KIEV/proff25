@@ -1,31 +1,33 @@
-package hw6.notes.dao;
+package hw7.notes.dao;
 
-import hw6.notes.domain.Notebook;
+import hw7.notes.domain.Vendor;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+
 import java.util.List;
 
 /**
- * Created by Jeckgehor on 20.06.2015.
+ * Created by Jeckgehor on 29.06.2015.
  */
-public class NotebookDaoImpl implements NotebookDao {
+public class VendorDaoImpl implements VendorDao {
     private SessionFactory factory;
-    private static Logger logger = Logger.getLogger(NotebookDaoImpl.class);
+    private static Logger logger = Logger.getLogger(VendorDaoImpl.class);
 
-    public NotebookDaoImpl(SessionFactory factory) {
+    public VendorDaoImpl(SessionFactory factory) {
         this.factory = factory;
     }
 
+
     @Override
-    public Long create(Notebook ntb) {
+    public Long create(Vendor vendor) {
         Session session = factory.openSession();
         Long id = null;
         try {
             session.beginTransaction();
-            id = (Long) session.save(ntb);
+            id = (Long) session.save(vendor);
             session.getTransaction().commit();
             return id;
         } catch (HibernateException e) {
@@ -40,10 +42,10 @@ public class NotebookDaoImpl implements NotebookDao {
     }
 
     @Override
-    public Notebook read(Long id) {
+    public Vendor read(Long id) {
         Session session = factory.openSession();
         try {
-            return (Notebook) session.get(Notebook.class, id);
+            return (Vendor) session.get(Vendor.class, id);
         } catch (HibernateException e) {
             logger.error("Transaction failed");
         } finally {
@@ -55,11 +57,11 @@ public class NotebookDaoImpl implements NotebookDao {
     }
 
     @Override
-    public boolean update(Notebook ntb) {
+    public boolean update(Vendor vendor) {
         Session session = factory.openSession();
         try {
             session.beginTransaction();
-            session.update(ntb);
+            session.update(vendor);
             session.getTransaction().commit();
             return true;
         } catch (HibernateException e) {
@@ -74,11 +76,11 @@ public class NotebookDaoImpl implements NotebookDao {
     }
 
     @Override
-    public boolean delete(Notebook ntb) {
+    public boolean delete(Vendor vendor) {
         Session session = factory.openSession();
         try {
             session.beginTransaction();
-            session.delete(ntb);
+            session.delete(vendor);
             session.getTransaction().commit();
             return true;
         } catch (HibernateException e) {
@@ -93,10 +95,10 @@ public class NotebookDaoImpl implements NotebookDao {
     }
 
     @Override
-    public List<Notebook> findAll() {
+    public List findAll() {
         Session session = factory.openSession();
         try {
-            Query query = session.createSQLQuery("SELECT * FROM notebooks").addEntity(Notebook.class);
+            Query query = session.createSQLQuery("SELECT * FROM vendor").addEntity(Vendor.class);
             return query.list();
         } catch (HibernateException e) {
             logger.error("Transaction failed");

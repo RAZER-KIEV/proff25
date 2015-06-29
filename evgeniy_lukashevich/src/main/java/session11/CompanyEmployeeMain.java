@@ -8,7 +8,6 @@ import org.hibernate.cfg.Configuration;
 
 import java.util.*;
 
-
 /**
  * Created by Jeckgehor on 22.06.2015.
  */
