@@ -16,7 +16,7 @@ public class Sales {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
     private long id;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "Store", cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Store store;
 
     @Column(name = "SALES_DATE")

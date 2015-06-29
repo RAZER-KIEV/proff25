@@ -88,7 +88,6 @@ public class NotebookDaoImpl implements NotebookDao{
             session.close();
         }
         return true;
-
     }
 
     @Override

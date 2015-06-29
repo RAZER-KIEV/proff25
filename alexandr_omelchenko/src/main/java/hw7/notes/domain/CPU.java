@@ -5,6 +5,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "CPU")
 public class CPU {
+
     @Id
     @SequenceGenerator(name="sequence", sequenceName="ID", allocationSize=1, initialValue =0)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="sequence")
@@ -14,8 +15,11 @@ public class CPU {
      private Long frequency;
     @Column(name ="MODEL")
      private String model;
-    private Vendor vendor;//класс
 
+    @ManyToOne
+    private Vendor vendor;//класс
+    @OneToOne
+    private Notebook note;//класс
 //Getters&Setters
     public Long getId() {
         return id;
@@ -41,8 +45,14 @@ public class CPU {
     public void setVendor(Vendor vendor) {
         this.vendor = vendor;
     }
+    public Notebook getNote() {
+        return note;
+    }
+    public void setNote(Notebook note) {
+        this.note = note;
+    }
 
-//Конструктора
+    //Конструктора
     public CPU() {
         frequency=3L ;
         model="modelCPU";
@@ -62,6 +72,12 @@ public class CPU {
         this.frequency = frequency;
         this.model = model;
         this.vendor = vendor;
+    }
+    public CPU(Long frequency, String model, Vendor vendor, Notebook note) {
+        this.frequency = frequency;
+        this.model = model;
+        this.vendor = vendor;
+        this.note = note;
     }
 
     @Override

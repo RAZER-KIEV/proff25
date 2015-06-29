@@ -56,32 +56,33 @@ public class NotebookServiceImpl implements NotebookService {
 
     @Override
     public List getNotebooksByPortion(int size) {
-        return null;
+        return storeDao.getNotesPorced(0,size);
     }
 
     @Override
     public List getNotebooksGtAmount(int amount) {
-        return null;
+        return storeDao.getNotebooksGtAmount(amount);
     }
 
     @Override
     public List getNotebooksByCpuVendor(Vendor cpuVendor) {
-        return null;
+        return storeDao.getNotebooksByCpuVendor(cpuVendor);
     }
 
     @Override
     public List getNotebooksFromStore() {
-        return null;
+        return storeDao.getNotebooksFromStore();
     }
 
     @Override
-    public List getNotebooksStorePresent() {
-        return null;
+    public Map getNotebooksStorePresent() {
+        return storeDao.getNotebooksStorePresent();
     }
+
 
     @Override
     public Map getSalesByDays() {
-        return null;
+        return salesDao.getSalesByDays();
     }
 
     @Override
