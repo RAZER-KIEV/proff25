@@ -162,7 +162,7 @@ public class NotebookServiceImpl implements NotebookService {
     }
 
     @Override
-    public List<Notebook> getNotebooksStorePresent() {
+    public Map getNotebooksStorePresent() {
         return null;
     }
 
