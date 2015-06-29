@@ -9,13 +9,13 @@ import java.util.List;
  * Created by Sveta on 6/18/2015.
  */
 public interface NotebookDao {
-    public Long create(Notebook ntb);
-    public Notebook read(Long ig);
-    public boolean update(Notebook ntb);
-    public boolean delete(Notebook ntb);
-    public List<Notebook> findAll();
-    public List<Notebook> findByModel(String model);
-    public List<Notebook> findByVendor(String vendor);
-    public List<Notebook> findByPriceManufDate(Double price, Date date);
-    public List<Notebook> findBetweenPriceLtDateByVendor(Double priceFrom, Double priceTo, Date date, String vendor);
+    Long create(Notebook ntb);
+    Notebook read(Long ig);
+    boolean update(Notebook ntb);
+    boolean delete(Notebook ntb);
+    List<Notebook> findAll();
+    List<Notebook> findByModel(String model);
+    List<Notebook> findByVendor(String vendor);
+    List<Notebook> findByPriceManufDate(Double price, Date date);
+    List<Notebook> findBetweenPriceLtDateByVendor(Double priceFrom, Double priceTo, Date date, String vendor);
 }

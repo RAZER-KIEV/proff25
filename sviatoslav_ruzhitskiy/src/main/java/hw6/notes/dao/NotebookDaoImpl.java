@@ -47,7 +47,6 @@ public class NotebookDaoImpl implements NotebookDao {
         Notebook nbk = null;
         try {
             nbk = (Notebook) session.get(Notebook.class,id);
-            //return nbk;
         }catch (HibernateException hEx){
             System.out.println("Exception: Not readed!");
             log.error("Exception: Not readed!  "+hEx);
@@ -120,8 +119,6 @@ public class NotebookDaoImpl implements NotebookDao {
     public List<Notebook> findAll() {
         Session session = sessionFactory.openSession();
         Query query = session.createQuery("FROM Notebook");
-        //  query.setFirstResult(1);
-        // query.setMaxResults(2);
         return query.list();
     }
 

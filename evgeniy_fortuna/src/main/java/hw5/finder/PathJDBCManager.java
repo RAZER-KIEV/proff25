@@ -1,69 +1,34 @@
 package hw5.finder;
 
 import java.sql.*;
-import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-/**
- * Написать приложение, осуществляющее поиск файла в файловой системе с сохранением результата в таблице базы данных.
- * Структура таблицы (id, дата, путь)
- *
- * Классы задания:
- * hw5.finder.MainWindow
- * hw5.finder.PathJDBCManager
- * hw5.finder.Path
- * hw5.finder.FileService
- */
-
 public class PathJDBCManager {
-    private final String URL = "jdbc:oracle:thin:@localhost:1521:XE";
-    private final String LOGIN = "hr";
-    private final String PASSWORD = "hr";
-    private Connection connection;
+    FileService fss  = new FileService();
+    private Connection connect;
+    public List<Path> list = new ArrayList<>();
 
-    PathJDBCManager() {
+    public PathJDBCManager() throws SQLException {
         Locale.setDefault(Locale.ENGLISH);
+        connect = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "hr", "hr");
     }
 
-    private void connect() {
+    public int create(Path user){
         try {
-            connection = DriverManager.getConnection(URL, LOGIN, PASSWORD);
-        } catch (SQLException exc) {
-            exc.printStackTrace();
+            PreparedStatement pprdstmnt = connect.prepareStatement("INSERT INTO PATHS(ID, FILE_DATA, PATH)VALUES(?, ?, ?)");
+            pprdstmnt.setInt(1, user.getId());
+            pprdstmnt.setDate(2, (Date) user.getDate());
+            pprdstmnt.setString(3, user.getFilePath());
+            pprdstmnt.executeUpdate();
+            return 1;
+        } catch (SQLException except){
+            return 0;
         }
     }
 
-    private void close() {
-        if (connection != null) {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    public int create(Path path) {
-        connect();
-        try {
-            SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
-            Statement stmt = connection.createStatement();
-            System.out.println("INSERT INTO PATH VALUES ((SELECT nvl(MAX(ID),0)+1 FROM PATH), '" + path.getPath()
-                    + "', TO_DATE('" + sdf.format(path.getDate()) + "', 'dd.MM.YYYY'))");
-            stmt.executeUpdate("INSERT INTO PATH VALUES ((SELECT nvl(MAX(ID),0)+1 FROM PATH), '" + path.getPath()
-                    + "', TO_DATE('" + sdf.format(path.getDate()) + "', 'dd.MM.yyyy'))");
-
-        } catch (SQLException exc) {
-            exc.printStackTrace();
-        } finally {
-            close();
-        }
-        return -1;
-    }
-
-    public List<Path> findAll() {
-        return null;
+    public List<Path> findAll(){
+        return fss.findAll();
     }
 }
-

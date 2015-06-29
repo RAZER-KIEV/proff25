@@ -36,8 +36,8 @@ public class NotebookServiceImpl implements NotebookService {
     @Override
     public void changePrice(long id, double price) {
         try {
-            Query query = session.createQuery("from hw6.notes.domain.Notebook n where n.id=id");
-            Notebook ntb = (Notebook) query;
+ //           Query query = session.createQuery("from hw6.notes.domain.Notebook n where n.id=id");
+            Notebook ntb = (Notebook) notebook.read(id);
             ntb.setPrice(price);
             session.beginTransaction();
             session.update(ntb);

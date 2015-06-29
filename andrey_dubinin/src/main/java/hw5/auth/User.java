@@ -6,10 +6,10 @@ package hw5.auth;
 public class User {
     private String name;
     private int id;
-    private int password;
+    private String password;
     private String date;
 
-    public User(String name, int id,int password,String date){
+    public User(String name, int id,String password,String date){
         this.name = name;
         this.id =id;
         this.password = password;
@@ -30,11 +30,11 @@ public class User {
         this.id = id;
     }
 
-    public int getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(int password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 

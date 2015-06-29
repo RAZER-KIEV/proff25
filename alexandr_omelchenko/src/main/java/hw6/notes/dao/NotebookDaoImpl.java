@@ -9,6 +9,7 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -151,12 +152,10 @@ public NotebookDaoImpl(){
  public List findByPriceManufDate(Double price, Date date) {
   Session session = factory.openSession();
   List<Notebook>list;
-  Query query = session.createQuery("from hw6.notes.domain.Notebook n where n.price=:price and n.manufacture_date=:date ");
-  //query.setParameter("sqldate",new java.sql.Date(date.getTime()));
-  query.setParameter("date", date);
+  Query query = session.createQuery("from hw6.notes.domain.Notebook n where n.price=:price and n.date=:sqldate ");
+  query.setParameter("sqldate",new java.sql.Date(date.getTime()));
   query.setParameter("price", price);
   list = query.list();
-
   if (session!=null){
    session.close();}
   return list;
@@ -166,16 +165,14 @@ public NotebookDaoImpl(){
  public List findBetweenPriceLtDateByVendor(Double priceFrom, Double priceTo, Date date, String vendor) {
   Session session = factory.openSession();
   List<Notebook>list;
-  Query query =session.createQuery("from hw6.notes.domain.Notebook n where n.price >:priceFrom and n.price<:priceTo and n.manufacture_date < :date and n.vendor=:vendor");
+  Query query =session.createQuery("from hw6.notes.domain.Notebook n where n.price >:priceFrom and n.price<:priceTo and n.date < :date and n.vendor=:vendor");
   query.setParameter("priceFrom", priceFrom);
   query.setParameter("priceTo", priceTo);
-  query.setParameter("date", date);
+  query.setParameter("date", new java.sql.Date(date.getTime()));
   query.setParameter("vendor", vendor);
   list = query.list();
-
   if (session!=null){
    session.close();}
-
   return list;
  }
 }
