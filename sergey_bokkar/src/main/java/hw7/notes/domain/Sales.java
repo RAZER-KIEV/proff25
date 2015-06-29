@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 /**
- * Created by Well on 29.06.2015.
+ * Created by Well on 29.06.2015
  */
 public class Sales {
 

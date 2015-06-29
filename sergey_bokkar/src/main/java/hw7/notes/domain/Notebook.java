@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.util.Date;
 
 /**
- * Created by Well on 29.06.2015.
+ * Created by Well on 29.06.2015
  */
 
 @Entity

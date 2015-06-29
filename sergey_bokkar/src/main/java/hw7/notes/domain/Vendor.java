@@ -3,7 +3,7 @@ package hw7.notes.domain;
 import javax.persistence.*;
 
 /**
- * Created by Well on 29.06.2015.
+ * Created by Well on 29.06.2015
  */
 @Entity
 @Table(name = "vendor")
