@@ -5,13 +5,9 @@ import hw6.notes.domain.Notebook;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by george on 19.06.15.
- */
 public interface NotebookDao {
-
     Long create(Notebook ntb);
-    Notebook read(Long ig);
+    Notebook read(Long id);
     boolean update(Notebook ntb);
     boolean delete(Notebook ntb);
     List<Notebook> findAll();
@@ -19,4 +15,6 @@ public interface NotebookDao {
     List<Notebook> findByVendor(String vendor);
     List<Notebook> findByPriceManufDate(Double price, Date date);
     List<Notebook> findBetweenPriceLtDateByVendor(Double priceFrom, Double priceTo, Date date, String vendor);
+
+
 }
