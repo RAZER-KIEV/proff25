@@ -15,7 +15,7 @@
     </bean>
 
     <bean id="pers2" class="session13.Person">
-        <constructor-arg value="Stefano"/>
+        <constructor-arg value="${stefano.name}"/>
         <property name="age" value="42"/>
     </bean>
 

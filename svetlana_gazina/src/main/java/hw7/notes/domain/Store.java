@@ -16,7 +16,7 @@ public class Store {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
     @Column(name = "STORES_ID")
     private long id;
-    @ManyToMany
+    @ManyToOne
     Vendor vendor;
     BigDecimal price;
     Integer amount;
