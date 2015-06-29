@@ -95,7 +95,8 @@ public class NotebookDaoImpl implements NotebookDao {
     public List<Notebook> findAll() {
         Session session = factory.openSession();
         Query query = session.createQuery("from Notebook");
+        List<Notebook> notebookList = query.list();
         session.close();
-        return query.list();
+        return notebookList;
     }
 }

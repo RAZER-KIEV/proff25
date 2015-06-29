@@ -18,17 +18,17 @@ public class Vendor {
 
     @OneToMany(cascade = CascadeType.ALL, // каскадирование
             fetch = FetchType.EAGER,// подргужать все сразу
-            mappedBy = "Vendor" )  // включить двунаправленность
+            mappedBy = "vendor" )  // включить двунаправленность
     private Set<Notebook> noteSet = new HashSet<>();
 
     @OneToMany(cascade = CascadeType.ALL, // каскадирование
             fetch = FetchType.EAGER,// подргужать все сразу
-            mappedBy = "Vendor" )  // включить двунаправленность
+            mappedBy = "vendor" )  // включить двунаправленность
     private Set<CPU> cpuSet = new HashSet<>();
 
     @OneToMany(cascade = CascadeType.ALL, // каскадирование
             fetch = FetchType.EAGER,// подргужать все сразу
-            mappedBy = "Vendor" )  // включить двунаправленность
+            mappedBy = "vendor" )  // включить двунаправленность
     private Set<Memory> ramSet = new HashSet<>();
 
     //Getters&Setters
@@ -77,6 +77,15 @@ public class Vendor {
         this.ramSet = ramSet;
     }
 
+    public void addNoteBook(Notebook note) {
+        noteSet.add(note);
+    }
+    public void addCpu(CPU cpu){
+        cpuSet.add(cpu);
+    }
+    public void addRam(Memory ram){
+        ramSet.add(ram);
+    }
     @Override
     public String toString() {
         return "Vendor{" +

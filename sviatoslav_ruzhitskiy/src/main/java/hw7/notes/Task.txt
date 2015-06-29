@@ -124,3 +124,45 @@ hw7.notes.service.NotebookServiceImpl
 view
 hw7.notes.service.Menu
 main()
+
+
+4. Добавить в приложение ноутбуков следующие функции:
+Показать все ноутбуки на складе (пользователь указывает размер порции)
+Показать все ноутбуки которых больше указанного количества
+Показать все ноутбуки по указанному имени производителя процессора
+Показать все ноутбуки на складе
+Показать типы ноутбуков, оставшиеся на складе по каждому производителю
+Получить объем продаж ноутбуков в среднем за день
+
+domain
+hw7.notes.domain.Notebook
+hw7.notes.domain.Vendor
+hw7.notes.domain.CPU
+hw7.notes.domain.Memory
+hw7.notes.domain.Store
+hw7.notes.domain.Sales
+dao
+hw7.notes.dao.NotebookDao
+hw7.notes.dao.VendorDao
+hw7.notes.dao.CPUDao
+hw7.notes.dao.MemoryDao
+hw7.notes.dao.StoreDao
+hw7.notes.dao.SalesDao
+hw7.notes.dao.NotebookDaoImpl
+hw7.notes.dao.VendorDaoImpl
+hw7.notes.dao.CPUDaoImpl
+hw7.notes.dao.MemoryDaoImpl
+hw7.notes.dao.StoreDaoImpl
+hw7.notes.dao.SalesDaoImpl
+service
+hw7.notes.service.NotebookService
+List getNotebooksByPortion(int size)
+List getNotebooksGtAmount(int amount)
+List getNotebooksByCpuVendor(Vendor cpuVendor)
+List getNotebooksFromStore()
+List getNotebooksStorePresent()
+Map getSalesByDays()
+hw7.notes.service.NotebookServiceImpl
+view
+hw7.notes.service.Menu
+main()

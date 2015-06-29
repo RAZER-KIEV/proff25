@@ -1,12 +1,14 @@
 package hw7.notes.dao;
 
+import hw7.notes.domain.Notebook;
 import hw7.notes.domain.Store;
+import hw7.notes.domain.Vendor;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by ПК on 25.06.2015.
@@ -107,4 +109,97 @@ public class StoreDaoImpl implements StoreDao{
         Query query = session.createQuery("FROM Store");
         return query.list();
     }
+
+    @Override
+    public List getNotebooksByPortion(int size) {
+        Query query;
+        List<Notebook> notebookList = new ArrayList<>();
+        int start = 0;
+        do {
+            Session session = sessionFactory.openSession();
+
+            try {
+                query = session.createQuery("select Notebook n from Store s");
+                query.setFirstResult(start);
+                query.setMaxResults(size);
+                notebookList.addAll(query.list());
+            } finally {
+                start += size;
+                if (session != null) {
+                    session.close();
+                }
+            }
+        } while (query.list() != (null));
+        return notebookList;
+    }
+
+    @Override
+    public List getNotebooksGtAmount(int amount) {
+        Session session = sessionFactory.openSession();
+        List<Notebook> notebookList = new ArrayList<>();
+        try{
+            Query query = session.createQuery("select Notebook n from Store s where s.quantity>:amount");
+            query.setParameter("amount",amount);
+            notebookList = query.list();
+
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally {
+            if(session!=null)
+                session.close();
+        }
+
+        return notebookList;
+    }
+
+    @Override
+    public List getNotebooksByCpuVendor(Vendor cpuVendor) {
+        Session session = sessionFactory.openSession();
+        List<Notebook> notebookList = new ArrayList<>();
+        try{
+            Query query = session.createQuery("select Notebook n from Store s where s.cpu.cpuVendor=:cpuVendor");
+            query.setParameter("cpuVendor",cpuVendor);
+            notebookList = query.list();
+
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally {
+            if(session!=null)
+                session.close();
+        }
+
+        return notebookList;
+    }
+
+    @Override
+    public List getNotebooksFromStore() {
+        Session session = sessionFactory.openSession();
+        Query query = session.createQuery("select notebook from Store");
+        return query.list();
+
+
+
+    }
+
+    @Override
+    public List getNotebooksStorePresent() {
+        Session session = sessionFactory.openSession();
+        List<Notebook> notebookList = new ArrayList<>();
+        try{
+            Query query = session.createQuery("select Notebook n from Store s where s.quantity>0 group by n.vendor");
+
+            notebookList = query.list();
+
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally {
+            if(session!=null)
+                session.close();
+        }
+
+        return notebookList;
+    }
+
+
+
 }

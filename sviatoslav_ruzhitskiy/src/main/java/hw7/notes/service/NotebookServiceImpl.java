@@ -7,6 +7,8 @@ import org.hibernate.SessionFactory;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by ПК on 25.06.2015.
@@ -75,6 +77,36 @@ public class NotebookServiceImpl implements NotebookService{
         Integer newQuant = store.getQuantity()-amount;
         store.setQuantity(newQuant);
         return menu.getStoreDao().update(store);
+    }
+
+    @Override
+    public List getNotebooksByPortion(int size) {
+        return menu.getStoreDao().getNotebooksByPortion(size);
+    }
+
+    @Override
+    public List getNotebooksGtAmount(int amount) {
+        return menu.getStoreDao().getNotebooksGtAmount(amount);
+    }
+
+    @Override
+    public List getNotebooksByCpuVendor(Vendor cpuVendor) {
+        return menu.getStoreDao().getNotebooksByCpuVendor(cpuVendor);
+    }
+
+    @Override
+    public List getNotebooksFromStore() {
+        return menu.getStoreDao().getNotebooksFromStore();
+    }
+
+    @Override
+    public List getNotebooksStorePresent() {
+        return menu.getStoreDao().getNotebooksStorePresent();
+    }
+
+    @Override
+    public Map getSalesByDays() {
+        return menu.getSalesDao().getSalesByDays();
     }
 
 
