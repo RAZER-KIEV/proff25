@@ -145,8 +145,8 @@ public class NotebookServiceImpl implements NotebookService {
      }
 
     @Override
-    public Map<Notebook, Integer> getSalesByDays() {
-        return null;
+    public Map<Date, Double> getSalesByDays() {
+        return salesDao.getSalesByDays();
     }
 
 }

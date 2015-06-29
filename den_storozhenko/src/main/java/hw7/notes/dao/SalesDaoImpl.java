@@ -6,8 +6,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class SalesDaoImpl implements SalesDao {
     private static final int STEP_PORCED =10;
@@ -128,5 +127,29 @@ public class SalesDaoImpl implements SalesDao {
             sales.addAll(getSalesPorced(i, STEP_PORCED));
         }
         return sales;
+    }
+
+    @Override
+    public Map<Date, Double> getSalesByDays() {
+        Session session = factory.openSession();
+        try {
+            Query query = session.createQuery("select s.date from Sales s");
+            List res = query.list();
+            Set<Date> dateSet = new HashSet<>();
+            for (Iterator iter = res.iterator(); iter.hasNext();) {
+                dateSet.add((Date) iter.next());
+            }
+            Map<Date, Double> resMap = new HashMap<>();
+            for (Date date:dateSet){
+                Query query1 = session.createQuery("select AVG(s.count) from Sales s where s.date=:date");
+                query1.setParameter("date", date);
+                resMap.put(date,((Double)query1.uniqueResult()) );
+            }
+            return resMap;
+        }finally {
+            if (session!=null){
+                session.close();
+            }
+        }
     }
 }
