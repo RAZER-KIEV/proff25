@@ -1,7 +1,6 @@
 package hw7.notes.domain;
 
 import javax.persistence.*;
-import javax.xml.soap.SAAJResult;
 import java.util.Date;
 
 /**
