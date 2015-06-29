@@ -15,7 +15,7 @@ public class CPU {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
     private Long id;
 
-    private String cpuVendor;
+    private Vendor cpuVendor;
 
     private Integer frequency;
 
@@ -23,7 +23,7 @@ public class CPU {
 
     public CPU() {
     }
-    public CPU(String cpuVendor, Integer frequency, String cpuModel) {
+    public CPU(Vendor cpuVendor, Integer frequency, String cpuModel) {
         this.cpuVendor = cpuVendor;
         this.frequency = frequency;
         this.cpuModel = cpuModel;
@@ -31,7 +31,7 @@ public class CPU {
     public Long getId() {
         return id;
     }
-    public String getCpuVendor() {
+    public Vendor getCpuVendor() {
         return cpuVendor;
     }
     public Integer getFrequency() {
