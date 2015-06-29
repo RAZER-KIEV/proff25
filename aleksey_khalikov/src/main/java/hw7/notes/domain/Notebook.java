@@ -27,13 +27,13 @@ public class Notebook {
                     CascadeType.MERGE,
                     CascadeType.PERSIST,
                     CascadeType.REFRESH})
-    @Column(name = "VENDOR")
+ //   @Column(name = "VENDOR")
     private Vendor vendor;
 
     @Column(name = "MODEL")
     private String model;
 
-    @Column(name = "DATE")
+    @Column(name = "DATE_MANUF")
     private Date manufactureDate;
 
     @ManyToOne(fetch = FetchType.LAZY,
@@ -41,7 +41,7 @@ public class Notebook {
                     CascadeType.MERGE,
                     CascadeType.PERSIST,
                     CascadeType.REFRESH})
-    @Column(name = "CPU")
+ //   @Column(name = "CPU")
     private CPU cpu;
 
     @ManyToOne(fetch = FetchType.LAZY,
@@ -49,7 +49,7 @@ public class Notebook {
                     CascadeType.MERGE,
                     CascadeType.PERSIST,
                     CascadeType.REFRESH})
-    @Column(name = "MEMORY")
+  //  @Column(name = "MEMORY")
     private Memory memory;
 
     @OneToMany(mappedBy = "notebook",

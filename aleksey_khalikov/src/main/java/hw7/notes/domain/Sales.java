@@ -24,10 +24,10 @@ public class Sales {
                     CascadeType.MERGE,
                     CascadeType.PERSIST,
                     CascadeType.REFRESH})
-    @Column(name = "STORE")
+ //   @Column(name = "STORE")
     private Store store;
 
-    @Column(name = "DATE")
+    @Column(name = "SDATE")
     private Date date;
 
     @Column(name = "AMOUNT")
@@ -35,6 +35,21 @@ public class Sales {
 
     public Sales(){
 
+    }
+
+    public Sales(Store store, int amount){
+        Date currentDate = new Date();
+        long dt = currentDate.getTime();
+        this.date = new Date(dt);
+
+        this.store = store;
+        this.amount = amount;
+    }
+
+    public Sales(Store store, Date date, int amount){
+        this.store = store;
+        this.date = date;
+        this.amount = amount;
     }
 
     @Override

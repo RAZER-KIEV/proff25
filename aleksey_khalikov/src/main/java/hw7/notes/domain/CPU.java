@@ -20,12 +20,12 @@ public class CPU {
     @Column(name = "ID")
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY,
-            cascade = {CascadeType.DETACH,
+    @ManyToOne(fetch = FetchType.EAGER,
+            cascade = {CascadeType.REFRESH,
                     CascadeType.MERGE,
                     CascadeType.PERSIST,
-                    CascadeType.REFRESH})
-    @Column(name = "VENDOR")
+                    CascadeType.DETACH})
+  //  @Column(name = "VENDOR")
     private Vendor vendor;
 
     @Column(name = "FREQUENCY")
@@ -50,7 +50,7 @@ public class CPU {
     public String toString() {
         return "CPU{" +
                 "id=" + id +
-                ", vendor=" + vendor.toString() +
+                ", vendor=" + vendor.getName() +
                 ", frequency=" + frequency +
                 ", model='" + model + '\'' +
                 '}';
