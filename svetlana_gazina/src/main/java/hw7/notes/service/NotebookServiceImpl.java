@@ -2,10 +2,14 @@ package hw7.notes.service;
 
 import hw7.notes.dao.*;
 import hw7.notes.domain.*;
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Sveta on 6/26/2015.
@@ -73,5 +77,47 @@ public class NotebookServiceImpl implements NotebookService {
         store.setAmount(am - amount);
         return storeDao.update(store);
 
+    }
+
+    @Override
+    public List<Notebook> getNotebooksByPortion(int size) {
+        Session session = factory.openSession();
+        Query query = (Query) session.createQuery("from hw7.notes.domain.Notebook");
+        query.setFirstResult(1);
+        query.setMaxResults(size);
+        return (List<Notebook>)query.list();
+    }
+
+    @Override
+    public List<Notebook> getNotebooksGtAmount(int amount) {
+        Session session = factory.openSession();
+        Query query = session.createQuery("from hw7.notes.domain.Notebook n group by n.vendor having count(n.id) > :amount ");
+        query.setParameter("amount", amount);
+        return query.list();
+    }
+
+    @Override
+    public List<Notebook> getNotebooksByCpuVendor(Vendor cpuVendor) {
+        Session session = factory.openSession();
+        Query query = session.createQuery("from hw7.notes.domain.Notebook n having n.cpu.vendor =:cpuVendor");
+        query.setParameter("cpuVendor", cpuVendor);
+        return query.list();
+    }
+
+    @Override
+    public List<Notebook> getNotebooksFromStore() {
+        Session session = factory.openSession();
+        Query query = session.createQuery("from hw7.notes.domain.Notebook n having n.cpu.vendor =:cpuVendor");
+        return query.list();
+    }
+
+    @Override
+    public List<Notebook> getNotebooksStorePresent() {
+        return null;
+    }
+
+    @Override
+    public Map<Notebook, Integer> getSalesByDays() {
+        return null;
     }
 }
