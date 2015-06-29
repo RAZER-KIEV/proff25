@@ -20,7 +20,7 @@ public class Store {
     @Column(name = "COUNT")
     private Long count;
     @Column(name = "PRICE")
-    private Long price;
+    private double price;
     @OneToMany(mappedBy = "store",cascade = CascadeType.ALL)
     private Set<Sales> salesSet = new HashSet<>();
 
@@ -28,7 +28,7 @@ public class Store {
 
     }
 
-    public Store(Notebook notebook, Long count, Long price) {
+    public Store(Notebook notebook, Long count, double price) {
         this.notebook = notebook;
         this.count = count;
         this.price = price;
@@ -51,16 +51,16 @@ public class Store {
         this.count = count;
     }
 
-    public Long getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(Long price) {
+    public void setPrice(double price) {
         this.price = price;
     }
     @Override
     public String toString() {
-        return notebook.toString()+" "+count.toString()+price.toString();
+        return notebook.toString()+" "+count.toString()+price;
     }
 
 }
