@@ -21,7 +21,7 @@ public class Store {
     private Notebook nb;
     @OneToMany(cascade = CascadeType.ALL, // каскадирование
             fetch = FetchType.EAGER,// подргужать все сразу
-            mappedBy = "Store" )  // включить двунаправленность
+            mappedBy = "stor" )  // включить двунаправленность
     private Set<Sales> saleSet = new HashSet<>();
 
 //Getters&Setters
