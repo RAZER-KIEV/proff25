@@ -17,7 +17,7 @@ import java.util.Locale;
  */
 public class RegionHibernateDaoImpl implements RegionDao{
 
-    private static Logger log = Logger.getLogger(HiberConnect.class); // Логгируем нашу работу
+    private static Logger log = Logger.getLogger(RegionHibernateDaoImpl.class); // Логгируем нашу работу
 
     private SessionFactory factory;
 
@@ -51,6 +51,7 @@ public class RegionHibernateDaoImpl implements RegionDao{
             return id;
         } catch (HibernateException e) {
             log.error("Transaction failed", e);
+            e.printStackTrace();
             session.close();
             factory.close();
         } finally {
@@ -72,8 +73,8 @@ public class RegionHibernateDaoImpl implements RegionDao{
         try {
             return (Region)session.get(Region.class, id);
         } catch(HibernateException e) {
-            log.error("Transaction failed", e);
-            session.getTransaction().rollback();
+            log.error("READ FAILED", e);
+            e.printStackTrace();
             session.close();
             factory.close();
         } finally {
@@ -138,12 +139,11 @@ public class RegionHibernateDaoImpl implements RegionDao{
         return query.list();
     }
 
-    public List<Region> getPortionOfRegions() {
+    public void getPortionOfRegions() {
         Session session = factory.openSession();
         try {
-            session.beginTransaction();
+            Query query = session.createQuery("select c.name from session10.Region c");
             for (int i = 0; i<3; i++) {
-                Query query = session.createQuery("select c.name from session10.Region c");
                 query.setFirstResult(i*2);
                 query.setMaxResults(2);
                 System.out.println(query.list());
@@ -151,13 +151,11 @@ public class RegionHibernateDaoImpl implements RegionDao{
         } catch (HibernateException e){
             log.error("Transaction failed");
             e.printStackTrace();
-            session.getTransaction().rollback();
         } finally {
             if (session!=null){
                 session.close();
             }
         }
-        return null;
     }
 
     public static void main(String[] args) {
@@ -170,12 +168,13 @@ public class RegionHibernateDaoImpl implements RegionDao{
 //        Region ukraine = new Region();
 //        ukraine.setName("ukraine");
 //        rhdi.create(ukraine);
-//        Region tmp = (Region) rhdi.read(3L);
-//        System.out.println(tmp);
+        Region tmp = (Region) rhdi.read(3L);
+        System.out.println(tmp);
 //        tmp.setName("newRegion");
-//        rhdi.update(tmp);
-        List<Region> regions = rhdi.getPortionOfRegions();
-        System.out.println(regions);
+        rhdi.getPortionOfRegions();
+//        List<Region> regions =
+//        rhdi.getPortionOfRegions();
+//        System.out.println(regions);
         rhdi.factory.close();
     }
 }
