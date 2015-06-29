@@ -1,5 +1,6 @@
 package hw7.notes.dao;
 
+import hw7.notes.domain.Notebook;
 import hw7.notes.domain.Store;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
@@ -136,7 +137,44 @@ public class StoreDaoImpl implements StoreDao {
         return query.list();
     }
 
-    public static void main(String[] args) {
+    public List<Notebook> getNotebooksFromStore() {
+        checkFactory();
+        Session session = factory.openSession();
+        List<Notebook> notebookList = null;
+        try {
+            Query query = session.createQuery("select n from Store s, Notebook n where s.notebook=n");
+            notebookList = query.list();
+        } catch (HibernateException e) {
+            log.error("ERROR: Cannot get notebooks from store.");
+            e.printStackTrace();
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+        return notebookList;
+    }
 
+    public List<Notebook> getNotebooksGtAmount(int amount) {
+        checkFactory();
+        Session session = factory.openSession();
+        List<Notebook> notebooks = null;
+        try {
+            Query query = session.createQuery("select n from Store s, Notebook n where s.notebook=n and s.count>:amount");
+            query.setParameter("amount", amount);
+            notebooks = query.list();
+        } catch (HibernateException e) {
+            log.error("ERROR: Cannot get notebooks from store by amount.");
+            e.printStackTrace();
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+        return notebooks;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(new StoreDaoImpl().getNotebooksGtAmount(3));
     }
 }
