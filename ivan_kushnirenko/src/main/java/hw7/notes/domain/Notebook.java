@@ -7,16 +7,8 @@ import java.util.Date;
  * Created by ivan on 24.06.15.
  */
 @Entity
-@Table(name="NOTEBOOK")
+@Table(name = "NOTEBOOK")
 public class Notebook {
-/*
-Тип ноутбука:
-    -производитeель,
-    -модель,
-    -дата производства,
-    -процессор,
-    -память.
- */
 
     private Long id;
     private Vendor vendor;
@@ -24,11 +16,30 @@ public class Notebook {
     private Date manufDate;
     private CPU cpu;
     private Memory memory;
+
+    public Notebook() {
+        this(new Vendor(), "notebook", new Date(), new CPU(), new Memory());
+    }
+
+    public Notebook(Notebook notebook) {
+        this.vendor = notebook.getVendor();
+        this.model = notebook.getModel();
+        this.manufDate = notebook.getManufDate();
+        this.cpu = notebook.getCpu();
+        this.memory = notebook.getMemory();
+    }
+
+    public Notebook(Vendor vendor, String model, Date manufDate, CPU cpu, Memory memory) {
+        this.vendor = vendor;
+        this.model = model;
+        this.manufDate = manufDate;
+        this.cpu = cpu;
+        this.memory = memory;
+    }
+
     @Id
-    @SequenceGenerator(name = "sequence", sequenceName = "SEQ_REGIONS_ID",
-            allocationSize = 1, initialValue = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
-    @Column
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public Long getId() {
         return id;
     }
@@ -36,8 +47,8 @@ public class Notebook {
     public void setId(Long id) {
         this.id = id;
     }
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinTable(name="VENDOR")
+
+    @ManyToOne
     public Vendor getVendor() {
         return vendor;
     }
@@ -45,7 +56,8 @@ public class Notebook {
     public void setVendor(Vendor vendor) {
         this.vendor = vendor;
     }
-    @Column
+
+    @Column(name = "notebook_model")
     public String getModel() {
         return model;
     }
@@ -53,7 +65,9 @@ public class Notebook {
     public void setModel(String model) {
         this.model = model;
     }
-    @Column
+
+    @Column(name = "manufacture_date")
+    @Temporal(TemporalType.DATE)
     public Date getManufDate() {
         return manufDate;
     }
@@ -61,8 +75,8 @@ public class Notebook {
     public void setManufDate(Date manufDate) {
         this.manufDate = manufDate;
     }
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinTable(name="CPU")
+
+    @ManyToOne
     public CPU getCpu() {
         return cpu;
     }
@@ -70,8 +84,8 @@ public class Notebook {
     public void setCpu(CPU cpu) {
         this.cpu = cpu;
     }
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinTable(name="MEMORY")
+
+    @ManyToOne
     public Memory getMemory() {
         return memory;
     }
@@ -81,8 +95,8 @@ public class Notebook {
     }
 
     @Override
-    public String toString(){
-        return new String("NOTEBOOK id: "+id+", vendor: "+vendor.getName()+", model: "+model+
-        ", manufacture date: "+manufDate+", cpu: "+cpu.getModel()+", memory: "+memory.getSize()+".");
+    public String toString() {
+        return new String("NOTEBOOK id: " + id + ", vendor: " + vendor.getName() + ", model: " + model +
+                ", manufacture date: " + manufDate + ", cpu: " + cpu.getModel() + ", memory: " + memory.getSize() + ".");
     }
 }
