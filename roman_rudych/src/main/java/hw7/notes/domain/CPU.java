@@ -1,6 +1,7 @@
 package hw7.notes.domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -26,8 +27,8 @@ public class CPU {
     @Column(name = "CPU_MODEL")
     private String model;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private Set notebookSet;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "cpu",cascade = CascadeType.ALL)
+    private Set<Notebook> notebookSet = new HashSet<>();
 
     public CPU() {
     }

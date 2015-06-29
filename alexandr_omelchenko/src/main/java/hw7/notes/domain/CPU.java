@@ -1,6 +1,8 @@
 package hw7.notes.domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "CPU")
@@ -18,8 +20,10 @@ public class CPU {
 
     @ManyToOne
     private Vendor vendor;//класс
-    @OneToOne
-    private Notebook note;//класс
+    @OneToMany(cascade = CascadeType.ALL, // каскадирование
+            fetch = FetchType.EAGER,// подргужать все сразу
+            mappedBy = "processor" )  // включить двунаправленность
+    private Set<Notebook> noteSet = new HashSet<>();
 //Getters&Setters
     public Long getId() {
         return id;
@@ -45,11 +49,11 @@ public class CPU {
     public void setVendor(Vendor vendor) {
         this.vendor = vendor;
     }
-    public Notebook getNote() {
-        return note;
+    public Set<Notebook> getNoteSet() {
+        return noteSet;
     }
-    public void setNote(Notebook note) {
-        this.note = note;
+    public void setNoteSet(Set<Notebook> noteSet) {
+        this.noteSet = noteSet;
     }
 
     //Конструктора
@@ -73,13 +77,16 @@ public class CPU {
         this.model = model;
         this.vendor = vendor;
     }
-    public CPU(Long frequency, String model, Vendor vendor, Notebook note) {
+    public CPU(Long frequency, String model, Vendor vendor, Set noteSet) {
         this.frequency = frequency;
         this.model = model;
         this.vendor = vendor;
-        this.note = note;
+        this.noteSet = noteSet;
     }
 
+    public void addNoteBook(Notebook note) {
+        noteSet.add(note);
+    }
     @Override
     public String toString() {
         return "CPU{" +

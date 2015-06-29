@@ -14,7 +14,7 @@ public class Sales {
      private Date saleDate;
     @Column(name ="COUNT")
      private Integer count;
-    private Store store;//класс
+
     @ManyToOne
     private Store stor;
 //Getters&Setters
@@ -36,12 +36,6 @@ public class Sales {
     public void setCount(Integer count) {
         this.count = count;
     }
-    public Store getStore() {
-        return store;
-    }
-    public void setStore(Store store) {
-        this.store = store;
-    }
     public Store getStor() {
         return stor;
     }
@@ -53,27 +47,21 @@ public class Sales {
     public Sales() {
         saleDate=new Date();
         count=100;
-        store=null;
+        stor=null;
     }
     public Sales(Date saleDate) {
         this.saleDate = saleDate;
         count=100;
-        store=null;
+        stor=null;
     }
     public Sales(Date saleDate, Integer count) {
         this.saleDate = saleDate;
         this.count = count;
-        store=null;
+        stor=null;
     }
-    public Sales(Date saleDate, Integer count, Store store) {
+    public Sales(Date saleDate, Integer count, Store stor) {
         this.saleDate = saleDate;
         this.count = count;
-        this.store = store;
-    }
-    public Sales(Date saleDate, Integer count, Store store, Store stor) {
-        this.saleDate = saleDate;
-        this.count = count;
-        this.store = store;
         this.stor = stor;
     }
 
@@ -83,7 +71,7 @@ public class Sales {
                 "id=" + id +
                 ", saleDate=" + saleDate +
                 ", count=" + count +
-                ", store=" + store +
+                ", store=" + stor +
                 '}';
     }
 }

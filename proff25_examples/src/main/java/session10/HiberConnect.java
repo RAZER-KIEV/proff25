@@ -20,7 +20,7 @@ public class HiberConnect {
 
     public static void main(String[] args) {
         Locale.setDefault(Locale.ENGLISH);
-        Configuration cfg = new Configuration().configure("session10/hibernate.cfg.xml");
+        Configuration cfg = new Configuration().configure("hibernate.cfg.xml");
         StandardServiceRegistryBuilder sb = new StandardServiceRegistryBuilder();
         sb.applySettings(cfg.getProperties());
         StandardServiceRegistry standardServiceRegistry = sb.build();
@@ -30,9 +30,16 @@ public class HiberConnect {
         Session session = null;
         try {
             session = factory.openSession();
+            Region region = (Region) session.get(Region.class, 1L);
+
+            session.beginTransaction();
+            Long id = (Long) session.save(new Region());
+
+            session.getTransaction().commit();
 
         } catch (HibernateException e) {
             log.error("Open session failed", e);
+            session.getTransaction().rollback();
         } finally {
             if (session != null) {
                 session.close();

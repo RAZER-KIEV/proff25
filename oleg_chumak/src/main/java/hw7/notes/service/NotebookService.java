@@ -13,7 +13,7 @@ public interface NotebookService {
     List getNotebooksGtAmount(int amount);
     List getNotebooksByCpuVendor(Vendor cpuVendor);
     List getNotebooksFromStore();
-    List getNotebooksStorePresent();
+    Map getNotebooksStorePresent();
     Map getSalesByDays();
     Long receive(Notebook note, int amount, double price);
     Long receive(Long id, int amount, double price);

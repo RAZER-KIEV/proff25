@@ -1,6 +1,8 @@
 package hw7.notes.domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by Роман on 25.06.2015.
@@ -16,8 +18,11 @@ public class Store {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
     private long id;
 
-    @OneToMany(mappedBy = "Notebook")
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Notebook notebookType;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "store", cascade = CascadeType.ALL)
+    private Set<Sales> salesSet = new HashSet<>();
 
     @Column(name = "STORE_NTB_QUANTITY")
     private int notebooksQuantity;

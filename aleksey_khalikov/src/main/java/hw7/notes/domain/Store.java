@@ -25,7 +25,7 @@ public class Store {
                     CascadeType.MERGE,
                     CascadeType.PERSIST,
                     CascadeType.REFRESH})
-    @Column(name = "NOTEBOOK")
+//    @Column(name = "NOTEBOOK")
     private Notebook notebook;
 
     @Column(name = "AMOUNT")
@@ -43,7 +43,14 @@ public class Store {
     private Set<Sales> salesSet;
 
     public Store() {
+        this(null, 0, 0.);
+    }
+
+    public Store(Notebook notebook, int amount, double price){
         salesSet = new HashSet<Sales>();
+        this.setNotebook(notebook);
+        this.setAmount(amount);
+        this.setPrice(price);
     }
 
     @Override
