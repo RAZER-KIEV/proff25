@@ -94,7 +94,8 @@ public class CPUDaoImpl implements CPUDao {
     public List<CPU> findAll() {
         Session session = factory.openSession();
         Query query = session.createQuery("from CPU");
+        List<CPU> cpuList = query.list();
         session.close();
-        return query.list();
+        return cpuList;
     }
 }

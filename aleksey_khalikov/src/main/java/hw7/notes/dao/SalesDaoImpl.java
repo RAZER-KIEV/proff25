@@ -94,7 +94,8 @@ public class SalesDaoImpl implements SalesDao {
     public List<Sales> findAll() {
         Session session = factory.openSession();
         Query query = session.createQuery("from Sales");
+        List<Sales> salesList = query.list();
         session.close();
-        return query.list();
+        return salesList;
     }
 }
