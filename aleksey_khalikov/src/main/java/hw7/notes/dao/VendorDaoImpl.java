@@ -94,7 +94,8 @@ public class VendorDaoImpl implements VendorDao {
     public List<Vendor> findAll() {
         Session session = factory.openSession();
         Query query = session.createQuery("from Vendor");
+        List<Vendor> vendors = query.list();
         session.close();
-        return query.list();
+        return vendors;
     }
 }

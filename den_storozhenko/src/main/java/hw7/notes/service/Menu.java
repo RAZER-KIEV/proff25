@@ -10,6 +10,8 @@ import org.hibernate.SessionFactory;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Map;
 
 public class Menu {
     public static void main(String[] args) throws ParseException {
@@ -38,9 +40,12 @@ public class Menu {
 
 
         //System.out.println(notebookService.receive(id, 5, 15600.));
-        //System.out.println(notebookService.sale(2L, 2));
-
-        notebookService.getNotebooksStorePresent();
+        //System.out.println(notebookService.sale(1L, 3));
+        //System.out.println(notebookService.sale(23L, 5));
+        //notebookService.getNotebooksStorePresent();
+       /* for (Map.Entry entry:notebookService.getSalesByDays().entrySet()){
+            System.out.println(entry.getKey()+" "+entry.getValue());
+        }*/
 
 
         sessionFactory.close();

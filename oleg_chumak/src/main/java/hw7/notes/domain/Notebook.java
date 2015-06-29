@@ -107,7 +107,7 @@ public class Notebook {
 
     @Override
     public String toString() {
-        return "Notebook{" +
+        return "\nNotebook{" +
                 "id=" + id +
                 ", vendor=" + vendor +
                 ", model='" + model + '\'' +

@@ -94,7 +94,8 @@ public class StoreDaoImpl implements StoreDao {
     public List<Store> findAll() {
         Session session = factory.openSession();
         Query query = session.createQuery("from Memory");
+        List<Store> storeList = query.list();
         session.close();
-        return query.list();
+        return storeList;
     }
 }

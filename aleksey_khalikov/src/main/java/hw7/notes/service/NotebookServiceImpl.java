@@ -6,6 +6,7 @@ import hw7.notes.util.HibernateUtil;
 import org.hibernate.SessionFactory;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by GFalcon on 25.06.15.
@@ -140,11 +141,59 @@ public class NotebookServiceImpl implements NotebookService {
         return result;
     }
 
+    @Override
+    public List<Notebook> getNotebooksByPortion(int size) {
+        return null;
+    }
+
+    @Override
+    public List<Notebook> getNotebooksGtAmount(int amount) {
+        return null;
+    }
+
+    @Override
+    public List<Notebook> getNotebooksByCpuVendor(Vendor cpuVendor) {
+        return null;
+    }
+
+    @Override
+    public List<Notebook> getNotebooksFromStore() {
+        return null;
+    }
+
+    @Override
+    public Map getNotebooksStorePresent() {
+        return null;
+    }
+
+    @Override
+    public Map getSalesByDays() {
+        return null;
+    }
+
+
     public List<Vendor> getVendorsList(){
         factory = hibernateSessionFactory.create();
         VendorDaoImpl vendorDao = new VendorDaoImpl(factory);
         List<Vendor> vendors = vendorDao.findAll();
         hibernateSessionFactory.close(factory);
         return vendors;
+    }
+
+    public Vendor getVendorByID(long id){
+        Vendor result;
+        factory = hibernateSessionFactory.create();
+        VendorDaoImpl vendorDao = new VendorDaoImpl(factory);
+        result = vendorDao.read(id);
+        hibernateSessionFactory.close(factory);
+        return result;
+    }
+
+    public List<CPU> getCPUList(){
+        factory = hibernateSessionFactory.create();
+        CPUDaoImpl cpuDao = new CPUDaoImpl(factory);
+        List<CPU> cpuList = cpuDao.findAll();
+        hibernateSessionFactory.close(factory);
+        return cpuList;
     }
 }
