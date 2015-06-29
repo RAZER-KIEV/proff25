@@ -6,8 +6,6 @@ import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -59,7 +57,6 @@ public class NotebookDaoImpl implements NotebookDao {
     @Override
     public boolean update(Notebook ntb) {
         Session session = factory.openSession();
-        ;
         try {
             session.beginTransaction();
             session.update(ntb);
@@ -79,7 +76,6 @@ public class NotebookDaoImpl implements NotebookDao {
     @Override
     public boolean delete(Notebook ntb) {
         Session session = factory.openSession();
-        ;
         try {
             session.beginTransaction();
             session.delete(ntb);

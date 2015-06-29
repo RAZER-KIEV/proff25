@@ -17,7 +17,7 @@ public class Launcher {
         Menu menu= Menu.getMenuInstance();
         menu.init();
         Vendor vendor = new Vendor("ASUS");
-        CPU cpu = new CPU("INTEL",3200,"i5");
+        CPU cpu = new CPU(vendor,3200,"i5");
         Memory memory = new Memory("CoolRam4",4096);
         String model = "INSPIRON";
         Date manuf_date = menu.getNotebookService().dateSet(2014, 4, 1);

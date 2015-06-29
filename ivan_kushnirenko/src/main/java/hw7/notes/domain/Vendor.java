@@ -1,6 +1,8 @@
 package hw7.notes.domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by ivan on 24.06.15.
@@ -8,17 +10,25 @@ import javax.persistence.*;
 @Entity
 @Table(name = "VENDOR")
 public class Vendor {
-    /*
-    Производители:
-     -имя.
-     */
 
     private Long id;
     private String name;
+    private Set<Notebook> notebookSet = new HashSet<>();
+
+    public Vendor() {
+        this("vendor");
+    }
+
+    public Vendor(Vendor vendor) {
+        this.name = vendor.getName();
+    }
+
+    public Vendor(String name) {
+        this.name = name;
+    }
+
     @Id
-    @SequenceGenerator(name = "sequence", sequenceName = "SEQ_REGIONS_ID",
-            allocationSize = 1, initialValue = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
     public Long getId() {
         return id;
@@ -27,7 +37,8 @@ public class Vendor {
     public void setId(Long id) {
         this.id = id;
     }
-    @Column
+
+    @Column(name = "vendor_name")
     public String getName() {
         return name;
     }
@@ -36,8 +47,17 @@ public class Vendor {
         this.name = name;
     }
 
+    @OneToMany(mappedBy = "vendor", cascade = CascadeType.ALL)
+    public Set<Notebook> getNotebookSet() {
+        return notebookSet;
+    }
+
+    public void setNotebookSet(Set<Notebook> notebookSet) {
+        this.notebookSet = notebookSet;
+    }
+
     @Override
-    public String toString(){
-        return new String("VENDOR id is: "+id+", name is: "+name+".");
+    public String toString() {
+        return new String("VENDOR id is: " + id + ", name is: " + name + ".");
     }
 }

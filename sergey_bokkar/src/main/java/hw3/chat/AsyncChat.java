@@ -21,7 +21,7 @@ import java.nio.channels.SocketChannel;
 
 /**
  * Написать чат, в котором можно отправлять и принимать сообщения в любом порядке.
- public void process()... i
+ public void process()
  Класс задания hw3.chat.AsyncChat
  */
 public class AsyncChat extends Application {
@@ -30,6 +30,7 @@ public class AsyncChat extends Application {
     private SocketChannel channel;
     private ByteBuffer bufOut = ByteBuffer.allocate(100);
     private ByteBuffer bufInp = ByteBuffer.allocate(100);
+    private StringBuilder sb = new StringBuilder();
 
 
 
@@ -75,36 +76,36 @@ public class AsyncChat extends Application {
         btn.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                bufOut.put(sendTextField.getText().getBytes());
-                bufOut.flip();
-                while (bufOut.hasRemaining()) {
                     try {
+                        bufOut.put(sendTextField.getText().getBytes());
+                        bufOut.flip();
                         channel.write(bufOut);
+                        textArea.setText(sb.append("Me --->>> "+sendTextField.getText()+ "\n").toString());
                         sendTextField.clear();
-                    } catch (IOException e) {
+                        bufOut.clear();
+                   } catch (IOException e) {
                         e.printStackTrace();
                     }
                 }
-            }
+
         });
 
 
-        btnClose.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-            }
-        });
+        btnClose.setOnMouseClicked(event -> {
+               System.exit(0);
+
+    });
 
 
         sendTextField.setOnKeyPressed(event -> {
             if (event.getCode() == KeyCode.ENTER) {
                 try {
-                    ByteBuffer buf = ByteBuffer.allocate(100);
-                    buf.put(sendTextField.getText().getBytes());
-                    buf.flip();
-                    channel.write(buf);
+                    bufOut.put(sendTextField.getText().getBytes());
+                    bufOut.flip();
+                    channel.write(bufOut);
+                    textArea.setText(sb.append("Me --->>> "+sendTextField.getText()+ "\n").toString());
                     sendTextField.clear();
-                    buf.clear();
+                    bufOut.clear();
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
@@ -127,15 +128,14 @@ public class AsyncChat extends Application {
                 try {
                     StringBuilder sb = new StringBuilder();
                     ServerSocketChannel channel = ServerSocketChannel.open();
-                    channel.socket().bind(new InetSocketAddress(30005));
-                    ByteBuffer bufInp = ByteBuffer.allocate(100);
+                    channel.socket().bind(new InetSocketAddress(30001));
+//                    ByteBuffer bufInp = ByteBuffer.allocate(100);
+                    SocketChannel socketChannelS = channel.accept();
                     while (true) {
-                        SocketChannel socketChannelS = channel.accept();
-
                             int bytesRead;
                             while ((bytesRead = socketChannelS.read(bufInp)) > 0) {
                                 sb.append(socketChannelS.getRemoteAddress() + " " + new String(bufInp.array(), 0, bytesRead) + "\n");
-                                sendTextField.setText(sb.toString());
+                                textArea.setText(sb.toString());
                                 bufInp.clear();
                             }
                     }
