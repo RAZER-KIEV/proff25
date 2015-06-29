@@ -1,4 +1,4 @@
-package session11;
+package session11_12;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -18,7 +18,7 @@ public class CompanyDaoImpl implements CompanyDao {
     @Override
     public List<String> CompaniesWithMoThanEmp(Long num) {
         Session session = factory.openSession();
-        Query query = session.createQuery("select c.name, count (c.name) from session11.Company c join c.employees p group by c.name having count(c.name) >:num");
+        Query query = session.createQuery("select c.name, count (c.name) from session11_12.Company c join c.employees p group by c.name having count(c.name) >:num");
         query.setParameter("num", num);
 //        query.setParameter("name")
 
