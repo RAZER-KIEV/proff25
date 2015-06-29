@@ -1,29 +1,41 @@
 package hw7.notes.domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by ivan on 24.06.15.
  */
 @Entity
-@Table(name="STORE")
+@Table(name = "STORE")
 public class Store {
-    /*
-    Склад ноутбуков:
-    -тип ноутбука,
-    -количество,
-    -цена.
-     */
+
 
     private Long id;
     private Notebook notebook;
     private Integer count;
     private Double price;
+    private Set<Sales> salesSet = new HashSet<>();
+
+    public Store() {
+        this(new Notebook(), 10, 500D);
+    }
+
+    public Store(Notebook notebook, Integer count, Double price) {
+        this.notebook = notebook;
+        this.count = count;
+        this.price = price;
+    }
+
+    public Store(Store store) {
+        this.notebook = store.getNotebook();
+        this.count = store.getCount();
+        this.price = store.getPrice();
+    }
 
     @Id
-    @SequenceGenerator(name = "sequence", sequenceName = "SEQ_REGIONS_ID",
-            allocationSize = 1, initialValue = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
     public Long getId() {
         return id;
@@ -32,8 +44,8 @@ public class Store {
     public void setId(Long id) {
         this.id = id;
     }
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinTable(name="NOTEBOOK")
+
+    @ManyToOne
     public Notebook getNotebook() {
         return notebook;
     }
@@ -41,7 +53,8 @@ public class Store {
     public void setNotebook(Notebook notebook) {
         this.notebook = notebook;
     }
-    @Column
+
+    @Column(name = "store_count")
     public Integer getCount() {
         return count;
     }
@@ -49,7 +62,8 @@ public class Store {
     public void setCount(Integer count) {
         this.count = count;
     }
-    @Column
+
+    @Column(name = "price_count")
     public Double getPrice() {
         return price;
     }
@@ -58,9 +72,18 @@ public class Store {
         this.price = price;
     }
 
+    @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
+    public Set<Sales> getSalesSet() {
+        return salesSet;
+    }
+
+    public void setSalesSet(Set<Sales> salesSet) {
+        this.salesSet = salesSet;
+    }
+
     @Override
-    public String toString(){
-        return new String("STORE id: "+id+", Notebook type: "+notebook+", count: "+count+
-        ", price: "+price+".");
+    public String toString() {
+        return new String("STORE id: " + id + ", Notebook type: " + notebook + ", count: " + count +
+                ", price: " + price + ".");
     }
 }

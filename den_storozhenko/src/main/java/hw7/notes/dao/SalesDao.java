@@ -2,6 +2,7 @@ package hw7.notes.dao;
 
 import hw7.notes.domain.Sales;
 import java.util.List;
+import java.util.Map;
 
 public interface SalesDao {
     Long create(Sales sales);
@@ -10,4 +11,5 @@ public interface SalesDao {
     boolean delete(Sales sales);
     List getSalesPorced(int start, int size);
     List findAll();
+    Map getSalesByDays();
 }

@@ -14,27 +14,18 @@ public class NotebookServiceImpl implements NotebookService {
     private MemoryDaoImpl memoryDao;
     private StoreDaoImpl storeDao;
     private SalesDaoImpl salesDao;
-    private SessionFactory factory;
 
     public NotebookServiceImpl(){
 
     }
 
-    public NotebookServiceImpl(SessionFactory sessionFactory){
-        this.factory = sessionFactory;
-    }
-
-    public void setFactory(SessionFactory factory) {
-        this.factory = factory;
-    }
-
-    public void createDao(){
-        notebookDao = new NotebookDaoImpl(factory);
-        vendorDao = new VendorDaoImpl(factory);
-        cpuDao = new CPUDaoImpl(factory);
-        memoryDao = new MemoryDaoImpl(factory);
-        storeDao = new StoreDaoImpl(factory);
-        salesDao = new SalesDaoImpl(factory);
+    public NotebookServiceImpl(NotebookDaoImpl notebookDao, VendorDaoImpl vendorDao, CPUDaoImpl cpuDao, MemoryDaoImpl memoryDao, StoreDaoImpl storeDao, SalesDaoImpl salesDao) {
+        this.notebookDao = notebookDao;
+        this.vendorDao = vendorDao;
+        this.cpuDao = cpuDao;
+        this.memoryDao = memoryDao;
+        this.storeDao = storeDao;
+        this.salesDao = salesDao;
     }
 
     public void deleteAll(){
@@ -145,8 +136,8 @@ public class NotebookServiceImpl implements NotebookService {
      }
 
     @Override
-    public Map<Notebook, Integer> getSalesByDays() {
-        return null;
+    public Map<Date, Double> getSalesByDays() {
+        return salesDao.getSalesByDays();
     }
 
 }
