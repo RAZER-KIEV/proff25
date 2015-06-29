@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Created by Well on 12.06.2015.
- * Реализовать в классе MyArrayList метод....
+ * Реализовать в классе MyArrayList метод
  * public int parallelIndexOf(E e), выполняющий линейный многопоточный поиск в списке.
  */
 public class MyArrayList<E> extends ArrayList {
