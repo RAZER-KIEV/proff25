@@ -8,7 +8,7 @@ import java.util.Scanner;
  * Created by george on 28.05.15.
  */
 public class Auth {
-    Map<String, String> auth = new HashMap<>();
+    Map<String, String> auth = new HashMap<String, String>();
 
     Auth(){
         auth.put("George", "7654321");

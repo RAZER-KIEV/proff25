@@ -1,5 +1,8 @@
 package session5;
 
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 
 /**
@@ -9,6 +12,18 @@ package session5;
 
 
 public class SingletoneTest {
+
+
+    Singleton module;
+    @Before
+    public void setUp(){
+        module = new Singleton();
+    }
+
+    @Test
+    public void testSingletone(){
+
+    }
 
 
 }

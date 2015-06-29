@@ -13,16 +13,16 @@ import java.nio.file.Paths;
 public class ChannelEx {
     public static void main(String[] args) throws IOException {
         Path path = Paths.get("text.txt");
-        //Files.size(path);//размер файла
+        //Files.size(path);
         try (SeekableByteChannel channel = Files.newByteChannel(path)){
             ByteBuffer byteBuffer = ByteBuffer.allocate(30);// wrap
 
 
-            //channel.position(2);//смещение пощиции
+            //channel.position(2);
             //channel.position(channel.position()+1);//next
 
-            //данные с каналла в буффер
-            int readed;//кол-во считанных байт
+
+            int readed;
             while ((readed = channel.read(byteBuffer)) > 0) {
 
                 String line = new String(byteBuffer.array(), 0, readed);
@@ -35,6 +35,5 @@ public class ChannelEx {
     }
 }
 
-//считывание с файла
 
 

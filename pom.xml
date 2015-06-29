@@ -18,7 +18,7 @@
         <module>roman_rudych</module>
         <module>alexandr_omelchenko</module>
         <module>sergey_bokkar</module>
-
+        <module>ivan_kushnirenko</module>
         <module>anton_lipskiy</module>
         <module>vitaliy_zholobitskiy</module>
         <module>andrey_dubinin</module>
@@ -28,8 +28,10 @@
         <module>evgeniy_fortuna</module>
         <module>sviatoslav_ruzhitskiy</module>
         <module>george_rublev</module>
+        <module>inna_minchenkova</module>
         <module>julia_brendel</module>
         <module>svetlana_gazina</module>
+        <module>viktor_sokol</module>
 
     </modules>
 
@@ -84,7 +86,7 @@
 
         2) Set up maven
         // For Windows
-        set PATH=%PATH%;D:\JavaProf\apache-maven-3.2.2\bin
+        set PATH=%PATH%;D:\Java\apache-maven-3.2.5\bin
         // For Linux
         export PATH=$PATH:/home/user/install/apache-maven-3.2.1/bin
 

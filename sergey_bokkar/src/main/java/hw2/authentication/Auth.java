@@ -15,7 +15,7 @@ public class Auth {
 //    public Auth(String login, String pass){
 //        this.login = login;
 //        this.pass = pass;
-//        users.add(login, pass);
+//        hw5.add(login, pass);
 //    }.
 
       // - ввод логина и пароля + проверка

@@ -34,10 +34,14 @@ public class FileService {
         return pathList;
     }
 
-
+    public List<Path> findAll(){
+        return findAll(findFilePath);
+    }
 
     public List<Path> findAll(String findFileIn){
+//        public List<Path> findAll(S){
         String fileFind = String.valueOf(findFileIn);
+
         File file = new File(String.valueOf(fileFind));
         File[] findedFile = file.listFiles();
 

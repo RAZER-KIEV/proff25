@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class AsyncChat {
     public  AsyncChat(){}
 
-    public static void main(String[] args) throws IOException {
+    public void process() throws IOException {
         SocketChannel channel = SocketChannel.open(new InetSocketAddress("127.0.0.1", 55555));
         ByteBuffer buffer=ByteBuffer.allocate(3000);
         ByteBuffer buf = ByteBuffer.allocate(48);
@@ -31,6 +31,7 @@ public class AsyncChat {
 
         }
     }
+
 }
 class AsyncChatTest{
     public AsyncChatTest(){}

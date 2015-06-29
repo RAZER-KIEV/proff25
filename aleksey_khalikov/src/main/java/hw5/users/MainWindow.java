@@ -23,9 +23,9 @@ import java.util.List;
  * пользователей. Структура таблицы (id, имя, пароль, дата).
 
  Классы задания:
- hw5.users.MainWindow
- hw5.users.UserJDBCManager
- hw5.users.User
+ hw5.hw5.MainWindow
+ hw5.hw5.UserJDBCManager
+ hw5.hw5.User
  */
 public class MainWindow extends Application{
     Label lblConnectStatus;

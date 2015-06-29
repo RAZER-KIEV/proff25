@@ -1,0 +1,728 @@
+2015-06-26 18:59:23,416 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-26 18:59:23,435 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-26 18:59:23,441 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-26 18:59:23,448 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-26 18:59:23,557 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7/hibernate.cfg.xml
+2015-06-26 18:59:23,558 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7/hibernate.cfg.xml
+2015-06-26 18:59:23,914 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-26 18:59:24,017 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-26 18:59:24,340 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-26 18:59:24,930 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 18:59:24,931 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Notebook, password=****}
+2015-06-26 18:59:24,931 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-26 18:59:24,955 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-26 18:59:28,036 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-26 18:59:28,500 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-26 18:59:28,551 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-26 18:59:28,555 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-26 18:59:28,559 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-26 18:59:28,564 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-26 18:59:28,576 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-26 19:00:29,867 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-26 19:00:29,915 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-26 19:00:29,929 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-26 19:00:29,936 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-26 19:00:30,056 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7/hibernate.cfg.xml
+2015-06-26 19:00:30,056 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7/hibernate.cfg.xml
+2015-06-26 19:00:30,392 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-26 19:00:30,713 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-26 19:00:30,977 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-26 19:00:31,269 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 19:00:31,269 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Notebook, password=****}
+2015-06-26 19:00:31,269 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-26 19:00:31,272 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-26 19:00:33,583 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-26 19:00:33,981 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-26 19:00:34,035 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-26 19:00:34,039 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-26 19:00:34,052 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-26 19:00:34,059 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-26 19:00:34,064 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-26 19:02:04,691 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-26 19:02:04,720 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-26 19:02:04,724 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-26 19:02:04,727 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-26 19:02:04,836 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7/hibernate.cfg.xml
+2015-06-26 19:02:04,836 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7/hibernate.cfg.xml
+2015-06-26 19:02:05,125 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-26 19:02:05,320 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-26 19:02:05,628 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-26 19:02:05,900 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-26 19:02:05,901 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Notebook, password=****}
+2015-06-26 19:02:05,901 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-26 19:02:05,904 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-26 19:02:08,922 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-26 19:02:09,293 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-26 19:02:09,335 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-26 19:02:09,388 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-26 19:02:09,397 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-26 19:02:09,407 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-26 19:02:09,418 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:01:50,260 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-29 14:01:50,303 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-29 14:01:50,320 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-29 14:01:50,333 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-29 14:01:50,639 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7/hibernate.cfg.xml
+2015-06-29 14:01:50,639 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7/hibernate.cfg.xml
+2015-06-29 14:01:51,442 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-29 14:01:51,535 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-29 14:01:51,913 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-29 14:01:52,672 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-29 14:01:52,673 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Notebook, password=****}
+2015-06-29 14:01:52,673 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-29 14:01:52,683 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-29 14:01:53,927 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-29 14:01:54,432 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:01:54,465 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:01:54,513 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:01:54,516 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:01:54,521 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:01:54,525 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:03:12,150 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-29 14:03:12,164 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-29 14:03:12,168 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-29 14:03:12,170 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-29 14:03:12,241 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7/hibernate.cfg.xml
+2015-06-29 14:03:12,242 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7/hibernate.cfg.xml
+2015-06-29 14:03:12,507 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-29 14:03:12,595 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-29 14:03:12,855 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-29 14:03:13,303 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-29 14:03:13,304 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Notebook, password=****}
+2015-06-29 14:03:13,305 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-29 14:03:13,308 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-29 14:03:15,451 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-29 14:03:15,859 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:03:15,879 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:03:15,904 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:03:15,909 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:03:15,912 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:03:15,915 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:07:28,459 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-29 14:07:28,474 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-29 14:07:28,478 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-29 14:07:28,482 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-29 14:07:28,561 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7/hibernate.cfg.xml
+2015-06-29 14:07:28,562 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7/hibernate.cfg.xml
+2015-06-29 14:07:28,720 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-29 14:07:28,832 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-29 14:07:29,089 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-29 14:07:29,365 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-29 14:07:29,366 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Notebook, password=****}
+2015-06-29 14:07:29,366 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-29 14:07:29,369 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-29 14:07:30,170 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-29 14:07:30,791 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:07:30,829 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:07:30,864 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:07:30,867 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:07:30,870 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:07:30,887 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:14:22,023 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-29 14:14:22,051 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-29 14:14:22,055 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-29 14:14:22,059 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-29 14:14:22,112 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7/hibernate.cfg.xml
+2015-06-29 14:14:22,112 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7/hibernate.cfg.xml
+2015-06-29 14:14:22,387 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-29 14:14:22,486 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-29 14:14:22,700 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-29 14:14:23,076 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-29 14:14:23,077 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Notebook, password=****}
+2015-06-29 14:14:23,077 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-29 14:14:23,080 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-29 14:14:25,019 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-29 14:14:25,296 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:14:25,318 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:14:25,343 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:14:25,346 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:14:25,349 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:14:25,354 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:15:28,518 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-29 14:15:28,559 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-29 14:15:28,563 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-29 14:15:28,568 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-29 14:15:28,640 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7/hibernate.cfg.xml
+2015-06-29 14:15:28,640 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7/hibernate.cfg.xml
+2015-06-29 14:15:28,811 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-29 14:15:28,894 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-29 14:15:29,121 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-29 14:15:29,375 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-29 14:15:29,376 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Notebook, password=****}
+2015-06-29 14:15:29,377 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-29 14:15:29,379 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-29 14:15:31,551 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-29 14:15:31,851 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:15:31,871 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:15:31,897 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:15:31,901 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:15:31,904 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 14:15:31,910 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 16:51:00,690 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-29 16:51:00,745 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-29 16:51:00,754 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-29 16:51:00,759 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-29 16:51:01,034 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7/hibernate.cfg.xml
+2015-06-29 16:51:01,034 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7/hibernate.cfg.xml
+2015-06-29 16:51:01,544 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-29 16:51:01,859 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-29 16:51:02,586 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-29 16:51:03,617 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-29 16:51:03,617 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Notebook, password=****}
+2015-06-29 16:51:03,618 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-29 16:51:03,630 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-29 16:51:05,622 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-29 16:51:05,974 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 16:51:06,026 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 16:51:06,062 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 16:51:06,065 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 16:51:06,070 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 16:51:06,074 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 16:52:46,758 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-29 16:52:46,780 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-29 16:52:46,785 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-29 16:52:46,796 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-29 16:52:46,855 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7/hibernate.cfg.xml
+2015-06-29 16:52:46,856 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7/hibernate.cfg.xml
+2015-06-29 16:52:47,032 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-29 16:52:47,167 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-29 16:52:47,399 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-29 16:52:47,596 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-29 16:52:47,597 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Notebook, password=****}
+2015-06-29 16:52:47,598 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-29 16:52:47,601 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-29 16:52:49,661 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-29 16:52:49,929 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 16:52:49,950 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 16:52:49,975 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 16:52:49,979 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 16:52:49,983 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 16:52:49,986 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 16:55:16,514 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-29 16:55:16,546 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-29 16:55:16,554 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-29 16:55:16,556 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-29 16:55:16,639 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7/hibernate.cfg.xml
+2015-06-29 16:55:16,639 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7/hibernate.cfg.xml
+2015-06-29 16:55:16,878 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-29 16:55:16,988 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-29 16:55:17,526 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-29 16:55:17,823 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-29 16:55:17,823 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Notebook, password=****}
+2015-06-29 16:55:17,824 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-29 16:55:17,827 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-29 16:55:19,436 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-29 16:55:19,668 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 16:55:19,691 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 16:55:19,716 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 16:55:19,720 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 16:55:19,723 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 16:55:19,728 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:01:21,129 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-29 17:01:21,146 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-29 17:01:21,150 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-29 17:01:21,153 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-29 17:01:21,234 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7/hibernate.cfg.xml
+2015-06-29 17:01:21,235 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7/hibernate.cfg.xml
+2015-06-29 17:01:21,472 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-29 17:01:21,612 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-29 17:01:21,859 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-29 17:01:22,175 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-29 17:01:22,176 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Notebook, password=****}
+2015-06-29 17:01:22,176 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-29 17:01:22,179 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-29 17:01:23,877 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-29 17:01:24,127 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:01:24,150 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:01:24,174 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:01:24,178 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:01:24,182 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:01:24,187 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:04:03,139 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-29 17:04:03,153 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-29 17:04:03,157 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-29 17:04:03,160 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-29 17:04:03,246 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7/hibernate.cfg.xml
+2015-06-29 17:04:03,246 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7/hibernate.cfg.xml
+2015-06-29 17:04:03,443 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-29 17:04:03,577 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-29 17:04:03,858 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-29 17:04:04,331 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-29 17:04:04,332 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Notebook, password=****}
+2015-06-29 17:04:04,332 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-29 17:04:04,335 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-29 17:04:06,198 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-29 17:04:06,503 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:04:06,524 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:04:06,550 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:04:06,553 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:04:06,557 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:04:06,561 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:18:17,209 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-29 17:18:17,223 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-29 17:18:17,234 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-29 17:18:17,237 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-29 17:18:17,359 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7/hibernate.cfg.xml
+2015-06-29 17:18:17,359 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7/hibernate.cfg.xml
+2015-06-29 17:18:17,596 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-29 17:18:17,726 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-29 17:18:17,950 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-29 17:18:18,223 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-29 17:18:18,224 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Notebook, password=****}
+2015-06-29 17:18:18,224 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-29 17:18:18,227 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-29 17:18:20,012 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-29 17:18:20,471 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:18:20,492 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:18:20,519 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:18:20,524 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:18:20,529 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:18:20,532 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:18:35,452 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-29 17:18:35,468 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-29 17:18:35,474 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-29 17:18:35,478 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-29 17:18:35,610 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7/hibernate.cfg.xml
+2015-06-29 17:18:35,610 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7/hibernate.cfg.xml
+2015-06-29 17:18:35,904 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-29 17:18:35,986 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-29 17:18:36,202 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-29 17:18:36,632 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-29 17:18:36,633 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Notebook, password=****}
+2015-06-29 17:18:36,633 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-29 17:18:36,636 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-29 17:18:38,374 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-29 17:18:38,602 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:18:38,623 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:18:38,651 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:18:38,656 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:18:38,659 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:18:38,663 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:19:49,205 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-29 17:19:49,220 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-29 17:19:49,223 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-29 17:19:49,226 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-29 17:19:49,297 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7/hibernate.cfg.xml
+2015-06-29 17:19:49,298 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7/hibernate.cfg.xml
+2015-06-29 17:19:49,578 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-29 17:19:49,884 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-29 17:19:50,168 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-29 17:19:50,659 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-29 17:19:50,660 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Notebook, password=****}
+2015-06-29 17:19:50,660 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-29 17:19:50,695 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-29 17:19:52,274 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-29 17:19:52,631 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:19:52,656 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:19:52,683 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:19:52,687 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:19:52,693 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:19:52,697 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:22:28,290 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-29 17:22:28,311 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-29 17:22:28,316 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-29 17:22:28,320 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-29 17:22:28,396 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7/hibernate.cfg.xml
+2015-06-29 17:22:28,397 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7/hibernate.cfg.xml
+2015-06-29 17:22:28,597 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-29 17:22:28,759 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-29 17:22:28,967 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-29 17:22:29,291 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-29 17:22:29,292 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Notebook, password=****}
+2015-06-29 17:22:29,292 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-29 17:22:29,295 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-29 17:22:31,497 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-29 17:22:31,820 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:22:31,840 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:22:31,867 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:22:31,871 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:22:31,876 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:22:31,880 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:39:18,511 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-29 17:39:18,536 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-29 17:39:18,540 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-29 17:39:18,544 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-29 17:39:18,608 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7/hibernate.cfg.xml
+2015-06-29 17:39:18,609 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7/hibernate.cfg.xml
+2015-06-29 17:39:18,707 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-29 17:39:18,839 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-29 17:39:19,046 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-29 17:39:19,219 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-29 17:39:19,220 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Notebook, password=****}
+2015-06-29 17:39:19,220 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-29 17:39:19,223 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-29 17:39:21,699 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-29 17:39:21,984 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:39:22,003 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:39:22,030 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:39:22,038 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:39:22,042 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:39:22,046 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:40:31,973 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-29 17:40:32,002 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-29 17:40:32,022 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-29 17:40:32,028 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-29 17:40:32,091 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7/hibernate.cfg.xml
+2015-06-29 17:40:32,091 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7/hibernate.cfg.xml
+2015-06-29 17:40:32,333 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-29 17:40:32,446 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-29 17:40:32,777 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-29 17:40:33,014 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-29 17:40:33,015 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Notebook, password=****}
+2015-06-29 17:40:33,016 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-29 17:40:33,018 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-29 17:40:34,742 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-29 17:40:35,112 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:40:35,142 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:40:35,180 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:40:35,184 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:40:35,189 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:40:35,198 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:40:50,960 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-29 17:40:50,975 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-29 17:40:50,979 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-29 17:40:50,985 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-29 17:40:51,081 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7/hibernate.cfg.xml
+2015-06-29 17:40:51,081 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7/hibernate.cfg.xml
+2015-06-29 17:40:51,331 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-29 17:40:51,441 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-29 17:40:51,660 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-29 17:40:51,939 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-29 17:40:51,940 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Notebook, password=****}
+2015-06-29 17:40:51,940 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-29 17:40:51,943 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-29 17:40:53,497 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-29 17:40:53,858 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:40:53,882 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:40:53,920 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:40:53,925 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:40:53,930 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:40:53,938 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:42:05,547 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-29 17:42:05,569 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-29 17:42:05,573 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-29 17:42:05,576 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-29 17:42:05,661 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7/hibernate.cfg.xml
+2015-06-29 17:42:05,662 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7/hibernate.cfg.xml
+2015-06-29 17:42:05,905 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-29 17:42:05,978 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-29 17:42:06,159 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-29 17:42:06,440 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-29 17:42:06,441 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Notebook, password=****}
+2015-06-29 17:42:06,441 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-29 17:42:06,444 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-29 17:42:08,851 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-29 17:42:09,128 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:42:09,152 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:42:09,184 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:42:09,188 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:42:09,197 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:42:09,206 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:42:38,919 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-29 17:42:38,933 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-29 17:42:38,937 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-29 17:42:38,942 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-29 17:42:39,002 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7/hibernate.cfg.xml
+2015-06-29 17:42:39,003 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7/hibernate.cfg.xml
+2015-06-29 17:42:39,162 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-29 17:42:39,238 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-29 17:42:39,496 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-29 17:42:39,789 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-29 17:42:39,789 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Notebook, password=****}
+2015-06-29 17:42:39,789 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-29 17:42:39,792 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-29 17:42:40,962 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-29 17:42:41,746 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:42:41,777 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:42:41,814 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:42:41,823 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:42:41,830 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:42:41,866 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:48:28,708 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-29 17:48:28,724 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-29 17:48:28,728 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-29 17:48:28,734 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-29 17:48:28,788 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7/hibernate.cfg.xml
+2015-06-29 17:48:28,788 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7/hibernate.cfg.xml
+2015-06-29 17:48:29,014 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-29 17:48:29,089 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-29 17:48:29,381 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-29 17:48:29,659 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-29 17:48:29,660 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Notebook, password=****}
+2015-06-29 17:48:29,660 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-29 17:48:29,663 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-29 17:48:31,472 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-29 17:48:31,751 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:48:31,771 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:48:31,798 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:48:31,803 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:48:31,807 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:48:31,814 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:50:01,135 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-29 17:50:01,158 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-29 17:50:01,163 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-29 17:50:01,166 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-29 17:50:01,273 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7/hibernate.cfg.xml
+2015-06-29 17:50:01,273 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7/hibernate.cfg.xml
+2015-06-29 17:50:01,587 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-29 17:50:01,673 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-29 17:50:01,909 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-29 17:50:02,238 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-29 17:50:02,239 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Notebook, password=****}
+2015-06-29 17:50:02,239 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-29 17:50:02,243 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-29 17:50:04,807 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-29 17:50:05,204 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:50:05,224 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:50:05,253 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:50:05,257 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:50:05,261 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:50:05,265 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:50:05,303 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-29 17:50:05,366 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-29 17:50:05,632 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-29 17:50:06,849 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-29 17:50:06,849 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-29 17:50:07,619 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-29 17:50:07,760 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: CPU
+2015-06-29 17:50:07,791 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: Memory
+2015-06-29 17:50:07,793 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: Notebook
+2015-06-29 17:50:07,794 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: Sales
+2015-06-29 17:50:07,796 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: Store
+2015-06-29 17:50:07,850 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: Vendor
+2015-06-29 17:50:07,852 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: CPU
+2015-06-29 17:50:07,854 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: Memory
+2015-06-29 17:50:07,855 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: Notebook
+2015-06-29 17:50:07,857 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: Sales
+2015-06-29 17:50:07,858 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: Store
+2015-06-29 17:50:07,860 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: Vendor
+2015-06-29 17:50:07,862 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: CPU
+2015-06-29 17:50:07,864 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: Memory
+2015-06-29 17:50:07,865 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: Notebook
+2015-06-29 17:50:07,867 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: Sales
+2015-06-29 17:50:07,869 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: Store
+2015-06-29 17:50:07,872 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: Vendor
+2015-06-29 17:50:07,921 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: ID
+2015-06-29 17:50:09,703 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: create table Notebook (ID number(19,0) not null, DATE timestamp, MODEL varchar2(255 char), processor_ID number(19,0), ram_ID number(19,0), vendor_ID number(19,0), primary key (ID))
+2015-06-29 17:50:09,703 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00904: : invalid identifier
+
+2015-06-29 17:50:10,168 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: alter table Notebook add constraint FK_6e1e4ldhrayhp9eyooleg3sw0 foreign key (processor_ID) references CPU
+2015-06-29 17:50:10,168 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00942: table or view does not exist
+
+2015-06-29 17:50:10,169 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: alter table Notebook add constraint FK_9vxdngff29qd5tiqtl8t26abe foreign key (ram_ID) references Memory
+2015-06-29 17:50:10,169 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00942: table or view does not exist
+
+2015-06-29 17:50:10,176 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: alter table Notebook add constraint FK_njs1l60ng36dywk5e9igfqc86 foreign key (vendor_ID) references Vendor
+2015-06-29 17:50:10,176 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00942: table or view does not exist
+
+2015-06-29 17:50:10,195 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: alter table Store add constraint FK_5trsne5v27vuexiuo3omsqcf6 foreign key (nb_ID) references Notebook
+2015-06-29 17:50:10,195 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00942: table or view does not exist
+
+2015-06-29 17:50:10,291 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-29 17:50:10,735 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 928, SQLState: 42000
+2015-06-29 17:50:10,735 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - ORA-00928: missing SELECT keyword
+
+2015-06-29 17:50:10,737 [main] INFO  org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl - HHH000010: On release of batch it still contained JDBC statements
+2015-06-29 17:50:10,742 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-29 17:55:03,638 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-29 17:55:03,655 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-29 17:55:03,661 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-29 17:55:03,669 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-29 17:55:03,905 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7/hibernate.cfg.xml
+2015-06-29 17:55:03,905 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7/hibernate.cfg.xml
+2015-06-29 17:55:04,255 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-29 17:55:04,355 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-29 17:55:04,598 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-29 17:55:05,165 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-29 17:55:05,167 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Notebook, password=****}
+2015-06-29 17:55:05,167 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-29 17:55:05,171 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-29 17:55:06,902 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-29 17:55:07,268 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:55:07,314 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:55:07,320 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:55:07,328 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:55:07,339 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:55:07,346 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:55:07,384 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-29 17:55:07,393 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-29 17:55:07,519 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-29 17:55:08,091 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-29 17:55:08,092 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-29 17:55:08,145 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-29 17:55:12,506 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.CPU
+2015-06-29 17:55:12,506 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, model, id, frequency]
+2015-06-29 17:55:12,507 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_92hvtyi17docepdi588prrbqd]
+2015-06-29 17:55:12,507 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004127]
+2015-06-29 17:55:12,689 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.MEMORY
+2015-06-29 17:55:12,689 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [ram_size, vendor_id, id]
+2015-06-29 17:55:12,689 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_4n2iaho6rr56q16pb1bkqsue8]
+2015-06-29 17:55:12,689 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004129]
+2015-06-29 17:55:12,691 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: Notebook
+2015-06-29 17:55:12,880 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.SALES
+2015-06-29 17:55:12,880 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [date_sale, stor_id, count, id]
+2015-06-29 17:55:12,880 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1re7todp1rp8rnpnryqj2dcb]
+2015-06-29 17:55:12,881 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004131]
+2015-06-29 17:55:13,053 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.STORE
+2015-06-29 17:55:13,053 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [price, count_nb, nb_id, id]
+2015-06-29 17:55:13,053 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-29 17:55:13,053 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004133]
+2015-06-29 17:55:13,251 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.VENDOR
+2015-06-29 17:55:13,251 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [name, id]
+2015-06-29 17:55:13,251 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-29 17:55:13,251 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004135]
+2015-06-29 17:55:13,253 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: Notebook
+2015-06-29 17:55:13,255 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: Notebook
+2015-06-29 17:55:13,260 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: create table Notebook (ID number(19,0) not null, DATE timestamp, MODEL varchar2(255 char), processor_ID number(19,0), ram_ID number(19,0), vendor_ID number(19,0), primary key (ID))
+2015-06-29 17:55:13,260 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00904: : invalid identifier
+
+2015-06-29 17:55:13,262 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: alter table Notebook add constraint FK_6e1e4ldhrayhp9eyooleg3sw0 foreign key (processor_ID) references CPU
+2015-06-29 17:55:13,262 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00942: table or view does not exist
+
+2015-06-29 17:55:13,263 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: alter table Notebook add constraint FK_9vxdngff29qd5tiqtl8t26abe foreign key (ram_ID) references Memory
+2015-06-29 17:55:13,264 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00942: table or view does not exist
+
+2015-06-29 17:55:13,265 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: alter table Notebook add constraint FK_njs1l60ng36dywk5e9igfqc86 foreign key (vendor_ID) references Vendor
+2015-06-29 17:55:13,265 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00942: table or view does not exist
+
+2015-06-29 17:55:13,267 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: alter table Store add constraint FK_5trsne5v27vuexiuo3omsqcf6 foreign key (nb_ID) references Notebook
+2015-06-29 17:55:13,267 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00942: table or view does not exist
+
+2015-06-29 17:55:13,267 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-29 17:55:13,531 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 928, SQLState: 42000
+2015-06-29 17:55:13,531 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - ORA-00928: missing SELECT keyword
+
+2015-06-29 17:55:13,533 [main] INFO  org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl - HHH000010: On release of batch it still contained JDBC statements
+2015-06-29 17:55:13,539 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-29 17:57:29,579 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-29 17:57:29,607 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-29 17:57:29,614 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-29 17:57:29,618 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-29 17:57:29,728 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7/hibernate.cfg.xml
+2015-06-29 17:57:29,729 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7/hibernate.cfg.xml
+2015-06-29 17:57:29,991 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-29 17:57:30,072 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-29 17:57:30,307 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-29 17:57:30,736 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-29 17:57:30,737 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Notebook, password=****}
+2015-06-29 17:57:30,737 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-29 17:57:30,774 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-29 17:57:32,630 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-29 17:57:32,927 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:57:32,966 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:57:32,970 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:57:32,975 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:57:32,978 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:57:32,982 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 17:57:33,026 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-29 17:57:33,034 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-29 17:57:33,131 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-29 17:57:33,704 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-29 17:57:33,705 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-29 17:57:33,766 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-29 17:57:33,949 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.CPU
+2015-06-29 17:57:33,949 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, model, id, frequency]
+2015-06-29 17:57:33,949 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_92hvtyi17docepdi588prrbqd]
+2015-06-29 17:57:33,949 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004127]
+2015-06-29 17:57:33,964 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.MEMORY
+2015-06-29 17:57:33,965 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [ram_size, vendor_id, id]
+2015-06-29 17:57:33,965 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_4n2iaho6rr56q16pb1bkqsue8]
+2015-06-29 17:57:33,965 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004129]
+2015-06-29 17:57:33,967 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: Notebook
+2015-06-29 17:57:33,988 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.SALES
+2015-06-29 17:57:33,988 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [date_sale, stor_id, count, id]
+2015-06-29 17:57:33,988 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1re7todp1rp8rnpnryqj2dcb]
+2015-06-29 17:57:33,988 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004131]
+2015-06-29 17:57:34,003 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.STORE
+2015-06-29 17:57:34,004 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [price, count_nb, nb_id, id]
+2015-06-29 17:57:34,004 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-29 17:57:34,004 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004133]
+2015-06-29 17:57:34,019 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.VENDOR
+2015-06-29 17:57:34,019 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [name, id]
+2015-06-29 17:57:34,020 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-29 17:57:34,020 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004135]
+2015-06-29 17:57:34,021 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: Notebook
+2015-06-29 17:57:34,023 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: Notebook
+2015-06-29 17:57:34,028 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: create table Notebook (ID number(19,0) not null, DATE timestamp, MODEL varchar2(255 char), processor_ID number(19,0), ram_ID number(19,0), vendor_ID number(19,0), primary key (ID))
+2015-06-29 17:57:34,029 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00904: : invalid identifier
+
+2015-06-29 17:57:34,030 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: alter table Notebook add constraint FK_6e1e4ldhrayhp9eyooleg3sw0 foreign key (processor_ID) references CPU
+2015-06-29 17:57:34,031 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00942: table or view does not exist
+
+2015-06-29 17:57:34,119 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: alter table Notebook add constraint FK_9vxdngff29qd5tiqtl8t26abe foreign key (ram_ID) references Memory
+2015-06-29 17:57:34,119 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00942: table or view does not exist
+
+2015-06-29 17:57:34,121 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: alter table Notebook add constraint FK_njs1l60ng36dywk5e9igfqc86 foreign key (vendor_ID) references Vendor
+2015-06-29 17:57:34,121 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00942: table or view does not exist
+
+2015-06-29 17:57:34,131 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: alter table Store add constraint FK_5trsne5v27vuexiuo3omsqcf6 foreign key (nb_ID) references Notebook
+2015-06-29 17:57:34,131 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00942: table or view does not exist
+
+2015-06-29 17:57:34,131 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-29 17:57:34,389 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-29 18:03:04,074 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-29 18:03:04,088 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-29 18:03:04,092 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-29 18:03:04,097 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-29 18:03:04,146 [main] INFO  org.hibernate.cfg.Configuration - HHH000043: Configuring from resource: hw7/hibernate.cfg.xml
+2015-06-29 18:03:04,146 [main] INFO  org.hibernate.cfg.Configuration - HHH000040: Configuration resource: hw7/hibernate.cfg.xml
+2015-06-29 18:03:04,405 [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-29 18:03:04,532 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2015-06-29 18:03:04,794 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-29 18:03:05,180 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-29 18:03:05,181 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=Notebook, password=****}
+2015-06-29 18:03:05,181 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+2015-06-29 18:03:05,185 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 1 (min=1)
+2015-06-29 18:03:06,858 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-29 18:03:07,264 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 18:03:07,321 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 18:03:07,328 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 18:03:07,332 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 18:03:07,337 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 18:03:07,342 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-06-29 18:03:07,390 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-29 18:03:07,477 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-29 18:03:07,585 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-29 18:03:08,339 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-29 18:03:08,340 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-29 18:03:08,386 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-29 18:03:08,564 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.CPU
+2015-06-29 18:03:08,564 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, model, id, frequency]
+2015-06-29 18:03:08,564 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_92hvtyi17docepdi588prrbqd]
+2015-06-29 18:03:08,565 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004127]
+2015-06-29 18:03:08,581 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.MEMORY
+2015-06-29 18:03:08,581 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [ram_size, vendor_id, id]
+2015-06-29 18:03:08,581 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_4n2iaho6rr56q16pb1bkqsue8]
+2015-06-29 18:03:08,581 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004129]
+2015-06-29 18:03:08,585 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: Notebook
+2015-06-29 18:03:08,609 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.SALES
+2015-06-29 18:03:08,609 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [date_sale, stor_id, count, id]
+2015-06-29 18:03:08,609 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1re7todp1rp8rnpnryqj2dcb]
+2015-06-29 18:03:08,610 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004131]
+2015-06-29 18:03:08,627 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.STORE
+2015-06-29 18:03:08,627 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [price, count_nb, nb_id, id]
+2015-06-29 18:03:08,627 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-29 18:03:08,628 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004133]
+2015-06-29 18:03:08,645 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.VENDOR
+2015-06-29 18:03:08,645 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [name, id]
+2015-06-29 18:03:08,645 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-29 18:03:08,645 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004135]
+2015-06-29 18:03:08,647 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: Notebook
+2015-06-29 18:03:08,649 [main] INFO  java.sql.DatabaseMetaData - HHH000262: Table not found: Notebook
+2015-06-29 18:03:08,655 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: create table Notebook (ID number(19,0) not null, DATE timestamp, MODEL varchar2(255 char), processor_ID number(19,0), ram_ID number(19,0), vendor_ID number(19,0), primary key (ID))
+2015-06-29 18:03:08,655 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00904: : invalid identifier
+
+2015-06-29 18:03:08,657 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: alter table Notebook add constraint FK_6e1e4ldhrayhp9eyooleg3sw0 foreign key (processor_ID) references CPU
+2015-06-29 18:03:08,657 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00942: table or view does not exist
+
+2015-06-29 18:03:08,659 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: alter table Notebook add constraint FK_9vxdngff29qd5tiqtl8t26abe foreign key (ram_ID) references Memory
+2015-06-29 18:03:08,659 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00942: table or view does not exist
+
+2015-06-29 18:03:08,662 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: alter table Notebook add constraint FK_njs1l60ng36dywk5e9igfqc86 foreign key (vendor_ID) references Vendor
+2015-06-29 18:03:08,662 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00942: table or view does not exist
+
+2015-06-29 18:03:08,665 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000388: Unsuccessful: alter table Store add constraint FK_5trsne5v27vuexiuo3omsqcf6 foreign key (nb_ID) references Notebook
+2015-06-29 18:03:08,665 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - ORA-00942: table or view does not exist
+
+2015-06-29 18:03:08,665 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-29 18:03:08,953 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]

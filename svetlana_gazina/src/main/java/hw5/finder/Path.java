@@ -6,6 +6,7 @@ import java.util.Date;
  * Created by Sveta on 6/13/2015.
  */
 public class Path {
+
     private String path;
     private Date date;
 
@@ -33,6 +34,7 @@ public class Path {
     public void setPath(String path) {
         this.path = path;
     }
+
 
 
 }
