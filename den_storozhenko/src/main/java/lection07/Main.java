@@ -33,5 +33,6 @@ public class Main {
         for (Company company:companyService.findAll()){
             company.print();
         }
+
     }
 }
