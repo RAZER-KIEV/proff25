@@ -20,6 +20,9 @@ public class VendorDaoImpl implements VendorDao {
         this.factory = factory;
     }
 
+    public VendorDaoImpl() {
+
+    }
 
     @Override
     public Long create(Vendor vendor) {

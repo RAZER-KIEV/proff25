@@ -23,16 +23,24 @@ public class Company {
     public Company(Car car) {
         this.car = car;
     }
-
     public Company(String name, Double money) {
         this.name = name;
         this.money = money;
     }
-
     public Company(String name, Double money, Director dir, Car car) {
         this.name = name;
         this.money = money;
         this.dir = dir;
+        this.car = car;
+    }
+    public Company(String name, Double money, Director dir) {
+        this.name = name;
+        this.money = money;
+        this.dir = dir;
+    }
+    public Company(String name, Double money, Car car) {
+        this.name = name;
+        this.money = money;
         this.car = car;
     }
 
