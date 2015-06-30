@@ -20,6 +20,9 @@ public class StoreDaoImpl implements StoreDao {
         this.factory = factory;
     }
 
+    public StoreDaoImpl() {
+
+    }
 
     @Override
     public Long create(Store store) {
