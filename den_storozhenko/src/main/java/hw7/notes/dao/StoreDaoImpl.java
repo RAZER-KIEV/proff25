@@ -197,22 +197,55 @@ public class StoreDaoImpl implements StoreDao {
     }
 
     @Override
-    public Map<Vendor, List<Notebook>> getNotebooksStorePresent() {
+    public Map<Long, List<Long>> getNotebooksStorePresent() {
         Session session = factory.openSession();
         try {
-            Query query = session.createQuery("select v from Store s, Notebook n, Vendor v where s.notebook=n and n.vendor=v");
-            List res = query.list();
-            Set<Vendor> setVendor = new HashSet<>();
-            for (Iterator iter = res.iterator(); iter.hasNext();) {
-                setVendor.add((Vendor) iter.next());
+            Query query = session.createQuery("select v.id, n.id from Store s join s.notebook n join n.vendor v group by v.id, n.id");
+            List results = query.list();
+            Map<Long, List<Long>> resMap = new HashMap<>();
+            for (Iterator iter = results.iterator(); iter.hasNext();) {
+                Object object[] = (Object[]) iter.next();
+                Long key = (Long)object[0];
+                if (resMap.containsKey(key)){
+                    List<Long> notebooks = resMap.get(key);
+                    notebooks.add((Long)object[1]);
+                    resMap.replace(key,notebooks);
+                }
+                else{
+                    List<Long> notebooks = new ArrayList<>();
+                    notebooks.add((Long)object[1]);
+                    resMap.put(key,notebooks);
+                }
             }
-            Map<Vendor,List<Notebook>> longListMap = new HashMap<>();
-            for (Vendor vendor:setVendor){
-                Query query1 = session.createQuery("select n from Store s join s.notebook n join n.vendor v where v.id=:id");
-                query1.setParameter("id", vendor.getId());
-                longListMap.put(vendor,query1.list());
+            return resMap;
+        }finally {
+            if (session!=null){
+                session.close();
             }
-            return longListMap;
+        }
+    }
+
+    public Map<Vendor, List<Notebook>> getMap(){
+        Session session = factory.openSession();
+        try {
+            Query query = session.createQuery("select n from Store s join s.notebook n");
+            List results = query.list();
+            Map<Vendor, List<Notebook>> resMap = new HashMap<>();
+            for (Iterator iter = results.iterator(); iter.hasNext();) {
+                Notebook notebook = (Notebook)iter.next();
+                Vendor key = notebook.getVendor();
+                if (resMap.containsKey(key)){
+                    List<Notebook> notebooks = resMap.get(key);
+                    notebooks.add(notebook);
+                    resMap.replace(key,notebooks);
+                }
+                else{
+                    List<Notebook> notebooks = new ArrayList<>();
+                    notebooks.add(notebook);
+                    resMap.put(key,notebooks);
+                }
+            }
+            return resMap;
         }finally {
             if (session!=null){
                 session.close();

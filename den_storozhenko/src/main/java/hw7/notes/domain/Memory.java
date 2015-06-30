@@ -12,8 +12,8 @@ public class Memory {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
     @Column(name = "MEMORY_ID")
     private Long id;
-    @Column(name = "VENDOR")
-    private String vendor;
+    @ManyToOne
+    private Vendor vendor;
     @Column(name = "MEM_SIZE")
     private Long size;
     @OneToMany(mappedBy = "memory",cascade = CascadeType.ALL)
@@ -23,12 +23,12 @@ public class Memory {
 
     }
 
-    public Memory(Long size, String vendor) {
+    public Memory(Long size, Vendor vendor) {
         this.size = size;
         this.vendor = vendor;
     }
 
-    public Memory(Long id, String vendor, Long size) {
+    public Memory(Long id, Vendor vendor, Long size) {
         this.id = id;
         this.vendor = vendor;
         this.size = size;
@@ -42,11 +42,11 @@ public class Memory {
         this.id = id;
     }
 
-    public String getVendor() {
+    public Vendor getVendor() {
         return vendor;
     }
 
-    public void setVendor(String vendor) {
+    public void setVendor(Vendor vendor) {
         this.vendor = vendor;
     }
 
@@ -59,6 +59,6 @@ public class Memory {
     }
 
     public void print(){
-        System.out.print(id+" "+vendor+" "+size);
+        System.out.print(id+" "+vendor.getName()+" "+size);
     }
 }
