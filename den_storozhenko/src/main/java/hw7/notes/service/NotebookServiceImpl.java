@@ -132,22 +132,7 @@ public class NotebookServiceImpl implements NotebookService {
 
     @Override
     public Map<Vendor, List<Notebook>> getNotebooksStorePresent() {
-       /* Map<Long, List<Long>> longListMap = storeDao.getNotebooksStorePresent();
-        Map<Vendor, List<Notebook>> resMap = new HashMap<>();
-        Vendor key;
-        List<Long> ids;
-
-        for (Map.Entry entry:longListMap.entrySet()){
-            List<Notebook> notebooks = new ArrayList<>();
-            key = vendorDao.read((Long)entry.getKey());
-            ids = (List)entry.getValue();
-            for (Long id:ids){
-                notebooks.add(notebookDao.read(id));
-            }
-            resMap.put(key,notebooks);
-        }
-        return resMap;*/
-        return storeDao.getMap();
+       return storeDao.getNotebooksStorePresent();
      }
 
     @Override

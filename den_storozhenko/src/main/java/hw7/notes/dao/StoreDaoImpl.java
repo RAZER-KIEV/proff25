@@ -197,35 +197,7 @@ public class StoreDaoImpl implements StoreDao {
     }
 
     @Override
-    public Map<Long, List<Long>> getNotebooksStorePresent() {
-        Session session = factory.openSession();
-        try {
-            Query query = session.createQuery("select v.id, n.id from Store s join s.notebook n join n.vendor v group by v.id, n.id");
-            List results = query.list();
-            Map<Long, List<Long>> resMap = new HashMap<>();
-            for (Iterator iter = results.iterator(); iter.hasNext();) {
-                Object object[] = (Object[]) iter.next();
-                Long key = (Long)object[0];
-                if (resMap.containsKey(key)){
-                    List<Long> notebooks = resMap.get(key);
-                    notebooks.add((Long)object[1]);
-                    resMap.replace(key,notebooks);
-                }
-                else{
-                    List<Long> notebooks = new ArrayList<>();
-                    notebooks.add((Long)object[1]);
-                    resMap.put(key,notebooks);
-                }
-            }
-            return resMap;
-        }finally {
-            if (session!=null){
-                session.close();
-            }
-        }
-    }
-
-    public Map<Vendor, List<Notebook>> getMap(){
+    public Map<Vendor, List<Notebook>> getNotebooksStorePresent() {
         Session session = factory.openSession();
         try {
             Query query = session.createQuery("select n from Store s join s.notebook n");
