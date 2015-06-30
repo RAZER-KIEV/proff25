@@ -14,7 +14,6 @@ import java.util.Locale;
  * Created by lukashevich.e on 11.06.2015.
  */
 public class MainWindow {
-
     public static void main (String[] args) throws SQLException {
         Locale.setDefault(Locale.ENGLISH);
         Path path = new Path();
@@ -52,4 +51,8 @@ class PathJDBCManager {
         int rs = stmt.executeUpdate(str);
         return rs;
     }
+}
+
+class FileService {
+
 }
