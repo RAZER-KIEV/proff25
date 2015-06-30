@@ -20,7 +20,7 @@
         <property name="dataSource" ref="myDataSource"/>
         <property name="packagesToScan">
             <list>
-                <value>session13</value>
+                <value>week6_lesson11.domain</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -31,6 +31,8 @@
             </value>
         </property>
     </bean>
+    <bean id="dao" class="week6_lesson11.dao.CompanyDaoImpl">
+        <constructor-arg ref="sf"/>
+    </bean>
+
 </beans>
-
-
