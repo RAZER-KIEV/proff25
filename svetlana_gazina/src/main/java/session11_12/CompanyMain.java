@@ -1,15 +1,11 @@
-package session11;
+package session11_12;
 
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
-import java.util.HashSet;
 import java.util.Locale;
-import java.util.Set;
 
 /**
  * Created by Sveta on 6/22/2015.

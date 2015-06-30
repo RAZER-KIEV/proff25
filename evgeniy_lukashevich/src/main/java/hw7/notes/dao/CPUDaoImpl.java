@@ -20,6 +20,9 @@ public class CPUDaoImpl implements CPUDao {
         this.factory = factory;
     }
 
+    public CPUDaoImpl() {
+
+    }
 
     @Override
     public Long create(CPU cpu) {

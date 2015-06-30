@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:session13/context.xml"></context:property-placeholder>
+    <bean id="pers1" class="session13.Person">
+        <property name="name" value="Peter"></property>
+        <constructor-arg value="Sonya"></constructor-arg>
+        <constructor-arg value="26" type="int"></constructor-arg>
+    </bean>
+    <bean id="pers2" class="session13.Person">
+        <constructor-arg value="Donna"></constructor-arg>
+        <property name="age" value="15"></property>
+    </bean>
+    <bean id="comp" class="session13.Company">
+        <property name="name" value="NewEra"></property>
+        <property name="money" value="20500"></property>
+        <property name="car" ref="car"></property>
+
+    </bean>
+    <bean id="man" class="session13.Manager">
+        <property name="name" value="Nick"></property>
+
+    </bean>
+    <bean id="car" class="session13.Car">
+        <property name="model" value="BMW"></property>
+        <property name="manager" ref="man"></property>
+
+    </bean>
+
+    <!-- more bean definitions go here -->
+</beans>

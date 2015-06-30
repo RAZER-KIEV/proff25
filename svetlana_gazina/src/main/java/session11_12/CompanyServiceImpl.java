@@ -1,11 +1,10 @@
-package session11;
+package session11_12;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Created by Sveta on 6/23/2015.
@@ -37,14 +36,14 @@ public class CompanyServiceImpl implements CompanyService {
 
     @Override
     public List<Object[]> getEmpFromAllCompanies() {
-        Query query = session.createQuery("from session11.Company c full join c.employees");
+        Query query = session.createQuery("from session11_12.Company c full join c.employees");
 
         return query.list();
     }
 
     @Override
     public List<Object[]> getEmpFromCompany(String company) {
-        Query query = session.createQuery("from session11.Company c inner join c.employees");
+        Query query = session.createQuery("from session11_12.Company c inner join c.employees");
 
         return query.list();
 
