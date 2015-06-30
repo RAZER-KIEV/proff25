@@ -16,6 +16,10 @@ public class Vendor {
     private String name;
     @OneToMany(mappedBy = "vendor",cascade = CascadeType.ALL)
     private Set<Notebook> notebookSet = new HashSet<>();
+    @OneToMany(mappedBy = "vendor",cascade = CascadeType.ALL)
+    private Set<CPU> cpuSet = new HashSet<>();
+    @OneToMany(mappedBy = "vendor",cascade = CascadeType.ALL)
+    private Set<Memory> memorySet = new HashSet<>();
 
     public Vendor(){
 

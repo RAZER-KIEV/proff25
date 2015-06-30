@@ -3,15 +3,13 @@ package hw7.notes.service;
 
 import hw7.notes.HibernateUtil;
 import hw7.notes.dao.*;
-import hw7.notes.domain.CPU;
-import hw7.notes.domain.Memory;
-import hw7.notes.domain.Notebook;
-import hw7.notes.domain.Vendor;
+import hw7.notes.domain.*;
 import org.hibernate.SessionFactory;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 public class Menu {
@@ -29,7 +27,21 @@ public class Menu {
 
         NotebookServiceImpl notebookService = new NotebookServiceImpl(notebookDao, vendorDao, cpuDao, memoryDao, storeDao, salesDao);
 
+        for (Map.Entry entry:notebookService.getNotebooksStorePresent().entrySet()){
+            Vendor vendor1 = (Vendor) entry.getKey();
+            if (vendor1==null) continue;
+            List<Notebook> notebookList = (List) entry.getValue();
+            vendor1.print();
+            for (Notebook notebook1:notebookList){
+                notebook1.print();
+            }
+            System.out.println();
+            System.out.println();
+        }
 
+        for (Map.Entry entry:notebookService.getSalesByDays().entrySet()){
+            System.out.println(entry.getKey()+" "+entry.getValue());
+        }
 
         sessionFactory.close();
     }
