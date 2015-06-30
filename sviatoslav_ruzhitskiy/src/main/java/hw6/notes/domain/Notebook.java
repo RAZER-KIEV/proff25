@@ -12,13 +12,13 @@ import java.util.DoubleSummaryStatistics;
  domain
  Notebook
  dao
- hw6.notes.dao.NotebookDao
+ NotebookDao
  Long create(Notebook ntb)
  Notebook read(Long ig)
  boolean update(Notebook ntb)
  boolean delete(Notebook ntb)
  List<Notebook> findAll()
- hw6.notes.dao.NotebookDaoImpl
+ NotebookDaoImpl
  * Created by ПК on 18.06.2015."
  */
 @Entity
