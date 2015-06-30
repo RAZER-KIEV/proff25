@@ -21,7 +21,7 @@ public class NotebookDaoImpl implements NotebookDao {
         this.factory = factory;
     }
 
-    NotebookDaoImpl() {
+    public NotebookDaoImpl() {
 
     }
 
