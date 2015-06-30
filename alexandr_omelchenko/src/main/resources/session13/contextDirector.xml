@@ -7,7 +7,7 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
        <bean id="firm" class="week7_lesson13.Task1.Company">
               <constructor-arg value="Soft"/>
               <constructor-arg value="500000" type="java.lang.Double"/>
-              <property name="dir" value="Poroshenko"/>
+              <constructor-arg value="" type="week7_lesson13.Task1.Car" index="2"/>
        </bean>
 
        <bean id="dir" class="week7_lesson13.Task1.Director">

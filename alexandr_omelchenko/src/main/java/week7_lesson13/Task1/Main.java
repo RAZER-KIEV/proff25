@@ -13,11 +13,11 @@ public class Main {
 
     ApplicationContext context = new ClassPathXmlApplicationContext("session13/contextDirector.xml");
     Company comp = context.getBean("firm", Company.class);
-    Director dir = context.getBean("dir", Director.class);
-    Car car = context.getBean("car", Car.class);
+ //   Director dir = context.getBean("dir", Director.class);
+ //   Car car = context.getBean("car", Car.class);
 
     System.out.println(comp);
-    System.out.println(dir);
-    System.out.println(car);
+  //  System.out.println(dir);
+  //  System.out.println(car);
 }
 }
