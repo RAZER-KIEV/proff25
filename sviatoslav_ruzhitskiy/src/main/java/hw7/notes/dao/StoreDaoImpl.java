@@ -182,13 +182,21 @@ public class StoreDaoImpl implements StoreDao{
     }
 
     @Override
-    public List getNotebooksStorePresent() {
+    public Map<Vendor, List<Notebook>> getNotebooksStorePresent() {
+        Map<Vendor, List<Notebook>> resMap = new HashMap<>();
         Session session = sessionFactory.openSession();
-        List<Notebook> notebookList = new ArrayList<>();
+        List<Vendor> vendorList = new ArrayList<>();
         try{
-            Query query = session.createQuery("select Notebook n from Store s where s.quantity>0 group by n.vendor");
+            Query query = session.createQuery("select s.notebook.vendor v from Store s where s.quantity>0 group by v");
 
-            notebookList = query.list();
+            vendorList = query.list();
+
+            for(Vendor vendor :vendorList){
+                Query query1 = session.createQuery("select s.notebook n from Store s where s.quantity>0 and s.notebook.vendor=:vendor");
+                query1.setParameter("vendor",vendor);
+                List<Notebook> notebookList = query1.list();
+                resMap.put(vendor,notebookList);
+            }
 
         }catch(Exception ex){
             ex.printStackTrace();
@@ -197,7 +205,7 @@ public class StoreDaoImpl implements StoreDao{
                 session.close();
         }
 
-        return notebookList;
+        return resMap;
     }
 
 
