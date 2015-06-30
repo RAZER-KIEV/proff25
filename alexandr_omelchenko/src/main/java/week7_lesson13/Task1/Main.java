@@ -10,7 +10,6 @@ import week7_lesson13.Person;
 public class Main {
     public static void main(String[] args) {
 
-
     ApplicationContext context = new ClassPathXmlApplicationContext("session13/contextDirector.xml");
     Company comp = context.getBean("firm", Company.class);
     Director dir = context.getBean("dir", Director.class);
