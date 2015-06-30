@@ -4,15 +4,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 /**
- * Created with IntelliJ IDEA.
- * User: al1
- * Date: 29.06.15
+ * Created by Jeckgehor on 30.06.2015.
  */
 @Component
 public class Person {
     @Value("Stefanchik")
     private String name;
-    @Value("${age}")
     private int age;
 
     public Person() {
