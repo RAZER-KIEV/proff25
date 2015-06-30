@@ -100,7 +100,7 @@ public class NotebookServiceImpl implements NotebookService{
     }
 
     @Override
-    public List getNotebooksStorePresent() {
+    public Map getNotebooksStorePresent() {
         return menu.getStoreDao().getNotebooksStorePresent();
     }
 
