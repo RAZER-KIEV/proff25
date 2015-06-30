@@ -20,6 +20,9 @@ public class SalesDaoImpl implements SalesDao {
         this.factory = factory;
     }
 
+    SalesDaoImpl() {
+
+    }
 
     @Override
     public Long create(Sales sales) {

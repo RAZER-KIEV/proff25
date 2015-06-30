@@ -21,6 +21,9 @@ public class NotebookDaoImpl implements NotebookDao {
         this.factory = factory;
     }
 
+    NotebookDaoImpl() {
+
+    }
 
     @Override
     public Long create(Notebook notebook) {
