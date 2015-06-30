@@ -1,28 +1,22 @@
-package session14;
-
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
+package lection07;
 
 /**
- * Created with IntelliJ IDEA.
- * User: al1
- * Date: 29.06.15
+ * Created by storo_000 on 29.06.2015.
  */
-@Component
 public class Person {
-    @Value("Stefanchik")
     private String name;
-    @Value("${age}")
     private int age;
 
     public Person() {
     }
 
     public Person(String name) {
+
         this.name = name;
     }
 
     public Person(int age) {
+
         this.age = age;
     }
 
@@ -31,20 +25,21 @@ public class Person {
         this.age = age;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
-    }
-
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public String getName() {
+
+        return name;
+    }
+
+    public int getAge() {
+        return age;
     }
 
     @Override

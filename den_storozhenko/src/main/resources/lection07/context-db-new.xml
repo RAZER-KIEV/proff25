@@ -7,20 +7,21 @@
          http://www.springframework.org/schema/context
          http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-    <context:property-placeholder location="classpath:session13/conf.properties"/>
+    <context:property-placeholder location="classpath:lection07/conf.properties"/>
+    <context:component-scan base-package="lection06"/>
 
     <bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="${driver}"/>
         <property name="url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
-        <property name="username" value="company"/>
-        <property name="password" value="company"/>
+        <property name="username" value="Denst"/>
+        <property name="password" value="denst"/>
     </bean>
 
     <bean id="sf" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="myDataSource"/>
         <property name="packagesToScan">
             <list>
-                <value>week6_lesson11.domain</value>
+                <value>lection06</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -31,8 +32,6 @@
             </value>
         </property>
     </bean>
-    <bean id="dao" class="week6_lesson11.dao.CompanyDaoImpl">
-        <constructor-arg ref="sf"/>
-    </bean>
-
 </beans>
+
+
