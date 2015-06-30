@@ -20,6 +20,9 @@ public class MemoryDaoImpl implements MemoryDao {
         this.factory = factory;
     }
 
+    public MemoryDaoImpl () {
+
+    }
 
     @Override
     public Long create(Memory memory) {
