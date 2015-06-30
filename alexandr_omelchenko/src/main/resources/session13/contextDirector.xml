@@ -5,9 +5,10 @@
 http://www.springframework.org/schema/beans/spring-beans.xsd">
 
        <bean id="firm" class="week7_lesson13.Task1.Company">
-              <constructor-arg value="Soft"/>
-              <constructor-arg value="500000" type="java.lang.Double"/>
-              <constructor-arg value="" type="week7_lesson13.Task1.Car" index="2"/>
+              <property name="name" value="Softer"/>
+              <property name="money" value="3000000.99"/>
+              <property name="dir" ref="dir" />
+              <constructor-arg ref="car"/>
        </bean>
 
        <bean id="dir" class="week7_lesson13.Task1.Director">
@@ -15,7 +16,7 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
        </bean>
 
        <bean id="car" class="week7_lesson13.Task1.Car">
-              <constructor-arg value="Poroshenko"/>
+              <constructor-arg ref="dir"/>
        </bean>
 
 </beans>
