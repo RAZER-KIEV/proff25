@@ -20,7 +20,7 @@ public class StoreDaoImpl implements StoreDao {
         this.factory = factory;
     }
 
-    StoreDaoImpl() {
+    public StoreDaoImpl() {
 
     }
 

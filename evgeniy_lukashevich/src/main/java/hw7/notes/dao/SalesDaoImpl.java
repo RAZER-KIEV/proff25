@@ -20,7 +20,7 @@ public class SalesDaoImpl implements SalesDao {
         this.factory = factory;
     }
 
-    SalesDaoImpl() {
+    public SalesDaoImpl() {
 
     }
 
