@@ -7,6 +7,11 @@ public interface NotebookService {
     Long create(Memory memory);
     Long create(Vendor vendor);
     Long create(Notebook notebook);
+
+    Long create(Store store);
+
+    Long create(Sales sale);
+
     Long receive(Long id, int amount, double price);
     Long sale(Long storeId, int amount);
     boolean updateCPU(CPU cpu);

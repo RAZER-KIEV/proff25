@@ -9,11 +9,11 @@ import java.util.Set;
 public class Memory {
 
     @Id
-    @SequenceGenerator(name="sequence", sequenceName="ID", allocationSize=1, initialValue =0)
+    @SequenceGenerator(name="sequence", sequenceName="RAM_ID", allocationSize=1, initialValue =0)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="sequence")
     @Column(name ="ID")
      private Long id;
-    @Column(name ="RAM_SIZE")
+    @Column(name ="RAM_GB")
      private Long ramSize;
 
     @ManyToOne
