@@ -5,7 +5,10 @@ import hw7.notes.dao.*;
 import hw7.notes.domain.*;
 import org.hibernate.SessionFactory;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 public class MainPoint {
     public static void main(String[] args) {
@@ -16,8 +19,7 @@ public class MainPoint {
         CPUDaoImpl cpuDao = new CPUDaoImpl(factory);
         MemoryDaoImpl ramDao = new MemoryDaoImpl(factory);
         NotebookDaoImpl noteDao = new NotebookDaoImpl(factory);
-      //  StoreDaoImpl storeDao = new StoreDaoImpl(factory);
-       Vendor vendor1 = vendorDao.read(1L);
+      /*Vendor vendor1 = vendorDao.read(1L);
         Vendor vendor2 = vendorDao.read(2L);
         Vendor vendor3 = vendorDao.read(3L);
         Vendor vendor4 = vendorDao.read(4L);
@@ -45,9 +47,10 @@ public class MainPoint {
         Notebook note5 = noteDao.read(5L);
         Notebook note6 = noteDao.read(6L);
         Notebook note7 = noteDao.read(7L);
-        Notebook note8 = noteDao.read(8L);
-        //Store part =new Store(100, 1099.55, note1);
-        noteService.sale(1L, 10);
+        Notebook note8 = noteDao.read(8L);*/
+        Map map;
+        map = noteService.getNotebooksStorePresent();
+        System.out.println(map);
 
         hiberUtil.factoryClose();
     }

@@ -116,12 +116,12 @@ public class Notebook {
     @Override
     public String toString() {
         return "Notebook{" +
-                "id=" + id +
-                ", model='" + model + '\'' +
-                ", date=" + date +
-                ", vendor=" + vendor +
-                ", processor=" + processor +
-                ", ram=" + ram +
+                "id=" + id +" "+
+                vendor +
+                 model +"/"+
+                processor +"/"+
+                ram +"/"+
+                 date +"/"+
                 '}';
     }
 }
