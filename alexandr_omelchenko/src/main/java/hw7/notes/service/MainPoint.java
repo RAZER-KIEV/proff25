@@ -48,9 +48,9 @@ public class MainPoint {
         Notebook note6 = noteDao.read(6L);
         Notebook note7 = noteDao.read(7L);
         Notebook note8 = noteDao.read(8L);*/
-        Map map;
-        map = noteService.getNotebooksStorePresent();
-        System.out.println(map);
+        List list;
+        list = noteService.getNotebooksStorePresent();
+        System.out.println(list);
 
         hiberUtil.factoryClose();
     }
