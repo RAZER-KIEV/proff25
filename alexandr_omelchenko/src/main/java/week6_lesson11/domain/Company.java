@@ -1,11 +1,15 @@
 package week6_lesson11.domain;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 /**
  * Created by HP on 22.06.2015.
  */
+@Component
 @Entity
 @Table (name = "COMPANY")
 public class Company {
@@ -35,6 +39,7 @@ public class Company {
     @Column(name ="ID")
     private Long id;
     @Column(name ="NAME")
+    @Value("CorpIvan")
     private String name;
     @Column(name ="Budget")
     private Double budget;

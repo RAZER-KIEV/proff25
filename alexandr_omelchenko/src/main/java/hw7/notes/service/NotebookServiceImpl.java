@@ -6,6 +6,8 @@ import hw7.notes.domain.*;
 import org.hibernate.SessionFactory;
 
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 public class NotebookServiceImpl implements NotebookService {
     private SessionFactory factory;
@@ -47,7 +49,7 @@ public class NotebookServiceImpl implements NotebookService {
         NotebookDaoImpl nbDao = new NotebookDaoImpl(factory);
         Notebook note = nbDao.read(id);
         StoreDaoImpl storDao = new StoreDaoImpl(factory);
-        return storDao.create( new Store(note, amount, price));
+        return storDao.create( new Store(amount, price, note));
     }
     @Override
     public Long sale(Long storeId, int amount) {
@@ -83,5 +85,42 @@ public class NotebookServiceImpl implements NotebookService {
         StoreDaoImpl storeDao= new StoreDaoImpl(factory);
         store.setCount(store.getCount()-amount);
         return storeDao.update(store);
+    }
+/*4. Добавить в приложение ноутбуков следующие функции:
+Показать все ноутбуки на складе (пользователь указывает размер порции)
+Показать все ноутбуки которых больше указанного количества
+Показать все ноутбуки по указанному имени производителя процессора
+Показать все ноутбуки на складе
+Показать типы ноутбуков, оставшиеся на складе по каждому производителю
+Получить объем продаж ноутбуков в среднем за день (в штуках)*/
+    @Override
+    public List getNotebooksByPortion(int size) {
+        StoreDaoImpl storeDao= new StoreDaoImpl(factory);
+        return storeDao.getNotebooksByPortion(size);
+    }
+    @Override
+    public List getNotebooksGtAmount(int amount) {
+        StoreDaoImpl storeDao= new StoreDaoImpl(factory);
+        return storeDao.getNotebooksGtAmount(amount);
+    }
+    @Override
+    public List getNotebooksByCpuVendor(Vendor cpuVendor) {
+        StoreDaoImpl storeDao= new StoreDaoImpl(factory);
+        return storeDao.getNotebooksByCpuVendor(cpuVendor);
+    }
+    @Override
+    public List getNotebooksFromStore() {
+        StoreDaoImpl storeDao= new StoreDaoImpl(factory);
+        return storeDao.getNotebooksFromStore();
+    }
+    @Override
+    public List getNotebooksStorePresent() {
+        StoreDaoImpl storeDao= new StoreDaoImpl(factory);
+        return storeDao.getNotebooksStorePresent();
+    }
+
+    @Override
+    public Map getSalesByDays() {
+        return null;
     }
 }
