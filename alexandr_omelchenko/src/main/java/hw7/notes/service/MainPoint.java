@@ -18,6 +18,7 @@ public class MainPoint {
         VendorDaoImpl vendorDao = new VendorDaoImpl(factory);
         CPUDaoImpl cpuDao = new CPUDaoImpl(factory);
         MemoryDaoImpl ramDao = new MemoryDaoImpl(factory);
+
         NotebookDaoImpl noteDao = new NotebookDaoImpl(factory);
       /*Vendor vendor1 = vendorDao.read(1L);
         Vendor vendor2 = vendorDao.read(2L);
@@ -48,10 +49,9 @@ public class MainPoint {
         Notebook note6 = noteDao.read(6L);
         Notebook note7 = noteDao.read(7L);
         Notebook note8 = noteDao.read(8L);*/
-        List list;
-        list = noteService.getNotebooksStorePresent();
-        System.out.println(list);
-
+        Map map;
+        map = noteService.getSalesByDays();
+System.out.println(map);
         hiberUtil.factoryClose();
     }
 }

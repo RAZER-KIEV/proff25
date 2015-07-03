@@ -100,6 +100,8 @@ public class StoreDaoImpl implements StoreDao {
         query.setFirstResult(0);
         query.setMaxResults(size);
         list= query.list();
+        if (session!=null){
+            session.close();}
         return list;
     }
     @Override
@@ -109,6 +111,8 @@ public class StoreDaoImpl implements StoreDao {
         Query query =session.createQuery("select nBook from hw7.notes.domain.Store s where s.count>:kol");
         query.setParameter("kol", amount);
         list= query.list();
+        if (session!=null){
+            session.close();}
         return list;
     }
     @Override
@@ -119,6 +123,8 @@ public class StoreDaoImpl implements StoreDao {
         Query query =session.createQuery("select n from hw7.notes.domain.Store s, Notebook n, CPU c, Vendor v where s.nBook=n and n.processor=c and c.vendor=v and v.id=:vendid");
         query.setParameter("vendid", cpuId);
         list= query.list();
+        if (session!=null){
+            session.close();}
         return list;
     }
     @Override
@@ -139,6 +145,8 @@ public class StoreDaoImpl implements StoreDao {
         for(Vendor v: list) {
             venNote.putIfAbsent(v, v.getNoteSet());
         }
+        if (session!=null){
+            session.close();}
         return venNote;
     }
     @Override
@@ -147,7 +155,8 @@ public class StoreDaoImpl implements StoreDao {
         List<Vendor>list;
         Query query =session.createQuery("select v from hw7.notes.domain.Store s, Notebook n, Vendor v where s.nBook=n and n.vendor=v");
         list= query.list();
-
+        if (session!=null){
+            session.close();}
         return list;
     }
 }
