@@ -50,7 +50,7 @@ public class MainPoint {
         Notebook note7 = noteDao.read(7L);
         Notebook note8 = noteDao.read(8L);*/
         Map map;
-        map = noteService.getSalesByDays();
+        map = noteService.getNotebooksStorePresent();
 System.out.println(map);
         hiberUtil.factoryClose();
     }

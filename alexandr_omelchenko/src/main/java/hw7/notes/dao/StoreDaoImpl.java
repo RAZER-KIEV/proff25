@@ -135,8 +135,9 @@ public class StoreDaoImpl implements StoreDao {
         list= query.list();
         return list;
     }
+
     @Override
-    public Map getMapVendorNotesPresent() {
+    public Map getNotebooksStorePresent() {
         Session session = factory.openSession();
         List<Vendor>list;
         Query query =session.createQuery("select v from hw7.notes.domain.Store s, Notebook n, Vendor v where s.nBook=n and n.vendor=v");
@@ -148,15 +149,5 @@ public class StoreDaoImpl implements StoreDao {
         if (session!=null){
             session.close();}
         return venNote;
-    }
-    @Override
-    public List getNotebooksStorePresent() {
-        Session session = factory.openSession();
-        List<Vendor>list;
-        Query query =session.createQuery("select v from hw7.notes.domain.Store s, Notebook n, Vendor v where s.nBook=n and n.vendor=v");
-        list= query.list();
-        if (session!=null){
-            session.close();}
-        return list;
     }
 }
