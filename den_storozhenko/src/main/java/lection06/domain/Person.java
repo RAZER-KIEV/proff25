@@ -24,6 +24,12 @@ public class Person {
         this.name = name;
     }
 
+    public Person(Long id, String name, Company company) {
+        this.id = id;
+        this.name = name;
+        this.company = company;
+    }
+
     public Long getId() {
         return id;
     }

@@ -55,20 +55,13 @@ public class CompanyDAOImpl implements CompanyDAO {
 
     @Override
     public List<Person> getEmploiesFromCompany(String name) {
-        Session session = factory.openSession();
+        Session session = factory.getCurrentSession();
 
-        Query query = session.createQuery("from Company c join c.persons p where c.name=:name");
+        Query query = session.createQuery("select new Person(p.id, p.name, c) from Company c join c.persons p where c.name=:name");
         query.setParameter("name",name);
-        List results = query.list();
-        List<Person> persons = new ArrayList<>();
-        for (Iterator iter = results.iterator(); iter.hasNext();) {
-            Object object[] = (Object[]) iter.next();
-            persons.add((Person)object[1]);
-        }
-        if (session!=null){
-            session.close();
-        }
-        return persons;
+        System.out.println(name);
+        List<Person> results = query.list();
+        return results;
     }
 
     @Override

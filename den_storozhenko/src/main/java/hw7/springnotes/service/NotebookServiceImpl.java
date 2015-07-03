@@ -1,18 +1,30 @@
-package hw7.notes.service;
+package hw7.springnotes.service;
 
-import hw7.notes.dao.*;
-import hw7.notes.domain.*;
-import org.hibernate.SessionFactory;
+import hw7.springnotes.dao.*;
+import hw7.springnotes.domain.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.*;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
-
+@Component
+@Transactional
 public class NotebookServiceImpl implements NotebookService {
+    @Autowired
     private NotebookDaoImpl notebookDao;
+    @Autowired
     private VendorDaoImpl vendorDao;
+    @Autowired
     private CPUDaoImpl cpuDao;
+    @Autowired
     private MemoryDaoImpl memoryDao;
+    @Autowired
     private StoreDaoImpl storeDao;
+    @Autowired
     private SalesDaoImpl salesDao;
 
     public NotebookServiceImpl(){
@@ -42,13 +54,14 @@ public class NotebookServiceImpl implements NotebookService {
         for (Sales sales:salesDao.findAll())
             salesDao.delete(sales);
     }
-
+    @Transactional(readOnly = true)
     @Override
     public Long receive(Long id, int amount, double price) {
         Notebook note = notebookDao.read(id);
         return storeDao.create(new Store(note, (long) amount,price));
     }
 
+    @Transactional(readOnly = true)
     public Vendor getVendorById(Long id){
         return vendorDao.read(id);
     }
@@ -85,6 +98,31 @@ public class NotebookServiceImpl implements NotebookService {
     }
 
     @Override
+    public Vendor getVendor(Long id) {
+        return vendorDao.read(id);
+    }
+
+    @Override
+    public CPU getCPU(Long id) {
+        return cpuDao.read(id);
+    }
+
+    @Override
+    public Memory getMemory(Long id) {
+        return memoryDao.read(id);
+    }
+
+    @Override
+    public Notebook getNotebook(Long id) {
+        return notebookDao.read(id);
+    }
+
+    @Override
+    public Store getStore(Long id) {
+        return storeDao.read(id);
+    }
+
+    @Override
     public boolean updateCPU(CPU cpu) {
         return cpuDao.update(cpu);
     }
@@ -110,32 +148,37 @@ public class NotebookServiceImpl implements NotebookService {
         return storeDao.update(store);
     }
 
+    @Transactional(readOnly = true)
     @Override
     public List<Notebook> getNotebooksByPortion(int size) {
         return storeDao.getNotebooksByPortion(size);
     }
 
+    @Transactional(readOnly = true)
     @Override
     public List<Notebook> getNotebooksGtAmount(int amount) {
         return storeDao.getNotebooksGtAmount(amount);
     }
 
+    @Transactional(readOnly = true)
     @Override
     public List<Notebook> getNotebooksByCpuVendor(Vendor cpuVendor) {
         return storeDao.getNotebooksByCpuVendor(cpuVendor);
     }
 
+    @Transactional(readOnly = true)
     @Override
     public List<Notebook> getNotebooksFromStore() {
         return storeDao.getNotebooksFromStore();
     }
 
-
+    @Transactional(readOnly = true)
     @Override
     public Map<Vendor, List<Notebook>> getNotebooksStorePresent() {
        return storeDao.getNotebooksStorePresent();
      }
 
+    @Transactional(readOnly = true)
     @Override
     public Map<Date, Double> getSalesByDays() {
         return salesDao.getSalesByDays();
