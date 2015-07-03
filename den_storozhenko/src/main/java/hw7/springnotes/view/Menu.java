@@ -257,7 +257,7 @@ public class Menu {
                             break;
                         }
                         case "7":{
-                            Map<Vendor, List<Notebook>> map = notebookService.getNotebooksStorePresent();
+                            Map<Vendor, List<Notebook>> map = notebookService.getNotebooksStorePresent1();
                             for (Map.Entry entry : map.entrySet()){
                                 Vendor vendor = (Vendor) entry.getKey();
                                 if (vendor==null) continue;
