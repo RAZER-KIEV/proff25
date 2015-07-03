@@ -174,9 +174,14 @@ public class NotebookServiceImpl implements NotebookService {
 
     @Transactional(readOnly = true)
     @Override
-    public Map<Vendor, List<Notebook>> getNotebooksStorePresent() {
+    public Map<Vendor, List<Notebook>> getNotebooksStorePresent1() {
        return storeDao.getNotebooksStorePresent();
      }
+
+    @Override
+    public List getNotebooksStorePresent() {
+        return null;//FOR JON
+    }
 
     @Transactional(readOnly = true)
     @Override
