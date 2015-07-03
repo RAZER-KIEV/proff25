@@ -1,10 +1,12 @@
 package lection07;
-import lection06.domain.Company;
-import lection06.dao.CompanyDAOImpl;
+import lection06.domain.Person;
+import lection06.service.CompanyService;
 import lection06.service.CompanyServiceImpl;
+import lection06.view.View;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.List;
 import java.util.Locale;
 
 /**
@@ -23,16 +25,15 @@ import java.util.Locale;
  * beans: источник данных, фабрика сессий, дао, property-placeholder
  *
  *
- *
+ * приложение с консольным меню в котором пользователь вводит имя компании, вывести всех сотрудников, которые в ней работают
  */
 public class Main {
     public static void main(String[] args) {
         Locale.setDefault(Locale.ENGLISH);
-        ApplicationContext context = new ClassPathXmlApplicationContext("lection07/context-db-new.xml");
-        CompanyServiceImpl companyService = context.getBean("companyServiceImpl", CompanyServiceImpl.class);
-        for (Company company:companyService.findAll()){
-            company.print();
-        }
+        ApplicationContext context = new ClassPathXmlApplicationContext("lection07/transactionalContext.xml");
+        CompanyService companyService = context.getBean("companyServiceImpl", CompanyService.class);
+        View view = new View(companyService);
+        view.menu();
 
     }
 }
