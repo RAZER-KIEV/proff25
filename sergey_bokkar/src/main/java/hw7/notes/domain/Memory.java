@@ -16,29 +16,32 @@ public class Memory {
     @Column(name = "memory_id")
     private Long memId;
 
-    @Column(name = "memory_vendor")
-    private String memVendor;
+    @ManyToOne
+    private Vendor vendor;
+
+//    @Column(name = "memory_vendor")
+//    private String memVendor;
 
     @Column(name = "memory_size")
     private Long memSize;
 
     public Memory(){}
 
-    public Memory(String memVendor, Long memSize){
-        this.memSize = memSize;
-        this.memVendor = memVendor;
+    public Memory(Vendor vendor, Long size){
+        memSize = size;
+        this.vendor = vendor;
     }
 
     public Long getMemId() {
         return memId;
     }
 
-    public String getMemVendor() {
-        return memVendor;
+    public Vendor getMemVendor() {
+        return vendor;
     }
 
-    public void setMemVendor(String memVendor) {
-        this.memVendor = memVendor;
+    public void setMemVendor(Vendor vendor) {
+        this.vendor = vendor;
     }
 
     public Long getMemSize() {
