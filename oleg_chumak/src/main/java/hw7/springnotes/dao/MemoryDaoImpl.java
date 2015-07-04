@@ -7,13 +7,15 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * Created by oleg on 25.06.15.
  */
-@Component
+
+@Repository
 public class MemoryDaoImpl implements MemoryDao {
     @Autowired
     private SessionFactory factory;
@@ -27,74 +29,29 @@ public class MemoryDaoImpl implements MemoryDao {
 
     @Override
     public Long create(Memory memory) {
-        Session session = factory.openSession();
-        try {
-            session.beginTransaction();
-            Long cr = (Long)session.save(memory);
-            session.getTransaction().commit();
-            return cr;
-        } catch (HibernateException exc) {
-            System.out.println(exc);
-            session.getTransaction().rollback();
-        } finally {
-            session.close();
-        }
-        return null;
+        return (Long)factory.getCurrentSession().save(memory);
     }
 
     @Override
     public Memory read(Long ig) {
-
-        Session session = factory.openSession();
-        try{
-            return (Memory)session.get(Memory.class, ig);
-        } catch (HibernateException exc){
-            System.out.println(exc);
-        } finally {
-            session.close();
-        }
-        return null;
+        return (Memory)factory.getCurrentSession().get(Memory.class, ig);
     }
 
     @Override
     public boolean update(Memory memory) {
-        Session session = factory.openSession();
-        try{
-            session.beginTransaction();
-            session.update(memory);
-            session.getTransaction().commit();
-        } catch (HibernateException exc){
-            System.out.println(exc);
-            session.getTransaction().rollback();
-            return false;
-        }finally {
-            session.close();
-        }
+        factory.getCurrentSession().update(memory);
         return true;
     }
 
     @Override
     public boolean delete(Memory memory) {
-        Session session = factory.openSession();
-        try{
-            session.beginTransaction();
-            session.delete(memory);
-            session.getTransaction().commit();
-        } catch (HibernateException exc){
-            System.out.println(exc);
-            session.getTransaction().rollback();
-            return false;
-        }finally {
-            session.close();
-        }
+        factory.getCurrentSession().delete(memory);
         return true;
-
     }
 
     @Override
     public List findAll() {
-        Session session = factory.openSession();
-        Query query = session.createQuery("from Memory");
+        Query query = factory.getCurrentSession().createQuery("from Memory");
         return query.list();
     }
 }
