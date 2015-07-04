@@ -6,6 +6,7 @@ import hw7.notes.domain.Sales;
 import hw7.notes.domain.Store;
 import org.hibernate.SessionFactory;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 /**
@@ -24,8 +25,12 @@ public class NotebookServiceImpl implements NotebookService {
 
 
     @Override
-    public Long receive(Notebook note, int amount, double price) {
-        return null;
+    public Long receive(Long ntbId, int amount, double price) {
+
+            StoreDaoImpl sdi = new StoreDaoImpl();
+            NotebookDaoImpl ndi = new NotebookDaoImpl();
+            Notebook notebook = ndi.read(ntbId);
+            return sdi.create(new Store(price, amount, notebook));
     }
 
     @Override
