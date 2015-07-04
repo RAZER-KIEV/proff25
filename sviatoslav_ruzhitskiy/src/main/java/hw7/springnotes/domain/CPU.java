@@ -1,11 +1,13 @@
-package hw7.notes.domain;
+package hw7.springnotes.domain;
+
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 
 /**
  * Created by ПК on 25.06.2015.
  */
-
+@Component
 @Entity
 @Table(name="CPUs")
 public class CPU {
