@@ -8,6 +8,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ import java.util.Map;
  * Created by oleg on 24.06.15.
  */
 
-@Component
+@Service
 @Transactional
 public class NotebookServiceImpl implements NotebookService {
     @Autowired
@@ -34,6 +35,8 @@ public class NotebookServiceImpl implements NotebookService {
     public StoreDaoImpl storeDao;
     @Autowired
     public SalesDaoImpl salesDao;
+    @Autowired
+    private SessionFactory factory;
 
     public NotebookServiceImpl(NotebookDaoImpl notebookDao, VendorDaoImpl vendorDao, CPUDaoImpl cpuDao, MemoryDaoImpl memoryDao, StoreDaoImpl storeDao, SalesDaoImpl salesDao) {
         this.notebookDao = notebookDao;
@@ -44,13 +47,15 @@ public class NotebookServiceImpl implements NotebookService {
         this.salesDao = salesDao;
     }
 
-    public NotebookServiceImpl() {
-        notebookDao = new NotebookDaoImpl();
-        vendorDao = new VendorDaoImpl();
-        cpuDao = new CPUDaoImpl();
-        memoryDao = new MemoryDaoImpl();
-        storeDao = new StoreDaoImpl();
-        salesDao = new SalesDaoImpl();
+    public NotebookServiceImpl() {}
+
+    public void strartDao(){
+        notebookDao = new NotebookDaoImpl(factory);
+        vendorDao = new VendorDaoImpl(factory);
+        cpuDao = new CPUDaoImpl(factory);
+        memoryDao = new MemoryDaoImpl(factory);
+        storeDao = new StoreDaoImpl(factory);
+        salesDao = new SalesDaoImpl(factory);
     }
 
     @Override

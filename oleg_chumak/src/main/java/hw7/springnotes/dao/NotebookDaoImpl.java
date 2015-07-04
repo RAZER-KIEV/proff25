@@ -17,7 +17,6 @@ import java.util.List;
  */
 @Repository
 public class NotebookDaoImpl implements NotebookDao {
-    @Autowired
     private SessionFactory factory;
 
     public NotebookDaoImpl(SessionFactory factory) {
@@ -51,7 +50,8 @@ public class NotebookDaoImpl implements NotebookDao {
 
     @Override
     public List findAll() {
-        Query query = factory.getCurrentSession().createQuery("from Notebook ");
+        Session session = factory.getCurrentSession();
+        Query query = session.createQuery("from Notebook ");
         return query.list();
     }
 }

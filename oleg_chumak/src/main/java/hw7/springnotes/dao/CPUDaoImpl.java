@@ -17,8 +17,12 @@ import java.util.List;
  */
 @Repository
 public class CPUDaoImpl implements CPUDao {
-    @Autowired
+
     private SessionFactory factory;
+
+    public CPUDaoImpl(SessionFactory factory) {
+        this.factory = factory;
+    }
 
     @Override
     public Long create(CPU cpu) {

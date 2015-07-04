@@ -17,7 +17,6 @@ import java.util.List;
 @Repository
 public class VendorDaoImpl implements VendorDao {
 
-    @Autowired
     private SessionFactory factory;
 
     public VendorDaoImpl(SessionFactory factory) {
