@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:configuration.properties"/>
+
+    <bean id="pers1" class="session13.Person">
+        <constructor-arg value="24" type="int"/>
+        <property name="name" ref="name">
+        </property>
+        <!-- collaborators and configuration for this bean go here -->
+    </bean>
+
+    <bean id="pers2" class="session13.Person">
+        <property name="age" value="26"/>
+        <property name="name" value = "${firstname}"/>
+        <!-- collaborators and configuration for this bean go here -->
+    </bean>
+    <bean id="name" class="java.lang.String">
+        <constructor-arg value="Margo"></constructor-arg>
+    </bean>
+    <bean id="auto" class="session13.Com.Auto">
+        <constructor-arg value="KOPJE"></constructor-arg>
+    </bean>
+    <bean id="director" class="session13.Com.Director">
+        <property name="name" value="Masta"/>
+        <property name="auto" ref="auto"/>
+    </bean>
+    <bean id="company" class="session13.Com.Company">
+        <property name="name"    value="gygol">
+
+        </property>
+        <property name="money" value="2500">
+
+        </property>
+        <property name="auto" ref="auto">
+
+        </property>
+        <property name="director" ref="director">
+
+        </property>
+    </bean>
+    <!-- more bean definitions go here -->
+</beans>

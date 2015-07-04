@@ -8,7 +8,7 @@ import java.util.Set;
 @Table(name = "Store")
 public class Store {
     @Id
-    @SequenceGenerator(name="sequence", sequenceName="ID", allocationSize=1, initialValue =0)
+    @SequenceGenerator(name="sequence", sequenceName="STORE_ID", allocationSize=1, initialValue =0)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="sequence")
     @Column(name ="ID")
      private Long id;
@@ -18,7 +18,7 @@ public class Store {
      private Double price;
 
     @ManyToOne
-    private Notebook nb;
+    private Notebook nBook;
     @OneToMany(cascade = CascadeType.ALL, // каскадирование
             fetch = FetchType.EAGER,// подргужать все сразу
             mappedBy = "stor" )  // включить двунаправленность
@@ -43,11 +43,11 @@ public class Store {
     public void setPrice(Double price) {
         this.price = price;
     }
-    public Notebook getNb() {
-        return nb;
+    public Notebook getNBook() {
+        return nBook;
     }
-    public void setNb(Notebook nb) {
-        this.nb = nb;
+    public void setNBook(Notebook nBook) {
+        this.nBook = nBook;
     }
     public Set<Sales> getSaleSet() {
         return saleSet;
@@ -59,27 +59,27 @@ public class Store {
     public Store() {
         count=100;
         price=1000.00;
-        nb=null;
+        nBook=null;
     }
     public Store(Integer count) {
         this.count = count;
         price=1000.00;
-        nb=null;
+        nBook=null;
     }
     public Store(Integer count, Double price) {
         this.count = count;
         this.price = price;
-        nb=null;
+        nBook=null;
     }
-    public Store(Notebook nb, Integer count, Double price) {
+    public Store(Integer count, Double price, Notebook nBook) {
         this.count = count;
         this.price = price;
-        this.nb = nb;
+        this.nBook = nBook;
     }
-    public Store(Integer count, Double price, Notebook nb, Set<Sales> saleSet) {
+    public Store(Integer count, Double price, Notebook nBook, Set<Sales> saleSet) {
         this.count = count;
         this.price = price;
-        this.nb = nb;
+        this.nBook = nBook;
         this.saleSet = saleSet;
     }
 
@@ -89,7 +89,7 @@ public class Store {
                 "id=" + id +
                 ", count=" + count +
                 ", price=" + price +
-                ", nb=" + nb +
+                ", nBook=" + nBook +
                 '}';
     }
 }

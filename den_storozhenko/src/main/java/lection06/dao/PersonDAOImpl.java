@@ -2,10 +2,13 @@ package lection06.dao;
 
 import lection06.domain.Person;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
-
+@Component
 public class PersonDAOImpl implements PersonDAO {
+    @Autowired
     private SessionFactory factory;
 
     public PersonDAOImpl(){

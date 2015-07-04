@@ -1,14 +1,18 @@
 package week6_lesson11.domain;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
 /**
  * Created by HP on 22.06.2015.
  */
+@Component
 @Entity
 @Table(name="Employee")
 public class Employee {
     @ManyToOne
-
+    @Autowired
     private Company company;
 
     public Employee() {

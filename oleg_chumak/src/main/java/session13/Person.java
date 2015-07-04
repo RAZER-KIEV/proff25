@@ -1,22 +1,30 @@
-package lection07;
+package session13;
 
 /**
- * Created by storo_000 on 29.06.2015.
+ * Created by oleg on 29.06.15.
  */
 public class Person {
     private String name;
     private int age;
-
-    public Person() {
-    }
+    public Person() {    }
 
     public Person(String name) {
-
         this.name = name;
     }
 
-    public Person(int age) {
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
         this.age = age;
     }
 
@@ -25,21 +33,8 @@ public class Person {
         this.age = age;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setAge(int age) {
+    public Person(int age) {
         this.age = age;
-    }
-
-    public String getName() {
-
-        return name;
-    }
-
-    public int getAge() {
-        return age;
     }
 
     @Override
@@ -48,5 +43,6 @@ public class Person {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 '}';
+
     }
 }

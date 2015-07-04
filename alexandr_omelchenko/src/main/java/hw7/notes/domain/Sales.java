@@ -6,10 +6,11 @@ import java.util.Date;
 @Table(name = "Sales")
 public class Sales {
     @Id
-    @SequenceGenerator(name="sequence", sequenceName="ID", allocationSize=1, initialValue =0)
+    @SequenceGenerator(name="sequence", sequenceName="SALES_ID", allocationSize=1, initialValue =0)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="sequence")
     @Column(name ="ID")
      private Long id;
+    @Temporal(TemporalType.DATE)
     @Column(name ="DATE_SALE")
      private Date saleDate;
     @Column(name ="COUNT")

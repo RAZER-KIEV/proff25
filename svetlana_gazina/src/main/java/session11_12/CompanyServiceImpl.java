@@ -12,6 +12,10 @@ import java.util.List;
 public class CompanyServiceImpl implements CompanyService {
     private SessionFactory factory;
     private Session session;
+    private SessionFactory sessionFactory;
+
+    public CompanyServiceImpl() {
+    }
 
     public Session getSession() {
         return session;
@@ -47,5 +51,13 @@ public class CompanyServiceImpl implements CompanyService {
 
         return query.list();
 
+    }
+
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
+
+    public SessionFactory getSessionFactory() {
+        return sessionFactory;
     }
 }
