@@ -7,9 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import java.math.BigDecimal;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Sveta on 6/26/2015.
@@ -113,11 +111,44 @@ public class NotebookServiceImpl implements NotebookService {
 
     @Override
     public List<Notebook> getNotebooksStorePresent() {
-        return null;
+        Session session = factory.openSession();
+        try {
+            Query query = session.createQuery("select n from Store s join s.notebook n");
+            List results = query.list();
+            Map<Vendor, List<Notebook>> resMap = new HashMap<>();
+            List<Notebook> result = new ArrayList<>();
+
+            for (Iterator iter = results.iterator(); iter.hasNext();) {
+                Notebook notebook = (Notebook)iter.next();
+                Vendor key = notebook.getVendor();
+                if (resMap.containsKey(key)){
+                    result = resMap.get(key);
+                    result.add(notebook);
+                    resMap.replace(key,result);
+                }
+                else{
+
+                    result.add(notebook);
+                }
+            }
+            return result;
+        }finally {
+            if (session!=null){
+                session.close();
+            }
+        }
     }
 
     @Override
-    public Map<Notebook, Integer> getSalesByDays() {
-        return null;
+    public Map<Date, Double> getSalesByDays() {
+        Session session = factory.openSession();
+        Map<Date, Double> map = new TreeMap<>();
+        Query query = session.createQuery("select c.date, avg (c.amount) from Sales c join c.store p group by c.date");
+        List list = query.list();
+        for(int i = 0; i < list.size(); i++) {
+            Object[] obj = (Object[]) list.get(i);
+            map.put((Date)obj[0], (Double)obj[1]);
+        }
+        return map;
     }
 }
