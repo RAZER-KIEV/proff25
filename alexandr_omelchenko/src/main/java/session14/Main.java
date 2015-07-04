@@ -2,6 +2,7 @@ package session14;
 
 import org.apache.xbean.spring.context.ClassPathXmlApplicationContext;
 import org.springframework.context.ApplicationContext;
+import week6_lesson11.domain.Company;
 import week6_lesson11.domain.Employee;
 
 /**
@@ -17,5 +18,7 @@ public class Main {
         ApplicationContext context = new ClassPathXmlApplicationContext("session14/context-c-e.xml");
         Employee empl = context.getBean("employee", Employee.class);
         System.out.println(empl.getCompany());
+        Company comp = new Company();
+        System.out.println(comp);
     }
 }
