@@ -3,7 +3,7 @@ package hw7.notes.domain;
 import javax.persistence.*;
 
 /**
- * Created by Well on 29.06.2015
+ * Created by Well on 29.06.2015.
  */
 @Entity
 @Table(name = "memory")
@@ -18,9 +18,6 @@ public class Memory {
 
     @ManyToOne
     private Vendor vendor;
-
-//    @Column(name = "memory_vendor")
-//    private String memVendor;
 
     @Column(name = "memory_size")
     private Long memSize;
