@@ -110,28 +110,22 @@ public class NotebookServiceImpl implements NotebookService {
     }
 
     @Override
-    public List<Notebook> getNotebooksStorePresent() {
+    public Map<Vendor, List<Notebook>> getNotebooksStorePresent() {
         Session session = factory.openSession();
         try {
-            Query query = session.createQuery("select n from Store s join s.notebook n");
-            List results = query.list();
-            Map<Vendor, List<Notebook>> resMap = new HashMap<>();
-            List<Notebook> result = new ArrayList<>();
-
-            for (Iterator iter = results.iterator(); iter.hasNext();) {
-                Notebook notebook = (Notebook)iter.next();
-                Vendor key = notebook.getVendor();
-                if (resMap.containsKey(key)){
-                    result = resMap.get(key);
-                    result.add(notebook);
-                    resMap.replace(key,result);
-                }
-                else{
-
-                    result.add(notebook);
-                }
+            Query query = session.createQuery("select v from Store s, Notebook n, Vendor v where s.noteBook=n and n.vendor=v");
+            List res = query.list();
+            Set<Vendor> setVendor = new HashSet<>();
+            for (Iterator iter = res.iterator(); iter.hasNext();) {
+                setVendor.add((Vendor) iter.next());
             }
-            return result;
+            Map<Vendor,List<Notebook>> longListMap = new HashMap<>();
+            for (Vendor vendor:setVendor){
+                Query query1 = session.createQuery("select n from Store s join s.noteBook n join n.vendor v where v.id=:id");
+                query1.setParameter("id", vendor.getId());
+                longListMap.put(vendor,query1.list());
+            }
+            return longListMap;
         }finally {
             if (session!=null){
                 session.close();
