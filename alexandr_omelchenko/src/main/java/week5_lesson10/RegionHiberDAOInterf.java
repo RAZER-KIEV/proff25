@@ -1,4 +1,4 @@
-package week_lesson10;
+package week5_lesson10;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;

@@ -20,7 +20,5 @@ public interface StoreDao {
 
     List getNotebooksFromStore();
 
-    Map getMapVendorNotesPresent();
-
-    List getNotebooksStorePresent();
+    Map getNotebooksStorePresent();
 }

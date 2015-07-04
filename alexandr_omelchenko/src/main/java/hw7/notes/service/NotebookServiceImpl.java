@@ -114,13 +114,13 @@ public class NotebookServiceImpl implements NotebookService {
         return storeDao.getNotebooksFromStore();
     }
     @Override
-    public List getNotebooksStorePresent() {
+    public Map getNotebooksStorePresent() {
         StoreDaoImpl storeDao= new StoreDaoImpl(factory);
         return storeDao.getNotebooksStorePresent();
     }
-
     @Override
     public Map getSalesByDays() {
-        return null;
+        SalesDaoImpl saleDao= new SalesDaoImpl(factory);
+        return saleDao.getSalesByDays();
     }
 }
