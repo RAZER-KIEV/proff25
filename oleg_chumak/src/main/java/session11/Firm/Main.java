@@ -6,6 +6,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import session10.HiberConnect;
 import session11.Firm.dao.FirmDaoImpl;
 import session11.Firm.service.ServiceImpl;
@@ -20,18 +22,9 @@ import java.util.Locale;
  */
 public class Main {
     public static void main(String[] args) {
-        HibernateUtil hib = new HibernateUtil();
-        hib.createSessionFactory();
-        SessionFactory factory = hib.getFactory();
-        ServiceImpl service = new ServiceImpl(new FirmDaoImpl(factory));
-//        System.out.println(service.findByCompany(new Company("c1", new Long(1574))));
-        System.out.println("------------------------------------------");
-        System.out.println();
-//        List<Person> empls = service.findAll();
-////        List<Person> empls = service.findByCompany(new Company("c1", new Long(1574)));
-//        for(Person per : empls){
-//            System.out.println(per);
-//        }
-        service.findCompaniesWithMoreThenTwoPersons();
+        ApplicationContext context = new ClassPathXmlApplicationContext("session13/context_db.xml");
+//        ServiceImpl service = context.getBean("serviceImpl", ServiceImpl.class);
+//        System.out.println(service.create(new Company("aaza", 234L)));
+//        System.out.println(service.findAll());
     }
 }

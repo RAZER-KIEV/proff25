@@ -9,7 +9,7 @@ import java.util.List;
  * Created by oleg on 23.06.15.
  */
 public interface Service {
-    public List<Person> findAll();
+    public List<Company> findAll();
     public List<Person> findByCompany(Company cmpn);
     void  findCompaniesWithMoreThenTwoPersons();
 }
