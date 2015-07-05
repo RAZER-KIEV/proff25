@@ -7,7 +7,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "VENDORS")
-public class Vendor {
+public class Vendor extends hw7.springnotes.domain.Vendor {
     @Id
     @SequenceGenerator(name = "sequence", sequenceName = "SEQ_VENDORS_ID",
             allocationSize = 1, initialValue = 10)
