@@ -15,6 +15,7 @@ public class CPU {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
     private Long id;
 
+    @ManyToOne(fetch = FetchType.EAGER,cascade = {CascadeType.MERGE, CascadeType.PERSIST} )
     private Vendor cpuVendor;
 
     private Integer frequency;

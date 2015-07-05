@@ -1,11 +1,15 @@
 package week6_lesson11.domain;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
-/**
- * Created by HP on 22.06.2015.
+/*
+Created by HP on 22.06.2015.
  */
+@Component
 @Entity
 @Table (name = "COMPANY")
 public class Company {
@@ -24,16 +28,18 @@ public class Company {
         this.name = name;
         this.budget=budget;
     }
-    public Company(String name, Double money, Set<Employee> employees) {
+    public Company(String name, Double budget, Set<Employee> employees) {
         this.name = name;
-        this.budget = money;
+        this.budget = budget;
         this.employees = employees;
     }
     @Id
     @SequenceGenerator(name="sequence", sequenceName="ID", allocationSize=1, initialValue =0)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="sequence")
+    //@Value("10")
     @Column(name ="ID")
     private Long id;
+    @Value("CorpIvan")
     @Column(name ="NAME")
     private String name;
     @Column(name ="Budget")

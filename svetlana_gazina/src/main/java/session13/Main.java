@@ -11,10 +11,10 @@ public class Main {
         ApplicationContext context = new ClassPathXmlApplicationContext("session13/context.xml");
         Person pers1 = context.getBean("pers1", Person.class);
         Person pers2 = context.getBean("pers2", Person.class);
-//        System.out.println(pers1);
-//        System.out.println(pers2.toString());
-        Company company = context.getBean("comp", Company.class);
-        System.out.println(company);
+        System.out.println(pers1);
+        System.out.println(pers2.toString());
+//        Company company = context.getBean("comp", Company.class);
+//        System.out.println(company);
 
     }
 }

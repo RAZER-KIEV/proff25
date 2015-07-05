@@ -17,13 +17,13 @@ import java.util.Locale;
  */
 public class HibernateUtil {
     private static Logger log = Logger.getLogger(HibernateUtil.class);
-    SessionFactory factory;
+    SessionFactory factory = newSesionFactory();
 
     public HibernateUtil(){
 
     }
 
-    public void newSesionFactory() {
+    public SessionFactory newSesionFactory() {
         Locale.setDefault(Locale.ENGLISH);
         Configuration cfg = new Configuration().configure("session10/hibernate.cfg.xml");
         StandardServiceRegistryBuilder sb = new StandardServiceRegistryBuilder();
@@ -31,6 +31,7 @@ public class HibernateUtil {
         StandardServiceRegistry standardServiceRegistry = sb.build();
         factory = cfg.buildSessionFactory(standardServiceRegistry);
         log.info("Reference to SessionFactory " + factory);
+        return factory;
     }
 
     public void closeSessionFactory(){

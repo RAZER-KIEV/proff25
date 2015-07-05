@@ -6,6 +6,8 @@ import java.time.LocalDate;
 /**
  * Created by Well on 29.06.2015
  */
+@Entity
+@Table(name = "sales")
 public class Sales {
 
     @Id
@@ -19,14 +21,14 @@ public class Sales {
     private LocalDate salesDate;
 
     @Column(name = "sales_quantity")
-    private Long salesQuantity;
+    private Integer salesQuantity;
 
     @ManyToOne
     private Store store;
 
     public Sales(){}
 
-    public Sales (LocalDate salesDate, Long salesQuantity, Store store){
+    public Sales (LocalDate salesDate, Integer salesQuantity, Store store){
         this.salesDate = salesDate;
         this.salesQuantity = salesQuantity;
         this.store = store;
@@ -44,11 +46,11 @@ public class Sales {
         this.salesDate = salesDate;
     }
 
-    public Long getSalesQuantity() {
+    public Integer getSalesQuantity() {
         return salesQuantity;
     }
 
-    public void setSalesQuantity(Long salesQuantity) {
+    public void setSalesQuantity(Integer salesQuantity) {
         this.salesQuantity = salesQuantity;
     }
 

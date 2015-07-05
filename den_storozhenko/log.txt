@@ -1575,3 +1575,1415 @@ line 1:26: unexpected token: Notebook
 2015-06-30 21:06:40,340 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004483]
 2015-06-30 21:06:40,341 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
 2015-06-30 21:06:40,992 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:XE]
+2015-06-30 21:34:22,231 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Tue Jun 30 21:34:22 EEST 2015]; root of context hierarchy
+2015-06-30 21:34:22,391 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [lection07/transactionalContext.xml]
+2015-06-30 21:34:24,844 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-30 21:34:24,856 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-30 21:34:24,858 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-30 21:34:24,861 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-30 21:34:58,907 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Tue Jun 30 21:34:58 EEST 2015]; root of context hierarchy
+2015-06-30 21:34:59,021 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [lection07/transactionalContext.xml]
+2015-06-30 21:35:00,799 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-30 21:35:00,815 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-30 21:35:00,820 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-30 21:35:00,823 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-30 21:35:01,967 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-30 21:35:02,356 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-30 21:35:02,364 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-30 21:35:02,438 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-30 21:35:02,857 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-30 21:35:02,857 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-30 21:35:03,232 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-30 21:35:03,527 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY
+2015-06-30 21:35:03,528 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [company_id, company_name, cash]
+2015-06-30 21:35:03,529 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-30 21:35:03,529 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004106]
+2015-06-30 21:35:03,705 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY_PERSON
+2015-06-30 21:35:03,705 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [persons_person_id, company_company_id]
+2015-06-30 21:35:03,705 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwcb9ahrpeb01mkqs90464jqm, fk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:35:03,706 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004130, uk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:35:03,805 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.PERSON
+2015-06-30 21:35:03,805 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [person_name, person_id, company_company_id]
+2015-06-30 21:35:03,806 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1aqdi48at94gibrt1uoxbvimi]
+2015-06-30 21:35:03,806 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004111]
+2015-06-30 21:35:03,808 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-30 21:35:03,917 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@585811a4] of Hibernate SessionFactory for HibernateTransactionManager
+2015-06-30 21:36:10,661 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Tue Jun 30 21:36:10 EEST 2015]; root of context hierarchy
+2015-06-30 21:36:10,788 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [lection07/transactionalContext.xml]
+2015-06-30 21:36:13,394 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-30 21:36:13,420 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-30 21:36:13,427 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-30 21:36:13,439 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-30 21:36:14,382 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-30 21:36:14,746 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-30 21:36:14,756 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-30 21:36:14,837 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-30 21:36:15,243 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-30 21:36:15,244 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-30 21:36:15,297 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-30 21:36:15,385 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY
+2015-06-30 21:36:15,385 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [company_id, company_name, cash]
+2015-06-30 21:36:15,385 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-30 21:36:15,385 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004106]
+2015-06-30 21:36:15,414 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY_PERSON
+2015-06-30 21:36:15,414 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [persons_person_id, company_company_id]
+2015-06-30 21:36:15,414 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwcb9ahrpeb01mkqs90464jqm, fk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:36:15,414 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004130, uk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:36:15,429 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.PERSON
+2015-06-30 21:36:15,429 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [person_name, person_id, company_company_id]
+2015-06-30 21:36:15,429 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1aqdi48at94gibrt1uoxbvimi]
+2015-06-30 21:36:15,429 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004111]
+2015-06-30 21:36:15,431 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-30 21:36:15,498 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@585811a4] of Hibernate SessionFactory for HibernateTransactionManager
+2015-06-30 21:37:06,002 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Tue Jun 30 21:37:05 EEST 2015]; root of context hierarchy
+2015-06-30 21:37:06,156 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [lection07/transactionalContext.xml]
+2015-06-30 21:37:06,930 [main] INFO  org.springframework.beans.factory.config.PropertyPlaceholderConfigurer - Loading properties file from class path resource [lection07/conf.properties]
+2015-06-30 21:37:08,219 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-30 21:37:08,233 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-30 21:37:08,236 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-30 21:37:08,240 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-30 21:37:08,895 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-30 21:37:09,247 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-30 21:37:09,252 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-30 21:37:09,309 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-30 21:37:09,705 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-30 21:37:09,706 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-30 21:37:09,777 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-30 21:37:09,937 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY
+2015-06-30 21:37:09,937 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [company_id, company_name, cash]
+2015-06-30 21:37:09,938 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-30 21:37:09,938 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004106]
+2015-06-30 21:37:09,962 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY_PERSON
+2015-06-30 21:37:09,962 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [persons_person_id, company_company_id]
+2015-06-30 21:37:09,962 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwcb9ahrpeb01mkqs90464jqm, fk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:37:09,962 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004130, uk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:37:09,984 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.PERSON
+2015-06-30 21:37:09,985 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [person_name, person_id, company_company_id]
+2015-06-30 21:37:09,985 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1aqdi48at94gibrt1uoxbvimi]
+2015-06-30 21:37:09,985 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004111]
+2015-06-30 21:37:09,987 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-30 21:37:10,080 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@560513ce] of Hibernate SessionFactory for HibernateTransactionManager
+2015-06-30 21:37:26,378 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Tue Jun 30 21:37:26 EEST 2015]; root of context hierarchy
+2015-06-30 21:37:26,521 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [lection07/context-db-new.xml]
+2015-06-30 21:37:27,601 [main] INFO  org.springframework.beans.factory.config.PropertyPlaceholderConfigurer - Loading properties file from class path resource [lection07/conf.properties]
+2015-06-30 21:37:28,686 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-30 21:37:28,698 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-30 21:37:28,704 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-30 21:37:28,707 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-30 21:37:29,561 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-30 21:37:29,977 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-30 21:37:29,985 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-30 21:37:30,046 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-30 21:37:30,421 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-30 21:37:30,421 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-30 21:37:30,483 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-30 21:37:30,559 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY
+2015-06-30 21:37:30,559 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [company_id, company_name, cash]
+2015-06-30 21:37:30,559 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-30 21:37:30,560 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004106]
+2015-06-30 21:37:30,575 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY_PERSON
+2015-06-30 21:37:30,575 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [persons_person_id, company_company_id]
+2015-06-30 21:37:30,576 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwcb9ahrpeb01mkqs90464jqm, fk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:37:30,576 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004130, uk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:37:30,589 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.PERSON
+2015-06-30 21:37:30,590 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [person_name, person_id, company_company_id]
+2015-06-30 21:37:30,590 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1aqdi48at94gibrt1uoxbvimi]
+2015-06-30 21:37:30,590 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004111]
+2015-06-30 21:37:30,591 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-30 21:37:57,493 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Tue Jun 30 21:37:57 EEST 2015]; root of context hierarchy
+2015-06-30 21:37:57,602 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [lection07/transactionalContext.xml]
+2015-06-30 21:37:58,380 [main] INFO  org.springframework.beans.factory.config.PropertyPlaceholderConfigurer - Loading properties file from class path resource [lection07/conf.properties]
+2015-06-30 21:37:59,599 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-30 21:37:59,609 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-30 21:37:59,612 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-30 21:37:59,614 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-30 21:38:00,344 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-30 21:38:00,640 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-30 21:38:00,646 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-30 21:38:00,704 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-30 21:38:01,138 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-30 21:38:01,138 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-30 21:38:01,192 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-30 21:38:01,284 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY
+2015-06-30 21:38:01,284 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [company_id, company_name, cash]
+2015-06-30 21:38:01,285 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-30 21:38:01,285 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004106]
+2015-06-30 21:38:01,304 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY_PERSON
+2015-06-30 21:38:01,304 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [persons_person_id, company_company_id]
+2015-06-30 21:38:01,305 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwcb9ahrpeb01mkqs90464jqm, fk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:38:01,305 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004130, uk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:38:01,322 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.PERSON
+2015-06-30 21:38:01,322 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [person_name, person_id, company_company_id]
+2015-06-30 21:38:01,322 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1aqdi48at94gibrt1uoxbvimi]
+2015-06-30 21:38:01,322 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004111]
+2015-06-30 21:38:01,323 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-30 21:38:01,443 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@443dbe42] of Hibernate SessionFactory for HibernateTransactionManager
+2015-06-30 21:38:36,103 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Tue Jun 30 21:38:36 EEST 2015]; root of context hierarchy
+2015-06-30 21:38:36,228 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [lection07/transactionalContext.xml]
+2015-06-30 21:38:38,359 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-30 21:38:38,372 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-30 21:38:38,377 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-30 21:38:38,380 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-30 21:38:39,158 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-30 21:38:39,471 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-30 21:38:39,479 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-30 21:38:39,545 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-30 21:38:39,995 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-30 21:38:39,995 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-30 21:38:40,047 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-30 21:38:40,145 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY
+2015-06-30 21:38:40,145 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [company_id, company_name, cash]
+2015-06-30 21:38:40,145 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-30 21:38:40,145 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004106]
+2015-06-30 21:38:40,164 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY_PERSON
+2015-06-30 21:38:40,165 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [persons_person_id, company_company_id]
+2015-06-30 21:38:40,165 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwcb9ahrpeb01mkqs90464jqm, fk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:38:40,165 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004130, uk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:38:40,183 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.PERSON
+2015-06-30 21:38:40,183 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [person_name, person_id, company_company_id]
+2015-06-30 21:38:40,183 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1aqdi48at94gibrt1uoxbvimi]
+2015-06-30 21:38:40,183 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004111]
+2015-06-30 21:38:40,185 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-30 21:38:40,309 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@73393584] of Hibernate SessionFactory for HibernateTransactionManager
+2015-06-30 21:42:02,228 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Tue Jun 30 21:42:02 EEST 2015]; root of context hierarchy
+2015-06-30 21:42:02,388 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [lection07/context-db-new.xml]
+2015-06-30 21:42:03,185 [main] INFO  org.springframework.beans.factory.config.PropertyPlaceholderConfigurer - Loading properties file from class path resource [lection07/conf.properties]
+2015-06-30 21:42:04,367 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-30 21:42:04,433 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-30 21:42:04,437 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-30 21:42:04,442 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-30 21:42:05,327 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-30 21:42:05,674 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-30 21:42:05,683 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-30 21:42:05,755 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-30 21:42:06,163 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-30 21:42:06,163 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-30 21:42:06,222 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-30 21:42:06,295 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY
+2015-06-30 21:42:06,295 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [company_id, company_name, cash]
+2015-06-30 21:42:06,295 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-30 21:42:06,295 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004106]
+2015-06-30 21:42:06,311 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY_PERSON
+2015-06-30 21:42:06,311 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [persons_person_id, company_company_id]
+2015-06-30 21:42:06,311 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwcb9ahrpeb01mkqs90464jqm, fk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:42:06,311 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004130, uk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:42:06,326 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.PERSON
+2015-06-30 21:42:06,326 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [person_name, person_id, company_company_id]
+2015-06-30 21:42:06,327 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1aqdi48at94gibrt1uoxbvimi]
+2015-06-30 21:42:06,327 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004111]
+2015-06-30 21:42:06,328 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-30 21:42:20,161 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Tue Jun 30 21:42:20 EEST 2015]; root of context hierarchy
+2015-06-30 21:42:20,310 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [lection07/transactionalContext.xml]
+2015-06-30 21:42:23,274 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-30 21:42:23,306 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-30 21:42:23,315 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-30 21:42:23,318 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-30 21:42:24,101 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-30 21:42:24,624 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-30 21:42:24,635 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-30 21:42:24,743 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-30 21:42:25,191 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-30 21:42:25,191 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-30 21:42:25,241 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-30 21:42:25,333 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY
+2015-06-30 21:42:25,333 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [company_id, company_name, cash]
+2015-06-30 21:42:25,334 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-30 21:42:25,334 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004106]
+2015-06-30 21:42:25,348 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY_PERSON
+2015-06-30 21:42:25,348 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [persons_person_id, company_company_id]
+2015-06-30 21:42:25,348 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwcb9ahrpeb01mkqs90464jqm, fk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:42:25,348 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004130, uk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:42:25,362 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.PERSON
+2015-06-30 21:42:25,362 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [person_name, person_id, company_company_id]
+2015-06-30 21:42:25,362 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1aqdi48at94gibrt1uoxbvimi]
+2015-06-30 21:42:25,362 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004111]
+2015-06-30 21:42:25,363 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-30 21:42:25,450 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@73393584] of Hibernate SessionFactory for HibernateTransactionManager
+2015-06-30 21:42:41,036 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Tue Jun 30 21:42:41 EEST 2015]; root of context hierarchy
+2015-06-30 21:42:41,209 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [lection07/transactionalContext.xml]
+2015-06-30 21:42:43,169 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-30 21:42:43,178 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-30 21:42:43,181 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-30 21:42:43,184 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-30 21:42:43,866 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-30 21:42:44,208 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-30 21:42:44,213 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-30 21:42:44,271 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-30 21:42:44,661 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-30 21:42:44,662 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-30 21:42:44,724 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-30 21:42:44,834 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY
+2015-06-30 21:42:44,835 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [company_id, company_name, cash]
+2015-06-30 21:42:44,836 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-30 21:42:44,836 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004106]
+2015-06-30 21:42:44,859 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY_PERSON
+2015-06-30 21:42:44,859 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [persons_person_id, company_company_id]
+2015-06-30 21:42:44,860 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwcb9ahrpeb01mkqs90464jqm, fk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:42:44,860 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004130, uk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:42:44,884 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.PERSON
+2015-06-30 21:42:44,884 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [person_name, person_id, company_company_id]
+2015-06-30 21:42:44,884 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1aqdi48at94gibrt1uoxbvimi]
+2015-06-30 21:42:44,885 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004111]
+2015-06-30 21:42:44,886 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-30 21:42:45,030 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@73393584] of Hibernate SessionFactory for HibernateTransactionManager
+2015-06-30 21:43:48,299 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Tue Jun 30 21:43:48 EEST 2015]; root of context hierarchy
+2015-06-30 21:43:48,422 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [lection07/transactionalContext.xml]
+2015-06-30 21:43:50,625 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-30 21:43:50,637 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-30 21:43:50,640 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-30 21:43:50,643 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-30 21:43:51,372 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-30 21:43:51,663 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-30 21:43:51,670 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-30 21:43:51,728 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-30 21:43:52,187 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-30 21:43:52,187 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-30 21:43:52,247 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-30 21:43:52,349 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY
+2015-06-30 21:43:52,349 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [company_id, company_name, cash]
+2015-06-30 21:43:52,349 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-30 21:43:52,350 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004106]
+2015-06-30 21:43:52,368 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY_PERSON
+2015-06-30 21:43:52,368 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [persons_person_id, company_company_id]
+2015-06-30 21:43:52,368 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwcb9ahrpeb01mkqs90464jqm, fk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:43:52,368 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004130, uk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:43:52,384 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.PERSON
+2015-06-30 21:43:52,384 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [person_name, person_id, company_company_id]
+2015-06-30 21:43:52,384 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1aqdi48at94gibrt1uoxbvimi]
+2015-06-30 21:43:52,384 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004111]
+2015-06-30 21:43:52,385 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-30 21:43:52,525 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@73393584] of Hibernate SessionFactory for HibernateTransactionManager
+2015-06-30 21:45:43,696 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Tue Jun 30 21:45:43 EEST 2015]; root of context hierarchy
+2015-06-30 21:45:43,846 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [lection07/transactionalContext.xml]
+2015-06-30 21:45:45,804 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-30 21:45:45,819 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-30 21:45:45,823 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-30 21:45:45,825 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-30 21:45:46,520 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-30 21:45:46,841 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-30 21:45:46,848 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-30 21:45:46,910 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-30 21:45:47,297 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-30 21:45:47,297 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-30 21:45:47,340 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-30 21:45:47,421 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY
+2015-06-30 21:45:47,421 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [company_id, company_name, cash]
+2015-06-30 21:45:47,421 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-30 21:45:47,421 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004106]
+2015-06-30 21:45:47,436 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY_PERSON
+2015-06-30 21:45:47,437 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [persons_person_id, company_company_id]
+2015-06-30 21:45:47,437 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwcb9ahrpeb01mkqs90464jqm, fk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:45:47,437 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004130, uk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:45:47,450 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.PERSON
+2015-06-30 21:45:47,450 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [person_name, person_id, company_company_id]
+2015-06-30 21:45:47,450 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1aqdi48at94gibrt1uoxbvimi]
+2015-06-30 21:45:47,450 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004111]
+2015-06-30 21:45:47,451 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-30 21:45:47,553 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@73393584] of Hibernate SessionFactory for HibernateTransactionManager
+2015-06-30 21:47:44,923 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Tue Jun 30 21:47:44 EEST 2015]; root of context hierarchy
+2015-06-30 21:47:45,066 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [lection07/transactionalContext.xml]
+2015-06-30 21:47:47,144 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-30 21:47:47,200 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-30 21:47:47,206 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-30 21:47:47,212 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-30 21:47:47,970 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-30 21:47:48,279 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-30 21:47:48,286 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-30 21:47:48,343 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-30 21:47:48,722 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-30 21:47:48,722 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-30 21:47:48,779 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-30 21:47:48,895 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY
+2015-06-30 21:47:48,895 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [company_id, company_name, cash]
+2015-06-30 21:47:48,896 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-30 21:47:48,896 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004106]
+2015-06-30 21:47:48,918 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY_PERSON
+2015-06-30 21:47:48,918 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [persons_person_id, company_company_id]
+2015-06-30 21:47:48,918 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwcb9ahrpeb01mkqs90464jqm, fk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:47:48,918 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004130, uk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:47:48,941 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.PERSON
+2015-06-30 21:47:48,941 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [person_name, person_id, company_company_id]
+2015-06-30 21:47:48,941 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1aqdi48at94gibrt1uoxbvimi]
+2015-06-30 21:47:48,941 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004111]
+2015-06-30 21:47:48,943 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-30 21:47:49,077 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@73393584] of Hibernate SessionFactory for HibernateTransactionManager
+2015-06-30 21:48:00,494 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Tue Jun 30 21:48:00 EEST 2015]; root of context hierarchy
+2015-06-30 21:48:00,632 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [lection07/transactionalContext.xml]
+2015-06-30 21:48:02,674 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-30 21:48:02,687 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-30 21:48:02,691 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-30 21:48:02,696 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-30 21:48:03,371 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-30 21:48:03,659 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-30 21:48:03,666 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-30 21:48:03,725 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-30 21:48:04,143 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-30 21:48:04,144 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-30 21:48:04,190 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-30 21:48:04,271 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY
+2015-06-30 21:48:04,272 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [company_id, company_name, cash]
+2015-06-30 21:48:04,272 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-30 21:48:04,272 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004106]
+2015-06-30 21:48:04,289 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY_PERSON
+2015-06-30 21:48:04,289 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [persons_person_id, company_company_id]
+2015-06-30 21:48:04,289 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwcb9ahrpeb01mkqs90464jqm, fk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:48:04,289 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004130, uk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:48:04,304 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.PERSON
+2015-06-30 21:48:04,304 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [person_name, person_id, company_company_id]
+2015-06-30 21:48:04,304 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1aqdi48at94gibrt1uoxbvimi]
+2015-06-30 21:48:04,304 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004111]
+2015-06-30 21:48:04,305 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-30 21:48:04,405 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@73393584] of Hibernate SessionFactory for HibernateTransactionManager
+2015-06-30 21:53:12,347 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Tue Jun 30 21:53:12 EEST 2015]; root of context hierarchy
+2015-06-30 21:53:12,495 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [lection07/transactionalContext.xml]
+2015-06-30 21:53:14,616 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-30 21:53:14,631 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-30 21:53:14,633 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-30 21:53:14,635 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-30 21:53:15,239 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-30 21:53:15,528 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-30 21:53:15,535 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-30 21:53:15,594 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-30 21:53:15,982 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-30 21:53:15,983 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-30 21:53:16,030 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-30 21:53:16,113 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY
+2015-06-30 21:53:16,113 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [company_id, company_name, cash]
+2015-06-30 21:53:16,114 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-30 21:53:16,114 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004106]
+2015-06-30 21:53:16,129 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY_PERSON
+2015-06-30 21:53:16,130 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [persons_person_id, company_company_id]
+2015-06-30 21:53:16,130 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwcb9ahrpeb01mkqs90464jqm, fk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:53:16,130 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004130, uk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:53:16,144 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.PERSON
+2015-06-30 21:53:16,144 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [person_name, person_id, company_company_id]
+2015-06-30 21:53:16,144 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1aqdi48at94gibrt1uoxbvimi]
+2015-06-30 21:53:16,144 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004111]
+2015-06-30 21:53:16,145 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-30 21:53:16,276 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@1827a871] of Hibernate SessionFactory for HibernateTransactionManager
+2015-06-30 21:54:07,252 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Tue Jun 30 21:54:07 EEST 2015]; root of context hierarchy
+2015-06-30 21:54:07,382 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [lection07/transactionalContext.xml]
+2015-06-30 21:54:09,630 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-30 21:54:09,674 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-30 21:54:09,679 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-30 21:54:09,687 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-30 21:54:10,558 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-30 21:54:10,880 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-30 21:54:10,886 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-30 21:54:10,949 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-30 21:54:11,329 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-30 21:54:11,329 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-30 21:54:11,377 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-30 21:54:11,451 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY
+2015-06-30 21:54:11,452 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [company_id, company_name, cash]
+2015-06-30 21:54:11,452 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-30 21:54:11,452 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004106]
+2015-06-30 21:54:11,467 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY_PERSON
+2015-06-30 21:54:11,467 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [persons_person_id, company_company_id]
+2015-06-30 21:54:11,468 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwcb9ahrpeb01mkqs90464jqm, fk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:54:11,468 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004130, uk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:54:11,481 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.PERSON
+2015-06-30 21:54:11,481 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [person_name, person_id, company_company_id]
+2015-06-30 21:54:11,482 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1aqdi48at94gibrt1uoxbvimi]
+2015-06-30 21:54:11,482 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004111]
+2015-06-30 21:54:11,483 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-30 21:54:11,586 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@1827a871] of Hibernate SessionFactory for HibernateTransactionManager
+2015-06-30 21:56:11,601 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Tue Jun 30 21:56:11 EEST 2015]; root of context hierarchy
+2015-06-30 21:56:11,731 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [lection07/transactionalContext.xml]
+2015-06-30 21:56:13,666 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-30 21:56:13,693 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-30 21:56:13,700 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-30 21:56:13,708 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-30 21:56:14,622 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-30 21:56:14,969 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-30 21:56:14,974 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-30 21:56:15,033 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-30 21:56:15,418 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-30 21:56:15,419 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-30 21:56:15,463 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-30 21:56:15,541 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY
+2015-06-30 21:56:15,541 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [company_id, company_name, cash]
+2015-06-30 21:56:15,542 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-30 21:56:15,542 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004106]
+2015-06-30 21:56:15,557 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY_PERSON
+2015-06-30 21:56:15,557 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [persons_person_id, company_company_id]
+2015-06-30 21:56:15,557 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwcb9ahrpeb01mkqs90464jqm, fk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:56:15,557 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004130, uk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 21:56:15,573 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.PERSON
+2015-06-30 21:56:15,573 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [person_name, person_id, company_company_id]
+2015-06-30 21:56:15,573 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1aqdi48at94gibrt1uoxbvimi]
+2015-06-30 21:56:15,573 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004111]
+2015-06-30 21:56:15,574 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-30 21:56:15,701 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@1827a871] of Hibernate SessionFactory for HibernateTransactionManager
+2015-06-30 22:01:42,960 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Tue Jun 30 22:01:42 EEST 2015]; root of context hierarchy
+2015-06-30 22:01:43,122 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [lection07/transactionalContext.xml]
+2015-06-30 22:01:45,418 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-30 22:01:45,430 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-30 22:01:45,434 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-30 22:01:45,437 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-30 22:01:48,592 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-30 22:01:49,333 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-30 22:01:49,339 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-30 22:01:49,404 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-30 22:01:49,828 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-30 22:01:49,829 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-30 22:01:50,305 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-30 22:01:51,415 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY
+2015-06-30 22:01:51,415 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [company_id, company_name, cash]
+2015-06-30 22:01:51,415 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-30 22:01:51,415 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004106]
+2015-06-30 22:01:52,324 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY_PERSON
+2015-06-30 22:01:52,324 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [persons_person_id, company_company_id]
+2015-06-30 22:01:52,324 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwcb9ahrpeb01mkqs90464jqm, fk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 22:01:52,324 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004130, uk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 22:01:52,344 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.PERSON
+2015-06-30 22:01:52,344 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [person_name, person_id, company_company_id]
+2015-06-30 22:01:52,345 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1aqdi48at94gibrt1uoxbvimi]
+2015-06-30 22:01:52,345 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004111]
+2015-06-30 22:01:52,346 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-30 22:01:52,438 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@1827a871] of Hibernate SessionFactory for HibernateTransactionManager
+2015-06-30 22:02:09,465 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Tue Jun 30 22:02:09 EEST 2015]; root of context hierarchy
+2015-06-30 22:02:09,623 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [lection07/transactionalContext.xml]
+2015-06-30 22:02:11,647 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-30 22:02:11,659 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-30 22:02:11,662 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-06-30 22:02:11,665 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-06-30 22:02:12,393 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-06-30 22:02:12,688 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-30 22:02:12,693 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-30 22:02:12,753 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-06-30 22:02:13,207 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-06-30 22:02:13,207 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-06-30 22:02:13,256 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-06-30 22:02:13,351 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY
+2015-06-30 22:02:13,352 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [company_id, company_name, cash]
+2015-06-30 22:02:13,352 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-06-30 22:02:13,352 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004106]
+2015-06-30 22:02:13,370 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY_PERSON
+2015-06-30 22:02:13,370 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [persons_person_id, company_company_id]
+2015-06-30 22:02:13,370 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwcb9ahrpeb01mkqs90464jqm, fk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 22:02:13,370 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004130, uk_64abbb8b2yjs5lyixl8a0r963]
+2015-06-30 22:02:13,388 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.PERSON
+2015-06-30 22:02:13,388 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [person_name, person_id, company_company_id]
+2015-06-30 22:02:13,388 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1aqdi48at94gibrt1uoxbvimi]
+2015-06-30 22:02:13,388 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004111]
+2015-06-30 22:02:13,389 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-06-30 22:02:13,536 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@1827a871] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 11:10:27,015 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Fri Jul 03 11:10:26 EEST 2015]; root of context hierarchy
+2015-07-03 11:10:27,972 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [lection07/transactionalContext.xml]
+2015-07-03 11:10:32,040 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 11:10:32,058 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 11:10:32,061 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-03 11:10:32,063 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-03 11:10:37,753 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-03 11:10:38,569 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 11:10:38,581 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 11:10:38,748 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-03 11:10:39,600 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-03 11:10:39,600 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-03 11:10:42,130 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-03 11:10:51,461 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY
+2015-07-03 11:10:51,462 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [company_id, company_name, cash]
+2015-07-03 11:10:51,462 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-03 11:10:51,462 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004106]
+2015-07-03 11:10:55,390 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY_PERSON
+2015-07-03 11:10:55,390 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [persons_person_id, company_company_id]
+2015-07-03 11:10:55,390 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwcb9ahrpeb01mkqs90464jqm, fk_64abbb8b2yjs5lyixl8a0r963]
+2015-07-03 11:10:55,390 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004130, uk_64abbb8b2yjs5lyixl8a0r963]
+2015-07-03 11:10:55,856 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.PERSON
+2015-07-03 11:10:55,856 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [person_name, person_id, company_company_id]
+2015-07-03 11:10:55,856 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1aqdi48at94gibrt1uoxbvimi]
+2015-07-03 11:10:55,856 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004111]
+2015-07-03 11:10:55,857 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-03 11:10:56,018 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@1827a871] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 11:12:36,123 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Fri Jul 03 11:12:36 EEST 2015]; root of context hierarchy
+2015-07-03 11:12:36,310 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [lection07/transactionalContext.xml]
+2015-07-03 11:12:37,640 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 11:12:37,646 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 11:12:37,649 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-03 11:12:37,650 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-03 11:12:38,410 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-03 11:12:38,721 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 11:12:38,727 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 11:12:38,790 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-03 11:12:39,239 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-03 11:12:39,240 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-03 11:12:39,306 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-03 11:12:39,386 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY
+2015-07-03 11:12:39,386 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [company_id, company_name, cash]
+2015-07-03 11:12:39,386 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-03 11:12:39,386 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004106]
+2015-07-03 11:12:39,411 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY_PERSON
+2015-07-03 11:12:39,411 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [persons_person_id, company_company_id]
+2015-07-03 11:12:39,411 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwcb9ahrpeb01mkqs90464jqm, fk_64abbb8b2yjs5lyixl8a0r963]
+2015-07-03 11:12:39,411 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004130, uk_64abbb8b2yjs5lyixl8a0r963]
+2015-07-03 11:12:39,425 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.PERSON
+2015-07-03 11:12:39,425 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [person_name, person_id, company_company_id]
+2015-07-03 11:12:39,425 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1aqdi48at94gibrt1uoxbvimi]
+2015-07-03 11:12:39,426 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004111]
+2015-07-03 11:12:39,426 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-03 11:12:39,573 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@1827a871] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 11:15:48,481 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Fri Jul 03 11:15:48 EEST 2015]; root of context hierarchy
+2015-07-03 11:15:48,646 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [lection07/transactionalContext.xml]
+2015-07-03 11:15:50,368 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 11:15:50,380 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 11:15:50,383 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-03 11:15:50,386 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-03 11:15:56,979 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-03 11:15:58,057 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 11:15:58,120 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 11:15:58,379 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-03 11:16:00,100 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-03 11:16:00,100 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-03 11:16:00,221 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-03 11:16:00,358 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY
+2015-07-03 11:16:00,358 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [company_id, company_name, cash]
+2015-07-03 11:16:00,359 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-03 11:16:00,359 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004106]
+2015-07-03 11:16:00,418 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY_PERSON
+2015-07-03 11:16:00,419 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [persons_person_id, company_company_id]
+2015-07-03 11:16:00,419 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwcb9ahrpeb01mkqs90464jqm, fk_64abbb8b2yjs5lyixl8a0r963]
+2015-07-03 11:16:00,419 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004130, uk_64abbb8b2yjs5lyixl8a0r963]
+2015-07-03 11:16:00,440 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.PERSON
+2015-07-03 11:16:00,440 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [person_name, person_id, company_company_id]
+2015-07-03 11:16:00,440 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1aqdi48at94gibrt1uoxbvimi]
+2015-07-03 11:16:00,441 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004111]
+2015-07-03 11:16:00,442 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-03 11:16:01,115 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@1827a871] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 11:17:15,944 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Fri Jul 03 11:17:15 EEST 2015]; root of context hierarchy
+2015-07-03 11:17:16,099 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [lection07/transactionalContext.xml]
+2015-07-03 11:17:18,830 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 11:17:18,841 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 11:17:18,856 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-03 11:17:18,858 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-03 11:17:19,861 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-03 11:17:20,163 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 11:17:20,169 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 11:17:20,228 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-03 11:17:20,705 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-03 11:17:20,706 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-03 11:17:20,864 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-03 11:17:21,003 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY
+2015-07-03 11:17:21,003 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [company_id, company_name, cash]
+2015-07-03 11:17:21,003 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-03 11:17:21,004 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004106]
+2015-07-03 11:17:21,026 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY_PERSON
+2015-07-03 11:17:21,027 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [persons_person_id, company_company_id]
+2015-07-03 11:17:21,027 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwcb9ahrpeb01mkqs90464jqm, fk_64abbb8b2yjs5lyixl8a0r963]
+2015-07-03 11:17:21,027 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004130, uk_64abbb8b2yjs5lyixl8a0r963]
+2015-07-03 11:17:21,058 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.PERSON
+2015-07-03 11:17:21,058 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [person_name, person_id, company_company_id]
+2015-07-03 11:17:21,058 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1aqdi48at94gibrt1uoxbvimi]
+2015-07-03 11:17:21,058 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004111]
+2015-07-03 11:17:21,060 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-03 11:17:21,188 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@1827a871] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 11:17:49,131 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Fri Jul 03 11:17:49 EEST 2015]; root of context hierarchy
+2015-07-03 11:17:49,325 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [lection07/transactionalContext.xml]
+2015-07-03 11:17:51,825 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 11:17:51,836 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 11:17:51,839 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-03 11:17:51,842 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-03 11:17:52,777 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-03 11:17:53,094 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 11:17:53,100 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 11:17:53,166 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-03 11:17:53,718 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-03 11:17:53,718 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-03 11:17:53,847 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-03 11:17:53,950 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY
+2015-07-03 11:17:53,951 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [company_id, company_name, cash]
+2015-07-03 11:17:53,951 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-03 11:17:53,951 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004106]
+2015-07-03 11:17:54,006 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY_PERSON
+2015-07-03 11:17:54,007 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [persons_person_id, company_company_id]
+2015-07-03 11:17:54,007 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwcb9ahrpeb01mkqs90464jqm, fk_64abbb8b2yjs5lyixl8a0r963]
+2015-07-03 11:17:54,007 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004130, uk_64abbb8b2yjs5lyixl8a0r963]
+2015-07-03 11:17:54,025 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.PERSON
+2015-07-03 11:17:54,025 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [person_name, person_id, company_company_id]
+2015-07-03 11:17:54,025 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1aqdi48at94gibrt1uoxbvimi]
+2015-07-03 11:17:54,025 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004111]
+2015-07-03 11:17:54,026 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-03 11:17:54,176 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@1827a871] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 11:19:11,752 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Fri Jul 03 11:19:11 EEST 2015]; root of context hierarchy
+2015-07-03 11:19:11,875 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [lection07/transactionalContext.xml]
+2015-07-03 11:19:14,410 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 11:19:14,428 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 11:19:14,433 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-03 11:19:14,437 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-03 11:19:15,185 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-03 11:19:15,515 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 11:19:15,523 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 11:19:15,590 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-03 11:19:16,100 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-03 11:19:16,100 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-03 11:19:16,167 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-03 11:19:16,249 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY
+2015-07-03 11:19:16,249 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [company_id, company_name, cash]
+2015-07-03 11:19:16,250 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-03 11:19:16,250 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004106]
+2015-07-03 11:19:16,267 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY_PERSON
+2015-07-03 11:19:16,267 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [persons_person_id, company_company_id]
+2015-07-03 11:19:16,268 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwcb9ahrpeb01mkqs90464jqm, fk_64abbb8b2yjs5lyixl8a0r963]
+2015-07-03 11:19:16,268 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004130, uk_64abbb8b2yjs5lyixl8a0r963]
+2015-07-03 11:19:16,283 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.PERSON
+2015-07-03 11:19:16,283 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [person_name, person_id, company_company_id]
+2015-07-03 11:19:16,283 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1aqdi48at94gibrt1uoxbvimi]
+2015-07-03 11:19:16,283 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004111]
+2015-07-03 11:19:16,284 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-03 11:19:16,410 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@1827a871] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 11:19:53,482 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Fri Jul 03 11:19:53 EEST 2015]; root of context hierarchy
+2015-07-03 11:19:53,644 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [lection07/transactionalContext.xml]
+2015-07-03 11:19:55,728 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 11:19:55,780 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 11:19:55,808 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-03 11:19:55,817 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-03 11:19:56,631 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-03 11:19:56,947 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 11:19:56,954 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 11:19:57,019 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-03 11:19:57,406 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-03 11:19:57,406 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-03 11:19:57,527 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-03 11:19:57,659 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY
+2015-07-03 11:19:57,659 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [company_id, company_name, cash]
+2015-07-03 11:19:57,660 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-03 11:19:57,660 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004106]
+2015-07-03 11:19:57,684 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY_PERSON
+2015-07-03 11:19:57,684 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [persons_person_id, company_company_id]
+2015-07-03 11:19:57,684 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwcb9ahrpeb01mkqs90464jqm, fk_64abbb8b2yjs5lyixl8a0r963]
+2015-07-03 11:19:57,684 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004130, uk_64abbb8b2yjs5lyixl8a0r963]
+2015-07-03 11:19:57,704 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.PERSON
+2015-07-03 11:19:57,705 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [person_name, person_id, company_company_id]
+2015-07-03 11:19:57,705 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1aqdi48at94gibrt1uoxbvimi]
+2015-07-03 11:19:57,705 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004111]
+2015-07-03 11:19:57,707 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-03 11:19:57,865 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@1827a871] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 11:20:29,918 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Fri Jul 03 11:20:29 EEST 2015]; root of context hierarchy
+2015-07-03 11:20:30,069 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [lection07/transactionalContext.xml]
+2015-07-03 11:20:32,325 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 11:20:32,341 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 11:20:32,347 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-03 11:20:32,365 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-03 11:20:33,366 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-03 11:20:33,717 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 11:20:33,724 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 11:20:33,786 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-03 11:20:34,212 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-03 11:20:34,213 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-03 11:20:34,266 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-03 11:20:34,367 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY
+2015-07-03 11:20:34,367 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [company_id, company_name, cash]
+2015-07-03 11:20:34,367 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-03 11:20:34,367 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004106]
+2015-07-03 11:20:34,397 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.COMPANY_PERSON
+2015-07-03 11:20:34,397 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [persons_person_id, company_company_id]
+2015-07-03 11:20:34,397 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_kwcb9ahrpeb01mkqs90464jqm, fk_64abbb8b2yjs5lyixl8a0r963]
+2015-07-03 11:20:34,397 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004130, uk_64abbb8b2yjs5lyixl8a0r963]
+2015-07-03 11:20:34,420 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: DENST.PERSON
+2015-07-03 11:20:34,421 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [person_name, person_id, company_company_id]
+2015-07-03 11:20:34,421 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1aqdi48at94gibrt1uoxbvimi]
+2015-07-03 11:20:34,422 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004111]
+2015-07-03 11:20:34,423 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-03 11:20:34,584 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@1827a871] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 11:49:16,476 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Fri Jul 03 11:49:16 EEST 2015]; root of context hierarchy
+2015-07-03 11:49:16,605 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [hw7/springnotes/context.xml]
+2015-07-03 11:49:18,156 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 11:49:18,173 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 11:49:18,178 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-03 11:49:18,181 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-03 11:49:21,381 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-03 11:49:21,831 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 11:49:21,838 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 11:49:21,911 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-03 11:49:22,535 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-03 11:49:22,535 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-03 11:49:24,604 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-03 11:49:28,208 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-07-03 11:49:28,208 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor_vendor_id, mem_size]
+2015-07-03 11:49:28,209 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_2alrsx46b0t4lr4bq37i15sgb]
+2015-07-03 11:49:28,209 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004473]
+2015-07-03 11:49:28,956 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-07-03 11:49:28,957 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-07-03 11:49:28,957 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-07-03 11:49:28,958 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004475]
+2015-07-03 11:49:29,694 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-07-03 11:49:29,694 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_vendor_id, processor_id, model, frequency]
+2015-07-03 11:49:29,694 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pxybs2vg7vey0bxqbp14e7ty4]
+2015-07-03 11:49:29,695 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004477]
+2015-07-03 11:49:29,916 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-07-03 11:49:29,917 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-07-03 11:49:29,917 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-07-03 11:49:29,917 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004479]
+2015-07-03 11:49:30,101 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-07-03 11:49:30,101 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-07-03 11:49:30,101 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-07-03 11:49:30,101 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004481]
+2015-07-03 11:49:30,889 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-07-03 11:49:30,890 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-07-03 11:49:30,890 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-03 11:49:30,890 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004483]
+2015-07-03 11:49:30,893 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-03 11:49:31,029 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@7577b641] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 12:25:53,364 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Fri Jul 03 12:25:53 EEST 2015]; root of context hierarchy
+2015-07-03 12:25:54,195 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [hw7/springnotes/context.xml]
+2015-07-03 12:25:58,637 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 12:25:58,686 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 12:25:58,695 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-03 12:25:58,701 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-03 12:26:04,953 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-03 12:26:05,739 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 12:26:05,762 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 12:26:05,854 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-03 12:26:06,724 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-03 12:26:06,724 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-03 12:26:10,516 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-03 12:26:14,139 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-07-03 12:26:14,140 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor_vendor_id, mem_size]
+2015-07-03 12:26:14,140 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_2alrsx46b0t4lr4bq37i15sgb]
+2015-07-03 12:26:14,140 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004473]
+2015-07-03 12:26:14,369 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-07-03 12:26:14,370 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-07-03 12:26:14,370 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-07-03 12:26:14,371 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004475]
+2015-07-03 12:26:14,492 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-07-03 12:26:14,492 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_vendor_id, processor_id, model, frequency]
+2015-07-03 12:26:14,492 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pxybs2vg7vey0bxqbp14e7ty4]
+2015-07-03 12:26:14,493 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004477]
+2015-07-03 12:26:14,632 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-07-03 12:26:14,632 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-07-03 12:26:14,632 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-07-03 12:26:14,632 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004479]
+2015-07-03 12:26:14,680 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-07-03 12:26:14,681 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-07-03 12:26:14,681 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-07-03 12:26:14,681 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004481]
+2015-07-03 12:26:14,767 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-07-03 12:26:14,768 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-07-03 12:26:14,768 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-03 12:26:14,768 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004483]
+2015-07-03 12:26:14,769 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-03 12:26:15,063 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@7577b641] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 12:37:49,367 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Fri Jul 03 12:37:49 EEST 2015]; root of context hierarchy
+2015-07-03 12:37:49,518 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [hw7/springnotes/context.xml]
+2015-07-03 12:37:51,549 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 12:37:51,556 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 12:37:51,559 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-03 12:37:51,562 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-03 12:37:58,047 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-03 12:37:59,556 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 12:37:59,566 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 12:37:59,643 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-03 12:38:00,100 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-03 12:38:00,101 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-03 12:38:04,059 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-03 12:38:06,043 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-07-03 12:38:06,043 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor_vendor_id, mem_size]
+2015-07-03 12:38:06,043 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_2alrsx46b0t4lr4bq37i15sgb]
+2015-07-03 12:38:06,043 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004473]
+2015-07-03 12:38:06,254 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-07-03 12:38:06,254 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-07-03 12:38:06,255 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-07-03 12:38:06,255 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004475]
+2015-07-03 12:38:06,325 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-07-03 12:38:06,326 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_vendor_id, processor_id, model, frequency]
+2015-07-03 12:38:06,326 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pxybs2vg7vey0bxqbp14e7ty4]
+2015-07-03 12:38:06,326 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004477]
+2015-07-03 12:38:06,491 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-07-03 12:38:06,491 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-07-03 12:38:06,491 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-07-03 12:38:06,491 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004479]
+2015-07-03 12:38:06,564 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-07-03 12:38:06,565 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-07-03 12:38:06,565 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-07-03 12:38:06,565 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004481]
+2015-07-03 12:38:06,677 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-07-03 12:38:06,678 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-07-03 12:38:06,678 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-03 12:38:06,678 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004483]
+2015-07-03 12:38:06,679 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-03 12:38:06,840 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@7577b641] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 12:50:05,353 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Fri Jul 03 12:50:05 EEST 2015]; root of context hierarchy
+2015-07-03 12:50:05,471 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [hw7/springnotes/context.xml]
+2015-07-03 12:50:07,838 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 12:50:07,853 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 12:50:07,856 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-03 12:50:07,858 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-03 12:50:08,717 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-03 12:50:09,083 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 12:50:09,090 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 12:50:09,155 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-03 12:50:09,707 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-03 12:50:09,707 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-03 12:50:09,796 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-03 12:50:09,887 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-07-03 12:50:09,887 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor_vendor_id, mem_size]
+2015-07-03 12:50:09,888 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_2alrsx46b0t4lr4bq37i15sgb]
+2015-07-03 12:50:09,888 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004473]
+2015-07-03 12:50:09,917 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-07-03 12:50:09,917 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-07-03 12:50:09,917 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-07-03 12:50:09,917 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004475]
+2015-07-03 12:50:09,932 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-07-03 12:50:09,933 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_vendor_id, processor_id, model, frequency]
+2015-07-03 12:50:09,933 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pxybs2vg7vey0bxqbp14e7ty4]
+2015-07-03 12:50:09,933 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004477]
+2015-07-03 12:50:09,947 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-07-03 12:50:09,947 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-07-03 12:50:09,947 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-07-03 12:50:09,948 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004479]
+2015-07-03 12:50:09,971 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-07-03 12:50:09,972 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-07-03 12:50:09,972 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-07-03 12:50:09,972 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004481]
+2015-07-03 12:50:09,986 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-07-03 12:50:09,987 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-07-03 12:50:09,987 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-03 12:50:09,987 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004483]
+2015-07-03 12:50:09,988 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-03 12:50:10,103 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@7577b641] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 12:52:25,912 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Fri Jul 03 12:52:25 EEST 2015]; root of context hierarchy
+2015-07-03 12:52:26,053 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [hw7/springnotes/context.xml]
+2015-07-03 12:52:28,637 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 12:52:28,655 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 12:52:28,659 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-03 12:52:28,662 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-03 12:52:29,426 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-03 12:52:29,859 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 12:52:29,868 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 12:52:29,956 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-03 12:52:30,441 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-03 12:52:30,441 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-03 12:52:30,491 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-03 12:52:30,570 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-07-03 12:52:30,571 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor_vendor_id, mem_size]
+2015-07-03 12:52:30,571 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_2alrsx46b0t4lr4bq37i15sgb]
+2015-07-03 12:52:30,571 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004473]
+2015-07-03 12:52:30,592 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-07-03 12:52:30,592 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-07-03 12:52:30,592 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-07-03 12:52:30,592 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004475]
+2015-07-03 12:52:30,694 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-07-03 12:52:30,694 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_vendor_id, processor_id, model, frequency]
+2015-07-03 12:52:30,694 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pxybs2vg7vey0bxqbp14e7ty4]
+2015-07-03 12:52:30,695 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004477]
+2015-07-03 12:52:30,710 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-07-03 12:52:30,710 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-07-03 12:52:30,710 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-07-03 12:52:30,710 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004479]
+2015-07-03 12:52:30,726 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-07-03 12:52:30,726 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-07-03 12:52:30,726 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-07-03 12:52:30,726 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004481]
+2015-07-03 12:52:30,742 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-07-03 12:52:30,742 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-07-03 12:52:30,743 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-03 12:52:30,743 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004483]
+2015-07-03 12:52:30,744 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-03 12:52:30,862 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@7577b641] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 13:50:20,005 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Fri Jul 03 13:50:19 EEST 2015]; root of context hierarchy
+2015-07-03 13:50:20,333 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [hw7/springnotes/context.xml]
+2015-07-03 13:50:24,806 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 13:50:24,815 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 13:50:24,818 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-03 13:50:24,819 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-03 13:50:26,602 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-03 13:50:27,157 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 13:50:27,165 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 13:50:27,316 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-03 13:50:28,039 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-03 13:50:28,039 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-03 13:50:28,134 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-03 13:50:28,269 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-07-03 13:50:28,269 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor_vendor_id, mem_size]
+2015-07-03 13:50:28,269 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_2alrsx46b0t4lr4bq37i15sgb]
+2015-07-03 13:50:28,269 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004473]
+2015-07-03 13:50:28,300 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-07-03 13:50:28,301 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-07-03 13:50:28,301 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-07-03 13:50:28,301 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004475]
+2015-07-03 13:50:28,330 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-07-03 13:50:28,330 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_vendor_id, processor_id, model, frequency]
+2015-07-03 13:50:28,331 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pxybs2vg7vey0bxqbp14e7ty4]
+2015-07-03 13:50:28,331 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004477]
+2015-07-03 13:50:28,455 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-07-03 13:50:28,456 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-07-03 13:50:28,456 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-07-03 13:50:28,456 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004479]
+2015-07-03 13:50:28,483 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-07-03 13:50:28,483 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-07-03 13:50:28,483 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-07-03 13:50:28,484 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004481]
+2015-07-03 13:50:28,512 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-07-03 13:50:28,512 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-07-03 13:50:28,512 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-03 13:50:28,513 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004483]
+2015-07-03 13:50:28,514 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-03 13:50:28,716 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@7577b641] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 13:51:55,155 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Fri Jul 03 13:51:55 EEST 2015]; root of context hierarchy
+2015-07-03 13:51:55,263 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [hw7/springnotes/context.xml]
+2015-07-03 13:51:57,483 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 13:51:57,495 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 13:51:57,501 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-03 13:51:57,504 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-03 13:51:58,303 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-03 13:51:58,629 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 13:51:58,635 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 13:51:58,707 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-03 13:51:59,244 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-03 13:51:59,245 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-03 13:51:59,353 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-03 13:51:59,475 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-07-03 13:51:59,475 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor_vendor_id, mem_size]
+2015-07-03 13:51:59,476 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_2alrsx46b0t4lr4bq37i15sgb]
+2015-07-03 13:51:59,476 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004473]
+2015-07-03 13:51:59,500 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-07-03 13:51:59,500 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-07-03 13:51:59,500 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-07-03 13:51:59,500 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004475]
+2015-07-03 13:51:59,521 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-07-03 13:51:59,521 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_vendor_id, processor_id, model, frequency]
+2015-07-03 13:51:59,521 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pxybs2vg7vey0bxqbp14e7ty4]
+2015-07-03 13:51:59,521 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004477]
+2015-07-03 13:51:59,544 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-07-03 13:51:59,544 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-07-03 13:51:59,544 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-07-03 13:51:59,544 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004479]
+2015-07-03 13:51:59,569 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-07-03 13:51:59,570 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-07-03 13:51:59,570 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-07-03 13:51:59,570 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004481]
+2015-07-03 13:51:59,599 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-07-03 13:51:59,600 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-07-03 13:51:59,600 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-03 13:51:59,600 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004483]
+2015-07-03 13:51:59,601 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-03 13:51:59,797 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@7577b641] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 13:54:27,195 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Fri Jul 03 13:54:27 EEST 2015]; root of context hierarchy
+2015-07-03 13:54:27,395 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [hw7/springnotes/context.xml]
+2015-07-03 13:54:29,894 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 13:54:29,909 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 13:54:29,914 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-03 13:54:29,919 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-03 13:54:31,138 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-03 13:54:31,408 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 13:54:31,413 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 13:54:31,494 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-03 13:54:32,013 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-03 13:54:32,013 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-03 13:54:32,067 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-03 13:54:32,174 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-07-03 13:54:32,174 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor_vendor_id, mem_size]
+2015-07-03 13:54:32,175 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_2alrsx46b0t4lr4bq37i15sgb]
+2015-07-03 13:54:32,175 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004473]
+2015-07-03 13:54:32,193 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-07-03 13:54:32,193 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-07-03 13:54:32,194 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-07-03 13:54:32,194 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004475]
+2015-07-03 13:54:32,211 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-07-03 13:54:32,212 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_vendor_id, processor_id, model, frequency]
+2015-07-03 13:54:32,212 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pxybs2vg7vey0bxqbp14e7ty4]
+2015-07-03 13:54:32,212 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004477]
+2015-07-03 13:54:32,234 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-07-03 13:54:32,234 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-07-03 13:54:32,234 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-07-03 13:54:32,234 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004479]
+2015-07-03 13:54:32,250 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-07-03 13:54:32,250 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-07-03 13:54:32,250 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-07-03 13:54:32,250 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004481]
+2015-07-03 13:54:32,265 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-07-03 13:54:32,265 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-07-03 13:54:32,266 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-03 13:54:32,266 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004483]
+2015-07-03 13:54:32,267 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-03 13:54:32,430 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@7577b641] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 13:56:33,315 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Fri Jul 03 13:56:33 EEST 2015]; root of context hierarchy
+2015-07-03 13:56:33,447 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [hw7/springnotes/context.xml]
+2015-07-03 13:56:35,479 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 13:56:35,489 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 13:56:35,493 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-03 13:56:35,495 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-03 13:56:36,306 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-03 13:56:36,685 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 13:56:36,691 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 13:56:36,751 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-03 13:56:37,219 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-03 13:56:37,219 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-03 13:56:37,284 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-03 13:56:37,392 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-07-03 13:56:37,393 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor_vendor_id, mem_size]
+2015-07-03 13:56:37,393 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_2alrsx46b0t4lr4bq37i15sgb]
+2015-07-03 13:56:37,393 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004473]
+2015-07-03 13:56:37,415 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-07-03 13:56:37,415 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-07-03 13:56:37,415 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-07-03 13:56:37,415 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004475]
+2015-07-03 13:56:37,439 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-07-03 13:56:37,439 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_vendor_id, processor_id, model, frequency]
+2015-07-03 13:56:37,439 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pxybs2vg7vey0bxqbp14e7ty4]
+2015-07-03 13:56:37,439 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004477]
+2015-07-03 13:56:37,460 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-07-03 13:56:37,461 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-07-03 13:56:37,461 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-07-03 13:56:37,461 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004479]
+2015-07-03 13:56:37,490 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-07-03 13:56:37,490 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-07-03 13:56:37,490 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-07-03 13:56:37,490 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004481]
+2015-07-03 13:56:37,512 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-07-03 13:56:37,513 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-07-03 13:56:37,513 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-03 13:56:37,513 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004483]
+2015-07-03 13:56:37,514 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-03 13:56:37,744 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@7577b641] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 13:57:16,225 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Fri Jul 03 13:57:16 EEST 2015]; root of context hierarchy
+2015-07-03 13:57:16,346 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [hw7/springnotes/context.xml]
+2015-07-03 13:57:18,417 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 13:57:18,440 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 13:57:18,445 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-03 13:57:18,449 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-03 13:57:19,151 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-03 13:57:19,518 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 13:57:19,523 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 13:57:19,593 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-03 13:57:20,052 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-03 13:57:20,052 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-03 13:57:20,106 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-03 13:57:20,211 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-07-03 13:57:20,212 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor_vendor_id, mem_size]
+2015-07-03 13:57:20,212 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_2alrsx46b0t4lr4bq37i15sgb]
+2015-07-03 13:57:20,212 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004473]
+2015-07-03 13:57:20,229 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-07-03 13:57:20,229 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-07-03 13:57:20,229 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-07-03 13:57:20,229 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004475]
+2015-07-03 13:57:20,247 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-07-03 13:57:20,247 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_vendor_id, processor_id, model, frequency]
+2015-07-03 13:57:20,247 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pxybs2vg7vey0bxqbp14e7ty4]
+2015-07-03 13:57:20,248 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004477]
+2015-07-03 13:57:20,270 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-07-03 13:57:20,270 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-07-03 13:57:20,270 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-07-03 13:57:20,270 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004479]
+2015-07-03 13:57:20,288 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-07-03 13:57:20,288 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-07-03 13:57:20,289 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-07-03 13:57:20,289 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004481]
+2015-07-03 13:57:20,304 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-07-03 13:57:20,304 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-07-03 13:57:20,304 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-03 13:57:20,304 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004483]
+2015-07-03 13:57:20,306 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-03 13:57:20,468 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@7577b641] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 13:58:17,656 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Fri Jul 03 13:58:17 EEST 2015]; root of context hierarchy
+2015-07-03 13:58:17,801 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [hw7/springnotes/context.xml]
+2015-07-03 13:58:19,806 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 13:58:19,823 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 13:58:19,842 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-03 13:58:19,846 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-03 13:58:21,179 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-03 13:58:21,538 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 13:58:21,545 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 13:58:21,616 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-03 13:58:22,084 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-03 13:58:22,085 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-03 13:58:22,139 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-03 13:58:22,249 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-07-03 13:58:22,249 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor_vendor_id, mem_size]
+2015-07-03 13:58:22,249 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_2alrsx46b0t4lr4bq37i15sgb]
+2015-07-03 13:58:22,249 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004473]
+2015-07-03 13:58:22,266 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-07-03 13:58:22,266 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-07-03 13:58:22,266 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-07-03 13:58:22,267 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004475]
+2015-07-03 13:58:22,284 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-07-03 13:58:22,284 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_vendor_id, processor_id, model, frequency]
+2015-07-03 13:58:22,284 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pxybs2vg7vey0bxqbp14e7ty4]
+2015-07-03 13:58:22,285 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004477]
+2015-07-03 13:58:22,306 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-07-03 13:58:22,306 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-07-03 13:58:22,306 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-07-03 13:58:22,306 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004479]
+2015-07-03 13:58:22,326 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-07-03 13:58:22,326 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-07-03 13:58:22,327 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-07-03 13:58:22,327 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004481]
+2015-07-03 13:58:22,347 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-07-03 13:58:22,347 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-07-03 13:58:22,347 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-03 13:58:22,348 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004483]
+2015-07-03 13:58:22,349 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-03 13:58:22,517 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@7577b641] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 14:10:44,339 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Fri Jul 03 14:10:44 EEST 2015]; root of context hierarchy
+2015-07-03 14:10:44,515 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [hw7/springnotes/context.xml]
+2015-07-03 14:10:46,481 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 14:10:46,489 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 14:10:46,492 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-03 14:10:46,494 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-03 14:10:47,356 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-03 14:10:47,735 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 14:10:47,741 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 14:10:47,811 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-03 14:10:48,281 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-03 14:10:48,282 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-03 14:10:48,332 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-03 14:10:48,424 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-07-03 14:10:48,425 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor_vendor_id, mem_size]
+2015-07-03 14:10:48,425 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_2alrsx46b0t4lr4bq37i15sgb]
+2015-07-03 14:10:48,425 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004473]
+2015-07-03 14:10:48,444 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-07-03 14:10:48,444 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-07-03 14:10:48,445 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-07-03 14:10:48,445 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004475]
+2015-07-03 14:10:48,462 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-07-03 14:10:48,462 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_vendor_id, processor_id, model, frequency]
+2015-07-03 14:10:48,462 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pxybs2vg7vey0bxqbp14e7ty4]
+2015-07-03 14:10:48,462 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004477]
+2015-07-03 14:10:48,480 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-07-03 14:10:48,480 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-07-03 14:10:48,481 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-07-03 14:10:48,481 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004479]
+2015-07-03 14:10:48,500 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-07-03 14:10:48,501 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-07-03 14:10:48,501 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-07-03 14:10:48,501 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004481]
+2015-07-03 14:10:48,517 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-07-03 14:10:48,518 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-07-03 14:10:48,518 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-03 14:10:48,518 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004483]
+2015-07-03 14:10:48,519 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-03 14:10:48,700 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@7577b641] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 14:12:37,403 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Fri Jul 03 14:12:37 EEST 2015]; root of context hierarchy
+2015-07-03 14:12:37,545 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [hw7/springnotes/context.xml]
+2015-07-03 14:12:39,608 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 14:12:39,620 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 14:12:39,624 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-03 14:12:39,627 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-03 14:12:40,416 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-03 14:12:40,830 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 14:12:40,838 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 14:12:40,939 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-03 14:12:41,421 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-03 14:12:41,421 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-03 14:12:41,462 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-03 14:12:41,540 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-07-03 14:12:41,540 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor_vendor_id, mem_size]
+2015-07-03 14:12:41,540 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_2alrsx46b0t4lr4bq37i15sgb]
+2015-07-03 14:12:41,540 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004473]
+2015-07-03 14:12:41,555 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-07-03 14:12:41,555 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-07-03 14:12:41,556 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-07-03 14:12:41,556 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004475]
+2015-07-03 14:12:41,573 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-07-03 14:12:41,573 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_vendor_id, processor_id, model, frequency]
+2015-07-03 14:12:41,573 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pxybs2vg7vey0bxqbp14e7ty4]
+2015-07-03 14:12:41,574 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004477]
+2015-07-03 14:12:41,592 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-07-03 14:12:41,592 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-07-03 14:12:41,592 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-07-03 14:12:41,592 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004479]
+2015-07-03 14:12:41,609 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-07-03 14:12:41,609 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-07-03 14:12:41,609 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-07-03 14:12:41,609 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004481]
+2015-07-03 14:12:41,622 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-07-03 14:12:41,622 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-07-03 14:12:41,622 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-03 14:12:41,622 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004483]
+2015-07-03 14:12:41,623 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-03 14:12:41,751 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@7577b641] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 14:17:03,791 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Fri Jul 03 14:17:03 EEST 2015]; root of context hierarchy
+2015-07-03 14:17:03,963 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [hw7/springnotes/context.xml]
+2015-07-03 14:17:06,122 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 14:17:06,133 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 14:17:06,137 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-03 14:17:06,140 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-03 14:17:06,817 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-03 14:17:07,188 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 14:17:07,194 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 14:17:07,255 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-03 14:17:07,720 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-03 14:17:07,720 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-03 14:17:07,761 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-03 14:17:07,851 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-07-03 14:17:07,852 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor_vendor_id, mem_size]
+2015-07-03 14:17:07,852 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_2alrsx46b0t4lr4bq37i15sgb]
+2015-07-03 14:17:07,852 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004473]
+2015-07-03 14:17:07,867 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-07-03 14:17:07,867 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-07-03 14:17:07,867 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-07-03 14:17:07,867 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004475]
+2015-07-03 14:17:07,880 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-07-03 14:17:07,880 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_vendor_id, processor_id, model, frequency]
+2015-07-03 14:17:07,881 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pxybs2vg7vey0bxqbp14e7ty4]
+2015-07-03 14:17:07,881 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004477]
+2015-07-03 14:17:07,896 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-07-03 14:17:07,896 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-07-03 14:17:07,896 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-07-03 14:17:07,896 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004479]
+2015-07-03 14:17:07,910 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-07-03 14:17:07,911 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-07-03 14:17:07,911 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-07-03 14:17:07,911 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004481]
+2015-07-03 14:17:07,925 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-07-03 14:17:07,926 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-07-03 14:17:07,926 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-03 14:17:07,926 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004483]
+2015-07-03 14:17:07,928 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-03 14:17:08,053 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@7577b641] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 14:17:42,830 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Fri Jul 03 14:17:42 EEST 2015]; root of context hierarchy
+2015-07-03 14:17:42,990 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [hw7/springnotes/context.xml]
+2015-07-03 14:17:45,281 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 14:17:45,297 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 14:17:45,300 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-03 14:17:45,305 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-03 14:17:46,056 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-03 14:17:46,397 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 14:17:46,403 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 14:17:46,465 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-03 14:17:46,939 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-03 14:17:46,939 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-03 14:17:47,009 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-03 14:17:47,128 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-07-03 14:17:47,128 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor_vendor_id, mem_size]
+2015-07-03 14:17:47,128 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_2alrsx46b0t4lr4bq37i15sgb]
+2015-07-03 14:17:47,128 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004473]
+2015-07-03 14:17:47,179 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-07-03 14:17:47,180 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-07-03 14:17:47,180 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-07-03 14:17:47,180 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004475]
+2015-07-03 14:17:47,199 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-07-03 14:17:47,199 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_vendor_id, processor_id, model, frequency]
+2015-07-03 14:17:47,199 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pxybs2vg7vey0bxqbp14e7ty4]
+2015-07-03 14:17:47,199 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004477]
+2015-07-03 14:17:47,218 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-07-03 14:17:47,218 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-07-03 14:17:47,218 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-07-03 14:17:47,218 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004479]
+2015-07-03 14:17:47,236 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-07-03 14:17:47,237 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-07-03 14:17:47,237 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-07-03 14:17:47,237 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004481]
+2015-07-03 14:17:47,252 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-07-03 14:17:47,253 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-07-03 14:17:47,253 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-03 14:17:47,253 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004483]
+2015-07-03 14:17:47,254 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-03 14:17:47,410 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@7577b641] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 14:17:54,704 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Fri Jul 03 14:17:54 EEST 2015]; root of context hierarchy
+2015-07-03 14:17:54,863 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [hw7/springnotes/context.xml]
+2015-07-03 14:17:57,244 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 14:17:57,258 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 14:17:57,261 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-03 14:17:57,264 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-03 14:17:57,870 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-03 14:17:58,249 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 14:17:58,255 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 14:17:58,322 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-03 14:17:58,774 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-03 14:17:58,774 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-03 14:17:58,830 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-03 14:17:58,919 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-07-03 14:17:58,919 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor_vendor_id, mem_size]
+2015-07-03 14:17:58,919 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_2alrsx46b0t4lr4bq37i15sgb]
+2015-07-03 14:17:58,919 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004473]
+2015-07-03 14:17:58,934 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-07-03 14:17:58,935 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-07-03 14:17:58,935 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-07-03 14:17:58,935 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004475]
+2015-07-03 14:17:58,949 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-07-03 14:17:58,949 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_vendor_id, processor_id, model, frequency]
+2015-07-03 14:17:58,949 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pxybs2vg7vey0bxqbp14e7ty4]
+2015-07-03 14:17:58,950 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004477]
+2015-07-03 14:17:58,963 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-07-03 14:17:58,963 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-07-03 14:17:58,964 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-07-03 14:17:58,964 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004479]
+2015-07-03 14:17:58,977 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-07-03 14:17:58,978 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-07-03 14:17:58,978 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-07-03 14:17:58,978 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004481]
+2015-07-03 14:17:59,016 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-07-03 14:17:59,016 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-07-03 14:17:59,016 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-03 14:17:59,016 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004483]
+2015-07-03 14:17:59,018 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-03 14:17:59,205 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@7577b641] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 14:18:18,323 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Fri Jul 03 14:18:18 EEST 2015]; root of context hierarchy
+2015-07-03 14:18:18,452 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [hw7/springnotes/context.xml]
+2015-07-03 14:18:20,449 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 14:18:20,459 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 14:18:20,462 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-03 14:18:20,465 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-03 14:18:21,246 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-03 14:18:21,624 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 14:18:21,630 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 14:18:21,712 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-03 14:18:22,224 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-03 14:18:22,225 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-03 14:18:22,276 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-03 14:18:22,374 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-07-03 14:18:22,374 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor_vendor_id, mem_size]
+2015-07-03 14:18:22,374 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_2alrsx46b0t4lr4bq37i15sgb]
+2015-07-03 14:18:22,374 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004473]
+2015-07-03 14:18:22,390 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-07-03 14:18:22,391 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-07-03 14:18:22,391 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-07-03 14:18:22,391 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004475]
+2015-07-03 14:18:22,408 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-07-03 14:18:22,408 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_vendor_id, processor_id, model, frequency]
+2015-07-03 14:18:22,408 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pxybs2vg7vey0bxqbp14e7ty4]
+2015-07-03 14:18:22,408 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004477]
+2015-07-03 14:18:22,429 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-07-03 14:18:22,429 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-07-03 14:18:22,429 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-07-03 14:18:22,429 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004479]
+2015-07-03 14:18:22,450 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-07-03 14:18:22,451 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-07-03 14:18:22,451 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-07-03 14:18:22,451 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004481]
+2015-07-03 14:18:22,468 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-07-03 14:18:22,468 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-07-03 14:18:22,468 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-03 14:18:22,468 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004483]
+2015-07-03 14:18:22,470 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-03 14:18:22,779 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@7577b641] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 14:21:08,085 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11028347: startup date [Fri Jul 03 14:21:08 EEST 2015]; root of context hierarchy
+2015-07-03 14:21:08,191 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [hw7/springnotes/context.xml]
+2015-07-03 14:21:10,284 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 14:21:10,294 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 14:21:10,297 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-03 14:21:10,300 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-03 14:21:11,010 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-03 14:21:11,374 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 14:21:11,379 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 14:21:11,441 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-03 14:21:11,911 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-03 14:21:11,911 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-03 14:21:11,966 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-03 14:21:12,062 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.MEMORIES
+2015-07-03 14:21:12,062 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_id, vendor_vendor_id, mem_size]
+2015-07-03 14:21:12,063 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_2alrsx46b0t4lr4bq37i15sgb]
+2015-07-03 14:21:12,063 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004473]
+2015-07-03 14:21:12,081 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.NOTEBOOKS_2
+2015-07-03 14:21:12,081 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [memory_memory_id, vendor_vendor_id, model, cpu_processor_id, notebook_id, manufact_date]
+2015-07-03 14:21:12,082 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jec1k0kce2gobvoidworkq6m7, fk_2ua3uawox0yao4o06sm34in3j, fk_scmrkle4kdaq6dpmf761i43e3]
+2015-07-03 14:21:12,082 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004475]
+2015-07-03 14:21:12,098 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.PROCESSORS
+2015-07-03 14:21:12,098 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_vendor_id, processor_id, model, frequency]
+2015-07-03 14:21:12,098 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_pxybs2vg7vey0bxqbp14e7ty4]
+2015-07-03 14:21:12,099 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004477]
+2015-07-03 14:21:12,115 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.SALES
+2015-07-03 14:21:12,115 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [sale_id, store_store_id, sale_date, count]
+2015-07-03 14:21:12,116 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jdgvvku1bij83u1p6bo4fs01h]
+2015-07-03 14:21:12,116 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004479]
+2015-07-03 14:21:12,144 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.STORES
+2015-07-03 14:21:12,144 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [store_id, notebook_notebook_id, price, count]
+2015-07-03 14:21:12,145 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_s21o0to76mwfd5o2r9cylql8r]
+2015-07-03 14:21:12,145 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004481]
+2015-07-03 14:21:12,162 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: CONN.VENDORS
+2015-07-03 14:21:12,163 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, name]
+2015-07-03 14:21:12,163 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-03 14:21:12,163 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004483]
+2015-07-03 14:21:12,164 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-03 14:21:12,319 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@7577b641] of Hibernate SessionFactory for HibernateTransactionManager
