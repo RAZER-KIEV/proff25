@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
 import java.util.*;
 
 /**
@@ -155,7 +156,7 @@ public class NotebookServiceImpl implements NotebookService {
 
         for(int i = 0; i < list.size(); i++) {
             Object[] obj = (Object[]) list.get(i);
-            result.put((Date)obj[0], (Double)obj[1]);
+            result.put((Date) obj[0], (Double) obj[1]);
         }
         return result;
     }
@@ -184,5 +185,10 @@ public class NotebookServiceImpl implements NotebookService {
     public boolean removeFromStore(Store store, int amount) {
         store.setAmount(store.getAmount() - amount);
         return storeDao.update(store);
+    }
+
+    @Override
+    public Long receive(Notebook note, int amount, double price) {
+        return storeDao.create(new Store(note.getVendor(), new BigDecimal(price), amount));
     }
 }
