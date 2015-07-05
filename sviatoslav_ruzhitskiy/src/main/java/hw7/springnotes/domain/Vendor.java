@@ -30,4 +30,5 @@ public class Vendor {
     public String getName(){
         return name;
     }
+
 }

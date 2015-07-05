@@ -1,89 +1,34 @@
 package hw7.springnotes.service;
 
-import hw7.springnotes.dao.*;
+
+
+import hw7.springnotes.dao.CPUDaoImpl;
+import hw7.springnotes.dao.MemoryDaoImpl;
+import hw7.springnotes.dao.NotebookDaoImpl;
+import hw7.springnotes.dao.SalesDaoImpl;
+import hw7.springnotes.dao.StoreDaoImpl;
+import hw7.springnotes.dao.VendorDaoImpl;
 import org.apache.log4j.Logger;
+import org.apache.xbean.spring.context.ClassPathXmlApplicationContext;
 import org.hibernate.SessionFactory;
-import org.hibernate.boot.registry.StandardServiceRegistry;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.cfg.Configuration;
+import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Locale;
 
 /**
  * Created by ПК on 25.06.2015.
  */
+
 public class Menu {
+}
 
 
 
-    //public static Notebook getNotebook(){return notebook;}
-
-    private Logger log = Logger.getLogger(Menu.class);
-    private NotebookServiceImpl notebookService;
-    private SessionFactory factory;
-    private NotebookDaoImpl notebookDao;
-    private CPUDaoImpl cpuDao;
-    private MemoryDaoImpl memoryDao;
-    private VendorDaoImpl vendorDao;
-    private StoreDaoImpl storeDao;
-    private SalesDaoImpl salesDao;
-    private static Menu instance;
 
 
-
-    private Menu(){}
-
-    public static Menu getMenuInstance(){
-        if(instance ==null){
-        instance = new Menu();
-         return instance;
-    }
-         return instance;
-    }
-
-    public void init(){
-        Locale.setDefault(Locale.ENGLISH);
-        Configuration cfg = new Configuration().configure("session10/hibernate2.cfg.xml");
-        StandardServiceRegistryBuilder sb = new StandardServiceRegistryBuilder();
-        sb.applySettings(cfg.getProperties());
-        StandardServiceRegistry standardServiceRegistry = sb.build();
-        factory = cfg.buildSessionFactory(standardServiceRegistry);
-        log.info("Reference to SessionFactory " + factory);
-        notebookService = new NotebookServiceImpl();
-        notebookDao= new NotebookDaoImpl(factory);
-        cpuDao = new CPUDaoImpl(factory);
-        memoryDao = new MemoryDaoImpl(factory);
-        vendorDao = new VendorDaoImpl(factory);
-        storeDao =new StoreDaoImpl(factory);
-        salesDao = new SalesDaoImpl(factory);
-
-
-    }
-    public NotebookServiceImpl getNotebookService() {
-        return notebookService;
-    }
-    public SessionFactory getSessionFactory(){
-        return  factory;
-    }
-    public NotebookDaoImpl getNotebookDao(){
-        return notebookDao;
-    }
-    public CPUDaoImpl getCpuDao(){
-        return cpuDao;
-    }
-    public MemoryDaoImpl getMemoryDao(){
-        return  memoryDao;
-    }
-    public VendorDaoImpl getVendorDao() {
-        return vendorDao;
-    }
-    public StoreDaoImpl getStoreDao(){
-       return storeDao;
-    }
-    public SalesDaoImpl getSalesDao(){
-        return salesDao;
-    }
-    }
 
 
 

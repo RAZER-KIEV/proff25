@@ -6,6 +6,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,11 +15,11 @@ import java.util.List;
 /**
  * Created by ПК on 25.06.2015.
  */
-@Repository
-@Transactional
 
+@Repository
 public class CPUDaoImpl implements CPUDao {
-   // @Autowired
+
+    @Autowired
     private SessionFactory sessionFactory;
 
     public CPUDaoImpl(){}
@@ -28,69 +29,37 @@ public class CPUDaoImpl implements CPUDao {
     }
 
     @Override
-    public Long create(CPU cpu) { return
+    public Long create(CPU cpu) {
+        System.out.println(sessionFactory);
+        Long id = (Long) sessionFactory.getCurrentSession().save(cpu);
+        return id;
     }
 
     @Override
+   // @Transactional( readOnly = true)
     public CPU read(Long id) {
-        Session session = sessionFactory.openSession();
-        CPU cpu = null;
-        try {
-            cpu = (CPU) session.get(CPU.class,id);
-        }catch (HibernateException hEx){
-            System.out.println("Exception: Not readed!");
-            hEx.printStackTrace();
-        }finally {
-            if (session != null) {
-                session.close();
-            }
-        }
+        CPU cpu = (CPU) sessionFactory.getCurrentSession().get(CPU.class, id);
         return cpu;
     }
 
     @Override
     public boolean update(CPU cpu) {
-        Session session = sessionFactory.openSession();
-        boolean upres = false;
-        try {
-            session.beginTransaction();
-            session.update(cpu);
-            session.getTransaction().commit();
-            upres = true;
-        }catch (HibernateException hEx){
-            session.getTransaction().rollback();
-            System.out.println("Exception: Not updated!");
-            hEx.printStackTrace();
-        }finally {
-            if (session != null) {
-                session.close();
-            }
-        }
-        return upres;
+        boolean upres;
+        sessionFactory.getCurrentSession().save(cpu);
+        if(read(cpu.getId()).equals(cpu)) return  true;
+        else return false;
+
 
     }
 
     @Override
     public boolean delete(CPU cpu) {
-        Session session = sessionFactory.openSession();
-        boolean res;
-        try {
-            session.beginTransaction();
-            session.delete(cpu);
-            session.getTransaction().commit();
-            res = true;
-        }catch (HibernateException hEx){
-            session.getTransaction().rollback();
-            System.out.println("Exception: Not deleted!");
-            hEx.printStackTrace();
-            res = false;
-        }finally {
-            if (session !=null)
-                session.close();
-        }
-        return res;
-    }
+    sessionFactory.getCurrentSession().delete(cpu);
+        if(read(cpu.getId())==(cpu)) return  false;
+        else return true;
 
+    }
+   // @Transactional(readOnly = true)
     @Override
     public List findAll() {
         Session session = sessionFactory.openSession();

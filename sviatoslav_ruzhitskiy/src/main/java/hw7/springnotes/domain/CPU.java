@@ -7,7 +7,7 @@ import javax.persistence.*;
 /**
  * Created by ПК on 25.06.2015.
  */
-@Component
+
 @Entity
 @Table(name="CPUs")
 public class CPU {
@@ -43,6 +43,19 @@ public class CPU {
     public String getCpuModel() {
         return cpuModel;
     }
+
+    public void setCpuVendor(Vendor cpuVendor) {
+        this.cpuVendor = cpuVendor;
+    }
+
+    public void setFrequency(Integer frequency) {
+        this.frequency = frequency;
+    }
+
+    public void setCpuModel(String cpuModel) {
+        this.cpuModel = cpuModel;
+    }
+
     public String toString(){
         return "CPU. id-> "+id+"; freq-> "+frequency+" CPU_vendor -> "+cpuVendor+"  Model -> "+cpuModel;
     }

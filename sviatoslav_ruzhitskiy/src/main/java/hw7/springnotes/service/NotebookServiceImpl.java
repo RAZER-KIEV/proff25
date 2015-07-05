@@ -1,8 +1,11 @@
 package hw7.springnotes.service;
 
-import hw7.springnotes.dao.SalesDaoImpl;
-import hw7.springnotes.dao.StoreDaoImpl;
+import hw7.springnotes.dao.*;
 import hw7.springnotes.domain.*;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,17 +18,82 @@ import java.util.Map;
  * Created by ПК on 25.06.2015.
  */
 @Service
-@Transactional
-
+//@Transactional
 public class NotebookServiceImpl implements NotebookService {
-    Menu menu = Menu.getMenuInstance();
+
+    @Autowired
+    private SessionFactory factory;
+    @Autowired
+    private NotebookDaoImpl notebookDao;
+    @Autowired
+    private CPUDaoImpl cpuDao;
+    @Autowired
+    private MemoryDaoImpl memoryDao;
+    @Autowired
+    private VendorDaoImpl vendorDao;
+    @Autowired
+    private StoreDaoImpl storeDao;
+    @Autowired
     private SalesDaoImpl salesDao;
 
-    private StoreDaoImpl storeDao;
+    public SessionFactory getFactory() {
+        return factory;
+    }
 
-     public NotebookServiceImpl(){
-         salesDao = menu.getSalesDao();
-         storeDao = menu.getStoreDao();
+    public void setFactory(SessionFactory factory) {
+        this.factory = factory;
+    }
+
+    public NotebookDaoImpl getNotebookDao() {
+        return notebookDao;
+    }
+
+    public void setNotebookDao(NotebookDaoImpl notebookDao) {
+        this.notebookDao = notebookDao;
+    }
+
+    public CPUDaoImpl getCpuDao() {
+        return cpuDao;
+    }
+
+    public void setCpuDao(CPUDaoImpl cpuDao) {
+        this.cpuDao = cpuDao;
+    }
+
+    public MemoryDaoImpl getMemoryDao() {
+        return memoryDao;
+    }
+
+    public void setMemoryDao(MemoryDaoImpl memoryDao) {
+        this.memoryDao = memoryDao;
+    }
+
+    public VendorDaoImpl getVendorDao() {
+        return vendorDao;
+    }
+
+    public void setVendorDao(VendorDaoImpl vendorDao) {
+        this.vendorDao = vendorDao;
+    }
+
+    public StoreDaoImpl getStoreDao() {
+        return storeDao;
+    }
+
+    public void setStoreDao(StoreDaoImpl storeDao) {
+        this.storeDao = storeDao;
+    }
+
+    public SalesDaoImpl getSalesDao() {
+        return salesDao;
+    }
+
+    public void setSalesDao(SalesDaoImpl salesDao) {
+        this.salesDao = salesDao;
+    }
+
+    public NotebookServiceImpl(){
+
 
      }
 
@@ -37,14 +105,14 @@ public class NotebookServiceImpl implements NotebookService {
      }
     @Override
     public Long receive(Long id, int amount, double price){
-        Notebook notebook = menu.getNotebookDao().read(id);
+        Notebook notebook = notebookDao.read(id);
         Store store = new Store(notebook,amount,price);
         Long id2 = storeDao.create(store);
         return id2;
     }
     @Override
     public Long sale(Long storeId, int amount){
-        Store store = menu.getStoreDao().read(storeId);
+        Store store = storeDao.read(storeId);
         Integer curAmount = store.getQuantity();
         Integer newAmount = curAmount-amount;
         store.setQuantity(newAmount);
@@ -57,22 +125,22 @@ public class NotebookServiceImpl implements NotebookService {
 
     @Override
     public boolean updateCPU(CPU cpu) {
-        return menu.getCpuDao().update(cpu);
+        return cpuDao.update(cpu);
     }
 
     @Override
     public boolean updateMemory(Memory memory) {
-        return menu.getMemoryDao().update(memory);
+        return memoryDao.update(memory);
     }
 
     @Override
     public boolean updateVendor(Vendor vendor) {
-        return menu.getVendorDao().update(vendor);
+        return vendorDao.update(vendor);
     }
 
     @Override
     public boolean updateNotebook(Notebook notebook) {
-        return menu.getNotebookDao().update(notebook);
+        return notebookDao.update(notebook);
     }
 
     @Override
@@ -80,38 +148,36 @@ public class NotebookServiceImpl implements NotebookService {
 
         Integer newQuant = store.getQuantity()-amount;
         store.setQuantity(newQuant);
-        return menu.getStoreDao().update(store);
+        return storeDao.update(store);
     }
 
     @Override
     public List getNotebooksByPortion(int size) {
-        return menu.getStoreDao().getNotebooksByPortion(size);
+        return storeDao.getNotebooksByPortion(size);
     }
 
     @Override
     public List getNotebooksGtAmount(int amount) {
-        return menu.getStoreDao().getNotebooksGtAmount(amount);
+        return storeDao.getNotebooksGtAmount(amount);
     }
 
     @Override
     public List getNotebooksByCpuVendor(Vendor cpuVendor) {
-        return menu.getStoreDao().getNotebooksByCpuVendor(cpuVendor);
+        return storeDao.getNotebooksByCpuVendor(cpuVendor);
     }
 
     @Override
     public List getNotebooksFromStore() {
-        return menu.getStoreDao().getNotebooksFromStore();
+        return storeDao.getNotebooksFromStore();
     }
 
     @Override
     public Map getNotebooksStorePresent() {
-        return menu.getStoreDao().getNotebooksStorePresent();
+        return storeDao.getNotebooksStorePresent();
     }
 
     @Override
-    public Map getSalesByDays() {
-        return menu.getSalesDao().getSalesByDays();
-    }
+    public Map getSalesByDays() { return salesDao.getSalesByDays(); }
 
 
 }

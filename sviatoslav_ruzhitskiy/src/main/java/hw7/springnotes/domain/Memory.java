@@ -7,7 +7,7 @@ import javax.persistence.*;
 /**
  * Created by ПК on 25.06.2015.
  */
-@Component
+
 @Entity
 @Table(name = "MEM")
 public class Memory {

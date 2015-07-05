@@ -8,12 +8,14 @@ import hw7.notes.service.Menu;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by ПК on 26.06.2015.
  */
 public class Launcher {
     public static void main(String[] args) {
+        Locale.setDefault(Locale.ENGLISH);
         Menu menu= Menu.getMenuInstance();
         menu.init();
         Vendor vendor = new Vendor("ASUS");
