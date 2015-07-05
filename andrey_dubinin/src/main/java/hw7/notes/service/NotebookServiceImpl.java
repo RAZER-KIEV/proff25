@@ -7,7 +7,7 @@ import hw7.notes.domain.Notebook;
  */
 public class NotebookServiceImpl implements NotebookService {
     @Override
-    public Long recieve(Notebook note, int amount, double price) {
+    public Long receive(Notebook note, int amount, double price) {
         return null;
     }
 

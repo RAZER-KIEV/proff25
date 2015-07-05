@@ -59,7 +59,7 @@ public class StoreDaoImpl implements StoreDao{
     }
 
     @Override
-    public Boolean update(Store store) {
+    public boolean update(Store store) {
         Session session = sessionFactory.openSession();
         try{
             session.beginTransaction();
@@ -75,7 +75,7 @@ public class StoreDaoImpl implements StoreDao{
     }
 
     @Override
-    public Boolean delete(Store store) {
+    public boolean delete(Store store) {
         Session session = sessionFactory.openSession();
         try{
             session.beginTransaction();

@@ -57,7 +57,7 @@ public class VendorDaoImpl implements VendorDao {
     }
 
     @Override
-    public Boolean update(Vendor vendor) {
+    public boolean update(Vendor vendor) {
         Session session = sessionFactory.openSession();
         try{
             session.beginTransaction();
@@ -73,7 +73,7 @@ public class VendorDaoImpl implements VendorDao {
     }
 
     @Override
-    public Boolean delete(Vendor vendor) {
+    public boolean delete(Vendor vendor) {
         Session session = sessionFactory.openSession();
         try{
             session.beginTransaction();

@@ -10,7 +10,7 @@ import java.util.List;
 public interface StoreDao {
     Long create(Store store);
     Store read(Long id);
-    Boolean update(Store store);
-    Boolean delete(Store store);
+    boolean update(Store store);
+    boolean delete(Store store);
     List findAll();
 }

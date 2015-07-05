@@ -57,7 +57,7 @@ public class SalesDaoImpl implements SalesDao  {
     }
 
     @Override
-    public Boolean update(Sales sales) {
+    public boolean update(Sales sales) {
         Session session = sessionFactory.openSession();
         try{
             session.beginTransaction();
@@ -73,7 +73,7 @@ public class SalesDaoImpl implements SalesDao  {
     }
 
     @Override
-    public Boolean delete(Sales sales) {
+    public boolean delete(Sales sales) {
         Session session = sessionFactory.openSession();
         try{
             session.beginTransaction();

@@ -10,7 +10,7 @@ import java.util.List;
 public interface CPUDao {
     Long create(CPU cpu);
     CPU read(Long id);
-    Boolean update(CPU cpu);
-    Boolean delete(CPU cpu);
+    boolean update(CPU cpu);
+    boolean delete(CPU cpu);
     List findAll();
 }

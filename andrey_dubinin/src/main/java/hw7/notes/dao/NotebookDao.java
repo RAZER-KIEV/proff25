@@ -10,7 +10,7 @@ import java.util.List;
 public interface NotebookDao {
     Long create(Notebook notebook);
     Notebook read(Long id);
-    Boolean update(Notebook notebook);
-    Boolean delete(Notebook notebook);
+    boolean update(Notebook notebook);
+    boolean delete(Notebook notebook);
     List findAll();
 }

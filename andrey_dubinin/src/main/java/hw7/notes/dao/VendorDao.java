@@ -10,7 +10,7 @@ import java.util.List;
 public interface VendorDao {
     Long create(Vendor vendor);
     Vendor read(Long id);
-    Boolean update(Vendor vendor);
-    Boolean delete(Vendor vendor);
+    boolean update(Vendor vendor);
+    boolean delete(Vendor vendor);
     List findAll();
 }

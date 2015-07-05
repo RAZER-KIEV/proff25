@@ -58,7 +58,7 @@ public class NotebookDaoImpl implements NotebookDao {
     }
 
     @Override
-    public Boolean update(Notebook notebook) {
+    public boolean update(Notebook notebook) {
         Session session = sessionFactory.openSession();
         try{
             session.beginTransaction();
@@ -74,7 +74,7 @@ public class NotebookDaoImpl implements NotebookDao {
     }
 
     @Override
-    public Boolean delete(Notebook notebook) {
+    public boolean delete(Notebook notebook) {
         Session session = sessionFactory.openSession();
         try{
             session.beginTransaction();

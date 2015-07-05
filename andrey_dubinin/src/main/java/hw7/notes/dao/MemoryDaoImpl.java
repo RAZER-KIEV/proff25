@@ -58,7 +58,7 @@ public class MemoryDaoImpl implements MemoryDao{
     }
 
     @Override
-    public Boolean update(Memory memory) {
+    public boolean update(Memory memory) {
         Session session = sessionFactory.openSession();
         try{
             session.beginTransaction();
@@ -74,7 +74,7 @@ public class MemoryDaoImpl implements MemoryDao{
     }
 
     @Override
-    public Boolean delete(Memory memory) {
+    public boolean delete(Memory memory) {
         Session session = sessionFactory.openSession();
         try{
             session.beginTransaction();
