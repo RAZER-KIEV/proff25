@@ -1,23 +1,28 @@
-package hw7.notes.dao;
+package hw7.springnotes.dao;
 
-import hw7.notes.domain.Notebook;
-import hw7.notes.domain.Store;
-import hw7.notes.domain.Vendor;
+import hw7.springnotes.domain.Notebook;
+import hw7.springnotes.domain.Store;
+import hw7.springnotes.domain.Vendor;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by ПК on 25.06.2015.
  */
 
 @Repository
-public class StoreDaoImpl implements StoreDao{
+public class StoreDaoImpl implements StoreDao {
+
     @Autowired
     private SessionFactory sessionFactory;
 

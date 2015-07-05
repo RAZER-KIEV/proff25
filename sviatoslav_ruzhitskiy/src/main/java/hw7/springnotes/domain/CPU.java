@@ -1,4 +1,6 @@
-package hw7.notes.domain;
+package hw7.springnotes.domain;
+
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 
@@ -41,6 +43,19 @@ public class CPU {
     public String getCpuModel() {
         return cpuModel;
     }
+
+    public void setCpuVendor(Vendor cpuVendor) {
+        this.cpuVendor = cpuVendor;
+    }
+
+    public void setFrequency(Integer frequency) {
+        this.frequency = frequency;
+    }
+
+    public void setCpuModel(String cpuModel) {
+        this.cpuModel = cpuModel;
+    }
+
     public String toString(){
         return "CPU. id-> "+id+"; freq-> "+frequency+" CPU_vendor -> "+cpuVendor+"  Model -> "+cpuModel;
     }
