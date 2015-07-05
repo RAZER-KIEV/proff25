@@ -136,13 +136,16 @@ public class NotebookServiceImpl implements NotebookService {
     @Override
     public Map<Date, Double> getSalesByDays() {
         Session session = factory.openSession();
-        Map<Date, Double> map = new TreeMap<>();
+        Map<Date, Double> result = new TreeMap<>();
+
         Query query = session.createQuery("select c.date, avg (c.amount) from Sales c join c.store p group by c.date");
         List list = query.list();
+
         for(int i = 0; i < list.size(); i++) {
             Object[] obj = (Object[]) list.get(i);
-            map.put((Date)obj[0], (Double)obj[1]);
+            result.put((Date) obj[0], (Double) obj[1]);
         }
-        return map;
+
+        return result;
     }
 }
