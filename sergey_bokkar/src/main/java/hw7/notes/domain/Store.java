@@ -23,11 +23,11 @@ public class Store {
     private Notebook notebook;
 
     @Column(name = "store_quantity")
-    private Long quantity;
+    private Integer quantity;
 
     public Store(){}
 
-    public Store(Double price, Long quantity, Notebook ntb){
+    public Store(Double price, Integer quantity, Notebook ntb){
         this.price = price;
         this.quantity = quantity;
         notebook = ntb;
@@ -53,11 +53,11 @@ public class Store {
         this.notebook = notebook;
     }
 
-    public Long getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Long quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 }

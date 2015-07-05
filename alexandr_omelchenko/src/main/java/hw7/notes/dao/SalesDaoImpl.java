@@ -1,6 +1,7 @@
 package hw7.notes.dao;
 
 import hw7.notes.domain.Sales;
+import hw7.notes.domain.Store;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -94,8 +95,8 @@ public class SalesDaoImpl implements SalesDao {
         Map map = new TreeMap<>();
         Session session = factory.openSession();
         List<Object>list;
-        Query query =session.createQuery("select s.saleDate, avg(s.count) from Sales s group by s.saleDate");
-        //Query query =session.createQuery("select s.saleDate, sum(c.price*s.count)/count(s.saleDate) from Sales s, Store c where s.stor=c group by s.saleDate");
+        //Query query =session.createQuery("select s.saleDate, avg(s.count) from Sales s group by s.saleDate");
+        Query query =session.createQuery("select s.saleDate, sum(c.price*s.count) from Sales s, Store c where s.stor=c group by s.saleDate");
         list=query.list();
         for(int i=0; i<list.size(); i++){
         Object [] objV=(Object [])list.get(i);
