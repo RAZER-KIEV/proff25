@@ -188,7 +188,8 @@ public class NotebookServiceImpl implements NotebookService {
     }
 
     @Override
-    public Long receive(Notebook note, int amount, double price) {
+    public Long receive(Long noteId, int amount, double price) {
+        Notebook note = notebookDao.read(noteId);
         return storeDao.create(new Store(note.getVendor(), new BigDecimal(price), amount));
     }
 }
