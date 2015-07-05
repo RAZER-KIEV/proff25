@@ -2,10 +2,7 @@ package hw7.springnotes.service;
 
 import hw7.notes.domain.Vendor;
 import hw7.springnotes.dao.*;
-import hw7.springnotes.domain.CPU;
-import hw7.springnotes.domain.Memory;
-import hw7.springnotes.domain.Notebook;
-import hw7.springnotes.domain.Store;
+import hw7.springnotes.domain.*;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -191,5 +188,15 @@ public class NotebookServiceImpl implements NotebookService {
     public Long receive(Long noteId, int amount, double price) {
         Notebook note = notebookDao.read(noteId);
         return storeDao.create(new Store(note.getVendor(), new BigDecimal(price), amount));
+    }
+
+    @Override
+    public Long sale(Long storeId, int amount) {
+        Store store = storeDao.read(storeId);
+        int am = store.getAmount();
+        store.setAmount(am - amount);
+        salesDao.create(new Sales(store, new Date(), amount));
+        storeDao.update(store);
+        return storeId;
     }
 }

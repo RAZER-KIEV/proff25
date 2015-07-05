@@ -25,4 +25,5 @@ public interface NotebookService {
     boolean updateNotebook(Notebook notebook);
     boolean removeFromStore(Store store, int amount);
     Long receive(Long noteId, int amount, double price);
+    Long sale(Long storeId,int amount);
 }

@@ -1,6 +1,6 @@
 package hw7.springnotes.domain;
 
-import hw7.notes.domain.Store;
+import hw7.springnotes.domain.Store;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -19,7 +19,7 @@ public class Sales {
     @Column(name = "SALES_ID")
     private long id;
     @ManyToOne
-    private hw7.notes.domain.Store store;
+    private Store store;
     @Column(name = "DATE_OF_SALE")
     Date dateOfSale;
     Integer amount;
@@ -27,7 +27,7 @@ public class Sales {
     public Sales() {
     }
 
-    public Sales(hw7.notes.domain.Store store, Date dateOfSale, Integer amount) {
+    public Sales(Store store, Date dateOfSale, Integer amount) {
         this.store = store;
         this.dateOfSale = dateOfSale;
         this.amount = amount;
@@ -41,7 +41,7 @@ public class Sales {
         this.id = id;
     }
 
-    public hw7.notes.domain.Store getStore() {
+    public Store getStore() {
         return store;
     }
 
