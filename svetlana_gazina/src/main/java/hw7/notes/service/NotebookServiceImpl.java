@@ -7,9 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import java.math.BigDecimal;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Sveta on 6/26/2015.
@@ -112,12 +110,42 @@ public class NotebookServiceImpl implements NotebookService {
     }
 
     @Override
-    public List<Notebook> getNotebooksStorePresent() {
-        return null;
+    public Map<Vendor, List<Notebook>> getNotebooksStorePresent() {
+        Session session = factory.openSession();
+        try {
+            Query query = session.createQuery("select v from Store s, Notebook n, Vendor v where s.noteBook=n and n.vendor=v");
+            List res = query.list();
+            Set<Vendor> setVendor = new HashSet<>();
+            for (Iterator iter = res.iterator(); iter.hasNext();) {
+                setVendor.add((Vendor) iter.next());
+            }
+            Map<Vendor,List<Notebook>> longListMap = new HashMap<>();
+            for (Vendor vendor:setVendor){
+                Query query1 = session.createQuery("select n from Store s join s.noteBook n join n.vendor v where v.id=:id");
+                query1.setParameter("id", vendor.getId());
+                longListMap.put(vendor,query1.list());
+            }
+            return longListMap;
+        }finally {
+            if (session!=null){
+                session.close();
+            }
+        }
     }
 
     @Override
-    public Map<Notebook, Integer> getSalesByDays() {
-        return null;
+    public Map<Date, Double> getSalesByDays() {
+        Session session = factory.openSession();
+        Map<Date, Double> result = new TreeMap<>();
+
+        Query query = session.createQuery("select c.date, avg (c.amount) from Sales c join c.store p group by c.date");
+        List list = query.list();
+
+        for(int i = 0; i < list.size(); i++) {
+            Object[] obj = (Object[]) list.get(i);
+            result.put((Date) obj[0], (Double) obj[1]);
+        }
+
+        return result;
     }
 }

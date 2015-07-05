@@ -1,12 +1,13 @@
-package hw7.notes.dao;
+package hw7.springnotes.dao;
 
-import hw7.notes.domain.Memory;
+import hw7.springnotes.domain.Vendor;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -15,25 +16,22 @@ import java.util.List;
  */
 
 @Repository
-public class MemoryDaoImpl implements MemoryDao {
+public class VendorDaoImpl implements VendorDao {
 
     @Autowired
     private SessionFactory sessionFactory;
 
-    public MemoryDaoImpl(){}
-
-    public MemoryDaoImpl(SessionFactory sf) {
-        sessionFactory = sf;
+    public VendorDaoImpl(){}
+    public VendorDaoImpl(SessionFactory sf){
+        sessionFactory=sf;
     }
-
-
     @Override
-    public Long create(Memory memory) {
+    public Long create(Vendor vendor) {
         Session session = sessionFactory.openSession();
         Long id = null;
         try {
             session.beginTransaction();
-            id = (Long) session.save(memory);
+            id = (Long) session.save(vendor);
             session.getTransaction().commit();
             return id;
         }catch (HibernateException hEx){
@@ -47,12 +45,13 @@ public class MemoryDaoImpl implements MemoryDao {
         }
         return id;
     }
+
     @Override
-    public Memory read(Long id) {
+    public Vendor read(Long id) {
         Session session = sessionFactory.openSession();
-        Memory memory = null;
+        Vendor nbk = null;
         try {
-            memory = (Memory) session.get(Memory.class,id);
+            nbk = (Vendor) session.get(Vendor.class,id);
         }catch (HibernateException hEx){
             System.out.println("Exception: Not readed!");
             hEx.printStackTrace();
@@ -61,15 +60,18 @@ public class MemoryDaoImpl implements MemoryDao {
                 session.close();
             }
         }
-        return memory;
+
+        return nbk;
+
     }
+
     @Override
-    public boolean update(Memory memory) {
+    public boolean update(Vendor vendor) {
         Session session = sessionFactory.openSession();
         boolean upres = false;
         try {
             session.beginTransaction();
-            session.update(memory);
+            session.update(vendor);
             session.getTransaction().commit();
             upres = true;
         }catch (HibernateException hEx){
@@ -82,15 +84,16 @@ public class MemoryDaoImpl implements MemoryDao {
             }
         }
         return upres;
+
     }
 
     @Override
-    public boolean delete(Memory memory) {
+    public boolean delete(Vendor vendor) {
         Session session = sessionFactory.openSession();
         boolean res;
         try {
             session.beginTransaction();
-            session.delete(memory);
+            session.delete(vendor);
             session.getTransaction().commit();
             res = true;
         }catch (HibernateException hEx){
@@ -108,7 +111,7 @@ public class MemoryDaoImpl implements MemoryDao {
     @Override
     public List findAll() {
         Session session = sessionFactory.openSession();
-        Query query = session.createQuery("FROM Memory");
+        Query query = session.createQuery("FROM Vendor");
         return query.list();
     }
 }

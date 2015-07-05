@@ -2,6 +2,7 @@ package hw7.notes.service;
 
 import hw7.notes.domain.*;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -20,6 +21,6 @@ public interface NotebookService {
     List<Notebook> getNotebooksGtAmount(int amount);
     List<Notebook> getNotebooksByCpuVendor(Vendor cpuVendor);
     List<Notebook> getNotebooksFromStore();
-    List<Notebook> getNotebooksStorePresent();
-    Map<Notebook, Integer> getSalesByDays();
+    public Map<Vendor, List<Notebook>> getNotebooksStorePresent();
+    Map<Date, Double> getSalesByDays();
 }
