@@ -4,8 +4,8 @@ import hw7.springnotes.domain.CPU;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
+
 @Repository
 public class CPUDaoImpl implements CPUDao {
     @Autowired
