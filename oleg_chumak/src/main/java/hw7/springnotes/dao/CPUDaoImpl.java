@@ -9,6 +9,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -17,7 +18,7 @@ import java.util.List;
  */
 @Repository
 public class CPUDaoImpl implements CPUDao {
-
+//    @Autowired
     private SessionFactory factory;
 
     public CPUDaoImpl(SessionFactory factory) {

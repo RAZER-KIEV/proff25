@@ -8,6 +8,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -16,7 +17,7 @@ import java.util.List;
  */
 @Repository
 public class VendorDaoImpl implements VendorDao {
-
+//    @Autowired
     private SessionFactory factory;
 
     public VendorDaoImpl(SessionFactory factory) {
@@ -33,7 +34,8 @@ public class VendorDaoImpl implements VendorDao {
 
     @Override
     public Vendor read(Long ig) {
-        return (Vendor)factory.getCurrentSession().get(Vendor.class, ig);
+        Session session = factory.getCurrentSession();
+        return (Vendor)session.get(Vendor.class, ig);
     }
 
     @Override
