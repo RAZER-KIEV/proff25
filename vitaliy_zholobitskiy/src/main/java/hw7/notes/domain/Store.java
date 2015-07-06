@@ -13,10 +13,10 @@ public class Store {
     @Id
     @SequenceGenerator(name = "sequence", sequenceName = "STORE_SEQ", initialValue = 1, allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
-    @ManyToOne
-    private Notebook notebook;
     @Column(name = "STORE_ID")
     private Long id;
+    @ManyToOne
+    private Notebook notebook;
     @Column(name = "COUNT")
     private Long count;
     @Column(name = "PRICE")

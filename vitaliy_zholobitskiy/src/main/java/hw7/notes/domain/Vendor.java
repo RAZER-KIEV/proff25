@@ -18,11 +18,11 @@ public class Vendor {
     private Long id;
     @Column(name = "NAME")
     private String name;
-    @OneToMany(mappedBy = "vendor_0",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "vendor",cascade = CascadeType.ALL)
     private Set<Notebook> ntbkSet = new HashSet<>();
-    @OneToMany(mappedBy = "vendor_1",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "vendor",cascade = CascadeType.ALL)
     private Set<CPU> cpuSet = new HashSet<>();
-    @OneToMany(mappedBy = "vendor_2",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "vendor",cascade = CascadeType.ALL)
     private Set<Memory> memorySet = new HashSet<>();
 
 

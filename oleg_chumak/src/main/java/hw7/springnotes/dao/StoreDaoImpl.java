@@ -20,7 +20,7 @@ import java.util.*;
  */
 @Repository
 public class StoreDaoImpl implements hw7.springnotes.dao.StoreDao {
-//    @Autowired
+    @Autowired(required = true)
     private SessionFactory factory;
 
     public StoreDaoImpl(SessionFactory factory) {
