@@ -1,4 +1,4 @@
-package week_lesson10;
+package week5_lesson10;
 
 import week5_lesson9.Region;
 

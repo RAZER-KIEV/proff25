@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 public class Person {
     @Value("Stefanchik")
     private String name;
+    @Value("${age}")
     private int age;
 
     public Person() {

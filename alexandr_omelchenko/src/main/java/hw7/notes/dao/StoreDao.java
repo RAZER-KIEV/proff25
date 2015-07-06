@@ -1,7 +1,10 @@
 package hw7.notes.dao;
 
 import hw7.notes.domain.Store;
+import hw7.notes.domain.Vendor;
+
 import java.util.List;
+import java.util.Map;
 
 public interface StoreDao {
     Long create(Store store);
@@ -9,4 +12,13 @@ public interface StoreDao {
     boolean update(Store store);
     boolean delete(Store store);
     List findAll();
+    List getNotebooksByPortion(int size);
+
+    List getNotebooksGtAmount(int amount);
+
+    List getNotebooksByCpuVendor(Vendor cpuVendor);
+
+    List getNotebooksFromStore();
+
+    Map getNotebooksStorePresent();
 }

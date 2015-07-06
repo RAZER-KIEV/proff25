@@ -12,6 +12,8 @@ public class CPU {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
     @Column(name = "PROCESSOR_ID")
     private Long id;
+    @ManyToOne
+    private Vendor vendor;
     @Column(name = "FREQUENCY")
     private Long frequency;
     @Column(name = "MODEL")
@@ -23,15 +25,25 @@ public class CPU {
 
     }
 
-    public CPU(Long frequency, String model) {
+    public CPU(Vendor vendor,Long frequency, String model) {
+        this.vendor = vendor;
         this.frequency = frequency;
         this.model = model;
     }
 
-    public CPU(Long id, Long frequency, String model) {
+    public CPU(Long id, Vendor vendor, Long frequency, String model) {
         this.id = id;
+        this.vendor = vendor;
         this.frequency = frequency;
         this.model = model;
+    }
+
+    public Vendor getVendor() {
+        return vendor;
+    }
+
+    public void setVendor(Vendor vendor) {
+        this.vendor = vendor;
     }
 
     public Long getId() {

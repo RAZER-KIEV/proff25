@@ -9,7 +9,7 @@ import java.util.Set;
 public class CPU {
 
     @Id
-    @SequenceGenerator(name="sequence", sequenceName="ID", allocationSize=1, initialValue =0)
+    @SequenceGenerator(name="sequence", sequenceName="CPU_ID", allocationSize=1, initialValue =0)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="sequence")
     @Column(name ="ID")
      private Long id;

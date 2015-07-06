@@ -1,14 +1,18 @@
 package week6_lesson11.domain;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
 /**
  * Created by HP on 22.06.2015.
  */
+@Component
 @Entity
 @Table(name="Employee")
 public class Employee {
     @ManyToOne
-
+    @Autowired
     private Company company;
 
     public Employee() {
@@ -20,6 +24,7 @@ public class Employee {
     @Id
     @SequenceGenerator(name="sequence", sequenceName="ID", allocationSize=1, initialValue =0)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="sequence")
+
     @Column(name ="ID")
     private Long id;
     @Column(name ="NAME")

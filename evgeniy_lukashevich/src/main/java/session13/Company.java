@@ -10,6 +10,10 @@ public class Company {
     private Director director;
     private Car car;
 
+    public Company () {
+
+    }
+
     public Company (String name) {
         this.name = name;
     }
@@ -39,8 +43,17 @@ public class Company {
         return this.account;
     }
 
+    public void setDirector (Director director) {
+        this.director = director;
+    }
+
+    public void setCar (Car car) {
+        this.car = car;
+    }
+
     @Override
     public String toString() {
-        return "Name: " + name + " , Account: " + account;
+        return "Name: " + name + " , Account: " + account +
+                " " + director + " " + car;
     }
 }

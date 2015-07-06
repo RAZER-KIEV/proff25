@@ -130,9 +130,10 @@ public class NotebookServiceImpl implements NotebookService {
         return storeDao.getNotebooksFromStore();
     }
 
+
     @Override
     public Map<Vendor, List<Notebook>> getNotebooksStorePresent() {
-        return storeDao.getNotebooksStorePresent();
+       return storeDao.getNotebooksStorePresent();
      }
 
     @Override

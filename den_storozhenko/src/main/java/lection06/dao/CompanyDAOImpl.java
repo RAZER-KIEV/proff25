@@ -5,13 +5,16 @@ import lection06.domain.Person;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
+@Component
 public class CompanyDAOImpl implements CompanyDAO {
+    @Autowired
     private SessionFactory factory;
 
     public CompanyDAOImpl(){
@@ -52,20 +55,13 @@ public class CompanyDAOImpl implements CompanyDAO {
 
     @Override
     public List<Person> getEmploiesFromCompany(String name) {
-        Session session = factory.openSession();
+        Session session = factory.getCurrentSession();
 
-        Query query = session.createQuery("from Company c join c.persons p where c.name=:name");
+        Query query = session.createQuery("select new Person(p.id, p.name, c) from Company c join c.persons p where c.name=:name");
         query.setParameter("name",name);
-        List results = query.list();
-        List<Person> persons = new ArrayList<>();
-        for (Iterator iter = results.iterator(); iter.hasNext();) {
-            Object object[] = (Object[]) iter.next();
-            persons.add((Person)object[1]);
-        }
-        if (session!=null){
-            session.close();
-        }
-        return persons;
+        System.out.println(name);
+        List<Person> results = query.list();
+        return results;
     }
 
     @Override
@@ -91,8 +87,15 @@ public class CompanyDAOImpl implements CompanyDAO {
     }
 
     @Override
-    public List findAll() {
-        return null;
+    public List<Company> findAll() {
+        Session session = factory.openSession();
+
+        Query query = session.createQuery("from Company");
+        List list = query.list();
+        if (session!=null){
+            session.close();
+        }
+        return list;
     }
 
     @Override

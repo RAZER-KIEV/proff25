@@ -1,15 +1,24 @@
 package lection06.service;
 
+import lection06.dao.CompanyDAO;
 import lection06.dao.CompanyDAOImpl;
+import lection06.dao.PersonDAO;
 import lection06.dao.PersonDAOImpl;
 import lection06.domain.Company;
 import lection06.domain.Person;
 import org.hibernate.SessionFactory;
-import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+@Component
+@Transactional
 public class CompanyServiceImpl implements CompanyService{
-    private PersonDAOImpl personDAO;
-    private CompanyDAOImpl companyDAO;
+    @Autowired
+    private PersonDAO personDAO;
+    @Autowired
+    private CompanyDAO companyDAO;
 
     public CompanyServiceImpl(){
 
@@ -20,6 +29,10 @@ public class CompanyServiceImpl implements CompanyService{
         companyDAO = new CompanyDAOImpl(factory);
     }
 
+    public List<Company> findAll(){
+        return companyDAO.findAll();
+    }
+    @Transactional(readOnly = true)
     @Override
     public List<Person> getEmploiesFromCompany(String name) {
         return companyDAO.getEmploiesFromCompany(name);

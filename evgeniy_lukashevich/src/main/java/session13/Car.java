@@ -7,6 +7,10 @@ public class Car {
 
     private Director director;
 
+    private Car() {
+
+    }
+
     public Car (Director director) {
         this.director = director;
     }
@@ -18,5 +22,9 @@ public class Car {
 
     public void setDirector (Director director) {
         this.director = director;
+    }
+
+    public Director getDirector () {
+        return this.director;
     }
 }

@@ -17,8 +17,11 @@ public class CPU {
     @Column(name = "cpu_id")
     private Long cpuId;
 
-    @Column(name = "cpu_vendor")
-    private String cpuVendor;
+    @ManyToOne
+    private Vendor vendor;
+
+//    @Column(name = "cpu_vendor")
+//    private String cpuVendor;
 
     @Column(name = "cpu_model")
     private String cpuModel;
@@ -28,22 +31,22 @@ public class CPU {
 
     public CPU(){}
 
-    public CPU (String cpuVendor, Long cpuFreq, String cpuModel){
+    public CPU (Vendor vendor, Long cpuFreq, String cpuModel){
         this.cpuFreq = cpuFreq;
         this.cpuModel = cpuModel;
-        this.cpuVendor = cpuVendor;
+        this.vendor = vendor;
     }
 
     public Long getId() {
         return cpuId;
     }
 
-    public String getCpuVendor() {
-        return cpuVendor;
+    public Vendor getCpuVendor() {
+        return vendor;
     }
 
-    public void setCpuVendor(String cpuVendor) {
-        this.cpuVendor = cpuVendor;
+    public void setCpuVendor(Vendor vendor) {
+        this.vendor = vendor;
     }
 
     public String getCpuModel() {

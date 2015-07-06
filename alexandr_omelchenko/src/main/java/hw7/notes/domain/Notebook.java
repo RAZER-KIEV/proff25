@@ -18,13 +18,14 @@ import java.util.Set;
 @Table(name = "Notebook")
 public class Notebook {
     @Id
-    @SequenceGenerator(name="sequence", sequenceName="ID", allocationSize=1, initialValue =0)
+    @SequenceGenerator(name="sequence", sequenceName="NOTEBOOK_ID", allocationSize=1, initialValue =0)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="sequence")
     @Column(name ="ID")
     private Long id;
     @Column(name ="MODEL")
     private String model;
-    @Column(name ="DATE")
+    @Temporal(TemporalType.DATE)
+    @Column(name ="DATE_MADE")
     private Date date;
     @ManyToOne
     private Vendor vendor;//класс
@@ -34,7 +35,7 @@ public class Notebook {
     private Memory ram;//класс
     @OneToMany(cascade = CascadeType.ALL, // каскадирование
             fetch = FetchType.EAGER,// подргужать все сразу
-            mappedBy = "nb" )  // включить двунаправленность
+            mappedBy = "nBook" )  // включить двунаправленность
     private Set<Store> storeSet = new HashSet<>();
 
 //Getters&Setters
@@ -109,18 +110,18 @@ public class Notebook {
         this.vendor = vendor;
         this.processor = processor;
         this.ram = ram;
-        this.storeSet = storeSet;
+ //       this.storeSet = storeSet;
     }
 
     @Override
     public String toString() {
         return "Notebook{" +
-                "id=" + id +
-                ", model='" + model + '\'' +
-                ", date=" + date +
-                ", vendor=" + vendor +
-                ", processor=" + processor +
-                ", ram=" + ram +
+                "id=" + id +" "+
+                vendor +
+                 model +"/"+
+                processor +"/"+
+                ram +"/"+
+                 date +"/"+
                 '}';
     }
 }
