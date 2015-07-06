@@ -74,6 +74,22 @@ public class NotebookServiceImpl implements NotebookService {
     }
 
     @Override
+    public Vendor readVendor(Long id) {
+        return vendorDao.read(id);
+    }
+    @Override
+    public CPU readCPU(Long id) {
+        return cpuDao.read(id);
+    }
+    @Override
+    public Memory readMemory(Long id) {
+        return ramDao.read(id);
+    }
+    @Override
+    public Notebook readNotebook(Long id) {
+        return noteDao.read(id);
+    }
+    @Override
     public Long create(Vendor vendor) {
         return vendorDao.create(vendor);
     }
