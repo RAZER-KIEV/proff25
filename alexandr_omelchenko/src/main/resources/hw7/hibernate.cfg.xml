@@ -20,6 +20,12 @@
         <mapping class="hw7.notes.domain.Memory"/>
         <mapping class="hw7.notes.domain.Store"/>
         <mapping class="hw7.notes.domain.Sales"/>
+        <mapping class="hw7.springnotes.domain.Notebook"/>
+        <mapping class="hw7.springnotes.domain.Vendor"/>
+        <mapping class="hw7.springnotes.domain.CPU"/>
+        <mapping class="hw7.springnotes.domain.Memory"/>
+        <mapping class="hw7.springnotes.domain.Store"/>
+        <mapping class="hw7.springnotes.domain.Sales"/>
     </session-factory>
 </hibernate-configuration>
 

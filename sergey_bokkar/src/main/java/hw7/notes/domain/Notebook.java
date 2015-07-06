@@ -27,7 +27,7 @@ public class Notebook {
     private String model;
 
     @Column(name = "manufacture_date")
-    private LocalDate manufactureDate;
+    private Date manufactureDate;
 
     @ManyToOne
     private Memory memory;
@@ -37,7 +37,7 @@ public class Notebook {
 
     public Notebook(){}
 
-    public Notebook(Vendor vendor, String model, LocalDate date, CPU cpu, Memory memory) {
+    public Notebook(Vendor vendor, String model, Date date, CPU cpu, Memory memory) {
         this.vendor = vendor;
         this.model = model;
         manufactureDate = date;
@@ -66,11 +66,11 @@ public class Notebook {
         this.model = model;
     }
 
-    public LocalDate getManufactureDate() {
+    public Date getManufactureDate() {
         return manufactureDate;
     }
 
-    public void setManufactureDate(LocalDate manufactureDate) {
+    public void setManufactureDate(Date manufactureDate) {
         this.manufactureDate = manufactureDate;
     }
 
