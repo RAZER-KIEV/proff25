@@ -1,13 +1,15 @@
 package hw7.notes.dao;
 
 import hw7.notes.domain.Notebook;
+import hw7.notes.domain.Store;
+import hw7.notes.domain.Vendor;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Роман on 25.06.2015.
@@ -20,6 +22,14 @@ public class NotebookDaoImpl implements NotebookDao {
     }
 
     public NotebookDaoImpl(SessionFactory factory) {
+        this.factory = factory;
+    }
+
+    public SessionFactory getFactory() {
+        return factory;
+    }
+
+    public void setFactory(SessionFactory factory) {
         this.factory = factory;
     }
 
@@ -92,7 +102,82 @@ public class NotebookDaoImpl implements NotebookDao {
     @Override
     public List<Notebook> findAll() {
         Session session = factory.openSession();
-        Query query = session.createQuery("from Notebook");
+        Query query = session.createQuery("from hw7.notes.domain.Notebook");
         return query.list();
     }
+
+    public List<Notebook> finaAllAtStoresbyPortion(int portion) {
+        Session session = factory.openSession();
+        Query query = session.createQuery("select s.notebookType from hw7.notes.domain.Store s join s.notebookType n");
+        Set<Notebook> notebookSet = new HashSet<>();
+        for(int i =0; i < query.list().size(); i++) {
+            notebookSet.add((Notebook)query.list().get(i));
+        }
+        List<Notebook> notebookList = new ArrayList<>();
+        int count = 0;
+        for(Notebook ntb : notebookSet) {
+            if(count == portion) {
+                break;
+            } else {
+                notebookList.add(ntb);
+                count++;
+            }
+        }
+        return notebookList;
+    }
+
+    public List getNotebooksGtAmount(int amount) {
+        Session session = factory.openSession();
+        Query query = session.createQuery("select s.notebookType from hw7.notes.domain.Store s where s.notebooksQuantity > :amount");
+        query.setParameter("amount", amount);
+        Set<Notebook> notebookSet = new HashSet<>();
+        for(int i =0; i < query.list().size(); i++) {
+            notebookSet.add((Notebook)query.list().get(i));
+        }
+        List<Notebook> notebookList = new ArrayList<>();
+        for(Notebook ntb : notebookSet) {
+                notebookList.add(ntb);
+        }
+        return notebookList;
+    }
+
+    public List getNotebooksByCpuVendor(Vendor cpuVendor) {
+        List<Notebook> notebooksAllinStores = getNotebooksGtAmount(0);
+        List<Notebook> notebooksByCpuVendor = new ArrayList<>();
+        for(Notebook ntb : notebooksAllinStores) {
+            if(ntb.getCpu().getVendor().equals(cpuVendor)) {
+                notebooksByCpuVendor.add(ntb);
+            }
+        }
+        return notebooksByCpuVendor;
+    }
+
+    public List getNotebooksStorePresent() {
+        Session session = factory.openSession();
+        Query query = session.createQuery("select s.notebookType from hw7.notes.domain.Store s");
+        return query.list();
+    }
+
+    public Map<Date, Double> getSalesByDays() {
+        Session session = factory.openSession();
+        Query query = session.createQuery("select sale.salesDate, avg(sale.salesQuantity) " +
+                "from hw7.notes.domain.Sales sale, hw7.notes.domain.Store s, " +
+                "hw7.notes.domain.Notebook n where sale.store = s and s.notebookType = n group by sale.salesDate");
+        Iterator iter = query.list().iterator();
+        Map<Date, Double> resultMap = new HashMap<>();
+        Object[] array;
+
+        while(iter.hasNext()) {
+            array = (Object[])iter.next();
+
+            resultMap.put((Date)array[0], (Double)array[1]);
+        }
+        return resultMap;
+    }
+
+//    public List test() {
+//        Session session = factory.openSession();
+//        Query query = session.createQuery("select s.notebookType, count(s.notebookType) from hw7.notes.domain.Store s group by s.notebookType.model");
+//        return query.list();
+//    }
 }

@@ -1,5 +1,7 @@
 package hw7.notes.domain;
 
+import hw7.notes.domain.*;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.HashSet;
@@ -7,21 +9,21 @@ import java.util.Set;
 
 @Entity
 @Table(name = "NOTEBOOKS_NEW")
-public class Notebook {
+public class Notebook  {
     @Id
     @SequenceGenerator(name = "sequence", sequenceName = "NTBK_SEQ", initialValue = 1, allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
     @Column(name = "NOTEBOOK_ID")
     private Long id;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Vendor vendor;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private CPU cpu;
     @Column(name = "MODEL")
     private String model;
     @Column(name = "MANUFACTURE_DATE")
     private Date manufacture_date;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Memory memory;
     @OneToMany(mappedBy = "notebook",cascade = CascadeType.ALL)
     private Set<Store> storeSet = new HashSet<>();
@@ -29,8 +31,7 @@ public class Notebook {
     public Notebook(){
     }
 
-    public Notebook(Long id, Vendor vendor, String model, Date manufacture_date, CPU cpu, Memory memory) {
-        this.id = id;
+    public Notebook( Vendor vendor, String model, Date manufacture_date, CPU cpu, Memory memory) {
         this.vendor = vendor;
         this.model = model;
         this.manufacture_date =manufacture_date;
