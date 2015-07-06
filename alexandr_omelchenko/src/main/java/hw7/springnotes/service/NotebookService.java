@@ -8,6 +8,11 @@ import java.util.Map;
  * Created by HP on 05.07.2015.
  */
 public interface NotebookService {
+    Long create(Vendor vendor);
+    Long create(CPU processor);
+    Long create(Memory memory);
+    Long create(Notebook notebook);
+
     List getNotebooksByPortion(int size);
     List getNotebooksGtAmount(int amount);
     List getNotebooksByCpuVendor(Vendor cpuVendor);
