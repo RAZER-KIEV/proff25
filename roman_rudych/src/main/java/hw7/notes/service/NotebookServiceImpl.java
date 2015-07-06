@@ -6,6 +6,9 @@ import hw7.notes.util.HibernateUtil;
 import org.hibernate.SessionFactory;
 
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by Роман on 26.06.2015.
@@ -22,6 +25,13 @@ import java.util.Date;
  Изменить имя производителя
  Изменить тип ноутбука
  Списать со склад ноутбуки (ключ, количество)
+ 4. Добавить в приложение ноутбуков следующие функции:
+ Показать все ноутбуки на складе (пользователь указывает размер порции)
+ Показать все ноутбуки которых больше указанного количества
+ Показать все ноутбуки по указанному имени производителя процессора
+ Показать все ноутбуки на складе
+ Показать типы ноутбуков, оставшиеся на складе по каждому производителю
+ Получить объем продаж ноутбуков в среднем за день
  */
 public class NotebookServiceImpl implements NotebookService {
 
@@ -98,6 +108,43 @@ public class NotebookServiceImpl implements NotebookService {
     public Store getStore(Long id) {
         StoreDaoImpl storeDao = new StoreDaoImpl(factory);
         return storeDao.read(id);
+    }
+
+    @Override
+    public List getNotebooksByPortion(int size) {
+        NotebookDaoImpl notebookDao = new NotebookDaoImpl(factory);
+        return notebookDao.finaAllAtStoresbyPortion(size);
+    }
+
+    @Override
+    public List getNotebooksGtAmount(int amount) {
+        NotebookDaoImpl notebookDao = new NotebookDaoImpl(factory);
+        return notebookDao.getNotebooksGtAmount(amount);
+    }
+
+    @Override
+    public List getNotebooksByCpuVendor(Vendor cpuVendor) {
+        NotebookDaoImpl notebookDao = new NotebookDaoImpl(factory);
+        return notebookDao.getNotebooksByCpuVendor(cpuVendor);
+    }
+
+    @Override
+    public List getNotebooksFromStore() {
+
+        return getNotebooksGtAmount(0);
+    }
+
+    @Override
+    public List getNotebooksStorePresent() {
+        NotebookDaoImpl notebookDao = new NotebookDaoImpl(factory);
+        return notebookDao.getNotebooksStorePresent();
+    }
+
+
+    @Override
+    public Map getSalesByDays() {
+        NotebookDaoImpl notebookDao = new NotebookDaoImpl(factory);
+        return notebookDao.getSalesByDays();
     }
 
     public void endSession() {

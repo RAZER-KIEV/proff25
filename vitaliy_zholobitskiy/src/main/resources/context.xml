@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:property-placeholder location="classpath:session13/conf.properties"></context:property-placeholder>
+    <bean id="company" class="session13.Company">
+        <property name="cash" value="5000"></property>
+        <property name="car" ref="car"></property>
+        <property name="name" value="Apple"></property>
+        <property name="director" ref="director1"></property>
+    </bean>
+    <bean id="car" class="session13.Car">
+        <constructor-arg value="Nissan" type="java.lang.String"/>
+        <property name="director" ref="director1"></property>
+    </bean>
+    <bean id="director1" class="session13.Director">
+        <constructor-arg value="John" type="java.lang.String"/>
+    </bean>
+    <!-- more bean definitions go here -->
+</beans>
