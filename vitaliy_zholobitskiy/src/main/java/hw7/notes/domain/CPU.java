@@ -19,7 +19,7 @@ public class CPU {
     private String cpuFrequency;
     @Column(name = "MODEL")
     private String model;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Vendor vendor;
     @OneToMany(mappedBy = "cpu",cascade = CascadeType.ALL)
     private Set<Notebook> ntbkSet = new HashSet<>();

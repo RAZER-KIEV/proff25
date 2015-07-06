@@ -5,19 +5,23 @@ import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import session12.domain.Company;
 import session12.domain.Person;
 
 import java.util.ArrayList;
-
+import org.springframework.stereotype.*;
 import java.util.Iterator;
 import java.util.List;
 
 /**
  * Created by just1ce on 23.06.2015.
  */
+@Component
 public class CompanyDaoImpl implements CompanyDao {
     private static Logger log = Logger.getLogger(CompanyDaoImpl.class);
+    @Autowired
     private SessionFactory factory;
 
     public CompanyDaoImpl(){
@@ -46,7 +50,7 @@ public class CompanyDaoImpl implements CompanyDao {
 
     @Override
     public List<Person> findEmpFromCompany(String company) {
-        Session session = factory.openSession();
+        Session session = factory.getCurrentSession();
 
         Query query = session.createQuery("from Company c join c.persons p where c.name=:name");
         query.setParameter("name",company);
@@ -56,15 +60,12 @@ public class CompanyDaoImpl implements CompanyDao {
             Object object[] = (Object[]) iter.next();
             persons.add((Person)object[1]);
         }
-        if (session!=null){
-            session.close();
-        }
         return persons;
     }
 
     @Override
     public List getAll() {
-        Session session = factory.openSession();
+        Session session = factory.getCurrentSession();
 
         Query query = session.createQuery("from Company c join c.persons p");
         List results = query.list();
@@ -73,9 +74,7 @@ public class CompanyDaoImpl implements CompanyDao {
             Object object[] = (Object[]) iter.next();
             persons.add((Person)object[1]);
         }
-        if (session!=null){
-            session.close();
-        }
+
         return persons;
     }
 

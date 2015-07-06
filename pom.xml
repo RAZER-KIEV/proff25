@@ -17,22 +17,29 @@
         <module>ievgen_boldyr</module>
         <module>bogdan_iavorskyi</module>
         <module>roman_rudych</module>
+        <module>roman_rudych_web</module>
         <module>alexandr_omelchenko</module>
         <module>sergey_bokkar</module>
         <module>ivan_kushnirenko</module>
         <module>anton_lipskiy</module>
         <module>vitaliy_zholobitskiy</module>
+        <module>vitaliy_zholobitskiy_web</module>
         <module>andrey_dubinin</module>
+        <module>andrey_dubinin_web</module>
         <module>oleg_chumak</module>
+        <module>oleg_chumak_web</module>
         <module>den_storozhenko</module>
         <module>den_storozhenko_web</module>
         <module>viktoria_mishchuk</module>
         <module>evgeniy_fortuna</module>
         <module>sviatoslav_ruzhitskiy</module>
+        <module>sviatoslav_ruzhitskiy_web</module>
         <module>george_rublev</module>
         <module>inna_minchenkova</module>
+        <module>inna_minchenkova_web</module>
         <module>julia_brendel</module>
         <module>svetlana_gazina</module>
+        <module>svetlana_gazina_web</module>
         <module>viktor_sokol</module>
 
     </modules>
@@ -99,7 +106,7 @@
         mvn -version
 
         5) Install driver into repo
-        any other steps are not required, only step 5
+        any other steps are not required , only step 5
         mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.2.0.5.0 -Dpackaging=jar -Dfile=ojdbc6.jar -DgeneratePom=true
 
         6) Run maven build

@@ -15,7 +15,7 @@ public class Memory {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
     @Column(name = "MEMORY_ID")
     private Long id;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Vendor vendor;
     @Column(name = "MEMORY_SIZE")
     private Long size;
