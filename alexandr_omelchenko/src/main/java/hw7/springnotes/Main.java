@@ -2,6 +2,7 @@ package hw7.springnotes;
 
 import hw7.springnotes.dao.*;
 import hw7.springnotes.domain.Vendor;
+import hw7.springnotes.service.Menu;
 import hw7.springnotes.service.NotebookService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -17,6 +18,7 @@ public class Main {
         ApplicationContext context = new ClassPathXmlApplicationContext("hw7/springnotes/context.xml");
 
         NotebookService service = context.getBean("notebookServiceImpl", NotebookService.class);
-        System.out.println(service.getNotebooksStorePresent());
+        Menu menu = new Menu(service);
+        menu.openMenu();
     }
 }

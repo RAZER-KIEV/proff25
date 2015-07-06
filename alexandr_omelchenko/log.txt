@@ -12242,3 +12242,273 @@ Caused by: org.hibernate.DuplicateMappingException: duplicate import: CPU refers
 2015-07-06 10:52:37,144 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004135]
 2015-07-06 10:52:37,146 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
 2015-07-06 10:52:37,317 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@6058e535] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-06 12:11:20,744 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@14899482: startup date [Mon Jul 06 12:11:20 EEST 2015]; root of context hierarchy
+2015-07-06 12:11:20,909 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [hw7/springnotes/context.xml]
+2015-07-06 12:11:25,896 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-06 12:11:25,922 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-06 12:11:25,936 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-06 12:11:25,939 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-06 12:11:28,156 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-06 12:11:28,627 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 12:11:28,671 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 12:11:28,677 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 12:11:28,681 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 12:11:28,685 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 12:11:28,691 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 12:11:28,777 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-06 12:11:28,788 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-06 12:11:28,966 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-06 12:11:29,684 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-06 12:11:29,684 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-06 12:11:30,171 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-06 12:11:30,808 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.CPU
+2015-07-06 12:11:30,808 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, model, id, frequency]
+2015-07-06 12:11:30,808 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_92hvtyi17docepdi588prrbqd]
+2015-07-06 12:11:30,808 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004127]
+2015-07-06 12:11:30,848 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.MEMORY
+2015-07-06 12:11:30,848 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, id, ram_gb]
+2015-07-06 12:11:30,848 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_4n2iaho6rr56q16pb1bkqsue8]
+2015-07-06 12:11:30,848 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004129]
+2015-07-06 12:11:30,911 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.NOTEBOOK
+2015-07-06 12:11:30,912 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [date_made, vendor_id, processor_id, model, id, ram_id]
+2015-07-06 12:11:30,912 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_6e1e4ldhrayhp9eyooleg3sw0, fk_9vxdngff29qd5tiqtl8t26abe, fk_njs1l60ng36dywk5e9igfqc86]
+2015-07-06 12:11:30,912 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [notebook_pk]
+2015-07-06 12:11:30,931 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.SALES
+2015-07-06 12:11:30,931 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [date_sale, stor_id, count, id]
+2015-07-06 12:11:30,931 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1re7todp1rp8rnpnryqj2dcb]
+2015-07-06 12:11:30,931 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004131]
+2015-07-06 12:11:30,961 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.STORE
+2015-07-06 12:11:30,962 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [price, count_nb, id, nbook_id]
+2015-07-06 12:11:30,962 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jrvggijrbxqxglvkfcl6thfmp]
+2015-07-06 12:11:30,962 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004133]
+2015-07-06 12:11:31,015 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.VENDOR
+2015-07-06 12:11:31,016 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [name, id]
+2015-07-06 12:11:31,016 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-06 12:11:31,016 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004135]
+2015-07-06 12:11:31,017 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-06 12:11:31,346 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@6058e535] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-06 13:46:54,677 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@14899482: startup date [Mon Jul 06 13:46:54 EEST 2015]; root of context hierarchy
+2015-07-06 13:46:54,922 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [hw7/springnotes/context.xml]
+2015-07-06 13:46:57,470 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-06 13:46:57,483 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-06 13:46:57,487 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-06 13:46:57,489 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-06 13:46:59,139 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-06 13:46:59,508 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 13:46:59,549 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 13:46:59,564 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 13:46:59,576 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 13:46:59,581 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 13:46:59,590 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 13:46:59,623 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-06 13:46:59,631 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-06 13:46:59,722 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-06 13:47:00,326 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-06 13:47:00,326 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-06 13:47:00,425 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-06 13:47:00,565 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.CPU
+2015-07-06 13:47:00,565 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, model, id, frequency]
+2015-07-06 13:47:00,565 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_92hvtyi17docepdi588prrbqd]
+2015-07-06 13:47:00,566 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004127]
+2015-07-06 13:47:00,580 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.MEMORY
+2015-07-06 13:47:00,580 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, id, ram_gb]
+2015-07-06 13:47:00,580 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_4n2iaho6rr56q16pb1bkqsue8]
+2015-07-06 13:47:00,580 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004129]
+2015-07-06 13:47:00,598 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.NOTEBOOK
+2015-07-06 13:47:00,598 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [date_made, vendor_id, processor_id, model, id, ram_id]
+2015-07-06 13:47:00,598 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_6e1e4ldhrayhp9eyooleg3sw0, fk_9vxdngff29qd5tiqtl8t26abe, fk_njs1l60ng36dywk5e9igfqc86]
+2015-07-06 13:47:00,598 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [notebook_pk]
+2015-07-06 13:47:00,613 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.SALES
+2015-07-06 13:47:00,613 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [date_sale, stor_id, count, id]
+2015-07-06 13:47:00,614 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1re7todp1rp8rnpnryqj2dcb]
+2015-07-06 13:47:00,614 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004131]
+2015-07-06 13:47:00,630 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.STORE
+2015-07-06 13:47:00,630 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [price, count_nb, id, nbook_id]
+2015-07-06 13:47:00,630 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jrvggijrbxqxglvkfcl6thfmp]
+2015-07-06 13:47:00,630 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004133]
+2015-07-06 13:47:00,645 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.VENDOR
+2015-07-06 13:47:00,645 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [name, id]
+2015-07-06 13:47:00,645 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-06 13:47:00,645 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004135]
+2015-07-06 13:47:00,646 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-06 13:47:00,824 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@6058e535] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-06 13:49:43,821 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@14899482: startup date [Mon Jul 06 13:49:43 EEST 2015]; root of context hierarchy
+2015-07-06 13:49:43,975 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [hw7/springnotes/context.xml]
+2015-07-06 13:49:46,517 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-06 13:49:46,529 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-06 13:49:46,532 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-06 13:49:46,536 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-06 13:49:48,528 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-06 13:49:48,830 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 13:49:48,888 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 13:49:48,905 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 13:49:48,912 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 13:49:48,915 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 13:49:48,920 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 13:49:48,958 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-06 13:49:48,969 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-06 13:49:49,088 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-06 13:49:49,740 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-06 13:49:49,740 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-06 13:49:49,790 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-06 13:49:49,889 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.CPU
+2015-07-06 13:49:49,889 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, model, id, frequency]
+2015-07-06 13:49:49,889 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_92hvtyi17docepdi588prrbqd]
+2015-07-06 13:49:49,889 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004127]
+2015-07-06 13:49:49,917 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.MEMORY
+2015-07-06 13:49:49,917 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, id, ram_gb]
+2015-07-06 13:49:49,917 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_4n2iaho6rr56q16pb1bkqsue8]
+2015-07-06 13:49:49,917 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004129]
+2015-07-06 13:49:49,936 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.NOTEBOOK
+2015-07-06 13:49:49,936 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [date_made, vendor_id, processor_id, model, id, ram_id]
+2015-07-06 13:49:49,938 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_6e1e4ldhrayhp9eyooleg3sw0, fk_9vxdngff29qd5tiqtl8t26abe, fk_njs1l60ng36dywk5e9igfqc86]
+2015-07-06 13:49:49,938 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [notebook_pk]
+2015-07-06 13:49:49,963 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.SALES
+2015-07-06 13:49:49,963 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [date_sale, stor_id, count, id]
+2015-07-06 13:49:49,964 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1re7todp1rp8rnpnryqj2dcb]
+2015-07-06 13:49:49,964 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004131]
+2015-07-06 13:49:49,981 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.STORE
+2015-07-06 13:49:49,981 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [price, count_nb, id, nbook_id]
+2015-07-06 13:49:49,981 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jrvggijrbxqxglvkfcl6thfmp]
+2015-07-06 13:49:49,981 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004133]
+2015-07-06 13:49:49,998 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.VENDOR
+2015-07-06 13:49:49,998 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [name, id]
+2015-07-06 13:49:49,998 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-06 13:49:49,998 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004135]
+2015-07-06 13:49:49,999 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-06 13:49:50,237 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@6058e535] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-06 13:51:10,489 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@14899482: startup date [Mon Jul 06 13:51:10 EEST 2015]; root of context hierarchy
+2015-07-06 13:51:10,761 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [hw7/springnotes/context.xml]
+2015-07-06 13:51:13,391 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-06 13:51:13,414 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-06 13:51:13,418 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-06 13:51:13,420 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-06 13:51:15,008 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-06 13:51:15,374 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 13:51:15,410 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 13:51:15,416 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 13:51:15,421 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 13:51:15,424 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 13:51:15,428 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 13:51:15,466 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-06 13:51:15,473 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-06 13:51:15,562 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-06 13:51:16,133 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-06 13:51:16,133 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-06 13:51:16,198 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-06 13:51:16,296 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.CPU
+2015-07-06 13:51:16,296 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, model, id, frequency]
+2015-07-06 13:51:16,296 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_92hvtyi17docepdi588prrbqd]
+2015-07-06 13:51:16,296 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004127]
+2015-07-06 13:51:16,314 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.MEMORY
+2015-07-06 13:51:16,314 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, id, ram_gb]
+2015-07-06 13:51:16,314 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_4n2iaho6rr56q16pb1bkqsue8]
+2015-07-06 13:51:16,314 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004129]
+2015-07-06 13:51:16,334 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.NOTEBOOK
+2015-07-06 13:51:16,334 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [date_made, vendor_id, processor_id, model, id, ram_id]
+2015-07-06 13:51:16,334 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_6e1e4ldhrayhp9eyooleg3sw0, fk_9vxdngff29qd5tiqtl8t26abe, fk_njs1l60ng36dywk5e9igfqc86]
+2015-07-06 13:51:16,335 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [notebook_pk]
+2015-07-06 13:51:16,357 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.SALES
+2015-07-06 13:51:16,358 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [date_sale, stor_id, count, id]
+2015-07-06 13:51:16,358 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1re7todp1rp8rnpnryqj2dcb]
+2015-07-06 13:51:16,358 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004131]
+2015-07-06 13:51:16,379 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.STORE
+2015-07-06 13:51:16,379 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [price, count_nb, id, nbook_id]
+2015-07-06 13:51:16,379 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jrvggijrbxqxglvkfcl6thfmp]
+2015-07-06 13:51:16,379 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004133]
+2015-07-06 13:51:16,399 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.VENDOR
+2015-07-06 13:51:16,399 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [name, id]
+2015-07-06 13:51:16,399 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-06 13:51:16,399 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004135]
+2015-07-06 13:51:16,401 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-06 13:51:16,594 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@6058e535] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-06 14:26:14,718 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@14899482: startup date [Mon Jul 06 14:26:14 EEST 2015]; root of context hierarchy
+2015-07-06 14:26:14,928 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [hw7/springnotes/context.xml]
+2015-07-06 14:26:17,452 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-06 14:26:17,463 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-06 14:26:17,467 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-06 14:26:17,469 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-06 14:26:19,399 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-06 14:26:19,877 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 14:26:19,917 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 14:26:19,924 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 14:26:19,928 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 14:26:19,931 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 14:26:19,936 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 14:26:19,966 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-06 14:26:19,972 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-06 14:26:20,073 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-06 14:26:20,664 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-06 14:26:20,664 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-06 14:26:20,715 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-06 14:26:20,814 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.CPU
+2015-07-06 14:26:20,814 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, model, id, frequency]
+2015-07-06 14:26:20,814 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_92hvtyi17docepdi588prrbqd]
+2015-07-06 14:26:20,814 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004127]
+2015-07-06 14:26:20,828 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.MEMORY
+2015-07-06 14:26:20,828 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, id, ram_gb]
+2015-07-06 14:26:20,829 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_4n2iaho6rr56q16pb1bkqsue8]
+2015-07-06 14:26:20,829 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004129]
+2015-07-06 14:26:20,844 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.NOTEBOOK
+2015-07-06 14:26:20,845 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [date_made, vendor_id, processor_id, model, id, ram_id]
+2015-07-06 14:26:20,845 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_6e1e4ldhrayhp9eyooleg3sw0, fk_9vxdngff29qd5tiqtl8t26abe, fk_njs1l60ng36dywk5e9igfqc86]
+2015-07-06 14:26:20,845 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [notebook_pk]
+2015-07-06 14:26:20,862 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.SALES
+2015-07-06 14:26:20,862 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [date_sale, stor_id, count, id]
+2015-07-06 14:26:20,863 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1re7todp1rp8rnpnryqj2dcb]
+2015-07-06 14:26:20,863 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004131]
+2015-07-06 14:26:20,892 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.STORE
+2015-07-06 14:26:20,892 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [price, count_nb, id, nbook_id]
+2015-07-06 14:26:20,892 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jrvggijrbxqxglvkfcl6thfmp]
+2015-07-06 14:26:20,892 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004133]
+2015-07-06 14:26:20,912 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.VENDOR
+2015-07-06 14:26:20,912 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [name, id]
+2015-07-06 14:26:20,912 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-06 14:26:20,912 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004135]
+2015-07-06 14:26:20,913 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-06 14:26:21,133 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@6058e535] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-06 14:30:47,462 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@14899482: startup date [Mon Jul 06 14:30:47 EEST 2015]; root of context hierarchy
+2015-07-06 14:30:47,696 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [hw7/springnotes/context.xml]
+2015-07-06 14:30:50,165 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-06 14:30:50,178 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-06 14:30:50,181 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2015-07-06 14:30:50,183 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2015-07-06 14:30:51,801 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2015-07-06 14:30:52,274 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 14:30:52,312 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 14:30:52,318 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 14:30:52,323 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 14:30:52,327 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 14:30:52,332 [main] WARN  org.hibernate.cfg.AnnotationBinder - HHH000392: Hibernate does not support SequenceGenerator.initialValue() unless 'hibernate.id.new_generator_mappings' set
+2015-07-06 14:30:52,364 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-06 14:30:52,374 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-06 14:30:52,461 [main] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2015-07-06 14:30:53,040 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2015-07-06 14:30:53,040 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2015-07-06 14:30:53,086 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2015-07-06 14:30:53,186 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.CPU
+2015-07-06 14:30:53,186 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, model, id, frequency]
+2015-07-06 14:30:53,186 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_92hvtyi17docepdi588prrbqd]
+2015-07-06 14:30:53,186 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004127]
+2015-07-06 14:30:53,201 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.MEMORY
+2015-07-06 14:30:53,201 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [vendor_id, id, ram_gb]
+2015-07-06 14:30:53,201 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_4n2iaho6rr56q16pb1bkqsue8]
+2015-07-06 14:30:53,201 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004129]
+2015-07-06 14:30:53,217 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.NOTEBOOK
+2015-07-06 14:30:53,218 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [date_made, vendor_id, processor_id, model, id, ram_id]
+2015-07-06 14:30:53,218 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_6e1e4ldhrayhp9eyooleg3sw0, fk_9vxdngff29qd5tiqtl8t26abe, fk_njs1l60ng36dywk5e9igfqc86]
+2015-07-06 14:30:53,218 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [notebook_pk]
+2015-07-06 14:30:53,241 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.SALES
+2015-07-06 14:30:53,242 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [date_sale, stor_id, count, id]
+2015-07-06 14:30:53,242 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_1re7todp1rp8rnpnryqj2dcb]
+2015-07-06 14:30:53,242 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004131]
+2015-07-06 14:30:53,256 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.STORE
+2015-07-06 14:30:53,257 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [price, count_nb, id, nbook_id]
+2015-07-06 14:30:53,257 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_jrvggijrbxqxglvkfcl6thfmp]
+2015-07-06 14:30:53,257 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004133]
+2015-07-06 14:30:53,273 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: NOTEBOOK.VENDOR
+2015-07-06 14:30:53,273 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [name, id]
+2015-07-06 14:30:53,273 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2015-07-06 14:30:53,274 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [sys_c004135]
+2015-07-06 14:30:53,274 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2015-07-06 14:30:53,490 [main] INFO  org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp.BasicDataSource@6058e535] of Hibernate SessionFactory for HibernateTransactionManager
