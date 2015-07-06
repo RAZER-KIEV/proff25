@@ -1,35 +1,34 @@
-package hw7.notes.dao;
+package hw7.springnotes.dao;
 
-import hw7.notes.domain.Notebook;
-import hw7.notes.domain.Store;
+import hw7.notes.dao.*;
+import hw7.notes.dao.CPUDao;
+import hw7.notes.domain.CPU;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by just1ce on 29.06.2015.
  */
-public class StoreDaoImpl implements StoreDao{
+public class CPUDaoImpl implements hw7.springnotes.dao.CPUDao {
 
     private SessionFactory factory;
+    public CPUDaoImpl() {
+    }
 
-    public StoreDaoImpl(SessionFactory factory) {
+    public CPUDaoImpl(SessionFactory factory) {
         this.factory = factory;
     }
 
-    public StoreDaoImpl() {
-    }
-
     @Override
-    public Long create(Store store) {
+    public Long create(hw7.springnotes.domain.CPU cpu) {
         Session session = factory.openSession();
         try {
             session.beginTransaction();
-            Long id = (Long)session.save(store);
+            Long id = (Long)session.save(cpu);
             session.getTransaction().commit();
             return id;
         } catch (HibernateException e) {
@@ -42,11 +41,10 @@ public class StoreDaoImpl implements StoreDao{
     }
 
     @Override
-    public Store read(Long id) {
-
+    public hw7.springnotes.domain.CPU read(Long id) {
         Session session = factory.openSession();
         try{
-            return (Store)session.get(Store.class, id);
+            return (hw7.springnotes.domain.CPU)session.get(hw7.springnotes.domain.CPU.class, id);
         } catch (HibernateException e){
             System.out.println(e);
         } finally {
@@ -56,12 +54,11 @@ public class StoreDaoImpl implements StoreDao{
     }
 
     @Override
-    public boolean update(Store store) {
-
+    public boolean update(hw7.springnotes.domain.CPU cpu) {
         Session session = factory.openSession();
         try{
             session.beginTransaction();
-            session.update(store);
+            session.update(cpu);
             session.getTransaction().commit();
         } catch (HibernateException e){
             System.out.println(e);
@@ -74,11 +71,11 @@ public class StoreDaoImpl implements StoreDao{
     }
 
     @Override
-    public boolean delete(Store store) {
+    public boolean delete(hw7.springnotes.domain.CPU cpu) {
         Session session = factory.openSession();
         try{
             session.beginTransaction();
-            session.delete(store);
+            session.delete(cpu);
             session.getTransaction().commit();
         } catch (HibernateException e){
             System.out.println(e);
@@ -88,28 +85,14 @@ public class StoreDaoImpl implements StoreDao{
             session.close();
         }
         return true;
-
     }
 
     @Override
     public List findAll() {
         Session session = factory.openSession();
-        Query query = session.createQuery("from Store");
+        Query query = session.createQuery("from CPU ");
         return query.list();
+    }
 
-    }
-    @Override
-    public List getNotesByPorces(int size) {
-        Session session = factory.openSession();
-        try {
-            Query query = session.createQuery("select notebook from Store store, Notebook notebook where store.notebook=notebook");
-            query.setFirstResult(0);
-            query.setMaxResults(size);
-            return query.list();
-        }finally {
-            if (session!=null){
-                session.close();
-            }
-        }
-    }
+
 }

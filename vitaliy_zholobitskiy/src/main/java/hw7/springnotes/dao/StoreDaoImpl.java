@@ -1,7 +1,8 @@
-package hw7.notes.dao;
+package hw7.springnotes.dao;
 
-import hw7.notes.domain.Notebook;
-import hw7.notes.domain.Store;
+import hw7.springnotes.dao.StoreDao;
+import hw7.springnotes.domain.Notebook;
+import hw7.springnotes.domain.Store;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;

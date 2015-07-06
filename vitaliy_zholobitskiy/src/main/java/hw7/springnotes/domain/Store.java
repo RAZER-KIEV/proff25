@@ -1,4 +1,6 @@
-package hw7.notes.domain;
+package hw7.springnotes.domain;
+
+
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -16,30 +18,30 @@ public class Store {
     @Column(name = "STORE_ID")
     private Long id;
     @ManyToOne
-    private Notebook notebook;
+    private hw7.springnotes.domain.Notebook notebook;
     @Column(name = "COUNT")
     private Long count;
     @Column(name = "PRICE")
     private double price;
     @OneToMany(mappedBy = "store",cascade = CascadeType.ALL)
-    private Set<Sales> salesSet = new HashSet<>();
+    private Set<hw7.springnotes.domain.Sales> salesSet = new HashSet<>();
 
     public Store(){
 
     }
 
-    public Store(Notebook notebook, Long count, double price) {
+    public Store(hw7.springnotes.domain.Notebook notebook, Long count, double price) {
         this.notebook = notebook;
         this.count = count;
         this.price = price;
     }
 
 
-    public Notebook getNotebook() {
+    public hw7.springnotes.domain.Notebook getNotebook() {
         return notebook;
     }
 
-    public void setNotebook(Notebook notebook) {
+    public void setNotebook(hw7.springnotes.domain.Notebook notebook) {
         this.notebook = notebook;
     }
 

@@ -1,4 +1,6 @@
-package hw7.notes.domain;
+package hw7.springnotes.domain;
+
+
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -19,11 +21,11 @@ public class Vendor {
     @Column(name = "NAME")
     private String name;
     @OneToMany(mappedBy = "vendor",cascade = CascadeType.ALL)
-    private Set<Notebook> ntbkSet = new HashSet<>();
+    private Set<hw7.springnotes.domain.Notebook> ntbkSet = new HashSet<>();
     @OneToMany(mappedBy = "vendor",cascade = CascadeType.ALL)
-    private Set<CPU> cpuSet = new HashSet<>();
+    private Set<hw7.springnotes.domain.CPU> cpuSet = new HashSet<>();
     @OneToMany(mappedBy = "vendor",cascade = CascadeType.ALL)
-    private Set<Memory> memorySet = new HashSet<>();
+    private Set<hw7.springnotes.domain.Memory> memorySet = new HashSet<>();
 
 
     public Vendor() {

@@ -1,4 +1,6 @@
-package hw7.notes.domain;
+package hw7.springnotes.domain;
+
+
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -20,15 +22,15 @@ public class CPU {
     @Column(name = "MODEL")
     private String model;
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private Vendor vendor;
+    private hw7.springnotes.domain.Vendor vendor;
     @OneToMany(mappedBy = "cpu",cascade = CascadeType.ALL)
-    private Set<Notebook> ntbkSet = new HashSet<>();
+    private Set<hw7.springnotes.domain.Notebook> ntbkSet = new HashSet<>();
 
 
     public CPU() {
     }
 
-    public CPU(Vendor vendor,String cpuFrequency, String model) {
+    public CPU(hw7.springnotes.domain.Vendor vendor,String cpuFrequency, String model) {
         this.cpuFrequency = cpuFrequency;
         this.vendor=vendor;
         this.model = model;
@@ -42,10 +44,10 @@ public class CPU {
     public void setCpuFrequency(String cpuFrequency) {
         this.cpuFrequency = cpuFrequency;
     }
-    public Vendor getVendor(){
+    public hw7.springnotes.domain.Vendor getVendor(){
         return vendor;
     }
-    public void setVendor(Vendor vendor){
+    public void setVendor(hw7.springnotes.domain.Vendor vendor){
         this.vendor=vendor;
     }
     public String getModel() {

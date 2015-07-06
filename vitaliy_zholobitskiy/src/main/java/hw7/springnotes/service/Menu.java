@@ -1,9 +1,6 @@
-package hw7.notes.service;
+package hw7.springnotes.service;
 
 
-import hw7.notes.*;
-import hw7.notes.dao.*;
-import hw7.notes.domain.*;
 
 
 import java.util.Date;
@@ -15,7 +12,7 @@ import java.util.Locale;
 public class Menu {
     public static void main(String[] args) {
         Locale.setDefault(Locale.ENGLISH);
-        HibernateUtil util = new HibernateUtil();
+        hw7.springnotes.service.HibernateUtil util = new hw7.springnotes.service.HibernateUtil();
         util.createSessionFactory();
         NotebookServiceImpl service = new NotebookServiceImpl(util.getFactory());
 

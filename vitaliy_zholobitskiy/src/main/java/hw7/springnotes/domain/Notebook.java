@@ -1,7 +1,8 @@
-package hw7.notes.domain;
+package hw7.springnotes.domain;
+
 
 import hw7.notes.domain.*;
-
+import hw7.springnotes.domain.Notebook;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.HashSet;
@@ -9,7 +10,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "NOTEBOOKS_NEW")
-public class Notebook  {
+public class Notebook {
     @Id
     @SequenceGenerator(name = "sequence", sequenceName = "NTBK_SEQ", initialValue = 1, allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
@@ -18,7 +19,7 @@ public class Notebook  {
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Vendor vendor;
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private CPU cpu;
+    private hw7.notes.domain.CPU cpu;
     @Column(name = "MODEL")
     private String model;
     @Column(name = "MANUFACTURE_DATE")
@@ -31,7 +32,7 @@ public class Notebook  {
     public Notebook(){
     }
 
-    public Notebook( Vendor vendor, String model, Date manufacture_date, CPU cpu, Memory memory) {
+    public Notebook( Vendor vendor, String model, Date manufacture_date, hw7.notes.domain.CPU cpu, Memory memory) {
         this.vendor = vendor;
         this.model = model;
         this.manufacture_date =manufacture_date;
@@ -51,7 +52,7 @@ public class Notebook  {
         this.manufacture_date = manufacture_date;
     }
 
-    public void setCpu(CPU cpu) {
+    public void setCpu(hw7.notes.domain.CPU cpu) {
         this.cpu = cpu;
     }
 
@@ -72,7 +73,7 @@ public class Notebook  {
         return manufacture_date;
     }
 
-    public CPU getCpu() {
+    public hw7.notes.domain.CPU getCpu() {
         return cpu;
     }
 
