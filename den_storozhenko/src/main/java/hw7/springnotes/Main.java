@@ -12,12 +12,6 @@ public class Main {
         ApplicationContext context = new ClassPathXmlApplicationContext("hw7\\springnotes\\context.xml");
         NotebookService companyService = context.getBean("notebookServiceImpl", NotebookService.class);
         Menu menu = new Menu(companyService);
-        menu.updateVendorCPU();
-        menu.updateVendorCPU();
-        menu.updateVendorCPU();
-        menu.updateVendorMemory();
-        menu.updateVendorMemory();
-        menu.updateVendorMemory();
         menu.start();
     }
 }
