@@ -1,6 +1,6 @@
-package hw6.notes.dao;
+package hw7.notes.dao;
 
-import hw6.notes.domain.Notebook;
+import hw7.notes.domain.Store;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -10,52 +10,48 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Inna on 19.06.2015.
+ * Created by Inna on 28.06.2015.
  */
-public class NotebookDaoImpl implements NotebookDao {
-    private static Logger log = Logger.getLogger(NotebookDaoImpl.class);
+public class StoreDaoImpl implements StoreDao {
+    private static Logger log = Logger.getLogger(StoreDaoImpl.class);
     private SessionFactory factory;
 
-    public NotebookDaoImpl(SessionFactory factory){
+    public StoreDaoImpl(SessionFactory factory){
         this.factory = factory;
-
     }
 
-    public NotebookDaoImpl() {
+    public StoreDaoImpl(){
 
     }
-
     @Override
-    public Long create(Notebook notebook) {
+    public Long create(Store store) {
         Session session = null;
         try {
             session = factory.openSession();
             session.beginTransaction();
-            Long id = (Long) session.save(notebook);
+            session.save(store);
+
             session.getTransaction().commit();
-            return id;
-
+            return store.getId();
         }catch (HibernateException e){
-            log.error("Open session failed", e);
             session.getTransaction().rollback();
+            log.error("Error opening session" + e);
         }finally {
             if(session != null)
                 session.close();
-
         }
         return null;
-    }
+}
 
     @Override
-    public Notebook read(Long id) {
+    public Store read(Long id) {
         Session session = null;
-        try{
+        try {
             session = factory.openSession();
-            return (Notebook)session.get(Notebook.class, id);
+            return (Store) session.get(Store.class, id);
 
         }catch (HibernateException e){
-            log.error("Open session failed", e);
-
+            log.error("Error opening session" + e);
         }finally {
             if(session != null)
                 session.close();
@@ -64,17 +60,36 @@ public class NotebookDaoImpl implements NotebookDao {
     }
 
     @Override
-    public boolean update(Notebook notebook) {
+    public boolean update(Store store) {
         Session session = null;
         try {
             session = factory.openSession();
             session.beginTransaction();
-            session.update(notebook);
+            session.update(store);
             session.getTransaction().commit();
             return true;
         }catch (HibernateException e){
-            log.error("Open session failed", e);
             session.getTransaction().rollback();
+            log.error("Error opening session" + e);
+        }finally {
+            if(session !=  null)
+                session.close();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean delete(Store store) {
+        Session session = null;
+        try {
+            session = factory.openSession();
+            session.beginTransaction();
+            session.delete(store);
+            session.getTransaction().commit();
+            return true;
+        }catch (HibernateException e){
+            session.getTransaction().rollback();
+            log.error("Error opening session" + e);
         }finally {
             if(session != null)
                 session.close();
@@ -83,38 +98,20 @@ public class NotebookDaoImpl implements NotebookDao {
     }
 
     @Override
-    public boolean delete(Notebook notebook) {
+    public List<Store> findAll() {
         Session session = null;
+        List<Store> list = new ArrayList<>();
         try {
             session = factory.openSession();
-            session.beginTransaction();
-            session.delete(notebook);
-            session.getTransaction().commit();
-            return true;
+            list = session.createCriteria(Store.class).list();
+
         }catch (HibernateException e){
-            log.error("Open session failed", e);
-            session.getTransaction().commit();
+            session.getTransaction().rollback();
+            log.error("Error opening session" + e);
         }finally {
             if(session != null)
                 session.close();
         }
-        return false;
-    }
-
-    @Override
-    public List<Notebook> findAll() {
-        Session session = null;
-        List<Notebook> notebooks = new ArrayList<>();
-        try {
-            session = factory.openSession();
-            notebooks = session.createCriteria(Notebook.class).list();
-
-        }catch (HibernateException e){
-            e.printStackTrace();
-        }finally {
-            if(session != null)
-                session.close();
-        }
-        return notebooks;
+        return list;
     }
 }

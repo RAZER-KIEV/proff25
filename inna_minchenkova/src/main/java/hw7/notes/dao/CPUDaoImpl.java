@@ -1,6 +1,6 @@
-package hw6.notes.dao;
+package hw7.notes.dao;
 
-import hw6.notes.domain.Notebook;
+import hw7.notes.domain.CPU;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -10,52 +10,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Inna on 19.06.2015.
+ * Created by Inna on 28.06.2015.
  */
-public class NotebookDaoImpl implements NotebookDao {
-    private static Logger log = Logger.getLogger(NotebookDaoImpl.class);
+public class CPUDaoImpl implements CPUDao {
+    private static Logger log = Logger.getLogger(CPUDaoImpl.class);
     private SessionFactory factory;
 
-    public NotebookDaoImpl(SessionFactory factory){
+    public CPUDaoImpl(SessionFactory factory){
         this.factory = factory;
 
     }
 
-    public NotebookDaoImpl() {
+    public CPUDaoImpl(){
 
     }
-
     @Override
-    public Long create(Notebook notebook) {
+    public Long create(CPU cpu) {
         Session session = null;
         try {
             session = factory.openSession();
             session.beginTransaction();
-            Long id = (Long) session.save(notebook);
+            Long id = (Long) session.save(cpu);
             session.getTransaction().commit();
             return id;
-
         }catch (HibernateException e){
-            log.error("Open session failed", e);
             session.getTransaction().rollback();
-        }finally {
-            if(session != null)
-                session.close();
-
-        }
-        return null;
-    }
-
-    @Override
-    public Notebook read(Long id) {
-        Session session = null;
-        try{
-            session = factory.openSession();
-            return (Notebook)session.get(Notebook.class, id);
-
-        }catch (HibernateException e){
-            log.error("Open session failed", e);
-
+            log.error("Error opening session" + e);
         }finally {
             if(session != null)
                 session.close();
@@ -64,36 +44,52 @@ public class NotebookDaoImpl implements NotebookDao {
     }
 
     @Override
-    public boolean update(Notebook notebook) {
+    public CPU read(Long id) {
+        Session session = null;
+        try {
+            session = factory.openSession();
+            return (CPU) session.get(CPU.class, id);
+
+        }catch (HibernateException e){
+            log.error("Error opening session" + e);
+        }finally {
+            if(session != null)
+                session.close();
+        }
+        return null;
+    }
+
+    @Override
+    public boolean update(CPU cpu) {
         Session session = null;
         try {
             session = factory.openSession();
             session.beginTransaction();
-            session.update(notebook);
+            session.update(cpu);
             session.getTransaction().commit();
             return true;
         }catch (HibernateException e){
-            log.error("Open session failed", e);
             session.getTransaction().rollback();
+            log.error("Error opening session" + e);
         }finally {
-            if(session != null)
+            if(session !=  null)
                 session.close();
         }
         return false;
     }
 
     @Override
-    public boolean delete(Notebook notebook) {
+    public boolean delete(CPU cpu) {
         Session session = null;
         try {
             session = factory.openSession();
             session.beginTransaction();
-            session.delete(notebook);
+            session.delete(cpu);
             session.getTransaction().commit();
             return true;
         }catch (HibernateException e){
-            log.error("Open session failed", e);
-            session.getTransaction().commit();
+            session.getTransaction().rollback();
+            log.error("Error opening session" + e);
         }finally {
             if(session != null)
                 session.close();
@@ -102,19 +98,20 @@ public class NotebookDaoImpl implements NotebookDao {
     }
 
     @Override
-    public List<Notebook> findAll() {
+    public List<CPU> findAll() {
         Session session = null;
-        List<Notebook> notebooks = new ArrayList<>();
+        List<CPU> list = new ArrayList<>();
         try {
             session = factory.openSession();
-            notebooks = session.createCriteria(Notebook.class).list();
+            list = session.createCriteria(CPU.class).list();
 
         }catch (HibernateException e){
-            e.printStackTrace();
+            session.getTransaction().rollback();
+            log.error("Error opening session" + e);
         }finally {
             if(session != null)
                 session.close();
         }
-        return notebooks;
+        return list;
     }
 }

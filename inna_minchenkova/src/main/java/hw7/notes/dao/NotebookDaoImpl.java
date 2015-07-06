@@ -1,6 +1,6 @@
-package hw6.notes.dao;
+package hw7.notes.dao;
 
-import hw6.notes.domain.Notebook;
+import hw7.notes.domain.Notebook;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Inna on 19.06.2015.
+ * Created by Inna on 28.06.2015.
  */
 public class NotebookDaoImpl implements NotebookDao {
     private static Logger log = Logger.getLogger(NotebookDaoImpl.class);
@@ -18,30 +18,26 @@ public class NotebookDaoImpl implements NotebookDao {
 
     public NotebookDaoImpl(SessionFactory factory){
         this.factory = factory;
-
     }
 
-    public NotebookDaoImpl() {
+    public NotebookDaoImpl(){
 
     }
-
     @Override
     public Long create(Notebook notebook) {
         Session session = null;
-        try {
+        try{
             session = factory.openSession();
             session.beginTransaction();
-            Long id = (Long) session.save(notebook);
+            Long id = (Long)session.save(notebook);
             session.getTransaction().commit();
             return id;
-
         }catch (HibernateException e){
-            log.error("Open session failed", e);
             session.getTransaction().rollback();
+            log.error("Error opening session" + e);
         }finally {
-            if(session != null)
+            if (session!= null)
                 session.close();
-
         }
         return null;
     }
@@ -51,13 +47,12 @@ public class NotebookDaoImpl implements NotebookDao {
         Session session = null;
         try{
             session = factory.openSession();
-            return (Notebook)session.get(Notebook.class, id);
+            return (Notebook) session.get(Notebook.class, id);
 
-        }catch (HibernateException e){
-            log.error("Open session failed", e);
-
+        }catch (HibernateException e) {
+            log.error("Error opening session" + e);
         }finally {
-            if(session != null)
+            if (session!= null)
                 session.close();
         }
         return null;
@@ -73,10 +68,10 @@ public class NotebookDaoImpl implements NotebookDao {
             session.getTransaction().commit();
             return true;
         }catch (HibernateException e){
-            log.error("Open session failed", e);
             session.getTransaction().rollback();
+            log.error("Error opening session" + e);
         }finally {
-            if(session != null)
+            if(session !=  null)
                 session.close();
         }
         return false;
@@ -92,8 +87,8 @@ public class NotebookDaoImpl implements NotebookDao {
             session.getTransaction().commit();
             return true;
         }catch (HibernateException e){
-            log.error("Open session failed", e);
-            session.getTransaction().commit();
+            session.getTransaction().rollback();
+            log.error("Error opening session" + e);
         }finally {
             if(session != null)
                 session.close();
@@ -110,7 +105,8 @@ public class NotebookDaoImpl implements NotebookDao {
             notebooks = session.createCriteria(Notebook.class).list();
 
         }catch (HibernateException e){
-            e.printStackTrace();
+            session.getTransaction().rollback();
+            log.error("Error opening session" + e);
         }finally {
             if(session != null)
                 session.close();
