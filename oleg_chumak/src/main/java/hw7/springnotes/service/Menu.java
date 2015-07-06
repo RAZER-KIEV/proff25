@@ -10,8 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Menu {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("hw7/context_db.xml");
-        NotebookServiceImpl service = context.getBean("notebookServiceImpl", NotebookServiceImpl.class);
-        service.strartDao();
+        NotebookService service = context.getBean("notebookServiceImpl", NotebookServiceImpl.class);
 //        System.out.println(service.notebookDao.read(9L));
 //        System.out.println(service.notebookDao.findAll());
         System.out.println(service.createVendor(new Vendor("fff")));
