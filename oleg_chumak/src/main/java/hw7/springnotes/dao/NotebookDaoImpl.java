@@ -18,7 +18,7 @@ import java.util.List;
  */
 @Repository
 public class NotebookDaoImpl implements NotebookDao {
-//    @Autowired
+    @Autowired(required = true)
     private SessionFactory factory;
 
     public NotebookDaoImpl(SessionFactory factory) {

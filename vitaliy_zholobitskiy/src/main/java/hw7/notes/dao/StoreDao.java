@@ -13,4 +13,5 @@ public interface StoreDao {
     boolean update(Store store);
     boolean delete(Store store);
     List findAll();
+    List getNotesByPorces(int k);
 }

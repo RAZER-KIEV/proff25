@@ -1,11 +1,13 @@
 package hw7.notes.dao;
 
+import hw7.notes.domain.Notebook;
 import hw7.notes.domain.Store;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -95,5 +97,19 @@ public class StoreDaoImpl implements StoreDao{
         Query query = session.createQuery("from Store");
         return query.list();
 
+    }
+    @Override
+    public List getNotesByPorces(int size) {
+        Session session = factory.openSession();
+        try {
+            Query query = session.createQuery("select notebook from Store store, Notebook notebook where store.notebook=notebook");
+            query.setFirstResult(0);
+            query.setMaxResults(size);
+            return query.list();
+        }finally {
+            if (session!=null){
+                session.close();
+            }
+        }
     }
 }
