@@ -1,0 +1,48 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<group>
+<name>Prof25</name>
+    <students>
+        <stud>
+            <name>
+                Ruzhytsky Sviatoslav
+            </name>
+            <rate>68</rate>
+            <miss>3</miss>
+        </stud>
+        <stud>
+            <name>
+                Khalikov Oleksiy
+            </name>
+            <rate>99</rate>
+            <miss>2</miss>
+        </stud>
+        <stud>
+            <name>
+                Rublev Georgy
+            </name>
+            <rate>10</rate>
+            <miss>4</miss>
+        </stud>
+        <stud>
+            <name>
+                Kushnirenko Ivan
+            </name>
+            <rate>70</rate>
+            <miss>0</miss>
+        </stud>
+        <stud>
+        <name>
+            Rudich Roman
+        </name>
+        <rate>70</rate>
+        <miss>4</miss>
+    </stud>
+        <stud>
+            <name>
+                Brendel Julia
+            </name>
+            <rate>80</rate>
+            <miss>0</miss>
+        </stud>
+    </students>
+</group>
