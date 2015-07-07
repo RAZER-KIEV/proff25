@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 public class HelloController {
     public static final Logger log = Logger.getLogger(HelloController.class);
 
-    /*@RequestMapping(value = "/hello.html", method = RequestMethod.GET)
+    @RequestMapping(value = "/hello.html", method = RequestMethod.GET)
     public
     @ResponseBody
     String hello(Model model) {
@@ -40,7 +40,7 @@ public class HelloController {
                 @RequestParam String pass) {
         return login + "[" + pass + "]";
     }
-    */
+
     @RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.HEAD})
     public String index(Model model) {
         log.info("/index controller");

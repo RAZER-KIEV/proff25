@@ -21,7 +21,7 @@
         <property name="dataSource" ref="myDataSource"/>
         <property name="packagesToScan">
             <list>
-                <value>session12</value>
+                <value>hw7.springnotes</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -36,7 +36,7 @@
     <bean id="txManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory" ref="factory"/>
     </bean>
-    <context:component-scan base-package="session12"/>
+    <context:component-scan base-package="hw7.springnotes"/>
     <tx:annotation-driven transaction-manager="txManager"/>
 
 </beans>
