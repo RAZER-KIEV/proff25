@@ -23,6 +23,9 @@ public class Vendor {
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "vendor", cascade = CascadeType.ALL)
     private Set<Notebook> notebooksSet = new HashSet<>();
 
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "vendor",cascade = CascadeType.ALL)
+    private Set<CPU> cpuSet = new HashSet<>();
+
     public Vendor() {
     }
 
@@ -50,7 +53,23 @@ public class Vendor {
         return notebooksSet;
     }
 
-    public void setNotebooksSet(Set notebooksSet) {
+    public void setNotebooksSet(Set<Notebook> notebooksSet) {
         this.notebooksSet = notebooksSet;
+    }
+
+    public Set<CPU> getCpuSet() {
+        return cpuSet;
+    }
+
+    public void setCpuSet(Set<CPU> cpuSet) {
+        this.cpuSet = cpuSet;
+    }
+
+    public boolean equals(Vendor vendor) {
+        return this.name.equalsIgnoreCase(vendor.getName());
+    }
+
+    public String toString() {
+        return name;
     }
 }

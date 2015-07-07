@@ -100,62 +100,65 @@ public class NotebookDaoImpl implements NotebookDao {
     }
 
     @Override
-    public List<Notebook> findAll() {
+    public List findAll() {
         Session session = factory.openSession();
         Query query = session.createQuery("from hw7.notes.domain.Notebook");
         return query.list();
     }
 
-    public List<Notebook> finaAllAtStoresbyPortion(int portion) {
+    public List getNotebooksByPortion(int portion) {
         Session session = factory.openSession();
-        Query query = session.createQuery("select s.notebookType from hw7.notes.domain.Store s join s.notebookType n");
-        Set<Notebook> notebookSet = new HashSet<>();
-        for(int i =0; i < query.list().size(); i++) {
-            notebookSet.add((Notebook)query.list().get(i));
-        }
-        List<Notebook> notebookList = new ArrayList<>();
-        int count = 0;
-        for(Notebook ntb : notebookSet) {
-            if(count == portion) {
-                break;
-            } else {
-                notebookList.add(ntb);
-                count++;
-            }
-        }
-        return notebookList;
+        Query query = session.createQuery("select s.notebookType from hw7.notes.domain.Store s, hw7.notes.domain.Notebook n where s.notebookType=n");
+        query.setFirstResult(0);
+        query.setMaxResults(portion);
+        return query.list();
     }
 
     public List getNotebooksGtAmount(int amount) {
         Session session = factory.openSession();
-        Query query = session.createQuery("select s.notebookType from hw7.notes.domain.Store s where s.notebooksQuantity > :amount");
+        Query query = session.createQuery("select s.notebookType from hw7.notes.domain.Store s, hw7.notes.domain.Notebook n" +
+                "  where s.notebookType=n and s.notebooksQuantity > :amount");
         query.setParameter("amount", amount);
-        Set<Notebook> notebookSet = new HashSet<>();
-        for(int i =0; i < query.list().size(); i++) {
-            notebookSet.add((Notebook)query.list().get(i));
-        }
-        List<Notebook> notebookList = new ArrayList<>();
-        for(Notebook ntb : notebookSet) {
-                notebookList.add(ntb);
-        }
-        return notebookList;
+        return query.list();
+
     }
 
     public List getNotebooksByCpuVendor(Vendor cpuVendor) {
-        List<Notebook> notebooksAllinStores = getNotebooksGtAmount(0);
-        List<Notebook> notebooksByCpuVendor = new ArrayList<>();
-        for(Notebook ntb : notebooksAllinStores) {
-            if(ntb.getCpu().getVendor().equals(cpuVendor)) {
-                notebooksByCpuVendor.add(ntb);
-            }
-        }
-        return notebooksByCpuVendor;
+        Session session = factory.openSession();
+        Query query = session.createQuery("select n from hw7.notes.domain.Notebook n, " +
+                "hw7.notes.domain.CPU cpu, hw7.notes.domain.Vendor v" +
+                "  where n.cpu=cpu and cpu.vendor=v and n.cpu.vendor=:cpuVendor");
+        query.setParameter("cpuVendor", cpuVendor);
+        return query.list();
     }
 
-    public List getNotebooksStorePresent() {
+//    public List getNotebooksStorePresent() {
+//        Session session = factory.openSession();
+//        Query query = session.createQuery("select s.notebookType from hw7.notes.domain.Store s");
+//        return query.list();
+//    }
+
+    public Map<Vendor, List<Notebook>> getNotebooksStorePresent() {
         Session session = factory.openSession();
-        Query query = session.createQuery("select s.notebookType from hw7.notes.domain.Store s");
-        return query.list();
+        Query query = session.createQuery("select n.vendor, s.notebookType from hw7.notes.domain.Store s," +
+                "hw7.notes.domain.Notebook n, hw7.notes.domain.Vendor v where s.notebookType=n and " +
+                "n.vendor=v and s.notebooksQuantity>0");
+        Iterator iter = query.list().iterator();
+        Map<Vendor, List<Notebook>> resultMap = new HashMap<>();
+        Object[] array;
+        while(iter.hasNext()) {
+            array = (Object[])iter.next();
+            if(!resultMap.containsKey((Vendor)array[0])) {
+                List<Notebook> list = new ArrayList<>();
+                list.add((Notebook)array[1]);
+                resultMap.put((Vendor)array[0], list);
+            } else {
+                List<Notebook> existingList = resultMap.get((Vendor) array[0]);
+                existingList.add((Notebook)array[1]);
+                resultMap.put((Vendor) array[0], existingList);
+            }
+        }
+        return resultMap;
     }
 
     public Map<Date, Double> getSalesByDays() {
@@ -166,18 +169,11 @@ public class NotebookDaoImpl implements NotebookDao {
         Iterator iter = query.list().iterator();
         Map<Date, Double> resultMap = new HashMap<>();
         Object[] array;
-
         while(iter.hasNext()) {
             array = (Object[])iter.next();
-
             resultMap.put((Date)array[0], (Double)array[1]);
         }
         return resultMap;
     }
 
-//    public List test() {
-//        Session session = factory.openSession();
-//        Query query = session.createQuery("select s.notebookType, count(s.notebookType) from hw7.notes.domain.Store s group by s.notebookType.model");
-//        return query.list();
-//    }
 }
