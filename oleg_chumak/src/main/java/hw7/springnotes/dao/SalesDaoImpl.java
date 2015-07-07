@@ -21,7 +21,7 @@ import java.util.TreeMap;
  */
 @Repository
 public class SalesDaoImpl implements SalesDao {
-//    @Autowired
+    @Autowired(required = true)
     private SessionFactory factory;
 
     public SalesDaoImpl(SessionFactory factory) {
