@@ -90,7 +90,7 @@ public class NotebookServiceImpl implements NotebookService {
 
     @Override
     public boolean updateVendor(Vendor vendor) {
-        return vendorDao.delete(vendor);
+        return vendorDao.update(vendor);
     }
 
     @Override
@@ -118,7 +118,7 @@ public class NotebookServiceImpl implements NotebookService {
     @Override
     @Transactional(readOnly = true)
     public List getNotebooksByPortion(int size) {
-        return notebookDao.finaAllAtStoresbyPortion(size);
+        return notebookDao.getNotebooksByPortion(size);
     }
 
     @Override
@@ -136,12 +136,12 @@ public class NotebookServiceImpl implements NotebookService {
     @Override
     @Transactional(readOnly = true)
     public List getNotebooksFromStore() {
-        return getNotebooksGtAmount(0);
+        return notebookDao.getNotebooksGtAmount(0);
     }
 
     @Override
     @Transactional(readOnly = true)
-    public List getNotebooksStorePresent() {
+    public Map getNotebooksStorePresent() {
         return notebookDao.getNotebooksStorePresent();
     }
 
