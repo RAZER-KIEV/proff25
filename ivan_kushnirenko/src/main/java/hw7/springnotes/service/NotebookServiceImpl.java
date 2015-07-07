@@ -97,6 +97,56 @@ public class NotebookServiceImpl implements NotebookService {
     }
 
     @Override
+    public Long sale(Long storeId, int amount) {
+        return null;
+    }
+
+    @Override
+    public Long createCPU(CPU cpu) {
+        return null;
+    }
+
+    @Override
+    public Long createMemory(Memory memory) {
+        return null;
+    }
+
+    @Override
+    public Long createVendor(Vendor vendor) {
+        return null;
+    }
+
+    @Override
+    public Long createNotebook(Notebook notebook) {
+        return null;
+    }
+
+    @Override
+    public Vendor getVendor(Long id) {
+        return null;
+    }
+
+    @Override
+    public CPU getCPU(Long id) {
+        return null;
+    }
+
+    @Override
+    public Memory getMemory(Long id) {
+        return null;
+    }
+
+    @Override
+    public Notebook getNotebook(Long id) {
+        return null;
+    }
+
+    @Override
+    public Store getStore(Long id) {
+        return null;
+    }
+
+    @Override
     @Transactional(readOnly = true)
     public List getNotebooksByPortion(int size) {
         return notebookDao.getPortionOfNotebooks(0, size);
@@ -118,6 +168,11 @@ public class NotebookServiceImpl implements NotebookService {
     @Transactional(readOnly = true)
     public List getNotebooksFromStore() {
         return storeDao.getNotebooksFromStore();
+    }
+
+    @Override
+    public Map getNotebooksStorePresent1() {
+        return null;
     }
 
     @Override
