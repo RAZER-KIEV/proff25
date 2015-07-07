@@ -7,11 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 
-/**
- * Created with IntelliJ IDEA.
- * User: al1
- * Date: 3/16/15
- */
+
 @Controller
 @SessionAttributes("id")
 public class HelloController {

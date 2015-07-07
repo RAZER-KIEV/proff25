@@ -7,6 +7,8 @@ import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +16,9 @@ import java.util.List;
 /**
  * Created by just1ce on 29.06.2015.
  */
+@Component
 public class StoreDaoImpl implements StoreDao{
-
+    @Autowired
     private SessionFactory factory;
 
     public StoreDaoImpl(SessionFactory factory) {

@@ -1,4 +1,4 @@
-package hw7.springnotes.service;
+package hw7.notes.service;
 
 /**
  * Created by just1ce on 05.07.2015.
