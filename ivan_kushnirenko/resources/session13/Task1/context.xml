@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <context:property-placeholder location="classpath:session13/Task1/conf.properties"/>
+
+    <bean id="company" class="session13.Task1.domain.Company">
+        <property name="name" value="itCantre"/>
+        <property name="account" value="256000.000"/>
+        <property name="car" ref="car"/>
+        <property name="director" ref="director"/>
+    </bean>
+    <bean id="car" class="session13.Task1.domain.Car">
+        <constructor-arg name="model" value="Subaru"/>
+        <constructor-arg name="director" ref="director"/>
+    </bean>
+    <bean id="director" class="session13.Task1.domain.Director">
+        <property name="name" value="${Director.name.new}"/>
+    </bean>
+</beans>

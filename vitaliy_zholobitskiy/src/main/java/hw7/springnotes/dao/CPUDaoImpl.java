@@ -1,20 +1,22 @@
 package hw7.springnotes.dao;
 
-import hw7.notes.dao.*;
-import hw7.notes.dao.CPUDao;
-import hw7.notes.domain.CPU;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * Created by just1ce on 29.06.2015.
  */
+@Repository
 public class CPUDaoImpl implements hw7.springnotes.dao.CPUDao {
-
+    @Autowired
     private SessionFactory factory;
     public CPUDaoImpl() {
     }

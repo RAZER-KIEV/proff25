@@ -1,13 +1,15 @@
 package hw7.notes.dao;
 
 import hw7.notes.domain.Notebook;
+import hw7.notes.domain.Store;
+import hw7.notes.domain.Vendor;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Роман on 25.06.2015.
@@ -20,6 +22,14 @@ public class NotebookDaoImpl implements NotebookDao {
     }
 
     public NotebookDaoImpl(SessionFactory factory) {
+        this.factory = factory;
+    }
+
+    public SessionFactory getFactory() {
+        return factory;
+    }
+
+    public void setFactory(SessionFactory factory) {
         this.factory = factory;
     }
 
@@ -90,9 +100,80 @@ public class NotebookDaoImpl implements NotebookDao {
     }
 
     @Override
-    public List<Notebook> findAll() {
+    public List findAll() {
         Session session = factory.openSession();
-        Query query = session.createQuery("from Notebook");
+        Query query = session.createQuery("from hw7.notes.domain.Notebook");
         return query.list();
     }
+
+    public List getNotebooksByPortion(int portion) {
+        Session session = factory.openSession();
+        Query query = session.createQuery("select s.notebookType from hw7.notes.domain.Store s, hw7.notes.domain.Notebook n where s.notebookType=n");
+        query.setFirstResult(0);
+        query.setMaxResults(portion);
+        return query.list();
+    }
+
+    public List getNotebooksGtAmount(int amount) {
+        Session session = factory.openSession();
+        Query query = session.createQuery("select s.notebookType from hw7.notes.domain.Store s, hw7.notes.domain.Notebook n" +
+                "  where s.notebookType=n and s.notebooksQuantity > :amount");
+        query.setParameter("amount", amount);
+        return query.list();
+
+    }
+
+    public List getNotebooksByCpuVendor(Vendor cpuVendor) {
+        Session session = factory.openSession();
+        Query query = session.createQuery("select n from hw7.notes.domain.Notebook n, " +
+                "hw7.notes.domain.CPU cpu, hw7.notes.domain.Vendor v" +
+                "  where n.cpu=cpu and cpu.vendor=v and n.cpu.vendor=:cpuVendor");
+        query.setParameter("cpuVendor", cpuVendor);
+        return query.list();
+    }
+
+//    public List getNotebooksStorePresent() {
+//        Session session = factory.openSession();
+//        Query query = session.createQuery("select s.notebookType from hw7.notes.domain.Store s");
+//        return query.list();
+//    }
+
+    public Map<Vendor, List<Notebook>> getNotebooksStorePresent() {
+        Session session = factory.openSession();
+        Query query = session.createQuery("select n.vendor, s.notebookType from hw7.notes.domain.Store s," +
+                "hw7.notes.domain.Notebook n, hw7.notes.domain.Vendor v where s.notebookType=n and " +
+                "n.vendor=v and s.notebooksQuantity>0");
+        Iterator iter = query.list().iterator();
+        Map<Vendor, List<Notebook>> resultMap = new HashMap<>();
+        Object[] array;
+        while(iter.hasNext()) {
+            array = (Object[])iter.next();
+            if(!resultMap.containsKey((Vendor)array[0])) {
+                List<Notebook> list = new ArrayList<>();
+                list.add((Notebook)array[1]);
+                resultMap.put((Vendor)array[0], list);
+            } else {
+                List<Notebook> existingList = resultMap.get((Vendor) array[0]);
+                existingList.add((Notebook)array[1]);
+                resultMap.put((Vendor) array[0], existingList);
+            }
+        }
+        return resultMap;
+    }
+
+    public Map<Date, Double> getSalesByDays() {
+        Session session = factory.openSession();
+        Query query = session.createQuery("select sale.salesDate, avg(sale.salesQuantity) " +
+                "from hw7.notes.domain.Sales sale, hw7.notes.domain.Store s, " +
+                "hw7.notes.domain.Notebook n where sale.store = s and s.notebookType = n group by sale.salesDate");
+        Iterator iter = query.list().iterator();
+        Map<Date, Double> resultMap = new HashMap<>();
+        Object[] array;
+        while(iter.hasNext()) {
+            array = (Object[])iter.next();
+            resultMap.put((Date)array[0], (Double)array[1]);
+        }
+        return resultMap;
+    }
+
 }

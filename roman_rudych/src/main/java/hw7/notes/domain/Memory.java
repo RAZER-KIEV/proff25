@@ -65,4 +65,8 @@ public class Memory {
     public void setNotebookSet(Set notebookSet) {
         this.notebookSet = notebookSet;
     }
+
+    public boolean equals(Memory memory) {
+        return this.vendor.equalsIgnoreCase(memory.getVendor()) && this.size == memory.getSize();
+    }
 }

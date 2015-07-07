@@ -102,4 +102,13 @@ public class Notebook {
     public void setStore(Set store) {
         this.store = store;
     }
+
+    public boolean equals(Notebook notebook) {
+        return this.vendor.equals(notebook.getVendor()) && this.model.equalsIgnoreCase(notebook.getModel()) &&
+                this.cpu.equals(notebook.getCpu()) && this.memory.equals(notebook.getMemory());
+    }
+
+    public String toString() {
+        return "Vendor: " + vendor.getName() + ", Model: " + model +", CPU(MHz): " + cpu.getFreq() +", Memory(Gb): " + memory.getSize();
+    }
 }
