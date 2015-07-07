@@ -23,17 +23,25 @@ public interface NotebookService {
 
     Long receive(Long id, int amount, double price);
 
-    List getNotebooksByPortion(int size);
+    Long sale(Long storeId, int amount);
 
-    List getNotebooksGtAmount(int amount);
+    Long createCPU(CPU cpu);
 
-    List getNotebooksByCpuVendor(Vendor cpuVendor);
+    Long createMemory(Memory memory);
 
-    List getNotebooksFromStore();
+    Long createVendor(Vendor vendor);
 
-    List getNotebooksStorePresent();
+    Long createNotebook(Notebook notebook);
 
-    Map getSalesByDays();
+    Vendor getVendor(Long id);
+
+    CPU getCPU(Long id);
+
+    Memory getMemory(Long id);
+
+    Notebook getNotebook(Long id);
+
+    Store getStore(Long id);
 
     boolean updateCPU(CPU cpu);
 
@@ -44,5 +52,19 @@ public interface NotebookService {
     boolean updateNotebook(Notebook notebook);
 
     boolean removeFromStore(Store store, int amount);
+
+    List getNotebooksByPortion(int size);
+
+    List getNotebooksGtAmount(int amount);
+
+    List getNotebooksByCpuVendor(Vendor cpuVendor);
+
+    List getNotebooksFromStore();
+
+    Map getNotebooksStorePresent1();
+
+    List getNotebooksStorePresent();
+
+    Map getSalesByDays();
 
 }
