@@ -1,9 +1,9 @@
 package hw7.springnotes.service;
 
 
+import hw7.springnotes.domain.Notebook;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,7 +15,7 @@ import java.util.Map;
 /**
  * Created by just1ce on 29.06.2015.
  */
-@Component
+@Service
 @Transactional
 public class NotebookServiceImpl implements hw7.springnotes.service.NotebookService {
     @Autowired(required = true)
@@ -105,7 +105,7 @@ public class NotebookServiceImpl implements hw7.springnotes.service.NotebookServ
     }
     @Transactional(readOnly = true)
     @Override
-    public List<hw7.springnotes.domain.Notebook> getNotebooksStorePresent() {
+    public Map<Notebook, Integer> getNotebooksStorePresent() {
         return null;
     }
     @Transactional(readOnly = true)
