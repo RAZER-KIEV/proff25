@@ -3,18 +3,27 @@ package hw7.springnotes.service;
 
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
+import java.util.Scanner;
 
 /**
  * Created by just1ce on 29.06.2015.
  */
 public class Menu {
+
+
     public static void main(String[] args) {
         Locale.setDefault(Locale.ENGLISH);
-        hw7.springnotes.service.HibernateUtil util = new hw7.springnotes.service.HibernateUtil();
-        util.createSessionFactory();
-        NotebookServiceImpl service = new NotebookServiceImpl(util.getFactory());
+        ApplicationContext context =
+                new ClassPathXmlApplicationContext("hw7/springnotes/context-anno.xml");
+        NotebookService service = context.getBean("notebookServiceImpl", NotebookService.class);
+        // = context.getBean("companyDaoImpl",CompanyDaoImpl.class);// new CompanyDaoImpl(context.getBean("sf", SessionFactory.class));
 
         /*Vendor vendor =  new Vendor("ASUS");
         VendorDaoImpl vendorDao = new VendorDaoImpl(util.getFactory());

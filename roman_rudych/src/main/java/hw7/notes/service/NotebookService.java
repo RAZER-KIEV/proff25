@@ -22,6 +22,7 @@ public interface NotebookService {
     List getNotebooksGtAmount(int amount);
     List getNotebooksByCpuVendor(Vendor cpuVendor);
     List getNotebooksFromStore();
-    List getNotebooksStorePresent();
+//    List getNotebooksStorePresent();
+    Map getNotebooksStorePresent();
     Map getSalesByDays();
 }

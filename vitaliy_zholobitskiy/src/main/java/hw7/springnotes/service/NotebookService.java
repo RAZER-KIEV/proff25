@@ -2,7 +2,13 @@ package hw7.springnotes.service;
 
 
 
+
 import hw7.springnotes.domain.*;
+import hw7.springnotes.domain.CPU;
+import hw7.springnotes.domain.Memory;
+import hw7.springnotes.domain.Notebook;
+import hw7.springnotes.domain.Store;
+import hw7.springnotes.domain.Vendor;
 
 import java.util.List;
 import java.util.Map;
@@ -22,6 +28,6 @@ public interface NotebookService {
     List<Notebook> getNotebooksGtAmount(int amount);
     List<Notebook> getNotebooksByCpuVendor(Vendor cpuVendor);
     List<Notebook> getNotebooksFromStore();
-    List<Notebook> getNotebooksStorePresent();
+    Map<Notebook, Integer> getNotebooksStorePresent();
     Map<Notebook, Integer> getSalesByDays();
 }

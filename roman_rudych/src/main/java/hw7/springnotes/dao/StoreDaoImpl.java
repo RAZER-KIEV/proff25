@@ -21,7 +21,6 @@ public class StoreDaoImpl implements StoreDao {
 
     @Autowired
     private SessionFactory factory;
-    private static Logger log = Logger.getLogger(hw7.notes.dao.StoreDaoImpl.class);
 
     public StoreDaoImpl() {
     }
@@ -32,74 +31,32 @@ public class StoreDaoImpl implements StoreDao {
 
     @Override
     public Long create(Store store) {
-        Session session = factory.openSession();
-        Long id = null;
-        try {
-            session.beginTransaction();
-            id = (Long)session.save(store);
-            session.getTransaction().commit();
-        } catch (HibernateException ex) {
-            log.error("Saving error", ex);
-            session.getTransaction().rollback();
-        } finally {
-            session.close();
-        }
-        log.info(session);
-        return id;
+        return (Long)factory.getCurrentSession().save(store);
     }
 
     @Override
     public Store read(Long ig) {
-        Session session = factory.openSession();
-        Store store = null;
-        store = (Store)session.get(Store.class, ig);
-        session.close();
-        log.info(session);
-        return store;
+        return (Store)factory.getCurrentSession().get(Store.class, ig);
     }
 
     @Override
     public boolean update(Store store) {
-        Session session = factory.openSession();
-        boolean result = false;
-        try {
-            session.beginTransaction();
-            session.update(store);
-            session.getTransaction().commit();
-            result = true;
-        } catch (HibernateException ex) {
-            log.error("Updating error", ex);
-            session.getTransaction().rollback();
-        } finally {
-            session.close();
-        }
-        log.info(session);
+        boolean result;
+        factory.getCurrentSession().update(store);
+        result = true;
         return result;
     }
 
     @Override
     public boolean delete(Store store) {
-        Session session = factory.openSession();
-        boolean result = false;
-        try {
-            session.beginTransaction();
-            session.delete(store);
-            session.getTransaction().commit();
-            result = true;
-        } catch (HibernateException ex) {
-            log.error("Deleting fail", ex);
-            session.getTransaction().rollback();
-        } finally {
-            session.close();
-        }
-        log.info(session);
+        boolean result;
+        factory.getCurrentSession().delete(store);
+        result = true;
         return result;
     }
 
     @Override
     public List<Store> findAll() {
-        Session session = factory.openSession();
-        Query query = session.createQuery("from hw7.springnotes.domain.Store");
-        return query.list();
+        return factory.getCurrentSession().createQuery("from hw7.springnotes.domain.Store").list();
     }
 }

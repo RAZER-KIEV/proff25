@@ -15,10 +15,11 @@ public interface NotebookDao {
     Notebook read(Long id);
     boolean update(Notebook notebook);
     boolean delete(Notebook notebook);
-    List<Notebook> findAll();
-    List<Notebook> finaAllAtStoresbyPortion(int portion);
+    List findAll();
+    List getNotebooksByPortion(int portion);
     List getNotebooksGtAmount(int amount);
     List getNotebooksByCpuVendor(Vendor cpuVendor);
-    List getNotebooksStorePresent();
+//    List getNotebooksStorePresent();
+    Map getNotebooksStorePresent();
     Map<Date, Double> getSalesByDays();
 }
