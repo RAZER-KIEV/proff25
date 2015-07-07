@@ -83,7 +83,7 @@ public class NotebookServiceImpl implements NotebookService {
     @Override
     public boolean updateVendor(Vendor vendor) {
         VendorDaoImpl vendorDao = new VendorDaoImpl(factory);
-        return vendorDao.delete(vendor);
+        return vendorDao.update(vendor);
     }
 
     @Override
