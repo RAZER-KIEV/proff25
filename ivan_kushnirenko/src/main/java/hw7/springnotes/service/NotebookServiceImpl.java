@@ -91,6 +91,12 @@ public class NotebookServiceImpl implements NotebookService {
     }
 
     @Override
+    public Long receive(Long id, int amount, double price) {
+        Notebook note = notebookDao.read(id);
+        return storeDao.create(new Store(note, amount, price));
+    }
+
+    @Override
     @Transactional(readOnly = true)
     public List getNotebooksByPortion(int size) {
         return notebookDao.getPortionOfNotebooks(0, size);

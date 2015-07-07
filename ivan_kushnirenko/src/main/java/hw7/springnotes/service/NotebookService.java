@@ -21,6 +21,8 @@ import java.util.Map;
  */
 public interface NotebookService {
 
+    Long receive(Long id, int amount, double price);
+
     List getNotebooksByPortion(int size);
 
     List getNotebooksGtAmount(int amount);
