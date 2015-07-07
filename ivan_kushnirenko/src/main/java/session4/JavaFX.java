@@ -20,9 +20,9 @@ public class JavaFX extends Application {
     @Override
     public void start(Stage primaryStage) {
         BorderPane borderPane = new BorderPane();
-        borderPane.setTop(new TextField("text"));
+        borderPane.setTop(new TextField("text.txt"));
         borderPane.setCenter(new TextArea("qwerty"));
-        borderPane.setLeft(new Label("Some text is here"));
+        borderPane.setLeft(new Label("Some text.txt is here"));
         borderPane.setBottom(new Button("Ok"));
         Scene scene = new Scene(new Label("hi!"),600,400);
         primaryStage.setScene(scene);
