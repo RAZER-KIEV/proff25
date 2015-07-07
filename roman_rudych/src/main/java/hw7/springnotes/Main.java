@@ -10,6 +10,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -162,46 +163,56 @@ public class Main {
         System.out.println(service.sale(6L, 700));
 
         //Task3
-//        cpu.setModel("Double Core II");
-//        service.updateCPU(cpu);
-//
-//        memory.setSize(8);
-//        service.updateMemory(memory);
-//
-//        vendor.setName("Dell");
-//        service.updateVendor(vendor);
-//
-//        notebook.setVendor(new Vendor("ASUS"));
-//        service.updateNotebook(notebook);
-//
-//        service.removeFromStore(service.getStore(1L), 10000);
+        cpu.setModel("Double Core II");
+        service.updateCPU(cpu);
+
+        memory.setSize(8);
+        service.updateMemory(memory);
+
+        vendor.setName("Dell");
+        service.updateVendor(vendor);
+
+        notebook.setVendor(new Vendor("ASUS"));
+        service.updateNotebook(notebook);
+
+        service.removeFromStore(service.getStore(1L), 10000);
 
         //Task4
-//        List<Notebook> ntbList = service.getNotebooksByPortion(10);
-//        for(Notebook ntb : ntbList) {
-//            System.out.println(ntb);
-//        }
+        System.out.println("getNotebooksByPortion:");
 
-//        List<Notebook> ntbList2 = service.getNotebooksGtAmount(10);
-//        for(Notebook ntb : ntbList2) {
-//            System.out.println(ntb);
-//        }
+        List<Notebook> ntbList = service.getNotebooksByPortion(10);
+        for(Notebook ntb : ntbList) {
+            System.out.println(ntb);
+        }
 
-//        List<Notebook> ntbList3 = service.getNotebooksByCpuVendor(vendor2);
-//        for(Notebook ntb : ntbList3) {
-//            System.out.println(ntb);
-//        }
+        System.out.println("getNotebooksGreateAmount:");
 
-//        List<Notebook> ntbList4 = service.getNotebooksFromStore();
-//        for(Notebook ntb : ntbList4) {
-//            System.out.println(ntb);
-//        }
-//
-//        List<Notebook> ntbList5 = service.getNotebooksStorePresent();
-//        System.out.println(ntbList5);
-//        for(Notebook ntb : ntbList5) {
-//            System.out.println(ntb);
-//        }
+        List<Notebook> ntbList2 = service.getNotebooksGtAmount(10);
+        for(Notebook ntb : ntbList2) {
+            System.out.println(ntb);
+        }
+
+        System.out.println("getNotebooksByCPUVendor:" + vendor2);
+
+        List<Notebook> ntbList3 = service.getNotebooksByCpuVendor(vendor2);
+        for(Notebook ntb : ntbList3) {
+            System.out.println(ntb);
+        }
+
+        System.out.println("getNotebooksFromStore:");
+
+        List<Notebook> ntbList4 = service.getNotebooksFromStore();
+        for(Notebook ntb : ntbList4) {
+            System.out.println(ntb);
+        }
+
+        System.out.println("getNotebooksStorePresent:");
+
+        Map<Vendor, List<Notebook>> map1 = service.getNotebooksStorePresent();
+        System.out.println(map1);
+
+        System.out.println("getSalesByDays:");
+
         Map<Date, Integer> map = service.getSalesByDays();
         System.out.println(map);
 

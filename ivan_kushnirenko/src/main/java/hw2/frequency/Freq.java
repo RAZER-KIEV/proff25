@@ -1,7 +1,6 @@
 package hw2.frequency;
 
 
-import javax.validation.constraints.Null;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -42,12 +41,12 @@ public class Freq {
         Matcher matcher = pattern.matcher(text);
         HashMap<String, Integer> textWords = new HashMap<>();
         while (matcher.find()) {
-            String s = matcher.group();
-            s = s.toLowerCase();
-            if (textWords.containsKey(s)) {
-                textWords.replace(s, textWords.get(s) + 1);
+            String settedText = matcher.group();
+            settedText = settedText.toLowerCase();
+            if (textWords.containsKey(settedText)) {
+                textWords.replace(settedText, textWords.get(settedText) + 1);
             } else {
-                textWords.put(s, 1);
+                textWords.put(settedText, 1);
             }
         }
         return textWords;
@@ -62,8 +61,8 @@ public class Freq {
         List sortedWords = new ArrayList<>(words.entrySet());
         Collections.sort(sortedWords, new Comparator<Map.Entry<String, Integer>>() {
             @Override
-            public int compare(Map.Entry<String, Integer> e1, Map.Entry<String, Integer> e2) {
-                return e1.getValue().compareTo(e2.getValue());
+            public int compare(Map.Entry<String, Integer> word1, Map.Entry<String, Integer> word2) {
+                return word1.getValue().compareTo(word2.getValue());
             }
         });
         return sortedWords;
@@ -75,8 +74,8 @@ public class Freq {
         System.out.println("Please, type the text.txt:");
         try {
             text = br.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
         return text;
     }
@@ -94,8 +93,8 @@ public class Freq {
                 text = new String(buffer.array(), 0, readed);
                 buffer.clear();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
         return text;
     }
@@ -217,4 +216,8 @@ public class Freq {
 
     public static void main(String[] args) {
     }
+}
+
+class FreqTest {
+
 }

@@ -21,7 +21,6 @@ public class NotebookDaoImpl implements NotebookDao {
 
     @Autowired
     private SessionFactory factory;
-    private static Logger log = Logger.getLogger(NotebookDaoImpl.class);
 
     public NotebookDaoImpl() {
     }
@@ -40,131 +39,88 @@ public class NotebookDaoImpl implements NotebookDao {
 
     @Override
     public Long create(Notebook notebook) {
-        Session session = factory.openSession();
-        Long id = null;
-        try {
-            session.beginTransaction();
-            id = (Long)session.save(notebook);
-            session.getTransaction().commit();
-        } catch (HibernateException ex) {
-            log.error("Saving error", ex);
-            session.getTransaction().rollback();
-        } finally {
-            session.close();
-        }
-        log.info(session);
-        return id;
+        return (Long)factory.getCurrentSession().save(notebook);
     }
 
     @Override
     public Notebook read(Long id) {
-        Session session = factory.openSession();
-        Notebook notebook = null;
-        notebook = (Notebook)session.get(Notebook.class, id);
-        session.close();
-        log.info(session);
-        return notebook;
+        return (Notebook)factory.getCurrentSession().get(Notebook.class, id);
     }
 
     @Override
     public boolean update(Notebook notebook) {
-        Session session = factory.openSession();
-        boolean result = false;
-        try {
-            session.beginTransaction();
-            session.update(notebook);
-            session.getTransaction().commit();
-            result = true;
-        } catch (HibernateException ex) {
-            log.error("Updating error", ex);
-            session.getTransaction().rollback();
-        } finally {
-            session.close();
-        }
-        log.info(session);
+        boolean result;
+        factory.getCurrentSession().update(notebook);
+        result = true;
         return result;
     }
 
     @Override
     public boolean delete(Notebook notebook) {
-        Session session = factory.openSession();
-        boolean result = false;
-        try {
-            session.beginTransaction();
-            session.delete(notebook);
-            session.getTransaction().commit();
-            result = true;
-        } catch (HibernateException ex) {
-            log.error("Deleting fail", ex);
-            session.getTransaction().rollback();
-        } finally {
-            session.close();
-        }
-        log.info(session);
+        boolean result;
+        factory.getCurrentSession().delete(notebook);
+        result = true;
         return result;
     }
 
     @Override
     public List<Notebook> findAll() {
-        Session session = factory.openSession();
-        Query query = session.createQuery("from hw7.springnotes.domain.Notebook");
-        return query.list();
+        return factory.getCurrentSession().createQuery("from hw7.springnotes.domain.Notebook").list();
     }
 
     @Override
-    public List<Notebook> finaAllAtStoresbyPortion(int portion) {
-        Session session = factory.openSession();
-        Query query = session.createQuery("select s.notebookType from hw7.springnotes.domain.Store s join s.notebookType n");
-        Set<Notebook> notebookSet = new HashSet<>();
-        for(int i =0; i < query.list().size(); i++) {
-            notebookSet.add((Notebook)query.list().get(i));
-        }
-        List<Notebook> notebookList = new ArrayList<>();
-        int count = 0;
-        for(Notebook ntb : notebookSet) {
-            if(count == portion) {
-                break;
-            } else {
-                notebookList.add(ntb);
-                count++;
-            }
-        }
-        return notebookList;
+    public List getNotebooksByPortion(int portion) {
+        Query query = factory.getCurrentSession().createQuery("select s.notebookType from hw7.springnotes.domain.Store s," +
+                " hw7.springnotes.domain.Notebook n where s.notebookType=n");
+        query.setFirstResult(0);
+        query.setMaxResults(portion);
+        return query.list();
     }
 
     @Override
     public List getNotebooksGtAmount(int amount) {
-        Session session = factory.openSession();
-        Query query = session.createQuery("select s.notebookType from hw7.springnotes.domain.Store s where s.notebooksQuantity > :amount");
+        Query query = factory.getCurrentSession().createQuery("select s.notebookType from hw7.springnotes.domain.Store s, " +
+                "hw7.springnotes.domain.Notebook n" +
+                "  where s.notebookType=n and s.notebooksQuantity > :amount");
         query.setParameter("amount", amount);
-        Set<Notebook> notebookSet = new HashSet<>();
-        for(int i =0; i < query.list().size(); i++) {
-            notebookSet.add((Notebook)query.list().get(i));
-        }
-        List<Notebook> notebookList = new ArrayList<>();
-        for(Notebook ntb : notebookSet) {
-                notebookList.add(ntb);
-        }
-        return notebookList;
+        return query.list();
     }
 
     @Override
     public List getNotebooksByCpuVendor(Vendor cpuVendor) {
-        List<Notebook> notebooksAllinStores = getNotebooksGtAmount(0);
-        List<Notebook> notebooksByCpuVendor = new ArrayList<>();
-        for(Notebook ntb : notebooksAllinStores) {
-            if(ntb.getCpu().getVendor().equals(cpuVendor)) {
-                notebooksByCpuVendor.add(ntb);
-            }
-        }
-        return notebooksByCpuVendor;
+        Query query = factory.getCurrentSession().createQuery("select n from hw7.springnotes.domain.Notebook n, " +
+                "hw7.springnotes.domain.CPU cpu, hw7.springnotes.domain.Vendor v" +
+                "  where n.cpu=cpu and cpu.vendor=v and n.cpu.vendor=:cpuVendor");
+        query.setParameter("cpuVendor", cpuVendor);
+        return query.list();
     }
 
     @Override
-    public List getNotebooksStorePresent() {
-        Session session = factory.openSession();
-        Query query = session.createQuery("select s.notebookType from hw7.springnotes.domain.Store s");
-        return query.list();
+//    public List getNotebooksStorePresent() {
+//        Query query = factory.getCurrentSession().createQuery("select s.notebookType from hw7.springnotes.domain.Store s");
+//        return query.list();
+//    }
+
+    public Map<Vendor, List<Notebook>> getNotebooksStorePresent() {
+        Query query = factory.getCurrentSession().createQuery("select n.vendor, s.notebookType from hw7.springnotes.domain.Store s," +
+                "hw7.springnotes.domain.Notebook n, hw7.springnotes.domain.Vendor v where s.notebookType=n and " +
+                "n.vendor=v and s.notebooksQuantity>0");
+        Iterator iter = query.list().iterator();
+        Map<Vendor, List<Notebook>> resultMap = new HashMap<>();
+        Object[] array;
+        while(iter.hasNext()) {
+            array = (Object[])iter.next();
+            if(!resultMap.containsKey((Vendor)array[0])) {
+                List<Notebook> list = new ArrayList<>();
+                list.add((Notebook)array[1]);
+                resultMap.put((Vendor)array[0], list);
+            } else {
+                List<Notebook> existingList = resultMap.get((Vendor) array[0]);
+                existingList.add((Notebook)array[1]);
+                resultMap.put((Vendor) array[0], existingList);
+            }
+        }
+        return resultMap;
     }
 
     @Override

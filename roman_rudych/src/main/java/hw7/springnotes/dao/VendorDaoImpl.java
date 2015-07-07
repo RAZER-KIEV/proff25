@@ -17,7 +17,6 @@ import java.util.List;
  */
 @Repository
 public class VendorDaoImpl implements VendorDao {
-    private static Logger log = Logger.getLogger(hw7.notes.dao.VendorDaoImpl.class);
 
     @Autowired
     private SessionFactory factory;
@@ -31,74 +30,32 @@ public class VendorDaoImpl implements VendorDao {
 
     @Override
     public Long create(Vendor vendor) {
-        Session session = factory.openSession();
-        Long id = null;
-        try{
-            session.beginTransaction();
-            id = (Long)session.save(vendor);
-            session.getTransaction().commit();
-        } catch (HibernateException ex) {
-            log.error("Saving error", ex);
-            session.getTransaction().rollback();
-        } finally {
-            session.close();
-        }
-        log.info(session);
-        return id;
+        return (Long)factory.getCurrentSession().save(vendor);
     }
 
     @Override
     public Vendor read(Long ig) {
-        Session session = factory.openSession();
-        Vendor vendor= null;
-        vendor = (Vendor)session.get(Vendor.class, ig);
-        session.close();
-        log.info(session);
-        return vendor;
+        return (Vendor)factory.getCurrentSession().get(Vendor.class, ig);
     }
 
     @Override
     public boolean update(Vendor vendor) {
-        Session session = factory.openSession();
-        boolean result = false;
-        try {
-            session.beginTransaction();
-            session.update(vendor);
-            session.getTransaction().commit();
-            result = true;
-        } catch (HibernateException ex) {
-            log.error("Updating error", ex);
-            session.getTransaction().rollback();
-        } finally {
-            session.close();
-        }
-        log.info(session);
+        boolean result;
+        factory.getCurrentSession().update(vendor);
+        result = true;
         return result;
     }
 
     @Override
     public boolean delete(Vendor vendor) {
-        Session session = factory.openSession();
-        boolean result = false;
-        try {
-            session.beginTransaction();
-            session.delete(vendor);
-            session.getTransaction().commit();
-            result = true;
-        } catch (HibernateException ex) {
-            log.error("Deleting fail", ex);
-            session.getTransaction().rollback();
-        } finally {
-            session.close();
-        }
-        log.info(session);
+        boolean result;
+        factory.getCurrentSession().delete(vendor);
+        result = true;
         return result;
     }
 
     @Override
     public List<Vendor> findAll() {
-        Session session = factory.openSession();
-        Query query = session.createQuery("from hw7.springnotes.domain.Vendor");
-        return query.list();
+        return factory.getCurrentSession().createQuery("from hw7.springnotes.domain.Vendor").list();
     }
 }
