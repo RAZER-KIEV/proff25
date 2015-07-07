@@ -48,4 +48,61 @@ public class NotebookServiceImpl implements NotebookService{
         this.store.update(store);
         return sales.create(new Sales(store, new Date(Calendar.getInstance().getTimeInMillis()),(long)amount));
     }
+
+    @Override
+    public boolean updateCPU(CPU cpu) {
+        return this.cpu.update(cpu);
+    }
+
+    @Override
+    public boolean updateMemory(Memory memory) {
+        return this.memory.update(memory);
+    }
+
+    @Override
+    public boolean updateVendor(Vendor vendor) {
+        return this.vendor.update(vendor);
+    }
+
+    @Override
+    public boolean updateNotebook(Notebook notebook) {
+        return this.notebook.update(notebook);
+    }
+
+    @Override
+    public boolean removeFromStore(Store store, int amount) {
+        long new_count = store.getCount();
+        store.setCount(new_count);
+        return this.store.update(store);
+    }
+
+    @Override
+    public List<Notebook> getNotebooksByPortion(int size) {
+        return store.getNotesByPorces(size);
+    }
+
+    @Override
+    public List<Notebook> getNotebooksGtAmount(int amount) {
+        return null;
+    }
+
+    @Override
+    public List<Notebook> getNotebooksByCpuVendor(Vendor cpuVendor) {
+        return null;
+    }
+
+    @Override
+    public List<Notebook> getNotebooksFromStore() {
+        return null;
+    }
+
+    @Override
+    public Map<Notebook, Integer>  getNotebooksStorePresent() {
+        return null;
+    }
+
+    @Override
+    public Map<Notebook, Integer> getSalesByDays() {
+        return null;
+    }
 }

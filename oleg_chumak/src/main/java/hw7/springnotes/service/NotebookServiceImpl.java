@@ -21,21 +21,21 @@ import java.util.Map;
  */
 
 @Service
+@Transactional
 public class NotebookServiceImpl implements NotebookService {
-    @Autowired
-    public NotebookDaoImpl notebookDao;
-    @Autowired
-    public VendorDaoImpl vendorDao;
-    @Autowired
-    public CPUDaoImpl cpuDao;
-    @Autowired
-    public MemoryDaoImpl memoryDao;
-    @Autowired
-    public StoreDaoImpl storeDao;
-    @Autowired
+
+    @Autowired(required = true)
+    private NotebookDaoImpl notebookDao;
+    @Autowired(required = true)
+    private VendorDaoImpl vendorDao;
+    @Autowired(required = true)
+    private CPUDaoImpl cpuDao;
+    @Autowired(required = true)
+    private MemoryDaoImpl memoryDao;
+    @Autowired(required = true)
+    private StoreDaoImpl storeDao;
+    @Autowired(required = true)
     public SalesDaoImpl salesDao;
-    @Autowired
-    private SessionFactory factory;
 
     public NotebookServiceImpl(NotebookDaoImpl notebookDao, VendorDaoImpl vendorDao, CPUDaoImpl cpuDao, MemoryDaoImpl memoryDao, StoreDaoImpl storeDao, SalesDaoImpl salesDao) {
         this.notebookDao = notebookDao;
@@ -46,17 +46,7 @@ public class NotebookServiceImpl implements NotebookService {
         this.salesDao = salesDao;
     }
 
-    public NotebookServiceImpl() {
-    }
-
-    public void strartDao(){
-        notebookDao = new NotebookDaoImpl(factory);
-        vendorDao = new VendorDaoImpl(factory);
-        cpuDao = new CPUDaoImpl(factory);
-        memoryDao = new MemoryDaoImpl(factory);
-        storeDao = new StoreDaoImpl(factory);
-        salesDao = new SalesDaoImpl(factory);
-    }
+    public NotebookServiceImpl() {    }
 
     @Override
     @Transactional(readOnly = true)
@@ -99,19 +89,19 @@ public class NotebookServiceImpl implements NotebookService {
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public Long receive(Long id, int amount, double price) {
         return storeDao.create(new Store(notebookDao.read(id), new Long(amount), new Long((int)price)));
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public Long receive(Notebook note, int amount, double price) {
         return storeDao.create(new Store(note, new Long(amount), new Long((int)price)));
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public Long sale(Long storeId, int amount) {
         Store currentStore = storeDao.read(storeId);
         Long tmp;

@@ -18,8 +18,8 @@ public class CPU {
     @Column(name = "CPU_ID")
     private long id;
 
-    @Column(name = "CPU_VENDOR")
-    private String vendor;
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    private Vendor vendor;
 
     @Column(name = "CPU_FREQ")
     private int freq;
@@ -33,17 +33,17 @@ public class CPU {
     public CPU() {
     }
 
-    public CPU(String vendor, int freq, String model) {
+    public CPU(Vendor vendor, int freq, String model) {
         this.vendor = vendor;
         this.freq = freq;
         this.model = model;
     }
 
-    public String getVendor() {
+    public Vendor getVendor() {
         return vendor;
     }
 
-    public void setVendor(String vendor) {
+    public void setVendor(Vendor vendor) {
         this.vendor = vendor;
     }
 
@@ -69,5 +69,10 @@ public class CPU {
 
     public void setNotebookSet(Set notebookSet) {
         this.notebookSet = notebookSet;
+    }
+
+    public boolean equals(CPU cpu) {
+        return this.vendor.equals(cpu.getVendor()) && this.model.equalsIgnoreCase(cpu.getModel()) &&
+                this.freq == cpu.getFreq();
     }
 }
