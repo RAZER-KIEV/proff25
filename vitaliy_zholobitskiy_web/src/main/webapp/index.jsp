@@ -1,12 +1,12 @@
-
+<%@ page import="java.util.Date" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Welcome!</title>
     <style>
         .rightpic {
-            float: left; /* Выравнивание по правому краю */
-            margin: 0 0 5px 5px; /* Отступы вокруг фотографии */
+            float: left; /* Выравнивание по левому краю */
+            margin:  5px 5px 0 0; /* Отступы вокруг фотографии */
         }
     </style>
 </head>
@@ -19,11 +19,20 @@
     </tr>
     <tr>
         <th colspan="6">
-            </br>
-            </br>
-            </br>
-            </br>
-            </br>
+            <%!
+                int counter=0;
+                public Date getDate(){
+                    return new Date();
+                }
+            %>
+            Вы зашли к нам
+            <%
+                counter+=1;
+                out.println(counter);
+            %>
+            раз
+            <br>
+            <%out.println(getDate()); %>
         </th>
     </tr>
     <tr width="100%">
