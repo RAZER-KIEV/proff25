@@ -16,7 +16,6 @@ import java.util.List;
  */
 @Repository
 public class CPUDaoImpl implements CPUDao {
-    private Logger log = Logger.getLogger(hw7.notes.dao.CPUDaoImpl.class);
 
     @Autowired
     private SessionFactory factory;
@@ -29,74 +28,32 @@ public class CPUDaoImpl implements CPUDao {
 
     @Override
     public Long create(CPU cpu) {
-        Session session = factory.openSession();
-        Long id = null;
-        try {
-            session.beginTransaction();
-            id = (Long)session.save(cpu);
-            session.getTransaction().commit();
-        } catch (HibernateException ex) {
-            log.error("Saving error", ex);
-            session.getTransaction().rollback();
-        } finally {
-            session.close();
-        }
-        log.info(session);
-        return id;
+        return (Long)factory.getCurrentSession().save(cpu);
     }
 
     @Override
     public CPU read(Long ig) {
-        Session session = factory.openSession();
-        CPU cpu = null;
-        cpu = (CPU)session.get(CPU.class, ig);
-        session.close();
-        log.info(session);
-        return cpu;
+        return (CPU)factory.getCurrentSession().get(CPU.class, ig);
     }
 
     @Override
     public boolean update(CPU cpu) {
-        Session session = factory.openSession();
-        boolean result = false;
-        try {
-            session.beginTransaction();
-            session.update(cpu);
-            session.getTransaction().commit();
-            result = true;
-        } catch (HibernateException ex) {
-            log.error("Updating error", ex);
-            session.getTransaction().rollback();
-        } finally {
-            session.close();
-        }
-        log.info(session);
+        boolean result;
+        factory.getCurrentSession().update(cpu);
+        result = true;
         return result;
     }
 
     @Override
     public boolean delete(CPU cpu) {
-        Session session = factory.openSession();
-        boolean result = false;
-        try {
-            session.beginTransaction();
-            session.delete(cpu);
-            session.getTransaction().commit();
-            result = true;
-        } catch (HibernateException ex) {
-            log.error("Deleting fail", ex);
-            session.getTransaction().rollback();
-        } finally {
-            session.close();
-        }
-        log.info(session);
+        boolean result;
+        factory.getCurrentSession().delete(cpu);
+        result = true;
         return result;
     }
 
     @Override
     public List<CPU> findAll() {
-        Session session = factory.openSession();
-        Query query = session.createQuery("from hw7.springnotes.domain.CPU");
-        return query.list();
+        return factory.getCurrentSession().createQuery("from hw7.springnotes.domain.CPU").list();
     }
 }

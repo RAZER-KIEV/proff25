@@ -12,13 +12,13 @@ import java.nio.file.Paths;
  */
 public class ChannelEx {
     public static void main(String[] args) throws IOException{
-        Path path = Paths.get("text.txt");
-        //int size = path.
-        //SeekableByteChannel channel = null;
+//        Path path = Paths.get("text.txt");
+
+//        SeekableByteChannel channel = null;
 //        try(SeekableByteChannel channel = Files.newByteChannel(path)) {
-//            //channel = Files.newByteChannel(path);
+//            channel = Files.newByteChannel(path);
 //            ByteBuffer buffer = ByteBuffer.allocate(30);
-//            //channel.position(0);//  Задаем позицию, с которой читаем их буфера
+//            channel.position(0);//  Задаем позицию, с которой читаем их буфера
 //            int readed;
 //            while ((readed = channel.read(buffer)) > 0) {
 //                String line = new String(buffer.array(), 0, readed);
