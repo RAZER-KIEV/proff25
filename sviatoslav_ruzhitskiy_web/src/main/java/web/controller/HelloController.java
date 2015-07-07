@@ -19,11 +19,11 @@ public class HelloController {
 
     @RequestMapping(value = "/hello.html", method = RequestMethod.GET)
     public
-    @ResponseBody
+
     String hello(Model model) {
         log.info("/hello.html controller");
         model.addAttribute("name", "Petro");
-        return "hello";
+        return "index";
     }
 
     @RequestMapping(value = "/great.html", method = RequestMethod.GET)
