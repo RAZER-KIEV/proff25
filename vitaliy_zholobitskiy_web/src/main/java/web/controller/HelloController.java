@@ -15,22 +15,23 @@ public class HelloController {
 
     @RequestMapping(value = "/hello.html", method = RequestMethod.GET)
     public
-    @ResponseBody
     String hello(Model model) {
         log.info("/hello.html controller");
         model.addAttribute("name", "Petro");
-        return "hello";
+        return "index";
     }
+
 
     @RequestMapping(value = "/great.html", method = RequestMethod.GET)
     public String great(@RequestParam("login") String name, Model model, HttpSession session) {
         log.info("/great.html controller");
+        model.addAttribute("name", name);
         Long sessId = (Long) session.getAttribute("id");
         if (sessId == null) {
-            return "index";
+            return "hello";
         }
 
-        return "index";
+        return "hello";
     }
 
     @RequestMapping(value = "/form.html", method = RequestMethod.POST)

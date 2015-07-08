@@ -28,6 +28,6 @@ public interface NotebookService {
     List<Notebook> getNotebooksGtAmount(int amount);
     List<Notebook> getNotebooksByCpuVendor(Vendor cpuVendor);
     List<Notebook> getNotebooksFromStore();
-    Map<Notebook, Integer> getNotebooksStorePresent();
+    List getNotebooksStorePresent();
     Map<Notebook, Integer> getSalesByDays();
 }
