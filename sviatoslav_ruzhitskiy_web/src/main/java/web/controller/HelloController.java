@@ -23,9 +23,7 @@ public class HelloController {
     private String name;
 
     @RequestMapping(value = "/hello.html", method = RequestMethod.GET)
-    public
-
-    String hello(Model model) {
+    public String hello(Model model) {
         log.info("/hello.html controller");
         model.addAttribute("name", "Petro");
 
@@ -47,9 +45,8 @@ public class HelloController {
     }
 
     @RequestMapping(value = "/form.html", method = RequestMethod.POST)
-    public
     @ResponseBody
-    String form(@RequestParam String login,
+    public String form(@RequestParam String login,
                 @RequestParam String pass) {
         return login + "[" + pass + "]";
     }
