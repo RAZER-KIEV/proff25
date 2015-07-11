@@ -1,6 +1,7 @@
 package web.controller;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +16,11 @@ import javax.servlet.http.HttpSession;
 @Controller
 @SessionAttributes("id")
 public class HelloController {
+
+    //@Autowired
+   // private  notebookService;
     public static final Logger log = Logger.getLogger(HelloController.class);
+    private String name;
 
     @RequestMapping(value = "/hello.html", method = RequestMethod.GET)
     public
@@ -23,15 +28,19 @@ public class HelloController {
     String hello(Model model) {
         log.info("/hello.html controller");
         model.addAttribute("name", "Petro");
+
         return "index";
     }
+
+
+
 
     @RequestMapping(value = "/great.html", method = RequestMethod.GET)
     public String great(@RequestParam("login") String name, Model model, HttpSession session) {
         log.info("/great.html controller");
         Long sessId = (Long) session.getAttribute("id");
         if (sessId == null) {
-            return "index";
+            return "index"+name;
         }
 
         return "index";
