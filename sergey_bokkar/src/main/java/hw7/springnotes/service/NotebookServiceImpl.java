@@ -1,10 +1,12 @@
-package hw7.notes.service;
+package hw7.springnotes.service;
 
-import hw7.notes.dao.*;
-import hw7.notes.domain.*;
+import hw7.springnotes.dao.*;
+import hw7.springnotes.domain.*;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
@@ -12,12 +14,20 @@ import java.util.Map;
 /**
  * Created by Well on 03.07.2015.
  */
+@Service
+@Transactional
 public class NotebookServiceImpl implements NotebookService {
+    @Autowired
     private NotebookDaoImpl ndi;
+    @Autowired
     private CPUDaoImpl cdi;
+    @Autowired
     private MemoryDaoImpl mdi;
+    @Autowired
     private VendorDaoImpl vdi;
+    @Autowired
     private StoreDaoImpl strdi;
+    @Autowired
     private SalesDaoImpl slsdi;
 
     public NotebookServiceImpl() {}
@@ -83,32 +93,37 @@ public class NotebookServiceImpl implements NotebookService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List getNotebooksByPortion(int size) {
         return null;
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List getNotebooksGtAmount(int amount) {
         return null;
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List getNotebooksByCpuVendor(Vendor cpuVendor) {
         return null;
     }
 
-
     @Override
+    @Transactional(readOnly = true)
     public List getNotebooksFromStore() {
         return null;
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List getNotebooksStorePresent() {
         return null;
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Map getSalesByDays() {
         return null;
     }

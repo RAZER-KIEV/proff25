@@ -1,33 +1,35 @@
-package hw7.notes.dao;
+package hw7.springnotes.dao;
 
-import hw7.notes.domain.Notebook;
-import hw7.notes.domain.Vendor;
+import hw7.springnotes.domain.CPU;
 import org.hibernate.HibernateException;
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * Created by Well on 03.07.2015.
  */
-public class NotebookDaoImpl implements NotebookDao {
+@Repository
+public class CPUDaoImpl implements CPUDao {
+    @Autowired
     private SessionFactory factory;
 
-    public NotebookDaoImpl (){}
+    public CPUDaoImpl (){}
 
-    public NotebookDaoImpl(SessionFactory factory) {
+    public CPUDaoImpl(SessionFactory factory) {
         this.factory = factory;
     }
 
     @Override
-    public Long create(Notebook notebook) {
+    public Long create(CPU cpu) {
         Session session = factory.openSession();
         Long id;
         try {
             session.beginTransaction();
-            id = (Long)session.save(notebook);
+            id = (Long)session.save(cpu);
             session.getTransaction().commit();
             return id;
         } catch (HibernateException exc) {
@@ -38,16 +40,16 @@ public class NotebookDaoImpl implements NotebookDao {
                 session.close();
             }
         }
-        return null;
+           return null;
     }
 
     @Override
-    public Notebook read(Long id) {
+    public CPU read(Long id) {
         Session session = factory.openSession();
         try {
             session.beginTransaction();
 
-            return (Notebook) session.get(Notebook.class, id);
+            return (CPU) session.get(CPU.class, id);
         } catch (HibernateException exc) {
             System.out.println(exc);
         } finally {
@@ -59,11 +61,11 @@ public class NotebookDaoImpl implements NotebookDao {
     }
 
     @Override
-    public boolean update(Notebook notebook) {
+    public boolean update(CPU cpu) {
         Session session = factory.openSession();
         try {
             session.beginTransaction();
-            session.update(notebook);
+            session.update(cpu);
             session.getTransaction().commit();
             return true;
         } catch (HibernateException exp) {
@@ -78,11 +80,11 @@ public class NotebookDaoImpl implements NotebookDao {
     }
 
     @Override
-    public boolean delete(Notebook notebook) {
+    public boolean delete(CPU cpu) {
         Session session = factory.openSession();
         try {
             session.beginTransaction();
-            session.delete(notebook);
+            session.delete(cpu);
             session.getTransaction().commit();
             return true;
         } catch (HibernateException exp) {
@@ -99,6 +101,6 @@ public class NotebookDaoImpl implements NotebookDao {
     @Override
     public List findAll() {
         Session session = factory.openSession();
-        return session.createQuery("from Notebook n").list();
+        return session.createQuery("from CPU c").list();
     }
 }
