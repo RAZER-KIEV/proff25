@@ -1,6 +1,6 @@
 package hw8.taxi.controller;
 
-import hw8.taxi.exception.AuthorizationExeption;
+import hw8.taxi.exception.AuthorizationException;
 import hw8.taxi.service.AuthorizationService;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
@@ -47,8 +47,8 @@ public class RegisterController {
             }
             model.addAttribute("info","User "+login+" registration is successful.<br>");
             return "index";
-        } catch (AuthorizationExeption authorizationExeption) {
-            model.addAttribute("authorizationEx", authorizationExeption.getMessage());
+        } catch (AuthorizationException authorizationException) {
+            model.addAttribute("authorizationEx", authorizationException.getMessage());
             return "register";
         } catch (HibernateException e){
             model.addAttribute("error","Database error.");
