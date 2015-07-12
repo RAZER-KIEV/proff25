@@ -32,7 +32,7 @@
 
     <servlet-mapping>
         <servlet-name>authController</servlet-name>
-        <url-pattern>/auth</url-pattern>
+        <url-pattern>/authController</url-pattern>
     </servlet-mapping>
 
 

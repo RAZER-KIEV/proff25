@@ -6,7 +6,10 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 /**
  * Created by ПК on 11.07.2015.
  */
-@Controller
-@SessionAttributes("id")
-public class AuthenticationException {
+public class AuthenticationException extends Exception {
+    public AuthenticationException () {}
+
+    public AuthenticationException(String message) {
+        super(message);
+    }
 }

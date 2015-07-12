@@ -11,7 +11,7 @@
     <title>Authentification</title>
 </head>
 <body>
-<form action="authController" method="POST">
+<form action="authController" method="post">
 <p> Введите логин: <input type="text" name="login"> <br></p>
 <p> Введите проль:<input type="password" name="password"></p>
   <input type="submit" name="enter" value="Log in">

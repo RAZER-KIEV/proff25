@@ -8,9 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title></title>
+    <title>DASHBOARD</title>
 </head>
 <body>
+
+<h1>YOU WELCOME ON DASHBOARD!</h1>
 
 </body>
 </html>
