@@ -33,6 +33,11 @@ public class AuthorizationServiceImpl implements AuthorizationService {
 
 
     @Override
+    public boolean register(String login, String pass, String id) throws AuthorizationException {
+        return false;//for jon
+    }
+
+    @Override
     public boolean register(String login, String pass, String confirmPass, String id) throws AuthorizationException {
         String error = "";
         if (!IsValid.isValidLogin(login)){
