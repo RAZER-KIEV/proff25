@@ -32,22 +32,37 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
+    @Transactional(readOnly = true)
+    public Client getClient(Long id) {
+        return clientDao.read(id);
+    }
+
+    @Override
     public boolean createClient(String name, String surname, String phone, String address) throws ClientException {
         Long res = clientDao.create(new Client(name,surname,phone,address,0,null));
         return (res>0);
     }
 
     @Override
+    public void updateDate(Client client) {
+        client.setDateLastOrder(new Date());
+        clientDao.update(client);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
     public List<Client> showClientsByPortion(int portionSize) {
         return clientDao.showClientsByPortion(portionSize);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Client> showClientsGtSum(int sum) {
         return clientDao.showClientsGtSum(sum);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Client> showClientsLastMonth() {
         return clientDao.showClientsLastMonth();
     }
