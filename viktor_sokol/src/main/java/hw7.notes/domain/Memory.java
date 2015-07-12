@@ -7,6 +7,8 @@ public class Memory {
     private String vendor;
     private double size;
 
+    public Memory(){}
+
     public Memory(String vendor, double size){
         this.vendor = vendor;
         this.size = size;

@@ -6,6 +6,8 @@ package hw7.notes.domain;
 public class Vendor {
     private String name;
 
+    public Vendor(){}
+
     public Vendor(String name){
         this.name = name;
     }

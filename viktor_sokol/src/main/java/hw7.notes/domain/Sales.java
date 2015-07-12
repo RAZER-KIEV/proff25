@@ -10,6 +10,10 @@ public class Sales {
     private Date date;
     private Long number;
 
+    public Sales(){
+
+    }
+
     public Sales(Store store, Date date, Long number){
         this.store = store;
         this.date = date;
