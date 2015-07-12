@@ -1,5 +1,7 @@
 package hw6.notes.domain;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.DoubleSummaryStatistics;
@@ -21,6 +23,7 @@ import java.util.DoubleSummaryStatistics;
  hw6.notes.dao.NotebookDaoImpl
  * Created by ПК on 18.06.2015."
  */
+@Component
 @Entity
 @Table(name = "NOTEBOOKS" )
 

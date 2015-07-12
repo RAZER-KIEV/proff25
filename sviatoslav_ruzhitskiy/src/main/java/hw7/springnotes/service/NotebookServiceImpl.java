@@ -172,7 +172,7 @@ public class NotebookServiceImpl implements NotebookService {
     }
 
     @Override
-    public Map getNotebooksStorePresent() {
+    public List getNotebooksStorePresent() {
         return storeDao.getNotebooksStorePresent();
     }
 

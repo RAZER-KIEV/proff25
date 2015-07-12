@@ -19,6 +19,7 @@
     </tr>
     <tr>
         <th colspan="6">
+            hello ${name}
             <%!
                 int counter=0;
                 public Date getDate(){
@@ -33,12 +34,6 @@
             раз
             <br>
             <%out.println(getDate()); %>
-        </th>
-        <th colspan="6">
-            <form action="/great.html" method="get">
-                <input type="text" name="login" value="petya">
-                <button type="submit">OK</button>
-            </form>
         </th>
     </tr>
     <tr width="100%">
