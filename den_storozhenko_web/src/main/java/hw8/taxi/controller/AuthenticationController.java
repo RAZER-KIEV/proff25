@@ -29,7 +29,7 @@ public class AuthenticationController {
     String login(@RequestParam("login") String login, @RequestParam("password") String password, Model model) {
 
         log.info("/dashboard.html controller");
-        model.addAttribute("login", login);
+        model.addAttribute("hello", "Hello, "+login+"!");
         try{
             authenticationService.authenticate(login,password);
             return "dashboard";

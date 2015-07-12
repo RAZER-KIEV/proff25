@@ -25,7 +25,7 @@ public class RegisterController {
 
     @PostConstruct
     public void init(){
-        Locale.setDefault(Locale.ENGLISH);;
+        Locale.setDefault(Locale.ENGLISH);
     }
 
     @RequestMapping(value = "/register.html", method = RequestMethod.POST)

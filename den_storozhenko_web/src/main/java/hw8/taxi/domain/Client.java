@@ -4,6 +4,8 @@ import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Component
 @Entity
@@ -26,6 +28,8 @@ public class Client {
     private Integer cash;
     @Column(name = "DATE_LAST_ORDER")
     private Date dateLastOrder;
+    @OneToMany(mappedBy = "client",cascade = CascadeType.ALL)
+    private Set<Order> orderSet = new HashSet<>();
 
     public Client() {
     }
@@ -95,18 +99,6 @@ public class Client {
         this.dateLastOrder = dateLastOrder;
     }
 
-    /*@Override
-    public String toString() {
-        return "Client{" +
-                "id=" + id +
-                ", firstname='" + firstname + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", phone='" + phone + '\'' +
-                ", adress='" + adress + '\'' +
-                ", cash=" + cash +
-                ", dateLastOrder=" + dateLastOrder +
-                '}';
-    }*/
     @Override
     public  String toString(){
         return id+", "+firstname+" "+lastname+", "+phone+", "+adress+", "+cash+", "+dateLastOrder;
