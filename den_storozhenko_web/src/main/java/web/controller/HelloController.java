@@ -11,30 +11,36 @@ import javax.servlet.http.HttpSession;
  * Created with IntelliJ IDEA.
  * User: al1
  * Date: 3/16/15
+ *
+ * написать кол-во посещений
  */
 @Controller
 @SessionAttributes("id")
 public class HelloController {
     public static final Logger log = Logger.getLogger(HelloController.class);
 
+
     @RequestMapping(value = "/hello.html", method = RequestMethod.GET)
     public
-    @ResponseBody
+    //@ResponseBody
     String hello(Model model) {
         log.info("/hello.html controller");
         model.addAttribute("name", "Petro");
-        return "hello";
+        return "/WEB-INF/jsps/index.jsp";
     }
 
-    @RequestMapping(value = "/great.html", method = RequestMethod.GET)
-    public String great(@RequestParam("login") String name, Model model, HttpSession session) {
+    @RequestMapping(value = "/great.html", method = RequestMethod.POST)
+    public
+    //@ResponseBody
+    String great(@RequestParam("login") String name,@RequestParam("password") String password, Model model, HttpSession session) {
         log.info("/great.html controller");
-        Long sessId = (Long) session.getAttribute("id");
+        model.addAttribute("name", name);
+        model.addAttribute("password",password);
+        /*Long sessId = (Long) session.getAttribute("id");
         if (sessId == null) {
             return "index";
-        }
-
-        return "index";
+        }*/
+        return "great";
     }
 
     @RequestMapping(value = "/form.html", method = RequestMethod.POST)
@@ -46,9 +52,8 @@ public class HelloController {
     }
 
     @RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.HEAD})
-    public String index(Model model) {
+    public String index() {
         log.info("/index controller");
-        model.addAttribute("name", "al1");
-        return "index";
+        return "/WEB-INF/jsps/index.jsp";
     }
 }

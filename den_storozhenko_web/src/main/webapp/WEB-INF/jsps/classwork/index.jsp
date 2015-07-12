@@ -1,10 +1,7 @@
-<%--
-  сделать сайт 3 раздела
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title></title>
+    <title>Index</title>
 </head>
 <table border="1px" width="100%" height="100%">
     <thead>
@@ -45,7 +42,27 @@
 
     <tfoot>
         <tr>
-            <td width="100%" colspan="6" height="5%"><p align="right">(c)Denst</p></td>
+            <td width="15%" height="5%">
+                <%! int k=0;
+                %>
+                <%
+                    k++;
+                    out.println("Количество посещений: "+k);
+                %>
+                ${name}
+            </td>
+            <td width="15%" height="5%">
+                <form action="/great.html" method="POST">
+                    <input type="text" name="login" value="YourName"/>
+                    <input type="password" name="password" value="YourPass"/>
+                    <input type="submit" value="SEND" align="center"/>
+                </form>
+            </td>
+            <td width="60%" colspan="5" height="5%">
+                <p align="right">
+                    (c)Denst
+                </p>
+            </td>
         </tr>
     </tfoot>
 </table>
