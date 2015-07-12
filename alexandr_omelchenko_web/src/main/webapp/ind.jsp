@@ -9,30 +9,46 @@
     <title></title>
 </head>
 <body>
-<h3>Hello Alexandr</h3>
+<%!
+    int count=0;
+%>
+<%
+    count++;
+    out.println(count);
+%>
+<h2>Hello Alexandr</h2>
+
 <p>Parag</p>
-<a href="ya.ru">Ссылка</a> <br/>
-<!--img src="duke.ranning.gif"/>-->
+<a href="http://ya.ru">Ссылка</a> <br/>
+<!--<img src="duke.running.gif"/>-->
 <q>Cicitata</q>
-<u1>
+
+<ul>
     <li>item 1</li>
-    <li>item 1\2</li>
+    <li>item 2</li>
     <li>item 3</li>
-</u1>
+</ul>
+
 <ol>
-    <li>Элемент 1</li>li>
-    <li>Элемент 2</li>li>
-    <li>Элемент 3</li>li>
- </ol>
+    <li>Элемент 1</li>
+    <li>Элемент 1</li>
+    <li>Элемент 1</li>
+</ol>
+
 <table border="1">
-    <thread>
+    <thead>
+    <tr>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+    </tr>
+    </thead>
+    <tbody>
     <tr>
         <td>1</td>
         <td>2</td>
         <td>3</td>
     </tr>
-    </thread>
-    <tbody>
     <tr>
         <td>3</td>
         <td>2</td>
