@@ -10,8 +10,10 @@ import java.util.List;
  */
 public interface ClientService {
     Client getClient(Long id);
+    Client getClientByName(String name, String surname);
     boolean createClient(String name, String surname, String phone, String address) throws ClientException;
     void updateDate(Client client);
+    List findAll();
     List showClientsByPortion(int portionSize);
     List showClientsGtSum(int sum);
     List showClientsLastMonth();

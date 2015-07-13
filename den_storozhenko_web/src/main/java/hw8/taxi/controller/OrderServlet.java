@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.annotation.PostConstruct;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -75,6 +76,78 @@ public class OrderServlet {
         } catch (OrderException e) {
             model.addAttribute("orderEx", e.getMessage());
             return "order";
+        }
+    }
+
+    @RequestMapping(value = "/createOrder1", method = RequestMethod.POST)
+    public String createOrder1(Model model) {
+        log.info("/createOrder1.html controller");
+        List<String> names = new ArrayList<>();
+        for (Client client:(List<Client>)clientService.findAll()){
+            names.add(client.getFirstname()+" "+client.getLastname()+" |"+client.getAdress());
+        }
+        model.addAttribute("names",names);
+        return "order1";
+    }
+
+    @RequestMapping(value = "/editOrder1", method = RequestMethod.POST)
+    public String editOrder1(Model model) {
+        log.info("/editOrder1.html controller");
+        List<String> ids = new ArrayList<>();
+        for (Order order:(List<Order>)orderService.findAll()){
+            ids.add(order.getId()+"|"+order.getClient().getFirstname()+" "+order.getClient().getLastname()+"|"+order.getAmount()+"|"+
+            order.getAddressFrom()+"|"+order.getAddressTo());
+        }
+        model.addAttribute("ids", ids);
+        List<String> names = new ArrayList<>();
+        for (Client client:(List<Client>)clientService.findAll()){
+            names.add(client.getFirstname()+" "+client.getLastname()+" |"+client.getAdress());
+        }
+        model.addAttribute("names",names);
+        return "order1";
+    }
+
+    @RequestMapping(value = "/create1", method = RequestMethod.POST)
+    public String create1(@RequestParam String names, @RequestParam String amount, @RequestParam String from,
+                         @RequestParam String to, Model model) {
+        log.info("/create1.html controller");
+        try {
+            String clientFirstName = names.split(" ")[0];
+            String clientLastName = names.split(" ")[1];
+            Client client = clientService.getClientByName(clientFirstName,clientLastName);
+            if (client!=null && orderService.createOrder(client, amount, from, to)) {
+                clientService.updateDate(client);
+                model.addAttribute("info", "Order was created.");
+            } else {
+                model.addAttribute("error", "Order wasn't created.");
+            }
+            return "dashboard";
+        } catch (OrderException e) {
+            model.addAttribute("orderEx", e.getMessage());
+            return "order1";
+        }
+    }
+
+    @RequestMapping(value = "/edit1", method = RequestMethod.POST)
+    public String edit1(@RequestParam String id, @RequestParam String names, @RequestParam String amount, @RequestParam String from,
+                       @RequestParam String to, Model model) {
+        log.info("/edit1.html controller");
+        try {
+            Long idOrder = Long.parseLong(id.split("|")[0]);
+            String clientFirstName = names.split(" ")[0];
+            String clientLastName = names.split(" ")[1];
+            Client client = clientService.getClientByName(clientFirstName,clientLastName);
+            if (client!=null) {
+                orderService.editOrder(idOrder, client, amount, from, to);
+                model.addAttribute("info", "Order was edited.");
+            }
+            else{
+                model.addAttribute("error", "Order wasn't edited.");
+            }
+            return "dashboard";
+        } catch (OrderException e) {
+            model.addAttribute("orderEx", e.getMessage());
+            return "order1";
         }
     }
 

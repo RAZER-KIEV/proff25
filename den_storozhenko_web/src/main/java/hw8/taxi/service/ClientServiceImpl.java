@@ -38,6 +38,12 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
+    @Transactional(readOnly = true)
+    public Client getClientByName(String name, String surname) {
+        return clientDao.readByName(name,surname);
+    }
+
+    @Override
     public boolean createClient(String name, String surname, String phone, String address) throws ClientException {
         Long res = clientDao.create(new Client(name,surname,phone,address,0,null));
         return (res>0);
@@ -47,6 +53,11 @@ public class ClientServiceImpl implements ClientService {
     public void updateDate(Client client) {
         client.setDateLastOrder(new Date());
         clientDao.update(client);
+    }
+
+    @Override
+    public List<Client> findAll() {
+        return clientDao.findAll();
     }
 
     @Override

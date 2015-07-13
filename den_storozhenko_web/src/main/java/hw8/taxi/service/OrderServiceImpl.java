@@ -47,6 +47,16 @@ public class OrderServiceImpl implements OrderService{
     }
 
     @Override
+    public boolean createOrder(Client client, String amount, String addressFrom, String addressTo) throws OrderException {
+        try {
+            return orderDao.create(new Order(new Date(), client, Long.parseLong(amount), addressFrom, addressTo)) > 0;
+        }
+        catch (HibernateException e){
+            throw new OrderException("Database error.");
+        }
+    }
+
+    @Override
     public void editOrder(Long id, Client client, String amount, String addressFrom, String addressTo) throws OrderException {
         try {
             Order order = orderDao.read(id);
@@ -62,6 +72,11 @@ public class OrderServiceImpl implements OrderService{
         catch (HibernateException e){
             throw new OrderException("Database error.");
         }
+    }
+
+    @Override
+    public List<Order> findAll() {
+        return orderDao.findAll();
     }
 
     @Override
