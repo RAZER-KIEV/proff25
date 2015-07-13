@@ -18,7 +18,8 @@ import java.util.Locale;
 public class Main {
     public static void main(String[] args) throws OrderException {
         Locale.setDefault(Locale.ENGLISH);
-        ApplicationContext context = new ClassPathXmlApplicationContext("hw8/context.xml");
+        System.out.println("22 |adsads|qwwqqw".split(" ")[0]);
+        //ApplicationContext context = new ClassPathXmlApplicationContext("hw8/context.xml");
         //AuthenticationService authenticationService = context.getBean("authenticationServiceImpl",AuthenticationService.class);
         /*ClientService clientService = context.getBean("clientServiceImpl",ClientService.class);
         for(Object client:clientService.showClientsLastMonth()){

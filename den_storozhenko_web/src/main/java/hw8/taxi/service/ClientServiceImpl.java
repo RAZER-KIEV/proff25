@@ -50,8 +50,9 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public void updateDate(Client client) {
+    public void updateClient(Client client, Long amount) {
         client.setDateLastOrder(new Date());
+        client.setCash((int) (client.getCash() + amount));
         clientDao.update(client);
     }
 

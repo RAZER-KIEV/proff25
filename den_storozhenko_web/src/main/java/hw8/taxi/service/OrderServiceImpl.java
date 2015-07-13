@@ -34,12 +34,20 @@ public class OrderServiceImpl implements OrderService{
     }
 
     @Override
+    public Order getOrder(Long id) {
+        return orderDao.read(id);
+    }
+
+    @Override
     public boolean createOrder(Long id, Client client, String amount, String addressFrom, String addressTo) throws OrderException {
         try {
             if (orderDao.read(id)!=null){
                 throw new OrderException("Order with id "+id+" exist.");
             }
             return orderDao.create(new Order(id, new Date(), client, Long.parseLong(amount), addressFrom, addressTo)) > 0;
+        }
+        catch (NumberFormatException e){
+            throw new OrderException("Amount has been number.");
         }
         catch (HibernateException e){
             throw new OrderException("Database error.");
@@ -50,6 +58,9 @@ public class OrderServiceImpl implements OrderService{
     public boolean createOrder(Client client, String amount, String addressFrom, String addressTo) throws OrderException {
         try {
             return orderDao.create(new Order(new Date(), client, Long.parseLong(amount), addressFrom, addressTo)) > 0;
+        }
+        catch (NumberFormatException e){
+            throw new OrderException("Amount has been number.");
         }
         catch (HibernateException e){
             throw new OrderException("Database error.");
@@ -68,6 +79,9 @@ public class OrderServiceImpl implements OrderService{
             order.setAddressFrom(addressFrom);
             order.setAddressTo(addressTo);
             orderDao.update(order);
+        }
+        catch (NumberFormatException e){
+            throw new OrderException("Amount has been number.");
         }
         catch (HibernateException e){
             throw new OrderException("Database error.");
