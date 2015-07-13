@@ -70,6 +70,7 @@ public class OrderServiceImpl implements OrderService{
     @Override
     public void editOrder(Long id, Client client, String amount, String addressFrom, String addressTo) throws OrderException {
         try {
+
             Order order = orderDao.read(id);
             if (order==null){
                 throw new OrderException("Order with id "+id+" does not exist.");
