@@ -15,7 +15,7 @@ public class Main {
         ApplicationContext context = new ClassPathXmlApplicationContext("hw8/taxi/context.xml");
 
         ClientService service = context.getBean("clientServiceImpl", ClientService.class);
-//service.createClient("Alexandr", "Omelchenko", "0931874501","Bilogorodka", 100.00, new Date());
+service.createClient("Alexandr", "Omelchenko", "0931874501","Bilogorodka", 100.00, new Date());
  //       System.out.println(service.getClient(1L));
     }
 }

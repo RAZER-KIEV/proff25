@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Date;
 import java.util.List;
 
-@Service ("clientServiceImpl")
+@Service //(name ="clientServiceImpl")
 @Transactional
 public class ClientServiceImpl implements ClientService {
     @Autowired
@@ -22,7 +22,7 @@ public class ClientServiceImpl implements ClientService {
         this.clientDao = clientDao;
     }
 
-    public ClientDao getClientDao() {
+    public ClientDaoImpl getClientDao() {
         return clientDao;
     }
     public void setClientDao(ClientDaoImpl clientDao) {
