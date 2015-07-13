@@ -10,6 +10,12 @@
 <html>
 <head>
     <title>Taxi Authentication</title>
+  <%!
+    int count=0;
+  %>
+  <%
+
+  %>
 </head>
 <body>
 </body>

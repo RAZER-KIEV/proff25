@@ -11,12 +11,21 @@
     <title>Authentification</title>
 </head>
 <body>
-<form action="authController" method="post">
+
+<%
+
+  if(request.getParameter("login")!=null){
+    count++;
+ // if(count>3){}
+  }
+%>
+Logining retry: <%= count%>
+
+<form id="myAuthForm" action="authController" method="post">
 <p> Введите логин: <input type="text" name="login"> <br></p>
 <p> Введите проль:<input type="password" name="password"></p>
   <input type="submit" name="enter" value="Log in">
   <input type="submit" name="register" value="Registeration">
 </form>
-
 </body>
 </html>

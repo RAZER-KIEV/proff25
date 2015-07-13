@@ -39,8 +39,9 @@ public class AuthenticationController extends HttpServlet{
             String login=request.getParameter("login");
             String pass = request.getParameter("password");
             PrintWriter out = response.getWriter();
+        if(request.getParameter("enter")!=null){
         if(superAdmin.equals(login)&superPass.equals(pass)){
-            forvard("/dashboard.jsp",request,response);
+            this.forvard("/WEB-INF/jsps/dashboard.jsp", request,response);
             /*response.setStatus(HttpServletResponse.SC_OK);
             out.write("HELLO SUPERADMIN!!! YOU WELCOME!!!");*/
         }
@@ -54,11 +55,17 @@ public class AuthenticationController extends HttpServlet{
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            forvard("/index.jsp", request, response);
+            forvard("/WEB-INF/jsps/index.jsp", request, response);
+
         }
         out.flush();
         out.close();
+        }else if(request.getParameter("register")!=null){
+            this.forvard("/WEB-INF/jsps/dashboard.jsp", request,response);
+        }
+
     }
+
     public void forvard (String torget, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(torget);
         dispatcher.forward(request,response);
