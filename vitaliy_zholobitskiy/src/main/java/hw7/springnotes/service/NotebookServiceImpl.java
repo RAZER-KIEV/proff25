@@ -105,7 +105,7 @@ public class NotebookServiceImpl implements hw7.springnotes.service.NotebookServ
     }
     @Transactional(readOnly = true)
     @Override
-    public Map<Notebook, Integer> getNotebooksStorePresent() {
+    public List getNotebooksStorePresent() {
         return null;
     }
     @Transactional(readOnly = true)

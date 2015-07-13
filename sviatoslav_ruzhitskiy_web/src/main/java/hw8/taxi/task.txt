@@ -1,0 +1,105 @@
+1)
+Оператор вводит логин и пароль.
+Если пароль с логином не совпадает то повторить ввод. Передача осуществляется методом POST.
+Колличество попыток ввода задается в properties файле. После последней неудачной попытки пользователь блокируется.
+Время действия пароля задается в сервисе
+После истечения действия пароля, пользователь должен поменять пароль. Предыдущий вводить нельзя
+
+hw8.taxi.service.AuthenticationService
+boolean authenticate(String login, String pass) throws AuthenticationException
+hw8.taxi.service.AuthenticationServiceImpl
+hw8.taxi.controller.AuthenticationController
+hw8.taxi.exception.AuthenticationException
+webapp
+WEB-INF
+jsps
+index.jsp - страница с формой аутентификации
+dashboard.jsp - поздравления об удачной аутентификации
+spring
+context.xml
+
+Задание выполнить в модуле name_surname_web
+
+2)
+Реализовать регистрацию пользователя системы (оператора).
+Пользователь вводит:
+- логин (должен быть не менее 4 символов, не должен содержать пробелы)
+- идентификационный номер (10 цифр, без букв и других знаков)
+- пароль (должен быть не менее 8 символов,
+включать большие и маленькие буквы, цифры, должен совпадать с подтверждением)
+- подтверждение пароля
+- пользователь с таким логином должен быть уникальным
+
+hw8.taxi.service.AuthorizationService
+boolean register(String login, String id, String pass, String confirm) throws AuthenticationException
+hw8.taxi.service.AuthorizationServiceImpl
+hw8.taxi.controller.RegisterController
+hw8.taxi.exception.AuthorizationException
+webapp
+jsps
+index.jsp
+register.jsp - форма регистрации
+spring
+context.xml
+
+Задание выполнить в модуле name_surname_web
+
+3)
+Учёт клиентов службы такси.
+
+Функции:
+- зарегистрировать клиента (имя, фамилия, телефон, адрес, сумма, дата последнего заказа)
+- вывести всех клиентов порциями по 10 человек
+- вывести всех клиентов наездивших на сумму больше указанной
+- вывести всех клиентов, делавших заказы за последний месяц
+
+hw8.taxi.domain.Client
+hw8.taxi.service.ClientService
+boolean createClient(String name, String surname, String phone, String address) throws OrderException
+List showClientsByPortion(int portionSize)
+List showClientsGtSum(int sum)
+List showClientsLastMonth()
+hw8.taxi.service.ClientServiceImpl
+hw8.taxi.controller.ClientController
+hw8.taxi.exception.ClientException
+webapp
+WEB-INF
+jsps
+index.jsp
+dashboard.jsp - страница со списком функций (доступна после аутентификации)
+registerClient.jsp - форма создания клиента
+clients.jsp - список клиентов
+spring
+context.xml
+
+Задание выполнить в модуле name_surname_web
+
+4)
+Добавить функции работы с заказами такси.
+Функции:
+- оформить заказ (дата, клиент, сумма, адрес подачи, адрес назначения)
+- отредактировать заказ (поменять свойства заказа)
+- вывести список заказов на сумму в указанном диапазоне
+- вывести список всех заказов порциями по 5 штук
+
+
+hw8.taxi.domain.Order
+hw8.taxi.domain.Client
+hw8.taxi.service.OrderService
+boolean createOrder(Long id, Client client, String amount, String addressFrom, String addressTo) throws OrderException
+void editOrder(Long id, Client client, String amount, String addressFrom, String addressTo)
+List showOrders(Long from, Long to)
+List showOrdersByPortion()
+hw8.taxi.service.OrderServiceImpl
+hw8.taxi.controller.OrderServlet
+hw8.taxi.exception.OrderException
+webapp
+jsps
+index.jsp
+dashboard.jsp - страница со списком функций
+order.jsp - форма оформления/редактирования заказа
+orders.jsp - список заказов
+spring
+context.xml
+
+Задание выполнить в модуле name_surname_web

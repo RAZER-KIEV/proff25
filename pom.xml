@@ -21,6 +21,7 @@
         <module>alexandr_omelchenko</module>
         <module>alexandr_omelchenko_web</module>
         <module>sergey_bokkar</module>
+        <module>sergey_bokkar_web</module>
         <module>ivan_kushnirenko</module>
         <module>anton_lipskiy</module>
         <module>vitaliy_zholobitskiy</module>
@@ -42,6 +43,7 @@
         <module>svetlana_gazina</module>
         <module>svetlana_gazina_web</module>
         <module>viktor_sokol</module>
+        <module>viktor_sokol_web</module>
         <module>anton_lipskiy_web</module>
 
     </modules>
