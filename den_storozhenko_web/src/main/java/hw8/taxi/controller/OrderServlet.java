@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.annotation.PostConstruct;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -52,7 +53,8 @@ public class OrderServlet {
         try {
             Client client = clientService.getClient(clientId);
             if (orderService.createOrder(id, client, amount, from, to)) {
-                clientService.updateDate(client);
+                clientService.updateClient(client, Long.parseLong(amount));
+
                 model.addAttribute("info", "Order was created.");
             } else {
                 model.addAttribute("error", "Order wasn't created.");
@@ -75,6 +77,71 @@ public class OrderServlet {
         } catch (OrderException e) {
             model.addAttribute("orderEx", e.getMessage());
             return "order";
+        }
+    }
+
+    @RequestMapping(value = "/editOrder1", method = RequestMethod.POST)
+    public String editOrder1(Model model) {
+        log.info("/editOrder1.html controller");
+        List<String> ids = new ArrayList<>();
+        for (Order order:(List<Order>)orderService.findAll()){
+            ids.add(order.getId()+" |"+order.getClient().getFirstname()+" "+order.getClient().getLastname()+"|"+order.getAmount()+"|"+
+            order.getAddressFrom()+"|"+order.getAddressTo());
+        }
+        model.addAttribute("ids", ids);
+        List<String> names = new ArrayList<>();
+        for (Client client:(List<Client>)clientService.findAll()){
+            names.add(client.getFirstname()+" "+client.getLastname()+" |"+client.getAdress());
+        }
+        model.addAttribute("names",names);
+        return "order1";
+    }
+
+    @RequestMapping(value = "/create1", method = RequestMethod.POST)
+    public String create1(@RequestParam String names, @RequestParam String amount, @RequestParam String from,
+                         @RequestParam String to, Model model) {
+        log.info("/create1.html controller");
+        try {
+            String clientFirstName = names.split(" ")[0];
+            String clientLastName = names.split(" ")[1];
+            Client client = clientService.getClientByName(clientFirstName,clientLastName);
+            if (client!=null && orderService.createOrder(client, amount, from, to)) {
+                clientService.updateClient(client, Long.parseLong(amount));
+                model.addAttribute("info", "Order was created.");
+            } else {
+                model.addAttribute("error", "Order wasn't created.");
+            }
+            return "dashboard";
+        } catch (OrderException e) {
+            model.addAttribute("orderEx", e.getMessage());
+            editOrder1(model);
+            return "order1";
+        }
+    }
+
+    @RequestMapping(value = "/edit1", method = RequestMethod.POST)
+    public String edit1(@RequestParam String id, @RequestParam String names1, @RequestParam String amount1, @RequestParam String from1,
+                       @RequestParam String to1, Model model) {
+        log.info("/edit1.html controller");
+
+        try {
+            Long idOrder = Long.parseLong(id.split(" ")[0]);
+            String clientFirstName = names1.split(" ")[0];
+            String clientLastName = names1.split(" ")[1];
+            Client client = clientService.getClientByName(clientFirstName,clientLastName);
+            if (client!=null) {
+                clientService.updateClient(client, Long.parseLong(amount1)-orderService.getOrder(idOrder).getAmount());
+                orderService.editOrder(idOrder, client, amount1, from1, to1);
+                model.addAttribute("info", "Order was edited.");
+            }
+            else{
+                model.addAttribute("error", "Order wasn't edited.");
+            }
+            return "dashboard";
+        } catch (OrderException e) {
+            model.addAttribute("orderEx", e.getMessage());
+            editOrder1(model);
+            return "order1";
         }
     }
 

@@ -10,6 +10,8 @@ public class Store {
     private Float price;
     private Notebook notebook;
 
+    public Store(){}
+
     public Store(Long number, Float price, Notebook notebook){
         this.number = number;
         this.price = price;

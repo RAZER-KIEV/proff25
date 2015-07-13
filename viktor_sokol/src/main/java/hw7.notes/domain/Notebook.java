@@ -11,6 +11,9 @@ public class Notebook {
     private String manufactureDate;
     private Float price;
 
+    public Notebook() {
+
+    }
     public Notebook(Long id, String serial, String vendor, String manufactureDate, Float price) {
         this.id = id;
         this.serial = serial;

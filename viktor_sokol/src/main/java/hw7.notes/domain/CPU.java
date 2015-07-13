@@ -8,6 +8,9 @@ public class CPU {
     private float frequency;
     private String model;
 
+    public CPU (){
+
+    }
     public CPU(String vendor, float frequency, String model ){
         this.vendor = vendor;
         this.frequency = frequency;
