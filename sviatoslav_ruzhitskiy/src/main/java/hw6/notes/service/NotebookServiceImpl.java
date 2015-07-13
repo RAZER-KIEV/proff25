@@ -8,6 +8,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -16,9 +17,11 @@ import java.util.List;
 /**
  * Created by ПК on 18.06.2015.
  */
+@Component
 public class NotebookServiceImpl implements NotebookService{
 
     private static Logger log = Logger.getLogger(NotebookServiceImpl.class);
+
     private SessionFactory sessionFactory;
     private NotebookDaoImpl notebookDao;
 

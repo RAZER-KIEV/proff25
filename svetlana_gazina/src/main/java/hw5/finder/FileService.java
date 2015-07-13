@@ -19,7 +19,6 @@ public class FileService {
     private Path path;
 
     public Path getWayToPath(String fileName, String extension) {
-        Path path = new Path();
         try{
             File temp = File.createTempFile(fileName, extension);
             path.setPath(temp.getAbsolutePath());

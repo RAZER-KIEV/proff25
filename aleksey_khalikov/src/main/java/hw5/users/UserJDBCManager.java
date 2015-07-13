@@ -179,8 +179,8 @@ public class UserJDBCManager {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
         String df = dateFormat.format(user.getRegistrationDate());
         strQuery = "INSERT INTO users (user_id, user_name, password, r_date) VALUES (" + nextUserId + ", '" + user.getName() + "', '" + user.getPass() + "', TO_DATE('" + df + "'))";
-      //  strQuery = "INSERT INTO users (user_id, user_name, password, r_date) VALUES (" + user.getUserId() + ", '" + user.getName() + "', '" + user.getPass() + "', TO_DATE('" + df + "'))";
-      //  strQuery = "INSERT INTO users (user_id, user_name, password, r_date) VALUES (SELECT USERS_SEQ.NEXTVAL FROM dual, '" + user.getName() + "', '" + user.getPass() + "', TO_DATE('" + df + "'))";
+      //  strQuery = "INSERT INTO hw5 (user_id, user_name, password, r_date) VALUES (" + user.getUserId() + ", '" + user.getName() + "', '" + user.getPass() + "', TO_DATE('" + df + "'))";
+      //  strQuery = "INSERT INTO hw5 (user_id, user_name, password, r_date) VALUES (SELECT USERS_SEQ.NEXTVAL FROM dual, '" + user.getName() + "', '" + user.getPass() + "', TO_DATE('" + df + "'))";
         System.out.println(strQuery);
 
         base.executeUpdate(strQuery);
