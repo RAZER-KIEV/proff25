@@ -21,11 +21,10 @@ public class AuthenticationController {
     public
     String great(@RequestParam("login") String login,
                  @RequestParam("password") String password) throws AuthenticationException {
-        log.info("/great.html controller");
         if(authenticationService.authenticate(login, password))
             return "dashboard";
 
-        return "/WEB-INF/qw/index.jsp";
+        return "index";
     }
 
 
