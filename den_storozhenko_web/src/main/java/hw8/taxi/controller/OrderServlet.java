@@ -123,6 +123,7 @@ public class OrderServlet {
     public String edit1(@RequestParam String id, @RequestParam String names1, @RequestParam String amount1, @RequestParam String from1,
                        @RequestParam String to1, Model model) {
         log.info("/edit1.html controller");
+
         try {
             Long idOrder = Long.parseLong(id.split(" ")[0]);
             String clientFirstName = names1.split(" ")[0];
