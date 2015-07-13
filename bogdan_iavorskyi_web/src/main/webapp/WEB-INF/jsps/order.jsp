@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: bosyi
-  Date: 08.07.15
-  Time: 17:02
+  Date: 13.07.15
+  Time: 17:19
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -17,22 +17,22 @@
     <input type="hidden" name="login" value="${login}">
     <input type="submit" value="Back to dashboard">
   </form>
-  <form action="createClient" method="post">
-    <p>Create client</p>
-    <p>Name</p>
-    <input type="text" name="name">
+
+  <form action="createOrder" method="post">
+    <p>Client ID</p>
+    <input type="text" name="clientID">
     <br>
-    <p>Surname</p>
-    <input type="text" name="surname">
+    <p>Money amount</p>
+    <input type="text" name="amount">
     <br>
-    <p>Phone</p>
-    <input type="text" name="phone">
+    <p>Address from</p>
+    <input type="text" name="addressFrom">
     <br>
-    <p>Address</p>
-    <input type="text" name="address">
+    <p>Address to</p>
+    <input type="text" name="addressTo">
+    <br>
     <input type="hidden" name="login" value="${login}">
-    <br>
-    <input type="submit" value="Submit">
+    <input type="submit" value="Create">
   </form>
 </body>
 </html>

@@ -25,6 +25,12 @@ public class ClientServiceImpl implements ClientService {
     public ClientServiceImpl() {
     }
 
+    @Transactional(readOnly = true)
+    @Override
+    public Client read(Long id) {
+        return clientDao.read(id);
+    }
+
     @Override
     public boolean createClient(String name, String surname, String phone, String address) throws ClientException {
         return false;

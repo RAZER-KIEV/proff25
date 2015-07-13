@@ -11,6 +11,14 @@
     <title></title>
 </head>
 <body>
-
+  <h3>TAXI 102</h3>
+  <p style="color: red">${message}</p>
+  <form action="backToDashboard" method="post">
+    <input type="hidden" name="login" value="${login}">
+    <input type="submit" value="Back to dashboard">
+  </form>
+  <p>
+    ${clients}
+  </p>
 </body>
 </html>

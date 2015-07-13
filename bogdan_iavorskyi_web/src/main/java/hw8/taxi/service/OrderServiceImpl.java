@@ -10,11 +10,13 @@ import hw8.taxi.exception.OrderException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.List;
 
+@Transactional
 @Service
 public class OrderServiceImpl implements OrderService {
 
@@ -26,9 +28,6 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private ClientDao clientDao;
-
-    @Autowired
-    private OperatorDao operatorDao;
 
     @Override
     public boolean createOrder(Long id, Client client, String amount, String addressFrom, String addressTo) throws OrderException {
@@ -67,11 +66,13 @@ public class OrderServiceImpl implements OrderService {
 
     }
 
+    @Transactional(readOnly = true)
     @Override
     public List showOrders(Long from, Long to) {
         return orderDao.listInRangeOfAmount(from, to);
     }
 
+    @Transactional(readOnly = true)
     @Override
     public List showOrdersByPortion() {
         int size = (int) orderDao.getListSize();

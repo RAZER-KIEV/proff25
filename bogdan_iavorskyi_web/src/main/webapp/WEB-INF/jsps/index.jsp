@@ -14,7 +14,7 @@
 <h3>TAXI 102</h3>
 <p style="color: red">${indexMessage}</p>
   <table>
-    <thead>TAXI</thead>
+    <thead></thead>
     <tbody>
       <tr>
         <td>

@@ -2,13 +2,12 @@ package hw8.taxi.controller;
 
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import hw8.taxi.domain.Client;
+import hw8.taxi.domain.Operator;
 import hw8.taxi.exception.AuthenticationException;
 import hw8.taxi.exception.AuthorizationException;
 import hw8.taxi.exception.ClientException;
-import hw8.taxi.service.AuthenticationService;
-import hw8.taxi.service.AuthenticationServiceImpl;
-import hw8.taxi.service.AuthorizationService;
-import hw8.taxi.service.ClientService;
+import hw8.taxi.exception.OrderException;
+import hw8.taxi.service.*;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -22,15 +21,17 @@ import java.util.List;
 public class Controller {
 
     private static final Logger log = Logger.getLogger(Controller.class);
-
     @Autowired
     private AuthenticationService authenticationService;
-
     @Autowired
     private AuthorizationService authorizationService;
-
     @Autowired
     private ClientService clientService;
+    @Autowired
+    private OrderService orderService;
+    @Autowired
+    private OperatorService operatorService;
+
 
     @RequestMapping(value = "auth", method = RequestMethod.POST)
     public
@@ -135,12 +136,12 @@ public class Controller {
         model.addAttribute("login", login);
         try {
             clientService.createClientWithOperator(login, name, surname, phone, address);
-            model.addAttribute("dashboardMessage", "Client successfully created.");
+            model.addAttribute("message", "Client successfully created.");
         } catch (ClientException e) {
         } catch (Exception e) {
-            model.addAttribute("dashboardMessage", "Error: " + e.getMessage());
+            model.addAttribute("message", "Error: " + e.getMessage());
         } finally {
-            return "dashboard";
+            return "registerClient";
         }
     }
 
@@ -181,7 +182,63 @@ public class Controller {
         }
 
         model.addAttribute("clients", clientsStringRepresentation);
+        return "clients";
+    }
+
+    @RequestMapping(value = "backToDashboard", method = RequestMethod.POST)
+    public
+    String backToDashboard(@RequestParam String login,
+                           Model model) {
+
+        model.addAttribute("login", login);
         return "dashboard";
+    }
+
+    @RequestMapping(value = "registerClientForm", method = RequestMethod.POST)
+    public
+    String registerClientForm(@RequestParam String login,
+                           Model model) {
+
+        model.addAttribute("login", login);
+        return "registerClient";
+    }
+
+    @RequestMapping(value = "registerOrdersForm", method = RequestMethod.POST)
+    public
+    String registerOrdersForm(@RequestParam String login,
+                           Model model) {
+
+        model.addAttribute("login", login);
+        return "order";
+    }
+
+    @RequestMapping(value = "createOrder", method = RequestMethod.POST)
+    public
+    String createOrder(@RequestParam String login,
+                       @RequestParam String clientID,
+                       @RequestParam String amount,
+                       @RequestParam String addressFrom,
+                       @RequestParam String addressTo,
+                       Model model) {
+
+        model.addAttribute("login", login);
+        Operator operator = operatorService.read(login);
+        log.info("operator received");
+        Client client = null;
+        try {
+            client = clientService.read(Long.parseLong(clientID));
+        } catch (Exception exception) {
+            model.addAttribute("message", "Error: " + exception.getMessage());
+        }
+
+        log.info("client received");
+        try {
+            orderService.createOrderWithOperator(operator, client, amount, addressFrom, addressTo);
+        } catch (OrderException exception) {
+            model.addAttribute("message", "Error: " + exception.getMessage());
+        }
+        model.addAttribute("message", "Order added successfully");
+        return "order";
     }
 
 }
