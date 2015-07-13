@@ -10,7 +10,7 @@
          http://www.springframework.org/schema/context
          http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-    <context:component-scan base-package="hw8.taxi.domain"/>
+    <context:component-scan base-package="hw8.taxi"/>
 
     <bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
@@ -23,7 +23,7 @@
         <property name="dataSource" ref="myDataSource"/>
         <property name="packagesToScan">
             <list>
-                <value>hw8.taxi.dao</value>
+                <value>hw8.taxi</value>
             </list>
         </property>
         <property name="hibernateProperties">

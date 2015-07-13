@@ -1,6 +1,7 @@
 package hw8.taxi.domain;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name="ORDERS")
@@ -16,10 +17,10 @@ public class Order {
     private String adressCl;
     @Column(name = "ADRESS_DESTINATION")
     private String adressDest;
+    @Column(name = "ORDER_DATE")
+    private Date date;
     @ManyToOne
     Client client;
-    @ManyToOne
-    Operator operator;
 
     public Order() {
     }
@@ -27,13 +28,15 @@ public class Order {
         this.price = price;
         this.adressCl = adressCl;
         this.adressDest = adressDest;
+        this.date=new Date();
     }
-    public Order(Double price, String adressCl, String adressDest, Client client, Operator operator) {
+
+    public Order(Double price, String adressCl, String adressDest, Date date, Client client) {
         this.price = price;
         this.adressCl = adressCl;
         this.adressDest = adressDest;
+        this.date = date;
         this.client = client;
-        this.operator = operator;
     }
 
     public Long getId() {
@@ -66,11 +69,11 @@ public class Order {
     public void setClient(Client client) {
         this.client = client;
     }
-    public Operator getOperator() {
-        return operator;
+    public Date getDate() {
+        return date;
     }
-    public void setOperator(Operator operator) {
-        this.operator = operator;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     @Override
@@ -80,8 +83,8 @@ public class Order {
                 ", price=" + price +
                 ", adressCl='" + adressCl + '\'' +
                 ", adressDest='" + adressDest + '\'' +
+                ", date=" + date +
                 ", client=" + client +
-                ", operator=" + operator +
                 '}';
     }
 }

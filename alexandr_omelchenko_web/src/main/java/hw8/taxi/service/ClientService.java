@@ -12,9 +12,7 @@ import java.util.List;
 public interface ClientService {
     Client getClient(Long id);
     boolean createClient(String name, String surname, String phone, String address) throws ClientException;
-
     boolean createClient(String name, String surname, String phone, String address, Double sum, Date date);
-
     void updateDate(Client client);
     List showClientsByPortion(int portionSize);
     List showClientsGtSum(int sum);
