@@ -22,7 +22,7 @@ public class Client {
     @Column(name = "ADRESS")
     private String adress;
     @Column(name = "SUM")
-    private Integer summ;
+    private Double summ;
     @Column(name = "LAST_ORDER_DATE")
     private Date dateLastOrder;
     @OneToMany(cascade = CascadeType.ALL, // каскадирование
@@ -32,13 +32,22 @@ public class Client {
 
     public Client() {
     }
-    public Client(String firstname, String lastname, String phone, String adress, Integer summ, Date dateLastOrder) {
+    public Client(String firstname, String lastname, String phone, String adress, Double summ, Date dateLastOrder) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.phone = phone;
         this.adress = adress;
         this.summ = summ;
         this.dateLastOrder = dateLastOrder;
+    }
+
+    public Client(String firstname, String lastname, String phone, String adress) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.phone = phone;
+        this.adress = adress;
+        summ=0.00;
+        dateLastOrder=new Date();
     }
 
     public Long getId() {
@@ -77,10 +86,10 @@ public class Client {
     public void setDateLastOrder(Date dateLastOrder) {
         this.dateLastOrder = dateLastOrder;
     }
-    public Integer getSumm() {
+    public Double getSumm() {
         return summ;
     }
-    public void setSumm(Integer summ) {
+    public void setSumm(Double summ) {
         this.summ = summ;
     }
     public Set<Order> getOrderSet() {
@@ -89,6 +98,7 @@ public class Client {
     public void setOrderSet(Set<Order> orderSet) {
         this.orderSet = orderSet;
     }
+
     @Override
     public String toString() {
         return "Client{" +

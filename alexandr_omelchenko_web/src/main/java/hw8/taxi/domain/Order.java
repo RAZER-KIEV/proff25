@@ -2,7 +2,6 @@ package hw8.taxi.domain;
 
 import javax.persistence.*;
 
-// (дата, клиент, сумма, адрес подачи, адрес назначения)
 @Entity
 @Table(name="ORDERS")
 public class Order {

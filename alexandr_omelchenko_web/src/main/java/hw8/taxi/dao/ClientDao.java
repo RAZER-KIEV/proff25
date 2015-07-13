@@ -1,12 +1,8 @@
 package hw8.taxi.dao;
 
 import hw8.taxi.domain.Client;
-
 import java.util.List;
 
-/**
- * Created by HP on 12.07.2015.
- */
 public interface ClientDao {
     Long create(Client client);
     Client read(Long id);
