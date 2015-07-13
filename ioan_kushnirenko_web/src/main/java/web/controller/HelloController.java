@@ -1,4 +1,4 @@
-package ivan_kushnirenko_web.src.main.java.web.controller;
+package ioan_kushnirenko_web.src.main.java.web.controller;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
