@@ -11,13 +11,13 @@
     <title></title>
 </head>
 <body>
-hello ${name}
-<script language="JavaScript" type="text/javascript">
+hi
+<%--<script language="JavaScript" type="text/javascript">
 
   function GoNah(){
     location="/";
   }
   setTimeout( 'GoNah()', 5000 );
-</script>
+</script>--%>
 </body>
 </html>

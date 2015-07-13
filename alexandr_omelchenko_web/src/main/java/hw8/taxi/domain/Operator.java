@@ -27,10 +27,6 @@ public class Operator {
     private Integer countMiss;
     @Column(name = "IS_BLOCKED")
     private Boolean isItBlock;
-    @OneToMany(cascade = CascadeType.ALL, // каскадирование
-            fetch = FetchType.EAGER,// подргужать все сразу
-            mappedBy = "operator" )  // включить двунаправленность
-    private Set<Order> orderSet = new HashSet<>();
 
     public Operator() {
     }
@@ -110,12 +106,6 @@ public class Operator {
     public void setIsItBlock(Boolean isItBlock) {
         this.isItBlock = isItBlock;
     }
-    public Set<Order> getOrderSet() {
-        return orderSet;
-    }
-    public void setOrderSet(Set<Order> orderSet) {
-        this.orderSet = orderSet;
-    }
 
     @Override
     public String toString() {
@@ -128,7 +118,6 @@ public class Operator {
                 ", passDate=" + passDate +
                 ", countMiss=" + countMiss +
                 ", isItBlock=" + isItBlock +
-                ", orderSet=" + orderSet +
                 '}';
     }
 }

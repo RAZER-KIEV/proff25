@@ -10,6 +10,7 @@ import java.util.List;
 public interface ClientDao {
     Long create(Client client);
     Client read(Long id);
+    Client readByName(String name, String surname);
     boolean update(Client client);
     boolean delete(Client client);
     List showClientsGtSum(int sum);
