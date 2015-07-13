@@ -18,7 +18,7 @@ import java.util.Map;
  * Created by ПК on 25.06.2015.
  */
 @Service
-//@Transactional
+@Transactional
 public class NotebookServiceImpl implements NotebookService {
 
     @Autowired
@@ -172,7 +172,7 @@ public class NotebookServiceImpl implements NotebookService {
     }
 
     @Override
-    public Map getNotebooksStorePresent() {
+    public List getNotebooksStorePresent() {
         return storeDao.getNotebooksStorePresent();
     }
 

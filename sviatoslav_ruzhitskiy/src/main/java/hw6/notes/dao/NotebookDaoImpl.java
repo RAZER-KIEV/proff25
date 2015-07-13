@@ -4,14 +4,25 @@ import hw6.notes.domain.Notebook;
 import hw6.notes.domain.Notebook;
 import org.apache.log4j.Logger;
 import org.hibernate.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
 /**
  * Created by ПК on 18.06.2015.
  */
+
+@Repository
+@Scope("prototype")
 public class NotebookDaoImpl implements NotebookDao {
+
     private static Logger log = Logger.getLogger(NotebookDaoImpl.class);
+
+    @Autowired(required = true)
     private SessionFactory sessionFactory;
     public SessionFactory getSessionFactory(){return sessionFactory;}
 

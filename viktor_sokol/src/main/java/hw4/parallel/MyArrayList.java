@@ -29,6 +29,10 @@ public class MyArrayList<T, E> implements Runnable {
     private E receivedObject;
     private String receivedDescription;
 
+    public MyArrayList(){
+
+    }
+
 
     public MyArrayList(List<T> sendedList, E sendedObject, String sendedDescription) {
         this.receivedList = sendedList; // з конструктора передаєм в клас
