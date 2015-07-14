@@ -12,7 +12,7 @@ public interface TaxiService {
   //  public Long create(Taxi taxi);
     public boolean update();
     public boolean delete();
- //   public List getTaxiList();
+    public List getTaxiList();
 
     public User read(Long id);
     public Long create(User user);

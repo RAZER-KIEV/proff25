@@ -33,7 +33,7 @@ public class ServiceTaxiImpl implements TaxiService {
 
     @Override
     @Transactional(readOnly = true)
-    public List getTaxiList() {
+    public List getUserList() {
         return null;
     }
 
