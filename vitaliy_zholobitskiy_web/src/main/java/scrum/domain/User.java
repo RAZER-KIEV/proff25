@@ -13,7 +13,7 @@ public class User {
     @SequenceGenerator(name = "sequence", sequenceName = "USER_SEQ",
             allocationSize = 1, initialValue = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
-
+    private Long id;
     @Column(name = "USER_LOGIN")
     private String userLogin;
 
