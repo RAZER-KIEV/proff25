@@ -43,12 +43,23 @@ public class ServiceTaxiImpl implements TaxiService {
     }
 
     @Override
-    public boolean update() {
+    @Transactional(readOnly = true)
+    public Taxi readTaxi(Long id) {
+        return null;
+    }
+
+    @Override
+    public Long createTaxi(Taxi taxi) {
+        return null;
+    }
+
+    @Override
+    public boolean updateTaxi() {
         return false;
     }
 
     @Override
-    public boolean delete() {
+    public boolean deleteTaxi() {
         return false;
     }
 
@@ -60,40 +71,28 @@ public class ServiceTaxiImpl implements TaxiService {
 
     @Override
     @Transactional(readOnly = true)
-    public List getUserList() {
-        return null;
-    }
-
-    @Override
-    @Transactional(readOnly = true)
     public User readUser(Long id) {
         return null;
     }
 
     @Override
+    public Long createUser(User user) {
+        return null;
+    }
+
+    @Override
+    public boolean updateUser(User user) {
+        return false;
+    }
+
+    @Override
+    public boolean deleteUser(User user) {
+        return false;
+    }
+
+    @Override
     @Transactional(readOnly = true)
-    public Taxi readTaxi(Long id) {
+    public List getUserList() {
         return null;
     }
-
-    @Override
-    public Long create(Taxi taxi) {
-        return null;
-    }
-
-    @Override
-    public Long create(User user) {
-        return null;
-    }
-
-    @Override
-    public boolean update(User user) {
-        return false;
-    }
-
-    @Override
-    public boolean delete(User user) {
-        return false;
-    }
-
 }
