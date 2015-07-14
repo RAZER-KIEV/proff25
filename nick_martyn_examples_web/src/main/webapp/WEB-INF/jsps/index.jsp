@@ -1,3 +1,4 @@
+<%@ page import="sun.util.calendar.LocalGregorianCalendar" %>
 <%@ page import="java.util.Date" %>
 <%--
   Created by IntelliJ IDEA.
@@ -8,17 +9,19 @@
 <html>
 <head>
     <title></title>
+    <h2>Hello Proff25</h2> <h2>Hello Proff25</h2>
 </head>
 <body>
-<h2>Hello Proff25</h2>
-
+${name}
+<form action="/great.html" method="get">
+    <input type="text" name="login" value="sidor"/><br>
+    <input type="submit" value="send"/>
+</form>
+<p>Paragraf lets do it</p>
+<a href="ya.ru">Ссылка</a> <br/>
 <%
     out.println( new Date());
- %>
-
-<p>Parag</p>
-<a href="ya.ru">Ссылка</a> <br/>
-<!--<img src="duke.running.gif"/>-->
+%>
 <q>Cicitata</q>
 
 <ul>
