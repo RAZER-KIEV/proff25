@@ -1,80 +1,88 @@
-<%@ page import="java.util.Date" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Welcome!</title>
     <style>
-        .rightpic {
-            float: left; /* Выравнивание по левому краю */
-            margin:  5px 5px 0 0; /* Отступы вокруг фотографии */
+        *{
+            color: #FFF;
+            font-size: 24px;
+            font-family: "Century Gothic","Lucida Grande",Helvetica,Arial,sans serif;
+        }
+
+        body {
+            background: #000;
+        }
+
+        input {
+            color: #000;
+            text-align: left;
+        }
+
+        #login_table {
+            border: #333 1px solid;
+            background: #6a0201 top left repeat-x;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -200px;
+            margin-top: -150px;
+        }
+
+        .auth_cell_titles {
+            color: #9e8c8c;
+            font-size: 11pt;
+        }
+
+        .auth_title {
+            padding-bottom: 20px;
+        }
+
+        .auth_submit a {
+            font-size: 9pt;
+            margin-left: 30px;
+        }
+
+        #auth_submit_button {
+            font-size: 24px;
         }
     </style>
 </head>
+
 <body >
-<table border="3" width="100%">
-    <tr>
-        <th colspan="2" width="33%">Заголовок №1</th>
-        <th colspan="2" width="33%">Заголовок №2</th>
-        <th colspan="2" width="33%">Заголовок №3</th>
-    </tr>
-    <tr>
-        <th colspan="6">
-            <%!
-                int counter=0;
-                public Date getDate(){
-                    return new Date();
-                }
-            %>
-            Вы зашли к нам
-            <%
-                counter+=1;
-                out.println(counter);
-            %>
-            раз
-            <br>
-            <%out.println(getDate()); %>
-        </th>
-        <th colspan="6">
-            <form action="/great.html" method="get">
-                <input type="text" name="login" value="petya">
-                <button type="submit">OK</button>
-            </form>
-        </th>
-    </tr>
-    <tr width="100%">
-        <th width="16%">Меню №1</th>
-        <th width="16%">Меню №2</th>
-        <th width="16%">Меню №3</th>
-        <th width="16%">Меню №4</th>
-        <th width="16%">Меню №5</th>
-        <th width="16%">Меню №6</th>
-    </tr>
-    <tr width="100%">
-        <th colspan="2" width="16%"><ul>
-            <li>Меню №1</li>
-            <li>Меню №2</li>
-            <li>Меню №3</li>
-            <li>Меню №4</li>
-            <li>Меню №5</li>
-            <li>Меню №6</li>
-        </ul></th>
-        <th colspan="4" width="16%">
-            <p><img src="http://mnemonikon.ru/images/270.jpg" class="rightpic"/>
-                <a href="https://ru.wikipedia.org/wiki/HTML">HTML</a> (от англ. HyperText Markup Language — «язык гипертекстовой разметки») — стандартный язык разметки документов во Всемирной паутине. Большинство веб-страниц содержат описание разметки на языке HTML (или XHTML). Язык HTML интерпретируется браузерами; полученный в результате интерпретации форматированный текст отображается на экране монитора компьютера или мобильного устройства.
 
-            Язык HTML является приложением SGML (стандартного обобщённого языка разметки) и соответствует международному стандарту ISO 8879.
-
-            Язык XHTML является более строгим вариантом HTML, он следует всем ограничениям XML и, фактически, XHTML можно воспринимать как приложение языка XML к области разметки гипертекста.
-
-            Во всемирной паутине HTML-страницы, как правило, передаются браузерам от сервера по протоколам HTTP или HTTPS, в виде простого текста или с использованием шифрования.
-        </p>
-        </th>
-    </tr>
-    <tr>
-        <th colspan="6">
-            ©just1ce 2015 Kyiv
-        </th>
-    </tr>
-</table>
+<form name="authorization" action="/auth" method="post">
+    <table id="login_table">
+        <tbody>
+        <tr><td>
+            <table cellpadding="0" cellspacing="20" width="400">
+                <tbody>
+                <tr>
+                    <td></td>
+                    <td class="auth_title" colspan="2">Здарова!</td>
+                </tr>
+                <tr>
+                    <td class="auth_cell_titles">Логин</td>
+                    <td class="auth_cell" width="100%">
+                        <input name="login" style="width: 100%;" class="auth" type="text"   />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auth_cell_titles">Пароль</td>
+                    <td class="auth_cell">
+                        <input name="password" style="width: 100%;" class="auth" type="password" />
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="auth_submit" align="left">
+                        <input value="Войти" name="submit" id="auth_submit_button" type="submit" />
+                    </td>
+                </tr>
+                </tbody></table>
+        </td></tr>
+        </tbody>
+    </table>
+</form>
 </body>
 </html>

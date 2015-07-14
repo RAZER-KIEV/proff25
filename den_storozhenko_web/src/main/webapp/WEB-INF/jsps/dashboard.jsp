@@ -35,11 +35,8 @@
 <form action="/showOrders" method="POST">
     <input type="submit" value="Show orders porced"/>
 </form>
-<form action="/createOrder1" method="POST">
-    <input type="submit" value="Create order(new)"/>
-</form>
 <form action="/editOrder1" method="POST">
-    <input type="submit" value="Edit order(new)"/>
+    <input type="submit" value="Create/edit order(new)"/>
 </form>
 </body>
 </html>

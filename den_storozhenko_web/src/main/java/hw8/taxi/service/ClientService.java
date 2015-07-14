@@ -12,7 +12,7 @@ public interface ClientService {
     Client getClient(Long id);
     Client getClientByName(String name, String surname);
     boolean createClient(String name, String surname, String phone, String address) throws ClientException;
-    void updateDate(Client client);
+    void updateClient(Client client, Long amount);
     List findAll();
     List showClientsByPortion(int portionSize);
     List showClientsGtSum(int sum);
