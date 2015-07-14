@@ -18,7 +18,7 @@ import java.util.List;
 
 @Repository
 public class MemoryDaoImpl implements MemoryDao {
-    @Autowired(required = true)
+    @Autowired
     private SessionFactory factory;
 
     public MemoryDaoImpl(SessionFactory factory) {
