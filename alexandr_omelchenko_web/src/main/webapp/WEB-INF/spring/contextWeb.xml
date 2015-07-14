@@ -14,10 +14,11 @@
     <import resource="mvc-dispatcher-servlet.xml"/>
     <!--<import resource="security.xml"/>-->
 
-    <context:component-scan base-package="web"/>
+    <context:component-scan base-package="hw8.taxi"/>
 
     <mvc:resources mapping="/**" location="/"/>
     <mvc:annotation-driven/>
+    <context:property-placeholder location="classpath:hw8/taxi/conf.properties"/>
 
     <bean id="str" class="java.lang.String">
         <constructor-arg value="Hello"/>
