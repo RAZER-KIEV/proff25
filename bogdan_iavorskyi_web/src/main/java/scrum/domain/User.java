@@ -1,19 +1,31 @@
 package scrum.domain;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.util.Objects;
 
 /**
  * Created by GFalcon on 14.07.15.
  */
 @Entity
+@Table(name = "USER")
 public class User {
+
+    @Id
+    @SequenceGenerator(name = "sequence", sequenceName = "SEQ_CLIENTS_ID", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
     private Long id;
+    @Column(name = "LOGIN")
     private String login;
+    @Column(name = "PASS")
     private String pass;
 
     public User(){
-// construct
+
+    }
+
+    public User(String login, String pass) {
+        this.login = login;
+        this.pass = pass;
     }
 
     public Long getId() {
