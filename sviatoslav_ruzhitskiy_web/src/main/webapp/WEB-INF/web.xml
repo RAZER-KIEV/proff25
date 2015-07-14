@@ -25,17 +25,6 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
-    <servlet>
-        <servlet-name>authController</servlet-name>
-        <servlet-class>hw8.taxi.controller.AuthenticationController </servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>authController</servlet-name>
-        <url-pattern>/authController</url-pattern>
-    </servlet-mapping>
-
-
 
     <servlet-mapping>
         <servlet-name>mvc-dispatcher</servlet-name>

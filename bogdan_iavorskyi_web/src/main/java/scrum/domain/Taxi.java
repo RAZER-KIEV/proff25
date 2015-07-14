@@ -1,6 +1,9 @@
 package scrum.domain;
 
+import hw8.taxi.domain.Operator;
+
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 /**
  * Created by User on 14.07.2015.
@@ -23,5 +26,67 @@ private Long id;
 
     @Column(name = "NUMBER")
     private String number;
+    public Taxi() {
+    }
 
+    public Taxi(String name, String telefon, String marka, String number) {
+        this.name = name;
+        this.telefon = telefon;
+        this.marka = marka;
+        this.number = number;
+
+    }
+
+
+    public Taxi(Long id, String name, String telefon, String marka, String number) {
+        this.id = id;
+        this.name = name;
+        this.telefon = telefon;
+        this.marka = marka;
+        this.number = number;
+
+    }
+
+
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getTelefon() {
+        return telefon;
+    }
+
+    public void setTelefon(String telefon) {
+        this.telefon = telefon;
+    }
+
+    public String getMarka() {
+        return marka;
+    }
+
+    public void setMarka(String marka) {
+        this.marka = marka;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
 }
