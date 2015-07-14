@@ -5,12 +5,14 @@ import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * Created by julia on 7/14/15.
  */
+@Repository
 public class UserDaoImpl implements UserDao {
 
     private static Logger log = Logger.getLogger(UserDao.class);
