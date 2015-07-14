@@ -22,24 +22,50 @@ public class ServiceTaxiImpl implements TaxiService {
     @Autowired
     private TaxiDao taxiDao;
 
-    @Override
-    public boolean update() {
-        return false;
+    public ServiceTaxiImpl() {
+    }
+    public ServiceTaxiImpl(UserDao userDao, TaxiDao taxiDao) {
+        this.userDao = userDao;
+        this.taxiDao = taxiDao;
     }
 
-    @Override
-    public boolean delete() {
-        return false;
+    public UserDao getUserDao() {
+        return userDao;
     }
-
-    @Override
-    public List getTaxiList() {
-        return null;
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
+    }
+    public TaxiDao getTaxiDao() {
+        return taxiDao;
+    }
+    public void setTaxiDao(TaxiDao taxiDao) {
+        this.taxiDao = taxiDao;
     }
 
     @Override
     @Transactional(readOnly = true)
-    public List getUserList() {
+    public Taxi readTaxi(Long id) {
+        return null;
+    }
+
+    @Override
+    public Long createTaxi(Taxi taxi) {
+        return null;
+    }
+
+    @Override
+    public boolean updateTaxi() {
+        return false;
+    }
+
+    @Override
+    public boolean deleteTaxi() {
+        return false;
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List getTaxiList() {
         return null;
     }
 
@@ -50,28 +76,23 @@ public class ServiceTaxiImpl implements TaxiService {
     }
 
     @Override
-    public Taxi readTaxi(Long id) {
+    public Long createUser(User user) {
         return null;
     }
 
     @Override
-    public Long create(Taxi taxi) {
-        return null;
-    }
-
-    @Override
-    public Long create(User user) {
-        return null;
-    }
-
-    @Override
-    public boolean update(User user) {
+    public boolean updateUser(User user) {
         return false;
     }
 
     @Override
-    public boolean delete(User user) {
+    public boolean deleteUser(User user) {
         return false;
     }
 
+    @Override
+    @Transactional(readOnly = true)
+    public List getUserList() {
+        return null;
+    }
 }

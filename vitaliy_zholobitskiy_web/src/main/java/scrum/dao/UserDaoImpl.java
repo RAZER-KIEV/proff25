@@ -1,6 +1,5 @@
 package scrum.dao;
 
-import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +36,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public User readClient(Long id) {
+    public User readUser(Long id) {
         return (User) sessionFactory.getCurrentSession().get(User.class, id);
     }
 
@@ -59,12 +58,18 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public boolean auth(String login, String pass) {
-        Query query = sessionFactory.getCurrentSession().createQuery("from User a where a.login=:login and a.pass=:pass");
-        query.setParameter("login",login);
-        query.setParameter("pass",pass);
-        if (!query.list().isEmpty())
-            return true;
-        return false;
+    public User auth(String name, String password) {
+        User user = null;
+        try {
+            user = (User) readByName(name);
+
+        } catch (Exception ex) {
+            if (user.getUserPassword().equals(password)) {
+                return user;
+            } else {
+                return null;
+            }
+        }
+        return user;
     }
 }
