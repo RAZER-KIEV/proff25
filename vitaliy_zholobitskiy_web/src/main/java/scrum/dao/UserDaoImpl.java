@@ -37,14 +37,13 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public User readClient(Long id) {
-        return (User) sessionFactory.getCurrentSession().get(User.class, id);
+    public Long readIdByName(String name) {
+        Query query = sessionFactory.getCurrentSession().createQuery("from User u where u.userLogin=:login");
+        query.setParameter("login",name);
+        return  ((User)query.uniqueResult()).getId();
+
     }
 
-    @Override
-    public User readByName(String name) {
-        return (User) sessionFactory.getCurrentSession().createCriteria(User.class).add(Restrictions.eq("clientName", name)).uniqueResult();
-    }
 
     @Override
     public void deleteUser(User user) {
