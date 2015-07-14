@@ -3,6 +3,8 @@ package scrum.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import scrum.dao.TaxiDao;
+import scrum.dao.UserDao;
 import scrum.dao.UserDaoImpl;
 import scrum.domain.User;
 
@@ -14,6 +16,10 @@ import java.util.List;
 @Service
 @Transactional
 public class ServiceTaxiImpl implements TaxiService {
+    @Autowired
+    private UserDao userDao;
+    @Autowired
+    private TaxiDao taxiDao;
 
     @Override
     public boolean update() {
@@ -26,11 +32,13 @@ public class ServiceTaxiImpl implements TaxiService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List getTaxiList() {
         return null;
     }
 
     @Override
+    @Transactional(readOnly = true)
     public User read(Long id) {
         return null;
     }

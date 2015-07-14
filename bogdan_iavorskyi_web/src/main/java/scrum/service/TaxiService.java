@@ -18,6 +18,6 @@ public interface TaxiService {
     public Long create(User user);
     public boolean update(User user);
     public boolean delete(User user);
-    public List getTaxiList();
+    public List getUserList();
 
 }
