@@ -15,7 +15,7 @@
         <property name="show_sql">true</property>
         <property name="hbm2ddl.auto">update</property>
         <mapping class="hw6.notes.domain.Notebook"/>
-        <!--<mapping class="hw6.notes.dao.NotebookDaoImpl"/>-->
+        <!--<mapping class="NotebookDaoImpl"/>-->
         <!--<mapping class="session10.Client"/>-->
     </session-factory>
 </hibernate-configuration>

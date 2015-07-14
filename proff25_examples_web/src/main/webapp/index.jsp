@@ -1,3 +1,4 @@
+<%@ page import="java.util.Date" %>
 <%--
   Created by IntelliJ IDEA.
   User: al1
@@ -10,6 +11,10 @@
 </head>
 <body>
 <h2>Hello Proff25</h2>
+
+<%
+    out.println( new Date());
+ %>
 
 <p>Parag</p>
 <a href="ya.ru">Ссылка</a> <br/>
