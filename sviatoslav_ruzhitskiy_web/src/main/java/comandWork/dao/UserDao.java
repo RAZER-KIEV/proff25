@@ -12,6 +12,7 @@ import java.util.Map;
 public interface UserDao {
     Long create(User user);
     User read(Long id);
+    User readByName(String login);
     boolean update(User user);
     boolean delete(User user);
     List findAll();
