@@ -1,23 +1,37 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: just1ce
-  Date: 07.07.2015
-  Time: 21:25
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="java.util.List" %>
+<%@ page import="scrum.domain.Driver" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title></title>
+  <title>Drivers</title>
 </head>
 <body>
-hi
-<%--<script language="JavaScript" type="text/javascript">
 
-  function GoNah(){
-    location="/";
-  }
-  setTimeout( 'GoNah()', 5000 );
-</script>--%>
+<%List<Driver> drivers = (List<Driver>)request.getAttribute("drivers");
+  if (drivers!=null){%>
+<table title="DRIVERS" width="100%">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Car model</th>
+    <th>Car number</th>
+    <th>Phone</th>
+  </tr>
+  </thead>
+  <%
+    for(Driver driver:drivers){
+  %>
+  <tr>
+    <td><% out.println(driver.getId());%></td>
+    <td><% out.println(driver.getName());%></td>
+    <td><% out.println(driver.getCarModel());%></td>
+    <td><% out.println(driver.getNumber());%></td>
+    <td><% out.println(driver.getPhone());%></td>
+  </tr>
+
+  <%}%>
+</table>
+<%} %>
 </body>
 </html>
