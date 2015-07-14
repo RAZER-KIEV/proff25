@@ -1,6 +1,6 @@
-package classwork.dao;
+package taxi.dao;
 
-import taxi.domain.Taxist;
+import taxi.domain.Taxi;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,18 +10,18 @@ import java.util.List;
 /**
  * Created by Well on 14.07.2015.
  */
-public class TaxistDaoImpl implements TaxistDao {
+public class TaxiDaoImpl implements TaxiDao {
     private SessionFactory factory;
 
-    public TaxistDaoImpl(){}
+    public TaxiDaoImpl(){}
 
-    public TaxistDaoImpl(SessionFactory factory){
+    public TaxiDaoImpl(SessionFactory factory){
         this.factory = factory;
     }
 
 
     @Override
-    public Long create(Taxist tax) {
+    public Long create(Taxi tax) {
         Session session = factory.openSession();
         Long id;
         try {
@@ -40,12 +40,12 @@ public class TaxistDaoImpl implements TaxistDao {
     }
 
     @Override
-    public Taxist read(Long id) {
+    public Taxi read(Long id) {
         Session session = factory.openSession();
         try {
             session.beginTransaction();
 
-            return (Taxist) session.get(Taxist.class, id);
+            return (Taxi) session.get(Taxi.class, id);
         } catch (HibernateException e) {
         } finally {
             if (session != null) {
@@ -56,7 +56,7 @@ public class TaxistDaoImpl implements TaxistDao {
     }
 
     @Override
-    public boolean update(Taxist tax) {
+    public boolean update(Taxi tax) {
         Session session = factory.openSession();
         try {
             session.beginTransaction();
@@ -74,7 +74,7 @@ public class TaxistDaoImpl implements TaxistDao {
     }
 
     @Override
-    public boolean delete(Taxist tax) {
+    public boolean delete(Taxi tax) {
         Session session = factory.openSession();
         try {
             session.beginTransaction();
@@ -92,8 +92,8 @@ public class TaxistDaoImpl implements TaxistDao {
     }
 
     @Override
-    public List<Taxist> findAll() {
+    public List<Taxi> findAll() {
         Session session = factory.openSession();
-        return session.createQuery("from Taxist t").list();
+        return session.createQuery("from Taxi t").list();
     }
 }

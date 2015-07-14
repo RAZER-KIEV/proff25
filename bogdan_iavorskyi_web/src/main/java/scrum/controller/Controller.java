@@ -34,8 +34,8 @@ public class Controller {
     @RequestMapping(value = "/request.html", method = RequestMethod.POST)
     public String medium(@RequestParam("login") String login, String password, Model model) {
         log.info("/request.html controller");
-        List<User> users = null;
-//        if (authenticate(login,password, users)) {
+
+//        if (authenticate(login,password, service.getUserList())) {
         if(login.equals("aaa")){
             model.addAttribute("taxists", /*service.getTaxiList()*/ login + password);
             return "dashboard";
@@ -47,7 +47,14 @@ public class Controller {
     }
 
     private static boolean authenticate(String login, String password, List<User> users){
-        return true;
+        for (User user : users) {
+            if (user.getLogin().equals(login)) {
+                if (user.getPass().equals(password)) {
+                    return true;
+                }
+            }
+        }
+            return false;
     }
 }
 
