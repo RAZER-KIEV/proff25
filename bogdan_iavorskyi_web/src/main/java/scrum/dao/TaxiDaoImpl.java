@@ -3,6 +3,7 @@ package scrum.dao;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import scrum.domain.Taxi;
 
 import java.util.List;
 
