@@ -21,21 +21,21 @@
 <form action="/showClientsLastMonth" method="GET">
     <input type="submit" value="Show clients last month"/>
 </form>
-<form action="/createOrder" method="POST">
+<form action="/createOrder" method="GET">
     <input type="submit" value="Create order"/>
 </form>
-<form action="/editOrder" method="POST">
+<form action="/editOrder" method="GET">
     <input type="submit" value="Edit order"/>
 </form>
-<form action="/showOrdersBySum" method="POST">
+<form action="/showOrdersBySum" method="GET">
     <input type="submit" value="Show orders by sum"/>
     <input type="number" name="from" placeholder="From"/>
     <input type="number" name="to" placeholder="To"/>
 </form>
-<form action="/showOrders" method="POST">
+<form action="/showOrders" method="GET">
     <input type="submit" value="Show orders porced"/>
 </form>
-<form action="/editOrder1" method="POST">
+<form action="/editOrder1" method="GET">
     <input type="submit" value="Create/edit order(new)"/>
 </form>
 </body>
