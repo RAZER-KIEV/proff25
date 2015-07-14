@@ -14,6 +14,21 @@ public class UserDaoImpl implements UserDao {
     @Autowired
     private SessionFactory sessionFactory;
 
+    public UserDaoImpl() {
+    }
+
+    public UserDaoImpl(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
+
+    public SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
+
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
+
     @Override
     public void createUser(User user) {
         sessionFactory.getCurrentSession().save(user);
@@ -21,13 +36,13 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public User readUser(Long id) {
+    public User readClient(Long id) {
         return (User) sessionFactory.getCurrentSession().get(User.class, id);
     }
 
     @Override
     public User readByName(String name) {
-        return (User) sessionFactory.getCurrentSession().createCriteria(User.class).add(Restrictions.eq("userName", name)).uniqueResult();
+        return (User) sessionFactory.getCurrentSession().createCriteria(User.class).add(Restrictions.eq("clientName", name)).uniqueResult();
     }
 
     @Override
@@ -39,23 +54,6 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void updateUser(User user) {
         sessionFactory.getCurrentSession().update(user);
-
-    }
-
-    @Override
-    public User auth(String name, String password) {
-        User user = null;
-        try {
-            user = (User) readByName(name);
-        }catch (Exception ex){
-            return user;
-        }
-
-        if (user.getUserPassword().equals(password)){
-            return user;
-        }else {
-            return null;
-        }
 
     }
 }
