@@ -10,8 +10,8 @@ import java.util.List;
 public interface TaxiService {
     public Taxi readTaxi(Long id);
     public Long createTaxi(Taxi taxi);
-    public boolean updateTaxi();
-    public boolean deleteTaxi();
+    public boolean updateTaxi(Taxi taxi);
+    public boolean deleteTaxi(Taxi taxi);
     public List getTaxiList();
 
     public User readUser(Long id);
