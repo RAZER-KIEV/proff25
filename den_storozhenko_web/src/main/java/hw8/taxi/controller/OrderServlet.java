@@ -34,19 +34,19 @@ public class OrderServlet {
         Locale.setDefault(Locale.ENGLISH);
     }
 
-    @RequestMapping(value = "/createOrder", method = RequestMethod.POST)
+    @RequestMapping(value = "/createOrder", method = RequestMethod.GET)
     public String createOrder(Model model) {
         log.info("/createOrder.html controller");
         return "order";
     }
 
-    @RequestMapping(value = "/editOrder", method = RequestMethod.POST)
+    @RequestMapping(value = "/editOrder", method = RequestMethod.GET)
     public String editOrder(Model model) {
         log.info("/editOrder.html controller");
         return "order";
     }
 
-    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    @RequestMapping(value = "/create", method = RequestMethod.GET)
     public String create(@RequestParam Long id, @RequestParam Long clientId, @RequestParam String amount, @RequestParam String from,
                          @RequestParam String to, Model model) {
         log.info("/create.html controller");
@@ -66,7 +66,7 @@ public class OrderServlet {
         }
     }
 
-    @RequestMapping(value = "/edit", method = RequestMethod.POST)
+    @RequestMapping(value = "/edit", method = RequestMethod.GET)
     public String edit(@RequestParam Long id, @RequestParam Long clientId, @RequestParam String amount, @RequestParam String from,
                        @RequestParam String to, Model model) {
         log.info("/edit.html controller");
@@ -80,7 +80,7 @@ public class OrderServlet {
         }
     }
 
-    @RequestMapping(value = "/editOrder1", method = RequestMethod.POST)
+    @RequestMapping(value = "/editOrder1", method = RequestMethod.GET)
     public String editOrder1(Model model) {
         log.info("/editOrder1.html controller");
         List<String> ids = new ArrayList<>();
@@ -97,7 +97,7 @@ public class OrderServlet {
         return "order1";
     }
 
-    @RequestMapping(value = "/create1", method = RequestMethod.POST)
+    @RequestMapping(value = "/create1", method = RequestMethod.GET)
     public String create1(@RequestParam String names, @RequestParam String amount, @RequestParam String from,
                          @RequestParam String to, Model model) {
         log.info("/create1.html controller");
@@ -119,7 +119,7 @@ public class OrderServlet {
         }
     }
 
-    @RequestMapping(value = "/edit1", method = RequestMethod.POST)
+    @RequestMapping(value = "/edit1", method = RequestMethod.GET)
     public String edit1(@RequestParam String id, @RequestParam String names1, @RequestParam String amount1, @RequestParam String from1,
                        @RequestParam String to1, Model model) {
         log.info("/edit1.html controller");
@@ -145,7 +145,7 @@ public class OrderServlet {
         }
     }
 
-    @RequestMapping(value = "/showOrdersBySum", method = RequestMethod.POST)
+    @RequestMapping(value = "/showOrdersBySum", method = RequestMethod.GET)
     public String showBySum(@RequestParam Long from, @RequestParam Long to, Model model) {
         log.info("/showOrdersBySum.html controller");
         String res = "";
@@ -156,7 +156,7 @@ public class OrderServlet {
         return "orders";
     }
 
-    @RequestMapping(value = "/showOrders", method = RequestMethod.POST)
+    @RequestMapping(value = "/showOrders", method = RequestMethod.GET)
     public String showByPorc(Model model) {
         log.info("/showOrders.html controller");
         String res = "";

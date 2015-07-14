@@ -12,6 +12,7 @@ public interface OperatorDao {
     Operator read(Long id);
     Operator getByLogin(String login);
     Operator getByLoginPass(String login, String pass);
+    Long getLoginPass(String login, String pass);
     boolean update(Operator operator);
     boolean delete(Operator operator);
     boolean authenticate(String login, String password);
