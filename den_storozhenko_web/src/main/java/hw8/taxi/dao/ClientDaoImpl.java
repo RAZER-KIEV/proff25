@@ -10,9 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by storo_000 on 10.07.2015.
- */
+
 @Repository
 public class ClientDaoImpl implements ClientDao {
     private static final int STEP_PORCED =10;
@@ -42,6 +40,14 @@ public class ClientDaoImpl implements ClientDao {
     @Override
     public Client read(Long id) {
         return (Client)factory.getCurrentSession().get(Client.class, id);
+    }
+
+    @Override
+    public Client readByName(String name, String surname) {
+        Query query = factory.getCurrentSession().createQuery("from Client c where c.firstname=:name and c.lastname=:surname");
+        query.setParameter("name",name);
+        query.setParameter("surname", surname);
+        return (Client)query.uniqueResult();
     }
 
     @Override

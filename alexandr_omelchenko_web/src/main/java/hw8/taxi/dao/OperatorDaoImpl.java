@@ -14,15 +14,15 @@ public class OperatorDaoImpl implements OperatorDao {
 
     public OperatorDaoImpl() {
     }
-    public OperatorDaoImpl(SessionFactory sessionFactory){
-        this.factory = sessionFactory;
+    public OperatorDaoImpl(SessionFactory factory){
+        this.factory = factory;
     }
 
-    public SessionFactory getSessionFactory() {
+    public SessionFactory getFactory() {
         return factory;
     }
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        this.factory = sessionFactory;
+    public void setFactory(SessionFactory factory) {
+        this.factory = factory;
     }
 
     @Override
@@ -46,7 +46,7 @@ public class OperatorDaoImpl implements OperatorDao {
     @Override
     public List findAll() {
         List<Operator>list;
-        list =factory.getCurrentSession().createQuery("from Operator").list();
+        list =factory.getCurrentSession().createQuery("from hw8.taxi.domain.Operator").list();
         return list;
     }
 }

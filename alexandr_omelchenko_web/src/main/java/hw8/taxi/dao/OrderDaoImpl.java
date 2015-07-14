@@ -13,15 +13,15 @@ public class OrderDaoImpl implements OrderDao{
 
     public OrderDaoImpl() {
     }
-    public OrderDaoImpl(SessionFactory sessionFactory){
-        this.factory = sessionFactory;
+    public OrderDaoImpl(SessionFactory factory){
+        this.factory = factory;
     }
 
-    public SessionFactory getSessionFactory() {
+    public SessionFactory getFactory() {
         return factory;
     }
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        this.factory = sessionFactory;
+    public void setFactory(SessionFactory factory) {
+        this.factory = factory;
     }
 
     @Override
@@ -45,7 +45,7 @@ public class OrderDaoImpl implements OrderDao{
     @Override
     public List findAll() {
         List<Order>list;
-        list =factory.getCurrentSession().createQuery("from Order").list();
+        list =factory.getCurrentSession().createQuery("from hw8.taxi.domain.Order").list();
         return list;
     }
 }
