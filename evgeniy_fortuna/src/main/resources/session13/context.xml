@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="pers1" class="session13.Person">
+        <property name="name" ref="simonasName"/>
+        <constructor-arg value="4" type="int"/>
+    </bean>
+
+    <bean id="pers2" class="session13.Person">
+        <property name="age" value="42"/>
+        <constructor-arg value="Stefan"/>
+    </bean>
+
+    <bean id="simonasName" class="java.lang.String">
+        <constructor-arg value="Simona"/>
+    </bean>
+
+</beans>

@@ -1,5 +1,6 @@
 package scrum.dao;
 
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,21 @@ import scrum.domain.User;
 public class UserDaoImpl implements UserDao {
     @Autowired
     private SessionFactory sessionFactory;
+
+    public UserDaoImpl() {
+    }
+
+    public UserDaoImpl(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
+
+    public SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
+
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 
     @Override
     public void createUser(User user) {
@@ -40,5 +56,15 @@ public class UserDaoImpl implements UserDao {
     public void updateUser(User user) {
         sessionFactory.getCurrentSession().update(user);
 
+    }
+
+    @Override
+    public boolean auth(String login, String pass) {
+        Query query = sessionFactory.getCurrentSession().createQuery("from User a where a.login=:login and a.pass=:pass");
+        query.setParameter("login",login);
+        query.setParameter("pass",pass);
+        if (!query.list().isEmpty())
+            return true;
+        return false;
     }
 }

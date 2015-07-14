@@ -8,6 +8,7 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
+import javax.swing.plaf.synth.Region;
 import java.util.Locale;
 
 /**
@@ -28,9 +29,18 @@ public class HiberConnect {
         Session session = null;
         try {
             session = factory.openSession();
+            Region region = (Region)session.get(Region.class, 1L);
+
+            session.beginTransaction();
+//            Long id = (Long)session.save(new Region());
+            session.update(region);
+            session.delete(region);
+
+            session.getTransaction().commit();
 
         } catch (HibernateException e) {
             log.error("Open session failed", e);
+            session.getTransaction().rollback();
         } finally {
             if (session != null) {
                 session.close();
