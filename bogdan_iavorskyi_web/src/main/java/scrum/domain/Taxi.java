@@ -16,12 +16,12 @@ private Long id;
     private String name;
 
     @Column(name = "TELEFON")
-    private String surname;
+    private String telefon;
 
-    @Column(name = "PHONE_NUMBER")
-    private String phoneNumber;
+    @Column(name = "MARKA")
+    private String marka;
 
-    @Column(name = "ADDRESS")
-    private String address;
+    @Column(name = "NUMBER")
+    private String number;
 
 }
