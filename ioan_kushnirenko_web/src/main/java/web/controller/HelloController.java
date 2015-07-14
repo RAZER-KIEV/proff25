@@ -1,4 +1,4 @@
-package ioan_kushnirenko_web.src.main.java.web.controller;
+package web.controller;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
  * User: al1
  * Date: 3/16/15
  */
+
 @Controller
 @SessionAttributes("id")
 public class HelloController {
@@ -33,7 +34,6 @@ public class HelloController {
         if (sessId == null) {
             return "index";
         }
-
         return "index";
     }
 
@@ -51,4 +51,13 @@ public class HelloController {
         model.addAttribute("name", "al1");
         return "index";
     }
+
+    @RequestMapping(value = "/client.html", method = {RequestMethod.GET})
+    public String client (@RequestParam("login") String name, Model model, HttpSession session) {
+        log.info("/client.html controller");
+        model.addAttribute("nameLogin", "name");
+
+        return "index";
+    }
+
 }
