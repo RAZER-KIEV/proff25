@@ -13,6 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -40,7 +41,13 @@ public class AuthenticationController extends HttpServlet{
             String pass = request.getParameter("password");
             PrintWriter out = response.getWriter();
         if(superAdmin.equals(login)&superPass.equals(pass)){
-            forvard("/dashboard.jsp",request,response);
+
+            HttpSession session =request.getSession();
+            session.setAttribute("name", login);
+            forvard("/WEB-INF/jsps/dashboard.jsp", request, response);
+           // response.sendRedirect("/WEB-INF/jsps/dashboard.jsp");
+
+
             /*response.setStatus(HttpServletResponse.SC_OK);
             out.write("HELLO SUPERADMIN!!! YOU WELCOME!!!");*/
         }

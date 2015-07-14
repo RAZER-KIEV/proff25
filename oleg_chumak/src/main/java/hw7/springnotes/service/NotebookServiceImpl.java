@@ -89,19 +89,16 @@ public class NotebookServiceImpl implements NotebookService {
     }
 
     @Override
-    @Transactional
     public Long receive(Long id, int amount, double price) {
         return storeDao.create(new Store(notebookDao.read(id), new Long(amount), new Long((int)price)));
     }
 
     @Override
-    @Transactional
     public Long receive(Notebook note, int amount, double price) {
         return storeDao.create(new Store(note, new Long(amount), new Long((int)price)));
     }
 
     @Override
-    @Transactional
     public Long sale(Long storeId, int amount) {
         Store currentStore = storeDao.read(storeId);
         Long tmp;
@@ -121,55 +118,46 @@ public class NotebookServiceImpl implements NotebookService {
     }
 
     @Override
-    @Transactional
     public Long createCPU(CPU cpu) {
         return cpuDao.create(cpu);
     }
 
     @Override
-    @Transactional
     public Long createMemory(Memory memory) {
         return memoryDao.create(memory);
     }
 
     @Override
-    @Transactional
     public Long createVendor(Vendor vendor) {
         return vendorDao.create(vendor);
     }
 
     @Override
-    @Transactional
     public Long createNote(Notebook notebook) {
         return notebookDao.create(notebook);
     }
 
     @Override
-    @Transactional
     public boolean updateCPU(CPU cpu) {
         return cpuDao.update(cpu);
     }
 
     @Override
-    @Transactional
     public boolean updateMemory(Memory memory) {
         return memoryDao.update(memory);
     }
 
     @Override
-    @Transactional
     public boolean updateVendor(Vendor vendor) {
         return vendorDao.update(vendor);
     }
 
     @Override
-    @Transactional
     public boolean updateNotebook(Notebook notebook) {
         return notebookDao.update(notebook);
     }
 
     @Override
-    @Transactional
     public boolean removeFromStore(Store store, int amount) {
         store.setAmount(store.getAmount() - new Long(amount));
         return storeDao.update(store);
