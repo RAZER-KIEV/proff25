@@ -8,7 +8,7 @@
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix">
-            <value>/WEB-INF/jsps/</value>
+            <value>/WEB-INF/</value>
         </property>
         <property name="suffix">
             <value>.jsp</value>
