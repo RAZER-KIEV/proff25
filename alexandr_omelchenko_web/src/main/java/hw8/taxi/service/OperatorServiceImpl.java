@@ -6,25 +6,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.Date;
-import java.util.List;
 
 @Service
 @Transactional
-public class AuthenticationServiceImpl implements AuthenticationService {
+public class OperatorServiceImpl implements OperatorService {
     @Autowired
     private OperatorDaoImpl operatorDao;
 
-    public AuthenticationServiceImpl() {
+    public OperatorServiceImpl() {
     }
-    public AuthenticationServiceImpl(OperatorDaoImpl operatorDao) {
-        this.operatorDao = operatorDao;
+    public OperatorServiceImpl(OperatorDaoImpl operatorDaoDao) {
+        this.operatorDao = operatorDaoDao;
     }
 
     public OperatorDaoImpl getOperatorDao() {
         return operatorDao;
     }
-    public void setOperatorDao(OperatorDaoImpl operatorDao) {
-        this.operatorDao = operatorDao;
+    public void setOperatorDao(OperatorDaoImpl operatorDaoDao) {
+        this.operatorDao = operatorDaoDao;
     }
 
     @Override
@@ -41,15 +40,4 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     public void update(Operator operator) {
         operatorDao.update(operator);
     }
-    @Override
-    public boolean authorization(String log, String pass) {
-        return operatorDao.authorization(log, pass);}
-    @Override
-    public List findAll(){
-            return operatorDao.findAll();
-        }
-    @Override
-    public List showAll(){
-        return operatorDao.showAll();
-    }
-    }
+}
