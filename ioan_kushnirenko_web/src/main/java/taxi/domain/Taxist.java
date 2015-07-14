@@ -1,4 +1,4 @@
-package classwork.domen;
+package taxi.domain;
 
 import javax.persistence.*;
 

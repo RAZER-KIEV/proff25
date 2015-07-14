@@ -1,6 +1,6 @@
 package classwork.dao;
 
-import classwork.domen.Taxist;
+import taxi.domain.Taxist;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

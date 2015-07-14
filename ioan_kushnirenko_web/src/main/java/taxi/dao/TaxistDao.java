@@ -1,6 +1,6 @@
 package classwork.dao;
 
-import classwork.domen.Taxist;
+import taxi.domain.Taxist;
 
 import java.util.List;
 
