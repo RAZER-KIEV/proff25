@@ -32,6 +32,11 @@ public class ServiceTaxiImpl implements TaxiService {
     }
 
     @Override
+    public List getTaxiList() {
+        return null;
+    }
+
+    @Override
     @Transactional(readOnly = true)
     public List getUserList() {
         return null;
