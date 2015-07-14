@@ -10,7 +10,7 @@
 <head>
   <title></title>
   <style>
-    body{ background: url(/image/taxi.jpg)}
+    /*body{ background: url(/image/taxi.jpg)}*/
   </style>
 </head>
 <body>
