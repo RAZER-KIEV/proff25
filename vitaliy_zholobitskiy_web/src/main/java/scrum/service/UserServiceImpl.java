@@ -28,9 +28,8 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public Long getIdByName(String name) {
-        return userDao.readIdByName(name);
+        return userDao.readByName(name).getId();
     }
-
     @Override
     public boolean authenticate(String login, String password) {
         return userDao.auth(login,password);
