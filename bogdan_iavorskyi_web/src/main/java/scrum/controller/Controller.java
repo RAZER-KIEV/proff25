@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import scrum.domain.User;
 import scrum.service.TaxiService;
-
-import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -35,9 +33,8 @@ public class Controller {
     public String medium(@RequestParam("login") String login, String password, Model model) {
         log.info("/request.html controller");
 
-//        if (authenticate(login,password, service.getUserList())) {
-        if(login.equals("aaa")){
-            model.addAttribute("taxists", /*service.getTaxiList()*/ login + password);
+        if (authenticate(login,password, service.getUserList())) {
+            model.addAttribute("taxists",service.getTaxiList());
             return "dashboard";
         }
         else {
