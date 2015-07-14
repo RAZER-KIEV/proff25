@@ -41,58 +41,55 @@ public class ServiceTaxiImpl implements TaxiService {
     public void setTaxiDao(TaxiDao taxiDao) {
         this.taxiDao = taxiDao;
     }
-
+    //TAXI
     @Override
     @Transactional(readOnly = true)
     public Taxi readTaxi(Long id) {
-        return null;
+        return taxiDao.read(id);
     }
-
     @Override
     public Long createTaxi(Taxi taxi) {
-        return null;
+        return taxiDao.create(taxi);
     }
-
     @Override
-    public boolean updateTaxi() {
-        return false;
+    public boolean updateTaxi(Taxi taxi) {
+        taxiDao.update(taxi);
+        return true;
     }
-
     @Override
-    public boolean deleteTaxi() {
-        return false;
+    public boolean deleteTaxi(Taxi taxi) {
+        taxiDao.delete(taxi);
+        return true;
     }
-
     @Override
     @Transactional(readOnly = true)
     public List getTaxiList() {
-        return null;
+        return taxiDao.listAll();
     }
-
+    //USER
     @Override
     @Transactional(readOnly = true)
     public User readUser(Long id) {
+        userDao.read(id);
         return null;
     }
-
     @Override
     public Long createUser(User user) {
-        return null;
+        return userDao.create(user);
     }
-
     @Override
     public boolean updateUser(User user) {
-        return false;
+        userDao.update(user);
+        return true;
     }
-
     @Override
     public boolean deleteUser(User user) {
-        return false;
+        userDao.delete(user);
+        return true;
     }
-
     @Override
     @Transactional(readOnly = true)
     public List getUserList() {
-        return null;
+        return userDao.listAll();
     }
 }

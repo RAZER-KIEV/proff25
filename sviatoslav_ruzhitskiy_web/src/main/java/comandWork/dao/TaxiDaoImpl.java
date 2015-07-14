@@ -1,6 +1,14 @@
-package Taxi.Dao;
+package comandWork.dao;
 
-import Taxi.Domain.Taxi;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+//package Taxi.Dao;
+
+import comandWork.domain.Taxi;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

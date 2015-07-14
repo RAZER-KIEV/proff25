@@ -7,7 +7,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "taxist")
-public class Taxist {
+public class Taxi {
         @Id
         @SequenceGenerator(name = "sequence", sequenceName = "TAXIST_SEQ",
                 allocationSize = 1)
@@ -27,9 +27,9 @@ public class Taxist {
         @Column(name = "number_car")
         private String numberCar;
 
-    public Taxist () {}
+    public Taxi() {}
 
-    public Taxist (String name, String tel, String modelCar, String numberCar) {
+    public Taxi(String name, String tel, String modelCar, String numberCar) {
         this.name = name;
         this.tel = tel;
         this.modelCar = modelCar;
