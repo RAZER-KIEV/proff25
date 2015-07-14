@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
 public class TaxiController {
     public static final Logger log = Logger.getLogger(TaxiController.class);
 
-    @RequestMapping(value = "/login.html", method = {RequestMethod.GET, RequestMethod.HEAD)
+    @RequestMapping(value = "/login.html", method = {RequestMethod.GET, RequestMethod.HEAD})
     public @ResponseBody String hello(Model model) {
         log.info("/login.html controller");
         model.addAttribute("name", "Petro");
