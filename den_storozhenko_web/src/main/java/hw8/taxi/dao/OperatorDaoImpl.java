@@ -57,6 +57,12 @@ public class OperatorDaoImpl implements OperatorDao {
     }
 
     @Override
+    public Long getLoginPass(String login, String pass) {
+        Query query = factory.getCurrentSession().createQuery("from Operator o where o.login='"+login+"' and o.password='"+pass+"'");
+        return ((Operator)query.uniqueResult()).getId();
+    }
+
+    @Override
     public boolean update(Operator operator) {
         factory.getCurrentSession().update(operator);
         return true;

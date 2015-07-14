@@ -10,7 +10,7 @@
 <font color="RED">
   ${orderEx}</font>
 
-<form action="/create1" method="POST">
+<form action="/create1" method="GET">
   Client: <select name="names">
     <% List<String> names = (List<String>)request.getAttribute("names");
       if (names!=null)
@@ -24,7 +24,7 @@
   <input type="text" name="to" placeholder="Address to"/><br>
   <input type="submit" value="Create order"/>
 </form>
-<form action="/edit1" method="POST">
+<form action="/edit1" method="GET">
   Order: <select name="id">
   <% List<String> ids = (List<String>)request.getAttribute("ids");
     if (ids!=null)

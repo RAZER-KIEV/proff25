@@ -1,7 +1,7 @@
 package hw8.taxi.service;
 
 import hw8.taxi.controller.AuthenticationController;
-import hw8.taxi.exeption.AuthenticationException;
+import hw8.taxi.exception.AuthenticationException;
 import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;

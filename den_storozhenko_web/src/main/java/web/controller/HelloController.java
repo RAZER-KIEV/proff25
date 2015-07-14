@@ -4,16 +4,10 @@ import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
 
 import javax.servlet.http.HttpSession;
 
-/**
- * Created with IntelliJ IDEA.
- * User: al1
- * Date: 3/16/15
- *
- * написать кол-во посещений
- */
 @Controller
 @SessionAttributes("id")
 public class HelloController {
@@ -26,20 +20,22 @@ public class HelloController {
     String hello(Model model) {
         log.info("/hello.html controller");
         model.addAttribute("name", "Petro");
-        return "/WEB-INF/jsps/index.jsp";
+        //model.addAttribute("id", 123);
+        return "index";
     }
 
     @RequestMapping(value = "/great.html", method = RequestMethod.POST)
     public
-    //@ResponseBody
-    String great(@RequestParam("login") String name,@RequestParam("password") String password, Model model, HttpSession session) {
+    String great(@RequestParam("login") String name,@RequestParam("password") String password, Model model, HttpSession session, SessionStatus status) {
         log.info("/great.html controller");
         model.addAttribute("name", name);
         model.addAttribute("password",password);
-        /*Long sessId = (Long) session.getAttribute("id");
+        Long sessId = (Long) session.getAttribute("id");
+        //session.invalidate(); //в спринге не желательно
+        status.setComplete(); //очищение сессии
         if (sessId == null) {
             return "index";
-        }*/
+        }
         return "great";
     }
 
@@ -54,6 +50,6 @@ public class HelloController {
     @RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.HEAD})
     public String index() {
         log.info("/index controller");
-        return "/WEB-INF/jsps/index.jsp";
+        return "index";
     }
 }

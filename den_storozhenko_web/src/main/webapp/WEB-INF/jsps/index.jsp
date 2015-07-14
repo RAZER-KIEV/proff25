@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Operator authorization</title>
+    <%--<link rel="stylesheet" href="css/styles.css"/>--%>
 </head>
 <body>
 <h1 align="center">Operator authorization</h1>
@@ -9,7 +10,7 @@
 <center>
     <font color="BLUE">${info}</font>
     <font color="RED">${authenticateEx}${error}</font>
-    <form action="/dashboard.html" method="POST">
+    <form action="/login" method="POST">
         <input type="text" name="login" placeholder="Login" value="${login}" onclick="if (this.value!=''){this.value='';}"/><br>
         <input type="password" name="password" placeholder="Password"/><br>
         <input type="submit" value="Authenticate"/><br>

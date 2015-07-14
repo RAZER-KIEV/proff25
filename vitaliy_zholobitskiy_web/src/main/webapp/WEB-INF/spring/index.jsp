@@ -51,7 +51,7 @@
 
 <body >
 
-<form name="authorization" action="/auth" method="post">
+<form name="authorization" action="/auth.html" method="post">
     <table id="login_table">
         <tbody>
         <tr><td>
