@@ -26,8 +26,8 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
     @Override
     public boolean authenticate(String login, String pass) throws AuthenticationException {
-       // User user = userDao.readByName(login);
-        //if()
+        User user = userDao.readByName(login);
+        //if(user.getPassword())
 
 
 
