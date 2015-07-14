@@ -21,13 +21,13 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public User readClient(Long id) {
+    public User readUser(Long id) {
         return (User) sessionFactory.getCurrentSession().get(User.class, id);
     }
 
     @Override
     public User readByName(String name) {
-        return (User) sessionFactory.getCurrentSession().createCriteria(User.class).add(Restrictions.eq("clientName", name)).uniqueResult();
+        return (User) sessionFactory.getCurrentSession().createCriteria(User.class).add(Restrictions.eq("userName", name)).uniqueResult();
     }
 
     @Override
@@ -39,6 +39,23 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void updateUser(User user) {
         sessionFactory.getCurrentSession().update(user);
+
+    }
+
+    @Override
+    public User auth(String name, String password) {
+        User user = null;
+        try {
+            user = (User) readByName(name);
+        }catch (Exception ex){
+            return user;
+        }
+
+        if (user.getUserPassword().equals(password)){
+            return user;
+        }else {
+            return null;
+        }
 
     }
 }
