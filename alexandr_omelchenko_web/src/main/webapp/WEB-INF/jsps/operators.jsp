@@ -1,22 +1,18 @@
 <%--
   Created by IntelliJ IDEA.
   User: HP
-  Date: 12.07.2015
-  Time: 16:47
+  Date: 14.07.2015
+  Time: 18:02
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>dashbord</title>
+    <title>operators</title>
 </head>
 <body>
-
 <tr>
-  <td>${name}, welcome to Taxi Service</td>
+  <td>${operators}</td>
 </tr>
-<form action = "/ShowOperators.html" methods="POST">
-  <input type = "submit" value = "ShowOperators"/>
-</form>
 </body>
 </html>

@@ -18,10 +18,10 @@ import java.util.Date;
 
 @Component
 @Entity
-@Table(name="Taxi")
+@Table(name="TAXI")
 public class Taxi {
     @Id
-    @SequenceGenerator(name = "sequence", sequenceName = "OPERATORS_SEQ", initialValue = 1, allocationSize = 1)
+    @SequenceGenerator(name = "sequence", sequenceName = "TAXI_SEQ", initialValue = 1, allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
     @Column(name = "TAXI_ID")
     private Long id;
