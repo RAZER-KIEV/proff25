@@ -39,7 +39,7 @@ public class AuthenticationController {
             return "dashboard";
         }
 
-
+        model.addAttribute("info","Incorrect login/password.");
         return "index";
     }
 
