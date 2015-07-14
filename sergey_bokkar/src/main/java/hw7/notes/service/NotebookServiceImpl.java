@@ -6,6 +6,8 @@ import org.hibernate.SessionFactory;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Well on 03.07.2015.
@@ -78,6 +80,37 @@ public class NotebookServiceImpl implements NotebookService {
     public boolean removeFromStore(Store store, int amount) {
         store.setQuantity(store.getQuantity() - amount);
         return strdi.update(store);
+    }
+
+    @Override
+    public List getNotebooksByPortion(int size) {
+        return null;
+    }
+
+    @Override
+    public List getNotebooksGtAmount(int amount) {
+        return null;
+    }
+
+    @Override
+    public List getNotebooksByCpuVendor(Vendor cpuVendor) {
+        return null;
+    }
+
+
+    @Override
+    public List getNotebooksFromStore() {
+        return null;
+    }
+
+    @Override
+    public Map getNotebooksStorePresent() {
+        return null;
+    }
+
+    @Override
+    public Map getSalesByDays() {
+        return null;
     }
 
 
