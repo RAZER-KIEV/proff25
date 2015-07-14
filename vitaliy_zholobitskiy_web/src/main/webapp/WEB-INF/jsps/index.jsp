@@ -65,7 +65,7 @@
             <table cellpadding="0" cellspacing="20" width="400">
                 <tbody>
                 <tr>
-                    <td></td>
+                    <td><font color="RED">${info}</font> </td>
                     <td class="auth_title" colspan="2">Привет!</td>
                 </tr>
                 <tr>
