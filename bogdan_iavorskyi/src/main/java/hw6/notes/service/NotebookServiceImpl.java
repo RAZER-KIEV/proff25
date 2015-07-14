@@ -2,8 +2,8 @@ package hw6.notes.service;
 
 //Created on 18.06.15.
 
-import hw6.notes.dao.NotebookDao;
-import hw6.notes.dao.NotebookDaoImpl;
+import hw6.notes.NotebookDao;
+import hw6.notes.NotebookDaoImpl;
 import hw6.notes.domain.Notebook;
 import hw6.notes.util.HibernateUtil;
 import org.hibernate.SessionFactory;

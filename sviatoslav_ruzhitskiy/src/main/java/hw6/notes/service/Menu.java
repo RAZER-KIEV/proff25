@@ -1,6 +1,6 @@
 package hw6.notes.service;
 
-import hw6.notes.dao.NotebookDaoImpl;
+import hw6.notes.NotebookDaoImpl;
 import hw6.notes.domain.Notebook;
 import hw6.notes.util.HibernateUtil;
 import javafx.application.Application;
@@ -8,22 +8,16 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.geometry.Orientation;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import org.hibernate.SessionFactory;
 
-import java.net.InetSocketAddress;
-import java.nio.ByteBuffer;
-import java.nio.channels.SocketChannel;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**

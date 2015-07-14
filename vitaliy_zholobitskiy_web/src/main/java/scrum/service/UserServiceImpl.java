@@ -3,7 +3,7 @@ package scrum.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import scrum.taxi.dao.UserDao;
+import scrum.dao.UserDao;
 
 @Service
 @Transactional
