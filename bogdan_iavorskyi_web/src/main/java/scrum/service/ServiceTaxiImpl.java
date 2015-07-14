@@ -45,28 +45,30 @@ public class ServiceTaxiImpl implements TaxiService {
     @Override
     @Transactional(readOnly = true)
     public Taxi readTaxi(Long id) {
-        return null;
+        return taxiDao.read(id);
     }
 
     @Override
     public Long createTaxi(Taxi taxi) {
-        return null;
+        return taxiDao.create(taxi);
     }
 
     @Override
-    public boolean updateTaxi() {
-        return false;
+    public boolean updateTaxi(Taxi taxi) {
+        taxiDao.update(taxi);
+        return true;
     }
 
     @Override
-    public boolean deleteTaxi() {
-        return false;
+    public boolean deleteTaxi(Taxi taxi) {
+        taxiDao.delete(taxi);
+        return true;
     }
 
     @Override
     @Transactional(readOnly = true)
     public List getTaxiList() {
-        return null;
+        return taxiDao.listAll();
     }
 
     @Override
