@@ -31,7 +31,7 @@
       </tr>
       <tr>
         <td align="right" valign="top" style="color:white">Enter password</td>
-        <td><input type="password" name="pass" size="25"
+        <td><input type="password" name="password" size="25"
                    maxlength="15" value="password"><br></td>
       </tr>
 
