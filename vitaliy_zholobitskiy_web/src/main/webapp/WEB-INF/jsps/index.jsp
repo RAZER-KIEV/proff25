@@ -10,7 +10,7 @@
         }
 
         body {
-            background: #000;
+            background: #212028;
         }
 
         input {
@@ -19,31 +19,38 @@
         }
 
         #login_table {
-            border: #333 1px solid;
-            background: #6a0201 top left repeat-x;
+            border-radius: 10px ;
+            border: rgba(235, 131, 70, 0.99) 1px solid;
+            background: #8589b8 top left repeat-x;
             display: block;
             position: absolute;
             top: 50%;
             left: 50%;
             margin-left: -200px;
             margin-top: -150px;
+
         }
 
         .auth_cell_titles {
-            color: #9e8c8c;
+            border-radius: 10px ;
+            color: #481540;
             font-size: 11pt;
         }
 
         .auth_title {
+            color: #481540;
+            border-radius: 10px ;
             padding-bottom: 20px;
         }
 
         .auth_submit a {
+            border-style: ridge ;
             font-size: 9pt;
             margin-left: 30px;
         }
 
         #auth_submit_button {
+            border-radius: 10px ;
             font-size: 24px;
         }
     </style>
@@ -51,7 +58,7 @@
 
 <body >
 
-<form name="authorization" action="/auth" method="post">
+<form name="authorization" action="/auth.html" method="post">
     <table id="login_table">
         <tbody>
         <tr><td>

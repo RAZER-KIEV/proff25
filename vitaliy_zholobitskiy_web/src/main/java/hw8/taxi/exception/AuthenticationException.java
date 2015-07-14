@@ -1,4 +1,4 @@
-package hw8.taxi.exeption;
+package hw8.taxi.exception;
 
 /**
  * Created by just1ce on 11.07.2015.
