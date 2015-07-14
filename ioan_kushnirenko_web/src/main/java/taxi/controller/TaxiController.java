@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpSession;
 
@@ -18,13 +19,11 @@ import javax.servlet.http.HttpSession;
 public class TaxiController {
     public static final Logger log = Logger.getLogger(TaxiController.class);
 
-    @RequestMapping(value = "/hello.html", method = RequestMethod.GET)
-    public
-    @ResponseBody
-    String hello(Model model) {
-        log.info("/hello.html controller");
+    @RequestMapping(value = "/login.html", method = {RequestMethod.GET, RequestMethod.HEAD)
+    public @ResponseBody String hello(Model model) {
+        log.info("/login.html controller");
         model.addAttribute("name", "Petro");
-        return "hello";
+        return "login";
     }
 
     @RequestMapping(value = "/great.html", method = RequestMethod.GET)
