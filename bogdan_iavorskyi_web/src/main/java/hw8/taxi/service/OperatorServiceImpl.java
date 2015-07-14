@@ -17,4 +17,16 @@ public class OperatorServiceImpl implements OperatorService {
     public Operator read(String login) {
         return operatorDao.read(login);
     }
+
+    @Transactional(readOnly = true)
+    @Override
+    public Long getIdByLogin(String login) {
+        return operatorDao.getIdByLogin(login);
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public String getLoginById(Long id) {
+        return operatorDao.getLoginById(id);
+    }
 }

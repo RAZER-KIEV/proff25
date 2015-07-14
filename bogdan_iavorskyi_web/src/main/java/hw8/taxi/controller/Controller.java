@@ -14,6 +14,8 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
+import java.lang.reflect.Field;
 import java.util.List;
 
 @org.springframework.stereotype.Controller
@@ -35,10 +37,11 @@ public class Controller {
 
     @RequestMapping(value = "auth", method = RequestMethod.POST)
     public
-    String auth(@RequestParam String login, @RequestParam String password, Model model) {
+    String auth(@RequestParam String login, @RequestParam String password, Model model, HttpSession session) {
         try {
             authenticationService.authenticate(login, password);
             model.addAttribute("login", login);
+            model.addAttribute("id", operatorService.getIdByLogin(login));
             return "dashboard";
         } catch (AuthenticationException exception) {
             if (exception.getMessage().equals(AuthenticationServiceImpl.getUnsuccessfulPasswordExpired())) {
@@ -122,6 +125,20 @@ public class Controller {
     public String index() {
         log.info("/index controller");
         return "index";
+    }
+
+    @RequestMapping(value = "/dashboard.html", method = RequestMethod.GET)
+    public String dashboard(Model model, HttpSession session) {
+        log.info("/dashboard controller");
+        Long id;
+        if ((id = (Long) session.getAttribute("id")) == null) {
+            return "index";
+        }
+        System.out.println("id:" + id);
+        String login = operatorService.getLoginById(id);
+        System.out.println("test login: " + login);
+        model.addAttribute("login", login);
+        return "dashboard";
     }
 
     @RequestMapping(value = "createClient", method = RequestMethod.POST)
@@ -239,6 +256,14 @@ public class Controller {
         }
         model.addAttribute("message", "Order added successfully");
         return "order";
+    }
+
+    @RequestMapping(value = "/testScriptlet.html", method = RequestMethod.GET)
+    public
+    String testScriptlet(Model model) {
+        List<Client> clientList = clientService.showAllClients();
+        model.addAttribute("clients", clientList);
+        return "css";
     }
 
 }

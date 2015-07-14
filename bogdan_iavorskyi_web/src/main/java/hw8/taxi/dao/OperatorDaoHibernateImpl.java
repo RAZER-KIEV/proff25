@@ -29,11 +29,26 @@ public class OperatorDaoHibernateImpl implements OperatorDao {
     }
 
     @Override
+    public String getLoginById(Long id) {
+        Query query = factory.getCurrentSession().createQuery("select op.login from Operator as op where op.id=:id");
+        query.setParameter("id", id);
+        return (String) query.uniqueResult();
+    }
+
+    @Override
     public Operator read(String login) {
         Query query = factory.getCurrentSession().createQuery("from Operator as op where op.login=:login");
         query.setParameter("login", login);
         List list = query.list();
         return list.size() == 0 ? null : (Operator) list.get(0);
+    }
+
+    @Override
+    public Long getIdByLogin(String login) {
+        Query query = factory.getCurrentSession().createQuery("select op.id from Operator as op where op.login=:login");
+        query.setParameter("login", login);
+
+        return (Long) query.uniqueResult();
     }
 
     @Override
