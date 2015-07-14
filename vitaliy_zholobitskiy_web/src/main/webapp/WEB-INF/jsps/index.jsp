@@ -65,8 +65,11 @@
             <table cellpadding="0" cellspacing="20" width="400">
                 <tbody>
                 <tr>
-                    <td><font color="RED">${info}</font> </td>
+                    <td></td>
                     <td class="auth_title" colspan="2">Привет!</td>
+                </tr>
+                <tr>
+                    <td class="auth_title" colspan="2"><font color="RED">${info}</font> </td>
                 </tr>
                 <tr>
                     <td class="auth_cell_titles">Логин</td>

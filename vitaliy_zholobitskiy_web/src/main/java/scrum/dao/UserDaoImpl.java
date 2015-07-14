@@ -43,7 +43,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public User readByName(String name) {
-        return (User) sessionFactory.getCurrentSession().createCriteria(User.class).add(Restrictions.eq("clientName", name)).uniqueResult();
+        return (User) sessionFactory.getCurrentSession().createCriteria(User.class).add(Restrictions.eq("userLogin", name)).uniqueResult();
     }
 
     @Override
@@ -60,7 +60,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public boolean auth(String login, String pass) {
-        Query query = sessionFactory.getCurrentSession().createQuery("from User a where a.login=:login and a.pass=:pass");
+        Query query = sessionFactory.getCurrentSession().createQuery("from User a where a.userLogin=:login and a.userPassword=:pass");
         query.setParameter("login",login);
         query.setParameter("pass",pass);
         if (!query.list().isEmpty())

@@ -1,5 +1,6 @@
 package scrum.domain;
 
+import javax.jws.soap.SOAPBinding;
 import javax.persistence.*;
 import org.springframework.stereotype.*;
 /**
@@ -47,4 +48,6 @@ public class User {
     public User(String userPassword) {
         this.userPassword = userPassword;
     }
+    public User(){}
+
 }

@@ -4,19 +4,21 @@
 <html>
 <head>
   <title>Drivers</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <%List<Driver> drivers = (List<Driver>)request.getAttribute("drivers");
   if (drivers!=null){%>
 <table title="DRIVERS" width="100%">
+  <caption><H1>Drivers</H1></caption>
   <thead>
   <tr>
-    <th>Id</th>
-    <th>Name</th>
-    <th>Car model</th>
-    <th>Car number</th>
-    <th>Phone</th>
+    <td>Id</td>
+    <td>Name</td>
+    <td>Car model</td>
+    <td>Car number</td>
+    <td>Phone</td>
   </tr>
   </thead>
   <%
