@@ -15,7 +15,7 @@
 </head>
 <body>
 <p>${Error}</p>
-<form action = "/dashboard.html" method="GET">
+<form action = "/client.html" method="GET">
   <%!
 
   %>

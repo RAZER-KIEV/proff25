@@ -20,7 +20,7 @@ import javax.servlet.http.HttpSession;
  * Created by just1ce on 11.07.2015.
  */
 @Controller
-@SessionAttributes("id")
+@SessionAttributes({"id","drivers"})
 public class AuthenticationController {
     @Autowired
     private DriverService driverService;
@@ -34,7 +34,7 @@ public class AuthenticationController {
                  Model model) throws AuthenticationException {
 
         if(userService.authenticate(login, password)){
-            model.addAttribute("id",1L);
+            model.addAttribute("id",userService.getIdByName(login));
             model.addAttribute("drivers",driverService.findAll());
             return "dashboard";
         }
@@ -43,11 +43,11 @@ public class AuthenticationController {
         return "index";
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/", method ={ RequestMethod.GET,RequestMethod.HEAD})
     public
     String index(HttpSession session) {
         Long id = (Long)(session.getAttribute("id"));
-        if ((id!=null)&&(id<5L)&&(id>0L)){
+        if ((id!=null)){
             return "dashboard";
         }
         return "index";

@@ -1,5 +1,7 @@
 package taxi.dao;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import taxi.domain.Taxi;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -10,15 +12,11 @@ import java.util.List;
 /**
  * Created by Well on 14.07.2015.
  */
+@Repository
 public class TaxiDaoImpl implements TaxiDao {
+
+    @Autowired
     private SessionFactory factory;
-
-    public TaxiDaoImpl(){}
-
-    public TaxiDaoImpl(SessionFactory factory){
-        this.factory = factory;
-    }
-
 
     @Override
     public Long create(Taxi tax) {
@@ -94,6 +92,6 @@ public class TaxiDaoImpl implements TaxiDao {
     @Override
     public List<Taxi> findAll() {
         Session session = factory.openSession();
-        return session.createQuery("from Taxi t").list();
+        return session.createQuery("from DRIVERS").list();
     }
 }
