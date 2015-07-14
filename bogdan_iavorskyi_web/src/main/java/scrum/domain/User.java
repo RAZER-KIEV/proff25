@@ -13,7 +13,7 @@ public class User {
     private String pass;
 
     public User(){
-
+// construct
     }
 
     public Long getId() {
