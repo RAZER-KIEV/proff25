@@ -1,0 +1,32 @@
+h3 {
+    color: pink;
+}
+
+#greycol {
+    color: gray;
+}
+
+.yellowcol {
+    color: yellow;
+}
+
+
+p.yellowcol {
+    color: yellow;
+}
+
+p {
+    color: green;
+}
+
+span p {
+    color: brown;
+}
+
+div div {
+    color: silver;
+}
+
+[style] {
+    color: olive;
+}
