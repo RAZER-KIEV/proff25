@@ -10,7 +10,7 @@
 <head>
   <title></title>
   <style>
-    /*body{ background: url(/image/taxi.jpg)}*/
+    body{ background: url(/image/taxi.jpg)}
   </style>
 </head>
 <body>
@@ -18,7 +18,7 @@
 <center>
   <h2 style="color:white">Authorization!!!!</h2>
 
-  <form name ="forma1" action="/dashboard.jsp">
+  <form name ="forma1" action="/dashboard.html" method="post">
 
 
 
@@ -36,7 +36,7 @@
       </tr>
 
       <tr>
-        <td><input type="submit" name="submit" value="РђРІС‚РѕСЂРёР·Р°С†РёСЏ">
+        <td><input type="submit" name="submit" value="Login">
         </td>
       </tr>
 
