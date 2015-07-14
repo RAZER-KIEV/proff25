@@ -1,12 +1,13 @@
 package scrum.domain;
 
 import javax.persistence.*;
-
+import org.springframework.stereotype.*;
 /**
  * Created by Inna on 14.07.2015.
  */
+@Component
 @Entity
-@Table(name = "USER")
+@Table(name = "USERS")
 public class User {
     @Id
     @SequenceGenerator(name = "sequence", sequenceName = "USER_SEQ",
