@@ -1,18 +1,18 @@
-package comandWork.dao;
+package taxi.dao;
 
-import comandWork.domain.User;
 
-import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 /**
- * Created by RAZER on 14.07.2015.
+ * Created by viktoria
+ * Project:.hw8.taxi.dao
  */
 public interface UserDao {
+
     Long create(User user);
-    User read(Long id);
+    User read(Long ig);
     boolean update(User user);
     boolean delete(User user);
     List findAll();
+
 }
