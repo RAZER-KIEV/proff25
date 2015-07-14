@@ -22,6 +22,26 @@ public class ServiceTaxiImpl implements TaxiService {
     @Autowired
     private TaxiDao taxiDao;
 
+    public ServiceTaxiImpl() {
+    }
+    public ServiceTaxiImpl(UserDao userDao, TaxiDao taxiDao) {
+        this.userDao = userDao;
+        this.taxiDao = taxiDao;
+    }
+
+    public UserDao getUserDao() {
+        return userDao;
+    }
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
+    }
+    public TaxiDao getTaxiDao() {
+        return taxiDao;
+    }
+    public void setTaxiDao(TaxiDao taxiDao) {
+        this.taxiDao = taxiDao;
+    }
+
     @Override
     public boolean update() {
         return false;
@@ -33,6 +53,7 @@ public class ServiceTaxiImpl implements TaxiService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List getTaxiList() {
         return null;
     }
@@ -50,6 +71,7 @@ public class ServiceTaxiImpl implements TaxiService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Taxi readTaxi(Long id) {
         return null;
     }

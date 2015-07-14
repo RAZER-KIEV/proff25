@@ -2,7 +2,6 @@ package scrum.service;
 
 import scrum.domain.Taxi;
 import scrum.domain.User;
-
 import java.util.List;
 
 /**
