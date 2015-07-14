@@ -10,7 +10,9 @@ import java.util.List;
 public interface UserDao {
     public void createUser(User user);
 
-    public Long readIdByName(String name);
+    public User readClient(Long id);
+
+    public User readByName(String name);
 
     public void deleteUser(User user);
 
