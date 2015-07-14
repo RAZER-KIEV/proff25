@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import scrum.dao.TaxiDao;
 import scrum.dao.UserDao;
 import scrum.dao.UserDaoImpl;
+import scrum.domain.Taxi;
 import scrum.domain.User;
 
 import java.util.List;
@@ -44,7 +45,17 @@ public class ServiceTaxiImpl implements TaxiService {
 
     @Override
     @Transactional(readOnly = true)
-    public User read(Long id) {
+    public User readUser(Long id) {
+        return null;
+    }
+
+    @Override
+    public Taxi readTaxi(Long id) {
+        return null;
+    }
+
+    @Override
+    public Long create(Taxi taxi) {
         return null;
     }
 
@@ -63,8 +74,4 @@ public class ServiceTaxiImpl implements TaxiService {
         return false;
     }
 
- //   @Override
- //   public Long create(Taxi taxi) {
- //       return null;
- //   }
 }
