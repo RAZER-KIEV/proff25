@@ -1,6 +1,8 @@
 package scrum.dao;
 
 
+import scrum.domain.Taxi;
+
 import java.util.List;
 
 /**
