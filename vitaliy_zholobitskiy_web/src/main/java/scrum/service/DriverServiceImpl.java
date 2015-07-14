@@ -3,8 +3,8 @@ package scrum.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import scrum.taxi.dao.DriverDao;
-import scrum.taxi.domain.Driver;
+import scrum.dao.DriverDao;
+import scrum.domain.Driver;
 
 import java.util.List;
 
