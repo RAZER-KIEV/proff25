@@ -36,7 +36,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public User readClient(Long id) {
+    public User readUser(Long id) {
         return (User) sessionFactory.getCurrentSession().get(User.class, id);
     }
 
@@ -55,5 +55,21 @@ public class UserDaoImpl implements UserDao {
     public void updateUser(User user) {
         sessionFactory.getCurrentSession().update(user);
 
+    }
+
+    @Override
+    public User auth(String name, String password) {
+        User user = null;
+        try {
+            user = (User) readByName(name);
+
+        } catch (Exception ex) {
+            if (user.getUserPassword().equals(password)) {
+                return user;
+            } else {
+                return null;
+            }
+        }
+        return user;
     }
 }
