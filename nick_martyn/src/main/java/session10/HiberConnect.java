@@ -8,7 +8,6 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
-import javax.swing.plaf.synth.Region;
 import java.util.Locale;
 
 /**
@@ -22,7 +21,6 @@ public class HiberConnect {
     public static void main(String[] args) {
         Locale.setDefault(Locale.ENGLISH);
         Configuration cfg = new Configuration().configure("hibernate.cfg.xml");
-        cfg = new Configuration().configure("resources/hibernate.cfg.xml");
         StandardServiceRegistryBuilder sb = new StandardServiceRegistryBuilder();
         sb.applySettings(cfg.getProperties());
         StandardServiceRegistry standardServiceRegistry = sb.build();
@@ -33,15 +31,8 @@ public class HiberConnect {
         try {
             session = factory.openSession();
 
-            session.beginTransaction();
-            Long id;
-//            id = (Long) session.save(new Region());
-
-            session.getTransaction().commit();
-
         } catch (HibernateException e) {
             log.error("Open session failed", e);
-            session.getTransaction().rollback();
         } finally {
             if (session != null) {
                 session.close();
@@ -50,4 +41,4 @@ public class HiberConnect {
         log.info(session);
     }
 }
-//
+

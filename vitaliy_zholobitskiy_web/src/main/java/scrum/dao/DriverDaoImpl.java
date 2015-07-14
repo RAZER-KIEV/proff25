@@ -1,40 +1,57 @@
 package scrum.dao;
 
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import scrum.domain.Driver;
 
 import java.util.List;
 
-/**
- * Created by storo_000 on 14.07.2015.
- */
+@Repository
 public class DriverDaoImpl implements DriverDao {
 
-    //@Autowired
+    @Autowired
     private SessionFactory factory;
 
+    public DriverDaoImpl() {
+    }
 
-    @Override
-    public Long create(Driver driver) {
-        return null;
+    public DriverDaoImpl(SessionFactory factory) {
+        this.factory = factory;
+    }
+
+    public SessionFactory getFactory() {
+        return factory;
+    }
+
+    public void setFactory(SessionFactory factory) {
+        this.factory = factory;
     }
 
     @Override
-    public Driver get(Long id) {
-        return null;
+    public Long create(Driver driver) {
+        return (Long)factory.getCurrentSession().save(driver);
+    }
+
+    @Override
+    public Driver read(Long id) {
+        return (Driver)factory.getCurrentSession().get(Driver.class,id);
     }
 
     @Override
     public boolean update(Driver driver) {
-        return false;
+        factory.getCurrentSession().update(driver);
+        return true;
     }
 
     @Override
     public boolean delete(Driver driver) {
-        return false;
+        factory.getCurrentSession().delete(driver);
+        return true;
     }
 
     @Override
-    public List findAll() {
-        return null;
+    public List<Driver> findAll() {
+        return factory.getCurrentSession().createQuery("from Driver").list();
     }
 }

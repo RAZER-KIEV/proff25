@@ -15,6 +15,5 @@
         <property name="show_sql">true</property>
         <property name="hbm2ddl.auto">update</property>
         <!--<mapping class="session10.Region"/>-->
-        <mapping class="session10.Region"/>
     </session-factory>
 </hibernate-configuration>
