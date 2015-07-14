@@ -1,6 +1,6 @@
 package hw8.taxi.service;
 
-import hw8.taxi.exeption.AuthenticationException;
+import hw8.taxi.exception.AuthenticationException;
 
 /**
  * Created by just1ce on 11.07.2015.
