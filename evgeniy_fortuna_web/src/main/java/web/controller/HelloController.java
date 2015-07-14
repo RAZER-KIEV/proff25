@@ -1,4 +1,4 @@
-package main.java.web.controller;
+package web.controller;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
@@ -22,7 +22,7 @@ public class HelloController {
     @ResponseBody
     String hello(Model model) {
         log.info("/hello.html controller");
-        model.addAttribute("name", "Petro");
+//        model.addAttribute("name", "Petro");
         return "hello";
     }
 
