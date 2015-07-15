@@ -46,7 +46,7 @@ public class Operator {
     }
 
     public Operator(String login, String password, Long individualTaxpayerNumber){
-        this(login, password, individualTaxpayerNumber, null, null, null, null, null);
+        this(login, password, individualTaxpayerNumber, null, null, false, null, null);
     }
 
     public Operator(String login, String password, Long individualTaxpayerNumber,
