@@ -35,6 +35,7 @@ public class AuthenticationController {
     @RequestMapping(value = "/dashboard.html", method = RequestMethod.GET)
     public
     String dashboard(Model model, HttpSession session) {
+
         log.info("/dashboard.html controller");
         if (isAutorized(session)){
             model.addAttribute("hello", "Hello, "+authenticationService.getOperator((Long)session.getAttribute("id")).getLogin()+"!");
