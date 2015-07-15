@@ -2,7 +2,9 @@ package taxi.domain;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * Created by GFalcon on 16.07.15.
@@ -26,7 +28,18 @@ public class Operator {
     @Column(name = "UNSUCCESSFUL_LOGIN_TRIES")
     private Long unsuccessfulLoginTries;
 
+    @ManyToOne(cascade = {CascadeType.REFRESH,
+            CascadeType.MERGE,
+            CascadeType.PERSIST,
+            CascadeType.DETACH})
     private Role role;
+
+    @OneToMany(mappedBy = "operator",
+            cascade = {CascadeType.DETACH,
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE,
+                    CascadeType.REFRESH})
+    private Set<Order> orders;
 
     public Operator(){
 
@@ -45,6 +58,8 @@ public class Operator {
         this.isBlocked = isBlocked;
         this.unsuccessfulLoginTries = unsuccessfulLoginTries;
         this.role = role;
+
+        orders = new HashSet<>();
     }
 
     public String getLogin() {
@@ -111,6 +126,22 @@ public class Operator {
         this.role = role;
     }
 
+    public Set<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Set<Order> orders) {
+        this.orders = orders;
+    }
+
+    public boolean addOrder(Order order){
+        return this.orders.add(order);
+    }
+
+    public boolean removeOrder(Order order){
+        return this.orders.remove(order);
+    }
+
     @Override
     public String toString() {
         return "Operator{" +
@@ -137,11 +168,12 @@ public class Operator {
                 Objects.equals(getLastPasswordChangeDate(), operator.getLastPasswordChangeDate()) &&
                 Objects.equals(getIsBlocked(), operator.getIsBlocked()) &&
                 Objects.equals(getUnsuccessfulLoginTries(), operator.getUnsuccessfulLoginTries()) &&
-                Objects.equals(getRole(), operator.getRole());
+                Objects.equals(getRole(), operator.getRole()) &&
+                Objects.equals(getOrders(), operator.getOrders());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getLogin(), getPassword(), getIndividualTaxpayerNumber(), getPreviousPassword(), getLastPasswordChangeDate(), getIsBlocked(), getUnsuccessfulLoginTries(), getRole());
+        return Objects.hash(getLogin(), getPassword(), getIndividualTaxpayerNumber(), getPreviousPassword(), getLastPasswordChangeDate(), getIsBlocked(), getUnsuccessfulLoginTries(), getRole(), getOrders());
     }
 }

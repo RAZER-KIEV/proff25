@@ -67,6 +67,22 @@ public class Role {
         this.adminPanelVisible = adminPanelVisible;
     }
 
+    public Set<Operator> getOperators() {
+        return operators;
+    }
+
+    public void setOperators(Set<Operator> operators) {
+        this.operators = operators;
+    }
+
+    public boolean addOperator(Operator operator){
+        return this.operators.add(operator);
+    }
+
+    public boolean removeOperator(Operator operator){
+        return this.operators.remove(operator);
+    }
+
     @Override
     public String toString() {
         return "Role{" +
@@ -83,11 +99,12 @@ public class Role {
         Role role = (Role) o;
         return Objects.equals(isDispatcherPanelVisible(), role.isDispatcherPanelVisible()) &&
                 Objects.equals(isAdminPanelVisible(), role.isAdminPanelVisible()) &&
-                Objects.equals(getRoleName(), role.getRoleName());
+                Objects.equals(getRoleName(), role.getRoleName()) &&
+                Objects.equals(getOperators(), role.getOperators());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getRoleName(), isDispatcherPanelVisible(), isAdminPanelVisible());
+        return Objects.hash(getRoleName(), isDispatcherPanelVisible(), isAdminPanelVisible(), getOperators());
     }
 }
