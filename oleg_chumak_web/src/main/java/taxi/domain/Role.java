@@ -1,4 +1,4 @@
-package domain;
+package taxi.domain;
 
 import javax.persistence.*;
 import java.util.HashSet;
