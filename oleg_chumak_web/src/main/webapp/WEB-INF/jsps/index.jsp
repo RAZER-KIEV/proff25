@@ -1,4 +1,4 @@
-<%@ page import="cache.dao.Dao" %>
+<%@ page import="dao.Dao" %>
 <%--
   Created by IntelliJ IDEA.
   User: al1

@@ -33,7 +33,7 @@ public class Controller {
 
 
     @RequestMapping(value = "/request.html", method = RequestMethod.POST)
-    public String medium(@RequestParam("login") String login, String password, Model model) {
+    public String medium(@RequestParam("login") String login, @RequestParam("password") String password, Model model) {
         log.info("/request.html controller");
 
         if (authenticate(login,password, service.getUserList())) {
@@ -60,6 +60,26 @@ public class Controller {
         }
             return false;
     }
+
+    private void fulfill(){
+    User user1 = new User("log", "pass");
+        User user2 = new User("aaa", "1111");
+        User user3 = new User("name", "trouble");
+        User user4 = new User("azaza", "ajajaja");
+        User user5 = new User("whosYourDaddy?", "ImyaDaddy");
+        service.createUser(user1);
+        service.createUser(user2);
+        service.createUser(user3);
+        service.createUser(user4);
+        service.createUser(user5);
+        Taxi taxi1 = new Taxi("vasya", "", "", "");
+        Taxi taxi2 = new Taxi("petya", "", "", "");
+        Taxi taxi3 = new Taxi("kolya", "", "", "");
+        Taxi taxi4 = new Taxi("andrey", "", "", "");
+        Taxi taxi5 = new Taxi("", "", "", "");
+    }
+
+    
 }
 
 
