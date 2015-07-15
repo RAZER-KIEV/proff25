@@ -1,4 +1,4 @@
-package controller;
+package taxi.controller;
 
 import org.apache.log4j.Logger;
 import org.springframework.ui.Model;
