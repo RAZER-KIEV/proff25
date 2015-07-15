@@ -16,7 +16,7 @@ import javax.annotation.PostConstruct;
 import java.util.Locale;
 
 @Controller
-@SessionAttributes("id")
+@SessionAttributes({"id","role"})
 public class RegisterController {
 
     public static final Logger log = Logger.getLogger(AuthenticationController.class);

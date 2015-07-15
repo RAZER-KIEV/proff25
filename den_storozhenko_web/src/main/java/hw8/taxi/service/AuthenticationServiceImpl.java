@@ -54,6 +54,11 @@ public class AuthenticationServiceImpl implements AuthenticationService{
     }
 
     @Override
+    public Operator readByLogin(String login) {
+        return operatorDao.getByLogin(login);
+    }
+
+    @Override
     public Long readByLoginPass(String login, String pass) {
         return operatorDao.getLoginPass(login,pass);
     }
