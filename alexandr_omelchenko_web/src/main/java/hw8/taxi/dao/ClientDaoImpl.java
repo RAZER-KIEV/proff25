@@ -13,15 +13,15 @@ public class ClientDaoImpl implements ClientDao {
 
     public ClientDaoImpl() {
     }
-    public ClientDaoImpl(SessionFactory sessionFactory){
-        this.factory = sessionFactory;
+    public ClientDaoImpl(SessionFactory factory){
+        this.factory = factory;
     }
 
-    public SessionFactory getSessionFactory() {
+    public SessionFactory getFactory() {
         return factory;
     }
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        this.factory = sessionFactory;
+    public void setFactory(SessionFactory factory) {
+        this.factory = factory;
     }
 
     @Override
@@ -45,7 +45,7 @@ public class ClientDaoImpl implements ClientDao {
     @Override
     public List findAll() {
         List<Client>list;
-        list =factory.getCurrentSession().createQuery("from Client").list();
+        list =factory.getCurrentSession().createQuery("from hw8.taxi.domain.Client").list();
         return list;
     }
 

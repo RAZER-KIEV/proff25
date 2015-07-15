@@ -9,7 +9,7 @@
 <h1>Order edit</h1></center>
 <font color="RED">
   ${orderEx}</font>
-<form action="/create" method="POST">
+<form action="/create" method="GET">
   <input type="number" name="id" placeholder="Id"/><br>
   <input type="number" name="clientId" placeholder="Client id"/><br>
   <input type="text" name="amount" placeholder="Amount"/><br>
@@ -17,7 +17,7 @@
   <input type="text" name="to" placeholder="Address to"/><br>
   <input type="submit" value="Create order"/>
 </form>
-<form action="/edit" method="POST">
+<form action="/edit" method="GET">
   <input type="number" name="id" placeholder="Id"/><br>
   <input type="number" name="clientId" placeholder="Client id"/><br>
   <input type="text" name="amount" placeholder="Amount"/><br>

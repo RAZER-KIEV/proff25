@@ -23,6 +23,7 @@ import java.util.List;
  * List<Notebook> findAll()
  * hw6.notes.dao.NotebookDaoImpl
  */
+
 public class NotebookDaoImpl implements NotebookDao {
     private static Logger log = Logger.getLogger(NotebookDaoImpl.class);
     private SessionFactory factory;
