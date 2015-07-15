@@ -1,14 +1,15 @@
 package hw8.taxi.domain;
 
+import hw8.taxi.UserRole;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
-import javax.persistence.criteria.Predicate;
 import java.util.Date;
 
 @Component
 @Entity
 @Table(name="OPERATORS")
+
 public class Operator {
     @Id
     @SequenceGenerator(name = "sequence", sequenceName = "OPERATORS_SEQ", initialValue = 1, allocationSize = 1)
@@ -21,6 +22,8 @@ public class Operator {
     private String login;
     @Column(name = "PASSWORD")
     private String password;
+    @Column(name = "ROLE")
+    private UserRole role;
     @Column(name = "REGISTRATION_DATE")
     private Date date;
     @Column(name = "CHANGED_PASS_DATE")
@@ -37,6 +40,7 @@ public class Operator {
         this.id = id;
         this.login = login;
         this.password = password;
+        role = UserRole.USER;
         idnumb = "0000000000";
         date = new Date();
         passDate = new Date();
@@ -47,6 +51,7 @@ public class Operator {
     public Operator(String login, String password) {
         this.login = login;
         this.password = password;
+        role = UserRole.USER;
         idnumb = "0000000000";
         date = new Date();
         passDate = new Date();
@@ -58,22 +63,32 @@ public class Operator {
         this.idnumb = idnumb;
         this.login = login;
         this.password = password;
+        role = UserRole.USER;
         date = new Date();
         passDate = new Date();
         countWrongPass = 0;
         isBlocked = false;
     }
 
-    public Operator(Long id, String login, String password,String idnumb, Date date, Date passDate, Integer countWrongPass, Boolean isBlocked) {
+    public UserRole getRole() {
+        return role;
+    }
+
+    public void setRole(UserRole role) {
+        this.role = role;
+    }
+
+    public Operator(Long id, String login, String password, UserRole role, String idnumb, Date date, Date passDate, Integer countWrongPass, Boolean isBlocked) {
         this.id = id;
         this.login = login;
         this.password = password;
+        this.role = role;
         this.idnumb = idnumb;
         this.date = date;
         this.passDate = passDate;
         this.countWrongPass = countWrongPass;
         this.isBlocked = isBlocked;
-        isBlocked = false;
+
     }
 
     public String getIdnumb() {
@@ -143,14 +158,15 @@ public class Operator {
     @Override
     public String toString() {
         return "Operator{" +
-                "isBlocked=" + isBlocked +
-                ", countWrongPass=" + countWrongPass +
-                ", passDate=" + passDate +
-                ", date=" + date +
-                ", password='" + password + '\'' +
-                ", login='" + login + '\'' +
+                "id=" + id +
                 ", idnumb='" + idnumb + '\'' +
-                ", id=" + id +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", role=" + role +
+                ", date=" + date +
+                ", passDate=" + passDate +
+                ", countWrongPass=" + countWrongPass +
+                ", isBlocked=" + isBlocked +
                 '}';
     }
 }

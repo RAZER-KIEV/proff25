@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@SessionAttributes("id")
+@SessionAttributes({"id","role"})
 public class ClientController {
     public static final Logger log = Logger.getLogger(AuthenticationController.class);
     @Autowired
@@ -50,10 +50,10 @@ public class ClientController {
         log.info("/showByPort controller");
         String result = "";
         try {
-            for (Client client : (List<Client>) clientService.showClientsByPortion(size)) {
+/*            for (Client client : (List<Client>) clientService.showClientsByPortion(size)) {
                 result = result + client + "<br>";
-            }
-            model.addAttribute("clientList",result);
+            }*/
+            model.addAttribute("clientList",clientService.showClientsByPortion(size));
             return "clients";
         } catch (HibernateException e) {
             model.addAttribute("error", "Database error.");
@@ -67,10 +67,10 @@ public class ClientController {
         log.info("/showGtSum controller");
         String result = "";
         try {
-            for (Client client : (List<Client>) clientService.showClientsGtSum(sum)) {
+            /*for (Client client : (List<Client>) clientService.showClientsGtSum(sum)) {
                 result = result + client + "<br>";
-            }
-            model.addAttribute("clientList",result);
+            }*/
+            model.addAttribute("clientList",clientService.showClientsGtSum(sum));
             return "clients";
         } catch (HibernateException e) {
             model.addAttribute("error", "Database error.");
@@ -84,10 +84,10 @@ public class ClientController {
         log.info("/showClientsLastMonth controller");
         String result = "";
         try {
-            for (Client client : (List<Client>) clientService.showClientsLastMonth()) {
+            /*for (Client client : (List<Client>) clientService.showClientsLastMonth()) {
                 result = result + client + "<br>";
-            }
-            model.addAttribute("clientList",result);
+            }*/
+            model.addAttribute("clientList",clientService.showClientsLastMonth());
             return "clients";
         } catch (HibernateException e) {
             model.addAttribute("error", "Database error.");

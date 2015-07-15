@@ -5,6 +5,7 @@ import hw8.taxi.exception.AuthenticationException;
 
 public interface AuthenticationService {
     Long createOperator(Operator operator);
+    Operator readByLogin(String login);
     Long readByLoginPass(String login, String pass);
     Operator getOperator(Long id);
     boolean authenticate(String login, String pass) throws AuthenticationException;
