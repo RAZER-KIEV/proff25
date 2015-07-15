@@ -49,7 +49,10 @@ public class Operator {
         this(login, password, individualTaxpayerNumber, null, null, null, null, null);
     }
 
-    public Operator(String login, String password, Long individualTaxpayerNumber, String previousPassword, LocalDateTime lastPasswordChangeDate, Boolean isBlocked, Long unsuccessfulLoginTries, Role role) {
+    public Operator(String login, String password, Long individualTaxpayerNumber,
+                    String previousPassword, LocalDateTime lastPasswordChangeDate,
+                    Boolean isBlocked, Long unsuccessfulLoginTries, Role role) {
+
         this.login = login;
         this.password = password;
         this.individualTaxpayerNumber = individualTaxpayerNumber;
@@ -174,6 +177,13 @@ public class Operator {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getLogin(), getPassword(), getIndividualTaxpayerNumber(), getPreviousPassword(), getLastPasswordChangeDate(), getIsBlocked(), getUnsuccessfulLoginTries(), getRole(), getOrders());
+        return Objects.hash(getLogin(),
+                getPassword(),
+                getIndividualTaxpayerNumber(),
+                getPreviousPassword(),
+                getLastPasswordChangeDate(),
+                getIsBlocked(),
+                getUnsuccessfulLoginTries(),
+                getRole(), getOrders());
     }
 }

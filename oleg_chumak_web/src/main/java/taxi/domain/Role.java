@@ -28,15 +28,15 @@ public class Role {
                     CascadeType.REFRESH})
     private Set<Operator> operators;
 
-    public Role(){
+    public Role() {
 
     }
 
-    public Role(String roleName){
+    public Role(String roleName) {
         this(roleName, false, true);
     }
 
-    public Role(String roleName, boolean adminPanelVisible, boolean dispatcherPanelVisible){
+    public Role(String roleName, boolean adminPanelVisible, boolean dispatcherPanelVisible) {
         operators = new HashSet<>();
         this.roleName = roleName;
         this.adminPanelVisible = adminPanelVisible;
@@ -75,11 +75,11 @@ public class Role {
         this.operators = operators;
     }
 
-    public boolean addOperator(Operator operator){
+    public boolean addOperator(Operator operator) {
         return this.operators.add(operator);
     }
 
-    public boolean removeOperator(Operator operator){
+    public boolean removeOperator(Operator operator) {
         return this.operators.remove(operator);
     }
 
