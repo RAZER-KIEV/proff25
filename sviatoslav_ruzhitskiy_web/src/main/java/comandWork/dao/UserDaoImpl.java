@@ -40,7 +40,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public User readByName(String login) {
-        return (User)factory.getCurrentSession().get(User.class, login);
+        return (User)factory.getCurrentSession().createQuery("from comandWork.domain.User u where u.name =" + login).uniqueResult();
     }
 
     @Override

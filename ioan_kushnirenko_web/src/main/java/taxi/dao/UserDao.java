@@ -1,6 +1,8 @@
 package taxi.dao;
 
 
+import taxi.domain.User;
+
 import java.util.List;
 
 /**

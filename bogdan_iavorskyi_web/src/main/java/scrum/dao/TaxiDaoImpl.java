@@ -3,6 +3,7 @@ package scrum.dao;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import scrum.domain.Taxi;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 /**
  * Created by User on 14.07.2015.
  */
+@Repository
 public class TaxiDaoImpl implements TaxiDao  {
     @Autowired
     private SessionFactory factory;

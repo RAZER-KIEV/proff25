@@ -22,7 +22,7 @@
         <property name="dataSource" ref="myDataSource"/>
         <property name="packagesToScan">
             <list>
-                <value>comandWork</value>
+                <value>comandWork.domain</value>
             </list>
         </property>
         <property name="hibernateProperties">
