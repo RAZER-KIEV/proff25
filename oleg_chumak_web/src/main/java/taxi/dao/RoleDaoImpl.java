@@ -1,5 +1,6 @@
 package taxi.dao;
 
+import org.springframework.stereotype.Repository;
 import taxi.domain.Role;
 
 import java.util.List;
@@ -7,6 +8,7 @@ import java.util.List;
 /**
  * Created by GFalcon on 16.07.15.
  */
+@Repository
 public class RoleDaoImpl implements RoleDao {
     @Override
     public String create(Role role) {

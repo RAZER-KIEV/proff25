@@ -9,6 +9,10 @@ import java.util.Set;
 @Table(name = "Clients")
 public class Client {
     @Id
+    @SequenceGenerator(name = "sequence", sequenceName = "SEQ_CLIENT_ID", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
+    private Long id;
+
     @Column(name = "Client_name")
     private String name;
 
@@ -39,7 +43,6 @@ public class Client {
     }
 
     public Client(String name, String surname, String phoneNumber, String address, Long totalMoneyAmount, LocalDateTime lastOrderDate, Set<Order> orders) {
-
         this.name = name;
         this.surname = surname;
         this.phoneNumber = phoneNumber;
