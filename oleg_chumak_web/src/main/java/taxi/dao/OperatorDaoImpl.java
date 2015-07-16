@@ -17,6 +17,12 @@ public class OperatorDaoImpl implements OperatorDao {
     @Autowired
     private SessionFactory factory;
 
+    public OperatorDaoImpl() {
+    }
+    public OperatorDaoImpl(SessionFactory factory) {
+        this.factory = factory;
+    }
+
     @Override
     public String create(Operator operator) {
         return (String)factory.getCurrentSession().save(operator);

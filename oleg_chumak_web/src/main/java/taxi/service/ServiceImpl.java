@@ -14,20 +14,20 @@ import java.util.List;
 @Transactional
 public class ServiceImpl implements Service {
     @Autowired
-    private OrderDao orderDao;
+    private OrderDaoImpl orderDao;
     @Autowired
-    private TaxiDriverDao taxiDriverDao;
+    private TaxiDriverDaoImpl taxiDriverDao;
     @Autowired
-    private ClientDao clientDao;
+    private ClientDaoImpl clientDao;
     @Autowired
-    private OperatorDao operatorDao;
+    private OperatorDaoImpl operatorDao;
     @Autowired
-    private RoleDao roleDao;
+    private RoleDaoImpl roleDao;
 
     public ServiceImpl(){
 
     }
-    public ServiceImpl(OrderDao orderDao, TaxiDriverDao taxiDriverDao, ClientDao clientDao, OperatorDao operatorDao, RoleDao roleDao) {
+    public ServiceImpl(OrderDaoImpl orderDao, TaxiDriverDaoImpl taxiDriverDao, ClientDaoImpl clientDao, OperatorDaoImpl operatorDao, RoleDaoImpl roleDao) {
         this.orderDao = orderDao;
         this.taxiDriverDao = taxiDriverDao;
         this.clientDao = clientDao;

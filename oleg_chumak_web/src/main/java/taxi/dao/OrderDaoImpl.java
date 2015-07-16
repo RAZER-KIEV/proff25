@@ -15,6 +15,9 @@ public class OrderDaoImpl implements OrderDao {
 
     public OrderDaoImpl() {
     }
+    public OrderDaoImpl(SessionFactory factory) {
+        this.factory = factory;
+    }
 
     @Override
     public Long create(Order order) {
