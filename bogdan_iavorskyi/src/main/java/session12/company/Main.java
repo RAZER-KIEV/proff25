@@ -14,8 +14,8 @@ import java.util.List;
  */
 public class Main {
     public static void main(String[] args) {
-        SessionFactory factory = HibernateUtil.getSessionFactory();
-        PersonService personService = new PersonServiceImpl(factory);
+        /*SessionFactory factory = HibernateUtil.getSessionFactory();
+//        PersonService personService = new PersonServiceImpl();
 //        List listOfArrays = personService.listByCompany("Google");
         List listOfArrays = personService.listCompaniesHireMoreThanXEmployees(1);
         for (int i = 0; i < listOfArrays.size(); i++) {
@@ -24,16 +24,16 @@ public class Main {
             System.out.println(name);
         }
 
-        /*List<Person> persons = personService.listAll();
+        *//*List<Person> persons = personService.listAll();
         for(Person person:persons) {
             System.out.println(person.getName());
-        }*/
+        }*//*
 
-        /*List<Company> companies = personService.listCompaniesHireMoreThanXEmployees(2);
+        *//*List<Company> companies = personService.listCompaniesHireMoreThanXEmployees(2);
         for (Company company:companies) {
             System.out.println(company.getName());
-        }*/
+        }*//*
 
-        factory.close();
+        factory.close();*/
     }
 }

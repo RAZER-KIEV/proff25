@@ -1,7 +1,9 @@
 package hw8.taxi.controller;
 
+import hw8.taxi.dao.OperatorDao;
 import hw8.taxi.domain.Operator;
 import hw8.taxi.service.AuthenticationService;
+import hw8.taxi.service.ClientService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -45,8 +47,10 @@ public class AuthenticationController {
 
     @RequestMapping(value = "/auth", method = RequestMethod.POST)
     public String auth(@RequestParam("login") String login, @RequestParam("password") String password, Model model, HttpSession session) throws AuthenticationException {
-        authenticationService.authenticate(login, password);
-
-        return "index";
+        Operator operator;
+       if(authenticationService.authenticate(login, password)){
+           session.setAttribute("operlogin", login);
+           return "dashboard";
+       }else  return "index";
     }
 }
