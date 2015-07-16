@@ -15,11 +15,13 @@ import java.util.List;
 @Repository
 public class ClientDaoImpl implements ClientDao {
 
+    public ClientDaoImpl() {
+
+    }
+
     @Autowired
     private SessionFactory factory;
 
-    public ClientDaoImpl() {
-    }
     public ClientDaoImpl(SessionFactory factory) {
         this.factory = factory;
     }

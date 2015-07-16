@@ -34,6 +34,7 @@ public class RoleDaoImpl implements RoleDao {
         return (String)factory.getCurrentSession().save(role);
     }
 
+
     @Override
     public Role read(String roleName) {
         return (Role)factory.getCurrentSession().get(Client.class, roleName);
