@@ -11,6 +11,28 @@
     <title></title>
 </head>
 <body>
+<table border="0" align="centre" TITLE="CLIENT" width="70%">
+  <tr>
 
+    <td><h2>Taxi's clients</h2></td>
+
+  </tr>
+  <tr>
+    <td align="centre">
+
+      <form action="/dashboard.html" method="get" >
+        <input type="text" name="login" value="Login" align="centre"/>
+        <input type="password" name="paswwd" value="password"/>
+        <input type="submit" value="send"/>
+      </form>
+
+    </td>
+  </tr>
+</table>
+<%--<form action="/dashboard.html" method="get" >--%>
+  <%--<input type="text" name="login" value="Login"/>--%>
+  <%--<input type="password" name="paswwd" value="password"/>--%>
+  <%--<input type="submit" value="send"/>--%>
+<%--</form>--%>
 </body>
 </html>

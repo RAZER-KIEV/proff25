@@ -37,8 +37,8 @@ public class ControllerTest {
 
     @RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.HEAD})
     public String index(Model model) {
-        log.info("/index controller");
+        log.info("/index clients controller");
         model.addAttribute("name", "al1");
-        return "index";
+        return "clients";
     }
 }

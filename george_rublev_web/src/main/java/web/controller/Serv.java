@@ -35,23 +35,7 @@ public class Serv {
             model.addAttribute("error", "Database error.");
             return "dashboard";
         }
-//        Long sessId = (Long) session.getAttribute("id");
-//        model.addAttribute("nameLog",name);
-//        if (sessId == null) {
-//            return "dashboard";
-//        }
-
-//        return "dashboard";
     }
+
+
 }
-//String result = "";
-//try {
-///*            for (Client client : (List<Client>) clientService.showClientsByPortion(size)) {
-//                result = result + client + "<br>";
-//            }*/
-//        model.addAttribute("clientList",clientService.showClientsByPortion(size));
-//        return "clients";
-//        } catch (HibernateException e) {
-//        model.addAttribute("error", "Database error.");
-//        return "dashboard";
-//        }
