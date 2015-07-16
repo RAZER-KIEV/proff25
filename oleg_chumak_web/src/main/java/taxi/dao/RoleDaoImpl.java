@@ -8,7 +8,6 @@ import java.util.List;
 /**
  * Created by GFalcon on 16.07.15.
  */
-@Repository
 public class RoleDaoImpl implements RoleDao {
     @Override
     public String create(Role role) {
