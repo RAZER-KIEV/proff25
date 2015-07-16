@@ -28,10 +28,10 @@ public class TaxiDriver {
     private String number;
     @Column(name = "NUMBER")
     private String phone;
-  //  @OneToMany(cascade = CascadeType.ALL, // каскадирование
-   //         fetch = FetchType.EAGER,// подргужать все сразу
-   //         mappedBy = "taxiDriver" )  // включить двунаправленность
-   // private Set<Order> orderSet = new HashSet<>();
+    @OneToMany(cascade = CascadeType.ALL, // каскадирование
+            fetch = FetchType.EAGER,// подргужать все сразу
+            mappedBy = "taxiDriver" )  // включить двунаправленность
+    private Set<Order> orderSet = new HashSet<>();
 
     public TaxiDriver() {
     }
@@ -71,6 +71,10 @@ public class TaxiDriver {
     }
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public void orderAdd(Order order){
+        orderSet.add(order);
     }
 
     @Override
