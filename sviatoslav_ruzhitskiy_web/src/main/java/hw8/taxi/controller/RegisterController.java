@@ -9,6 +9,7 @@ import hw8.taxi.service.AuthorizationService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -45,12 +46,14 @@ public class RegisterController {
     }
 
 
-    @RequestMapping(value = "/addUser", method = RequestMethod.POST)
-    public String addUser(@RequestParam("login")String login, @RequestParam("password")String password, @RequestParam("passwordConfirm")String passwordConfirm, @RequestParam("inn")String inn) throws AuthorizationException, AuthenticationException {
-        if (authorizationService.register(login, inn, password, passwordConfirm)) {
-            return "dashboard";
-        } else
-            return "index";
+    @RequestMapping(value = "/goToRegisterClient", method = RequestMethod.POST)
+    public String goToRegisterClient(){
+          return "registerClient";
+    }
+
+    @RequestMapping(value = "/backToDashboard", method = RequestMethod.POST)
+    public String backToDashboard(){
+        return "dashboard";
     }
 
 }

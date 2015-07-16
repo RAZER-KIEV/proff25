@@ -1,0 +1,10 @@
+body{
+    background: url(/image/taxi2.jpg);
+    margin: 40px 40px 40px 40px;
+}
+form {
+    align-content: center;
+    align-items: center;
+   /*border: 5px solid skyblue;*/
+
+}

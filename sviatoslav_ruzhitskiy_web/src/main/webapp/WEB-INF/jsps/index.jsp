@@ -9,12 +9,10 @@
 <html>
 <head>
   <title></title>
-  <style>
-    body{ background: url(/image/taxi.jpg)}
-  </style>
+  <link href="/css/hw8CSS.css" rel="stylesheet"/>
 </head>
 <body>
-<<<<<<< HEAD
+
 <%! int count=0; %>
 Logining retry: <%=count%>
 <!--
@@ -29,47 +27,26 @@ Logining retry: <%=count%>
 </form>
 </body>
 </html>
-=======
-
 <center>
-  <h2 style="color:white">Authorization!!!!</h2>
-
+  <h2 style="color:white">Authentication!</h2>
   <form name ="myAuthForm" action="/auth" method="post">
-
-
-
-    <table border="0" cellspacing="5" cellpadding="5">
-
+   <table border="0" cellspacing="5" cellpadding="5">
       <tr>
         <td align="right" valign="top" style="color:white">Enter login</td>
         <td><input type="text" name="login" size="25"
-                   maxlength="15" value="Login"><br></td>
+                   maxlength="15"><br></td>
       </tr>
       <tr>
         <td align="right" valign="top" style="color:white">Enter password</td>
         <td><input type="password" name="password" size="25"
                    maxlength="15" value="password"><br></td>
       </tr>
-
       <tr>
         <td><input type="submit" name="submit" value="Login">
         </td>
-
-
-      </tr>
-
+     </tr>
     </table>
-
-
-
-
-
-
-
-
-
   </form>
-
 </center>
 </body>
->>>>>>> origin/master
+
