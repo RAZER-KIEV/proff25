@@ -23,7 +23,7 @@ public class Operator {
     private String previousPassword;
     @Column(name = "LAST_PASSWORD_CHANGE_DATE")
     private LocalDateTime lastPasswordChangeDate;
-    @Column(name = "BLOCKED")
+    @Column(name = "BLOCKED", unique = true)
     private Boolean isBlocked;
     @Column(name = "UNSUCCESSFUL_LOGIN_TRIES")
     private Long unsuccessfulLoginTries;
