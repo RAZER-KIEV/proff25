@@ -19,6 +19,13 @@ public class OrderDaoImpl implements OrderDao {
         this.factory = factory;
     }
 
+    public SessionFactory getFactory() {
+        return factory;
+    }
+    public void setFactory(SessionFactory factory) {
+        this.factory = factory;
+    }
+
     @Override
     public Long create(Order order) {
         return (Long) factory.getCurrentSession().save(order);

@@ -22,6 +22,13 @@ public class RoleDaoImpl implements RoleDao {
         this.factory = factory;
     }
 
+    public SessionFactory getFactory() {
+        return factory;
+    }
+    public void setFactory(SessionFactory factory) {
+        this.factory = factory;
+    }
+
     @Override
     public String create(Role role) {
         return (String)factory.getCurrentSession().save(role);

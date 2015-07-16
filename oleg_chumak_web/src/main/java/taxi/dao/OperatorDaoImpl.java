@@ -23,6 +23,13 @@ public class OperatorDaoImpl implements OperatorDao {
         this.factory = factory;
     }
 
+    public SessionFactory getFactory() {
+        return factory;
+    }
+    public void setFactory(SessionFactory factory) {
+        this.factory = factory;
+    }
+
     @Override
     public String create(Operator operator) {
         return (String)factory.getCurrentSession().save(operator);

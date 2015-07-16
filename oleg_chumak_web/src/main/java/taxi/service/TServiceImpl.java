@@ -1,37 +1,68 @@
 package taxi.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import taxi.dao.*;
 import taxi.domain.*;
-
 import java.util.List;
 
 /**
  * Created by oleg on 16.07.15.
  */
-@org.springframework.stereotype.Service
+@Service
 @Transactional
-public class ServiceImpl implements Service {
+public class TServiceImpl implements TService {
     @Autowired
-    private OrderDaoImpl orderDao;
+    private OrderDao orderDao;
     @Autowired
-    private TaxiDriverDaoImpl taxiDriverDao;
+    private TaxiDriverDao taxiDriverDao;
     @Autowired
-    private ClientDaoImpl clientDao;
+    private ClientDao clientDao;
     @Autowired
-    private OperatorDaoImpl operatorDao;
+    private OperatorDao operatorDao;
     @Autowired
-    private RoleDaoImpl roleDao;
+    private RoleDao roleDao;
 
-    public ServiceImpl(){
+    public TServiceImpl(){
 
     }
-    public ServiceImpl(OrderDaoImpl orderDao, TaxiDriverDaoImpl taxiDriverDao, ClientDaoImpl clientDao, OperatorDaoImpl operatorDao, RoleDaoImpl roleDao) {
+    public TServiceImpl(OrderDao orderDao, TaxiDriverDao taxiDriverDao, ClientDao clientDao, OperatorDao operatorDao, RoleDao roleDao) {
         this.orderDao = orderDao;
         this.taxiDriverDao = taxiDriverDao;
         this.clientDao = clientDao;
         this.operatorDao = operatorDao;
+        this.roleDao = roleDao;
+    }
+
+    public OrderDao getOrderDao() {
+        return orderDao;
+    }
+    public void setOrderDao(OrderDao orderDao) {
+        this.orderDao = orderDao;
+    }
+    public TaxiDriverDao getTaxiDriverDao() {
+        return taxiDriverDao;
+    }
+    public void setTaxiDriverDao(TaxiDriverDao taxiDriverDao) {
+        this.taxiDriverDao = taxiDriverDao;
+    }
+    public ClientDao getClientDao() {
+        return clientDao;
+    }
+    public void setClientDao(ClientDao clientDao) {
+        this.clientDao = clientDao;
+    }
+    public OperatorDao getOperatorDao() {
+        return operatorDao;
+    }
+    public void setOperatorDao(OperatorDao operatorDao) {
+        this.operatorDao = operatorDao;
+    }
+    public RoleDao getRoleDao() {
+        return roleDao;
+    }
+    public void setRoleDao(RoleDao roleDao) {
         this.roleDao = roleDao;
     }
 

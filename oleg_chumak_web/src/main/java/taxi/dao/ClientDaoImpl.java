@@ -24,6 +24,13 @@ public class ClientDaoImpl implements ClientDao {
         this.factory = factory;
     }
 
+    public SessionFactory getFactory() {
+        return factory;
+    }
+    public void setFactory(SessionFactory factory) {
+        this.factory = factory;
+    }
+
     @Override
     public List<Client> clientsPortinedByTen(Long numberOfPortion) {
         Query query = factory.getCurrentSession().createQuery("from Client");

@@ -20,7 +20,7 @@ public class TaxiDriver {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
     @Column(name = "ID")
     private Long id;
-    @Column(name = "NAME")
+    @Column(name = "NAMES")
     private String name;
     @Column(name = "MODEL")
     private String model;

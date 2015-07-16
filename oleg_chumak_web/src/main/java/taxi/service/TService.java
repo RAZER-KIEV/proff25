@@ -1,14 +1,13 @@
 package taxi.service;
 
 import taxi.domain.*;
-
 import java.util.List;
 
 /**
  * Created by oleg on 16.07.15.
  */
 
-public interface Service {
+public interface TService {
     List<Client> clientsPortinedByTen(Long numberOfPortion);
     List<Client> clientsMadeOrdersDuringLastMonth();
     List<Client> clientswithOrderAmountMoreThen(Long amount);
