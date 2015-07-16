@@ -10,17 +10,25 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>форма создания клиента</title>
+    <title>Форма создания клиента</title>
+  <link href="/css/hw8CSS.css" rel="stylesheet"/>
 </head>
 <body>
-<form action="/addClient" method="post">
-  <p>Name: <input type="text" name="login"/> должен быть не менее 4 символов, не должен содержать пробелы</p>
-  <p>Sur name: <input type="text" name="inn"/> идентификационный номер (10 цифр, без букв и других знаков) </p>
-  <p>Phone: <input type="text" name="password"/> должен быть не менее 8 символов, включать большие и маленькие буквы, цифры</p>
-  <p>adress: <input type="text" name="passwordConfirm" > должен совпадать с паролем</p>
-  <p>CashSum: <input type="text" name="inn"/> идентификационный номер (10 цифр, без букв и других знаков) </p>
-   <input type="submit" name="register" value="Registration"/>
+<h1>CLIENT REGISTERATION PAGE</h1>
+
+<p>STATUS: <%= request.getAttribute("status") %></p>
+
+<form action="/createClient" method="post">
+  <p>Name: <input type="text" name="name"/> </p>
+  <p>Sur name: <input type="text" name="surname"/>  </p>
+  <p>Phone: <input type="text" name="phone"/></p>
+  <p>Adress: <input type="text" name="adress" > </p>
+    <input type="submit" name="createClient" value="Create Client!"/>
+  <button formaction="/backToDashboard"  type="submit" formmethod="post" name="BacktoDASHBOARD" value="Back to DASHBOARD!">Back to DASHBOARD!</button>
 </form>
+
+
+
 
 </body>
 </html>

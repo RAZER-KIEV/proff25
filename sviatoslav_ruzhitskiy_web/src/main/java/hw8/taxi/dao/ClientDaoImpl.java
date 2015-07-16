@@ -65,22 +65,25 @@ public class ClientDaoImpl implements ClientDao{
     public List showClientsByPortion(int portionSize) {
         Query query;
         List<Client> clientList = new ArrayList<>();
+        List<Client> bufferList = new ArrayList<>();
         int start = 0;
         do {
             Session session = sessionFactory.openSession();
+            bufferList.clear();
 
             try {
-                query = session.createQuery("select Notebook n from Store s");
+                query = session.createQuery("from Client");
                 query.setFirstResult(start);
                 query.setMaxResults(portionSize);
                 clientList.addAll(query.list());
+                bufferList.addAll(query.list());
             } finally {
                 start += portionSize;
                 if (session != null) {
                     session.close();
                 }
             }
-        } while (query.list() != (null));
+        } while (bufferList == null);
         return clientList;
 
     }
@@ -96,7 +99,7 @@ public class ClientDaoImpl implements ClientDao{
     @Override
     public List showClientsLastMonth() {
         long monthTime = 30 * 24 * 60 * 60 * 1000;
-        Date date = new Date(System.currentTimeMillis()-monthTime);
+        Date date = new Date(System.currentTimeMillis()+monthTime);
         Query query = sessionFactory.getCurrentSession().createQuery("from Client c where c.lastOrderDay>:date");
         query.setParameter("date",date);
         return query.list();
