@@ -1,7 +1,6 @@
 package taxi.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.*;
 import org.springframework.transaction.annotation.Transactional;
 import taxi.dao.*;
 import taxi.domain.*;
@@ -24,6 +23,10 @@ public class ServiceImpl implements Service {
     private OperatorDao operatorDao;
     @Autowired
     private RoleDao roleDao;
+
+    public ServiceImpl(){
+
+    }
 
     @Transactional(readOnly = true)
     @Override
