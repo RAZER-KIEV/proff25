@@ -26,7 +26,7 @@ public class TaxiDriver {
     private String model;
     @Column(name = "NUMBER")
     private String number;
-    @Column(name = "NUMBER")
+    @Column(name = "PHONE_NUM")
     private String phone;
     @OneToMany(cascade = CascadeType.ALL, // каскадирование
             fetch = FetchType.EAGER,// подргужать все сразу
