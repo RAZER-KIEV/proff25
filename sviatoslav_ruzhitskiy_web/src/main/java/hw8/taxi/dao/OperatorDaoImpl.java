@@ -18,6 +18,9 @@ public class OperatorDaoImpl implements OperatorDao {
     @Autowired
     private SessionFactory sessionFactory;
 
+    public OperatorDaoImpl() {
+    }
+
     @Override
     public Long create(Operator operator) {
         return (Long)sessionFactory.getCurrentSession().save(operator);
@@ -49,7 +52,7 @@ public class OperatorDaoImpl implements OperatorDao {
 
     @Override
     public List findAll() {
-        List<Operator> operators = new ArrayList<>();
+        List<Operator> operators;
         Query query = sessionFactory.getCurrentSession().createQuery("from Operator");
         operators = query.list();
         return operators;

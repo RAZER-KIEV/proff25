@@ -23,7 +23,7 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="packagesToScan">
             <list>
-                <value>scrum.domain</value>
+                <value>domain</value>
             </list>
         </property>
         <property name="hibernateProperties">

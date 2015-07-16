@@ -40,7 +40,6 @@ public class Client {
         this.summ = summ;
         this.dateLastOrder = dateLastOrder;
     }
-
     public Client(String firstname, String lastname, String phone, String adress) {
         this.firstname = firstname;
         this.lastname = lastname;
