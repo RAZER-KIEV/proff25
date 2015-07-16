@@ -9,10 +9,13 @@ import java.util.List;
  * Created by ПК on 15.07.2015.
  */
 public interface ClientDao {
-    Long create(Client operator);
+    Long create(Client client);
     Client read(Long ig);
-    boolean update(Client operator);
-    boolean delete(Client operator);
+    boolean update(Client client);
+    boolean delete(Client client);
     Client searchByLogin(String login);
     List findAll();
+    List showClientsByPortion(int portionSize);
+    List showClientsGtSum(int sum);
+    List showClientsLastMonth();
 }

@@ -46,6 +46,7 @@ public class AuthenticationController {
     @RequestMapping(value = "/auth", method = RequestMethod.POST)
     public String auth(@RequestParam("login") String login, @RequestParam("password") String password, Model model, HttpSession session) throws AuthenticationException {
        if(authenticationService.authenticate(login, password)){
+           session.setAttribute("name", login);
            return "dashboard";
        }
         return "index";

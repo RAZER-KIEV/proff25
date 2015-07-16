@@ -17,13 +17,14 @@
 <<<<<<< HEAD
 <%! int count=0; %>
 Logining retry: <%=count%>
+<!--
 <form id="myAuthForm" action="/auth" method="post">
   <p> Введите логин: <input type="text" name="login"> <br></p>
   <p> Введите проль:<input type="password" name="password"></p>
   <input type="submit" name="enter" value="Log in">
-</form> <br>
+</form> <br>-->
 
-<form id="regForm" action="/register" method="post">
+<form id="regForm1" action="/register" method="post">
   <input type="submit" name="register" value="Registeration">
 </form>
 </body>
@@ -53,9 +54,7 @@ Logining retry: <%=count%>
       <tr>
         <td><input type="submit" name="submit" value="Login">
         </td>
-        <td>
-          <input type="submit" name="register" value="Registeration">
-        </td>
+
 
       </tr>
 
