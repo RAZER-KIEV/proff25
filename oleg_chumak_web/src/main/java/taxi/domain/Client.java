@@ -32,7 +32,7 @@ public class Client {
     private LocalDateTime lastOrderDate;
 
 
-    @OneToMany(mappedBy = "Clients",
+    @OneToMany(mappedBy = "client",
             cascade = {CascadeType.DETACH,
                     CascadeType.PERSIST,
                     CascadeType.MERGE,
