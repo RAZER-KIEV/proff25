@@ -24,7 +24,7 @@ public class TaxiDriver {
     private String name;
     @Column(name = "MODEL")
     private String model;
-    @Column(name = "NUMBER")
+    @Column(name = "NUMBEROK")
     private String number;
     @Column(name = "PHONE_NUM")
     private String phone;
