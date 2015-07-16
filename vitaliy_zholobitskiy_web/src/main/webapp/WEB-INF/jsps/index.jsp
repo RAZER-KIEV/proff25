@@ -2,58 +2,7 @@
 <html>
 <head>
     <title>Welcome!</title>
-    <style>
-        *{
-            color: #FFF;
-            font-size: 24px;
-            font-family: "Century Gothic","Lucida Grande",Helvetica,Arial,sans serif;
-        }
-
-        body {
-            background: #212028;
-        }
-
-        input {
-            color: #000;
-            text-align: left;
-        }
-
-        #login_table {
-            border-radius: 10px ;
-            border: rgba(235, 131, 70, 0.99) 1px solid;
-            background: #8589b8 top left repeat-x;
-            display: block;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-left: -200px;
-            margin-top: -150px;
-
-        }
-
-        .auth_cell_titles {
-            border-radius: 10px ;
-            color: #481540;
-            font-size: 11pt;
-        }
-
-        .auth_title {
-            color: #481540;
-            border-radius: 10px ;
-            padding-bottom: 20px;
-        }
-
-        .auth_submit a {
-            border-style: ridge ;
-            font-size: 9pt;
-            margin-left: 30px;
-        }
-
-        #auth_submit_button {
-            border-radius: 10px ;
-            font-size: 24px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body >
@@ -84,7 +33,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td>
+                    </td>
                     <td class="auth_submit" align="left">
                         <input value="Войти" name="submit" id="auth_submit_button" type="submit" />
                     </td>
@@ -93,6 +43,9 @@
         </td></tr>
         </tbody>
     </table>
+</form>
+<form  action="/register" method="get">
+    <input class="auth_title" value="Регистрация" name="submit_reg" id="register_button1" type="submit" />
 </form>
 </body>
 </html>

@@ -2,6 +2,7 @@ package hw8.taxi.controller;
 
 
 import hw8.taxi.exception.AuthenticationException;
+import hw8.taxi.service.AuthenticationService;
 import hw8.taxi.service.AuthenticationServiceImpl;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ import javax.servlet.http.HttpSession;
 @SessionAttributes("id")
 public class AuthenticationController {
     @Autowired
-    private AuthenticationServiceImpl authenticationService;
+    private AuthenticationService authenticationService;
     public static final Logger log = Logger.getLogger(AuthenticationController.class);
     @RequestMapping(value = "/auth.html", method = RequestMethod.POST)
     public
@@ -27,11 +28,11 @@ public class AuthenticationController {
                  Model model) throws AuthenticationException {
 
         if(authenticationService.authenticate(login, password)){
-            model.addAttribute("id",1L);
+            model.addAttribute("id",authenticationService.getIdByLogin(login));
             return "dashboard";
         }
 
-
+        model.addAttribute("info","Incorrect login/password.");
         return "index";
     }
 
@@ -39,10 +40,15 @@ public class AuthenticationController {
     public
     String index(HttpSession session) {
         Long id = (Long)(session.getAttribute("id"));
-        if ((id!=null)&&(id<5L)&&(id>0L)){
+        if ((id!=null)){
             return "dashboard";
         }
         return "index";
+    }
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public
+    String register() {
+        return "register";
     }
 
 

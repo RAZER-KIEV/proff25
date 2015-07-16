@@ -1,5 +1,6 @@
 package taxi.dao;
 
+import org.springframework.stereotype.Repository;
 import taxi.domain.Role;
 
 import java.util.List;
