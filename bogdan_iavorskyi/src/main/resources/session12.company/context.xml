@@ -2,12 +2,15 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
          http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
          http://www.springframework.org/schema/context
          http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
     <context:property-placeholder location="classpath:session12.company/conf.properties"/>
+
+    <context:component-scan base-package="session12"/>
 
     <bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="${driver}"/>
@@ -31,12 +34,11 @@
             </value>
         </property>
     </bean>
-    <bean id="companyDao" class="session12.company.dao.CompanyDaoImpl">
-        <constructor-arg ref="sf"/>
+    <bean id="txManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sf"/>
     </bean>
-    <bean id="personDao" class="session12.company.dao.PersonDaoImpl">
-        <constructor-arg ref="sf"/>
-    </bean>
+
+    <tx:annotation-driven transaction-manager="txManager"/>
 </beans>
 
 

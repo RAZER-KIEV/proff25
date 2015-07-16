@@ -8,6 +8,6 @@ import session12.company.domain.Company;
 public interface CompanyDao {
     Long create(Company company);
     Company read(Long id);
-    boolean update(Company company);
-    boolean delete(Company company);
+    void update(Company company);
+    void delete(Company company);
 }

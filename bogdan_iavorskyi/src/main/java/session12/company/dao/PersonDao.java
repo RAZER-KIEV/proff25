@@ -11,8 +11,8 @@ import java.util.List;
 public interface PersonDao {
     Long create(Person person);
     Person read(Long id);
-    boolean update(Person person);
-    boolean delete(Person person);
+    void update(Person person);
+    void delete(Person person);
     List listByCompany(String name);
     List listAll();
     List listCompaniesHireMoreThanXEmployees(int i);
