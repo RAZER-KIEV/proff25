@@ -16,7 +16,7 @@ public class Test2 {
 
         Service service = context.getBean("serviceImpl", Service.class);
         //    service.createOperator()
-        service.createTaxist(new TaxiDriver("Balvan", "Mercedes", "AA0001AA", "0939393933"));
+       // service.createTaxist(new TaxiDriver("Balvan", "Mercedes", "AA0001AA", "0939393933"));
 
     }
 }

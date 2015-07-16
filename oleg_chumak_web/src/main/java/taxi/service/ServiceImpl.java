@@ -27,6 +27,13 @@ public class ServiceImpl implements Service {
     public ServiceImpl(){
 
     }
+    public ServiceImpl(OrderDao orderDao, TaxiDriverDao taxiDriverDao, ClientDao clientDao, OperatorDao operatorDao, RoleDao roleDao) {
+        this.orderDao = orderDao;
+        this.taxiDriverDao = taxiDriverDao;
+        this.clientDao = clientDao;
+        this.operatorDao = operatorDao;
+        this.roleDao = roleDao;
+    }
 
     @Transactional(readOnly = true)
     @Override
