@@ -3,6 +3,7 @@ package taxi.dao;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import taxi.domain.Client;
 
 import java.time.LocalDateTime;
@@ -11,6 +12,7 @@ import java.util.List;
 /**
  * Created by oleg on 16.07.15.
  */
+@Repository
 public class ClientDaoImpl implements ClientDao {
 
     @Autowired
@@ -38,7 +40,6 @@ public class ClientDaoImpl implements ClientDao {
         Query query = factory.getCurrentSession().createQuery("from Client as o where o.money>=:frompoint");
         query.setParameter("frompoint", amount);
         return query.list();
-
     }
 
     @Override
