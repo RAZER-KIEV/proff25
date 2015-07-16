@@ -14,7 +14,7 @@
 <%
   String login = (String)session.getAttribute("name");
   if(login==null){
- response.sendRedirect("/WEB-INF/jsps/index.jsp");
+ response.sendRedirect("/WEB-INF/jsps/index2.jsp");
   }
 
 %>

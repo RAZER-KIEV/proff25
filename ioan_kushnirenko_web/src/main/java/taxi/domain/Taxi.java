@@ -6,10 +6,10 @@ import javax.persistence.*;
  * Created by Well on 14.07.2015.
  */
 @Entity
-@Table(name = "taxist")
+@Table(name = "DRIVERS")
 public class Taxi {
         @Id
-        @SequenceGenerator(name = "sequence", sequenceName = "TAXIST_SEQ",
+        @SequenceGenerator(name = "sequence", sequenceName = "DRIVERS_SEQ",
                 allocationSize = 1)
         @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
         @Column(name = "id")
@@ -18,13 +18,13 @@ public class Taxi {
         @Column(name = "name")
         private String name;
 
-        @Column(name = "telephon")
+        @Column(name = "phone")
         private String tel;
 
-        @Column(name = "model_car")
+        @Column(name = "CAR_MODEL")
         private String modelCar;
 
-        @Column(name = "number_car")
+        @Column(name = "CAR_NUMBER")
         private String numberCar;
 
     public Taxi() {}

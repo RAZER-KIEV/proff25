@@ -4,6 +4,9 @@ import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import session12.company.domain.Company;
 import session12.company.domain.Person;
 
@@ -12,10 +15,15 @@ import java.util.List;
 /**
  * Created by bosyi on 23.06.15.
  */
-public class PersonDaoImpl implements PersonDao {
-    private static Logger log = Logger.getLogger(PersonDaoImpl.class);
 
+@Repository("personDao")
+public class PersonDaoImpl implements PersonDao {
+
+    @Autowired
     private SessionFactory factory;
+
+    public PersonDaoImpl() {
+    }
 
     public PersonDaoImpl(SessionFactory sessionFactory) {
         factory = sessionFactory;
@@ -23,47 +31,36 @@ public class PersonDaoImpl implements PersonDao {
 
     @Override
     public Long create(Person person) {
-        return null;
+        return (Long) factory.getCurrentSession().save(person);
     }
 
     @Override
     public Person read(Long id) {
-        return null;
+        return (Person) factory.getCurrentSession().get(Person.class, id);
     }
 
     @Override
-    public boolean update(Person person) {
-        return false;
+    public void update(Person person) {
+        factory.getCurrentSession().update(person);
     }
 
     @Override
-    public boolean delete(Person person) {
-        return false;
+    public void delete(Person person) {
+        factory.getCurrentSession().delete(person);
     }
 
     @Override
     public List listByCompany(String name) {
-        List persons = null;
-        Session session = factory.openSession();
-        Query query = session.createQuery("from Company c join c.persons p where c.name=:name");
-        query.setParameter("name", name);
-        return query.list();
+        return factory.getCurrentSession().createQuery("from Company c join c.persons p where c.name=:name").list();
     }
 
     @Override
     public List<Person> listAll() {
-        List persons = null;
-        Session session = factory.openSession();
-        Query query = session.createQuery("select new Person(p.id, p.name) from Company c join c.persons p");
-        return query.list();
+        return factory.getCurrentSession().createQuery("select new Person(p.id, p.name) from Company c join c.persons p").list();
     }
 
     @Override
     public List listCompaniesHireMoreThanXEmployees(int i) {
-        Session session = factory.openSession();
-        Query query = session.createQuery("select c.name, count (c.name) from Company c join c.persons p group by c.name having count(c.name) >:number");
-        Long number = new Long(i);
-        query.setParameter("number", number);
-        return query.list();
+        return factory.getCurrentSession().createQuery("select c.name, count (c.name) from Company c join c.persons p group by c.name having count(c.name) >:number").list();
     }
 }

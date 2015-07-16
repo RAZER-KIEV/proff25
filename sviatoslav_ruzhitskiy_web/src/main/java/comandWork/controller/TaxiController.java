@@ -5,6 +5,7 @@ import comandWork.service.TaxiService;
 import hw8.taxi.exception.AuthenticationException;
 import hw8.taxi.service.AuthenticationService;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -23,6 +24,8 @@ import java.util.Locale;
 @Controller
 @SessionAttributes("id")
 public class TaxiController {
+    @Autowired
+private TaxiService service;
 
         public static final Logger log = Logger.getLogger(TaxiController.class);
 
@@ -33,8 +36,8 @@ public class TaxiController {
             log.info("/dashboard.html controller");
             Locale.setDefault(Locale.ENGLISH);
 
-            ApplicationContext context = new ClassPathXmlApplicationContext("/WEB-INF/spring/context.xml");
-            TaxiService service = context.getBean("service", TaxiService.class);
+//            ApplicationContext context = new ClassPathXmlApplicationContext("/WEB-INF/spring/context.xml");
+//            TaxiService service = context.getBean("service", TaxiService.class);
 
             if (service.authenticate(login, pass)) {
                 model.addAttribute("name", login);

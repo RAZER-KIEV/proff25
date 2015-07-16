@@ -10,7 +10,7 @@
         http://www.springframework.org/schema/tx
         http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <context:component-scan base-package="hw8.taxi.dao"/>
+    <context:component-scan base-package="scrum.dao"/>
     <context:property-placeholder location="classpath:conf.properties"/>
 
 
@@ -25,7 +25,7 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="packagesToScan">
             <list>
-                <value>hw8.taxi.domain</value>
+                <value>scrum.domain</value>
             </list>
         </property>
         <property name="hibernateProperties">

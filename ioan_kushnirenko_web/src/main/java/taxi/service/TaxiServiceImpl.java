@@ -25,4 +25,7 @@ public class TaxiServiceImpl implements TaxiService {
         return taxiDao.findAll();
     }
 
+    public void Auth(){
+
+    }
 }

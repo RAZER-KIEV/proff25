@@ -14,11 +14,27 @@
   </style>
 </head>
 <body>
+<<<<<<< HEAD
+<%! int count=0; %>
+Logining retry: <%=count%>
+<!--
+<form id="myAuthForm" action="/auth" method="post">
+  <p> Введите логин: <input type="text" name="login"> <br></p>
+  <p> Введите проль:<input type="password" name="password"></p>
+  <input type="submit" name="enter" value="Log in">
+</form> <br>-->
+
+<form id="regForm1" action="/register" method="post">
+  <input type="submit" name="register" value="Registeration">
+</form>
+</body>
+</html>
+=======
 
 <center>
   <h2 style="color:white">Authorization!!!!</h2>
 
-  <form name ="forma1" action="/dashboard.html" method="post">
+  <form name ="myAuthForm" action="/auth" method="post">
 
 
 
@@ -31,13 +47,15 @@
       </tr>
       <tr>
         <td align="right" valign="top" style="color:white">Enter password</td>
-        <td><input type="password" name="pass" size="25"
+        <td><input type="password" name="password" size="25"
                    maxlength="15" value="password"><br></td>
       </tr>
 
       <tr>
         <td><input type="submit" name="submit" value="Login">
         </td>
+
+
       </tr>
 
     </table>
@@ -54,3 +72,4 @@
 
 </center>
 </body>
+>>>>>>> origin/master
