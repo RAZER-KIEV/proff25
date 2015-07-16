@@ -13,12 +13,12 @@
     <title></title>
 </head>
 <body>
-<H2>Dashboard new</H2>
+<%--<H2>Dashboard new</H2>--%>
 
 <%List<Client> clients = (List<Client>)request.getAttribute("clientList");
   if (clients!=null){%>
-<table title="CLIENTS" width="100%">
-  <caption><H1>Clients</H1></caption>
+<table title="CLIENTS" width="80%" border="1" align="center">
+  <caption><H1>Clients of Taxi</H1></caption>
   <thead>
   <tr>
     <th align="left">Id</th>
