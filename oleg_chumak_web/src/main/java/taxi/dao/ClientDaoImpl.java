@@ -43,13 +43,13 @@ public class ClientDaoImpl implements ClientDao {
     }
 
     @Override
-    public String create(Client client) {
-        return (String)factory.getCurrentSession().save(client);
+    public Long create(Client client) {
+        return (Long)factory.getCurrentSession().save(client);
     }
 
     @Override
-    public Client read(String name) {
-        return (Client)factory.getCurrentSession().get(Client.class, name);
+    public Client read(Long Id) {
+        return (Client)factory.getCurrentSession().get(Client.class, Id);
     }
 
     @Override

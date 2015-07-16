@@ -11,8 +11,8 @@ public interface ClientDao {
     List<Client> clientsPortinedByTen(Long numberOfPortion);
     List<Client> clientsMadeOrdersDuringLastMonth();
     List<Client> clientswithOrderAmountMoreThen(Long amount);
-    String create(Client client);
-    Client read(String name);
+    Long create(Client client);
+    Client read(Long id);
     boolean update(Client client);
     boolean delete(Client client);
     List<Client> findAll();
