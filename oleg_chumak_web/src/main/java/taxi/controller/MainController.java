@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 public class MainController {
     private static final Logger log = Logger.getLogger(MainController.class);
 
-    @RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.HEAD})
+    @RequestMapping(value = "/request.html", method = {RequestMethod.GET, RequestMethod.HEAD})
     public String index(Model model) {
         log.info("/index controller");
         model.addAttribute("name", "default");
-        return "index";
+        return "test";
     }
 }

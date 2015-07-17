@@ -20,13 +20,13 @@ public class TaxiDriver {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
     @Column(name = "ID")
     private Long id;
-    @Column(name = "NAME")
+    @Column(name = "NAMES")
     private String name;
     @Column(name = "MODEL")
     private String model;
-    @Column(name = "NUMBER")
+    @Column(name = "NUMBEROK")
     private String number;
-    @Column(name = "NUMBER")
+    @Column(name = "PHONE_NUM")
     private String phone;
     @OneToMany(cascade = CascadeType.ALL, // каскадирование
             fetch = FetchType.EAGER,// подргужать все сразу

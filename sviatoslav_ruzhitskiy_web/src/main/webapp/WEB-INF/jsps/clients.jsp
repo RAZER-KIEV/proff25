@@ -11,6 +11,7 @@
 <html>
 <head>
     <title>список клиентов</title>
+  <link href="/css/hw8CSS.css" rel="stylesheet"/>
 </head>
 <body>
 <h1 align="center">Taxi full list</h1>
@@ -22,6 +23,8 @@
     }
   %>
 </div>
-
+<form>
+  <button formaction="/backToDashboard"  type="submit" formmethod="post" name="BacktoDASHBOARD" value="Back to DASHBOARD!">Back to DASHBOARD!</button>
+</form>
 </body>
 </html>
