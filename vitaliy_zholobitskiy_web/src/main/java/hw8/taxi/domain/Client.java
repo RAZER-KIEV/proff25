@@ -2,6 +2,8 @@ package hw8.taxi.domain;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 //имя, фамилия, телефон, адрес, сумма, дата последнего заказа
 /**
  * Created by just1ce on 16.07.2015.
@@ -26,6 +28,8 @@ public class Client {
     private Long sum;
     @Column(name = "DATE_LAST_ORDER")
     private Date dateLastOrder;
+    @OneToMany(mappedBy = "client",cascade = CascadeType.ALL)
+    private Set<Order> ordersSet = new HashSet<>();
 
     public Client(Date dateLastOrder, Long sum, String address, String surname, String name, String phoneNumber) {
         this.dateLastOrder = dateLastOrder;
@@ -36,6 +40,14 @@ public class Client {
         this.phoneNumber = phoneNumber;
     }
     public Client(){}
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
 
     public String getName() {
         return name;
