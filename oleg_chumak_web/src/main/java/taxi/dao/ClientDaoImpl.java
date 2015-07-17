@@ -15,8 +15,23 @@ import java.util.List;
 @Repository
 public class ClientDaoImpl implements ClientDao {
 
+    public ClientDaoImpl() {
+
+    }
+
     @Autowired
     private SessionFactory factory;
+
+    public ClientDaoImpl(SessionFactory factory) {
+        this.factory = factory;
+    }
+
+    public SessionFactory getFactory() {
+        return factory;
+    }
+    public void setFactory(SessionFactory factory) {
+        this.factory = factory;
+    }
 
     @Override
     public List<Client> clientsPortinedByTen(Long numberOfPortion) {
