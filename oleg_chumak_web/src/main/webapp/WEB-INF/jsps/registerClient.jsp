@@ -1,9 +1,5 @@
 <%--
-  Created by IntelliJ IDEA.
-  User: User
-  Date: 17.07.2015
-  Time: 12:48
-  To change this template use File | Settings | File Templates.
+  форма создания клиента
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>

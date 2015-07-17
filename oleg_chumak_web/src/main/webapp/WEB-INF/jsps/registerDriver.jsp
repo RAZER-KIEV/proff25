@@ -1,9 +1,5 @@
 <%--
-  Created by IntelliJ IDEA.
-  User: HP
-  Date: 17.07.2015
-  Time: 13:14
-  To change this template use File | Settings | File Templates.
+  форма регистрации таксистов
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>

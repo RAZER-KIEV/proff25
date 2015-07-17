@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import taxi.domain.TaxiDriver;
 import taxi.service.TService;
 
-import java.util.List;
-
 /**
  * Created by HP on 17.07.2015.
  */
@@ -33,7 +31,7 @@ public class TaxiDriverController {
     public String re() {
         log.info("/re controller");
 
-        return "driverCreatorForm";
+        return "registerDriver";
     }
     @RequestMapping(value = "/newDriver.html", method = {RequestMethod.GET})
     public String createDriver
