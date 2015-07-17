@@ -62,7 +62,7 @@ public class ClientController {
                                 Model model){
         List<Client> list = clientService.showClientsGtSum(Integer.parseInt(sum));
         model.addAttribute("clients",list);
-        model.addAttribute("def","Клиенты наездившие на сумму больше" + sum);
+        model.addAttribute("def","Клиенты наездившие на сумму больше " + sum);
         return "clients";
     }
     @RequestMapping(value = "/showClientsLastMonth", method = RequestMethod.GET)

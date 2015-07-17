@@ -1,5 +1,6 @@
 package hw8.taxi.service;
 
+import hw8.taxi.domain.Client;
 import hw8.taxi.exception.ClientException;
 
 import java.util.List;
@@ -12,4 +13,6 @@ public interface ClientService {
     List showClientsByPortion(int portionSize);
     List showClientsGtSum(int sum);
     List showClientsLastMonth();
+    Client getClientByID(Long id);
+    List findAll();
 }

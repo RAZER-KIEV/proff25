@@ -61,13 +61,7 @@ public class AuthenticationController {
         return "index";
     }
 
-    @RequestMapping(value = "/exit", method =RequestMethod.GET)
-    public
-    String logOff(HttpSession session) {
-        session.removeAttribute("id");
-        session.removeAttribute("drivers");
-        return "index";
-    }
+
 
 
 

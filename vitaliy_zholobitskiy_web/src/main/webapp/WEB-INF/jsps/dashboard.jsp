@@ -35,10 +35,34 @@
   <tr>
     <td>
     <form  action="/showClientsLastMonth" method="get">
-      <input class="reg_title" value="вывести всех клиентов, делавших заказы за последний месяц" name="submit_reg" id="showClientsLastMonth_button" type="submit" />
+      <input class="reg_title" value="Вывести всех клиентов, делавших заказы за последний месяц" name="submit_reg" id="showClientsLastMonth_button" type="submit" />
     </form>
+    </td>
   </tr>
-  </td>
+  <tr>
+    <td>
+      <form  action="/order" method="get">
+        <input class="reg_title" value="Создать/Редактировать заказ" name="order" id="create_order" type="submit" />
+      </form>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <form  action="/showOrders" method="post">
+        <input class="reg_title" value="Показать заказы на суму в диазоне" id="showOrders" type="submit" />
+        <input class="reg_title" value="0" name="from" id="from" type="text" />
+        <input class="reg_title" value="0" name="to" id="to" type="text" />
+      </form>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <form  action="/showOrdersByPortion" method="get">
+        <input class="reg_title" value="Показать заказы порциями по 5"  id="showOrdersByPortion" type="submit" />
+      </form>
+    </td>
+  </tr>
+
   </tbody>
 </table>
 </body>
