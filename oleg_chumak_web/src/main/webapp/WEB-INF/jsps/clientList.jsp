@@ -35,8 +35,8 @@
   %>
   <tr>
     <td><% out.println(client.getId());%></td>
-    <td><% out.println(client.getFirstname());%></td>
-    <td><% out.println(client.getLastname());%></td>
+    <td><% out.println(client.getName());%></td>
+    <td><% out.println(client.getSurname());%></td>
     <td><% out.println(client.getPhone());%></td>
     <td><% out.println(client.getAdress());%></td>
     <td><% out.println(client.getCash());%></td>
