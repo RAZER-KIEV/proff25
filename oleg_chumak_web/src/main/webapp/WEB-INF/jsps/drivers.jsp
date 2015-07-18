@@ -37,7 +37,7 @@
 </table>
 <%} %>
 
-<form action="/create.html" method="get">
+<form action="/createDriver.html" method="get">
         <input type="submit"  value="Create New Driver">
 </form>
 </body>

@@ -35,7 +35,6 @@
         <td><% out.println(op.getIsBlocked());%></td>
         <td><% out.println(op.getUnsuccessfulLoginTries());%></td>
     </tr>
-
     <%}%>
 </table>
 <%} %>
