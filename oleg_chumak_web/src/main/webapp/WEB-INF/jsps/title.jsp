@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Proff 25 Вуйки на бамбетах</title>
+    <title></title>
 </head>
 <body>
-Управление службой такси
+<h1>IT-Center Proff 25 Вуйки на бамбетах</h1>
 </body>
 </html>

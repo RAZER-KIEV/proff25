@@ -7,10 +7,10 @@
     <title></title>
 </head>
 <frameset rows="64,*">
-    <frame name="titlePage" scrolling="no" noresize="noresize" target="menuPage" src="title.jsp">
+    <frame name="titlePage" scrolling="no" noresize="noresize" target="menuPage" src="title.html">
     <frameset cols="226,*">
-        <frame name="menuPage" target="mainPage" src="menu.jsp">
-        <frame name="mainPage" src="mainView.jsp">
+        <frame name="menuPage" target="mainPage" src="menu.html">
+        <frame name="mainPage" src="main.html">
     </frameset>
     <noframes>
         <body><p>ups</p></body>

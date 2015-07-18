@@ -24,11 +24,13 @@ public class MainController {
     @Autowired
     TService service;
 
-    @RequestMapping(value = "/request.html", method = {RequestMethod.GET, RequestMethod.HEAD})
-    public String index(Model model) {
-        log.info("/index controller");
-        model.addAttribute("name", "default");
-        return "test";
+    /*
+    Autor: Алексей
+    для теста Дешбоарда
+     */
+    @RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.HEAD})
+    public String main(){
+        return "dashboard";
     }
 
     /*
@@ -39,6 +41,33 @@ public class MainController {
     public String resend() {
         log.info("/dash controller");
         return "dashboard";
+    }
+
+    /*
+    Autor: Aleksey Khalikov
+    Загружает фрейм Меню в dashboard
+    */
+    @RequestMapping(value = "/menu.html", method = {RequestMethod.GET})
+    public String loadTitlePage() {
+        return "menu";
+    }
+
+    /*
+    Autor: Aleksey Khalikov
+    Загружает титульный фрейм в dashboard
+    */
+    @RequestMapping(value = "/title.html", method = {RequestMethod.GET})
+    public String loadMenuPage() {
+        return "title";
+    }
+
+    /*
+    Autor: Aleksey Khalikov
+    Загружает фрейм главного рабочего окна в Dashboard дефолтной страницей
+    */
+    @RequestMapping(value = "/main.html", method = {RequestMethod.GET})
+    public String loadMainViewPage() {
+        return "mainView";
     }
 
     /*

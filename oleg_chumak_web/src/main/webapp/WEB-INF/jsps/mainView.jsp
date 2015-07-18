@@ -19,7 +19,7 @@
 
 <body>
 
-<p><span lang="en-us">IT-Center Proff-25</span></p>
+<p><span lang="en-us"><h1>Управление службой такси</h1></span></p>
 <p class="style1"><span lang="en-us">@developers:</span></p>
 <p class="style1"><span lang="en-us">Aleksandr Omelchenko</span></p>
 <p class="style1"><span lang="en-us">Bogdan Javorsky</span></p>
