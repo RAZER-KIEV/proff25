@@ -13,12 +13,7 @@
         <frame name="mainPage" src="mainView.jsp">
     </frameset>
     <noframes>
-        <body>
-
-        <p>Эта страница использует рамки, однако ваш обозреватель их не
-            поддерживает.</p>
-
-        </body>
+        <body><p>ups</p></body>
     </noframes>
 </frameset>
 
