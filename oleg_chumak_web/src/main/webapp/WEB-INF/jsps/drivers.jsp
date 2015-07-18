@@ -1,3 +1,5 @@
+<%@ page import="taxi.domain.TaxiDriver" %>
+<%@ page import="java.util.List" %>
 <%--
   лист таксистов
 --%>
@@ -7,7 +9,33 @@
     <title>drivers</title>
 </head>
 <body>
-${driversList}
+<%List<TaxiDriver> drivers = (List<TaxiDriver>)request.getAttribute("driversList");
+  if (drivers!=null){%>
+<table title="Drivers" width="100%">
+  <caption><H1>Drivers</H1></caption>
+  <thead>
+  <tr>
+    <th align="left">Id</th>
+    <th align="left">Name</th>
+    <th align="left">Model</th>
+    <th align="left">Number</th>
+    <th align="left">Phone</th>
+  </tr>
+  </thead>
+  <%
+    for(TaxiDriver dr: drivers){
+  %>
+  <tr>
+    <td><% out.println(dr.getId());%></td>
+    <td><% out.println(dr.getName());%></td>
+    <td><% out.println(dr.getModel());%></td>
+    <td><% out.println(dr.getNumber());%></td>
+    <td><% out.println(dr.getPhone());%></td>
+  </tr>
+
+  <%}%>
+</table>
+<%} %>
 
 <form action="/create.html" method="get">
   <table>

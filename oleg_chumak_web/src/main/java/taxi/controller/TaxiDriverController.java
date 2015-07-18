@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import taxi.domain.TaxiDriver;
 import taxi.service.TService;
 
+import java.util.List;
+
 /**
  * Created by HP on 17.07.2015.
  */
@@ -22,15 +24,14 @@ public class TaxiDriverController {
 
     @RequestMapping(value = "/drivers.html", method = {RequestMethod.GET})
      public String showDrivers(Model model) {
-        String list = service.findAllTaxists().toString();
+        List<TaxiDriver> list = service.findAllTaxists();
         log.info("/drivers controller");
         model.addAttribute("driversList", list);
         return "drivers";
     }
     @RequestMapping(value = "/create.html", method = {RequestMethod.GET})
     public String re() {
-        log.info("/re controller");
-
+        log.info("/create controller");
         return "registerDriver";
     }
     @RequestMapping(value = "/newDriver.html", method = {RequestMethod.GET})
