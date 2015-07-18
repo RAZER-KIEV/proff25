@@ -30,12 +30,21 @@ public class MainController {
         model.addAttribute("name", "default");
         return "test";
     }
+
+    /*
+    Autor: Aleksey Khalikov
+    Dashboard
+     */
     @RequestMapping(value = "/dash.html", method = {RequestMethod.GET})
     public String resend() {
         log.info("/dash controller");
         return "dashboard";
     }
-    //МЕТОДЫ TaxiDrivers
+
+    /*
+    Autor: Alexandr Omelchenko
+    Driver List
+     */
     @RequestMapping(value = "/drivers.html", method = {RequestMethod.GET})
     public String showDrivers(Model model) {
         List<TaxiDriver> list = service.findAllTaxists();
@@ -43,11 +52,21 @@ public class MainController {
         model.addAttribute("driversList", list);
         return "drivers";
     }
+
+    /*
+    Autor: Alexandr Omelchenko
+    Create Driver
+     */
     @RequestMapping(value = "/create.html", method = {RequestMethod.GET})
     public String re() {
         log.info("/create controller");
         return "registerDriver";
     }
+
+    /*
+    Autor: Alexandr Omelchenko
+    Create Driver
+     */
     @RequestMapping(value = "/newDriver.html", method = {RequestMethod.GET})
     public String createDriver
             (@RequestParam("name") String name, @RequestParam("model") String carModel,
@@ -57,6 +76,6 @@ public class MainController {
         model.addAttribute("driversList", service.findAllTaxists());
         return "drivers";
     }
-    //КОНЕЦ методов TaxiDrivers
+
 
 }
