@@ -11,7 +11,7 @@
 <body>
 <%List<TaxiDriver> drivers = (List<TaxiDriver>)request.getAttribute("driversList");
   if (drivers!=null){%>
-<table title="Drivers" width="100%">
+<table border="1" title="Drivers" width="100%">
   <caption><H1>Drivers</H1></caption>
   <thead>
   <tr>
@@ -38,13 +38,7 @@
 <%} %>
 
 <form action="/create.html" method="get">
-  <table>
-    <tr>
-      <td>
-        <input type="submit" value="Create New Driver">
-      </td>
-    </tr>
-  </table>
+        <input type="submit"  value="Create New Driver">
 </form>
 </body>
 
