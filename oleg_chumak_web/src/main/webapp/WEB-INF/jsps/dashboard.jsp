@@ -1,20 +1,16 @@
 <%--
-  страница со списком функций (доступна после аутентификации)
+  Created by IntelliJ IDEA.
+  User: GFalcon
+  Date: 18.07.15
+  Time: 19:27
+  To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title></title>
 </head>
-<frameset rows="64,*">
-    <frame name="titlePage" scrolling="no" noresize="noresize" target="menuPage" src="title.html">
-    <frameset cols="226,*">
-        <frame name="menuPage" target="mainPage" src="menu.html">
-        <frame name="mainPage" src="main.html">
-    </frameset>
-    <noframes>
-        <body><p>ups</p></body>
-    </noframes>
-</frameset>
+<body>
 
+</body>
 </html>
