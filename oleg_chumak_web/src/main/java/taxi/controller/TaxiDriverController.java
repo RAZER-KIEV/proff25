@@ -43,9 +43,4 @@ public class TaxiDriverController {
         model.addAttribute("driversList", service.findAllTaxists());
         return "drivers";
     }
-    @RequestMapping(value = "/dash.html", method = {RequestMethod.GET})
-    public String resend() {
-        log.info("/dash controller");
-        return "dashboard";
-    }
 }
