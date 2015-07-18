@@ -30,7 +30,7 @@ public class MainController {
     для теста Дешбоарда
      */
     @RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.HEAD})
-    public String main(){
+    public String main() {
         return "dashboard";
     }
 
@@ -72,16 +72,17 @@ public class MainController {
      */
     @RequestMapping(value = "/newDriver.html", method = {RequestMethod.GET})
     public String createDriver
-            (@RequestParam("name") String name, @RequestParam("model") String carModel,
-             @RequestParam("number") String carNumber, @RequestParam("phone") String phone,  Model model) {
+    (@RequestParam("name") String name, @RequestParam("model") String carModel,
+     @RequestParam("number") String carNumber, @RequestParam("phone") String phone, Model model) {
         service.createTaxist(new TaxiDriver(name, carModel, carNumber, phone));
         log.info("/newDriver controller");
         model.addAttribute("driversList", service.findAllTaxists());
         return "drivers";
     }
-   /* Autor: Alexandr Omelchenko
-    Driver List
-    */
+
+    /* Autor: Alexandr Omelchenko
+     Driver List
+     */
     @RequestMapping(value = "/operators.html", method = {RequestMethod.GET})
     public String showOperators(Model model) {
         List<Operator> list = service.findAllOperators();
