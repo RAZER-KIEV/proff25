@@ -14,15 +14,15 @@
       <td><input type="text" name="name"></td>
     </tr>
     <tr>
-      <td>Model</td>
+      <td>Car Model</td>
       <td><input type="text" name="model"></td>
     </tr>
     <tr>
-      <td>CarNumber</td>
+      <td>Car Number</td>
       <td><input type="text" name="number"></td>
     </tr>
     <tr>
-      <td>PhoneNum</td>
+      <td>Phone Number</td>
       <td><input type="text" name="phone"></td>
     </tr>
     <tr>
