@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import taxi.domain.Operator;
 import taxi.domain.TaxiDriver;
 import taxi.service.TService;
 
@@ -78,6 +79,15 @@ public class MainController {
         model.addAttribute("driversList", service.findAllTaxists());
         return "drivers";
     }
-
+   /* Autor: Alexandr Omelchenko
+    Driver List
+    */
+    @RequestMapping(value = "/operators.html", method = {RequestMethod.GET})
+    public String showOperators(Model model) {
+        List<Operator> list = service.findAllOperators();
+        log.info("/operators controller");
+        model.addAttribute("operatorsList", list);
+        return "operators";
+    }
 
 }
