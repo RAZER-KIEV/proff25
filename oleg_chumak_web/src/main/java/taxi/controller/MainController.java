@@ -60,7 +60,7 @@ public class MainController {
     Autor: Alexandr Omelchenko
     Create Driver
      */
-    @RequestMapping(value = "/create.html", method = {RequestMethod.GET})
+    @RequestMapping(value = "/createDriver.html", method = {RequestMethod.GET})
     public String re() {
         log.info("/create controller");
         return "registerDriver";

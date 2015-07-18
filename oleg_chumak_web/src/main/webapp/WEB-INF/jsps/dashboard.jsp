@@ -73,7 +73,7 @@
   <tr>
     <td style="height: 89px">
       <ul>
-        <li>Создать водителя</li>
+        <li><a href="createDriver.html">Создать водителя</a> </li>
         <li>Редактировать водителя</li>
       </ul>
     </td>
@@ -95,7 +95,7 @@
     </td>
     <td style="height: 79px">
       <ul>
-        <li>Вывести список операторов</li>
+        <li><a href="operators.html">Вывести список операторов</a></li>
       </ul>
     </td>
   </tr>
