@@ -6,7 +6,20 @@
 <head>
     <title></title>
 </head>
-<body>
+<frameset rows="64,*">
+    <frame name="titlePage" scrolling="no" noresize="noresize" target="menuPage" src="title.jsp">
+    <frameset cols="226,*">
+        <frame name="menuPage" target="mainPage" src="menu.jsp">
+        <frame name="mainPage" src="mainView.jsp">
+    </frameset>
+    <noframes>
+        <body>
 
-</body>
+        <p>Эта страница использует рамки, однако ваш обозреватель их не
+            поддерживает.</p>
+
+        </body>
+    </noframes>
+</frameset>
+
 </html>
