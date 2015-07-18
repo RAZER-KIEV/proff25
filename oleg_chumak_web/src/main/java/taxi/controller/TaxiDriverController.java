@@ -39,9 +39,13 @@ public class TaxiDriverController {
     (@RequestParam("name") String name, @RequestParam("model") String carModel,
      @RequestParam("number") String carNumber, @RequestParam("phone") String phone,  Model model) {
    service.createTaxist(new TaxiDriver(name, carModel, carNumber, phone));
-        String list = service.findAllTaxists().toString();
         log.info("/newDriver controller");
-        model.addAttribute("driversList", list);
+        model.addAttribute("driversList", service.findAllTaxists());
         return "drivers";
+    }
+    @RequestMapping(value = "/dash.html", method = {RequestMethod.GET})
+    public String resend() {
+        log.info("/dash controller");
+        return "dashboard";
     }
 }
