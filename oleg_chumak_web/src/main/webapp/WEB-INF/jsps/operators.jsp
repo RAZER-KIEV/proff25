@@ -1,6 +1,6 @@
 
 <%@ page import="java.util.List" %>
-<%@ page import="taxi.domain.Operator" %>
+<%@ page import="taxi.domain.*" %>
 <%--
   лист таксистов
 --%>

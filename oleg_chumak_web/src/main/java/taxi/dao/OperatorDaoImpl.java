@@ -53,8 +53,8 @@ public class OperatorDaoImpl implements OperatorDao {
     }
 
     @Override
-    public List<Operator> findAll() {
-        return factory.getCurrentSession().createQuery("from Operators as oper").list();
+    public List findAll() {
+        return factory.getCurrentSession().createQuery("from Operator as oper").list();
     }
 
     @Override
