@@ -9,8 +9,9 @@ import java.util.Set;
 @Table(name = "Clients")
 public class Client {
     @Id
-    @SequenceGenerator(name = "sequence", sequenceName = "SEQ_CLIENT_ID", allocationSize = 1)
+    @SequenceGenerator(name = "sequence", sequenceName = "SEQ_CLIENT_ID", initialValue = 1, allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
+    @Column(name = "ID")
     private Long id;
 
     @Column(name = "Client_name")

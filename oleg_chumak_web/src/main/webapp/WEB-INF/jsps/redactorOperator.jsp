@@ -35,7 +35,7 @@
     </tr>
     <tr>
       <td>Is Blocked</td>
-      <td><input type="text" name="isblocked"></td>
+      <td><input type="checkbox" name="isblocked" value=true></td>
     </tr>
     <tr>
       <td>Unsuccessful Login Tries</td>

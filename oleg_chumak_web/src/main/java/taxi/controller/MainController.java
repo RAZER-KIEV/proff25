@@ -215,7 +215,7 @@ public class MainController {
              @RequestParam("indNum") Long indNum,
              @RequestParam("prevpass") String prevpass,
              @RequestParam("lastChangeDate") LocalDateTime lastChangeDate,
-             @RequestParam("isblocked") String isblocked,
+             @RequestParam("isblocked") Boolean isblocked,
              @RequestParam("unsuccTries") Long unsuccTries,
              Model model) {
         Operator operator = service.readOperator(oldLogin);
@@ -230,11 +230,8 @@ public class MainController {
             operator.setIndividualTaxpayerNumber(indNum);
             operator.setPreviousPassword(prevpass);
             operator.setLastPasswordChangeDate(lastChangeDate);
-            if (isblocked.equals("true")) {
-                operator.setIsBlocked(true);
-            } else {
-                operator.setIsBlocked(false);
-            }
+                operator.setIsBlocked(isblocked);
+
             operator.setUnsuccessfulLoginTries(unsuccTries);
             service.updateOperator(operator);
             log.info("/redactOperator controller");
