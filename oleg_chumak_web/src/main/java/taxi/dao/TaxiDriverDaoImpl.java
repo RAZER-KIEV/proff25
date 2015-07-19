@@ -12,6 +12,7 @@ import java.util.List;
 @Repository
 public class TaxiDriverDaoImpl implements TaxiDriverDao {
     @Autowired
+
     private SessionFactory factory;
 
     public TaxiDriverDaoImpl() {

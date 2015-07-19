@@ -12,6 +12,7 @@ import java.util.List;
 /**
  * Created by ПК on 16.07.2015.
  */
+@Deprecated
 @Service
 @Transactional
 public class ClientGenerator {
@@ -309,7 +310,7 @@ public class ClientGenerator {
     }
 
 
-    public Long greateClientsInBD(int quantity){
+    public Long createClientsInBD(int quantity){
             Long id = null;
 
             for (int i = 0; i < quantity; i++) {

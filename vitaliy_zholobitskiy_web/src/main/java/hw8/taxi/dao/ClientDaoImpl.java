@@ -54,7 +54,7 @@ public class ClientDaoImpl implements ClientDao {
     @Override
     public List showClientsGtSum(int sum) {
         Query query = sessionFactory.getCurrentSession().createQuery("from Client c where c.sum>:sum");
-        query.setParameter("sum",sum);
+        query.setParameter("sum",Long.parseLong(Integer.toString(sum)));
         return query.list();
     }
 
@@ -71,6 +71,11 @@ public class ClientDaoImpl implements ClientDao {
         Query query = sessionFactory.getCurrentSession().createQuery("from Client c where c.dateLastOrder>:date");
         query.setParameter("date",date);
         return query.list();
+    }
+
+    @Override
+    public List findAll() {
+        return sessionFactory.getCurrentSession().createQuery("from Client").list();
     }
 
     private List<Client> getPortion(int begin, int size) {

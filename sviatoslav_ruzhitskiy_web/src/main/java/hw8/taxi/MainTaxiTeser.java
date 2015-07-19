@@ -3,6 +3,7 @@ package hw8.taxi;
 /**
  * Created by ПК on 16.07.2015.
  */
+@Deprecated
 public class MainTaxiTeser {
     public static void main(String[] args) {
         ClientGenerator clientGenerator = new ClientGenerator();

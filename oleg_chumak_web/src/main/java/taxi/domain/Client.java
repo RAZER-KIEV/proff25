@@ -16,7 +16,7 @@ public class Client {
     @Column(name = "Client_name")
     private String name;
 
-    @Column(name  = "Client_surname")
+    @Column(name = "Client_surname")
     private String surname;
 
     @Column(name = "phone_number")
@@ -32,7 +32,7 @@ public class Client {
     private LocalDateTime lastOrderDate;
 
 
-    @OneToMany(mappedBy = "Clients",
+    @OneToMany(mappedBy = "client",
             cascade = {CascadeType.DETACH,
                     CascadeType.PERSIST,
                     CascadeType.MERGE,

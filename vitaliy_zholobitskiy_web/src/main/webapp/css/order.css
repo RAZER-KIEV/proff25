@@ -1,0 +1,14 @@
+body{
+    background-color: #212028;
+}
+*{
+    color: #030103;
+    font-size: 20px;
+    font-family: "Century Gothic","Lucida Grande",Helvetica,Arial,sans serif;
+}
+table{
+    border-radius: 10px ;
+    border: rgba(235, 131, 70, 0.99) 1px solid;
+    background: #8589b8 top left repeat-x;
+
+}

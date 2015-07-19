@@ -38,4 +38,14 @@ public class ClientServiceImpl implements ClientService {
     public List showClientsLastMonth() {
         return clientDao.showClientsLastMonth();
     }
+
+    @Override
+    public Client getClientByID(Long id) {
+        return clientDao.read(id);
+    }
+
+    @Override
+    public List findAll() {
+        return clientDao.findAll();
+    }
 }
