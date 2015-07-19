@@ -12,6 +12,15 @@
 <head>
   <title>Exercises</title>
   <link rel="stylesheet" href="css/style.css"></link>
+  <style >
+    body{
+      background-image: url(street_taxi.jpg);
+      background-position: left, right;
+    }
+    table{
+      vertical-align: middle;
+    }
+  </style>
 </head>
 <body>
 <p>${Error}</p>
@@ -24,12 +33,21 @@
   %>
 
 
-  <fieldset>
-    <legend>Registration:</legend>
-    Your login: <input type="text" name = "login" value = ""/><br/>
-    Password: <input type="password" name="passw" value=""><br/>
-    <input type="submit" value="Send"/>
-  </fieldset>
-</form>
+    <table>
+      <tr height="250px"></tr>
+      <tr>
+        <td  width="35%"></td>
+        <td  width="35%"></td>
+        <td  width="30%">
+          <form action = "dashboard.jsp" method="GET" style="width: 300px; background: #f0f0f0; padding: 10px">
+            <fieldset align="right">
+              <legend align="center"><b>Registration:</b></legend>
+              Your login: <input type="text" name = "login" value = ""/><br/>
+              Password: <input type="password" name="passw" value=""><br/>
+              <input type="submit" value="Send"/>
+            </fieldset>
+          </form>
+      </tr>
+      </table>
 </body>
 </html>
