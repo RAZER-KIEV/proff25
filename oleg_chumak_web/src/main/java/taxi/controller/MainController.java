@@ -12,6 +12,7 @@ import taxi.domain.Operator;
 import taxi.domain.TaxiDriver;
 import taxi.service.TService;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -197,17 +198,42 @@ public class MainController {
         model.addAttribute("operatorsList", list);
         return "operators";
     }
-
-    @RequestMapping(value = "/readOperator.html", method = {RequestMethod.GET})
-    public String readOperator
-            (@RequestParam("operator") String operName, Model model) {
-        Operator operator = service.readOperator(operName);
-        if (operator == null) {
-            return "dashboard";
-        }
-        log.info("/readOperator controller");
-        model.addAttribute("operator", operator);
+    /* Autor: Alexandr Omelchenko
+     Operator Redactor
+     */
+    @RequestMapping(value = "/changeOperator.html", method = {RequestMethod.GET})
+    public String toredactOper(){
+        log.info("/changeOperator controller");
         return "redactorOperator";
     }
-
+    @RequestMapping(value = "/redactOperator.html", method = {RequestMethod.GET})
+    public String redactorOper
+            (@RequestParam("oldLogin") String oldLogin,
+             @RequestParam("newLogin") String newLogin,
+             @RequestParam("pass") String pass,
+             @RequestParam("indNum") Long indNum,
+             @RequestParam("prevpass") String prevpass,
+             @RequestParam("lastChangeDate") LocalDateTime lastChangeDate,
+             @RequestParam("isblocked") String isblocked,
+             @RequestParam("unsuccTries") Long unsuccTries,
+             Model model) {
+        Operator operator = service.readOperator(oldLogin);
+        if (operator == null) {
+            log.info("/redactOperator controller");
+            model.addAttribute("message", "Неверное имя оператора! Повторите попытку.");
+            return "redactorOperator";
+        }
+        operator.setLogin(newLogin);
+        operator.setPassword(pass);
+        operator.setIndividualTaxpayerNumber(indNum);
+        operator.setPreviousPassword(prevpass);
+        operator.setLastPasswordChangeDate(lastChangeDate);
+        if (isblocked.equals("true")){operator.setIsBlocked(true);}
+        else {operator.setIsBlocked(false);}
+        operator.setUnsuccessfulLoginTries(unsuccTries);
+        service.updateOperator(operator);
+        log.info("/redactOperator controller");
+        model.addAttribute("message", "Редактирование прошло успешно!");
+        return "redactorOperator";
+    }
 }
