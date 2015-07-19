@@ -12,9 +12,16 @@
     <base target="menuView"/>
 </head>
 <body>
-<h1>IT-Center Proff-25 Вуйки на бембетах</h1><br/>
-
-<h3>система управления службой такси</h3><br/>
-
+<table width="90%">
+    <tr>
+        <td width="70%" align="center">
+            <h2>Вуйки на бембетах</h2>
+            <h4>система управления службой такси</h4>
+        </td>
+        <td align="right">
+            User:
+        </td>
+    </tr>
+</table>
 </body>
 </html>

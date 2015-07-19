@@ -25,21 +25,56 @@
 <form method="post" class="style1">
     <fieldset name="grpOrderControls">
         <legend><span lang="ru">Работа с заказами</span></legend>
-        <input name="btnCreateOrder" type="button" value="Оформить" onclick="top.frames['main'].location.href=''" style="width: 90%"/><br/>
-        <input name="btnEditOrder" type="button" value="Редактировать" onclick="top.frames['main'].location.href=''" style="width: 90%"/><br/>
-        <input name="btnGetOrderReports" type="button" value="Отчеты" onclick="top.frames['main'].location.href=''" style="width: 90%"/>
+        <input name="btnCreateOrder"
+               type="button"
+               value="Оформить"
+               onclick="top.frames['main'].location.href=''"
+               style="width: 90%"/>
+        <br/>
+        <input name="btnEditOrder"
+               type="button"
+               value="Редактировать"
+               onclick="top.frames['main'].location.href=''"
+               style="width: 90%"/>
+        <br/>
+        <input name="btnGetOrderReports"
+               type="button"
+               value="Отчеты"
+               onclick="top.frames['main'].location.href=''"
+               style="width: 90%"/>
+        <br/>
     </fieldset>
 
     <fieldset name="grpClientsControl">
         <legend><span lang="ru">Клиенты</span></legend>
-        <input name="btnCreateClient" type="button" value="Зарегистрировать" onclick="top.frames['main'].location.href=''" style="width: 90%"/><br/>
-        <input name="btnGetClientReport" type="button" value="Отчеты" onclick="top.frames['main'].location.href=''" style="width: 90%"/></div>
+        <input name="btnCreateClient"
+               type="button"
+               value="Зарегистрировать"
+               onclick="top.frames['main'].location.href=''"
+               style="width: 90%"/>
+        <br/>
+        <input name="btnGetClientReport"
+               type="button"
+               value="Отчеты"
+               onclick="top.frames['main'].location.href=''"
+               style="width: 90%"/>
+        <br/>
     </fieldset>
 
     <fieldset name="grpDriverControl">
         <legend><span lang="ru">Водители</span></legend>
-        <input name="btnCreateDriver" type="button" value="Зарегистрировать" onclick="top.frames['main'].location.href='createDriver.html'" style="width: 90%"/><br/>
-        <input name="btnGetDriverReport" type="button" value="Отчеты" onclick="top.frames['main'].location.href='drivers.html'" style="width: 90%"/>
+        <input name="btnCreateDriver"
+               type="button"
+               value="Зарегистрировать"
+               onclick="top.frames['main'].location.href='createDriver.html'"
+               style="width: 90%"/>
+        <br/>
+        <input name="btnGetDriverReport"
+               type="button"
+               value="Отчеты"
+               onclick="top.frames['main'].location.href='drivers.html'"
+               style="width: 90%"/>
+        <br/>
     </fieldset>
 </form>
 
@@ -49,7 +84,7 @@
         <input  name="btnUpdateOperator"
                 type="button"
                 value="Изменить оператора"
-                onclick="top.frames['main'].location.href='createDriver.html'"
+                onclick="top.frames['main'].location.href=''"
                 style="width: 90%"/>
         <br/>
         <input name="btnGetOperatorsList"
@@ -57,6 +92,7 @@
                value="Список операторов"
                onclick="top.frames['main'].location.href='operators.html'"
                style="width: 90%"/>
+        <br/>
     </fieldset>
 </form>
 

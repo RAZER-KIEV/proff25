@@ -11,7 +11,7 @@
 <head>
     <meta http-equiv="Content-Language" content="en-us"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Без названия 1</title>
+    <title>Taxi DB</title>
     <style type="text/css">
         .style1 {
             text-align: center;
@@ -23,9 +23,7 @@
     </style>
 </head>
 
-
-
-<frameset rows="64,*">
+<frameset rows="80,*">
     <frame name="title" scrolling="no" noresize="noresize" target="menu" src="title.html">
     <frameset cols="226,*">
         <frame name="menu" target="main" src="menu.html">
@@ -37,8 +35,6 @@
         <table style="width: 90%" align="center">
             <tr>
                 <th colspan="2" class="style1">
-                    <h1 class="style1">IT-Center: group Proff 25 <span lang="ru">Вуйки на бембетах</span></h1>
-                    <hr/>
                     <h3>Система управления службой такси</h3>
                 </th>
             </tr>
@@ -82,9 +78,12 @@
                 <td colspan="2" class="style1">Управление водителями</td>
             </tr>
             <tr>
-                <td style="width: 50%x">
+                <td style="width: 50%">
                     <ul>
-                        <li><a href="createDriver.html">Создать водителя</a></li>
+                        <li><a href="createDriver.html">
+                            Создать водителя
+                        </a>
+                        </li>
                         <li>Редактировать водителя</li>
                     </ul>
                 </td>
@@ -104,10 +103,11 @@
                         <li>Редактировать оператора</li>
                     </ul>
                 </td>
-                A
-                <td style="width: 50%A">
+
+                <td style="width: 50%">
                     <ul>
-                        <li><a href="operators.html">Вывести список операторов</a></li>
+                        <li><a href="operators.html">
+                            Вывести список операторов</a></li>
                     </ul>
                 </td>
             </tr>
@@ -127,9 +127,5 @@
 
         </body>
     </noframes>
-
-
-
-
-
+</frameset>
 </html>
