@@ -18,12 +18,13 @@ import java.util.List;
  * User: al1
  * Date: 3/16/15
  */
+
 @org.springframework.stereotype.Controller
 @SessionAttributes("id")
 public class MainController {
     private static final Logger log = Logger.getLogger(MainController.class);
     @Autowired
-    TService service;
+    private TService service;
 
     /*
     Autor: Алексей
@@ -90,11 +91,14 @@ public class MainController {
         model.addAttribute("operatorsList", list);
         return "operators";
     }
+
     @RequestMapping(value = "/readOperator.html", method = {RequestMethod.GET})
     public String readOperator
             (@RequestParam("operator") String operName, Model model) {
         Operator operator = service.readOperator(operName);
-        if (operator==null){return "dashboard";}
+        if (operator == null) {
+            return "dashboard";
+        }
         log.info("/readOperator controller");
         model.addAttribute("operator", operator);
         return "redactorOperator";
