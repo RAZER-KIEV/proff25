@@ -8,7 +8,6 @@
 <html>
 <head>
   <title>Clients list</title>
-
 </head>
 <body>
 <%List<Client> clients = (List<Client>)request.getAttribute("clientList");
