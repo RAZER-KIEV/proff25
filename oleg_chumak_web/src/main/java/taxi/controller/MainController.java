@@ -46,6 +46,33 @@ public class MainController {
     }
 
     /*
+    Autor: Aleksey Khalikov
+    Загружает титульную строку в Dashboard
+    */
+    @RequestMapping(value = "/title.html", method = {RequestMethod.GET})
+    public String getTitlePage() {
+        return "title";
+    }
+
+    /*
+    Autor: Aleksey Khalikov
+    Загружает страницу меню в Dashboard
+     */
+    @RequestMapping(value = "/menu.html", method = {RequestMethod.GET})
+    public String getMenuPage() {
+        return "menu";
+    }
+
+    /*
+    Autor: Aleksey Khalikov
+    Загружает страницу приветствия в Dashboard
+    */
+    @RequestMapping(value = "/main.html", method = {RequestMethod.GET})
+    public String getWelcomePage() {
+        return "welcome";
+    }
+
+    /*
     Autor: Alexandr Omelchenko
     Driver List
      */
