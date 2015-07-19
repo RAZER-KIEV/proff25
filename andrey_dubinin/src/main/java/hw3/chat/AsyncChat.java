@@ -12,32 +12,41 @@ import java.util.Scanner;
  */
 public class AsyncChat {
     public static void main(String[] args) {
-        try{
-            ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
-            serverSocketChannel.socket().bind(new InetSocketAddress(30000));
-            ByteBuffer buffer =ByteBuffer.allocate(3000);
+        AsyncChat chat=new AsyncChat();
+        chat.process();
+    }
 
-            while (true){
-                SocketChannel socketChannel = serverSocketChannel.accept();
-                int bytesRead;
-                while ((bytesRead = socketChannel.read(buffer)) > 0) {
-                    buffer.flip();
-                    System.out.println(new String(buffer.array(), 0, bytesRead));
-                    buffer.clear();
-                }
-                Scanner scanner = new Scanner(System.in);
-                String scan = scanner.nextLine();
-                buffer.put(scan.getBytes());
+public void process(){
 
-                while (buffer.hasRemaining()) {
-                    buffer.flip();
-                    socketChannel.write(buffer);
-                    buffer.clear();
-                }
+    try{
+        ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
+        serverSocketChannel.socket().bind(new InetSocketAddress(30000));
+        ByteBuffer buffer =ByteBuffer.allocate(3000);
+
+        while (true){
+            SocketChannel socketChannel = serverSocketChannel.accept();
+            int bytesRead;
+            while ((bytesRead = socketChannel.read(buffer)) > 0) {
+                buffer.flip();
+                System.out.println(new String(buffer.array(), 0, bytesRead));
+                buffer.clear();
             }
+            Scanner scanner = new Scanner(System.in);
+            String scan = scanner.nextLine();
+            buffer.put(scan.getBytes());
 
-        }catch (IOException e){
-            e.printStackTrace();
+            while (buffer.hasRemaining()) {
+                buffer.flip();
+                socketChannel.write(buffer);
+                buffer.clear();
+            }
         }
+
+    }catch (IOException e){
+        e.printStackTrace();
     }
 }
+
+}
+
+
