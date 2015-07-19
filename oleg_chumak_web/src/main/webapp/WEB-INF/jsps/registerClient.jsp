@@ -12,9 +12,9 @@
 <p style="color:pink">${message}</p>
 <form action="backToDashboard" method="post">
   <input type="hidden" name="login" value="${login}">
-  <input type="submit" value="Back to dashboard">
+  <input type="button" value="Back to dashboard" onclick="location.href='main.html'">
 </form>
-<form action="createClient" method="post">
+<form action="/createClient" method="get">
   <p>Create client</p>
   <p>Name</p>
   <input type="text" name="name">

@@ -135,7 +135,7 @@ public class MainController {
     Create Driver
      */
     @RequestMapping(value = "/createDriver.html", method = {RequestMethod.GET})
-    public String re() {
+    public String startRegisterDriver() {
         log.info("/create controller");
         return "registerDriver";
     }

@@ -50,7 +50,7 @@
         <input name="btnCreateClient"
                type="button"
                value="Зарегистрировать"
-               onclick="top.frames['main'].location.href=''"
+               onclick="top.frames['main'].location.href='startRegisterClient.html'"
                style="width: 90%"/>
         <br/>
         <input name="btnGetClientReport"
