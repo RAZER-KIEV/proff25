@@ -88,8 +88,8 @@ public class MainController {
      */
     @RequestMapping(value = "/clientsPortinedByTen.html", method = {RequestMethod.GET})
     public String showClients(Model model){
-        List<Client> list = service.clientsPortinedByTen(new Long(10));
-        log.info("/clients controller");
+        List<Client> list = service.clientsPortinedByTen(10L);
+        log.info("/clientsPortinedByTen controller");
         model.addAttribute("clientList", list);
         return "clients";
     }
