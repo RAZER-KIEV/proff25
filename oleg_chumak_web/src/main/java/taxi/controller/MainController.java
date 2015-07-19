@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import taxi.domain.Client;
 import taxi.domain.Operator;
 import taxi.domain.TaxiDriver;
 import taxi.service.TService;
@@ -70,6 +71,51 @@ public class MainController {
     @RequestMapping(value = "/main.html", method = {RequestMethod.GET})
     public String getWelcomePage() {
         return "welcome";
+    }
+
+    /*
+    Autor: Aleksey Khalikov
+    загружает страницу отчетов по клиентам
+    */
+    @RequestMapping(value = "/clientReport.html", method = {RequestMethod.GET})
+    public String getClientReportPage() {
+        return "clientReport";
+    }
+
+    /*
+        Autor: Aleksey Khalikov
+    Загружает страницу со списком клиентов списком по 10
+     */
+    @RequestMapping(value = "/clientsPortinedByTen.html", method = {RequestMethod.GET})
+    public String showClients(Model model){
+        List<Client> list = service.clientsPortinedByTen(new Long(10));
+        log.info("/clients controller");
+        model.addAttribute("clientList", list);
+        return "clients";
+    }
+
+    /*
+        Autor: Aleksey Khalikov
+    Загружает страницу со списком клиентов делавших заказы за последний месяц
+     */
+    @RequestMapping(value = "/ClientsMadeOrdersDuringLastMonth.html", method = {RequestMethod.GET})
+    public String showClientsMadeOrdersDuringLastMonth(Model model){
+        List<Client> list = service.clientsMadeOrdersDuringLastMonth();
+        log.info("/clients controller");
+        model.addAttribute("clientList", list);
+        return "clients";
+    }
+
+    /*
+    Autor: Aleksey Khalikov
+    вывести всех клиентов наездивших на сумму больше указанной
+     */
+    @RequestMapping(value = "/ClientsWithOrderAmountMoreThen.html", method = {RequestMethod.GET})
+    public String showClientswithOrderAmountMoreThen(@RequestParam("value") Long value, Model model){
+        List<Client> list = service.clientswithOrderAmountMoreThen(value);
+        log.info("/clients controller");
+        model.addAttribute("clientList", list);
+        return "clients";
     }
 
     /*

@@ -56,7 +56,7 @@
         <input name="btnGetClientReport"
                type="button"
                value="Отчеты"
-               onclick="top.frames['main'].location.href=''"
+               onclick="top.frames['main'].location.href='clientReport.html'"
                style="width: 90%"/>
         <br/>
     </fieldset>

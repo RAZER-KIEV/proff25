@@ -10,7 +10,7 @@
 <form action="/newDriver.html" method="GET">
   <table>
     <tr>
-      <td>Login</td>
+      <td>Name</td>
       <td><input type="text" name="name"></td>
     </tr>
     <tr>
