@@ -13,14 +13,18 @@
 <body>
 <form>
   <input type="button"
-         value="Вывести список клиентов по 10"
-         onclick="location.href='clientsPortinedByTen.html'"
+         value="Вывести весь список клиентов"
+         onclick="location.href='clientslistAll.html'"
          width="90%">
 <br/>
   <input type="button"
          value="Вывести всех клиентов, делавших заказы за последний месяц"
          onclick="location.href='ClientsMadeOrdersDuringLastMonth.html'"
          width="90%">
+</form>
+<form action="/clientsPortinedByTen.html", method="get">
+    <input type="text" name="portion">
+    <input type="submit" value="Вывести всех клиентов указанной порцией">
 </form>
 <form action="/ClientsWithOrderAmountMoreThen.html", method="get">
   <input type="text" name="value">

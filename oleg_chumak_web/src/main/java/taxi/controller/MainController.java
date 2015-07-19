@@ -74,6 +74,27 @@ public class MainController {
     }
 
     /*
+           Autor: Aleksey Khalikov
+   загружает страницу регистрации клиентов
+     */
+    @RequestMapping(value = "/startRegisterClient.html", method = {RequestMethod.GET})
+    public String startRegisterClient() {
+        return "registerClient";
+    }
+
+    /*
+               Autor: Aleksey Khalikov
+   регистрируем нового клиента
+     */
+    @RequestMapping(value = "/createClient", method = {RequestMethod.GET})
+    public String createClient(@RequestParam("name") String name, @RequestParam("surname") String surname, @RequestParam("phone_number") String phone, @RequestParam("address") String address, Model model) {
+        service.createClient(new Client(name, surname, phone, address));
+        List<Client> list = service.findAllClients();
+        model.addAttribute("clientList", list);
+        return "clients";
+    }
+
+    /*
     Autor: Aleksey Khalikov
     загружает страницу отчетов по клиентам
     */
@@ -82,14 +103,26 @@ public class MainController {
         return "clientReport";
     }
 
+/*
+    Autor: Aleksey Khalikov
+    выводит список всех клиентов
+*/
+    @RequestMapping(value = "/clientslistAll.html", method = {RequestMethod.GET})
+    public String showClientslist(Model model) {
+        List<Client> list = service.findAllClients();
+        log.info("/clients controller");
+        model.addAttribute("clientList", list);
+        return "clients";
+    }
+
     /*
         Autor: Aleksey Khalikov
     Загружает страницу со списком клиентов списком по 10
      */
     @RequestMapping(value = "/clientsPortinedByTen.html", method = {RequestMethod.GET})
-    public String showClients(Model model){
-        List<Client> list = service.clientsPortinedByTen(10L);
-        log.info("/clientsPortinedByTen controller");
+    public String showClients(@RequestParam("portion") Long portion,Model model) {
+        List<Client> list = service.clientsPortinedByTen(portion);
+        log.info("/clients controller");
         model.addAttribute("clientList", list);
         return "clients";
     }
@@ -99,7 +132,7 @@ public class MainController {
     Загружает страницу со списком клиентов делавших заказы за последний месяц
      */
     @RequestMapping(value = "/ClientsMadeOrdersDuringLastMonth.html", method = {RequestMethod.GET})
-    public String showClientsMadeOrdersDuringLastMonth(Model model){
+    public String showClientsMadeOrdersDuringLastMonth(Model model) {
         List<Client> list = service.clientsMadeOrdersDuringLastMonth();
         log.info("/clients controller");
         model.addAttribute("clientList", list);
@@ -111,7 +144,7 @@ public class MainController {
     вывести всех клиентов наездивших на сумму больше указанной
      */
     @RequestMapping(value = "/ClientsWithOrderAmountMoreThen.html", method = {RequestMethod.GET})
-    public String showClientswithOrderAmountMoreThen(@RequestParam("value") Long value, Model model){
+    public String showClientswithOrderAmountMoreThen(@RequestParam("value") Long value, Model model) {
         List<Client> list = service.clientswithOrderAmountMoreThen(value);
         log.info("/clients controller");
         model.addAttribute("clientList", list);
