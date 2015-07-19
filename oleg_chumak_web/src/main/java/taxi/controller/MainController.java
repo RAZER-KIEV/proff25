@@ -202,7 +202,8 @@ public class MainController {
      Operator Redactor
      */
     @RequestMapping(value = "/changeOperator.html", method = {RequestMethod.GET})
-    public String toredactOper(){
+    public String toredactOper(Model model){
+        model.addAttribute("message", "Введите данные для редактирования.");
         log.info("/changeOperator controller");
         return "redactorOperator";
     }
@@ -223,17 +224,22 @@ public class MainController {
             model.addAttribute("message", "Неверное имя оператора! Повторите попытку.");
             return "redactorOperator";
         }
-        operator.setLogin(newLogin);
-        operator.setPassword(pass);
-        operator.setIndividualTaxpayerNumber(indNum);
-        operator.setPreviousPassword(prevpass);
-        operator.setLastPasswordChangeDate(lastChangeDate);
-        if (isblocked.equals("true")){operator.setIsBlocked(true);}
-        else {operator.setIsBlocked(false);}
-        operator.setUnsuccessfulLoginTries(unsuccTries);
-        service.updateOperator(operator);
-        log.info("/redactOperator controller");
-        model.addAttribute("message", "Редактирование прошло успешно!");
-        return "redactorOperator";
+        else {
+            operator.setLogin(newLogin);
+            operator.setPassword(pass);
+            operator.setIndividualTaxpayerNumber(indNum);
+            operator.setPreviousPassword(prevpass);
+            operator.setLastPasswordChangeDate(lastChangeDate);
+            if (isblocked.equals("true")) {
+                operator.setIsBlocked(true);
+            } else {
+                operator.setIsBlocked(false);
+            }
+            operator.setUnsuccessfulLoginTries(unsuccTries);
+            service.updateOperator(operator);
+            log.info("/redactOperator controller");
+            model.addAttribute("message", "Редактирование прошло успешно!");
+            return "redactorOperator";
+        }
     }
 }

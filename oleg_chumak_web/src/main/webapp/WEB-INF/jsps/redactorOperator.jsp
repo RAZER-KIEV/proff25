@@ -11,27 +11,27 @@
   <table>
     <tr>
       <td>Old Login</td>
-      <td><input type="text" name="oldLogin" value=""></td>
+      <td><input type="text" name="oldLogin"></td>
     </tr>
     <tr>
       <td>NEW Login</td>
-      <td><input type="text" name="newLogin" value=""></td>
+      <td><input type="text" name="newLogin"></td>
     </tr>
     <tr>
       <td>Password</td>
-      <td><input type="text" name="pass" value=""></td>
+      <td><input type="text" name="pass"></td>
     </tr>
     <tr>
       <td>Individual Number</td>
-      <td><input type="number" name="indNum" value=""></td>
+      <td><input type="number" name="indNum"></td>
     </tr>
     <tr>
       <td>Previous Password</td>
-      <td><input type="text" name="prevpass" value=""></td>
+      <td><input type="text" name="prevpass"></td>
     </tr>
     <tr>
       <td>Last Password Change Date</td>
-      <td><input type="datetime-local" name="lastChangeDate" value=""></td>
+      <td><input type="datetime-local" name="lastChangeDate"></td>
     </tr>
     <tr>
       <td>Is Blocked</td>
