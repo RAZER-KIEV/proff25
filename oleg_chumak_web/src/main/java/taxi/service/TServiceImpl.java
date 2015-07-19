@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import taxi.dao.*;
 import taxi.domain.*;
+
 import java.util.List;
 
 /**
@@ -24,9 +25,10 @@ public class TServiceImpl implements TService {
     @Autowired
     private RoleDao roleDao;
 
-    public TServiceImpl(){
+    public TServiceImpl() {
 
     }
+
     public TServiceImpl(OrderDao orderDao, TaxiDriverDao taxiDriverDao, ClientDao clientDao, OperatorDao operatorDao, RoleDao roleDao) {
         this.orderDao = orderDao;
         this.taxiDriverDao = taxiDriverDao;
@@ -38,30 +40,39 @@ public class TServiceImpl implements TService {
     public OrderDao getOrderDao() {
         return orderDao;
     }
+
     public void setOrderDao(OrderDao orderDao) {
         this.orderDao = orderDao;
     }
+
     public TaxiDriverDao getTaxiDriverDao() {
         return taxiDriverDao;
     }
+
     public void setTaxiDriverDao(TaxiDriverDao taxiDriverDao) {
         this.taxiDriverDao = taxiDriverDao;
     }
+
     public ClientDao getClientDao() {
         return clientDao;
     }
+
     public void setClientDao(ClientDao clientDao) {
         this.clientDao = clientDao;
     }
+
     public OperatorDao getOperatorDao() {
         return operatorDao;
     }
+
     public void setOperatorDao(OperatorDao operatorDao) {
         this.operatorDao = operatorDao;
     }
+
     public RoleDao getRoleDao() {
         return roleDao;
     }
+
     public void setRoleDao(RoleDao roleDao) {
         this.roleDao = roleDao;
     }
