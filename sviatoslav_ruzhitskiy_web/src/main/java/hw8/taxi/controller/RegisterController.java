@@ -83,8 +83,6 @@ public class RegisterController {
             if(wrongPass!=null)opr.setWrongPass(Integer.parseInt(wrongPass));
         authenticationService.update(opr);
 
-
-
         return "operator";
     }
 

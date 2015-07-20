@@ -28,7 +28,7 @@ public class ClientServiceImpl implements ClientService{
     @Override
     public boolean createClient(String name, String surname, String phone, String address) throws OrderException {
         Client client = new Client(name,surname,phone,address);
-        if(!(clientDao.create(client).equals(null))){
+        if(!(clientDao.create(client)==null)){
         return true;
        }
         return false;
@@ -42,12 +42,16 @@ public class ClientServiceImpl implements ClientService{
         @Override
         public List showClientsByPortion(int portionSize) {
                 List<Client> clientList = new ArrayList<>();
-                boolean flag=true;
-                for (int i=0; i<clientDao.getDBSize(); i+=portionSize ){
+                Long size= clientDao.getDBSize();
+
+                for (int i=0; i<size; i+=portionSize ){
                         List<Client> orderListBuff=new ArrayList<>();
-                        orderListBuff=clientDao.showClientsByPortion(i, i + portionSize);
-                        if(!orderListBuff.isEmpty()){flag=false;}
-                        else clientList.addAll(orderListBuff);
+                        orderListBuff=clientDao.showClientsByPortion(i, portionSize);
+                        clientList.addAll(orderListBuff);
+
+                }
+                for (Client client:clientList){
+                        System.out.println(client);
                 }
                 return clientList;
     }
