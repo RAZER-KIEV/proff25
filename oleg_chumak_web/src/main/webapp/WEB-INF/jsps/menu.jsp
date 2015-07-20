@@ -50,13 +50,13 @@
         <input name="btnCreateClient"
                type="button"
                value="Зарегистрировать"
-               onclick="top.frames['main'].location.href=''"
+               onclick="top.frames['main'].location.href='startRegisterClient.html'"
                style="width: 90%"/>
         <br/>
         <input name="btnGetClientReport"
                type="button"
                value="Отчеты"
-               onclick="top.frames['main'].location.href=''"
+               onclick="top.frames['main'].location.href='clientReport.html'"
                style="width: 90%"/>
         <br/>
     </fieldset>
@@ -84,7 +84,7 @@
         <input  name="btnUpdateOperator"
                 type="button"
                 value="Изменить оператора"
-                onclick="top.frames['main'].location.href=''"
+                onclick="top.frames['main'].location.href='changeOperator.html'"
                 style="width: 90%"/>
         <br/>
         <input name="btnGetOperatorsList"

@@ -31,7 +31,7 @@ public class RegisterController {
     @Autowired
     private AuthorizationService authorizationService;
 
-    public static final Logger log = Logger.getLogger(RegisterController.class);
+    //public static final Logger log = Logger.getLogger(RegisterController.class);
 
     @PostConstruct
     public void init(){

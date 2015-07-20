@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface OrderService {
     boolean createOrder(Long id, Client client, String amount, String addressFrom, String addressTo) throws OrderException;
-    void editOrder(Long id, Client client, String amount, String addressFrom, String addressTo);
+    void editOrder(Long id, Client client, String amount, String addressFrom, String addressTo) throws OrderException;
     List showOrders(Long from, Long to);
     List showOrdersByPortion();
 }

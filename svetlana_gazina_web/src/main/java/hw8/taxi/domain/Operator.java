@@ -6,23 +6,22 @@ import javax.persistence.*;
 import java.util.Date;
 
 /**
- * Created by ПК on 14.07.2015.
+ * Created by Sveta on 7/18/2015.
  */
 @Entity
 @Component
-@Table(name="OPERATORs")
+@Table(name="OPERATORS")
 public class Operator {
     @Id
     @SequenceGenerator(name = "sequence", sequenceName = "OPERATORS_SEQ", initialValue = 1, allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
-    @Column(name = "OPER_ID")
+    @Column(name = "OPERATOR_ID")
     private Long id;
     private String login;
     private String inn;
     private String password;
     private Date passDate;
     private Boolean isBlocked;
-    private Boolean isSuperAdmin;
     private Integer wrongPass;
 
     public Operator(){}
@@ -33,16 +32,7 @@ public class Operator {
         passDate = new Date();
         isBlocked=false;
         wrongPass=0;
-        isSuperAdmin = false;
 
-    }
-
-    public Boolean getIsSuperAdmin() {
-        return isSuperAdmin;
-    }
-
-    public void setIsSuperAdmin(Boolean isSuperAdmin) {
-        this.isSuperAdmin = isSuperAdmin;
     }
 
     public Long getId() {
@@ -110,7 +100,6 @@ public class Operator {
                 ", password='" + password + '\'' +
                 ", passDate=" + passDate +
                 ", isBlocked=" + isBlocked +
-                ", isSuperAdmin=" + isSuperAdmin +
                 ", wrongPass=" + wrongPass +
                 '}';
     }

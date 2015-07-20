@@ -37,8 +37,15 @@
 </table>
 <%} %>
 
-<form action="/createDriver.html" method="get">
+<!--<form action="/createDriver.html" method="get">
         <input type="submit"  value="Create New Driver">
+</form>-->
+
+<!-- Такой вариант кнопки работает как гипер-ссылка -->
+<form>
+  <input type="button"
+         value="Create New Driver"
+         onclick="location.href='createDriver.html'">
 </form>
 </body>
 

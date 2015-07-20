@@ -12,7 +12,7 @@ public interface OrderDao {
     Order read(Long ig);
     boolean update(Order operator);
     boolean delete(Order operator);
-    Order searchByLogin(String login);
-    List findAll();
+    List showOrders(Long from, Long to);;
+    List findAllbyPortion(int start, int end);
 
 }

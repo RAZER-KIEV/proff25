@@ -1,7 +1,6 @@
 package hw8.taxi.dao;
 
 import hw8.taxi.domain.Client;
-import hw8.taxi.domain.Operator;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -9,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -90,16 +90,20 @@ public class ClientDaoImpl implements ClientDao{
 
     @Override
     public List showClientsGtSum(int sum) {
+        Double sumD=(double)sum;
         Session session = sessionFactory.openSession();
         Query query=session.createQuery("from Client c where c.summ>:sum");
-        query.setParameter("sum", sum);
+        query.setParameter("sum", sumD);
         return query.list();
     }
 
     @Override
     public List showClientsLastMonth() {
-        long monthTime = 30 * 24 * 60 * 60 * 1000;
-        Date date = new Date(System.currentTimeMillis()+monthTime);
+        Calendar cal= Calendar.getInstance();
+        cal.add(Calendar.MONTH ,-1);
+        Long millis = cal.getTimeInMillis();
+        Date date = new Date(millis);
+        System.out.println(date);
         Query query = sessionFactory.getCurrentSession().createQuery("from Client c where c.lastOrderDay>:date");
         query.setParameter("date",date);
         return query.list();

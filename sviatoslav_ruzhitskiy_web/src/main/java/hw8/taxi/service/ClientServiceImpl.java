@@ -33,7 +33,12 @@ public class ClientServiceImpl implements ClientService{
         return false;
     }
 
-    @Override
+        @Override
+        public Client findClientById(Long id) {
+                return clientDao.read(id);
+        }
+
+        @Override
     public List showClientsByPortion(int portionSize) {
         return  clientDao.showClientsByPortion(portionSize);
     }
@@ -327,8 +332,8 @@ public class ClientServiceImpl implements ClientService{
     }
 
     public Date generateRandDate(){
-        long yearTime = 12 * 30 * 24 * 60 * 60 * 1000;
-        Date randomDate = new Date(System.currentTimeMillis()+(long)(Math.random()*yearTime));
+        long yearTime = 12L * 30L * 24L * 60L * 60L * 1000L;
+        Date randomDate = new Date(System.currentTimeMillis()-(long)(Math.random()*yearTime));
         return randomDate;
     }
 

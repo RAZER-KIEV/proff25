@@ -53,7 +53,7 @@ public class ClientDaoImpl implements ClientDao {
 
     @Override
     public List<Client> clientswithOrderAmountMoreThen(Long amount) {
-        Query query = factory.getCurrentSession().createQuery("from Client as o where o.money>=:frompoint");
+        Query query = factory.getCurrentSession().createQuery("from Client as o where o.totalMoneyAmount>=:frompoint");
         query.setParameter("frompoint", amount);
         return query.list();
     }
