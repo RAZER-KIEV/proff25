@@ -5,19 +5,44 @@
   Time: 23:25
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page import="web.domain.Client"%>
-<%@ page import="java.util.List" %>
-<%@ page import="web.domain.Operator" %>
+<%@ page import="java.sql.Driver"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title></title>
 </head>
 <body>
-<jsp:include page="clients.jsp"></jsp:include>
+<jsp:include page="operator.jsp"></jsp:include>
 <br>
+<%Driver driver = (Driver) request.getAttribute("operator");
+if(driver != null){
+  %>
+<table>
 
-<br>
+  <tr>
+    <td>ID</td>
+    <td>name</td>
+    <td>phone</td>
+    <td>car model</td>
+    <td>car number</td>
+  </tr>
+  <%
+    for(Driver driver1 : driver){
+  %>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+<%}%>
+</table>
+<%
+}
+
+%>
+
 
 
 </body>
