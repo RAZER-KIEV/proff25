@@ -14,14 +14,12 @@
 <body>
 
 <%! int count=0; %>
-Logining retry: <%=count%>
-<!--
-<form id="myAuthForm" action="/auth" method="post">
-  <p> Введите логин: <input type="text" name="login"> <br></p>
-  <p> Введите проль:<input type="password" name="password"></p>
-  <input type="submit" name="enter" value="Log in">
-</form> <br>-->
 
+<%
+    if(request.getAttribute("countAdd")!=null){
+  count+= (int)request.getAttribute("countAdd");}
+%>
+Logining retry: <%=count%>
 <form id="regForm1" action="/register" method="post">
   <input type="submit" name="register" value="Registeration">
 </form>

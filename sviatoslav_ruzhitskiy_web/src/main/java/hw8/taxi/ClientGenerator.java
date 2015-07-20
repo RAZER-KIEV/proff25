@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by ПК on 16.07.2015.
@@ -304,8 +306,11 @@ public class ClientGenerator {
     }
 
     public Date generateRandDate(){
-        long yearTime = 12 * 30 * 24 * 60 * 60 * 1000;
-        Date randomDate = new Date(System.currentTimeMillis()+(long)(Math.random()*yearTime));
+
+            long yearTime = 12L * 30L * 24L * 60L * 60L * 1000L;
+            Calendar cal = Calendar.getInstance();
+            cal.setTimeInMillis(cal.getTimeInMillis()-(long)(Math.random()*yearTime));
+            Date randomDate = new Date(cal.getTimeInMillis());
         return randomDate;
     }
 

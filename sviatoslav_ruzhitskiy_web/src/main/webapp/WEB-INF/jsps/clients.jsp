@@ -16,14 +16,6 @@
 </head>
 <body>
 <h1 align="center">Taxi full list</h1>
-<!--  <div>
-  <%
-   // List<Client> list = (List<Client>)request.getAttribute("list");
-   // for (Client client : list) {
-   //   out.println(client);
-   // }
-  %> -->
-</div>
 <form>
   <button formaction="/backToDashboard"  type="submit" formmethod="post" name="BacktoDASHBOARD" value="Back to DASHBOARD!">Back to DASHBOARD!</button>
 </form>

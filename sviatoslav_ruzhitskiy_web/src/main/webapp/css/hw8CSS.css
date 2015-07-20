@@ -8,3 +8,9 @@ form {
    /*border: 5px solid skyblue;*/
 
 }
+table, td {
+    background-color: gold;
+    border: medium solid aqua;
+
+}
+

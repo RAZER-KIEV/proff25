@@ -39,7 +39,7 @@ public class AuthenticationController {
     }
 
 
-    @RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.HEAD})
+    @RequestMapping(value = "/", method = {RequestMethod.GET,RequestMethod.POST, RequestMethod.HEAD})
     public String great() {
         log.info("/index controller");
         return "index";
@@ -49,8 +49,14 @@ public class AuthenticationController {
     public String auth(@RequestParam("login") String login, @RequestParam("password") String password, Model model, HttpSession session) throws AuthenticationException {
         Operator operator;
        if(authenticationService.authenticate(login, password)){
+           log.debug("Its Ok Operator found");
+
            session.setAttribute("operlogin", login);
            return "dashboard";
-       }else  return "index";
+       }else{
+           session.setAttribute("countAdd", 1);
+           log.debug("Something wrong Operator not found");
+           return "index";
+       }
     }
 }
