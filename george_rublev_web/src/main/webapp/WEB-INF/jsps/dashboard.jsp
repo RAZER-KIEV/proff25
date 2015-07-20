@@ -5,39 +5,45 @@
   Time: 23:25
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page import="web.domain.Client"%>
-<%@ page import="java.util.List" %>
+<%@ page import="java.sql.Driver"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title></title>
 </head>
 <body>
-<%--<H2>Dashboard new</H2>--%>
+<jsp:include page="operator.jsp"></jsp:include>
+<br>
+<%Driver driver = (Driver) request.getAttribute("operator");
+if(driver != null){
+  %>
+<table>
 
-<%List<Client> clients = (List<Client>)request.getAttribute("clientList");
-  if (clients!=null){%>
-<table title="CLIENTS" width="80%" border="1" align="center">
-  <caption><H1>Clients of Taxi</H1></caption>
-  <thead>
   <tr>
-    <th align="left">Id</th>
-    <th align="left">Name</th>
-    <th align="left">Phone</th>
+    <td>ID</td>
+    <td>name</td>
+    <td>phone</td>
+    <td>car model</td>
+    <td>car number</td>
   </tr>
-  </thead>
   <%
-    for(Client client:clients){
+    for(Driver driver1 : driver){
   %>
   <tr>
-    <td><% out.println(client.getId());%></td>
-    <td><% out.println(client.getName());%></td>
-    <td><% out.println(client.getPhone());%></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
   </tr>
-
-  <%}%>
+<%}%>
 </table>
-<%} %>
+<%
+}
+
+%>
+
+
 
 </body>
 </html>
