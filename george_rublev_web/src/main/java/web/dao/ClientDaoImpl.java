@@ -31,7 +31,7 @@ public class ClientDaoImpl implements ClientDao {
 
     @Override
     public List<Client> listClient() {
-        Query query = factory.getCurrentSession().createQuery("from client");
+        Query query = factory.getCurrentSession().createQuery("from Client");
         return query.list();
     }
 

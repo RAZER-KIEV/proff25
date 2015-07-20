@@ -3,20 +3,19 @@ package web.controller;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
-//import scala.collection.immutable.List;
 import web.domain.Client;
-import web.domain.Operator;
 import web.service.ClientService;
-import web.service.OperatorService;
 
-import java.util.*;
 import javax.servlet.http.HttpSession;
+import java.util.List;
+
 
 /**
  * Created by george on 07.07.15.
@@ -28,6 +27,11 @@ public class DashboardController {
 
     @Autowired
     private ClientService clientS;
+
+    @Qualifier("client")
+    @Autowired
+    private Client client;
+
 
     @RequestMapping(value = "/dashboard.html", method = RequestMethod.GET)
     public String great(@RequestParam("login") String name,@RequestParam("paswwd") String paswd, Model model, HttpSession session) {
