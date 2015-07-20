@@ -25,6 +25,7 @@ public interface TService {
     Order readOrder(Long id);
     void updateOrder(Order order);
     void deleteOrder(Order order);
+    List listAllOrders();
     List listOfOrdersInRangeOfAmount(Long from, Long to);
     List listOfOrdersChunk(int startPoint, int chunkSize);
     String createRole(Role role);
