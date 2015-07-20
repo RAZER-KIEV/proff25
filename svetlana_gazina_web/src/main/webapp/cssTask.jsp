@@ -7,6 +7,7 @@
 <html>
 <head>
     <title>Задание на каскадные таблицы</title>
+    <link rel="stylesheet" href="java.webapp.myUltraStyle.css">
 </head>
 <body>
 <%--<h3>Покрасьте меня в розовый цвет (color:pink).</h3>--%>
@@ -19,7 +20,7 @@
     <p>Покрасьте меня в красный цвет (color:red).</p>
     <span><p>Покрасьте меня в коричневый цвет (color:brown).</p></span>
 
-    <div style="">Покрасьте меня в серебряный цвет (color:silver)</div>
+    <div style="background: green">Покрасьте меня в серебряный цвет (color:silver)</div>
 </div>
 <h4>Данный элемент должен остаться неоформленным.</h4>
 

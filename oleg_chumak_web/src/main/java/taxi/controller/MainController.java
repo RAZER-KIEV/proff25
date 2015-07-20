@@ -7,10 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import taxi.domain.Client;
 import taxi.domain.Operator;
 import taxi.domain.TaxiDriver;
 import taxi.service.TService;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -46,6 +48,111 @@ public class MainController {
     }
 
     /*
+    Autor: Aleksey Khalikov
+    Загружает титульную строку в Dashboard
+    */
+    @RequestMapping(value = "/title.html", method = {RequestMethod.GET})
+    public String getTitlePage() {
+        return "title";
+    }
+
+    /*
+    Autor: Aleksey Khalikov
+    Загружает страницу меню в Dashboard
+     */
+    @RequestMapping(value = "/menu.html", method = {RequestMethod.GET})
+    public String getMenuPage() {
+        return "menu";
+    }
+
+    /*
+    Autor: Aleksey Khalikov
+    Загружает страницу приветствия в Dashboard
+    */
+    @RequestMapping(value = "/main.html", method = {RequestMethod.GET})
+    public String getWelcomePage() {
+        return "welcome";
+    }
+
+    /*
+           Autor: Aleksey Khalikov
+   загружает страницу регистрации клиентов
+     */
+    @RequestMapping(value = "/startRegisterClient.html", method = {RequestMethod.GET})
+    public String startRegisterClient() {
+        return "registerClient";
+    }
+
+    /*
+               Autor: Aleksey Khalikov
+   регистрируем нового клиента
+     */
+    @RequestMapping(value = "/createClient", method = {RequestMethod.GET})
+    public String createClient(@RequestParam("name") String name, @RequestParam("surname") String surname, @RequestParam("phone_number") String phone, @RequestParam("address") String address, Model model) {
+        service.createClient(new Client(name, surname, phone, address));
+        List<Client> list = service.findAllClients();
+        model.addAttribute("clientList", list);
+        return "clients";
+    }
+
+    /*
+    Autor: Aleksey Khalikov
+    загружает страницу отчетов по клиентам
+    */
+    @RequestMapping(value = "/clientReport.html", method = {RequestMethod.GET})
+    public String getClientReportPage() {
+        return "clientReport";
+    }
+
+/*
+    Autor: Aleksey Khalikov
+    выводит список всех клиентов
+*/
+    @RequestMapping(value = "/clientslistAll.html", method = {RequestMethod.GET})
+    public String showClientslist(Model model) {
+        List<Client> list = service.findAllClients();
+        log.info("/clients controller");
+        model.addAttribute("clientList", list);
+        return "clients";
+    }
+
+    /*
+        Autor: Aleksey Khalikov
+    Загружает страницу со списком клиентов списком по 10
+     */
+    @RequestMapping(value = "/clientsPortinedByTen.html", method = {RequestMethod.GET})
+    public String showClients(@RequestParam("portion") Long portion,Model model) {
+        List<Client> list = service.clientsPortinedByTen(portion);
+        log.info("/clients controller");
+        model.addAttribute("clientList", list);
+        return "clients";
+    }
+
+    /*
+        Autor: Aleksey Khalikov
+    Загружает страницу со списком клиентов делавших заказы за последний месяц
+     */
+    @RequestMapping(value = "/ClientsMadeOrdersDuringLastMonth.html", method = {RequestMethod.GET})
+    public String showClientsMadeOrdersDuringLastMonth(Model model) {
+        List<Client> list = service.clientsMadeOrdersDuringLastMonth();
+        log.info("/clients controller");
+        model.addAttribute("clientList", list);
+        return "clients";
+    }
+
+    /*
+    Autor: Aleksey Khalikov
+    вывести всех клиентов наездивших на сумму больше указанной
+     */
+    @RequestMapping(value = "/ClientsWithOrderAmountMoreThen.html", method = {RequestMethod.GET})
+    public String showClientswithOrderAmountMoreThen(@RequestParam("value") Long value, Model model) {
+        List<Client> list = service.clientswithOrderAmountMoreThen(value);
+        log.info("/clients controller");
+        model.addAttribute("clientList", list);
+        return "clients";
+    }
+
+    /*
     Autor: Alexandr Omelchenko
     Driver List
      */
@@ -62,7 +169,7 @@ public class MainController {
     Create Driver
      */
     @RequestMapping(value = "/createDriver.html", method = {RequestMethod.GET})
-    public String re() {
+    public String startRegisterDriver() {
         log.info("/create controller");
         return "registerDriver";
     }
@@ -91,17 +198,45 @@ public class MainController {
         model.addAttribute("operatorsList", list);
         return "operators";
     }
-
-    @RequestMapping(value = "/readOperator.html", method = {RequestMethod.GET})
-    public String readOperator
-            (@RequestParam("operator") String operName, Model model) {
-        Operator operator = service.readOperator(operName);
-        if (operator == null) {
-            return "dashboard";
-        }
-        log.info("/readOperator controller");
-        model.addAttribute("operator", operator);
+    /* Autor: Alexandr Omelchenko
+     Operator Redactor
+     */
+    @RequestMapping(value = "/changeOperator.html", method = {RequestMethod.GET})
+    public String toredactOper(Model model){
+        model.addAttribute("message", "Введите данные для редактирования.");
+        log.info("/changeOperator controller");
         return "redactorOperator";
     }
+    @RequestMapping(value = "/redactOperator.html", method = {RequestMethod.GET})
+    public String redactorOper
+            (@RequestParam("oldLogin") String oldLogin,
+             @RequestParam("newLogin") String newLogin,
+             @RequestParam("pass") String pass,
+             @RequestParam("indNum") Long indNum,
+             @RequestParam("prevpass") String prevpass,
+             @RequestParam("lastChangeDate") LocalDateTime lastChangeDate,
+             @RequestParam("isblocked") Boolean isblocked,
+             @RequestParam("unsuccTries") Long unsuccTries,
+             Model model) {
+        Operator operator = service.readOperator(oldLogin);
+        if (operator == null) {
+            log.info("/redactOperator controller");
+            model.addAttribute("message", "Неверное имя оператора! Повторите попытку.");
+            return "redactorOperator";
+        }
+        else {
+            operator.setLogin(newLogin);
+            operator.setPassword(pass);
+            operator.setIndividualTaxpayerNumber(indNum);
+            operator.setPreviousPassword(prevpass);
+            operator.setLastPasswordChangeDate(lastChangeDate);
+                operator.setIsBlocked(isblocked);
 
+            operator.setUnsuccessfulLoginTries(unsuccTries);
+            service.updateOperator(operator);
+            log.info("/redactOperator controller");
+            model.addAttribute("message", "Редактирование прошло успешно!");
+            return "redactorOperator";
+        }
+    }
 }
