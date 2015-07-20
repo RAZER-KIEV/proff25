@@ -14,6 +14,10 @@ import taxi.exception.AuthorizationException;
 import taxi.service.AuthenticationService;
 import taxi.service.AuthenticationServiceImpl;
 import taxi.service.AuthorizationService;
+import taxi.domain.Client;
+import taxi.domain.Operator;
+import taxi.domain.Role;
+import taxi.domain.TaxiDriver;
 import taxi.service.TService;
 
 import javax.servlet.http.HttpSession;
@@ -39,7 +43,7 @@ public class MainController {
 
     /*
     Autor: Алексей
-    для теста Дешбоарда
+    точка входа
      */
     @RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.HEAD})
     public String main(HttpSession session) {
