@@ -22,6 +22,7 @@ public class Operator {
     private String password;
     private Date passDate;
     private Boolean isBlocked;
+    private Boolean isSuperAdmin;
     private Integer wrongPass;
 
     public Operator(){}
@@ -32,7 +33,16 @@ public class Operator {
         passDate = new Date();
         isBlocked=false;
         wrongPass=0;
+        isSuperAdmin = false;
 
+    }
+
+    public Boolean getIsSuperAdmin() {
+        return isSuperAdmin;
+    }
+
+    public void setIsSuperAdmin(Boolean isSuperAdmin) {
+        this.isSuperAdmin = isSuperAdmin;
     }
 
     public Long getId() {
@@ -100,6 +110,7 @@ public class Operator {
                 ", password='" + password + '\'' +
                 ", passDate=" + passDate +
                 ", isBlocked=" + isBlocked +
+                ", isSuperAdmin=" + isSuperAdmin +
                 ", wrongPass=" + wrongPass +
                 '}';
     }

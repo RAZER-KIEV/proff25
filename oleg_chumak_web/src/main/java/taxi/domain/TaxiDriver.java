@@ -5,12 +5,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- Entities: Long id,
- String name,
- String model,
- String number,
- String phone
- + connection @OneToMany Order
+ * Entities: Long id,
+ * String name,
+ * String model,
+ * String number,
+ * String phone
+ * + connection @OneToMany Order
  */
 @Entity
 @Table(name = "TaxiDrivers")
@@ -30,11 +30,12 @@ public class TaxiDriver {
     private String phone;
     @OneToMany(cascade = CascadeType.ALL, // каскадирование
             fetch = FetchType.EAGER,// подргужать все сразу
-            mappedBy = "taxiDriver" )  // включить двунаправленность
+            mappedBy = "taxiDriver")  // включить двунаправленность
     private Set<Order> orderSet = new HashSet<>();
 
     public TaxiDriver() {
     }
+
     public TaxiDriver(String name, String model, String number, String phone) {
         this.name = name;
         this.model = model;
@@ -45,35 +46,44 @@ public class TaxiDriver {
     public Long getId() {
         return id;
     }
+
     public void setId(Long id) {
         this.id = id;
     }
+
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public String getModel() {
         return model;
     }
+
     public void setModel(String model) {
         this.model = model;
     }
+
     public String getNumber() {
         return number;
     }
+
     public void setNumber(String number) {
         this.number = number;
     }
+
     public String getPhone() {
         return phone;
     }
+
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    public void orderAdd(Order order){
+    public void orderAdd(Order order) {
         orderSet.add(order);
     }
 

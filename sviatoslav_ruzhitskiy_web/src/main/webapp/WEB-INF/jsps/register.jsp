@@ -18,6 +18,7 @@
   <p>Password: <input type="password" name="password"/> должен быть не менее 8 символов, включать большие и маленькие буквы, цифры</p>
   <p>Password confirm: <input type="password" name="passwordConfirm" > должен совпадать с паролем</p>
  <input type="submit" name="register" value="Registration"/>
+
 </form>
 </body>
 </html>

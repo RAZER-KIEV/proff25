@@ -19,6 +19,7 @@ public class OperatorDaoImpl implements OperatorDao {
 
     public OperatorDaoImpl() {
     }
+
     public OperatorDaoImpl(SessionFactory factory) {
         this.factory = factory;
     }
@@ -26,18 +27,19 @@ public class OperatorDaoImpl implements OperatorDao {
     public SessionFactory getFactory() {
         return factory;
     }
+
     public void setFactory(SessionFactory factory) {
         this.factory = factory;
     }
 
     @Override
     public String create(Operator operator) {
-        return (String)factory.getCurrentSession().save(operator);
+        return (String) factory.getCurrentSession().save(operator);
     }
 
     @Override
     public Operator read(String login) {
-        return (Operator)factory.getCurrentSession().get(Client.class, login);
+        return (Operator) factory.getCurrentSession().get(Client.class, login);
     }
 
     @Override
@@ -53,8 +55,8 @@ public class OperatorDaoImpl implements OperatorDao {
     }
 
     @Override
-    public List<Operator> findAll() {
-        return factory.getCurrentSession().createQuery("from Operators as oper").list();
+    public List findAll() {
+        return factory.getCurrentSession().createQuery("from Operator as oper").list();
     }
 
     @Override

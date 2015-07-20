@@ -15,6 +15,7 @@ public class OrderDaoImpl implements OrderDao {
 
     public OrderDaoImpl() {
     }
+
     public OrderDaoImpl(SessionFactory factory) {
         this.factory = factory;
     }
@@ -22,6 +23,7 @@ public class OrderDaoImpl implements OrderDao {
     public SessionFactory getFactory() {
         return factory;
     }
+
     public void setFactory(SessionFactory factory) {
         this.factory = factory;
     }

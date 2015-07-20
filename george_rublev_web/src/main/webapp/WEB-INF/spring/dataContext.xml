@@ -10,12 +10,7 @@
         http://www.springframework.org/schema/tx
         http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <context:component-scan base-package="web.dao"/>
-    <context:component-scan base-package="web.controller"/>
-    <context:component-scan base-package="web.domain"/>
-    <context:component-scan base-package="web.exception"/>
-    <context:component-scan base-package="web.service"/>
-    <context:component-scan base-package="web.action"/>
+    <context:component-scan base-package="web"/>
 
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
@@ -28,7 +23,6 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="packagesToScan">
             <list>
-                <!--<value>web.domain</value>-->
                 <value>web</value>
             </list>
         </property>
@@ -36,7 +30,7 @@
             <value>
                 hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
                 hibernate.show_sql=true
-                hibernate.hbm2ddl.auto=validate
+                hibernate.hbm2ddl.auto=update
             </value>
         </property>
     </bean>

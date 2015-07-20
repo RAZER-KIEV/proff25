@@ -1,0 +1,24 @@
+#greycol {
+    color: gray;
+}
+div p {
+    color:red;
+}
+h4+{
+    color:green;
+}
+p.yellowcol {
+    color:yellow
+}
+div.yellowcol {
+    color:blue;
+}
+div.yellowcol+{
+    color:olive
+}
+div span p {
+    color:brown
+}
+div div {
+    color:silver
+}

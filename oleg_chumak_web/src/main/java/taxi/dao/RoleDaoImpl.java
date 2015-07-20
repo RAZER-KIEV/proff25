@@ -18,6 +18,7 @@ public class RoleDaoImpl implements RoleDao {
 
     public RoleDaoImpl() {
     }
+
     public RoleDaoImpl(SessionFactory factory) {
         this.factory = factory;
     }
@@ -25,19 +26,20 @@ public class RoleDaoImpl implements RoleDao {
     public SessionFactory getFactory() {
         return factory;
     }
+
     public void setFactory(SessionFactory factory) {
         this.factory = factory;
     }
 
     @Override
     public String create(Role role) {
-        return (String)factory.getCurrentSession().save(role);
+        return (String) factory.getCurrentSession().save(role);
     }
 
 
     @Override
     public Role read(String roleName) {
-        return (Role)factory.getCurrentSession().get(Client.class, roleName);
+        return (Role) factory.getCurrentSession().get(Client.class, roleName);
     }
 
     @Override

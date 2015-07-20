@@ -41,11 +41,11 @@ public class Operator {
                     CascadeType.REFRESH})
     private Set<Order> orders;
 
-    public Operator(){
+    public Operator() {
 
     }
 
-    public Operator(String login, String password, Long individualTaxpayerNumber){
+    public Operator(String login, String password, Long individualTaxpayerNumber) {
         this(login, password, individualTaxpayerNumber, null, null, false, null, null);
     }
 
@@ -137,11 +137,11 @@ public class Operator {
         this.orders = orders;
     }
 
-    public boolean addOrder(Order order){
+    public boolean addOrder(Order order) {
         return this.orders.add(order);
     }
 
-    public boolean removeOrder(Order order){
+    public boolean removeOrder(Order order) {
         return this.orders.remove(order);
     }
 

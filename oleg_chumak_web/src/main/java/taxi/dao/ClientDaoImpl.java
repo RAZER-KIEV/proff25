@@ -29,6 +29,7 @@ public class ClientDaoImpl implements ClientDao {
     public SessionFactory getFactory() {
         return factory;
     }
+
     public void setFactory(SessionFactory factory) {
         this.factory = factory;
     }
@@ -36,7 +37,7 @@ public class ClientDaoImpl implements ClientDao {
     @Override
     public List<Client> clientsPortinedByTen(Long numberOfPortion) {
         Query query = factory.getCurrentSession().createQuery("from Client");
-        query.setFirstResult((int) ((numberOfPortion - 1)*10 + 1));
+        query.setFirstResult((int) ((numberOfPortion - 1) * 10 + 1));
         query.setMaxResults(10);
         return query.list();
     }
@@ -52,19 +53,19 @@ public class ClientDaoImpl implements ClientDao {
 
     @Override
     public List<Client> clientswithOrderAmountMoreThen(Long amount) {
-        Query query = factory.getCurrentSession().createQuery("from Client as o where o.money>=:frompoint");
+        Query query = factory.getCurrentSession().createQuery("from Client as o where o.totalMoneyAmount>=:frompoint");
         query.setParameter("frompoint", amount);
         return query.list();
     }
 
     @Override
     public Long create(Client client) {
-        return (Long)factory.getCurrentSession().save(client);
+        return (Long) factory.getCurrentSession().save(client);
     }
 
     @Override
     public Client read(Long Id) {
-        return (Client)factory.getCurrentSession().get(Client.class, Id);
+        return (Client) factory.getCurrentSession().get(Client.class, Id);
     }
 
     @Override

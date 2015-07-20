@@ -55,8 +55,8 @@ public class ClientController {
     }
 
     @RequestMapping(value = "/showClientsGtSum", method = RequestMethod.POST)
-    public String showClientsGtSum(@RequestParam("sum")Integer sum, Model model){
-        model.addAttribute("list", clientService.showClientsGtSum(sum));
+    public String showClientsGtSum(@RequestParam("sum")String sum, Model model){
+        model.addAttribute("list", clientService.showClientsGtSum(Integer.parseInt(sum)));
         return "clients";
     }
 

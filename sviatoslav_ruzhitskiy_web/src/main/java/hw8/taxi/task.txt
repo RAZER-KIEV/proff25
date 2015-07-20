@@ -91,7 +91,7 @@ void editOrder(Long id, Client client, String amount, String addressFrom, String
 List showOrders(Long from, Long to)
 List showOrdersByPortion()
 hw8.taxi.service.OrderServiceImpl
-hw8.taxi.controller.OrderServlet
+hw8.taxi.controller.OrderController
 hw8.taxi.exception.OrderException
 webapp
 jsps

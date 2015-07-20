@@ -16,8 +16,8 @@ import java.util.List;
 @Transactional
 public class ClientServiceImpl implements ClientService {
 
-    @Autowired
-    private ClientDao client;
+//    @Autowired
+//    private ClientDao clientDao;
 
     public ClientServiceImpl() {
     }
@@ -44,7 +44,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Transactional
     public List<Client> listClient() {
-        return client.listClient();
+        return clientDao.listClient();
     }
 
     @Transactional
@@ -53,7 +53,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Transactional
-    public Client findClilent(String name) {
+    public Client findclilent(String name) {
         List<Client> list;
         list = clientDao.listClient();
         for(Client client : list){

@@ -9,14 +9,15 @@ import java.util.Set;
 @Table(name = "Clients")
 public class Client {
     @Id
-    @SequenceGenerator(name = "sequence", sequenceName = "SEQ_CLIENT_ID", allocationSize = 1)
+    @SequenceGenerator(name = "sequence", sequenceName = "SEQ_CLIENT_ID", initialValue = 1, allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
+    @Column(name = "ID")
     private Long id;
 
     @Column(name = "Client_name")
     private String name;
 
-    @Column(name  = "Client_surname")
+    @Column(name = "Client_surname")
     private String surname;
 
     @Column(name = "phone_number")
@@ -57,6 +58,14 @@ public class Client {
         this.surname = surname;
         this.phoneNumber = phoneNumber;
         this.address = address;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -113,6 +122,20 @@ public class Client {
 
     public void setOrders(Set<Order> orders) {
         this.orders = orders;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", address='" + address + '\'' +
+                ", totalMoneyAmount=" + totalMoneyAmount +
+                ", lastOrderDate=" + lastOrderDate +
+                ", orders=" + orders +
+                '}';
     }
 }
 
