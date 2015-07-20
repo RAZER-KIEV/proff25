@@ -14,7 +14,7 @@
 <body>
 <fieldset>
   <legend>Registration</legend>
-<form action="/addUser" method="post">
+<form action="/registerOper" method="post">
   <p>Login: <input type="text" name="login"/> должен быть не менее 4 символов, не должен содержать пробелы</p>
   <p>INN: <input type="text" name="inn"/> идентификационный номер (10 цифр, без букв и других знаков) </p>
   <p>Password: <input type="password" name="password"/> должен быть не менее 8 символов, включать большие и маленькие буквы, цифры</p>

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpSession;
 import java.util.Locale;
 
 /**
@@ -92,5 +93,18 @@ public class RegisterController {
         return "operator";
     }
 
+    @RequestMapping(value = "/registerOper", method = RequestMethod.POST)
+    public String addUser(@RequestParam("login")String login, @RequestParam("password")String password, @RequestParam("passwordConfirm")String passwordConfirm,
+                          @RequestParam("inn")String inn, HttpSession session){
+        if(authenticationService.searchByLogin(login)==(null)&password.equals(passwordConfirm)){
+            Operator opr = new Operator(login,password,inn);
+            authenticationService.create(opr);
+            session.setAttribute("login", login);
+            session.setAttribute("operator", opr);
+            return "dashboard";
 
+        }else
+            return "index";
+
+    }
 }
