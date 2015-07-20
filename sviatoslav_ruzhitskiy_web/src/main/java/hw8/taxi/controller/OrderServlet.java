@@ -22,7 +22,7 @@ import java.util.Locale;
  */
 @Controller
 @SessionAttributes("id")
-public class OrderController{
+public class OrderServlet {
 
     @Autowired
     OrderService orderService;
@@ -30,7 +30,7 @@ public class OrderController{
     @Autowired
     ClientService clientService;
 
-    public OrderController() {
+    public OrderServlet() {
     }
 
     @PostConstruct
