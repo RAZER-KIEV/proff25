@@ -9,6 +9,6 @@ import java.util.List;
 public interface ClientService {
     public void addClient(Client client);
     public List<Client> listClient();
-    public void removeClient(Integer id);
-    public Client findclilent(String name);
+    public void removeClient(Long id);
+    public Client findClient(String name);
 }

@@ -2,7 +2,6 @@ package web.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import org.springframework.transaction.annotation.Transactional;
 import web.dao.ClientDao;
 import web.domain.Client;
@@ -30,16 +29,16 @@ public class ClientServiceImpl implements ClientService {
         return clientDao;
     }
 
+    @Autowired
     public void setClientDao(ClientDao clientDao) {
         this.clientDao = clientDao;
     }
 
-    @Autowired
     private ClientDao clientDao;
 
     @Transactional
     public void addClient(Client client) {
-        clientDao.addClient(client);
+        clientDao.create(client);
     }
 
     @Transactional
@@ -48,16 +47,17 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Transactional
-    public void removeClient(Integer id) {
-
+    public void removeClient(Long id) {
+        clientDao.delete(clientDao.read(id));
     }
 
     @Transactional
-    public Client findclilent(String name) {
-        List<Client> list;
-        list = clientDao.listClient();
-        for(Client client : list){
-            if(client.getName().equals(name))return client;
+    public Client findClient(String name) {
+        List<Client> listClients = clientDao.findClientByName(name);
+        for (Client client : listClients) {
+            if (client.getName().equals(name)) {
+                return client;
+            }
         }
         return null;
     }

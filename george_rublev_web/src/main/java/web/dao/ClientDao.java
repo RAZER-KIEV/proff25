@@ -6,9 +6,11 @@ import java.util.List;
  * Created by george on 13.07.15.
  */
 public interface ClientDao {
-    void addClient(Client client);
+    Long create(Client client);
+    Client read(Long id);
+    boolean update(Client client);
+    boolean delete(Client client);
     List<Client> listClient();
-    void removeClient(Integer id);
-    Client findClient(String name);
+    List<Client> findClientByName(String name);
     boolean cliendFind(String name);
 }

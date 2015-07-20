@@ -19,7 +19,7 @@
             <h4>система управления службой такси</h4>
         </td>
         <td align="right">
-            User:
+            User: ${loginId}
         </td>
     </tr>
 </table>
