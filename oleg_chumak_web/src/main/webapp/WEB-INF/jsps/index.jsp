@@ -4,11 +4,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title></title>
+  <title></title>
 </head>
 <body>
-<p>${message}</p>
-<form action="/request.html" method="post">
+<form action="/request.html" method="get">
   <table>
     <tr>
       <td>Login</td>
@@ -16,7 +15,7 @@
     </tr>
     <tr>
       <td>Password</td>
-      <td><input type="password" name="password"></td>
+      <td><input type="text" name="password"></td>
     </tr>
     <tr>
       <td>

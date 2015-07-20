@@ -30,7 +30,7 @@ public class MainController {
 
     /*
     Autor: Алексей
-    для теста Дешбоарда
+    точка входа
      */
     @RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.HEAD})
     public String main() {
@@ -198,45 +198,31 @@ public class MainController {
         model.addAttribute("operatorsList", list);
         return "operators";
     }
-    /* Autor: Alexandr Omelchenko
-     Operator Redactor
-     */
-    @RequestMapping(value = "/changeOperator.html", method = {RequestMethod.GET})
-    public String toredactOper(Model model){
-        model.addAttribute("message", "Введите данные для редактирования.");
-        log.info("/changeOperator controller");
-        return "redactorOperator";
-    }
-    @RequestMapping(value = "/redactOperator.html", method = {RequestMethod.GET})
-    public String redactorOper
-            (@RequestParam("oldLogin") String oldLogin,
-             @RequestParam("newLogin") String newLogin,
-             @RequestParam("pass") String pass,
-             @RequestParam("indNum") Long indNum,
-             @RequestParam("prevpass") String prevpass,
-             @RequestParam("lastChangeDate") LocalDateTime lastChangeDate,
-             @RequestParam("isblocked") Boolean isblocked,
-             @RequestParam("unsuccTries") Long unsuccTries,
-             Model model) {
-        Operator operator = service.readOperator(oldLogin);
-        if (operator == null) {
-            log.info("/redactOperator controller");
-            model.addAttribute("message", "Неверное имя оператора! Повторите попытку.");
-            return "redactorOperator";
+
+//    Autor : Oleg
+//    handling operators
+
+    @RequestMapping(value = "/request.html", method = RequestMethod.POST)
+    public String medium(@RequestParam("login") String login, @RequestParam("password") String password, Model model) {
+        log.info("/request.html controller");
+        if (authenticate(login,password, service.findAllOperators())) {
+            return "dashboard";
         }
         else {
-            operator.setLogin(newLogin);
-            operator.setPassword(pass);
-            operator.setIndividualTaxpayerNumber(indNum);
-            operator.setPreviousPassword(prevpass);
-            operator.setLastPasswordChangeDate(lastChangeDate);
-                operator.setIsBlocked(isblocked);
-
-            operator.setUnsuccessfulLoginTries(unsuccTries);
-            service.updateOperator(operator);
-            log.info("/redactOperator controller");
-            model.addAttribute("message", "Редактирование прошло успешно!");
-            return "redactorOperator";
+            model.addAttribute("message", "несуществующий аккаунт или неверный пароль, попробуйте еще разок");
+            return "error";
         }
     }
+
+    private static boolean authenticate(String login, String password, List<Operator> operators){
+        for (Operator operator1 : operators) {
+            if (operator1.getLogin().equals(login)) {
+                if (operator1.getPassword().equals(password)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 }
