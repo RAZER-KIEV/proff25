@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import taxi.domain.Client;
 import taxi.domain.Operator;
+import taxi.domain.Role;
 import taxi.domain.TaxiDriver;
 import taxi.service.TService;
 
@@ -34,7 +35,7 @@ public class MainController {
      */
     @RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.HEAD})
     public String main() {
-        return "dashboard";
+        return "index";
     }
 
     /*
@@ -224,5 +225,4 @@ public class MainController {
         }
         return false;
     }
-
 }
