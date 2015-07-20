@@ -1,11 +1,13 @@
 package web.domain;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
 
 /**
  * Created by george on 13.07.15.
  */
-
+@Component
 @Entity
 @Table(name = "CLIENT")
 public class Client {
