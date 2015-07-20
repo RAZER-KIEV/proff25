@@ -18,6 +18,8 @@ public interface OrderDao {
 
     List listChunk(int startPoint, int chunkSize);
 
+    List listAll();
+
     long getListSize();
 
 }

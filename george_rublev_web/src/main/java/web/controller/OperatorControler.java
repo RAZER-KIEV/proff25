@@ -27,25 +27,25 @@ public class OperatorControler {
     @Autowired
     private OperatorService serviceO;
 
-//    @RequestMapping(value = "/dashboard.html", method = RequestMethod.GET)
-//    public String great(@RequestParam("login") String name,@RequestParam("paswwd") String paswd, Model model, HttpSession session) {
-//        log.info("/dashboard.html controller");
-//
-//        List<Operator> client;
-//
-//        client = serviceO.listOperator();
-//        for(Operator c: client){
-//            if(c.getLogin().equals(name) && c.getPassword().equals(paswd)){
-//                try{
-//                    model.addAttribute("operatorList",serviceO.listOperator());
-//                    return "dashboard";
-//                }catch (HibernateException e){
-//
-//                }
-//
-//            }
-//        }
-//        return "clients";
-//    }
+    @RequestMapping(value = "/operator.html", method = RequestMethod.GET)
+    public String great(@RequestParam("login") String name,@RequestParam("paswwd") String paswd, Model model, HttpSession session) {
+        log.info("/dashboard.html controller");
+
+        List<Operator> client;
+
+        client = serviceO.listOperator();
+        for(Operator c: client){
+            if(c.getLogin().equals(name) && c.getPassword().equals(paswd)){
+                try{
+                    model.addAttribute("operatorList",serviceO.listOperator());
+                    return "dashboard";
+                }catch (HibernateException e){
+
+                }
+
+            }
+        }
+        return "clients";
+    }
 
 }

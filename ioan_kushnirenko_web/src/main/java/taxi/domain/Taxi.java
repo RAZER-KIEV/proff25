@@ -8,26 +8,27 @@ import javax.persistence.*;
 @Entity
 @Table(name = "DRIVERS")
 public class Taxi {
-        @Id
-        @SequenceGenerator(name = "sequence", sequenceName = "DRIVERS_SEQ",
-                allocationSize = 1)
-        @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
-        @Column(name = "id")
-        private Long id;
+    @Id
+    @SequenceGenerator(name = "sequence", sequenceName = "DRIVERS_SEQ",
+            allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
+    @Column(name = "id")
+    private Long id;
 
-        @Column(name = "name")
-        private String name;
+    @Column(name = "name")
+    private String name;
 
-        @Column(name = "phone")
-        private String tel;
+    @Column(name = "phone")
+    private String tel;
 
-        @Column(name = "CAR_MODEL")
-        private String modelCar;
+    @Column(name = "CAR_MODEL")
+    private String modelCar;
 
-        @Column(name = "CAR_NUMBER")
-        private String numberCar;
+    @Column(name = "CAR_NUMBER")
+    private String numberCar;
 
-    public Taxi() {}
+    public Taxi() {
+    }
 
     public Taxi(String name, String tel, String modelCar, String numberCar) {
         this.name = name;
@@ -75,4 +76,11 @@ public class Taxi {
     public void setNumberCar(String numberCar) {
         this.numberCar = numberCar;
     }
+
+    @Override
+    public String toString() {
+        return new String("Drivers name: "+name+"; Phone: "+tel+"; Car: "+modelCar+
+                "; Number: "+numberCar+".");
+    }
+
 }

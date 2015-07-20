@@ -37,6 +37,8 @@ public class DashboardController {
     public String great(@RequestParam("login") String name,@RequestParam("paswwd") String paswd, Model model, HttpSession session) {
         log.info("/dashboard.html controller");
 
+
+
         List<Client> client;
         client = clientS.listClient();
         for(Client c: client){

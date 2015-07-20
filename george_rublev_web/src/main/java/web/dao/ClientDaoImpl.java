@@ -15,34 +15,48 @@ import java.util.List;
 public class ClientDaoImpl implements ClientDao {
 
     @Autowired
-    private SessionFactory factory;
+    private SessionFactory sessionFactory;
 
     public ClientDaoImpl() {
     }
 
     public ClientDaoImpl(SessionFactory sessionFactory){
-        this.factory = sessionFactory;
+        this.sessionFactory = sessionFactory;
     }
 
     @Override
-    public void addClient(Client client) {
+    public Long create(Client client) {
+        return (Long)sessionFactory.getCurrentSession().save(client);
+    }
 
+    @Override
+    public Client read (Long id){
+        return (Client)sessionFactory.getCurrentSession().get(Client.class, id);
+    }
+
+    @Override
+    public boolean update(Client client){
+        sessionFactory.getCurrentSession().update(client);
+        return true;
+    }
+
+    @Override
+    public boolean delete(Client client) {
+        sessionFactory.getCurrentSession().delete(client);
+        return true;
     }
 
     @Override
     public List<Client> listClient() {
-        Query query = factory.getCurrentSession().createQuery("from Client");
+        Query query = sessionFactory.getCurrentSession().createQuery("from web.domain.Client");
         return query.list();
     }
 
     @Override
-    public void removeClient(Integer id) {
-
-    }
-
-    @Override
-    public Client findClient(String name) {
-        return null;
+    public List<Client> findClientByName(String name) {
+        Query query = sessionFactory.getCurrentSession().createQuery("select c from web.domain.Client c where c.name = name");
+        query.setParameter(name,"name");
+        return query.list();
     }
 
     @Override

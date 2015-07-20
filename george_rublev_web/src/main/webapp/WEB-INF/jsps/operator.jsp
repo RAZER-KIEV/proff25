@@ -11,6 +11,10 @@
     <title></title>
 </head>
 <body>
-
+<form action="/dashboard.html" method="get" >
+  <input type="text" name="login" value="Login" align="centre"/>
+  <input type="password" name="paswwd" value="password"/>
+  <input type="submit" value="send"/>
+</form>
 </body>
 </html>

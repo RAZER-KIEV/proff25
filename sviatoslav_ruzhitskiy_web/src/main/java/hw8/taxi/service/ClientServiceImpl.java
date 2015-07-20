@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -27,7 +28,7 @@ public class ClientServiceImpl implements ClientService{
     @Override
     public boolean createClient(String name, String surname, String phone, String address) throws OrderException {
         Client client = new Client(name,surname,phone,address);
-        if(!(clientDao.create(client).equals(null))){
+        if(!(clientDao.create(client)==null)){
         return true;
        }
         return false;
@@ -39,8 +40,20 @@ public class ClientServiceImpl implements ClientService{
         }
 
         @Override
-    public List showClientsByPortion(int portionSize) {
-        return  clientDao.showClientsByPortion(portionSize);
+        public List showClientsByPortion(int portionSize) {
+                List<Client> clientList = new ArrayList<>();
+                Long size= clientDao.getDBSize();
+
+                for (int i=0; i<size; i+=portionSize ){
+                        List<Client> orderListBuff=new ArrayList<>();
+                        orderListBuff=clientDao.showClientsByPortion(i, portionSize);
+                        clientList.addAll(orderListBuff);
+
+                }
+                for (Client client:clientList){
+                        System.out.println(client);
+                }
+                return clientList;
     }
 
     @Override
@@ -52,7 +65,9 @@ public class ClientServiceImpl implements ClientService{
     public List showClientsLastMonth() {
         return clientDao.showClientsLastMonth();
     }
+
 // -----------------CLIENT GENERATOR ---------------------!
+
     private String names="Luna Tibbetts  \n" +
             "Jessi Huerta  \n" +
             "Marilynn Burnette  \n" +

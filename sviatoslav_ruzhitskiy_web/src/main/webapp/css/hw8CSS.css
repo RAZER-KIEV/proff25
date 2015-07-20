@@ -1,11 +1,14 @@
 body{
     background: url(/image/taxi2.jpg);
     margin: 40px 40px 40px 40px;
+    font: large Verdana,sans-serif;
 }
 form {
     align-content: center;
     align-items: center;
-   /*border: 5px solid skyblue;*/
+   /* border: 5px solid black;*/
+    width: auto;
+   /* padding: 15px;*/
 
 }
 table, td {
@@ -14,3 +17,23 @@ table, td {
 
 }
 
+button, input {
+    padding: 10px;
+    margin-right: 8px;
+    margin-bottom:10px;
+    font-family: Arial, Tahoma, Verdana, FreeSans, sans-serif;
+    text-shadow:0 1px 1px rgba(0, 0, 0, 0.25);
+    display: inline-block;
+    white-space: nowrap;
+    line-height:1em;
+    position:relative;
+    outline: none;
+    overflow: visible;
+    cursor: pointer;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius:4px;
+    box-shadow:1px 1px 2px 0 #DFE158;
+    -moz-box-shadow: 1px 1px 2px 0 #DFE158;
+    -webkit-box-shadow: 1px 1px 2px 0 #DFE158;
+}

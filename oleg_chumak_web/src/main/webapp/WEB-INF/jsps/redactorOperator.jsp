@@ -5,12 +5,12 @@
     <title>OperatorRedactor</title>
 </head>
 <body>
-<h3>${message}</h3>
+<h3>${mess}</h3>
 <form action="/redactOperator.html" method="GET">
 
   <table>
     <tr>
-      <td>Old Login</td>
+      <td>Login</td>
       <td><input type="text" name="oldLogin"></td>
     </tr>
     <tr>
@@ -40,6 +40,10 @@
     <tr>
       <td>Unsuccessful Login Tries</td>
       <td><input type="number" name="unsuccTries"></td>
+    </tr>
+    <tr>
+      <td>Admin role</td>
+      <td><input type="checkbox" name="role" value="true"></td>
     </tr>
     <tr>
       <td>

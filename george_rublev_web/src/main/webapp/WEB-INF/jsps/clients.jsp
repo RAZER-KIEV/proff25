@@ -14,11 +14,11 @@
 </head>
 <body>
 <table border="0" align="centre" TITLE="CLIENT" width="70%">
-  <tr>
+  <%--<tr>--%>
 
-    <td><h2>Taxi's clients</h2></td>
+    <%--<td><h2>Taxi's clients</h2></td>--%>
 
-  </tr>
+  <%--</tr>--%>
   <tr>
     <td align="centre">
 

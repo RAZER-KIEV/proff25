@@ -6,8 +6,9 @@ import org.springframework.transaction.annotation.Transactional;
 import web.dao.OperatorDao;
 import web.domain.Operator;
 
-//import javax.transaction.Transactional;
 import java.util.List;
+
+//import javax.transaction.Transactional;
 
 /**
  * Created by george on 16.07.15.
@@ -16,7 +17,7 @@ import java.util.List;
 @Transactional
 public class OperatorServiceImpl implements OperatorService {
 
-    @Autowired
+
     private OperatorDao operatorDao;
 
     public OperatorServiceImpl() {
@@ -30,6 +31,7 @@ public class OperatorServiceImpl implements OperatorService {
         return operatorDao;
     }
 
+    @Autowired
     public void setOperatorDao(OperatorDao operatorDao) {
         this.operatorDao = operatorDao;
     }
@@ -58,8 +60,8 @@ public class OperatorServiceImpl implements OperatorService {
     public Operator findOperator(String name) {
         List<Operator> list;
         list = (List<Operator>) operatorDao.listOperator();
-        for(Operator operator : list){
-            if(operator.getLogin().equals(name))return operator;
+        for (Operator operator : list) {
+            if (operator.getLogin().equals(name)) return operator;
         }
         return null;
     }

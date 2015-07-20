@@ -4,18 +4,12 @@ package hw4.parallel;
 import org.junit.*;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 /**
  * Created by ivan on 12.07.15.
  */
-/*
-В тестах проверить поиск:
-- элемента со значением null
- */
-
-public class MyArrayListTest extends Assert {
+public class MyArrayListTestCopy extends Assert {
 
     private MyArrayList<Integer> normalList;
     private MyArrayList<Integer> emptyList;

@@ -39,7 +39,9 @@ public class OperatorDaoImpl implements OperatorDao {
 
     @Override
     public Operator read(String login) {
-        return (Operator) factory.getCurrentSession().get(Client.class, login);
+        Query query = factory.getCurrentSession().createQuery("from Operator as o where o.login=:login");
+        query.setParameter("login", login);
+        return (Operator) query.uniqueResult();
     }
 
     @Override
