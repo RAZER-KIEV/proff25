@@ -24,6 +24,17 @@ Logining retry: <%=count%>
   <input type="submit" name="register" value="Registeration">
 </form>
 </body>
+<script src="js/script.js">
+</script>
+<span id="spn">
+<p id="myP">No</p>
+<p><input type="text" name="text1" /></p>
+<p><input type="text" name="text2" /></p>
+<button onclick="check">Check</button></p>
+</span>
+
+<script src="js/script.js">
+    </script>
 </html>
 <center>
   <h2 style="color:white">Authentication!</h2>

@@ -1,5 +1,9 @@
 <%--
-  список клиентов
+  Created by IntelliJ IDEA.
+  User: User
+  Date: 17.07.2015
+  Time: 13:35
+  To change this template use File | Settings | File Templates.
 --%>
 
 <%@ page import="taxi.domain.Client" %>
@@ -8,6 +12,7 @@
 <html>
 <head>
   <title>Clients list</title>
+
 </head>
 <body>
 <%List<Client> clients = (List<Client>)request.getAttribute("clientList");
@@ -30,12 +35,12 @@
   %>
   <tr>
     <td><% out.println(client.getId());%></td>
-    <td><% out.println(client.getName());%></td>
-    <td><% out.println(client.getSurname());%></td>
-    <td><% out.println(client.getPhoneNumber());%></td>
-    <td><% out.println(client.getAddress());%></td>
-    <td><% out.println(client.getTotalMoneyAmount());%></td>
-    <td><% out.println(client.getLastOrderDate());%></td>
+    <td><% out.println(client.getFirstname());%></td>
+    <td><% out.println(client.getLastname());%></td>
+    <td><% out.println(client.getPhone());%></td>
+    <td><% out.println(client.getAdress());%></td>
+    <td><% out.println(client.getCash());%></td>
+    <td><% out.println(client.getDateLastOrder());%></td>
   </tr>
 
   <%}%>

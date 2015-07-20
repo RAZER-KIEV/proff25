@@ -92,6 +92,6 @@ public class TaxiDaoImpl implements TaxiDao {
     @Override
     public List<Taxi> findAll() {
         Session session = factory.openSession();
-        return session.createQuery("from DRIVERS").list();
+        return session.createQuery("from taxi.domain.Taxi").list();
     }
 }

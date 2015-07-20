@@ -28,7 +28,7 @@ public class RegisterController {
         Locale.setDefault(Locale.ENGLISH);
     }
 
-    @RequestMapping(value = "/register.html", method = RequestMethod.POST)
+    @RequestMapping(value = "/register.html", method = RequestMethod.GET)
     public
     String registerForm(Model model) {
         log.info("/register.html controller");

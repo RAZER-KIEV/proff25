@@ -54,18 +54,18 @@ public class TaxiServiceController {
 
 
 
-        User autorizedUser = userManager.auth(login, password);
+      //  User autorizedUser = userManager.auth(login, password);//
 
 
-        if (autorizedUser == null) {
+     //   if (autorizedUser == null) {
 
             model.addAttribute("errorMassage", "Ошибка авторизации");
             return "login";
         }
 
-        model.addAttribute("user", autorizedUser);
-        return "dashboard";
+      //  model.addAttribute("user", autorizedUser);
+        //return "dashboard";
 
     }
 
-}
+//}

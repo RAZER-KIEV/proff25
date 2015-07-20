@@ -6,6 +6,6 @@ package hw8.taxi.exception;
 public class OrderException extends Exception {
     @Override
     public String toString(){
-        return "Order error!";
+        return "Incorrect input data!";
     }
 }

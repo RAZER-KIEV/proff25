@@ -11,11 +11,19 @@
 <html>
 <head>
   <title>Exercises</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css"></link>
 </head>
 <body>
 <p>${Error}</p>
-<form action = "/dashboard.html" method="GET">
+<form action = "/client.html" method="GET">
+  <%!
+
+  %>
+
+  <%
+  %>
+
+
   <fieldset>
     <legend>Registration:</legend>
     Your login: <input type="text" name = "login" value = ""/><br/>

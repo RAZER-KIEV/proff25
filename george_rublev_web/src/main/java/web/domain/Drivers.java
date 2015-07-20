@@ -10,7 +10,7 @@ import javax.persistence.Table;
 /**
  * Created by george on 20.07.15.
  */
-@Component
+
 @Entity
 @Table(name = "DRIVERS")
 public class Drivers {
@@ -18,7 +18,7 @@ public class Drivers {
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "car_number")
+    @Column(name = "car_num")
     private String carNum;
 
     @Column(name = "name")

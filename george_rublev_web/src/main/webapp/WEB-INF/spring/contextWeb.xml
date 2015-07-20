@@ -19,8 +19,4 @@
     <mvc:resources mapping="/**" location="/"/>
     <mvc:annotation-driven/>
 
-    <bean id="str" class="java.lang.String">
-        <constructor-arg value="Hello"/>
-    </bean>
-
 </beans>
