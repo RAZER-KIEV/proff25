@@ -59,7 +59,7 @@ public class OrderServiceImpl implements OrderService {
         List<Order> orderList = new ArrayList<>();
         boolean flag=true;
         for (int i=0; flag==true; i+=portionsize ){
-            List<Order> orderListBuff=null;
+            List<Order> orderListBuff=new ArrayList<>();
             orderListBuff=orderDao.findAllbyPortion(i, i + portionsize);
             if(orderListBuff.isEmpty()){flag=false;}
            else orderList.addAll(orderListBuff);

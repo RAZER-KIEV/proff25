@@ -54,6 +54,13 @@ public class ClientDaoImpl implements ClientDao{
     }
 
     @Override
+    public Long getDBSize() {
+        Long size = (Long) sessionFactory.getCurrentSession().createQuery("select COUNT(c.id) from Client c").uniqueResult();
+        System.out.println("getDBSize: "+size);
+        return size;
+    }
+
+    @Override
     public List findAll() {
         List<Client> operators;
         Query query = sessionFactory.getCurrentSession().createQuery("from Client");
@@ -62,29 +69,13 @@ public class ClientDaoImpl implements ClientDao{
     }
 
     @Override
-    public List showClientsByPortion(int portionSize) {
-        Query query;
-        List<Client> clientList = new ArrayList<>();
-        List<Client> bufferList = new ArrayList<>();
-        int start = 0;
-        do {
-            Session session = sessionFactory.openSession();
-            bufferList.clear();
-
-            try {
-                query = session.createQuery("from Client");
-                query.setFirstResult(start);
-                query.setMaxResults(portionSize);
-                clientList.addAll(query.list());
-                bufferList.addAll(query.list());
-            } finally {
-                start += portionSize;
-                if (session != null) {
-                    session.close();
-                }
-            }
-        } while (bufferList == null);
-        return clientList;
+    public List showClientsByPortion(int start, int portionSize) {
+        Query query = sessionFactory.getCurrentSession().createQuery("from Client");
+        query.setFirstResult(start);
+        query.setMaxResults(portionSize);
+        List<Client> clients = new ArrayList<>();
+        clients = query.list();
+          return clients;
 
     }
 
@@ -94,6 +85,11 @@ public class ClientDaoImpl implements ClientDao{
         Session session = sessionFactory.openSession();
         Query query=session.createQuery("from Client c where c.summ>:sum");
         query.setParameter("sum", sumD);
+        List<Client> clients= new ArrayList<>();
+        clients = query.list();
+                for(Client cl: clients){
+                    System.out.println(cl);
+                }
         return query.list();
     }
 

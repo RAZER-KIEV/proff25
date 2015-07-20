@@ -25,7 +25,7 @@ public class ClientController {
 
     public static final Logger log = Logger.getLogger(ClientController.class);
 
-    private Integer portionSize=10;
+    private Integer portionSize=1;
 
     @Autowired
     private ClientService clientService;

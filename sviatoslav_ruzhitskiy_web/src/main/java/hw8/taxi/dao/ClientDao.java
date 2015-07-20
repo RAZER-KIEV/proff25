@@ -14,8 +14,9 @@ public interface ClientDao {
     boolean update(Client client);
     boolean delete(Client client);
     Client searchByLogin(String login);
+    Long getDBSize();
     List findAll();
-    List showClientsByPortion(int portionSize);
+    List showClientsByPortion(int start, int portionSize);
     List showClientsGtSum(int sum);
     List showClientsLastMonth();
 }

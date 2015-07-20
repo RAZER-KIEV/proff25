@@ -8,7 +8,7 @@
 </head>
 <body>
 <p>${message}</p>
-<form action="/request.html" method="post">
+<form action="auth" method="post">
   <table>
     <tr>
       <td>Login</td>
@@ -24,6 +24,9 @@
       </td>
     </tr>
   </table>
+</form>
+<form action="/register.html" method="get">
+  <input type="submit" value="Register">
 </form>
 </body>
 </html>
