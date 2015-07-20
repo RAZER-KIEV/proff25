@@ -77,7 +77,10 @@
         <br/>
     </fieldset>
 </form>
-
+<%
+    Boolean isAdmin = (Boolean) request.getAttribute("isAdmin");
+    if (isAdmin) {
+%>
 <form method="post" class="style1">
     <fieldset name="grpAdmin">
         <legend>Admin panel</legend>
@@ -95,6 +98,8 @@
         <br/>
     </fieldset>
 </form>
-
+<%
+    }
+%>
 </body>
 </html>
