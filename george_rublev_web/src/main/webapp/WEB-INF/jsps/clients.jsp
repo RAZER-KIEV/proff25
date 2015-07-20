@@ -29,10 +29,5 @@
     </td>
   </tr>
 </table>
-<%--<form action="/dashboard.html" method="get" >--%>
-  <%--<input type="text" name="login" value="Login"/>--%>
-  <%--<input type="password" name="paswwd" value="password"/>--%>
-  <%--<input type="submit" value="send"/>--%>
-<%--</form>--%>
 </body>
 </html>

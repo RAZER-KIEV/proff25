@@ -7,6 +7,7 @@
 --%>
 <%@ page import="web.domain.Client"%>
 <%@ page import="java.util.List" %>
+<%@ page import="web.domain.Operator" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -14,9 +15,16 @@
 </head>
 <body>
 <%--<H2>Dashboard new</H2>--%>
+<%--<%Operator operator = (Operator) request.getAttribute("operator");%>--%>
+<%--<br>--%>
+<%--<% if(operator.getStatus().equals("admin")){%>--%>
 
+  <h2>ADMIN ON</h2>
+<%--<%} %>--%>
+<br>
 <%List<Client> clients = (List<Client>)request.getAttribute("clientList");
   if (clients!=null){%>
+
 <table title="CLIENTS" width="80%" border="1" align="center">
   <caption><H1>Clients of Taxi</H1></caption>
   <thead>
@@ -38,6 +46,8 @@
   <%}%>
 </table>
 <%} %>
+<br>
+<jsp:include page="index.jsp"></jsp:include>
 
 </body>
 </html>

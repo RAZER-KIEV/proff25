@@ -47,17 +47,24 @@ public class HelloController {
 
     @RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.HEAD})
     public String index(Model model) {
-        log.info("/index controller");
+        log.info("/dashboard controller");
         model.addAttribute("name", "al1");
-        return "index";
+        return "dashboard";
     }
 
     @RequestMapping(value = "/client.html", method = {RequestMethod.GET})
     public String client (@RequestParam("login") String name, Model model, HttpSession session) {
         log.info("/client.html controller");
-        model.addAttribute("nameLogin", "name");
+//        model.addAttribute("nameLogin", "name");
 
-        return "index";
+        return "dashboard.jsp";
     }
 
+    @RequestMapping(value = "/dashboard.html", method = {RequestMethod.GET})
+    public String dashboard(@RequestParam("login") String name, Model model, HttpSession session) {
+        log.info("/dashboard.html controller");
+//        model.addAttribute("nameLogin", "name");
+
+        return "dashboard";
+    }
 }
