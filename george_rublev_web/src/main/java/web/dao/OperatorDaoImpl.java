@@ -24,23 +24,35 @@ public class OperatorDaoImpl implements OperatorDao {
     }
 
     @Override
-    public void addOperator(Operator operator) {
+    public Long create(Operator operator) {
+        return (Long)sessionFactory.getCurrentSession().save(operator);
+    }
 
+    @Override
+    public Operator read(Long id){
+        return (Operator)sessionFactory.getCurrentSession().get(Operator.class,id);
+    }
+
+    @Override
+    public boolean update(Operator operator){
+        sessionFactory.getCurrentSession().update(operator);
+        return true;
+    }
+
+    @Override
+    public boolean delete(Operator operator) {
+        sessionFactory.getCurrentSession().delete(operator);
+        return true;
     }
 
     @Override
     public Operator findOperatorByName(String name) {
-        return (Operator) sessionFactory.getCurrentSession().createQuery("select o from operator o where o.login = name");
-    }
-
-    @Override
-    public void removeOperator(Integer id) {
-
+        return (Operator) sessionFactory.getCurrentSession().createQuery("select o from web.domain.Operator o where o.login = name");
     }
 
     @Override
     public List listOperator() {
-        Query query = sessionFactory.getCurrentSession().createQuery("from OPERATOR");
+        Query query = sessionFactory.getCurrentSession().createQuery("from web.domain.Operator");
         return query.list();
     }
 }

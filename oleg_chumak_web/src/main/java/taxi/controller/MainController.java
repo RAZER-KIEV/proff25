@@ -80,9 +80,12 @@ public class MainController {
     Загружает страницу меню в Dashboard
      */
     @RequestMapping(value = "/menu.html", method = {RequestMethod.GET})
-    public String getMenuPage(HttpSession session) {
+    public String getMenuPage(Model model, HttpSession session) {
         if (!isAuth(session))
             return "index";
+        Operator operator = service.readOperator((String) session.getAttribute("loginId"));
+        Boolean isAdmin = operator.getRole().isAdminPanelVisible();
+        model.addAttribute("isAdmin", isAdmin);
         return "menu";
     }
 
