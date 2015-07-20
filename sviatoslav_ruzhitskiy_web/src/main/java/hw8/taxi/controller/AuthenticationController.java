@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import javax.annotation.PostConstruct;
 import javax.naming.AuthenticationException;
 import javax.servlet.http.HttpSession;
+import java.io.PrintWriter;
 import java.util.Locale;
 
 /**
@@ -47,10 +48,10 @@ public class AuthenticationController {
 
     @RequestMapping(value = "/auth", method = RequestMethod.POST)
     public String auth(@RequestParam("login") String login, @RequestParam("password") String password, Model model, HttpSession session) throws AuthenticationException {
-        Operator operator;
        if(authenticationService.authenticate(login, password)){
            log.debug("Its Ok Operator found");
-
+           Operator operator = authenticationService.searchByLogin(login);
+           session.setAttribute("operator",operator);
            session.setAttribute("operlogin", login);
            return "dashboard";
        }else{

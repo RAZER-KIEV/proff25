@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -39,8 +40,16 @@ public class ClientServiceImpl implements ClientService{
         }
 
         @Override
-    public List showClientsByPortion(int portionSize) {
-        return  clientDao.showClientsByPortion(portionSize);
+        public List showClientsByPortion(int portionSize) {
+                List<Client> clientList = new ArrayList<>();
+                boolean flag=true;
+                for (int i=0; i<clientDao.getDBSize(); i+=portionSize ){
+                        List<Client> orderListBuff=new ArrayList<>();
+                        orderListBuff=clientDao.showClientsByPortion(i, i + portionSize);
+                        if(!orderListBuff.isEmpty()){flag=false;}
+                        else clientList.addAll(orderListBuff);
+                }
+                return clientList;
     }
 
     @Override
@@ -52,7 +61,9 @@ public class ClientServiceImpl implements ClientService{
     public List showClientsLastMonth() {
         return clientDao.showClientsLastMonth();
     }
+
 // -----------------CLIENT GENERATOR ---------------------!
+
     private String names="Luna Tibbetts  \n" +
             "Jessi Huerta  \n" +
             "Marilynn Burnette  \n" +

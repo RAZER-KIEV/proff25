@@ -15,9 +15,9 @@
 </head>
 <body>
 <h1>CLIENT REGISTERATION PAGE</h1>
-
 <p>STATUS: <%= request.getAttribute("status") %></p>
-
+<fieldset>
+  <legend>Create new Client</legend>
 <form action="/createClient" method="post">
   <p>Name: <input type="text" name="name"/> </p>
   <p>Sur name: <input type="text" name="surname"/>  </p>
@@ -26,9 +26,6 @@
     <input type="submit" name="createClient" value="Create Client!"/>
   <button formaction="/backToDashboard"  type="submit" formmethod="post" name="BacktoDASHBOARD" value="Back to DASHBOARD!">Back to DASHBOARD!</button>
 </form>
-
-
-
-
+</fieldset>
 </body>
 </html>

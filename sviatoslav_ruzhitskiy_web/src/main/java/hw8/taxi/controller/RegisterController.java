@@ -25,13 +25,14 @@ import java.util.Locale;
 @Controller
 @SessionAttributes("id")
 public class RegisterController {
+
     @Autowired
-    private OperatorDao operatorDao;
+    private AuthenticationService authenticationService;
 
     @Autowired
     private AuthorizationService authorizationService;
 
-    //public static final Logger log = Logger.getLogger(RegisterController.class);
+    public static final Logger log = Logger.getLogger(AuthorizationService.class);
 
     @PostConstruct
     public void init(){
@@ -55,5 +56,41 @@ public class RegisterController {
     public String backToDashboard(){
         return "dashboard";
     }
+
+    @RequestMapping(value = "/showOperators", method = RequestMethod.POST)
+    public String showOperators(Model model){
+        model.addAttribute("list",authenticationService.findAll());
+         return "operators";
+    }
+
+    @RequestMapping(value = "/createEditOperator", method = RequestMethod.POST)
+    public String createEditOperator(@RequestParam("id")String id,@RequestParam("login") String login, @RequestParam("inn") String inn, @RequestParam("password") String password,
+                                     @RequestParam("isBlocked")String isBlocked, @RequestParam("isSuperAdmin") String isSuperAdmin, @RequestParam("wrongPass") String wrongPass, Model model ){
+        Operator opr = authenticationService.read(Long.parseLong(id));
+         if(opr!=null){
+            log.info("Operator exist. Updating...");
+             model.addAttribute("message","Operator already exist. Updated");
+         }else {
+             log.info("Operator not exist. Creating...");
+             model.addAttribute("message", "Operator was not exist. Created new one!");
+         }
+            if(login!=null) opr.setLogin(login);
+            if(inn!=null) opr.setInn(inn);
+            if(password!=null)opr.setPassword(password);
+            if(isBlocked!=null)opr.setIsBlocked(false);
+            if(isSuperAdmin!=null)opr.setIsSuperAdmin(false);
+            if(wrongPass!=null)opr.setWrongPass(Integer.parseInt(wrongPass));
+        authenticationService.update(opr);
+
+
+
+        return "operator";
+    }
+
+    @RequestMapping(value = "/goToCreateUpdateOperator", method = RequestMethod.POST)
+    public String goToCreateUpdateOperator(){
+        return "operator";
+    }
+
 
 }
