@@ -8,6 +8,7 @@
 <html>
 <head>
     <title>operators</title>
+    <link rel ="stylesheet" href=${style}>
 </head>
 <body>
 <%List<Operator> operators = (List<Operator>)request.getAttribute("operatorsList");
