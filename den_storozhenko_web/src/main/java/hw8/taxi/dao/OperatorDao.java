@@ -19,4 +19,5 @@ public interface OperatorDao {
     boolean register(String login, String pass, String id);
     List getOperatorsPorced(int start, int size);
     List findAll();
+    List findUsers();
 }

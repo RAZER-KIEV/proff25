@@ -64,7 +64,9 @@ public class ServiceTaxiImpl implements TaxiService {
     @Override
     @Transactional(readOnly = true)
     public List getTaxiList() {
-        return taxiDao.listAll();
+        List<Taxi> taxiList = taxiDao.listAll();
+        System.out.println(taxiList.size());
+        return taxiList;
     }
     //USER
     @Override

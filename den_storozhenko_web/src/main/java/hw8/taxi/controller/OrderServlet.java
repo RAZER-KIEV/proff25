@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Locale;
 
 @Controller
-@SessionAttributes("id")
+@SessionAttributes({"id","role"})
 public class OrderServlet {
     public static final Logger log = Logger.getLogger(AuthenticationController.class);
     @Autowired
@@ -148,22 +148,14 @@ public class OrderServlet {
     @RequestMapping(value = "/showOrdersBySum", method = RequestMethod.GET)
     public String showBySum(@RequestParam Long from, @RequestParam Long to, Model model) {
         log.info("/showOrdersBySum.html controller");
-        String res = "";
-        for (Order order : (List<Order>) orderService.showOrders(from, to)) {
-            res=res+order+"<br>";
-        }
-        model.addAttribute("ordersList", res);
+        model.addAttribute("ordersList", orderService.showOrders(from, to));
         return "orders";
     }
 
     @RequestMapping(value = "/showOrders", method = RequestMethod.GET)
     public String showByPorc(Model model) {
         log.info("/showOrders.html controller");
-        String res = "";
-        for (Order order : (List<Order>) orderService.showOrdersByPortion()) {
-            res=res+order+"<br>";
-        }
-        model.addAttribute("ordersList", res);
+        model.addAttribute("ordersList", orderService.showOrdersByPortion());
         return "orders";
     }
 }

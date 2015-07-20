@@ -38,5 +38,13 @@
 <form action="/editOrder1" method="GET">
     <input type="submit" value="Create/edit order(new)"/>
 </form>
+<% if (request.getAttribute("role").equals("SUPERADMIN") || request.getAttribute("role").equals("ADMIN")){
+%>
+<a href="/editOperator" name="/editOperator">Edit operator</a><br>
+<a href="/unlockClear" name="/unlockClear">Unlock operator/clear attempts to enter password</a>
+<%}%>
+<form action="/logout" method="GET">
+    <input type="submit" value="Log out"/>
+</form>
 </body>
 </html>

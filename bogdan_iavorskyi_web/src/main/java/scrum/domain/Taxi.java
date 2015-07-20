@@ -11,11 +11,11 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "TAXI")
 public class Taxi { @Id
-@SequenceGenerator(name = "sequence", sequenceName = "SEQ_CLIENTS_ID", allocationSize = 1)
+@SequenceGenerator(name = "sequence", sequenceName = "SEQ_TAXI_ID", allocationSize = 1)
 @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
 private Long id;
 
-    @Column(name = "NAME")
+    @Column(name = "NAME_")
     private String name;
 
     @Column(name = "TELEFON")
@@ -24,7 +24,7 @@ private Long id;
     @Column(name = "MARKA")
     private String marka;
 
-    @Column(name = "NUMBER")
+    @Column(name = "NUMBER_")
     private String number;
     public Taxi() {
     }

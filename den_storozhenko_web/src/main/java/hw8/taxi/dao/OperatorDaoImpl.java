@@ -1,5 +1,6 @@
 package hw8.taxi.dao;
 
+import hw8.taxi.UserRole;
 import hw8.taxi.domain.Operator;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -111,4 +112,12 @@ public class OperatorDaoImpl implements OperatorDao {
         }
         return operators;
     }
+
+    @Override
+    public List<Operator> findUsers() {
+        Query query = factory.getCurrentSession().createQuery("from Operator o where o.role=:role");
+        query.setParameter("role", UserRole.USER);
+        return query.list();
+    }
+
 }

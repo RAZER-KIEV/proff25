@@ -7,11 +7,11 @@ import java.util.Objects;
  * Created by GFalcon on 14.07.15.
  */
 @Entity
-@Table(name = "USER")
+@Table(name = "USER_")
 public class User {
 
     @Id
-    @SequenceGenerator(name = "sequence", sequenceName = "SEQ_CLIENTS_ID", allocationSize = 1)
+    @SequenceGenerator(name = "sequence", sequenceName = "SEQ_USER_ID", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
     private Long id;
     @Column(name = "LOGIN")

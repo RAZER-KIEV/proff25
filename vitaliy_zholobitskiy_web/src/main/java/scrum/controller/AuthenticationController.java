@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 import scrum.service.DriverService;
 import scrum.service.UserService;
 
@@ -52,6 +53,15 @@ public class AuthenticationController {
         }
         return "index";
     }
+    @RequestMapping(value = "/exit", method =RequestMethod.GET)
+    public
+    String logOff(HttpSession session) {
+        session.removeAttribute("id");
+        session.removeAttribute("drivers");
+        return "index";
+    }
+
+
 
 
 

@@ -9,48 +9,42 @@
 <html>
 <head>
   <title></title>
-  <style>
-    body{ background: url(/image/taxi.jpg)}
-  </style>
+  <link href="/css/hw8CSS.css" rel="stylesheet"/>
 </head>
 <body>
 
+<%! int count=0; %>
+
+<%
+    if(request.getAttribute("countAdd")!=null){
+  count+= (int)request.getAttribute("countAdd");}
+%>
+Logining retry: <%=count%>
+<form id="regForm1" action="/register" method="post">
+  <input type="submit" name="register" value="Registeration">
+</form>
+</body>
+</html>
 <center>
-  <h2 style="color:white">Authorization!!!!</h2>
-
-  <form name ="forma1" action="/dashboard.html" method="post">
-
-
-
-    <table border="0" cellspacing="5" cellpadding="5">
-
+  <h2 style="color:white">Authentication!</h2>
+  <form name ="myAuthForm" action="/auth" method="post">
+   <table border="0" cellspacing="5" cellpadding="5">
       <tr>
         <td align="right" valign="top" style="color:white">Enter login</td>
         <td><input type="text" name="login" size="25"
-                   maxlength="15" value="Login"><br></td>
+                   maxlength="15"><br></td>
       </tr>
       <tr>
         <td align="right" valign="top" style="color:white">Enter password</td>
-        <td><input type="password" name="pass" size="25"
+        <td><input type="password" name="password" size="25"
                    maxlength="15" value="password"><br></td>
       </tr>
-
       <tr>
         <td><input type="submit" name="submit" value="Login">
         </td>
-      </tr>
-
+     </tr>
     </table>
-
-
-
-
-
-
-
-
-
   </form>
-
 </center>
 </body>
+
