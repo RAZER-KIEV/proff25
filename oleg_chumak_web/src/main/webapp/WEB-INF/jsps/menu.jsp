@@ -28,7 +28,7 @@
         <input name="btnCreateOrder"
                type="button"
                value="Оформить"
-               onclick="top.frames['main'].location.href=''"
+               onclick="top.frames['main'].location.href='createOrder.html'"
                style="width: 90%"/>
         <br/>
         <input name="btnEditOrder"
@@ -40,7 +40,7 @@
         <input name="btnGetOrderReports"
                type="button"
                value="Отчеты"
-               onclick="top.frames['main'].location.href=''"
+               onclick="top.frames['main'].location.href='orderReport.html'"
                style="width: 90%"/>
         <br/>
     </fieldset>

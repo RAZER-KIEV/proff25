@@ -65,6 +65,11 @@ public class OrderDaoImpl implements OrderDao {
     }
 
     @Override
+    public List listAll() {
+        return factory.getCurrentSession().createQuery("from Order as o").list();
+    }
+
+    @Override
     public long getListSize() {
         return (long) factory.getCurrentSession().createQuery("select count (*) from Order as o").uniqueResult();
     }
