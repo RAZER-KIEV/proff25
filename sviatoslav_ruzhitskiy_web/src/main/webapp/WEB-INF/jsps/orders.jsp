@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="hw8.taxi.domain.Client" %>
+<%@ page import="java.util.List" %>
 <%--
   Created by IntelliJ IDEA.
   User: ПК
@@ -32,7 +35,7 @@
     <tr>
       <td>${order.id}</td>
       <td>${order.orderDay}</td>
-      <td>${order.client.getId()}</td>
+      <td>${order.client.id}</td>
       <td>${order.orderSum}</td>
       <td>${order.departureAddress}</td>
       <td>${order.destinationAddress}</td>

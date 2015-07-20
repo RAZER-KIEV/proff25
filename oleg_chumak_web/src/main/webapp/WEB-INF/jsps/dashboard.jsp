@@ -116,7 +116,7 @@
                 <td colspan="2">@developers:
                     <ul class="style2">
                         <li>Alexandr Omelchenko</li>
-                        <li>Bogdan Javorsky</li>
+                        <li>Bogdan Iavorsky</li>
                         <li>Oleg 4umak</li>
                         <li>Oleksii Khalikov</li>
                         <li>Nick Martin</li>

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.naming.AuthenticationException;
 import javax.servlet.http.HttpServlet;
+import java.util.List;
 
 /**
  * Created by ПК on 11.07.2015.
@@ -64,6 +65,11 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     @Override
     public Operator searchByLogin(String login) {
         return operatorDao.searchByLogin(login);
+    }
+
+    @Override
+    public List findAll() {
+        return operatorDao.findAll();
     }
 
 

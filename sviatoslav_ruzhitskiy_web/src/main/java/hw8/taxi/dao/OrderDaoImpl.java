@@ -6,6 +6,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -46,9 +47,14 @@ public class OrderDaoImpl implements OrderDao{
     public List showOrders(Long from, Long to) {
         Double fromD = Double.parseDouble(String.valueOf(from));
         Double toD = Double.parseDouble(String.valueOf(to));
-        Query query = sessionFactory.getCurrentSession().createQuery("from Order o where o.orderSum>:from and o.orderSum<:to");
-        query.setParameter("from", fromD);
-        query.setParameter("to", toD);
+        Query query = sessionFactory.getCurrentSession().createQuery("from Order o where o.orderSum>:fromD and o.orderSum<:toD");
+        query.setParameter("fromD", fromD);
+        query.setParameter("toD", toD);
+        List<Order> orders = new ArrayList<>();
+        orders = query.list();
+        for(Order or: orders){
+            System.out.println(or);
+        }
         return query.list();
     }
 
@@ -58,6 +64,11 @@ public class OrderDaoImpl implements OrderDao{
         Query query = sessionFactory.getCurrentSession().createQuery("from Order");
         query.setFirstResult(start);
         query.setMaxResults(quantity);
+        List<Order> orders = new ArrayList<>();
+        orders = query.list();
+        for(Order or: orders){
+            System.out.println(or);
+        }
         return query.list();
     }
 

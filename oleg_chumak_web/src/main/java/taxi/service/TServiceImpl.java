@@ -29,54 +29,6 @@ public class TServiceImpl implements TService {
 
     }
 
-    public TServiceImpl(OrderDao orderDao, TaxiDriverDao taxiDriverDao, ClientDao clientDao, OperatorDao operatorDao, RoleDao roleDao) {
-        this.orderDao = orderDao;
-        this.taxiDriverDao = taxiDriverDao;
-        this.clientDao = clientDao;
-        this.operatorDao = operatorDao;
-        this.roleDao = roleDao;
-    }
-
-    public OrderDao getOrderDao() {
-        return orderDao;
-    }
-
-    public void setOrderDao(OrderDao orderDao) {
-        this.orderDao = orderDao;
-    }
-
-    public TaxiDriverDao getTaxiDriverDao() {
-        return taxiDriverDao;
-    }
-
-    public void setTaxiDriverDao(TaxiDriverDao taxiDriverDao) {
-        this.taxiDriverDao = taxiDriverDao;
-    }
-
-    public ClientDao getClientDao() {
-        return clientDao;
-    }
-
-    public void setClientDao(ClientDao clientDao) {
-        this.clientDao = clientDao;
-    }
-
-    public OperatorDao getOperatorDao() {
-        return operatorDao;
-    }
-
-    public void setOperatorDao(OperatorDao operatorDao) {
-        this.operatorDao = operatorDao;
-    }
-
-    public RoleDao getRoleDao() {
-        return roleDao;
-    }
-
-    public void setRoleDao(RoleDao roleDao) {
-        this.roleDao = roleDao;
-    }
-
     @Transactional(readOnly = true)
     @Override
     public List<Client> clientsPortinedByTen(Long numberOfPortion) {
@@ -168,6 +120,11 @@ public class TServiceImpl implements TService {
     @Override
     public void deleteOrder(Order order) {
         orderDao.delete(order);
+    }
+
+    @Override
+    public List listAllOrders() {
+        return orderDao.listAll();
     }
 
     @Transactional(readOnly = true)
