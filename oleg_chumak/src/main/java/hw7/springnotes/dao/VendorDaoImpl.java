@@ -17,19 +17,18 @@ import java.util.List;
  */
 @Repository
 public class VendorDaoImpl implements VendorDao {
-    @Autowired(required = true)
+    @Autowired
     private SessionFactory factory;
 
     public VendorDaoImpl(SessionFactory factory) {
         this.factory = factory;
     }
-
-    public VendorDaoImpl() {
-    }
+    public VendorDaoImpl() {    }
 
     @Override
     public Long create(Vendor vendor) {
-        return (Long)factory.getCurrentSession().save(vendor);
+        Session session = factory.getCurrentSession();
+        return (Long)session.save(vendor);
     }
 
     @Override

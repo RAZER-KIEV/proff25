@@ -10,9 +10,10 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class Person {
-    @Value("Stefanchik")
+    @Value("Garcya")
     private String name;
     @Value("${age}")
+    //@Value ("60")
     private int age;
 
     public Person() {

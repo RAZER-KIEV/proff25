@@ -1,0 +1,23 @@
+#greycol {
+    color: grey;
+}
+
+.yellowcol {
+    color: yellow;
+}
+
+[style] {
+    color: olive;
+}
+
+h4 + p {
+    color: green;
+}
+
+span p {
+    color: brown;
+}
+
+div p {
+    color: red;
+}

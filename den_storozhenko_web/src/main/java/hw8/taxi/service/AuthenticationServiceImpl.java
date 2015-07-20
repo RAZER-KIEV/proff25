@@ -54,6 +54,16 @@ public class AuthenticationServiceImpl implements AuthenticationService{
     }
 
     @Override
+    public Operator readByLogin(String login) {
+        return operatorDao.getByLogin(login);
+    }
+
+    @Override
+    public Long readByLoginPass(String login, String pass) {
+        return operatorDao.getLoginPass(login,pass);
+    }
+
+    @Override
     public Operator getOperator(Long id) {
         return operatorDao.read(id);
     }
@@ -87,12 +97,22 @@ public class AuthenticationServiceImpl implements AuthenticationService{
 
     @Override
     public boolean changePassword(String login, String password, String newpass, String confirm) throws AuthenticationException{
-        Operator operator = operatorDao.getByLoginPass(login,password);
+        Operator operator = operatorDao.getByLogin(login);
         if (operator==null){
-            throw  new AuthenticationException("Incorrect old password.");
+            throw  new AuthenticationException("Operator with login "+login+" does not exist.");
         }
         if (operator.getIsBlocked()){
             throw new AuthenticationException("Operator "+login+" is blocked.");
+        }
+        if (!operator.getPassword().equals(password)){ //количество попыток
+            Integer attemps = operator.getCountWrongPass();
+            attemps++;
+            operator.setCountWrongPass(attemps);
+            if (Objects.equals(attemps, properties.getCountAttempts())){
+                operator.setIsBlocked(true);
+            }
+            operatorDao.update(operator);
+            throw new AuthenticationException("Old password is incorrect.");
         }
         if (!newpass.equals(confirm)){
             throw  new AuthenticationException("New password and confirm does not match.");

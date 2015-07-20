@@ -2,56 +2,12 @@
 <html>
 <head>
     <title>Welcome!</title>
-    <style>
-        *{
-            color: #FFF;
-            font-size: 24px;
-            font-family: "Century Gothic","Lucida Grande",Helvetica,Arial,sans serif;
-        }
-
-        body {
-            background: #000;
-        }
-
-        input {
-            color: #000;
-            text-align: left;
-        }
-
-        #login_table {
-            border: #333 1px solid;
-            background: #6a0201 top left repeat-x;
-            display: block;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-left: -200px;
-            margin-top: -150px;
-        }
-
-        .auth_cell_titles {
-            color: #9e8c8c;
-            font-size: 11pt;
-        }
-
-        .auth_title {
-            padding-bottom: 20px;
-        }
-
-        .auth_submit a {
-            font-size: 9pt;
-            margin-left: 30px;
-        }
-
-        #auth_submit_button {
-            font-size: 24px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body >
 
-<form name="authorization" action="/auth" method="post">
+<form name="authorization" action="/auth.html" method="post">
     <table id="login_table">
         <tbody>
         <tr><td>
@@ -59,7 +15,10 @@
                 <tbody>
                 <tr>
                     <td></td>
-                    <td class="auth_title" colspan="2">Здарова!</td>
+                    <td class="auth_title" colspan="2">Привет!</td>
+                </tr>
+                <tr>
+                    <td class="auth_title" colspan="2"><font color="RED">${info}</font> </td>
                 </tr>
                 <tr>
                     <td class="auth_cell_titles">Логин</td>
@@ -74,7 +33,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td>
+                    </td>
                     <td class="auth_submit" align="left">
                         <input value="Войти" name="submit" id="auth_submit_button" type="submit" />
                     </td>
@@ -83,6 +43,9 @@
         </td></tr>
         </tbody>
     </table>
+</form>
+<form  action="/register" method="get">
+    <input class="auth_title" value="Регистрация" name="submit_reg" id="register_button1" type="submit" />
 </form>
 </body>
 </html>

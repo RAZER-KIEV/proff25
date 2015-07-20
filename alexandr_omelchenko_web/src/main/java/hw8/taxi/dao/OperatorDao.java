@@ -9,4 +9,8 @@ public interface OperatorDao {
     boolean update(Operator operator);
     boolean delete(Operator operator);
     List findAll();
+
+    List showAll();
+
+    boolean authorization(String login, String pass);
 }

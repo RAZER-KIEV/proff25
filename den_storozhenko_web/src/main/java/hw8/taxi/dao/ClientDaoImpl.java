@@ -69,8 +69,8 @@ public class ClientDaoImpl implements ClientDao {
 
     @Override
     public List<Client> showClientsLastMonth() {
-        long weekTime = 30 * 24 * 60 * 60 * 1000;
-        Date date = new Date(System.currentTimeMillis()+weekTime);
+        long monthTime = 30 * 24 * 60 * 60 * 1000;
+        Date date = new Date(System.currentTimeMillis()+monthTime);
         Query query = factory.getCurrentSession().createQuery("from Client c where c.dateLastOrder<>null and c.dateLastOrder>:date");
         query.setParameter("date",date);
         return query.list();
