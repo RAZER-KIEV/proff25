@@ -47,7 +47,7 @@ public class MainController {
      */
     @RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.HEAD})
     public String main(HttpSession session) {
-        addOperators();
+//        addOperators();
         if (!isAuth(session))
             return "index";
         return "dashboard";

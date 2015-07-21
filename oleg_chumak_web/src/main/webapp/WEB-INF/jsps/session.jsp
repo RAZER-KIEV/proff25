@@ -32,7 +32,7 @@
     </tr>
   </table>
 </form>
-<form onsubmit="auth()" action="/register.html" method="get">
+<%--<form onsubmit="auth()" action="/register.html" method="get">--%>
   <input type="submit" value="Register">
 </form>
 </body>
