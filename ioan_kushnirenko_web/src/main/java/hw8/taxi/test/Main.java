@@ -1,6 +1,6 @@
-package taxi.test;
+package hw8.taxi.test;
 
-import taxi.service.TaxiService;
+import hw8.taxi.service.TaxiService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

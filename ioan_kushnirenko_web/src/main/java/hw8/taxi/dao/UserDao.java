@@ -1,7 +1,7 @@
-package taxi.dao;
+package hw8.taxi.dao;
 
 
-import taxi.domain.User;
+import hw8.taxi.domain.User;
 
 import java.util.List;
 

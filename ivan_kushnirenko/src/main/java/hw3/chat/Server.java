@@ -1,9 +1,9 @@
 package hw3.chat;
 
 import java.io.IOException;
-import java.net.InetAddress;
-import java.net.ServerSocket;
+import java.net.InetSocketAddress;
 import java.net.UnknownHostException;
+import java.nio.channels.ServerSocketChannel;
 import java.util.ArrayList;
 
 /**
@@ -12,14 +12,16 @@ import java.util.ArrayList;
 public class Server {
 
     private ArrayList<ClientHandler> clients;
-    private ServerSocket serverSocket;
+    private ServerSocketChannel serverSocketChannel;
+    String gettedMessage = new String();
 
     public Server(int port, String ipAddress) {
 
         clients = new ArrayList<ClientHandler>();
 
         try {
-            serverSocket = new ServerSocket(port, 0, InetAddress.getByName(ipAddress));
+            serverSocketChannel = ServerSocketChannel.open();
+            serverSocketChannel.bind(new InetSocketAddress(port));
         } catch (UnknownHostException exp) {
             System.out.println("ERROR: Unknown host.");
             exp.printStackTrace();
@@ -30,12 +32,28 @@ public class Server {
         System.out.println("Server is created.");
     }
 
+    public String getGettedMessage() {
+        return gettedMessage;
+    }
+
+    public void setGettedMessage(String gettedMessage) {
+        this.gettedMessage = gettedMessage;
+    }
+
     public ArrayList<ClientHandler> getClients() {
         return clients;
     }
 
     public void setClients(ArrayList<ClientHandler> clients) {
         this.clients = clients;
+    }
+
+    public ServerSocketChannel getServerSocketChannel() {
+        return serverSocketChannel;
+    }
+
+    public void setServerSocketChannel(ServerSocketChannel serverSocketChannel) {
+        this.serverSocketChannel = serverSocketChannel;
     }
 
     public void getConnections() {
@@ -46,7 +64,7 @@ public class Server {
                 while (true) {
                     try {
                         synchronized (clients) {
-                            clients.add(new ClientHandler(i, serverSocket.accept()));
+                            clients.add(new ClientHandler(i, serverSocketChannel.accept(), hw3.chat.Server.this));
                         }
                     } catch (IOException exp) {
                         System.out.println("ERROR: Cannot connect client.");
@@ -59,19 +77,27 @@ public class Server {
         connector.start();
     }
 
+    public void sendMessage(String message) {
+        ArrayList<ClientHandler> clients = this.clients;
+        for (ClientHandler clh : clients) {
+            clh.sendMessage(message);
+        }
+    }
+
     public static void main(String[] args) {
-        Server serv = new Server(30000, "localhost");
-        serv.getConnections();
-        Client client1 = new Client();
+        Server server = new Server(30000, "localhost");
+        server.getConnections();
+
+        Client client1 = new Client("John");
         client1.connectToServer("localhost", 30000);
-        client1.sendMessage("Message from client1.");
-        Client clent2 = new Client();
-        clent2.connectToServer("localhost", 30000);
-        clent2.sendMessage("Message from client2.");
-        Client client3 = new Client();
+
+        Client client2 = new Client("Michael");
+        client2.connectToServer("localhost", 30000);
+
+        Client client3 = new Client("Pedro");
         client3.connectToServer("localhost", 30000);
-        client3.sendMessage("Message from client3.");
-        client1.sendMessage("new Message - Client1.");
+
+        client1.sendMessage("Message from from client1.");
 
     }
 }

@@ -18,6 +18,14 @@ import javax.servlet.http.HttpSession;
 public class HelloController {
     public static final Logger log = Logger.getLogger(HelloController.class);
 
+    @RequestMapping(value = "/ajax", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    String ajax(@RequestParam("name") String name, Model model) {
+        return "hello " + name;
+    }
+
+
     @RequestMapping(value = "/hello.html", method = RequestMethod.GET)
     public
     @ResponseBody
@@ -34,6 +42,7 @@ public class HelloController {
         if (sessId == null) {
             return "index";
         }
+
         return "index";
     }
 
@@ -47,24 +56,8 @@ public class HelloController {
 
     @RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.HEAD})
     public String index(Model model) {
-        log.info("/dashboard controller");
+        log.info("/index controller");
         model.addAttribute("name", "al1");
-        return "dashboard";
-    }
-
-    @RequestMapping(value = "/client.html", method = {RequestMethod.GET})
-    public String client (@RequestParam("login") String name, Model model, HttpSession session) {
-        log.info("/client.html controller");
-//        model.addAttribute("nameLogin", "name");
-
-        return "dashboard.jsp";
-    }
-
-    @RequestMapping(value = "/dashboard.html", method = {RequestMethod.GET})
-    public String dashboard(@RequestParam("login") String name, Model model, HttpSession session) {
-        log.info("/dashboard.html controller");
-//        model.addAttribute("nameLogin", "name");
-
-        return "dashboard";
+        return "index";
     }
 }

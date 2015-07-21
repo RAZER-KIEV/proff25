@@ -1,8 +1,8 @@
-package taxi.dao;
+package hw8.taxi.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import taxi.domain.Taxi;
+import hw8.taxi.domain.Taxi;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
