@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>drivers</title>
+  <link rel="stylesheet" href="css/style.css">
   <script src="js/script.js">
   </script>
 </head>
@@ -19,7 +20,7 @@
       <td>Password</td>
       <td><input type="text" name="password" id="password"></td>
     </tr>
-    <button onclick = "sendTo()"> 'OK' </button>
+    <button onclick = "sendTo()"> 'OK </button>
   </table>
   </div>
 
