@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 import web.domain.Client;
 import web.service.ClientService;
 
@@ -27,10 +24,10 @@ public class DashboardController {
 
     @Autowired
     private ClientService clientS;
-
-    @Qualifier("client")
-    @Autowired
-    private Client client;
+//
+//    @Qualifier("client")
+//    @Autowired
+//    private Client client;
 
 
     @RequestMapping(value = "/dashboard.html", method = RequestMethod.GET)
@@ -55,5 +52,9 @@ public class DashboardController {
         return "clients";
     }
 
+    @RequestMapping(value = "/ajax", method = RequestMethod.GET)
+    public @ResponseBody String ajax(Model model){
+        return "Yes";
+    }
 
 }
