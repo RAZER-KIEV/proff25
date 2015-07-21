@@ -32,7 +32,7 @@ public class Controller {
     public
     @ResponseBody
     String ajax(@RequestParam("login") String login, @RequestParam("password") String password, Model model) {
-        String result = new String(" <table>");
+        String result = new String(" <table> <th>Name</th> <th>Phone Number</th> <th>Auto's Mark</th> <th>Auto's number</th>");
         if(authenticate(login, password, service.getUserList())){
             List<Taxi> taxists = service.getTaxiList();
             for (Taxi taxi : taxists){
