@@ -1,4 +1,3 @@
-<%@ page import="java.util.Date" %>
 <%--
   Created by IntelliJ IDEA.
   User: al1
@@ -8,32 +7,37 @@
 <html>
 <head>
     <title></title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <h2>Hello Proff25</h2>
 
-<%
-    out.println( new Date());
- %>
+<p>
 
-<p>Parag</p>
-<a href="ya.ru">Ссылка</a> <br/>
+<div>weewrwrewr</div>
+</p>
+<p>Parag
+
+<div>eeee</div>
+</p>
+<a href="ya.ru">Ссылка 1</a> <br/>
+<a href="ty.ru">Ссылка 2</a> <br/>
 <!--<img src="duke.running.gif"/>-->
 <q>Cicitata</q>
 
-<ul>
+<ul id="list">
     <li>item 1</li>
     <li>item 2</li>
     <li>item 3</li>
 </ul>
 
-<ol>
+<ol class="brown">
     <li>Элемент 1</li>
     <li>Элемент 1</li>
     <li>Элемент 1</li>
 </ol>
-
-<table border="1">
+<p>other parag</p>
+<table class="brown">
     <thead>
     <tr>
         <th>1</th>
@@ -53,6 +57,16 @@
         <td>1</td>
     </tr>
     </tbody>
+    <tfoot></tfoot>
+</table>
+<table class="brown">
+    <thead>
+    <tr>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+    </tr>
+    </thead>
     <tfoot></tfoot>
 </table>
 </body>
