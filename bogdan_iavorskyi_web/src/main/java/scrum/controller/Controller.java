@@ -77,9 +77,19 @@ public class Controller {
         Taxi taxi3 = new Taxi("kolya", "", "", "");
         Taxi taxi4 = new Taxi("andrey", "", "", "");
         Taxi taxi5 = new Taxi("", "", "", "");
+        service.createTaxi(taxi1);
+        service.createTaxi(taxi2);
+        service.createTaxi(taxi3);
+        service.createTaxi(taxi4);
+        service.createTaxi(taxi5);
     }
 
-    
+    @RequestMapping(value = "/test.html", method = RequestMethod.GET)
+    public String test() {
+        fulfill();
+        return "index";
+    }
+
 }
 
 
