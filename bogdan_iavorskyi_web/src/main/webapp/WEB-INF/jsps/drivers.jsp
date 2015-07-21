@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>drivers</title>
-  <script src="JS/script.js">
+  <script src="js/script.js">
   </script>
 </head>
 <body onload=init()>
