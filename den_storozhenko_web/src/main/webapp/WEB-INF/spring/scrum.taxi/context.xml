@@ -14,13 +14,11 @@
     <import resource="mvc-dispatcher-servlet.xml"/>
     <!--<import resource="security.xml"/>-->
 
-    <context:component-scan base-package="action"/>
+    <context:component-scan base-package="scrum.taxi"/>
 
     <mvc:resources mapping="/**" location="/"/>
     <mvc:annotation-driven/>
+    <context:property-placeholder location="classpath:scrum.taxi/conf.properties"/>
 
-    <bean id="str" class="java.lang.String">
-        <constructor-arg value="Hello"/>
-    </bean>
 
 </beans>

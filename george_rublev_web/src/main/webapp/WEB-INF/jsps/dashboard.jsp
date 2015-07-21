@@ -14,7 +14,7 @@
 <body>
 <jsp:include page="operator.jsp"></jsp:include>
 <br>
-<%Driver driver = (Driver) request.getAttribute("operator");
+<%Driver driverss = (Driver) request.getAttribute("driverList");
 if(driver != null){
   %>
 <table>
@@ -27,7 +27,7 @@ if(driver != null){
     <td>car number</td>
   </tr>
   <%
-    for(Driver driver1 : driver){
+    for(Driver driver1 : driverss){
   %>
   <tr>
     <td></td>
@@ -38,7 +38,7 @@ if(driver != null){
   </tr>
 <%}%>
 </table>
-<%
+<%--&lt;%&ndash;&lt;%&ndash;%>--%>
 }
 
 %>

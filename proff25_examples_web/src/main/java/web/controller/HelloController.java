@@ -17,6 +17,13 @@ import javax.servlet.http.HttpSession;
 public class HelloController {
     public static final Logger log = Logger.getLogger(HelloController.class);
 
+    @RequestMapping(value = "/ajax", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    String ajax(@RequestParam("name") String name, Model model) {
+        return "hello " + name;
+    }
+
     @RequestMapping(value = "/hello.html", method = RequestMethod.GET)
     public
     @ResponseBody
