@@ -7,5 +7,5 @@ import hw8.taxi.exception.AuthorizationException;
  * Created by ПК on 12.07.2015.
  */
 public interface AuthorizationService {
-    boolean register(String login, String id, String pass, String confirm) throws AuthenticationException, AuthorizationException;
+    boolean register(String login, String id, String pass) throws AuthenticationException, AuthorizationException;
 }

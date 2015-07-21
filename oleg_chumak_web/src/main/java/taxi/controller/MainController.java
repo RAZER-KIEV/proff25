@@ -390,6 +390,7 @@ public class MainController {
         try {
             authenticationService.authenticate(login, password);
             model.addAttribute("loginId", login);
+            identifyStyle(session);
             return "dashboard";
         } catch (AuthenticationException exception) {
             if (exception.getMessage().equals(AuthenticationServiceImpl.getUnsuccessfulPasswordExpired())) {
@@ -476,4 +477,13 @@ public class MainController {
         return true;
     }
 
+    private void identifyStyle(HttpSession session){
+        String oper = (String)session.getAttribute("loginId");
+        if (oper.equals("admin")){
+            session.setAttribute("style", "style.css");
+        }
+        else if (oper.equals("bosyi")){
+            session.setAttribute("style", "style2.css");
+        }
+    }
 }
