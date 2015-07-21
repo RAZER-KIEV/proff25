@@ -5,7 +5,8 @@
   Time: 23:25
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page import="java.sql.Driver"%>
+<%--<%@ page import="java.sql.Driver"%>--%>
+<%@ page import="web.domain.Drivers" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -14,8 +15,8 @@
 <body>
 <jsp:include page="operator.jsp"></jsp:include>
 <br>
-<%Driver driverss = (Driver) request.getAttribute("driverList");
-if(driver != null){
+<%Drivers driverss = (Drivers) request.getAttribute("driversList");
+if(driverss != null){
   %>
 <table>
 
@@ -27,7 +28,7 @@ if(driver != null){
     <td>car number</td>
   </tr>
   <%
-    for(Driver driver1 : driverss){
+    for(Drivers driver1 : driverss){
   %>
   <tr>
     <td></td>

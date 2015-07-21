@@ -43,17 +43,17 @@ public class OperatorServiceImpl implements OperatorService {
 
     @Transactional
     public List<Operator> listOperator() {
-//        List<Operator> list;
-//        list = (List<Operator>) operatorDao.listOperator();
-//        for(Operator client : list){
-//            if(client.getLogin().equals(name))return client;
-//        }
-        return null;
+        return operatorDao.listOperator();
+    }
+
+    @Override
+    public void removeOperator(Integer id) {
+
     }
 
     @Transactional
-    public void removeOperator(Integer id) {
-
+    public void removeOperator(Operator operator) {
+            operatorDao.deleteOperator(operator);
     }
 
     @Transactional
