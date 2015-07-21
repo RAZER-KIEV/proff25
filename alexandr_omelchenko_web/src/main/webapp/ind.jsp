@@ -6,9 +6,19 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title></title>
+    <title>ind</title>
+    <script src="JS/script.js">var vector =[1,2,3,4,5];
+       var razmer = vector.length;
+    var vect =[razmer];
+    var j=0;
+    for(var i=razmer; i>0; i--, j++){
+        vect[j]=vector[i-1];
+        console.log(vect[j]);
+    }
+    </script>
 </head>
 <body>
+
 <%!
     int count=0;
 %>
@@ -16,7 +26,7 @@
     count++;
     out.println(count);
 %>
-<h2>Hello Alexandr</h2>
+<h2 onclick="print()">Hello Alexandr</h2>
 
 <p>Parag</p>
 <a href="http://ya.ru">Ссылка</a> <br/>

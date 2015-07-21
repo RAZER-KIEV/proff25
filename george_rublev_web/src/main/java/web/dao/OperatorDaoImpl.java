@@ -29,18 +29,18 @@ public class OperatorDaoImpl implements OperatorDao {
     }
 
     @Override
-    public Operator read(Long id){
+    public Operator readOperator(Long id){
         return (Operator)sessionFactory.getCurrentSession().get(Operator.class,id);
     }
 
     @Override
-    public boolean update(Operator operator){
+    public boolean updateOperator(Operator operator){
         sessionFactory.getCurrentSession().update(operator);
         return true;
     }
 
     @Override
-    public boolean delete(Operator operator) {
+    public boolean deleteOperator(Operator operator) {
         sessionFactory.getCurrentSession().delete(operator);
         return true;
     }
