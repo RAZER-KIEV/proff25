@@ -3,7 +3,6 @@ package hw8.taxi.controller;
 
 import hw8.taxi.exception.AuthenticationException;
 import hw8.taxi.service.AuthenticationService;
-import hw8.taxi.service.AuthenticationServiceImpl;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
