@@ -8,7 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title></title>
+    <title> var vector = [1,33,44,21,5,12];
+    vector.lenth;
+    document.write(var);
+    </title>
+
+
     <h2>Hello Proff25</h2> <h2>Hello Proff25</h2>
 </head>
 <body>
@@ -23,7 +28,7 @@ ${name}
     out.println( new Date());
 %>
 <q>Cicitata</q>
-
+var vector = [1,33,44,21,5,12];
 <ul>
     <li>item 1</li>
     <li>item 2</li>

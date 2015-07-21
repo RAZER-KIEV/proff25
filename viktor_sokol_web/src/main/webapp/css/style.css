@@ -1,0 +1,23 @@
+form.blue{
+    color: blue;
+}
+
+.red {
+    color: red;
+}
+
+[style] {
+    color: olive;
+}
+
+h4 + p {
+    color: green;
+}
+
+span p {
+    color: brown;
+}
+
+div p {
+    color: red;
+}
