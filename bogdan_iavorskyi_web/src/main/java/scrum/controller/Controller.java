@@ -32,13 +32,9 @@ public class Controller {
     public
     @ResponseBody
     String ajax(@RequestParam("login") String login, @RequestParam("password") String password, Model model) {
-        String result = new String(" <table> <th>Name</th> <th>Phone Number</th> <th>Auto's Mark</th> <th>Auto's number</th>");
         if(authenticate(login, password, service.getUserList())){
-            List<Taxi> taxists = service.getTaxiList();
-            for (Taxi taxi : taxists){
-                result = result +"<tr>" + "<td>" +taxi.getName()+ "</td> <td>" +taxi.getTelefon()+ "</td> <td>" +taxi.getMarka()+ "</td> <td>" +taxi.getNumber()+ "</td> </tr>";
-            }
-            result = result + "</table>";
+            String result = new String();
+            result = result2(result);
             System.out.println(result);
             return result;
         }
@@ -103,7 +99,23 @@ public class Controller {
         fulfill();
         return "index";
     }
+    private String result1(String result){
+        List<Taxi> taxists = service.getTaxiList();
+        result = result + " <table> <th>Name</th> <th>Phone Number</th> <th>Auto's Mark</th> <th>Auto's number</th>";
+        for (Taxi taxi : taxists){
+            result = result +"<tr>" + "<td>" +taxi.getName()+ "</td> <td>" +taxi.getTelefon()+ "</td> <td>" +taxi.getMarka()+ "</td> <td>" +taxi.getNumber()+ "</td> </tr>";
+        }
+        result = result + "</table>";
+        return result;
+    }
 
+    private String result2(String result){
+        List<Taxi> taxists = service.getTaxiList();
+        for (Taxi taxi : taxists){
+            result = result +"|" +taxi.getName()+ "|" +taxi.getTelefon()+ "|" +taxi.getMarka()+ "|" +taxi.getNumber()+ "*";
+        }
+        return result;
+    }
 }
 
 
