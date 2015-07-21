@@ -2,22 +2,30 @@
 <html>
 <head>
     <title>Operator authorization</title>
-    <%--<link rel="stylesheet" href="css/styles.css"/>--%>
+    <link rel="stylesheet" href="css/index.css"/>
 </head>
 <body>
-<h1 align="center">Operator authorization</h1>
+    <div id="wrapper">
+        <form name="login-form" class="login-form" action="/dashboard" method="post">
+            <div class="header">
+                <h1>Operator Login</h1>
+                <span>
+                    <font color="BLUE">${info}</font>
+                    <font color="RED">${authenticateEx}${error}</font>
+                </span>
+            </div>
 
-<center>
-    <font color="BLUE">${info}</font>
-    <font color="RED">${authenticateEx}${error}</font>
-    <form action="/login" method="POST">
-        <input type="text" name="login" placeholder="Login" value="${login}" onclick="if (this.value!=''){this.value='';}"/><br>
-        <input type="password" name="password" placeholder="Password"/><br>
-        <input type="submit" value="Authenticate"/><br>
-    </form>
-    <form action="/register.html" method="POST">
-        <input type="submit" value="Register"/><br>
-    </form>
-</center>
+            <div class="content">
+                <input name="login" type="text" class="input username" placeholder="Username" />
+                <input name="password" type="password" class="input password" placeholder="Password" />
+            </div>
+
+            <div class="footer">
+                <input type="submit" name="submit" value="Login" class="button"/>
+                <input type="button" name="register" value="Register" class="register" onclick="location.href='/register.html'" />
+            </div>
+
+        </form>
+    </div>
 </body>
 </html>

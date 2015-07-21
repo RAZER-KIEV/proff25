@@ -20,8 +20,9 @@ public class AuthorizationServiceImpl implements AuthorizationService{
 
 
     @Override
-    public boolean register(String login, String inn, String pass, String confirm) throws  AuthorizationException {
+    public boolean register(String login, String inn, String pass) throws  AuthorizationException {
         boolean regDataValid=false;
+        String confirm = pass;
         regDataValid = analizeRegData(login, inn, pass, confirm);
         if(regDataValid) {
             if (operatorDao.searchByLogin(login) == (null)) {
