@@ -10,27 +10,27 @@
         http://www.springframework.org/schema/tx
         http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <context:component-scan base-package="web.dao" />
-
+    <context:component-scan base-package="taxi.dao"/>
+    <context:component-scan base-package="taxi.service"/>
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
         <property name="url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
-        <property name="username" value="hr"/>
-        <property name="password" value="hr"/>
+        <property name="username" value="taxi"/>
+        <property name="password" value="taxi"/>
     </bean>
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="packagesToScan">
             <list>
-                <value>web.domain</value>
+                <value>taxi.domain</value>
             </list>
         </property>
         <property name="hibernateProperties">
             <value>
                 hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
                 hibernate.show_sql=true
-                hibernate.hbm2ddl.auto=validate
+                hibernate.hbm2ddl.auto=update
             </value>
         </property>
     </bean>

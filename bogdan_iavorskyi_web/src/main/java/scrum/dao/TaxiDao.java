@@ -1,7 +1,17 @@
 package scrum.dao;
 
+
+import scrum.domain.Taxi;
+
+import java.util.List;
+
 /**
  * Created by User on 14.07.2015.
  */
-public class TaxiDao {
+public interface TaxiDao {
+    Long create(Taxi taxi);
+    Taxi read(Long id);
+    void update(Taxi taxi);
+    void delete(Taxi taxi);
+    List listAll();
 }

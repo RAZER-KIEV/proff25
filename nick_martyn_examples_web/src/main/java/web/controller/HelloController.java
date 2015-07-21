@@ -24,7 +24,7 @@ public class HelloController {
         String hello(Model model) {
         log.info("/hello.html controller");
         model.addAttribute("name", "Petro");
-        return "сssTask";
+        return "index";
     }
 
     @RequestMapping(value = "/great.html", method = RequestMethod.GET)
@@ -35,7 +35,7 @@ public class HelloController {
           //  return "index";
        // }
 
-        return "cssTask" ;
+        return "index" ;
     }
 
     @RequestMapping(value = "/form.html", method = RequestMethod.POST)
@@ -50,6 +50,6 @@ public class HelloController {
     public String index(Model model) {
         log.info("/index controller");
         model.addAttribute("name", "al1");
-        return "cssTask";
+        return "index";
     }
 }

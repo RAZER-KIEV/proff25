@@ -1,5 +1,7 @@
 package hw8.taxi.controller;
 
+import hw8.taxi.UserRole;
+import hw8.taxi.domain.Operator;
 import hw8.taxi.exception.AuthenticationException;
 import hw8.taxi.service.AuthenticationService;
 import org.apache.log4j.Logger;
@@ -8,13 +10,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpSession;
 import java.util.Locale;
 
 @Controller
-@SessionAttributes("id")
+@SessionAttributes({"id","role"})
 public class AuthenticationController {
     public static final Logger log = Logger.getLogger(AuthenticationController.class);
     @Autowired
@@ -32,6 +35,7 @@ public class AuthenticationController {
     @RequestMapping(value = "/dashboard.html", method = RequestMethod.GET)
     public
     String dashboard(Model model, HttpSession session) {
+
         log.info("/dashboard.html controller");
         if (isAutorized(session)){
             model.addAttribute("hello", "Hello, "+authenticationService.getOperator((Long)session.getAttribute("id")).getLogin()+"!");
@@ -42,18 +46,7 @@ public class AuthenticationController {
         }
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public
-    String login(Model model, HttpSession session) {
-        log.info("/login.html controller");
-        if (isAutorized(session)){
-            model.addAttribute("hello", "Hello, "+authenticationService.getOperator((Long)session.getAttribute("id")).getLogin()+"!");
-            return "dashboard";
-        }
-        return "index";
-    }
-
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @RequestMapping(value = "/dashboard", method = RequestMethod.POST)
     public
     String login(@RequestParam("login") String login, @RequestParam("password") String password, Model model, HttpSession session) {
         log.info("/login.html controller");
@@ -63,7 +56,18 @@ public class AuthenticationController {
         }
         try {
             authenticationService.authenticate(login, password);
-            model.addAttribute("id", authenticationService.readByLoginPass(login, password));
+            Long id = authenticationService.readByLoginPass(login, password);
+            model.addAttribute("id", id);
+            UserRole role = authenticationService.getOperator(id).getRole();
+            if (role==UserRole.USER){
+                model.addAttribute("role","USER");
+            } else
+            if (role==UserRole.ADMIN){
+                model.addAttribute("role","ADMIN");
+            } else
+            if (role==UserRole.SUPERADMIN) {
+                model.addAttribute("role", "SUPERADMIN");
+            }
             model.addAttribute("hello", "Hello, " + login + "!");
             return "dashboard";
         } catch (AuthenticationException e) {
@@ -72,7 +76,7 @@ public class AuthenticationController {
         } catch (HibernateException e) {
             model.addAttribute("error", "Database error.");
             return "index";
-        }
+        } 
     }
 
     @RequestMapping(value = "/changepassword", method = RequestMethod.GET)
@@ -102,11 +106,29 @@ public class AuthenticationController {
     }
 
     @RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.HEAD})
-    public String index(HttpSession session) {
+    public String root(Model model, HttpSession session) {
         log.info("/index controller");
         if (isAutorized(session)){
+            model.addAttribute("hello", "Hello, "+authenticationService.getOperator((Long)session.getAttribute("id")).getLogin()+"!");
             return "dashboard";
         }
+        return "index";
+    }
+
+    @RequestMapping(value = "/index", method = {RequestMethod.GET, RequestMethod.HEAD})
+    public String index(Model model, HttpSession session) {
+        log.info("/index controller");
+        if (isAutorized(session)){
+            model.addAttribute("hello", "Hello, "+authenticationService.getOperator((Long)session.getAttribute("id")).getLogin()+"!");
+            return "dashboard";
+        }
+        return "index";
+    }
+
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public String logout(SessionStatus status) {
+        log.info("/logout controller");
+        status.setComplete();
         return "index";
     }
 }

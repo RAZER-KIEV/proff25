@@ -6,7 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
+import taxi.domain.User;
 import java.util.List;
 
 /**
@@ -84,7 +84,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public List findAll() {
         Session session = factory.openSession();
-        Query query = session.createQuery("from USER");
+        Query query = session.createQuery("from OPERATORS");
         return query.list();
     }
 }

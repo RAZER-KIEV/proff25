@@ -9,53 +9,25 @@
 <html>
 <head>
     <title></title>
-    <link>
 </head>
 <body>
-<h3>TAXI 102</h3>
-<p style="color: red">${indexMessage}</p>
+<p>${message}</p>
+<form action="/request.html" method="post">
   <table>
-    <thead></thead>
-    <tbody>
-      <tr>
-        <td>
-          <form action="auth" method="post">
-            <table>
-              <tr>
-                <td>Login</td>
-                <td><input type="text" name="login"></td>
-              </tr>
-              <tr>
-                <td>Password</td>
-                <td><input type="password" name="password"></td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="submit" value="Sign in">
-                </td>
-              </tr>
-            </table>
-          </form>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <form action="register.html" method="get">
-            <input type="submit" value="Register">
-          </form>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <form action="timeMachine" method="post">
-            Login<br>
-            <input type="text" name="login"><br>
-            <input type="submit" value="Change time">
-          </form>
-        </td>
-      </tr>
-    </tbody>
-    <tfoot></tfoot>
+    <tr>
+      <td>Login</td>
+      <td><input type="text" name="login"></td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td><input type="password" name="password"></td>
+    </tr>
+    <tr>
+      <td>
+        <input type="submit" value="Sign in">
+      </td>
+    </tr>
   </table>
+</form>
 </body>
 </html>

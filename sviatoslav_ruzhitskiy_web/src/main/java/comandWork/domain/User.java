@@ -1,5 +1,7 @@
 package comandWork.domain;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
 
 /**
@@ -12,7 +14,7 @@ public class User {
     @Column(name = "USER_ID")
     @SequenceGenerator(name = "sequence", sequenceName = "USERS_SEQ", allocationSize = 1, initialValue = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
-    private long id;
+    private Long id;
 
     @Column(name = "USER_NAME")
     private String name;
@@ -28,11 +30,11 @@ public class User {
         this.password = password;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -1,27 +1,50 @@
-#greycol{
-    color : grey;
-}
-p.yellowcol{
-    color : yellow;
-}
-div.yellowcol{
-    color : blue;
-}
-div+div{
-    color : olive;
-}
+ body {
+     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+     font-size: 14px;
+     border-radius: 10px;
+     border-spacing: 0;
+     text-align: center;
 
-div p {
-    color : red;
-}
+ }
+th {
+    background: #BCEBDD;
+    color: black;
+    text-shadow: 0 1px 1px #FFFFF0;
+    padding: 10px 20px;
 
-span p {
-    color : brown;
 }
-div div {
-    color : silver;
+th, td {
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: white;
 }
-
-h4+p {
-    color:green;
+th:first-child, td:first-child {
+    text-align: left;
 }
+th:first-child {
+    border-top-left-radius: 10px;
+}
+th:last-child {
+    border-top-right-radius: 10px;
+    border-right: none;
+}
+td {
+    padding: 10px 20px;
+    background: #F8E391;
+}
+tr:last-child td:first-child {
+    border-radius: 0 0 0 10px;
+}
+tr:last-child td:last-child {
+    border-radius: 0 0 10px 0;
+}
+tr td:last-child {
+    border-right: none;
+}
+tr:hover td {
+    background: #e8edff;
+}
+tr:hover th {
+    background: #ccddff;
+}
+ /*<th colspan="4" style=" background: #5F9EA0;color: white;text-shadow: 0 1px 1px #2D2020;"><p style="text-align:center">"Table for Oleg-Marat"</p></th>*/

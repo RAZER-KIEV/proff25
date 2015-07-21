@@ -1,73 +1,32 @@
-<%@ page import="cache.dao.Dao" %>
 <%--
-  Created by IntelliJ IDEA.
-  User: al1
-  Date: 06.07.15
+  страница с формой аутентификации
 --%>
-<%!int a;%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title></title>
 </head>
-<table border="1" width="90%">
-    <thead>
+<body>
+<p>${message}</p>
+<form action="auth" method="post">
+  <table>
     <tr>
-        <td width = "15%"colspan="2">Odin</td>
-        <td width = "15%"colspan="2">Loki</td>
-        <td width = "15%"colspan="2">Thore</td>
-    </tr>
-    </thead>
-    <tbody>
-    <tr><td width = "15%" colspan="6"><p></p> </td>
-    <tr>
-        <td width = "15%">
-            <form action="/medium.html" method="get"></form>
-            <input type="submit" value="destroy"/>
-        </td>
-        <td width = "15%">
-            <a href="ya.ru">ya.ru</a> <br/></td>
-        <td width = "15%">
-            <a href="mail.ru">mail.ru</a> <br/></td>
-        <td width = "15%">
-            <a href="vk.com">vk.com</a> <br/></td>
-        <td width = "15%">
-            <a href="youtube.com">youtube.com</a> <br/></td>
-        <td width = "15%">
-            <a href="ex.ua">ex.ua</a> <br/></td>
+      <td>Login</td>
+      <td><input type="text" name="login"></td>
     </tr>
     <tr>
-        <td height="400" width="15%" colspan="2">
-            ${us1}
-            <br/>
-            ${us2}
-                <br/>
-            ${us3}
-                <br/>
-            ${us4}
-                <br/>
-            ${us5}
-                <br/>
-            ${us6}
-                <br/>
-            ${us7}
-                <br/>
-            ${us8}
-                <br/>
-            ${us9}
-                <br/>
-            ${us10}
-                <br/>
-            ${name}
-                <br/>
+      <td>Password</td>
+      <td><input type="password" name="password"></td>
+    </tr>
     <tr>
-        <td>
-            <br/>
-        </td>
+      <td>
+        <input type="submit" value="Sign in">
+      </td>
     </tr>
-    </td>
-    </tr>
-    </tbody>
-</table>
+  </table>
+</form>
+<form action="/register.html" method="get">
+  <input type="submit" value="Register">
+</form>
 </body>
 </html>

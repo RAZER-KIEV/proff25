@@ -10,7 +10,7 @@
         http://www.springframework.org/schema/tx
         http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <context:component-scan base-package="scrum"/>
+    <context:component-scan base-package="hw8.taxi"/>
 
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
@@ -23,7 +23,7 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="packagesToScan">
             <list>
-                <value>scrum.domain</value>
+                <value>hw8.taxi.domain</value>
             </list>
         </property>
         <property name="hibernateProperties">

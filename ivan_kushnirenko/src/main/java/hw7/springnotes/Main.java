@@ -14,6 +14,7 @@ public class Main {
     public static void main(String[] args) {
         Locale.setDefault(Locale.ENGLISH);
         ApplicationContext context = new ClassPathXmlApplicationContext("ivan_kushnirenko/src/main/java/hw7/springnotes/context.xml");
+        //ApplicationContext context = new ClassPathXmlApplicationContext("");
         NotebookService companyService = context.getBean("notebookServiceImpl", NotebookService.class);
         Menu menu = new Menu(companyService);
         menu.run();

@@ -14,7 +14,7 @@
     <import resource="mvc-dispatcher-servlet.xml"/>
     <!--<import resource="security.xml"/>-->
 
-    <context:component-scan base-package="hw8.taxi"/>
+    <context:component-scan base-package="scrum"/>
     <context:property-placeholder location="classpath:conf.properties"/>
 
     <mvc:resources mapping="/**" location="/"/>
