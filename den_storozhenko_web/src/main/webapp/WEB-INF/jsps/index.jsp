@@ -6,7 +6,7 @@
 </head>
 <body>
     <div id="wrapper">
-        <form name="login-form" class="login-form" action="/login" method="post">
+        <form name="login-form" class="login-form" action="/dashboard" method="post">
             <div class="header">
                 <h1>Operator Login</h1>
                 <span>

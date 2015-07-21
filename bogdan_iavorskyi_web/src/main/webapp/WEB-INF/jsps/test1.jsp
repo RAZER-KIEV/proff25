@@ -1,4 +1,4 @@
-<%@ page import="hw8.taxi.domain.Client" %>
+<%@ page import="hw8.Client" %>
 <%@ page import="java.util.List" %>
 <%--
   Created by IntelliJ IDEA.

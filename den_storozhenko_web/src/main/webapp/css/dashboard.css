@@ -10,7 +10,7 @@ input{
     min-width: 100%;
 }
 
-[type="submit"]{
+[type="submit"],[type="button"]{
     float:left;
     padding: 11px 25px;
 
