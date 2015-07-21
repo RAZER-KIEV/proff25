@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -47,6 +48,27 @@ public class ClientController {
             return "dashboard";
         }
     }
+
+
+
+    @RequestMapping(value = "/classwork",method = RequestMethod.GET)
+    public
+    String reg() {
+        return "classwork";
+    }
+
+    @RequestMapping(value = "/ajax",method = RequestMethod.GET)
+    public @ResponseBody
+    String checkpass(@RequestParam("login") String login,
+                     @RequestParam("pass") String pass) {
+        if(login.equals(pass))
+            return "Da";
+        else
+            return "Net";
+    }
+
+
+
     @RequestMapping(value = "/showClientsByPortion", method = RequestMethod.GET)
     public
     String showClientsByPortion(@RequestParam("portion") String portion,
