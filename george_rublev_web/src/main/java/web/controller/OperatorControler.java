@@ -30,9 +30,7 @@ public class OperatorControler {
     @RequestMapping(value = "/operator.html", method = RequestMethod.GET)
     public String great(@RequestParam("login") String name,@RequestParam("paswwd") String paswd, Model model, HttpSession session) {
         log.info("/dashboard.html controller");
-
         List<Operator> client;
-
         client = serviceO.listOperator();
         for(Operator c: client){
             if(c.getLogin().equals(name) && c.getPassword().equals(paswd)){
@@ -42,10 +40,8 @@ public class OperatorControler {
                 }catch (HibernateException e){
 
                 }
-
             }
         }
         return "clients";
     }
-
 }
