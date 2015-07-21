@@ -33,8 +33,8 @@ public class DashboardController {
     @Autowired
     private DriverService driverService;
 
-    @RequestMapping(value = "/index.html",method = RequestMethod.GET)
-    public boolean index(
+    @RequestMapping(value = "/indexTaxi.html",method = RequestMethod.GET)
+    public String index(
             @RequestParam("login") String login,
             @RequestParam("password") String password,
             Model model,
@@ -43,11 +43,16 @@ public class DashboardController {
         operator = operatorService.listOperator();
         for(Operator op1 : operator){
             if(op1.getLogin().equals(login)&&op1.getPassword().equals(password)){
+                List<Drivers> drivers = driverService.listDrivers();
+                StringBuilder sb = new StringBuilder();
+                for (Drivers d : drivers){
+                    sb.append(d.getName()).append("|");
+                }
                 model.addAttribute("driversList",driverService.listDrivers());
-                return true;
+                return new String(sb);
             }
         }
-        return false;
+        return "false";
     }
 
 
