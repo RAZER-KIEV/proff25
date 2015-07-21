@@ -47,6 +47,7 @@ public class MainController {
      */
     @RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.HEAD})
     public String main(HttpSession session) {
+        addOperators();
         if (!isAuth(session))
             return "index";
         return "dashboard";
@@ -470,6 +471,11 @@ public class MainController {
         return "register";
     }
 
+    @RequestMapping(value = "session.html", method = RequestMethod.GET)
+    public   String registerPost(){
+            return "session";
+    }
+
     private boolean isAuth(HttpSession session) {
         if (session.getAttribute("loginId") == null) {
             return false;
@@ -485,5 +491,12 @@ public class MainController {
         else if (oper.equals("bosyi")){
             session.setAttribute("style", "style2.css");
         }
+    }
+
+    private void addOperators(){
+        Role user = service.readRole("User");
+        Role admin = service.readRole("Administrator");
+        System.out.println(user);
+//        Operator oper1 = new Operator("bosyi", "111", 8765465487662L);
     }
 }
