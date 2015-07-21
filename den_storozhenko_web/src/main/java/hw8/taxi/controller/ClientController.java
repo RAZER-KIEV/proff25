@@ -18,14 +18,14 @@ public class ClientController {
 
     @RequestMapping(value = "/regCl", method = RequestMethod.GET)
     public
-    String registerClient(Model model) {
+    String registerClient() {
         log.info("/regCl controller");
         return "registerClient";
     }
 
-    @RequestMapping(value = "/registerClient", method = RequestMethod.POST)
+    @RequestMapping(value = "/submitRegisterClient", method = RequestMethod.POST)
     public
-    String regCl(@RequestParam String name, @RequestParam String surname, @RequestParam String phone,
+    String registerClient(@RequestParam String name, @RequestParam String surname, @RequestParam String phone,
                  @RequestParam String address, Model model) {
         log.info("/registerClient controller");
         try {

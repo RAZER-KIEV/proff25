@@ -46,18 +46,7 @@ public class AuthenticationController {
         }
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public
-    String login(Model model, HttpSession session) {
-        log.info("/login.html controller");
-        if (isAutorized(session)){
-            model.addAttribute("hello", "Hello, "+authenticationService.getOperator((Long)session.getAttribute("id")).getLogin()+"!");
-            return "dashboard";
-        }
-        return "index";
-    }
-
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @RequestMapping(value = "/dashboard", method = RequestMethod.POST)
     public
     String login(@RequestParam("login") String login, @RequestParam("password") String password, Model model, HttpSession session) {
         log.info("/login.html controller");
@@ -87,7 +76,7 @@ public class AuthenticationController {
         } catch (HibernateException e) {
             model.addAttribute("error", "Database error.");
             return "index";
-        }
+        } 
     }
 
     @RequestMapping(value = "/changepassword", method = RequestMethod.GET)
@@ -117,6 +106,16 @@ public class AuthenticationController {
     }
 
     @RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.HEAD})
+    public String root(Model model, HttpSession session) {
+        log.info("/index controller");
+        if (isAutorized(session)){
+            model.addAttribute("hello", "Hello, "+authenticationService.getOperator((Long)session.getAttribute("id")).getLogin()+"!");
+            return "dashboard";
+        }
+        return "index";
+    }
+
+    @RequestMapping(value = "/index", method = {RequestMethod.GET, RequestMethod.HEAD})
     public String index(Model model, HttpSession session) {
         log.info("/index controller");
         if (isAutorized(session)){
@@ -127,7 +126,7 @@ public class AuthenticationController {
     }
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
-    public String logout(HttpSession session, SessionStatus status) {
+    public String logout(SessionStatus status) {
         log.info("/logout controller");
         status.setComplete();
         return "index";
