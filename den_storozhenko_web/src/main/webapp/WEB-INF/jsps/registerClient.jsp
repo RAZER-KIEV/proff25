@@ -8,11 +8,11 @@
 <div id="wrapper">
   <form name="login-form" class="login-form" action="/submitRegisterClient" method="post">
     <div class="header">
-      <h1>Registration</h1>
- <span>
- <font color="BLUE">${info}</font>
- <font color="RED">${authenticateEx}${error}</font>
- </span>
+         <h1>Registration</h1>
+         <span>
+         <font color="BLUE">${info}</font>
+         <font color="RED">${authenticateEx}${error}</font>
+         </span>
     </div>
 
     <div class="content">
@@ -24,11 +24,9 @@
 
     <div class="footer">
         <input type="submit" name="submit" value="Register" class="button"/>
-      <input type="button" name="back" value="Back" class="register" onclick="location.href='/'" />
+        <input type="button" name="back" value="Back" class="register" onclick="location.href='/'" />
     </div>
-
   </form>
 </div>
-
 </body>
 </html>
