@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Repository;
 import session12.company.domain.Company;
 
 /**
@@ -11,7 +12,6 @@ import session12.company.domain.Company;
  */
 public class CompanyDaoImpl implements CompanyDao {
 
-    private static Logger log = Logger.getLogger(CompanyDaoImpl.class);
 
     private SessionFactory factory;
 
@@ -26,31 +26,14 @@ public class CompanyDaoImpl implements CompanyDao {
 
     @Override
     public Company read(Long id) {
-        Session session = null;
-        Company company = null;
-        try {
-            session = factory.openSession();
-            session.beginTransaction();
-            company = (Company) session.get(Company.class, id);
-            session.getTransaction().commit();
-        } catch (HibernateException exception) {
-            log.error("Session Error on read(Long id)", exception);
-        } finally {
-            if (session != null) {
-                session.close();
-            }
-        }
-        log.info(session);
-        return company;
+        return (Company) factory.getCurrentSession().get(Company.class, id);
     }
 
     @Override
-    public boolean update(Company company) {
-        return false;
+    public void update(Company company) {
     }
 
     @Override
-    public boolean delete(Company company) {
-        return false;
+    public void delete(Company company) {
     }
 }

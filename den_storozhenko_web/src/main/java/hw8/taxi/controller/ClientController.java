@@ -1,6 +1,5 @@
 package hw8.taxi.controller;
 
-import hw8.taxi.domain.Client;
 import hw8.taxi.exception.ClientException;
 import hw8.taxi.service.ClientService;
 import org.apache.log4j.Logger;
@@ -10,25 +9,23 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @Controller
-@SessionAttributes("id")
+@SessionAttributes({"id","role"})
 public class ClientController {
     public static final Logger log = Logger.getLogger(AuthenticationController.class);
     @Autowired
     private ClientService clientService;
 
-    @RequestMapping(value = "/regCl", method = RequestMethod.POST)
+    @RequestMapping(value = "/regCl", method = RequestMethod.GET)
     public
-    String registerClient(Model model) {
+    String registerClient() {
         log.info("/regCl controller");
         return "registerClient";
     }
 
-    @RequestMapping(value = "/registerClient", method = RequestMethod.POST)
+    @RequestMapping(value = "/submitRegisterClient", method = RequestMethod.POST)
     public
-    String regCl(@RequestParam String name, @RequestParam String surname, @RequestParam String phone,
+    String registerClient(@RequestParam String name, @RequestParam String surname, @RequestParam String phone,
                  @RequestParam String address, Model model) {
         log.info("/registerClient controller");
         try {
@@ -48,12 +45,8 @@ public class ClientController {
     public
     String getByPortion(@RequestParam("size") Integer size, Model model) {
         log.info("/showByPort controller");
-        String result = "";
         try {
-            for (Client client : (List<Client>) clientService.showClientsByPortion(size)) {
-                result = result + client + "<br>";
-            }
-            model.addAttribute("clientList",result);
+            model.addAttribute("clientList",clientService.showClientsByPortion(size));
             return "clients";
         } catch (HibernateException e) {
             model.addAttribute("error", "Database error.");
@@ -64,13 +57,9 @@ public class ClientController {
     @RequestMapping(value = "/showGtSum", method = RequestMethod.GET)
     public
     String showGtSum(@RequestParam Integer sum, Model model) {
-        log.info("/showGtSum controller");
-        String result = "";
+         log.info("/showGtSum controller");
         try {
-            for (Client client : (List<Client>) clientService.showClientsGtSum(sum)) {
-                result = result + client + "<br>";
-            }
-            model.addAttribute("clientList",result);
+            model.addAttribute("clientList",clientService.showClientsGtSum(sum));
             return "clients";
         } catch (HibernateException e) {
             model.addAttribute("error", "Database error.");
@@ -82,12 +71,8 @@ public class ClientController {
     public
     String showClientsLastMonth(Model model) {
         log.info("/showClientsLastMonth controller");
-        String result = "";
         try {
-            for (Client client : (List<Client>) clientService.showClientsLastMonth()) {
-                result = result + client + "<br>";
-            }
-            model.addAttribute("clientList",result);
+            model.addAttribute("clientList",clientService.showClientsLastMonth());
             return "clients";
         } catch (HibernateException e) {
             model.addAttribute("error", "Database error.");

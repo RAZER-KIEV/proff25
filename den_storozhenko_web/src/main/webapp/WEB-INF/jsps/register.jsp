@@ -2,19 +2,32 @@
 <html>
 <head>
     <title>Register operator</title>
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-<center>
-<h1>Register operator</h1>
-  <font color="RED">
-  ${authorizationEx}${error}</font>
-<form action="/registersuccess.html" method="POST">
-  <input type="text" name="login" placeholder="Login" onclick="if (this.value!=''){this.value='';}"/><br>
-  <input type="password" name="password" placeholder="Password"/><br>
-  <input type="password" name="confirmPassword" placeholder="Confirm password" /><br>
-  <input type="text" name="id" placeholder="ID"/><br>
-  <input type="submit" value="Register"/><br>
-</form>
-</center>
+<div id="wrapper">
+  <form name="login-form" class="login-form" action="/registersuccess.html" method="post">
+    <div class="header">
+      <h1>Register operator</h1>
+ <span>
+ <font color="BLUE">${info}</font>
+ <font color="RED">${authenticateEx}${error}</font>
+ </span>
+    </div>
+
+    <div class="content">
+      <input type="text" class="input password" name="login" placeholder="Login" onclick="if (this.value!=''){this.value='';}"/>
+      <input type="password" class="input password" name="password" placeholder="Password"/>
+      <input type="password" class="input password" name="confirmPassword" placeholder="Confirm password" />
+      <input type="text" class="input password" name="id" placeholder="ID"/>
+    </div>
+
+    <div class="footer">
+      <input type="submit" class="button" value="Register"/>
+      <input type="button" name="back" value="Back" class="register" onclick="location.href='/'" />
+    </div>
+
+  </form>
+</div>
 </body>
 </html>

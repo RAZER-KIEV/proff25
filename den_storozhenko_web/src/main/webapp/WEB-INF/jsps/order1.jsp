@@ -4,47 +4,75 @@
 <html>
 <head>
     <title>New order</title>
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-<center><h1>Order edit</h1></center>
-<font color="RED">
-  ${orderEx}</font>
+<span>
+  <font color="BLUE">${info}</font>
+ <font color="RED">${orderEx}</font>
+</span>
+<table  width="100%" >
+  <tr>
+    <td width="50%" height="100%">
+      <form name="login-form" class="login-form" action="/create1" method="GET">
+      <div class="header">
+        <h1>Create Order</h1>
+      </div>
+      <div class="content">
+        Client:<br> <select name="names" class="input password">
+        <% List<String> names = (List<String>)request.getAttribute("names");
+          if (names!=null)
+            for(String s:names){
+        %>
 
-<form action="/create1" method="POST">
-  Client: <select name="names">
-    <% List<String> names = (List<String>)request.getAttribute("names");
-      if (names!=null)
-      for(String s:names){
-    %>
-    <option value="<%=s %>"><%=s %></option>
-    <%} %>
-  </select><br>
-  <input type="text" name="amount" placeholder="Amount"/><br>
-  <input type="text" name="from" placeholder="Address from"/><br>
-  <input type="text" name="to" placeholder="Address to"/><br>
-  <input type="submit" value="Create order"/>
-</form>
-<form action="/edit1" method="POST">
-  Order: <select name="id">
-  <% List<String> ids = (List<String>)request.getAttribute("ids");
-    if (ids!=null)
-      for(String s:ids){
-  %>
-  <option value="<%=s %>"><%=s %></option>
-  <%} %>
-</select><br>
-  Client: <select name="names1">
-  <%
-    if (names!=null)
-      for(String s:names){
-  %>
-  <option value="<%=s %>"><%=s %></option>
-  <%} %>
-</select><br>
-  <input type="text" name="amount1" placeholder="Amount"/><br>
-  <input type="text" name="from1" placeholder="Address from"/><br>
-  <input type="text" name="to1" placeholder="Address to"/><br>
-  <input type="submit" value="Edit order"/>
-</form>
+        <option value="<%=s %>"><%=s %></option>
+        <%} %>
+
+      </select>
+
+        <input type="text" name="amount" class="input password" placeholder="Amount"/>
+        <input type="text" name="from" class="input password" placeholder="Address from"/>
+        <input type="text" name="to" class="input password" placeholder="Address to"/>
+      </div>
+      <div class="footer">
+        <input type="submit" class="button" value="Create "/>
+        <input type="button" name="back" value="Back" class="register" onclick="location.href='/'" />
+      </div>
+    </form>
+    </td>
+    <td width="50%">
+      <form class="login-form" action="/edit1" method="GET">
+        <div class="header">
+          <h1>Edit Order</h1>
+        </div>
+        <div class="content">
+          Order:<br> <select name="id" class="input password">
+            <% List<String> ids = (List<String>)request.getAttribute("ids");
+      if (ids!=null)
+        for(String s:ids){
+        %>
+          <option value="<%=s %>"><%=s %></option>
+            <%} %>
+        </select>
+          <br>Client:<br> <select name="names1" class="input password">
+          <%
+            if (names!=null)
+              for(String s:names){
+          %>
+          <option value="<%=s %>"><%=s %></option>
+          <% } %>
+        </select>
+          <input type="text" name="amount1" class="input password" placeholder="Amount"/>
+          <input type="text" name="from1" class="input password" placeholder="Address from"/>
+          <input type="text" name="to1" class="input password" placeholder="Address to"/>
+        </div>
+        <div class="footer">
+          <input type="submit" class="button" value="Edit order"/>
+          <input type="button" name="back" value="Back" class="register" onclick="location.href='/'" />
+        </div>
+      </form>
+    </td>
+  </tr>
+</table>
 </body>
 </html>

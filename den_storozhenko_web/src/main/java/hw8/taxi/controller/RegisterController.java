@@ -16,7 +16,7 @@ import javax.annotation.PostConstruct;
 import java.util.Locale;
 
 @Controller
-@SessionAttributes("id")
+@SessionAttributes({"id","role"})
 public class RegisterController {
 
     public static final Logger log = Logger.getLogger(AuthenticationController.class);
@@ -28,7 +28,7 @@ public class RegisterController {
         Locale.setDefault(Locale.ENGLISH);
     }
 
-    @RequestMapping(value = "/register.html", method = RequestMethod.POST)
+    @RequestMapping(value = "/register.html", method = RequestMethod.GET)
     public
     String registerForm(Model model) {
         log.info("/register.html controller");

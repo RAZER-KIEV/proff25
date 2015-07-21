@@ -19,11 +19,11 @@ public class HelloController {
 
     @RequestMapping(value = "/hello.html", method = RequestMethod.GET)
     public
-    @ResponseBody
+    //@ResponseBody
     String hello(Model model) {
         log.info("/hello.html controller");
         model.addAttribute("name", "Petro");
-        return "hello";
+        return "index";
     }
 
     @RequestMapping(value = "/great.html", method = RequestMethod.GET)
@@ -50,5 +50,13 @@ public class HelloController {
         log.info("/index controller");
         model.addAttribute("name", "al1");
         return "index";
+    }
+
+    @RequestMapping (value =  "styleTask.html" , method = {RequestMethod.GET, RequestMethod.HEAD})
+    public String cssTask() {
+
+        log.info("/styleTask controller");
+
+        return "styleTask";
     }
 }

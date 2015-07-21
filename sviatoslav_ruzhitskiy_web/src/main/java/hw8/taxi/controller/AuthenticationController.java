@@ -1,20 +1,22 @@
 package hw8.taxi.controller;
 
+import hw8.taxi.dao.OperatorDao;
+import hw8.taxi.domain.Operator;
+import hw8.taxi.service.AuthenticationService;
+import hw8.taxi.service.ClientService;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.servlet.DispatcherServlet;
-
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import javax.annotation.PostConstruct;
+import javax.naming.AuthenticationException;
+import javax.servlet.http.HttpSession;
 import java.io.PrintWriter;
+import java.util.Locale;
 
 /**
  * Created by ПК on 11.07.2015.
@@ -22,48 +24,40 @@ import java.io.PrintWriter;
 
 @Controller
 @SessionAttributes("id")
-public class AuthenticationController extends HttpServlet{
-    String superAdmin="R";
-    String superPass="1";
+public class AuthenticationController {
 
     public static final Logger log = Logger.getLogger(AuthenticationController.class);
 
-    @RequestMapping(value = "/", method = {RequestMethod.POST, RequestMethod.HEAD})
-    public String index(Model model) {
-        log.info("/index AuthenticationController");
+    @Autowired
+    private AuthenticationService authenticationService;
+
+    @PostConstruct
+    public void init() {
+        Locale.setDefault(Locale.ENGLISH);
+    }
+
+    AuthenticationController() {
+    }
+
+
+    @RequestMapping(value = "/", method = {RequestMethod.GET,RequestMethod.POST, RequestMethod.HEAD})
+    public String great() {
+        log.info("/index controller");
         return "index";
     }
 
-    @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
-            String login=request.getParameter("login");
-            String pass = request.getParameter("password");
-            PrintWriter out = response.getWriter();
-        if(superAdmin.equals(login)&superPass.equals(pass)){
-            forvard("/dashboard.jsp",request,response);
-            /*response.setStatus(HttpServletResponse.SC_OK);
-            out.write("HELLO SUPERADMIN!!! YOU WELCOME!!!");*/
-        }
-        else {
-
-           response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-            out.write("Sorry but You not registered....");
-            out.flush();
-            try {
-                Thread.sleep(3000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            forvard("/index.jsp", request, response);
-        }
-        out.flush();
-        out.close();
+    @RequestMapping(value = "/auth", method = RequestMethod.POST)
+    public String auth(@RequestParam("login") String login, @RequestParam("password") String password, Model model, HttpSession session) throws AuthenticationException {
+       if(authenticationService.authenticate(login, password)){
+           log.debug("Its Ok Operator found");
+           Operator operator = authenticationService.searchByLogin(login);
+           session.setAttribute("operator",operator);
+           session.setAttribute("operlogin", login);
+           return "dashboard";
+       }else{
+           session.setAttribute("countAdd", 1);
+           log.debug("Something wrong Operator not found");
+           return "index";
+       }
     }
-    public void forvard (String torget, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(torget);
-        dispatcher.forward(request,response);
-
-    }
-
-
 }
