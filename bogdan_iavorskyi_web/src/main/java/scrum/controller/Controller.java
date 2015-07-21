@@ -32,19 +32,19 @@ public class Controller {
     public
     @ResponseBody
     String ajax(@RequestParam("login") String login, @RequestParam("password") String password, Model model) {
-        String result = new String(" ");
+        String result = new String(" <table>");
         if(authenticate(login, password, service.getUserList())){
             List<Taxi> taxists = service.getTaxiList();
             for (Taxi taxi : taxists){
-                result = result + taxi.getName()+ "|" +taxi.getTelefon()+ "|" +taxi.getMarka()+ "|" +taxi.getNumber()+ "*";
-                System.out.println(result);
-                return result;
+                result = result +"<tr>" + "<td>" +taxi.getName()+ "</td> <td>" +taxi.getTelefon()+ "</td> <td>" +taxi.getMarka()+ "</td> <td>" +taxi.getNumber()+ "</td> </tr>";
             }
+            result = result + "</table>";
+            System.out.println(result);
+            return result;
         }
         else {
             return "0";
         }
-        return result;
     }
 
     @RequestMapping(value = "/request.html", method = RequestMethod.POST)
