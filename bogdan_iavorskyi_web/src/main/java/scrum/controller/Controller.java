@@ -3,10 +3,7 @@ package scrum.controller;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 import scrum.domain.Taxi;
 import scrum.domain.User;
 import scrum.service.TaxiService;
@@ -31,13 +28,30 @@ public class Controller {
         return "index";
     }
 
+    @RequestMapping(value = "/ajax", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    String ajax(@RequestParam("login") String login, @RequestParam("password") String password, Model model) {
+        String result = new String(" ");
+        if(authenticate(login, password, service.getUserList())){
+            List<Taxi> taxists = service.getTaxiList();
+            for (Taxi taxi : taxists){
+                result = result + taxi.getName()+ "|" +taxi.getTelefon()+ "|" +taxi.getMarka()+ "|" +taxi.getNumber()+ "*";
+                System.out.println(result);
+                return result;
+            }
+        }
+        else {
+            return "0";
+        }
+        return result;
+    }
 
     @RequestMapping(value = "/request.html", method = RequestMethod.POST)
     public String medium(@RequestParam("login") String login, @RequestParam("password") String password, Model model) {
         log.info("/request.html controller");
 
         if (authenticate(login,password, service.getUserList())) {
-
             List<Taxi> taxists = service.getTaxiList();
             model.addAttribute("taxists", taxists);
             System.out.println(taxists.size());
