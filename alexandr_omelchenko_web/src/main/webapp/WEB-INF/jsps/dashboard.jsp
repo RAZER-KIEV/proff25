@@ -8,9 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title></title>
+    <title>dashbord</title>
 </head>
 <body>
 
+<tr>
+  <td>${name}, welcome to Taxi Service</td>
+</tr>
+<form action = "/ShowOperators.html" methods="POST">
+  <input type = "submit" value = "ShowOperators"/>
+</form>
 </body>
 </html>

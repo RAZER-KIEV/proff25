@@ -27,7 +27,7 @@
 
     <servlet>
         <servlet-name>authController</servlet-name>
-        <servlet-class>hw8.taxi.controller.AuthenticationController </servlet-class>
+        <servlet-class>hw8.AuthenticationController </servlet-class>
     </servlet>
 
     <servlet-mapping>

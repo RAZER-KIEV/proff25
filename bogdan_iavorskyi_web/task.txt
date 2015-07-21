@@ -4,11 +4,11 @@
 Время действия пароля задается в сервисе
 После истечения действия пароля, пользователь должен поменять пароль. Предыдущий вводить нельзя
 
-hw8.taxi.service.AuthenticationService
+hw8.AuthenticationService
 boolean authenticate(String login, String pass) throws AuthenticationException
-hw8.taxi.service.AuthenticationServiceImpl
+hw8.AuthenticationServiceImpl
 hw8.taxi.action.AuthenticationServlet
-hw8.taxi.exception.AuthenticationException
+hw8.AuthenticationException
 webapp
 index.jsp - страница с формой аутентификации
 dashboard.jsp - поздравления об удачной аутентификации
@@ -27,11 +27,11 @@ dashboard.jsp - поздравления об удачной аутентифи�
 - подтверждение пароля
 - пользователь с таким логином должен быть уникальным
 
-hw8.taxi.service.AuthorizationService
+hw8.AuthorizationService
 boolean register(String login, String id, String pass) throws AuthenticationException
-hw8.taxi.service.AuthorizationServiceImpl
+hw8.AuthorizationServiceImpl
 hw8.taxi.action.RegisterServlet
-hw8.taxi.exception.AuthorizationException
+hw8.AuthorizationException
 webapp
 index.jsp
 register.jsp - форма регистрации
@@ -48,15 +48,15 @@ register.jsp - форма регистрации
 - вывести всех клиентов наездивших на сумму больше указанной
 - вывести всех клиентов, делавших заказы за последний месяц
 
-hw8.taxi.domain.Client
-hw8.taxi.service.ClientService
+hw8.Client
+hw8.ClientService
 boolean createClient(String name, String surname, String phone, String address) throws ClientException
 List showClientsByPortion(int portionSize)
 List showClientsGtSum(int sum)
 List showClientsLastMonth()
-hw8.taxi.service.ClientServiceImpl
+hw8.ClientServiceImpl
 hw8.taxi.action.ClientServlet
-hw8.taxi.exception.ClientException
+hw8.ClientException
 webapp
 index.jsp
 dashboard.jsp - страница со списком функций (доступна после аутентификации)
@@ -74,16 +74,16 @@ clients.jsp - список клиентов
 - вывести список заказов на сумму в указанном диапазоне
 - вывести список всех заказов порциями по 5 штук
 
-hw8.taxi.domain.Order
-hw8.taxi.domain.Client
-hw8.taxi.service.OrderService
+hw8.Order
+hw8.Client
+hw8.OrderService
 boolean createOrder(Long id, Client client, String amount, String addressFrom, String addressTo) throws OrderException
 void editOrder(Long id, Client client, String amount, String addressFrom, String addressTo)
 List showOrders(Long from, Long to)
 List showOrdersByPortion()
-hw8.taxi.service.OrderServiceImpl
+hw8.OrderServiceImpl
 hw8.taxi.action.OrderServlet
-hw8.taxi.exception.OrderException
+hw8.OrderException
 webapp
 index.jsp
 dashboard.jsp - страница со списком функций

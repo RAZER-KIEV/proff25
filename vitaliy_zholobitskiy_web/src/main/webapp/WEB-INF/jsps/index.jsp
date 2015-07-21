@@ -66,7 +66,7 @@
                 <tbody>
                 <tr>
                     <td></td>
-                    <td class="auth_title" colspan="2">Здарова!</td>
+                    <td class="auth_title" colspan="2">Привет!</td>
                 </tr>
                 <tr>
                     <td class="auth_cell_titles">Логин</td>

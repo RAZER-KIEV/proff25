@@ -38,6 +38,5 @@ public class ChannelEx {
                 buffer.clear();
             }
         }
-
     }
 }

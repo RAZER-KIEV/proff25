@@ -120,4 +120,10 @@ public class Operator {
                 ", isItBlock=" + isItBlock +
                 '}';
     }
+
+    public String toStr() {
+        return "Operator{" +
+                "login='" + login + '\'' +
+                '}';
+    }
 }
