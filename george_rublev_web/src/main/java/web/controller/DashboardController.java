@@ -36,7 +36,7 @@ public class DashboardController {
     @RequestMapping(value = "/indexTaxi.html",method = RequestMethod.GET)
     public String index(
             @RequestParam("login") String login,
-            @RequestParam("password") String password,
+            @RequestParam("pass") String password,
             Model model,
             HttpSession session){
         List<Operator> operator;

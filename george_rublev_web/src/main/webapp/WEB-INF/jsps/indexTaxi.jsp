@@ -19,7 +19,7 @@
 
 <button onclick="check()">Submit</button>
 
-<div id="resp"> </div>
+<div id="resp">bla </div>
 
 </body>
 </html>

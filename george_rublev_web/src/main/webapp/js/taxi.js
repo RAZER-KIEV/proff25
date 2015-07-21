@@ -3,24 +3,27 @@
  */
 
 var ajax = new XMLHttpRequest();
-var login = document.getElementById("login");
-var pass = document.getElementById("pass");
+
 ajax.onreadystatechange = function () {
     if (ajax.readyState === 4 && ajax.status === 200) {
         if (ajax.responseText !== 'false') {
-        var div = document.getElementById('resp');
-            div.innerHTML = ajax.responseText;//ajax.responseText.split('|');
-
+            //var div = document.getElementById('resp');
+            //div.innerHTML = ajax.responseText;//ajax.responseText.split('|');
+            document.write(ajax.responseText);
+            resp.innerHTML=ajax.responseText;
 
         } else {
             alert('Login or Password - FAILED!!!!');
         }
     }
-    ;
+};
+
 
     function check() {
-        ajax.open('GET', '/ajax?login=' + login.value + '&pass=' + pass.value);
+        var login = document.getElementById("login").value;
+        var pass = document.getElementById("pass").value;
+        console.log('/indexTaxi.html?login=' + login + '&pass=' + pass);
+        ajax.open('GET', '/indexTaxi.html?login=' + login + '&pass=' + pass);
         ajax.send();
     }
 
-}
