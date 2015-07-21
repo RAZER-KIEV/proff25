@@ -9,9 +9,9 @@ import java.util.List;
  */
 public interface OperatorDao {
     Long create(Operator operator);
-    Operator read(Long id);
-    boolean update(Operator operator);
-    boolean delete(Operator operator);
+    Operator readOperator(Long id);
+    boolean updateOperator(Operator operator);
+    boolean deleteOperator(Operator operator);
     Operator findOperatorByName(String name);
     List listOperator();
 }
