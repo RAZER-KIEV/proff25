@@ -8,8 +8,8 @@ var pass = document.getElementById("pass");
 ajax.onreadystatechange = function () {
     if (ajax.readyState === 4 && ajax.status === 200) {
         if (ajax.responseText !== 'false') {
-        var div = document.getElementById('div');
-            div = ajax.responseText.split('|');
+        var div = document.getElementById('resp');
+            div.innerHTML = ajax.responseText;//ajax.responseText.split('|');
 
 
         } else {
