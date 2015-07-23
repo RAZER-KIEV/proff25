@@ -17,9 +17,10 @@
 <p>Login:  <input id="login" maxlength="25" size="40"></p>
 <p>Password: <input id="pass" maxlength="25" size="40"></p>
 
-<button onclick="check()">Submit</button>
+<button onclick="send()">Submit</button>
 
 <div id="resp">bla </div>
+
 
 </body>
 </html>

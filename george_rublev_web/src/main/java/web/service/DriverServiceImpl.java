@@ -1,7 +1,10 @@
 package web.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import web.dao.ClientDao;
+import web.dao.DriversDao;
 import web.domain.Drivers;
 
 import java.util.List;
@@ -12,6 +15,20 @@ import java.util.List;
 @Service
 @Transactional
 public class DriverServiceImpl implements DriverService {
+    private DriversDao driversDao;
+
+    public DriverServiceImpl() {
+    }
+
+    public DriverServiceImpl(DriversDao driversDao) {
+        this.driversDao = driversDao;
+    }
+
+    @Autowired
+    public void setDriversDao(DriversDao driversDao) {
+        this.driversDao = driversDao;
+    }
+
     @Override
     public void addDrivers(Drivers drivers) {
 
@@ -19,7 +36,7 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public List<Drivers> listDrivers() {
-        return null;
+        return driversDao.listDrivers();
     }
 
     @Override

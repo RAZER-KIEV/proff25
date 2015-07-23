@@ -1,5 +1,6 @@
 package web.dao;
 
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -26,6 +27,7 @@ public class DriversDaoImpl implements DriversDao{
 
     @Override
     public List<Drivers> listDrivers() {
-        return null;
+        Query query = sessionFactory.getCurrentSession().createQuery("from web.domain.Drivers");
+        return query.list();
     }
 }

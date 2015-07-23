@@ -15,9 +15,6 @@ import java.util.List;
 @Transactional
 public class ClientServiceImpl implements ClientService {
 
-//    @Autowired
-//    private ClientDao clientDao;
-
     public ClientServiceImpl() {
     }
 

@@ -33,26 +33,24 @@ public class DashboardController {
     @Autowired
     private DriverService driverService;
 
-    @RequestMapping(value = "/indexTaxi.html",method = RequestMethod.GET)
-    public String index(
-            @RequestParam("login") String login,
-            @RequestParam("pass") String password,
-            Model model,
-            HttpSession session){
-        List<Operator> operator;
-        operator = operatorService.listOperator();
+    @RequestMapping(value = "/indexTaxi.html",method = RequestMethod.POST)
+    public @ResponseBody String indexTaxi(@RequestParam("login") String login,@RequestParam("pass") String password){
+        log.info("controller");
+        List<Operator> operator = operatorService.listOperator();
         for(Operator op1 : operator){
             if(op1.getLogin().equals(login)&&op1.getPassword().equals(password)){
                 List<Drivers> drivers = driverService.listDrivers();
-                StringBuilder sb = new StringBuilder();
+                String sb = "<table border=\"1\"><tr><td>Name</td><td>Phone</td><td>model</td><td>number</td></tr>";
                 for (Drivers d : drivers){
-                    sb.append(d.getName()).append("|");
+                    sb = sb + "<tr><td>"+d.getName()+"</td><td>"+d.getPhone()+"</td><td>"+d.getCarNum()+"</td><td>"+d.getCarNumber()+"</td></tr>";
                 }
-                model.addAttribute("driversList",driverService.listDrivers());
-                return new String(sb);
+                    sb = sb+"</table>";
+                return sb;
+            }else{
+                return "error else";
             }
         }
-        return "false";
+        return "error";
     }
 
 
