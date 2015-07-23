@@ -1,4 +1,4 @@
-package taxi.dao;
+package hw8.taxi.dao;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
@@ -6,7 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import taxi.domain.User;
+import hw8.taxi.domain.User;
 import java.util.List;
 
 /**

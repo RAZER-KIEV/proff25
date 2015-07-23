@@ -31,19 +31,28 @@ public class AuthorizationServiceImpl implements AuthorizationService {
     @Transactional
     @Override
     public boolean register(String login, String individualTaxpayerNumber, String password) throws AuthorizationException {
-
+/*
+этот IF вываливает ошибку Something bad: Provided id of the wrong type for
+class taxi.domain.Client. Expected: class java.lang.Long, got class java.lang.String
+вероятно, потому что у некоторых из нас таблица Role - пустая.
+для начала, нужно написать проверку, что база запускается на сервере в первый раз (т.е. таблица
+Role пустая и тогда создавать две роли админа и юзера. Только после этого и можно использовать этот If
         if (USER == null) {
             USER = roleDao.read("user");
         }
-
+*/
         if (!loginTypoCheck(login, false))
             throw new AuthorizationException("Login not correct");
         if (!passwordTypoCheck(password, false))
             throw new AuthorizationException("Password not correct");
-        if (!individualTaxpayerNumberTypoCheck(individualTaxpayerNumber, false))
-            throw new AuthorizationException(("Individual taxpayer number not correct"));
+
+        // здесь не понятно, что с чем сравнивается, возможно Богдан в jsp которая делает регистрацию
+        // забыл добавить еще одно поле для проверки individualTaxpayerNumber
+ /*       if (!individualTaxpayerNumberTypoCheck(individualTaxpayerNumber, false))
+            throw new AuthorizationException(("Individual taxpayer number not correct"));*/
         LocalDateTime now = LocalDateTime.now();
         Operator operator = new Operator(login, password, Long.parseLong(individualTaxpayerNumber), "", now, false, 0L, USER);
+
         try {
             dao.create(operator);
         } catch (Exception exception) {

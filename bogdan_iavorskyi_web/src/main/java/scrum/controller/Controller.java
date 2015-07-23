@@ -25,7 +25,7 @@ public class Controller {
     public String index(Model model) {
         log.info("/index controller");
         model.addAttribute("name", "default");
-        return "index";
+        return "drivers";
     }
 
     @RequestMapping(value = "/ajax", method = RequestMethod.POST)
@@ -33,8 +33,7 @@ public class Controller {
     @ResponseBody
     String ajax(@RequestParam("login") String login, @RequestParam("password") String password, Model model) {
         if(authenticate(login, password, service.getUserList())){
-            String result = new String();
-            result = result2(result);
+            String result = result2();
             System.out.println(result);
             return result;
         }
@@ -109,10 +108,11 @@ public class Controller {
         return result;
     }
 
-    private String result2(String result){
+    private String result2(){
+        String result = "";
         List<Taxi> taxists = service.getTaxiList();
         for (Taxi taxi : taxists){
-            result = result +"|" +taxi.getName()+ "|" +taxi.getTelefon()+ "|" +taxi.getMarka()+ "|" +taxi.getNumber()+ "*";
+            result = result +taxi.getName()+ "|" +taxi.getTelefon()+ "|" +taxi.getMarka()+ "|" +taxi.getNumber()+ "*";
         }
         return result;
     }

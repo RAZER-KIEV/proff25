@@ -1,9 +1,6 @@
 package hw3.chat;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.Socket;
 import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
 
@@ -12,18 +9,26 @@ import java.nio.channels.SocketChannel;
  */
 public class ClientHandler extends Thread {
 
-    private Socket socket;
+    private SocketChannel socketChannel;
     private int numOfConnection;
-    private byte[] buffer;
-    private InputStream inStream;
-    private OutputStream outStream;
+    private ByteBuffer inputBuffer;
+    private ByteBuffer outputBuffer;
+    private Server server;
 
-    public Socket getSocket() {
-        return socket;
+    public Server getServer() {
+        return server;
     }
 
-    public void setSocket(Socket socket) {
-        this.socket = socket;
+    public void setServer(Server server) {
+        this.server = server;
+    }
+
+    public SocketChannel getSocketChannel() {
+        return socketChannel;
+    }
+
+    public void setSocketChannel(SocketChannel socketChannel) {
+        this.socketChannel = socketChannel;
     }
 
     public int getNumOfConnection() {
@@ -34,61 +39,67 @@ public class ClientHandler extends Thread {
         this.numOfConnection = numOfConnection;
     }
 
-    public byte[] getBuffer() {
-        return buffer;
+    public ByteBuffer getInputBuffer() {
+        return inputBuffer;
     }
 
-    public void setBuffer(byte[] buffer) {
-        this.buffer = buffer;
+    public void setInputBuffer(ByteBuffer buffer) {
+        this.inputBuffer = buffer;
     }
 
-    public InputStream getInStream() {
-        return inStream;
+    public ByteBuffer getOutputBuffer() {
+        return outputBuffer;
     }
 
-    public void setInStream(InputStream inStream) {
-        this.inStream = inStream;
+    public void setOutputBuffer(ByteBuffer outputBuffer) {
+        this.outputBuffer = outputBuffer;
     }
 
-    public OutputStream getOutStream() {
-        return outStream;
-    }
+    public ClientHandler(int numOfConnection, SocketChannel socketChannel, Server server) {
+        inputBuffer = ByteBuffer.allocate(64);
+        outputBuffer = ByteBuffer.allocate(64);
 
-    public void setOutStream(OutputStream outStream) {
-        this.outStream = outStream;
-    }
-
-    public ClientHandler(int numOfConnection, Socket socket) {
-        buffer = new byte[64 * 1024];
-
+        this.server = server;
         this.numOfConnection = numOfConnection;
-        this.socket = socket;
-        try {
-            inStream = socket.getInputStream();
-            outStream = socket.getOutputStream();
-        } catch (IOException exp) {
-            exp.printStackTrace();
-        }
+        this.socketChannel = socketChannel;
 
         setDaemon(true);
         setPriority(NORM_PRIORITY);
         start();
     }
 
-    @Override
-    public void run() {
-        while(true) {
-            try {
-                int readed = inStream.read(buffer);
-                if (readed > 0) {
-                    System.out.println(new String(buffer, 0, readed));
-                    buffer = new byte[64 * 1024];
-                }
-            } catch (IOException exp) {
-                exp.printStackTrace();
-            }
+    public void sendMessage(String message) {
+        try {
+            outputBuffer.put(message.getBytes());
+            outputBuffer.flip();
+            socketChannel.write(outputBuffer);
+        } catch (IOException exp) {
+            System.out.println("ERROR: Cannot send message.");
+            exp.printStackTrace();
+        } finally {
+            outputBuffer.clear();
         }
     }
 
+    @Override
+    public void run() {
+        int readed;
+        while (true) {
+            try {
+                if ((readed = socketChannel.read(inputBuffer)) > 0) {
+                    synchronized (server.gettedMessage) {
+                        server.gettedMessage = new String(inputBuffer.array(), 0, readed);
+                        System.out.println("Getted message: " + server.gettedMessage);
+                        server.sendMessage(server.gettedMessage);
+                        server.gettedMessage = new String();
+                    }
+                }
+            } catch (IOException exp) {
+                exp.printStackTrace();
+            } finally {
+                inputBuffer.clear();
+            }
+        }
+    }
 }
 

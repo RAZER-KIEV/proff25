@@ -1,10 +1,10 @@
-package taxi.service;
+package hw8.taxi.service;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import taxi.dao.TaxiDaoImpl;
+import hw8.taxi.dao.TaxiDaoImpl;
 
 import java.util.List;
 
