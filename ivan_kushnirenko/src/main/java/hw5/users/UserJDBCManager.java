@@ -1,26 +1,12 @@
 package hw5.users;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
 /**
  * Created by ivan on 24.07.15.
- */
-
-/*
-Написать приложение, позволяющее добавлять нового пользователя и просматривать
-список существующих пользователей. Структура таблицы (id, имя, пароль, дата).
-
-В класс UserJDBCManager поместите все операции с базой данных. Желательно в
-методы этого класс передовать и возвращать объекты класса User
-
-public int create(User user)
-public List findAll()
-
-База данных:
- Login: User
- Password: User
  */
 
 public class UserJDBCManager {
@@ -78,15 +64,15 @@ public class UserJDBCManager {
 
     public List<User> findAll() {
         String query = "SELECT * FROM USERS";
-        List<User> users = null;
+        List<User> users = new ArrayList<>();
         try {
             statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
                 int id = resultSet.getInt("ID");
-                String name = resultSet.getString("NAME_USER");
+                String name = resultSet.getString("USER_NAME");
                 String password = resultSet.getString("PASSWORD");
-                Date reg_date = resultSet.getDate("REG_DATE");
+                Date reg_date = resultSet.getDate("REGIST_DATE");
                 users.add(new User(id, name, password, reg_date));
             }
         } catch (SQLException exp) {
@@ -96,11 +82,22 @@ public class UserJDBCManager {
         return users;
     }
 
+    private void closeConnection() {
+        try {
+            if (!connection.isClosed()) {
+                connection.close();
+            }
+        } catch (SQLException exp) {
+            System.out.println("ERROR: Cannot close connection.");
+            exp.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
         UserJDBCManager userJDBCManager = new UserJDBCManager();
-        User user = new User(1, "John", "desperado77", new Date(System.currentTimeMillis()));
-        userJDBCManager.create(user);
-
+        //User user = new User(1, "John", "desperado77", new Date(System.currentTimeMillis()));
+        System.out.println(userJDBCManager.findAll());
+        userJDBCManager.closeConnection();
     }
 
 }
