@@ -10,7 +10,7 @@
 <head>
   <title>Taxi Last Way</title>
   <script src="js/taxi.js"></script>
-
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 <body>
 
