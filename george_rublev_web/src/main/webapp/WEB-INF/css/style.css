@@ -1,6 +1,6 @@
 body {
-    background-image: url(../resources/street_taxi.jpg);
-    background-position: left, right;
+    background: url(resources/street_taxi.jpg);
+    /*background-position: left, right;*/
 }
 table {
     vertical-align: middle;
