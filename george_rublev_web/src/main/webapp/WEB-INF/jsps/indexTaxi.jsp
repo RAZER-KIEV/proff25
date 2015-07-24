@@ -10,9 +10,22 @@
 <head>
   <title>Taxi Last Way</title>
   <script src="js/taxi.js"></script>
-  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <style>
+    .bodyStyle {
+      background-image: url(http://localhost:8082/imeg/street_taxi.jpg); /* Путь к фоновому изображению */
+      background-color: #c7b39b;
+    }
+    table {
+      vertical-align: middle;
+    }
+    p {
+      font-weight: bold;
+      font-style: italic
+    }
+  </style>
+
 </head>
-<body>
+<body class="bodyStyle">
 
 <p>Login:  <input id="login" maxlength="25" size="40"></p>
 <p>Password: <input id="pass" maxlength="25" size="40"></p>
