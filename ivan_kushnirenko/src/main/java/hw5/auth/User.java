@@ -1,11 +1,10 @@
-package hw5.users;
+package hw5.auth;
 
-import java.sql.Date;
+import java.util.Date;
 
 /**
  * Created by ivan on 24.07.15.
  */
-
 
 public class User {
 
