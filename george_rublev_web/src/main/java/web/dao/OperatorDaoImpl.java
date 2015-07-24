@@ -19,22 +19,22 @@ public class OperatorDaoImpl implements OperatorDao {
     public OperatorDaoImpl() {
     }
 
-    public OperatorDaoImpl(SessionFactory sessionFactory){
+    public OperatorDaoImpl(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
     @Override
     public Long create(Operator operator) {
-        return (Long)sessionFactory.getCurrentSession().save(operator);
+        return (Long) sessionFactory.getCurrentSession().save(operator);
     }
 
     @Override
-    public Operator readOperator(Long id){
-        return (Operator)sessionFactory.getCurrentSession().get(Operator.class,id);
+    public Operator readOperator(Long id) {
+        return (Operator) sessionFactory.getCurrentSession().get(Operator.class, id);
     }
 
     @Override
-    public boolean updateOperator(Operator operator){
+    public boolean updateOperator(Operator operator) {
         sessionFactory.getCurrentSession().update(operator);
         return true;
     }

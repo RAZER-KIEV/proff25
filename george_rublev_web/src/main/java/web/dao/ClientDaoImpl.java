@@ -20,22 +20,22 @@ public class ClientDaoImpl implements ClientDao {
     public ClientDaoImpl() {
     }
 
-    public ClientDaoImpl(SessionFactory sessionFactory){
+    public ClientDaoImpl(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
     @Override
     public Long create(Client client) {
-        return (Long)sessionFactory.getCurrentSession().save(client);
+        return (Long) sessionFactory.getCurrentSession().save(client);
     }
 
     @Override
-    public Client read (Long id){
-        return (Client)sessionFactory.getCurrentSession().get(Client.class, id);
+    public Client read(Long id) {
+        return (Client) sessionFactory.getCurrentSession().get(Client.class, id);
     }
 
     @Override
-    public boolean update(Client client){
+    public boolean update(Client client) {
         sessionFactory.getCurrentSession().update(client);
         return true;
     }
@@ -55,7 +55,7 @@ public class ClientDaoImpl implements ClientDao {
     @Override
     public List<Client> findClientByName(String name) {
         Query query = sessionFactory.getCurrentSession().createQuery("select c from web.domain.Client c where c.name = name");
-        query.setParameter(name,"name");
+        query.setParameter(name, "name");
         return query.list();
     }
 

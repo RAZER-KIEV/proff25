@@ -15,6 +15,9 @@ import java.util.List;
 @Transactional
 public class ClientServiceImpl implements ClientService {
 
+    @Autowired
+    private ClientDao clientDao;
+
     public ClientServiceImpl() {
     }
 
@@ -26,12 +29,9 @@ public class ClientServiceImpl implements ClientService {
         return clientDao;
     }
 
-    @Autowired
     public void setClientDao(ClientDao clientDao) {
         this.clientDao = clientDao;
     }
-
-    private ClientDao clientDao;
 
     @Transactional
     public void addClient(Client client) {

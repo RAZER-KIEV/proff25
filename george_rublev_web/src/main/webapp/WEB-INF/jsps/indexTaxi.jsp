@@ -46,8 +46,9 @@
                 <fieldset align="right"
                           style="border-style: solid; border-radius: 10px 10px 10px 10px; border-color: black; background-color: #FCCC56 ">
                     <legend align="center"
-                            style="border-radius: 10px 10px 10px 10px; border-style: solid; border-width: 2px; background-color: #5FAEAB "><b
-                            style="font-family: Arial; font-weight: bold">Authentication:</b></legend>
+                            style="border-radius: 10px 10px 10px 10px; border-style: solid; border-width: 2px; background-color: #E6A37E">
+                        <b
+                                style="font-family: Arial; font-weight: bold">Authentication:</b></legend>
                     <table>
                         <tr>
                             <td>Login:</td>

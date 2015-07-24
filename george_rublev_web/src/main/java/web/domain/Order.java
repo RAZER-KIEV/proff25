@@ -11,9 +11,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "ORDER")
 public class Order {
+
     @Id
     @Column(name = "ID")
     private Integer id;
-
 
 }

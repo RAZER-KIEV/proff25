@@ -1,6 +1,5 @@
 package web.service;
 
-import web.domain.Client;
 import web.domain.Operator;
 
 import java.util.List;
@@ -10,7 +9,10 @@ import java.util.List;
  */
 public interface OperatorService {
     public void addOperator(Operator operator);
+
     public List<Operator> listOperator();
+
     public void removeOperator(Integer id);
+
     public Operator findOperator(String name);
 }

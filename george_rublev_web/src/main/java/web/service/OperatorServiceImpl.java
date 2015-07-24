@@ -38,7 +38,7 @@ public class OperatorServiceImpl implements OperatorService {
 
     @Transactional
     public void addOperator(Operator operator) {
-
+        operatorDao.create(operator);
     }
 
     @Transactional
@@ -48,12 +48,13 @@ public class OperatorServiceImpl implements OperatorService {
 
     @Override
     public void removeOperator(Integer id) {
-
+        Operator oper = operatorDao.readOperator(Long.valueOf(id));
+        operatorDao.deleteOperator(oper);
     }
 
     @Transactional
     public void removeOperator(Operator operator) {
-            operatorDao.deleteOperator(operator);
+        operatorDao.deleteOperator(operator);
     }
 
     @Transactional
