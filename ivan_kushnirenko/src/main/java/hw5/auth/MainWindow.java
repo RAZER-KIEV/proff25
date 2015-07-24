@@ -2,7 +2,9 @@ package hw5.auth;
 
 /**
  * Created by ivan on 24.07.15.
+ *
  */
+
 public class MainWindow {
 
     private UserJDBCManager userJDBCManager;
@@ -31,6 +33,6 @@ public class MainWindow {
 
     public static void main(String[] args) {
         MainWindow mainWindow = new MainWindow();
-        mainWindow.authenticate("User","123");
+        mainWindow.authenticate("User", "123");
     }
 }

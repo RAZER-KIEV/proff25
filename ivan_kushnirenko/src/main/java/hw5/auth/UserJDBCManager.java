@@ -8,6 +8,7 @@ import java.util.Locale;
 
 /**
  * Created by ivan on 24.07.15.
+ *
  */
 public class UserJDBCManager {
 

@@ -4,6 +4,7 @@ import java.util.Date;
 
 /**
  * Created by ivan on 24.07.15.
+ *
  */
 
 public class User {
