@@ -46,8 +46,6 @@ ajax.onreadystatechange = function () {
         //var login = document.getElementById("login").value;
         //var pass = document.getElementById("pass").value;
         console.log('/indexTaxi.html?login=' + login + '&pass=' + pass);
-        //ajax.open('GET', '/indexTaxi.html?login=' + login + '&pass=' + pass);
-        //ajax.send();
     }
 
 var ajax = new XMLHttpRequest();

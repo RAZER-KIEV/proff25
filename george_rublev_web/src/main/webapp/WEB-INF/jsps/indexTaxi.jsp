@@ -39,10 +39,10 @@
 <table>
     <tr height="400px"></tr>
     <tr>
-        <td width="35%"></td>
-        <td width="35%"></td>
-        <td width="30%">
-            <form action="dashboard.jsp" method="GET" style="width: 300px; padding: 10px">
+        <td width="35%"><p id="menu"></p> </td>
+        <td width="35%"><p id="resp"></p></td>
+        <td width="30%" id="logid">
+            <%--<form action="indexTaxi.html" method="POST" style="width: 300px; padding: 10px">--%>
                 <fieldset align="right"
                           style="border-style: solid; border-radius: 10px 10px 10px 10px; border-color: black; background-color: #FCCC56 ">
                     <legend align="center"
@@ -66,7 +66,7 @@
                         </tr>
                     </table>
                 </fieldset>
-            </form>
+            <%--</form>--%>
     </tr>
 </table>
 
