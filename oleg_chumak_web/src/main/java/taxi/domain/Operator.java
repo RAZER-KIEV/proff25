@@ -154,7 +154,7 @@ public class Operator {
                 + lastPasswordChangeDate + '|'
                 + isBlocked + '|'
                 + unsuccessfulLoginTries + '|'
-                + role.toString()
+                + role.getRoleName()
                 ;
     }
 
