@@ -131,8 +131,7 @@ public class Client {
                 '|' + phoneNumber +
                 '|' + address +
                 '|' + totalMoneyAmount +
-                '|' + lastOrderDate +
-                '|' + orders;
+                '|' + lastOrderDate;
     }
 }
 
