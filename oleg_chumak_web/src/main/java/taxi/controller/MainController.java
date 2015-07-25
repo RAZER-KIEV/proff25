@@ -536,7 +536,18 @@ public class MainController {
     public
     @ResponseBody
     String ajaxDrivers(Model model) {
-            return "aa";
+        List<TaxiDriver> taxiDrivers = service.findAllTaxists();
+        if (taxiDrivers == null){
+            return "0";
+        }
+        else {
+            String drivResult = taxiDrivers.toString();
+            drivResult.replace('[', ' ');
+            drivResult.replace(']', ' ');
+            drivResult.trim();
+            String result = new String("Driver's name | Car model | Car number | Driver phone," + drivResult);
+            return result;
+        }
     }
 
 
@@ -545,7 +556,18 @@ public class MainController {
     public
     @ResponseBody
     String ajaxOrders(Model model) {
+        List<Order> orders = service.listAllOrders();
+        if (orders == null){
             return "0";
+        }
+        else {
+            String orderResult = orders.toString();
+            orderResult.replace('[', ' ');
+            orderResult.replace(']', ' ');
+            orderResult.trim();
+            String result = new String("Operator | Driver's name | Order Date | Amount in cents | Start point | Point of destination," + orderResult);
+            return result;
+        }
     }
 
 
@@ -554,7 +576,18 @@ public class MainController {
     public
     @ResponseBody
     String ajaxOrdersPortioned(@RequestParam("numberOfPortion") String numberOfPortion, Model model) {
+        List<Order> orders = service.listOfOrdersChunk(Integer.valueOf(numberOfPortion), 5);
+        if (orders == null){
             return "0";
+        }
+        else {
+            String orderResult = orders.toString();
+            orderResult.replace('[', ' ');
+            orderResult.replace(']', ' ');
+            orderResult.trim();
+            String result = new String("Operator | Driver's name | Order Date | Amount in cents | Start point | Point of destination," + orderResult);
+            return result;
+        }
     }
 
 
@@ -563,7 +596,18 @@ public class MainController {
     public
     @ResponseBody
     String ajaxAmount(@RequestParam("amountFrom") String amountFrom, @RequestParam("amountTo") String amountTo, Model model) {
+        List<Order> orders = service.listOfOrdersInRangeOfAmount(Long.valueOf(amountFrom), Long.valueOf(amountTo));
+        if (orders == null){
             return "0";
+        }
+        else {
+            String orderResult = orders.toString();
+            orderResult.replace('[', ' ');
+            orderResult.replace(']', ' ');
+            orderResult.trim();
+            String result = new String("Operator | Driver's name | Order Date | Amount in cents | Start point | Point of destination," + orderResult);
+            return result;
+        }
     }
 
 
@@ -572,8 +616,17 @@ public class MainController {
     public
     @ResponseBody
     String ajaxClients(Model model) {
-        {
+        List<Client> clients = service.findAllClients();
+        if (clients == null){
             return "0";
+        }
+        else {
+            String clientResult = clients.toString();
+            clientResult.replace('[', ' ');
+            clientResult.replace(']', ' ');
+            clientResult.trim();
+            String result = new String("Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult);
+            return result;
         }
     }
 
@@ -583,8 +636,17 @@ public class MainController {
     public
     @ResponseBody
     String ajaxClientsPortioned(@RequestParam("numberOfPortion") String numberOfPortion, Model model) {
-        {
+        List<Client> clients = service.clientsPortinedByTen(Long.valueOf(numberOfPortion));
+        if (clients == null){
             return "0";
+        }
+        else {
+            String clientResult = clients.toString();
+            clientResult.replace('[', ' ');
+            clientResult.replace(']', ' ');
+            clientResult.trim();
+            String result = new String("Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult);
+            return result;
         }
     }
 
@@ -594,8 +656,17 @@ public class MainController {
     public
     @ResponseBody
     String ajaxClientsMonth(Model model) {
-        {
+        List<Client> clients = service.clientsMadeOrdersDuringLastMonth();
+        if (clients == null){
             return "0";
+        }
+        else {
+            String clientResult = clients.toString();
+            clientResult.replace('[', ' ');
+            clientResult.replace(']', ' ');
+            clientResult.trim();
+            String result = new String("Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult);
+            return result;
         }
     }
 
@@ -605,8 +676,17 @@ public class MainController {
     public
     @ResponseBody
     String ajaxClientsAmount(@RequestParam("amount") String amount, Model model) {
-        {
+        List<Client> clients = service.clientswithOrderAmountMoreThen(Long.valueOf(amount));
+        if (clients == null){
             return "0";
+        }
+        else {
+            String clientResult = clients.toString();
+            clientResult.replace('[', ' ');
+            clientResult.replace(']', ' ');
+            clientResult.trim();
+            String result = new String("Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult);
+            return result;
         }
     }
 
