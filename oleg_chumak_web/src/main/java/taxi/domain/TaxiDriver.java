@@ -89,13 +89,10 @@ public class TaxiDriver {
 
     @Override
     public String toString() {
-        return "TaxiDriver{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", model='" + model + '\'' +
-                ", number='" + number + '\'' +
-                ", phone='" + phone + '\'' +
-                '}';
-
+        return
+                name + '|' +
+                model + '|' +
+                number + '|' +
+                phone;
     }
 }
