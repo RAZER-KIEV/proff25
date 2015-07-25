@@ -46,7 +46,7 @@ public class MainController {
     public String main(HttpSession session) {
 //        addOperators();
         if (!isAuth(session))
-            return "indexTT";
+            return "index";
         return "dashboard";
     }
 

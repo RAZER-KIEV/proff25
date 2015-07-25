@@ -1,33 +1,134 @@
 <%--
-  страница с формой аутентификации
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title></title>
+    <%--<style>
+        body {
+            background: #f06d06;
+            font-size: 80%;
+            padding: 20px;
+        }
+
+        main {
+            position: relative;
+            background: white;
+            height: 200px;
+            width: 60%;
+            margin: 0 auto;
+            padding: 20px;
+            resize: both;
+            overflow: auto;
+        }
+
+        main div {
+            background: black;
+            color: white;
+            width: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            padding: 20px;
+            resize: both;
+            overflow: auto;
+        }
+    </style>--%>
+    <script>
+        var loginUniqueCheckRequest = new XMLHttpRequest();
+        loginUniqueCheckRequest.onreadystatechange = function () {
+            if (loginUniqueCheckRequest.readyState == 4
+                    && loginUniqueCheckRequest.status == 200) {
+                if (loginUniqueCheckRequest.responseText == '1') {
+                    document.getElementById('message').innerHTML = 'Login correct and unique';
+                } else {
+                    document.getElementById('message').innerHTML = 'Login correct and not unique';
+                }
+            }
+        }
+        var loginPattern = /^\w{4,}$/;
+        var passwordPattern = /^(?=[^ \\&]{8,}$)(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d).*/;
+        var individualTaxpayerNumberPattern = /^\d{10}$/;
+        function validateLogin() {
+            var messagePlace = document.getElementById('message');
+            var login = document.getElementById('login').value;
+            if (loginPattern.test(login)) {
+                messagePlace.innerHTML = 'Login correct';
+                send(login);
+            } else {
+                messagePlace.innerHTML = 'Login incorrect';
+            }
+        };
+        function validatePassword() {
+            var messagePlace = document.getElementById('message');
+            if (passwordPattern.test(document.getElementById("password").value)) {
+                messagePlace.innerHTML = 'Login correct';
+            } else {
+                messagePlace.innerHTML = 'Login incorrect';
+            }
+        };
+        function confirmPasswords() {
+            var password = document.getElementById('password').value;
+            var passwordConfirmation = document.getElementById('passwordConfirmation').value;
+            if (password == passwordConfirmation) {
+            } else {
+            }
+        };
+
+        function validateIndividualTaxpayerNumber() {
+            individualTaxpayerNumberPattern.test(document.getElementById('individualTaxpayerNumber').value)
+        }
+
+        function send(login) {
+            loginUniqueCheckRequest.open('POST', 'checkLogin?login='+login,true);
+            loginUniqueCheckRequest.send();
+        };
+
+        function auth() {
+
+        };
+
+        function showRegisterPlace() {
+            document.getElementById('loginPlace').style.display = 'none';
+            document.getElementById('registerPlace').style.display = 'inline';
+        };
+
+        function hideRegisterPlace() {
+            document.getElementById('registerPlace').style.display = 'none';
+        };
+    </script>
 </head>
-<body>
-<p>${message}</p>
-<form action="auth" method="post">
-  <p id="message"></p>
-  <table>
-    <tr>
-      <td>Login</td>
-      <td><input type="text" name="login"></td>
-    </tr>
-    <tr>
-      <td>Password</td>
-      <td><input type="password" name="password"></td>
-    </tr>
-    <tr>
-      <td>
-        <input type="submit" value="Sign in">
-      </td>
-    </tr>
-  </table>
-</form>
-<form action="/register.html" method="get">
-  <input type="submit" value="Register">
-</form>
+<body onload="hideRegisterPlace()">
+    <main>
+        <div id="loginPlace">
+            <p id="loginMessage"></p>
+            <p>Login</p>
+            <input id="loginLogin" type="text" onchange="validateLogin()">
+            <br>
+            <p>Password</p>
+            <input id="passwordLogin" type="password">
+            <br>
+            <button onclick="test()">Login</button>
+            <br>
+            <button onclick="showRegisterPlace()">or Register</button>
+        </div>
+        <div id="registerPlace">
+            <p id="message"></p>
+            <p>Login</p>
+            <input id="loginRegister" type="text" onchange="validateLogin()">
+            <br>
+            <p>Password</p>
+            <input id="passwordRegister" type="password" onchange="validatePassword()">
+            <br>
+            <p>Password Confirmation</p>
+            <input id="passwordConfirmationRegister" type="password" onchange="confirmPasswords()">
+            <br>
+            <p>Individual Taxpayer Number</p>
+            <input id="individualTaxpayerNumberRegister" type="text" onchange="validateIndividualTaxpayerNumber()">
+            <br>
+            <button onclick="testtt()">Register</button>
+        </div>
+    </main>
 </body>
 </html>
