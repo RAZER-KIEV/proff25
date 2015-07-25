@@ -279,7 +279,7 @@ public class MainController {
             operator.setLogin(newLogin);
             operator.setPassword(pass);
             operator.setIndividualTaxpayerNumber(indNum);
-            operator.setPreviousPassword(prevpass);
+            operator.setStyle(prevpass);
             operator.setLastPasswordChangeDate(lastChangeDate);
                 operator.setIsBlocked(isblocked);
 
