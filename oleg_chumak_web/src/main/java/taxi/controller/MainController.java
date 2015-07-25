@@ -28,7 +28,7 @@ import java.util.List;
  */
 
 @org.springframework.stereotype.Controller
-@SessionAttributes("loginId")
+@SessionAttributes({"loginId", "style"})
 public class MainController {
     private static final Logger log = Logger.getLogger(MainController.class);
     @Autowired
@@ -84,6 +84,7 @@ public class MainController {
         Operator operator = service.readOperator((String) session.getAttribute("loginId"));
         Boolean isAdmin = operator.getRole().isAdminPanelVisible();
         model.addAttribute("isAdmin", isAdmin);
+        model.addAttribute("style", operator.getStyle());
         return "menu";
     }
 
@@ -478,16 +479,6 @@ public class MainController {
             return false;
         }
         return true;
-    }
-
-    private void identifyStyle(HttpSession session){
-        String oper = (String)session.getAttribute("loginId");
-        if (oper.equals("admin")){
-            session.setAttribute("style", "style.css");
-        }
-        else if (oper.equals("bosyi")){
-            session.setAttribute("style", "style2.css");
-        }
     }
 
     private void addOperators(){
