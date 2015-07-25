@@ -126,16 +126,13 @@ public class Client {
 
     @Override
     public String toString() {
-        return "Client{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", address='" + address + '\'' +
-                ", totalMoneyAmount=" + totalMoneyAmount +
-                ", lastOrderDate=" + lastOrderDate +
-                ", orders=" + orders +
-                '}';
+        return name +
+                '|'+ surname +
+                '|' + phoneNumber +
+                '|' + address +
+                '|' + totalMoneyAmount +
+                '|' + lastOrderDate +
+                '|' + orders;
     }
 }
 
