@@ -3,7 +3,6 @@ package taxi.dao;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import taxi.domain.Client;
 import taxi.domain.Role;
 
 import java.util.List;
@@ -39,7 +38,7 @@ public class RoleDaoImpl implements RoleDao {
 
     @Override
     public Role read(String roleName) {
-        return (Role) factory.getCurrentSession().get(Client.class, roleName);
+        return (Role) factory.getCurrentSession().get(Role.class, roleName);
     }
 
     @Override
