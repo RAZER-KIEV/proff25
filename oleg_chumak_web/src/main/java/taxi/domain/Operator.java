@@ -19,7 +19,7 @@ public class Operator {
     private String password;
     @Column(name = "IND_NUMBER")
     private Long individualTaxpayerNumber;
-    @Column(name = "PREV_PASSWORD")
+    @Column(name = "STYLE")
     private String style;
     @Column(name = "LAST_PASSWORD_CHANGE_DATE")
     private LocalDateTime lastPasswordChangeDate;
@@ -61,7 +61,6 @@ public class Operator {
         this.isBlocked = isBlocked;
         this.unsuccessfulLoginTries = unsuccessfulLoginTries;
         this.role = role;
-
         orders = new HashSet<>();
     }
 
