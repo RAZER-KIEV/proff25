@@ -85,11 +85,10 @@ public class Role {
 
     @Override
     public String toString() {
-        return "Role{" +
-                "roleName='" + roleName + '\'' +
-                ", dispatcherPanelVisible=" + dispatcherPanelVisible +
-                ", adminPanelVisible=" + adminPanelVisible +
-                '}';
+        return  roleName + '|'
+                + dispatcherPanelVisible + '|'
+                + adminPanelVisible
+                ;
     }
 
     @Override

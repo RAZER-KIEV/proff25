@@ -17,7 +17,7 @@ import java.util.List;
 public class AuthorizationServiceImpl implements AuthorizationService {
 
     @Autowired
-    private OperatorDao dao;
+    private OperatorDao operatorDao;
 
     @Autowired
     private RoleDao roleDao;
@@ -41,6 +41,18 @@ Role пустая и тогда создавать две роли админа 
             USER = roleDao.read("user");
         }
 */
+        List<Role> roleList = roleDao.findAll();
+        if (roleList.size() == 0){
+            Role adminRole = new Role("Administrator", true, true);
+            Role userRole = new Role("User", false, false);
+            roleDao.create(adminRole);
+            roleDao.create(userRole);
+            USER = adminRole;
+        } else {
+            USER = roleDao.read("User");
+        }
+
+
         if (!loginTypoCheck(login, false))
             throw new AuthorizationException("Login not correct");
         if (!passwordTypoCheck(password, false))
@@ -54,7 +66,7 @@ Role пустая и тогда создавать две роли админа 
         Operator operator = new Operator(login, password, Long.parseLong(individualTaxpayerNumber), "", now, false, 0L, USER);
 
         try {
-            dao.create(operator);
+            operatorDao.create(operator);
         } catch (Exception exception) {
             throw new AuthorizationException("Login not unique");
         }
@@ -64,14 +76,14 @@ Role пустая и тогда создавать две роли админа 
     @Transactional
     @Override
     public boolean changePassword(String login, String password) throws AuthorizationException {
-        Operator operator = dao.read(login);
+        Operator operator = operatorDao.read(login);
         if (!passwordTypoCheck(password, false))
             throw new AuthorizationException("Password not correct");
         if (password.equals(operator.getPassword()))
             throw new AuthorizationException("Password can't be same as previous");
         operator.setPassword(password);
         operator.setLastPasswordChangeDate(LocalDateTime.now());
-        dao.update(operator);
+        operatorDao.update(operator);
         return true;
     }
 

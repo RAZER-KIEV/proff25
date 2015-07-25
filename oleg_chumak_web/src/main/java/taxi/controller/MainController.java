@@ -4,10 +4,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 import taxi.domain.*;
 import taxi.exception.AuthenticationException;
 import taxi.exception.AuthorizationException;
@@ -49,7 +46,7 @@ public class MainController {
     public String main(HttpSession session) {
 //        addOperators();
         if (!isAuth(session))
-            return "index";
+            return "indexTT";
         return "dashboard";
     }
 
@@ -391,7 +388,7 @@ public class MainController {
         try {
             authenticationService.authenticate(login, password);
             model.addAttribute("loginId", login);
-            identifyStyle(session);
+//            identifyStyle(session);
             return "dashboard";
         } catch (AuthenticationException exception) {
             if (exception.getMessage().equals(AuthenticationServiceImpl.getUnsuccessfulPasswordExpired())) {
@@ -499,4 +496,28 @@ public class MainController {
         System.out.println(user);
 //        Operator oper1 = new Operator("bosyi", "111", 8765465487662L);
     }
+
+    // Bogdan Iavorskyi
+    @RequestMapping(value = "auth2", method = RequestMethod.POST)
+    public @ResponseBody String auth2(@RequestParam String login, @RequestParam String password) {
+        System.out.println("inController");
+        try {
+            authenticationService.authenticate(login, password);
+            return "1";
+        } catch (Exception exception) {
+            return "0";
+        }
+    }
+
+    @RequestMapping(value = "/i.html", method = RequestMethod.GET)
+    public String i() {
+        return "futureIndex";
+    }
+
+    @RequestMapping(value = "checkLogin", method = RequestMethod.POST)
+    public @ResponseBody String checkLogin(@RequestParam String login) {
+        System.out.println("inCheckLogin");
+        return authenticationService.isLoginUnique(login) ? "1" : "0";
+    }
+
 }

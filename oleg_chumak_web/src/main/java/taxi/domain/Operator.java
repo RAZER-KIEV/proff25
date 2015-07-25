@@ -147,16 +147,15 @@ public class Operator {
 
     @Override
     public String toString() {
-        return "Operator{" +
-                "login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                ", individualTaxpayerNumber=" + individualTaxpayerNumber +
-                ", previousPassword='" + previousPassword + '\'' +
-                ", lastPasswordChangeDate=" + lastPasswordChangeDate +
-                ", isBlocked=" + isBlocked +
-                ", unsuccessfulLoginTries=" + unsuccessfulLoginTries +
-                ", role=" + role.toString() +
-                '}';
+        return login + '|'
+                + password +'|'
+                + individualTaxpayerNumber +'|'
+                + previousPassword + '|'
+                + lastPasswordChangeDate + '|'
+                + isBlocked + '|'
+                + unsuccessfulLoginTries + '|'
+                + role.getRoleName()
+                ;
     }
 
     @Override

@@ -63,10 +63,18 @@ public class OperatorDaoImpl implements OperatorDao {
 
     @Override
     public boolean auth(String login, String password) {
-        Query query = factory.getCurrentSession().createQuery("select count (*) from Operators as op where op.login=:login and op.password=:password");
+        Query query = factory.getCurrentSession().createQuery("select count (*) from Operator as op where op.login=:login and op.password=:password");
         query.setParameter("login", login);
         query.setParameter("password", password);
         Long result = (Long) query.uniqueResult();
         return result == 1 ? true : false;
+    }
+
+    @Override
+    public boolean isLoginUnique(String login) {
+        Query query = factory.getCurrentSession().createQuery("select count (*) from Operator as op where op.login=:login");
+        query.setParameter("login", login);
+        Long result = (Long) query.uniqueResult();
+        return result == 1 ? false : true;
     }
 }
