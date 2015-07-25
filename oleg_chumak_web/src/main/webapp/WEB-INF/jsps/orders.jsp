@@ -7,6 +7,12 @@
 <html>
 <head>
     <title></title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        var val = '33';
+//        console.log(val);
+        document
+    </script>
 </head>
 <body>
 <table style="width: auto">

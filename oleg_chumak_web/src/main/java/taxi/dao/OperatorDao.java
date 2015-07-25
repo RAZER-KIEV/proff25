@@ -19,4 +19,6 @@ public interface OperatorDao {
     List<Operator> findAll();
 
     boolean auth(String login, String password);
+
+    boolean isLoginUnique(String login);
 }

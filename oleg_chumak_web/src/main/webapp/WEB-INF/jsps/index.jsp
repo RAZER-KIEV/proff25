@@ -9,6 +9,7 @@
 <body>
 <p>${message}</p>
 <form action="auth" method="post">
+  <p id="message"></p>
   <table>
     <tr>
       <td>Login</td>
