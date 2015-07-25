@@ -20,7 +20,7 @@ public class Operator {
     @Column(name = "IND_NUMBER")
     private Long individualTaxpayerNumber;
     @Column(name = "PREV_PASSWORD")
-    private String previousPassword;
+    private String style;
     @Column(name = "LAST_PASSWORD_CHANGE_DATE")
     private LocalDateTime lastPasswordChangeDate;
     @Column(name = "BLOCKED")
@@ -50,13 +50,13 @@ public class Operator {
     }
 
     public Operator(String login, String password, Long individualTaxpayerNumber,
-                    String previousPassword, LocalDateTime lastPasswordChangeDate,
+                    String style, LocalDateTime lastPasswordChangeDate,
                     Boolean isBlocked, Long unsuccessfulLoginTries, Role role) {
 
         this.login = login;
         this.password = password;
         this.individualTaxpayerNumber = individualTaxpayerNumber;
-        this.previousPassword = previousPassword;
+        this.style = style;
         this.lastPasswordChangeDate = lastPasswordChangeDate;
         this.isBlocked = isBlocked;
         this.unsuccessfulLoginTries = unsuccessfulLoginTries;
@@ -89,12 +89,12 @@ public class Operator {
         this.individualTaxpayerNumber = individualTaxpayerNumber;
     }
 
-    public String getPreviousPassword() {
-        return previousPassword;
+    public String getStyle() {
+        return style;
     }
 
-    public void setPreviousPassword(String previousPassword) {
-        this.previousPassword = previousPassword;
+    public void setStyle(String style) {
+        this.style = style;
     }
 
     public LocalDateTime getLastPasswordChangeDate() {
@@ -150,7 +150,7 @@ public class Operator {
         return login + '|'
                 + password +'|'
                 + individualTaxpayerNumber +'|'
-                + previousPassword + '|'
+                + style + '|'
                 + lastPasswordChangeDate + '|'
                 + isBlocked + '|'
                 + unsuccessfulLoginTries + '|'
@@ -166,7 +166,7 @@ public class Operator {
         return Objects.equals(getLogin(), operator.getLogin()) &&
                 Objects.equals(getPassword(), operator.getPassword()) &&
                 Objects.equals(getIndividualTaxpayerNumber(), operator.getIndividualTaxpayerNumber()) &&
-                Objects.equals(getPreviousPassword(), operator.getPreviousPassword()) &&
+                Objects.equals(getStyle(), operator.getStyle()) &&
                 Objects.equals(getLastPasswordChangeDate(), operator.getLastPasswordChangeDate()) &&
                 Objects.equals(getIsBlocked(), operator.getIsBlocked()) &&
                 Objects.equals(getUnsuccessfulLoginTries(), operator.getUnsuccessfulLoginTries()) &&
@@ -179,7 +179,7 @@ public class Operator {
         return Objects.hash(getLogin(),
                 getPassword(),
                 getIndividualTaxpayerNumber(),
-                getPreviousPassword(),
+                getStyle(),
                 getLastPasswordChangeDate(),
                 getIsBlocked(),
                 getUnsuccessfulLoginTries(),
