@@ -54,7 +54,7 @@ public class MainController {
     Autor: Aleksey Khalikov
     Dashboard
      */
-    @RequestMapping(value = "/dash.html", method = {RequestMethod.GET})
+    @RequestMapping(value = "/dashboard.html", method = {RequestMethod.GET})
     public String resend(HttpSession session) {
         log.info("/dash controller");
         if (!isAuth(session))
@@ -499,19 +499,16 @@ public class MainController {
 
     // Bogdan Iavorskyi
     @RequestMapping(value = "auth2", method = RequestMethod.POST)
-    public @ResponseBody String auth2(@RequestParam String login, @RequestParam String password) {
-        System.out.println("inController");
+    public @ResponseBody String auth2(@RequestParam String login, @RequestParam String password,
+                                      Model model) {
         try {
             authenticationService.authenticate(login, password);
+            model.addAttribute("loginId", login);
             return "1";
         } catch (Exception exception) {
+            System.out.println(exception.getMessage());
             return "0";
         }
-    }
-
-    @RequestMapping(value = "/i.html", method = RequestMethod.GET)
-    public String i() {
-        return "futureIndex";
     }
 
     @RequestMapping(value = "checkLogin", method = RequestMethod.POST)
