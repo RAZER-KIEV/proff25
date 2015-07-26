@@ -77,6 +77,12 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         dao.update(operator);
     }
 
+    @Transactional(readOnly = true)
+    @Override
+    public boolean isLoginUnique(String login) {
+        return dao.isLoginUnique(login);
+    }
+
     private boolean checkIfPasswordExpired(Operator operator) {
         LocalDateTime now = LocalDateTime.now();
         LocalDateTime lastPassChangeTime = operator.getLastPasswordChangeDate();

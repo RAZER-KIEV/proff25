@@ -4,10 +4,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 import taxi.domain.*;
 import taxi.exception.AuthenticationException;
 import taxi.exception.AuthorizationException;
@@ -31,7 +28,7 @@ import java.util.List;
  */
 
 @org.springframework.stereotype.Controller
-@SessionAttributes("loginId")
+@SessionAttributes({"loginId", "style"})
 public class MainController {
     private static final Logger log = Logger.getLogger(MainController.class);
     @Autowired
@@ -57,7 +54,7 @@ public class MainController {
     Autor: Aleksey Khalikov
     Dashboard
      */
-    @RequestMapping(value = "/dash.html", method = {RequestMethod.GET})
+    @RequestMapping(value = "/dashboard.html", method = {RequestMethod.GET})
     public String resend(HttpSession session) {
         log.info("/dash controller");
         if (!isAuth(session))
@@ -87,6 +84,7 @@ public class MainController {
         Operator operator = service.readOperator((String) session.getAttribute("loginId"));
         Boolean isAdmin = operator.getRole().isAdminPanelVisible();
         model.addAttribute("isAdmin", isAdmin);
+        model.addAttribute("style", operator.getStyle());
         return "menu";
     }
 
@@ -282,7 +280,7 @@ public class MainController {
             operator.setLogin(newLogin);
             operator.setPassword(pass);
             operator.setIndividualTaxpayerNumber(indNum);
-            operator.setPreviousPassword(prevpass);
+            operator.setStyle(prevpass);
             operator.setLastPasswordChangeDate(lastChangeDate);
                 operator.setIsBlocked(isblocked);
 
@@ -391,7 +389,7 @@ public class MainController {
         try {
             authenticationService.authenticate(login, password);
             model.addAttribute("loginId", login);
-            identifyStyle(session);
+//            identifyStyle(session);
             return "dashboard";
         } catch (AuthenticationException exception) {
             if (exception.getMessage().equals(AuthenticationServiceImpl.getUnsuccessfulPasswordExpired())) {
@@ -483,20 +481,212 @@ public class MainController {
         return true;
     }
 
-    private void identifyStyle(HttpSession session){
-        String oper = (String)session.getAttribute("loginId");
-        if (oper.equals("admin")){
-            session.setAttribute("style", "style.css");
-        }
-        else if (oper.equals("bosyi")){
-            session.setAttribute("style", "style2.css");
+    private void addOperators(){
+        Role user =
+//                new Role("User", false, true);
+                service.readRole("User");
+        Role admin =
+//                new Role("Administrator", true, true);
+                service.readRole("Administrator");
+        System.out.println(user);
+//        Operator oper1 = new Operator("bosyi", "111", 8765465487662L);
+//        oper1.setRole(admin);
+//        Operator oper2 = new Operator("oleg", "222", 657682313L);
+//        oper2.setRole(user);
+////        service.createRole(user);
+////        service.createRole(admin);
+//        service.createOperator(oper1);
+//        service.createOperator(oper2);
+//        Client cl1 = new Client("Anya", "Borisova", "6548886224", "gde-to");
+//        Client cl2 = new Client("Lena", "Stadnik", "097225354", "TYalta");
+//        Client cl3 = new Client("Olya", "Novikova", "975222546","Foros");
+//        service.createClient(cl1);
+//        service.createClient(cl2);
+//        service.createClient(cl3);
+//        TaxiDriver t1 = new TaxiDriver("Vasya", "Gazel'", "22547", "098886543");
+//        TaxiDriver t2 = new TaxiDriver("Petya", "Oka", "22546K", "063555477");
+//        TaxiDriver t3 = new TaxiDriver("Kolya", "Kopye", "aa-2333-AK", "0509795542");
+//        service.createTaxist(t1);
+//        service.createTaxist(t2);
+//        service.createTaxist(t3);
+    }
+
+    // Bogdan Iavorskyi
+    @RequestMapping(value = "auth2", method = RequestMethod.POST)
+    public @ResponseBody String auth2(@RequestParam String login, @RequestParam String password,
+                                      Model model) {
+        try {
+            authenticationService.authenticate(login, password);
+            model.addAttribute("loginId", login);
+            return "1";
+        } catch (Exception exception) {
+            System.out.println(exception.getMessage());
+            return "0";
         }
     }
 
-    private void addOperators(){
-        Role user = service.readRole("User");
-        Role admin = service.readRole("Administrator");
-        System.out.println(user);
-//        Operator oper1 = new Operator("bosyi", "111", 8765465487662L);
+    @RequestMapping(value = "checkLogin", method = RequestMethod.POST)
+    public @ResponseBody String checkLogin(@RequestParam String login) {
+        System.out.println("inCheckLogin");
+        return authenticationService.isLoginUnique(login) ? "1" : "0";
+    }
+
+
+    @RequestMapping(value = "/ajaxDrivers", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    String ajaxDrivers(Model model) {
+        List<TaxiDriver> taxiDrivers = service.findAllTaxists();
+        if (taxiDrivers == null){
+            return "0";
+        }
+        else {
+            String drivResult = taxiDrivers.toString();
+            drivResult.replace('[', ' ');
+            drivResult.replace(']', ' ');
+            drivResult.trim();
+            String result = new String("Driver's name | Car model | Car number | Driver phone," + drivResult);
+            return result;
+        }
+    }
+
+
+
+    @RequestMapping(value = "/ajaxOrders", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    String ajaxOrders(Model model) {
+        List<Order> orders = service.listAllOrders();
+        if (orders == null){
+            return "0";
+        }
+        else {
+            String orderResult = orders.toString();
+            orderResult.replace('[', ' ');
+            orderResult.replace(']', ' ');
+            orderResult.trim();
+            String result = new String("Operator | Driver's name | Order Date | Amount in cents | Start point | Point of destination," + orderResult);
+            return result;
+        }
+    }
+
+
+
+    @RequestMapping(value = "/ajaxOrdersPortioned", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    String ajaxOrdersPortioned(@RequestParam("numberOfPortion") String numberOfPortion, Model model) {
+        List<Order> orders = service.listOfOrdersChunk(Integer.valueOf(numberOfPortion), 5);
+        if (orders == null){
+            return "0";
+        }
+        else {
+            String orderResult = orders.toString();
+            orderResult.replace('[', ' ');
+            orderResult.replace(']', ' ');
+            orderResult.trim();
+            String result = new String("Operator | Driver's name | Order Date | Amount in cents | Start point | Point of destination," + orderResult);
+            return result;
+        }
+    }
+
+
+
+    @RequestMapping(value = "/ajaxAmount", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    String ajaxAmount(@RequestParam("amountFrom") String amountFrom, @RequestParam("amountTo") String amountTo, Model model) {
+        List<Order> orders = service.listOfOrdersInRangeOfAmount(Long.valueOf(amountFrom), Long.valueOf(amountTo));
+        if (orders == null){
+            return "0";
+        }
+        else {
+            String orderResult = orders.toString();
+            orderResult.replace('[', ' ');
+            orderResult.replace(']', ' ');
+            orderResult.trim();
+            String result = new String("Operator | Driver's name | Order Date | Amount in cents | Start point | Point of destination," + orderResult);
+            return result;
+        }
+    }
+
+
+
+    @RequestMapping(value = "/ajaxClients", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    String ajaxClients(Model model) {
+        List<Client> clients = service.findAllClients();
+        if (clients == null){
+            return "0";
+        }
+        else {
+            String clientResult = clients.toString();
+            clientResult.replace('[', ' ');
+            clientResult.replace(']', ' ');
+            clientResult.trim();
+            String result = new String("Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult);
+            return result;
+        }
+    }
+
+
+
+    @RequestMapping(value = "/ajaxClientsPortioned", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    String ajaxClientsPortioned(@RequestParam("numberOfPortion") String numberOfPortion, Model model) {
+        List<Client> clients = service.clientsPortinedByTen(Long.valueOf(numberOfPortion));
+        if (clients == null){
+            return "0";
+        }
+        else {
+            String clientResult = clients.toString();
+            clientResult.replace('[', ' ');
+            clientResult.replace(']', ' ');
+            clientResult.trim();
+            String result = new String("Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult);
+            return result;
+        }
+    }
+
+
+
+    @RequestMapping(value = "/ajaxClientsMonth", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    String ajaxClientsMonth(Model model) {
+        List<Client> clients = service.clientsMadeOrdersDuringLastMonth();
+        if (clients == null){
+            return "0";
+        }
+        else {
+            String clientResult = clients.toString();
+            clientResult.replace('[', ' ');
+            clientResult.replace(']', ' ');
+            clientResult.trim();
+            String result = new String("Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult);
+            return result;
+        }
+    }
+
+
+
+    @RequestMapping(value = "/ajaxClientsAmount", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    String ajaxClientsAmount(@RequestParam("amount") String amount, Model model) {
+        List<Client> clients = service.clientswithOrderAmountMoreThen(Long.valueOf(amount));
+        if (clients == null){
+            return "0";
+        }
+        else {
+            String clientResult = clients.toString();
+            clientResult.replace('[', ' ');
+            clientResult.replace(']', ' ');
+            clientResult.trim();
+            String result = new String("Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult);
+            return result;
+        }
     }
 }
