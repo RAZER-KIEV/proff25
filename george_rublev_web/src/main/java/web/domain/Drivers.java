@@ -2,10 +2,7 @@ package web.domain;
 
 import org.springframework.stereotype.Component;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by george on 20.07.15.
@@ -16,6 +13,7 @@ import javax.persistence.Table;
 public class Drivers {
     @Id
     @Column(name = "id")
+    @GeneratedValue
     private Integer id;
 
     @Column(name = "car_num")

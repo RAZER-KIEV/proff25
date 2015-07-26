@@ -1,11 +1,15 @@
 package web.domain;
 
+import org.springframework.stereotype.Component;
+import scala.collection.Set;
+import scala.collection.mutable.HashSet;
+
 import javax.persistence.*;
 
 /**
  * Created by george on 16.07.15.
  */
-
+@Component
 @Entity
 @Table(name = "OPERATOR")
 public class Operator {
@@ -23,8 +27,11 @@ public class Operator {
     @Column(name = "STATUS")
     private String status;
 
-    @ManyToOne
-    private Order order;
+//    @ManyToOne
+//    private Order order;
+//
+//    @OneToMany
+//    private Set<Order> order;
 
     public String getStatus() {
         return status;
@@ -44,9 +51,23 @@ public class Operator {
         this.status = status;
     }
 
+//    @OneToMany(mappedBy = "Operator", cascade = CascadeType.ALL)
+//    private Set<Order> operator = new HashSet<>();
+
+
+
+//    public Order getOrder() {
+//        return order;
+//    }
+//
+//    public void setOrder(Order order) {
+//        this.order = order;
+//    }
+
     public Operator(Integer id, String login, String password) {
         this.id = id;
         this.login = login;
+
         this.password = password;
     }
 

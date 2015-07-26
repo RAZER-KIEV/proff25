@@ -1,5 +1,7 @@
 package web.domain;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import scala.collection.mutable.HashSet;
 import scala.collection.mutable.Set;
 
@@ -8,6 +10,7 @@ import javax.persistence.*;
 /**
  * Created by george on 19.07.15.
  */
+@Component
 @Entity
 @Table(name = "ORDERS")
 public class Order {
@@ -28,8 +31,20 @@ public class Order {
     @Column(name = "created_date")
     private String date;
 
-//    @OneToMany(mappedBy = "Order", cascade = CascadeType.ALL)
-//    private Set<Operator> operator = new HashSet<>();
+    @ManyToOne
+    private Operator operator;
+
+    public Operator getOperator() {
+        return operator;
+    }
+
+    public void setOperator(Operator operator) {
+        this.operator = operator;
+    }
+
+    //    @OneToMany(mappedBy = "Order", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private Set<Operator> operator = new HashSet<Operator>();
+
 
     public String print(){
         return "ID: "+id+", Move From: "+moveFrom+", Move To: "+moveTo;

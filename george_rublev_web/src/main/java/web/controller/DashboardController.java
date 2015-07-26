@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import web.domain.Client;
 import web.domain.Drivers;
 import web.domain.Operator;
 import web.service.ClientService;
@@ -20,6 +21,8 @@ import java.util.List;
 @SessionAttributes("id")
 public class DashboardController {
     public static final Logger log = Logger.getLogger(DashboardController.class);
+
+
 
     @Autowired
     private ClientService clientS;
@@ -57,18 +60,14 @@ public class DashboardController {
     private String mneuOperator(String status) {
         if(status.equals("admin")){
             return "<table border=\"0\">" +
-                    "<tr>" +
-                    "<td><button onclick=\"menuButt('listDrivers')\">List Drivers</button></td>" +
-                    "</tr><tr>" +
-                    "<td><button onclick=\"menuButt('listOperators')\">List Operators</button></td>" +
-                    "<tr>" +
+                    "<tr><td><button onclick=\"menuButt('listDrivers')\">List Drivers</button></td></tr>" +
+                    "<tr><td><button onclick=\"menuButt('listOperators')\">List Operators</button></td></tr>" +
+                    "<tr><button onclick=\"menuButt('listClient')\">List Clients</button></td></tr>" +
                     "</table>";
     }
         if(status.equals("operator")){
-            return "<table border=\"0\">" +
-                    "<tr>" +
-                    "<td><button onclick=\"menuButt('listDrivers')\">List Drivers</button></td>" +
-                    "<tr>" +
+            return "<table border=\"0\"><tr><td><button onclick=\"menuButt('listDrivers')\">List Drivers</button></td></tr>" +
+                    "<tr><button onclick=\"menuButt('listClient')\">List Clients</button></td></tr>" +
                     "</table>";
         }
         return null;
@@ -94,7 +93,8 @@ public class DashboardController {
         switch (butt){
             case "listDrivers":
                 List<Drivers> drivers = driverService.listDrivers();
-                sb = "<table border=\"1\"><tr><td>Name</td><td>Phone</td><td>model</td><td>number</td></tr>";
+                sb = "<table border=\"1\"><tr><td colspan=\"4\">Drivers</td></tr>" +
+                        "<tr><td>Name</td><td>Phone</td><td>model</td><td>number</td></tr>";
                 for (Drivers d : drivers){
                     sb = sb + "<tr><td>"+d.getName()+"</td><td>"+d.getPhone()+"</td><td>"+d.getCarNum()+"</td><td>"+d.getCarNumber()+"</td></tr>";
                 }
@@ -103,14 +103,22 @@ public class DashboardController {
             case "listOperators":
                 Operator operator;
                 List<Operator> operators = operatorService.listOperator();
-                sb="<table border=\"1\"><tr><td>ID</td><td>login</td><td>password</td><td>status</td></tr>";
+                sb="<table border=\"1\"><tr><td colspan=\"4\">Operators</td></tr>" +
+                        "<tr><td>ID</td><td>login</td><td>password</td><td>status</td></tr>";
                 for(Operator op:operators){
                     sb = sb+"<tr><td>"+op.getId()+"</td><td>"+op.getLogin()+"</td><td>"+op.getPassword()+"</td><td>"+op.getStatus()+"</td></tr>";
                 }
                 sb=sb+"</table>";
                 return sb;
             case "listClient":
-                return sb = "";
+                List<Client> clients = clientS.listClient();
+                sb = "<table border=\"1\"><tr><td colspan=\"3\">Clients</td></tr>" +
+                        "<tr><td>ID</td><td>Name</td><td>phone</td></tr>";
+                for (Client d : clients){
+                    sb = sb + "<tr><td>"+d.getId()+"</td><td>"+d.getName()+"</td><td>"+d.getPhone()+"</td></tr>";
+                }
+                sb = sb+"</table>";
+                return sb;
             case "addClient":
                 return sb = "";
             case "addOperator":
