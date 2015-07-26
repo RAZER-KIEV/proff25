@@ -559,10 +559,8 @@ public class MainController {
         }
         else {
             String drivResult = taxiDrivers.toString();
-            drivResult.replace('[', ' ');
-            drivResult.replace(']', ' ');
-            drivResult.trim();
-            String result = new String("Driver's name | Car model | Car number | Driver phone," + drivResult);
+            String result = "Driver's name | Car model | Car number | Driver phone," + drivResult;
+            result = result.replace(']', ' ').replace('[', ' ').trim();
             return result;
         }
     }
@@ -579,10 +577,8 @@ public class MainController {
         }
         else {
             String orderResult = orders.toString();
-            orderResult.replace('[', ' ');
-            orderResult.replace(']', ' ');
-            orderResult.trim();
-            String result = new String("Operator | Driver's name | Order Date | Amount in cents | Start point | Point of destination," + orderResult);
+            String result = "Operator | Driver's name | Order Date | Amount in cents | Start point | Point of destination," + orderResult;
+            result = result.replace(']', ' ').replace('[', ' ').trim();
             return result;
         }
     }
@@ -599,10 +595,8 @@ public class MainController {
         }
         else {
             String orderResult = orders.toString();
-            orderResult.replace('[', ' ');
-            orderResult.replace(']', ' ');
-            orderResult.trim();
-            String result = new String("Operator | Driver's name | Order Date | Amount in cents | Start point | Point of destination," + orderResult);
+            String result = "Operator | Driver's name | Order Date | Amount in cents | Start point | Point of destination," + orderResult;
+            result = result.replace(']', ' ').replace('[', ' ').trim();
             return result;
         }
     }
@@ -619,10 +613,9 @@ public class MainController {
         }
         else {
             String orderResult = orders.toString();
-            orderResult.replace('[', ' ');
-            orderResult.replace(']', ' ');
-            orderResult.trim();
-            String result = new String("Operator | Driver's name | Order Date | Amount in cents | Start point | Point of destination," + orderResult);
+
+            String result = "Operator | Driver's name | Order Date | Amount in cents | Start point | Point of destination," + orderResult;
+            result = result.replace(']', ' ').replace('[', ' ').trim();
             return result;
         }
     }
@@ -639,10 +632,8 @@ public class MainController {
         }
         else {
             String clientResult = clients.toString();
-            clientResult.replace('[', ' ');
-            clientResult.replace(']', ' ');
-            clientResult.trim();
-            String result = new String("Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult);
+            String result = "Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult;
+            result = result.replace(']', ' ').replace('[', ' ').trim();
             return result;
         }
     }
@@ -659,10 +650,8 @@ public class MainController {
         }
         else {
             String clientResult = clients.toString();
-            clientResult.replace('[', ' ');
-            clientResult.replace(']', ' ');
-            clientResult.trim();
-            String result = new String("Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult);
+            String result = "Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult;
+            result = result.replace(']', ' ').replace('[', ' ').trim();
             return result;
         }
     }
@@ -679,10 +668,8 @@ public class MainController {
         }
         else {
             String clientResult = clients.toString();
-            clientResult.replace('[', ' ');
-            clientResult.replace(']', ' ');
-            clientResult.trim();
-            String result = new String("Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult);
+            String result = "Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult;
+            result = result.replace(']', ' ').replace('[', ' ').trim();
             return result;
         }
     }
@@ -699,10 +686,9 @@ public class MainController {
         }
         else {
             String clientResult = clients.toString();
-            clientResult.replace('[', ' ');
-            clientResult.replace(']', ' ');
-            clientResult.trim();
-            String result = new String("Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult);
+
+            String result = "Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult;
+            result = result.replace(']', ' ').replace('[', ' ').trim();
             return result;
         }
     }
