@@ -34,9 +34,9 @@ public class MainController {
     @Autowired
     private TService service;
     @Autowired
-    AuthenticationService authenticationService;
+    private  AuthenticationService authenticationService;
     @Autowired
-    AuthorizationService authorizationService;
+    private AuthorizationService authorizationService;
 
     /*
     Autor: Алексей
@@ -521,6 +521,23 @@ public class MainController {
             return "1";
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
+            return "0";
+        }
+    }
+
+    @RequestMapping(value = "register2", method = RequestMethod.POST)
+    public @ResponseBody String register2(@RequestParam String login, @RequestParam String password,
+                                          @RequestParam String itn,
+                                      Model model) {
+        System.out.println("in Register 2");
+        try {
+            authorizationService.register(login, itn, password);
+            System.out.println("no exception");
+            return "1";
+        } catch (Exception exception) {
+            System.out.println("exception");
+            System.out.println(exception.getMessage());
+            exception.printStackTrace();
             return "0";
         }
     }
