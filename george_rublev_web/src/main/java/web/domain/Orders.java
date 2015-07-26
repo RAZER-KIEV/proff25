@@ -13,7 +13,7 @@ import javax.persistence.*;
 @Component
 @Entity
 @Table(name = "ORDERS")
-public class Order {
+public class Orders {
 
     @Id
     @Column(name = "ID")
@@ -31,35 +31,19 @@ public class Order {
     @Column(name = "created_date")
     private String date;
 
-    @ManyToOne
-    private Operator operator;
-
-    public Operator getOperator() {
-        return operator;
-    }
-
-    public void setOperator(Operator operator) {
-        this.operator = operator;
-    }
-
-    //    @OneToMany(mappedBy = "Order", cascade = CascadeType.ALL, orphanRemoval = true)
-//    private Set<Operator> operator = new HashSet<Operator>();
-
-
     public String print(){
         return "ID: "+id+", Move From: "+moveFrom+", Move To: "+moveTo;
     }
 
-    public Order() {
+    public Orders() {
     }
 
-    public Order(Integer id, String moveFrom, String moveTo, String price, String date) {
+    public Orders(Integer id, String moveFrom, String moveTo, String price, String date) {
         this.id = id;
         this.moveFrom = moveFrom;
         this.moveTo = moveTo;
         this.price = price;
         this.date = date;
-//        this.operatorSet = operatorSet;
     }
 
     public Integer getId() {
@@ -101,15 +85,4 @@ public class Order {
     public void setDate(String date) {
         this.date = date;
     }
-
-//    public Set<Operator> getOperatorSet() {
-//        return operator;
-//    }
-//
-//    public void setOperatorSet(Set<Operator> operatorSet) {
-//        this.operator = operatorSet;
-//    }
-
-
-
 }

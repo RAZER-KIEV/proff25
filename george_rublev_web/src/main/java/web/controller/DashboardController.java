@@ -1,5 +1,7 @@
 package web.controller;
 
+
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -7,9 +9,12 @@ import org.springframework.web.bind.annotation.*;
 import web.domain.Client;
 import web.domain.Drivers;
 import web.domain.Operator;
+//import web.domain.Order;
+import web.domain.Orders;
 import web.service.ClientService;
 import web.service.DriverService;
 import web.service.OperatorService;
+import web.service.OrdersService;
 
 import java.util.List;
 
@@ -33,8 +38,12 @@ public class DashboardController {
     @Autowired
     private DriverService driverService;
 
+    @Autowired
+    private OrdersService orderS;
+
     @RequestMapping(value = "/indexTaxi.html",method = RequestMethod.POST)
-    public @ResponseBody String indexTaxi(@RequestParam("login") String login,@RequestParam("pass") String password, @RequestParam("status") String status,
+    public @ResponseBody
+    String indexTaxi(@RequestParam("login") String login,@RequestParam("pass") String password, @RequestParam("status") String status,
                                           @RequestParam("buton") String butt ){
         log.info("controller");
         List<Operator> operator = operatorService.listOperator();
@@ -51,10 +60,6 @@ public class DashboardController {
             return "ok|"+operator1.getLogin()+"|"+operator1.getPassword()+"|"+operator1.getStatus()+"|"
                     +mneuOperator(operator1.getStatus())+"|"+checkSelectedButton(butt);
         }
-        
-        
-        
-//        return "error";
     }
 
     private String mneuOperator(String status) {
@@ -62,12 +67,15 @@ public class DashboardController {
             return "<table border=\"0\">" +
                     "<tr><td><button onclick=\"menuButt('listDrivers')\">List Drivers</button></td></tr>" +
                     "<tr><td><button onclick=\"menuButt('listOperators')\">List Operators</button></td></tr>" +
-                    "<tr><button onclick=\"menuButt('listClient')\">List Clients</button></td></tr>" +
+                    "<tr><td><button onclick=\"menuButt('listClient')\">List Clients</button></td></tr>" +
+                    "<tr><td><button onclick=\"menuButt('listOrders')\">List Orders</button></td></tr>" +
                     "</table>";
     }
         if(status.equals("operator")){
-            return "<table border=\"0\"><tr><td><button onclick=\"menuButt('listDrivers')\">List Drivers</button></td></tr>" +
+            return "<table border=\"0\">" +
+                    "<tr><td><button onclick=\"menuButt('listDrivers')\">List Drivers</button></td></tr>" +
                     "<tr><button onclick=\"menuButt('listClient')\">List Clients</button></td></tr>" +
+                    "<tr><td><button onclick=\"menuButt('listOrders')\">List Orders</button></td></tr>" +
                     "</table>";
         }
         return null;
@@ -96,7 +104,7 @@ public class DashboardController {
                 sb = "<table border=\"1\"><tr><td colspan=\"4\">Drivers</td></tr>" +
                         "<tr><td>Name</td><td>Phone</td><td>model</td><td>number</td></tr>";
                 for (Drivers d : drivers){
-                    sb = sb + "<tr><td>"+d.getName()+"</td><td>"+d.getPhone()+"</td><td>"+d.getCarNum()+"</td><td>"+d.getCarNumber()+"</td></tr>";
+                    sb = sb + "<tr><td>"+d.getName() + "</td><td>"+d.getPhone()+"</td><td>"+d.getCarModels()+"</td><td>"+d.getCarNumber()+"</td></tr>";
                 }
                 sb = sb+"</table>";
                 return sb;
@@ -119,7 +127,18 @@ public class DashboardController {
                 }
                 sb = sb+"</table>";
                 return sb;
+            case "listOrders":
+                List<Orders> orders = orderS.listOrder();
+                sb = "<table border=\"1\"><tr><td colspan=\"3\">Orders</td></tr>" +
+                        "<tr><td>ID</td><td>from</td><td>to</td><td>Price</td></tr>";
+                for (Orders d : orders){
+                    sb = sb + "<tr><td>"+d.getId()+"</td><td>"+d.getMoveFrom()+"</td><td>"+d.getMoveTo()+"</td>" +
+                            "<td>"+d.getPrice()+"</td></tr>";
+                }
+                sb = sb+"</table>";
+                return sb;
             case "addClient":
+
                 return sb = "";
             case "addOperator":
                 return sb = "";
@@ -138,7 +157,9 @@ public class DashboardController {
         }
         return sb;
     }
-    
+
+
+
 //    @RequestMapping(value = "/dashboard.html", method = RequestMethod.GET)
 //    public String great(@RequestParam("login") String name,@RequestParam("paswwd") String paswd, Model model, HttpSession session) {
 //        log.info("/dashboard.html controller");

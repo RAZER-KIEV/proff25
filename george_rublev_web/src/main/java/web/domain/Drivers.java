@@ -28,6 +28,9 @@ public class Drivers {
     @Column(name = "phone")
     private String phone;
 
+    @Column(name = "car_model")
+    private String carModels;
+
     public Drivers() {
     }
 
@@ -37,6 +40,14 @@ public class Drivers {
         this.name = name;
         this.carNumber = carNumber;
         this.phone = phone;
+    }
+
+    public String getCarModels() {
+        return carModels;
+    }
+
+    public void setCarModels(String carModels) {
+        this.carModels = carModels;
     }
 
     public Integer getId() {

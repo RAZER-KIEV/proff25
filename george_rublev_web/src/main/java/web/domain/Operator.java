@@ -27,12 +27,6 @@ public class Operator {
     @Column(name = "STATUS")
     private String status;
 
-//    @ManyToOne
-//    private Order order;
-//
-//    @OneToMany
-//    private Set<Order> order;
-
     public String getStatus() {
         return status;
     }
@@ -50,19 +44,6 @@ public class Operator {
         this.password = password;
         this.status = status;
     }
-
-//    @OneToMany(mappedBy = "Operator", cascade = CascadeType.ALL)
-//    private Set<Order> operator = new HashSet<>();
-
-
-
-//    public Order getOrder() {
-//        return order;
-//    }
-//
-//    public void setOrder(Order order) {
-//        this.order = order;
-//    }
 
     public Operator(Integer id, String login, String password) {
         this.id = id;
