@@ -109,6 +109,22 @@ public class DashboardController {
                 }
                 sb=sb+"</table>";
                 return sb;
+            case "listClient":
+                return sb = "";
+            case "addClient":
+                return sb = "";
+            case "addOperator":
+                return sb = "";
+            case "removeOperator":
+                return sb = "";
+            case "removeClient":
+                return sb = "";
+            case "addDriver":
+                return sb = "";
+            case "removeDriver":
+                return sb = "";
+            case "createOrder":
+                return sb = "";
             default:
                 sb = "";
         }

@@ -1,9 +1,6 @@
 package web.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by george on 16.07.15.
@@ -25,6 +22,9 @@ public class Operator {
 
     @Column(name = "STATUS")
     private String status;
+
+    @ManyToOne
+    private Order order;
 
     public String getStatus() {
         return status;
