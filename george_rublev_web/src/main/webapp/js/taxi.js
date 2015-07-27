@@ -4,7 +4,7 @@
 
 $(document).ready(function() {
     var el = $('#four');
-    el.append($('<p>Foru from JQuery</p>'));
+    el.append($('<p>Four from JQuery</p>'));
     $('#four').append($('<p>Foru from JQuery</p>'))
 });
 
@@ -14,11 +14,8 @@ var ajax = new XMLHttpRequest();
 ajax.onreadystatechange = function () {
     if (ajax.readyState === 4 && ajax.status === 200) {
         if (ajax.responseText !== 'false') {
-            //var div = document.getElementById('resp');
-            //div.innerHTML = ajax.responseText;//ajax.responseText.split('|');
             document.write(ajax.responseText);
             resp.innerHTML=ajax.responseText;
-
         } else {
             alert('Login or Password - FAILED!!!!');
         }

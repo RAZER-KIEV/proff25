@@ -2,7 +2,9 @@
 <head>
     <title>Taxi Last Way</title>
     <link rel = "stylesheet" href="/css/style.css">
-    <script src="/js/taxi.js"></script>
+    <script src="/js/taxi.js">
+        
+    </script>
     <script src="/js/jquery-1.11.3.js"></script>
 </head>
 <body class="bodyStyle">
