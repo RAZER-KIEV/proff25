@@ -24,7 +24,7 @@
 <p class="style1"><span lang="en-us">@developers:</span></p>
 <p class="style1"><span lang="en-us">Aleksandr Omelchenko</span></p>
 <p class="style1"><span lang="en-us">Bogdan Javorsky</span></p>
-<p class="style1"><span lang="en-us">Oleg 4umak</span></p>
+<p class="style1"><span lang="en-us">Oleg 4ymak</span></p>
 <p class="style1"><span lang="en-us">Oleksii Khalikov</span></p>
 <p class="style1"><span lang="en-us">Nick Martin</span></p>
 

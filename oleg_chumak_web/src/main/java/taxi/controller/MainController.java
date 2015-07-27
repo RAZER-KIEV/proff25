@@ -28,7 +28,7 @@ import java.util.List;
  */
 
 @org.springframework.stereotype.Controller
-@SessionAttributes({"loginId", "style"})
+@SessionAttributes("loginId")
 public class MainController {
     private static final Logger log = Logger.getLogger(MainController.class);
     @Autowired
@@ -60,6 +60,13 @@ public class MainController {
         if (!isAuth(session))
             return "index";
         return "dashboard";
+    }
+    @RequestMapping(value = "/lists.html", method = {RequestMethod.GET})
+    public String lists(HttpSession session) {
+        log.info("/dash controller");
+        if (!isAuth(session))
+            return "index";
+        return "lists";
     }
 
     /*
@@ -132,7 +139,7 @@ public class MainController {
     public String getClientReportPage(HttpSession session) {
         if (!isAuth(session))
             return "index";
-        return "clientReport";
+        return "lists";
     }
 
 /*
@@ -488,27 +495,26 @@ public class MainController {
         Role admin =
 //                new Role("Administrator", true, true);
                 service.readRole("Administrator");
-        System.out.println(user);
-//        Operator oper1 = new Operator("bosyi", "111", 8765465487662L);
-//        oper1.setRole(admin);
-//        Operator oper2 = new Operator("oleg", "222", 657682313L);
-//        oper2.setRole(user);
-////        service.createRole(user);
-////        service.createRole(admin);
-//        service.createOperator(oper1);
-//        service.createOperator(oper2);
-//        Client cl1 = new Client("Anya", "Borisova", "6548886224", "gde-to");
-//        Client cl2 = new Client("Lena", "Stadnik", "097225354", "TYalta");
-//        Client cl3 = new Client("Olya", "Novikova", "975222546","Foros");
-//        service.createClient(cl1);
-//        service.createClient(cl2);
-//        service.createClient(cl3);
-//        TaxiDriver t1 = new TaxiDriver("Vasya", "Gazel'", "22547", "098886543");
-//        TaxiDriver t2 = new TaxiDriver("Petya", "Oka", "22546K", "063555477");
-//        TaxiDriver t3 = new TaxiDriver("Kolya", "Kopye", "aa-2333-AK", "0509795542");
-//        service.createTaxist(t1);
-//        service.createTaxist(t2);
-//        service.createTaxist(t3);
+        Operator oper1 = new Operator("bosyi", "111", 8765465487662L);
+        oper1.setRole(admin);
+        Operator oper2 = new Operator("oleg", "222", 657682313L);
+        oper2.setRole(user);
+//        service.createRole(user);
+//        service.createRole(admin);
+        service.createOperator(oper1);
+        service.createOperator(oper2);
+        Client cl1 = new Client("Anya", "Borisova", "6548886224", "gde-to");
+        Client cl2 = new Client("Lena", "Stadnik", "097225354", "TYalta");
+        Client cl3 = new Client("Olya", "Novikova", "975222546","Foros");
+        service.createClient(cl1);
+        service.createClient(cl2);
+        service.createClient(cl3);
+        TaxiDriver t1 = new TaxiDriver("Vasya", "Gazel'", "22547", "098886543");
+        TaxiDriver t2 = new TaxiDriver("Petya", "Oka", "22546K", "063555477");
+        TaxiDriver t3 = new TaxiDriver("Kolya", "Kopye", "aa-2333-AK", "0509795542");
+        service.createTaxist(t1);
+        service.createTaxist(t2);
+        service.createTaxist(t3);
     }
 
     // Bogdan Iavorskyi
@@ -555,11 +561,12 @@ public class MainController {
     String ajaxDrivers(Model model) {
         List<TaxiDriver> taxiDrivers = service.findAllTaxists();
         if (taxiDrivers == null){
-            return "0";
+            return "Table of drivers is empty";
+
         }
         else {
             String drivResult = taxiDrivers.toString();
-            String result = "Driver's name | Car model | Car number | Driver phone," + drivResult;
+            String result = "Table of taxi-drivers, Driver's name | Car model | Car number | Driver phone," + drivResult;
             result = result.replace(']', ' ').replace('[', ' ').trim();
             return result;
         }
@@ -571,14 +578,21 @@ public class MainController {
     public
     @ResponseBody
     String ajaxOrders(Model model) {
-        List<Order> orders = service.listAllOrders();
+        System.out.println("in");
+        List<Order> orders = (List<Order>)service.listAllOrders();
+        System.out.println("medium");
+        System.out.println(orders);
+        System.out.println("after");
         if (orders == null){
-            return "0";
+            return "Table of orders is empty";
         }
         else {
+            System.out.println("not empty");
             String orderResult = orders.toString();
-            String result = "Operator | Driver's name | Order Date | Amount in cents | Start point | Point of destination," + orderResult;
+            System.out.println(orderResult);
+            String result = "Table of orders, Operator | Driver's name | Order Date | Amount in cents | Start point | Point of destination," + orderResult;
             result = result.replace(']', ' ').replace('[', ' ').trim();
+            System.out.println(result);
             return result;
         }
     }
@@ -591,11 +605,11 @@ public class MainController {
     String ajaxOrdersPortioned(@RequestParam("numberOfPortion") String numberOfPortion, Model model) {
         List<Order> orders = service.listOfOrdersChunk(Integer.valueOf(numberOfPortion), 5);
         if (orders == null){
-            return "0";
+            return "portion of orders № "+numberOfPortion+" is empty";
         }
         else {
             String orderResult = orders.toString();
-            String result = "Operator | Driver's name | Order Date | Amount in cents | Start point | Point of destination," + orderResult;
+            String result = "portion of orders № "+numberOfPortion+" , Operator | Driver's name | Order Date | Amount in cents | Start point | Point of destination," + orderResult;
             result = result.replace(']', ' ').replace('[', ' ').trim();
             return result;
         }
@@ -609,12 +623,11 @@ public class MainController {
     String ajaxAmount(@RequestParam("amountFrom") String amountFrom, @RequestParam("amountTo") String amountTo, Model model) {
         List<Order> orders = service.listOfOrdersInRangeOfAmount(Long.valueOf(amountFrom), Long.valueOf(amountTo));
         if (orders == null){
-            return "0";
+            return "There are no orders with amount between "+amountFrom+ " and "+amountTo;
         }
         else {
             String orderResult = orders.toString();
-
-            String result = "Operator | Driver's name | Order Date | Amount in cents | Start point | Point of destination," + orderResult;
+            String result = "orders with amount between "+amountFrom+ " and "+amountTo+ ", Operator | Driver's name | Order Date | Amount in cents | Start point | Point of destination," + orderResult;
             result = result.replace(']', ' ').replace('[', ' ').trim();
             return result;
         }
@@ -628,12 +641,13 @@ public class MainController {
     String ajaxClients(Model model) {
         List<Client> clients = service.findAllClients();
         if (clients == null){
-            return "0";
+            return "Table of clients is empty";
         }
         else {
             String clientResult = clients.toString();
-            String result = "Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult;
+            String result = "Clients,Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult;
             result = result.replace(']', ' ').replace('[', ' ').trim();
+            System.out.println(result);
             return result;
         }
     }
@@ -646,11 +660,11 @@ public class MainController {
     String ajaxClientsPortioned(@RequestParam("numberOfPortion") String numberOfPortion, Model model) {
         List<Client> clients = service.clientsPortinedByTen(Long.valueOf(numberOfPortion));
         if (clients == null){
-            return "0";
+            return "portion of clients № "+numberOfPortion+" is empty";
         }
         else {
             String clientResult = clients.toString();
-            String result = "Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult;
+            String result = "Portion № "+numberOfPortion+"of clients , Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult;
             result = result.replace(']', ' ').replace('[', ' ').trim();
             return result;
         }
@@ -664,11 +678,11 @@ public class MainController {
     String ajaxClientsMonth(Model model) {
         List<Client> clients = service.clientsMadeOrdersDuringLastMonth();
         if (clients == null){
-            return "0";
+            return "There were no clients making orders during last month";
         }
         else {
             String clientResult = clients.toString();
-            String result = "Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult;
+            String result = "Clients made orders last month, Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult;
             result = result.replace(']', ' ').replace('[', ' ').trim();
             return result;
         }
@@ -682,12 +696,11 @@ public class MainController {
     String ajaxClientsAmount(@RequestParam("amount") String amount, Model model) {
         List<Client> clients = service.clientswithOrderAmountMoreThen(Long.valueOf(amount));
         if (clients == null){
-            return "0";
+            return "There were no clients made orders with amount  more "+amount+ " cents ";
         }
         else {
             String clientResult = clients.toString();
-
-            String result = "Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult;
+            String result = "CLients made orders in amount more then "+amount+", Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult;
             result = result.replace(']', ' ').replace('[', ' ').trim();
             return result;
         }
