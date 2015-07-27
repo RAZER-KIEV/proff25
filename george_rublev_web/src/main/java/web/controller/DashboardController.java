@@ -54,8 +54,10 @@ public class DashboardController {
             if(operator1.getStatus().equals("0")){
             return "login or password error!|||||";
             }
+//            return "ok|"+operator1.getLogin()+"|"+operator1.getPassword()+"|"+operator1.getStatus()+"|"
+//                    +mneuOperator(operator1.getStatus())+"|"+checkSelectedButton(butt);
             return "ok|"+operator1.getLogin()+"|"+operator1.getPassword()+"|"+operator1.getStatus()+"|"
-                    +mneuOperator(operator1.getStatus())+"|"+checkSelectedButton(butt);
+                    +mneuOperator(operator1.getStatus())+"| Welcom "+operator1.getStatus()+" "+ operator1.getLogin();
         }else{
             return "ok|"+operator1.getLogin()+"|"+operator1.getPassword()+"|"+operator1.getStatus()+"|"
                     +mneuOperator(operator1.getStatus())+"|"+checkSelectedButton(butt);
@@ -65,17 +67,17 @@ public class DashboardController {
     private String mneuOperator(String status) {
         if(status.equals("admin")){
             return "<table border=\"0\">" +
-                    "<tr><td><button onclick=\"menuButt('listDrivers')\">List Drivers</button></td></tr>" +
-                    "<tr><td><button onclick=\"menuButt('listOperators')\">List Operators</button></td></tr>" +
-                    "<tr><td><button onclick=\"menuButt('listClient')\">List Clients</button></td></tr>" +
-                    "<tr><td><button onclick=\"menuButt('listOrders')\">List Orders</button></td></tr>" +
+                    "<tr><td><button class=\"button4\" onclick=\"menuButt('listDrivers')\">List Drivers</button></td></tr>" +
+                    "<tr><td><button class=\"button4\" onclick=\"menuButt('listOperators')\">List Operators</button></td></tr>" +
+                    "<tr><td><button class=\"button4\" onclick=\"menuButt('listClient')\">List Clients</button></td></tr>" +
+                    "<tr><td><button class=\"button4\" onclick=\"menuButt('listOrders')\">List Orders</button></td></tr>" +
                     "</table>";
     }
         if(status.equals("operator")){
             return "<table border=\"0\">" +
-                    "<tr><td><button onclick=\"menuButt('listDrivers')\">List Drivers</button></td></tr>" +
-                    "<tr><button onclick=\"menuButt('listClient')\">List Clients</button></td></tr>" +
-                    "<tr><td><button onclick=\"menuButt('listOrders')\">List Orders</button></td></tr>" +
+                    "<tr><td><button class=\"button4\" onclick=\"menuButt('listDrivers')\">List Drivers</button></td></tr>" +
+                    "<tr><td><button class=\"button4\" onclick=\"menuButt('listClient')\">List Clients</button></td></tr>" +
+                    "<tr><td><button class=\"button4\" onclick=\"menuButt('listOrders')\">List Orders</button></td></tr>" +
                     "</table>";
         }
         return null;
