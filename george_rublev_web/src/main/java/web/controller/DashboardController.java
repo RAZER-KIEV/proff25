@@ -54,8 +54,10 @@ public class DashboardController {
             if(operator1.getStatus().equals("0")){
             return "login or password error!|||||";
             }
+//            return "ok|"+operator1.getLogin()+"|"+operator1.getPassword()+"|"+operator1.getStatus()+"|"
+//                    +mneuOperator(operator1.getStatus())+"|"+checkSelectedButton(butt);
             return "ok|"+operator1.getLogin()+"|"+operator1.getPassword()+"|"+operator1.getStatus()+"|"
-                    +mneuOperator(operator1.getStatus())+"|"+checkSelectedButton(butt);
+                    +mneuOperator(operator1.getStatus())+"| Welcom "+operator1.getStatus()+" "+ operator1.getLogin();
         }else{
             return "ok|"+operator1.getLogin()+"|"+operator1.getPassword()+"|"+operator1.getStatus()+"|"
                     +mneuOperator(operator1.getStatus())+"|"+checkSelectedButton(butt);
@@ -65,17 +67,17 @@ public class DashboardController {
     private String mneuOperator(String status) {
         if(status.equals("admin")){
             return "<table border=\"0\">" +
-                    "<tr><td><button onclick=\"menuButt('listDrivers')\">List Drivers</button></td></tr>" +
-                    "<tr><td><button onclick=\"menuButt('listOperators')\">List Operators</button></td></tr>" +
-                    "<tr><td><button onclick=\"menuButt('listClient')\">List Clients</button></td></tr>" +
-                    "<tr><td><button onclick=\"menuButt('listOrders')\">List Orders</button></td></tr>" +
+                    "<tr><td><button class=\"button4\" onclick=\"menuButt('listDrivers')\">List Drivers</button></td></tr>" +
+                    "<tr><td><button class=\"button4\" onclick=\"menuButt('listOperators')\">List Operators</button></td></tr>" +
+                    "<tr><td><button class=\"button4\" onclick=\"menuButt('listClient')\">List Clients</button></td></tr>" +
+                    "<tr><td><button class=\"button4\" onclick=\"menuButt('listOrders')\">List Orders</button></td></tr>" +
                     "</table>";
     }
         if(status.equals("operator")){
             return "<table border=\"0\">" +
-                    "<tr><td><button onclick=\"menuButt('listDrivers')\">List Drivers</button></td></tr>" +
-                    "<tr><button onclick=\"menuButt('listClient')\">List Clients</button></td></tr>" +
-                    "<tr><td><button onclick=\"menuButt('listOrders')\">List Orders</button></td></tr>" +
+                    "<tr><td><button class=\"button4\" onclick=\"menuButt('listDrivers')\">List Drivers</button></td></tr>" +
+                    "<tr><td><button class=\"button4\" onclick=\"menuButt('listClient')\">List Clients</button></td></tr>" +
+                    "<tr><td><button class=\"button4\" onclick=\"menuButt('listOrders')\">List Orders</button></td></tr>" +
                     "</table>";
         }
         return null;
@@ -101,7 +103,7 @@ public class DashboardController {
         switch (butt){
             case "listDrivers":
                 List<Drivers> drivers = driverService.listDrivers();
-                sb = "<table border=\"1\"><tr><td colspan=\"4\">Drivers</td></tr>" +
+                sb = "<table class=\"table\" border=\"1\"><tr><td colspan=\"4\">Drivers</td></tr>" +
                         "<tr><td>Name</td><td>Phone</td><td>model</td><td>number</td></tr>";
                 for (Drivers d : drivers){
                     sb = sb + "<tr><td>"+d.getName() + "</td><td>"+d.getPhone()+"</td><td>"+d.getCarModels()+"</td><td>"+d.getCarNumber()+"</td></tr>";
@@ -111,7 +113,7 @@ public class DashboardController {
             case "listOperators":
                 Operator operator;
                 List<Operator> operators = operatorService.listOperator();
-                sb="<table border=\"1\"><tr><td colspan=\"4\">Operators</td></tr>" +
+                sb="<table class=\"table\" border=\"1\"><tr><td colspan=\"4\">Operators</td></tr>" +
                         "<tr><td>ID</td><td>login</td><td>password</td><td>status</td></tr>";
                 for(Operator op:operators){
                     sb = sb+"<tr><td>"+op.getId()+"</td><td>"+op.getLogin()+"</td><td>"+op.getPassword()+"</td><td>"+op.getStatus()+"</td></tr>";
@@ -120,7 +122,7 @@ public class DashboardController {
                 return sb;
             case "listClient":
                 List<Client> clients = clientS.listClient();
-                sb = "<table border=\"1\"><tr><td colspan=\"3\">Clients</td></tr>" +
+                sb = "<table class=\"table\" border=\"1\"><tr><td colspan=\"3\">Clients</td></tr>" +
                         "<tr><td>ID</td><td>Name</td><td>phone</td></tr>";
                 for (Client d : clients){
                     sb = sb + "<tr><td>"+d.getId()+"</td><td>"+d.getName()+"</td><td>"+d.getPhone()+"</td></tr>";
@@ -129,7 +131,7 @@ public class DashboardController {
                 return sb;
             case "listOrders":
                 List<Orders> orders = orderS.listOrder();
-                sb = "<table border=\"1\"><tr><td colspan=\"3\">Orders</td></tr>" +
+                sb = "<table class=\"table\" border=\"1\"><tr><td colspan=\"3\">Orders</td></tr>" +
                         "<tr><td>ID</td><td>from</td><td>to</td><td>Price</td></tr>";
                 for (Orders d : orders){
                     sb = sb + "<tr><td>"+d.getId()+"</td><td>"+d.getMoveFrom()+"</td><td>"+d.getMoveTo()+"</td>" +

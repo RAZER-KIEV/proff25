@@ -6,20 +6,29 @@
 </head>
 <body class="bodyStyle">
 
-<%--<p>Login:  <input id="login" maxlength="25" size="40"></p>--%>
-<%--<p>Password: <input id="pass" maxlength="25" size="40"></p>--%>
-
-<%--<button onclick="send()">Submit</button>--%>
-
-<table>
-    <tr height="250px"></tr>
+<table width="100%">
     <tr>
-        <td width="37%"><p id="menu"></p> </td>
-        <td width="35%"><p id="resp"></p></td>
-        <td width="28%" id="logid">
+        <td width="20%">
+            <fieldset align="right" >
+                <legend align="center" >
+                    <b class="title">Menu:</b></legend>
+            <p id="menu">Menu is<br> locked</p>
+                </fieldset>
+        </td>
+        <td width="55%">
+            <fieldset align="right" >
+                <legend align="center" >
+                    <b class="title">Requested information:</b></legend>
+            <p id="resp" >
+                Enter Login and password!
+            </p>
+            </fieldset>
+        </td>
+
+        <td width="25%" id="logid">
             <%--<form action="indexTaxi.html" method="POST" style="width: 300px; padding: 10px">--%>
-                <fieldset align="right">
-                    <legend align="center">
+                <fieldset align="right" >
+                    <legend align="center" >
                         <b class="title">  A u t h e n t i c a t i o n:  </b></legend>
                     <table>
                         <tr>
