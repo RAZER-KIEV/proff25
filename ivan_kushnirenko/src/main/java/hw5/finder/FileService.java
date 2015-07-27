@@ -58,8 +58,8 @@ public class FileService {
     public static void main(String[] args) {
     }
 
-    public void findAll(){
-
+    public List findAll() {
+        return new ArrayList<>();
     }
 
 }
