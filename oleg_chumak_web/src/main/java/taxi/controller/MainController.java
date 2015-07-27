@@ -28,7 +28,7 @@ import java.util.List;
  */
 
 @org.springframework.stereotype.Controller
-@SessionAttributes({"loginId", "style"})
+@SessionAttributes("loginId")
 public class MainController {
     private static final Logger log = Logger.getLogger(MainController.class);
     @Autowired
@@ -488,27 +488,26 @@ public class MainController {
         Role admin =
 //                new Role("Administrator", true, true);
                 service.readRole("Administrator");
-        System.out.println(user);
-//        Operator oper1 = new Operator("bosyi", "111", 8765465487662L);
-//        oper1.setRole(admin);
-//        Operator oper2 = new Operator("oleg", "222", 657682313L);
-//        oper2.setRole(user);
-////        service.createRole(user);
-////        service.createRole(admin);
-//        service.createOperator(oper1);
-//        service.createOperator(oper2);
-//        Client cl1 = new Client("Anya", "Borisova", "6548886224", "gde-to");
-//        Client cl2 = new Client("Lena", "Stadnik", "097225354", "TYalta");
-//        Client cl3 = new Client("Olya", "Novikova", "975222546","Foros");
-//        service.createClient(cl1);
-//        service.createClient(cl2);
-//        service.createClient(cl3);
-//        TaxiDriver t1 = new TaxiDriver("Vasya", "Gazel'", "22547", "098886543");
-//        TaxiDriver t2 = new TaxiDriver("Petya", "Oka", "22546K", "063555477");
-//        TaxiDriver t3 = new TaxiDriver("Kolya", "Kopye", "aa-2333-AK", "0509795542");
-//        service.createTaxist(t1);
-//        service.createTaxist(t2);
-//        service.createTaxist(t3);
+        Operator oper1 = new Operator("bosyi", "111", 8765465487662L);
+        oper1.setRole(admin);
+        Operator oper2 = new Operator("oleg", "222", 657682313L);
+        oper2.setRole(user);
+//        service.createRole(user);
+//        service.createRole(admin);
+        service.createOperator(oper1);
+        service.createOperator(oper2);
+        Client cl1 = new Client("Anya", "Borisova", "6548886224", "gde-to");
+        Client cl2 = new Client("Lena", "Stadnik", "097225354", "TYalta");
+        Client cl3 = new Client("Olya", "Novikova", "975222546","Foros");
+        service.createClient(cl1);
+        service.createClient(cl2);
+        service.createClient(cl3);
+        TaxiDriver t1 = new TaxiDriver("Vasya", "Gazel'", "22547", "098886543");
+        TaxiDriver t2 = new TaxiDriver("Petya", "Oka", "22546K", "063555477");
+        TaxiDriver t3 = new TaxiDriver("Kolya", "Kopye", "aa-2333-AK", "0509795542");
+        service.createTaxist(t1);
+        service.createTaxist(t2);
+        service.createTaxist(t3);
     }
 
     // Bogdan Iavorskyi

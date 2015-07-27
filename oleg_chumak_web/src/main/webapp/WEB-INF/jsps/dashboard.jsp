@@ -117,7 +117,7 @@
                     <ul class="style2">
                         <li>Alexandr Omelchenko</li>
                         <li>Bogdan Iavorsky</li>
-                        <li>Oleg 4umak</li>
+                        <li>Oleg 4ymak</li>
                         <li>Oleksii Khalikov</li>
                         <li>Nick Martin</li>
                     </ul>
