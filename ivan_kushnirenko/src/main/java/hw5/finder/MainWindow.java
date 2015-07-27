@@ -2,7 +2,6 @@ package hw5.finder;
 
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -47,7 +46,7 @@ public class MainWindow {
 
     public void createDataBase() {
         try {
-            List<Path> pathes = fileService.searchFile(getData("Type file name, please."), getData("Type path to search directory, please"));
+            List<Path> pathes = fileService.findAll(getData("Type file name, please."), getData("Type path to search directory, please"));
             if (pathes.size() != 0) {
                 for (Path path : pathes) {
                     pathJDBCManager.create(path);
@@ -62,6 +61,7 @@ public class MainWindow {
         MainWindow main = new MainWindow();
 
     }
+
 }
 
 
