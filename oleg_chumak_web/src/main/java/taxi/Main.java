@@ -1,19 +1,21 @@
 package taxi;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import taxi.domain.Client;
 import taxi.domain.Operator;
-import taxi.service.TService;
-import taxi.service.TServiceImpl;
+import taxi.domain.Order;
+import taxi.domain.TaxiDriver;
+
+import java.time.LocalDateTime;
 
 /**
- * Created by oleg on 21.07.15.
+ * Created by oleg on 27.07.15.
  */
 public class Main {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("WEB-INF/spring/dataContext.xml");
-        TService service = context.getBean("TServiceImpl", TServiceImpl.class);
-        System.out.println(service.readRole("User"));
-//        service.createOperator(new Operator())
+        Client cl = new Client("client", "bb", "cc", "dd");
+        Operator oper = new Operator("oper", "111", 23343L);
+        TaxiDriver tax = new TaxiDriver("taxist", "aa", "bb", "cc");
+        Order order = new Order(cl, oper, tax, null, 2332L, "point a", "point b");
+        System.out.println(order);
     }
 }

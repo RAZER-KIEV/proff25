@@ -17,8 +17,8 @@ public class Menu {
         Locale.setDefault(Locale.ENGLISH);
         NotebookServiceImpl service = new NotebookServiceImpl();
         HibernateUtil hibernateUtil = new HibernateUtil();
-        service.add(new Notebook("Ahhgxs12345", "hp", "Probook", new Date(2015,6,20), 14000.00 ));
-        System.out.println(service.findAll().toString());
+//        service.add(new Notebook("Ahhgxs12345", "hp", "Probook", new Date(2015,6,20), 14000.00 ));
+//        System.out.println(service.findAll().toString());
 
     }
 }

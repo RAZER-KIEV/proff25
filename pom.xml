@@ -24,8 +24,6 @@
         <module>sergey_bokkar</module>
         <module>sergey_bokkar_web</module>
         <module>ivan_kushnirenko</module>
-        <module>ioan_kushnirenko_web</module>
-        <module>ivan_kushnirenko_webTest</module>
         <module>anton_lipskiy</module>
         <module>vitaliy_zholobitskiy</module>
         <module>vitaliy_zholobitskiy_web</module>
@@ -36,10 +34,12 @@
         <module>den_storozhenko</module>
         <module>den_storozhenko_web</module>
         <module>viktoria_mishchuk</module>
+        <module>viktoria_mishchuk_web</module>
         <module>evgeniy_fortuna</module>
         <module>sviatoslav_ruzhitskiy</module>
         <module>sviatoslav_ruzhitskiy_web</module>
         <module>george_rublev</module>
+        <module>george_rublev_web</module>
         <module>inna_minchenkova</module>
         <module>inna_minchenkova_web</module>
         <module>julia_brendel</module>

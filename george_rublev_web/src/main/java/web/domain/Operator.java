@@ -1,14 +1,15 @@
 package web.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.springframework.stereotype.Component;
+import scala.collection.Set;
+import scala.collection.mutable.HashSet;
+
+import javax.persistence.*;
 
 /**
  * Created by george on 16.07.15.
  */
-
+@Component
 @Entity
 @Table(name = "OPERATOR")
 public class Operator {
@@ -47,6 +48,7 @@ public class Operator {
     public Operator(Integer id, String login, String password) {
         this.id = id;
         this.login = login;
+
         this.password = password;
     }
 

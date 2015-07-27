@@ -109,4 +109,16 @@ public class Order {
     public void setAddressTo(String addressTo) {
         this.addressTo = addressTo;
     }
+
+    @Override
+    public String toString() {
+        return
+                client.getName() +
+                        '|' + operator.getLogin() +
+                        '|' + taxiDriver.getName() +
+                        '|' + orderDate +
+                        '|' + amount +
+                        '|' + addressFrom +
+                        '|' + addressTo ;
+    }
 }

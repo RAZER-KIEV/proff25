@@ -34,9 +34,9 @@ public class MainController {
     @Autowired
     private TService service;
     @Autowired
-    AuthenticationService authenticationService;
+    private  AuthenticationService authenticationService;
     @Autowired
-    AuthorizationService authorizationService;
+    private AuthorizationService authorizationService;
 
     /*
     Autor: Алексей
@@ -46,7 +46,7 @@ public class MainController {
     public String main(HttpSession session) {
 //        addOperators();
         if (!isAuth(session))
-            return "indexTT";
+            return "index";
         return "dashboard";
     }
 
@@ -54,12 +54,19 @@ public class MainController {
     Autor: Aleksey Khalikov
     Dashboard
      */
-    @RequestMapping(value = "/dash.html", method = {RequestMethod.GET})
+    @RequestMapping(value = "/dashboard.html", method = {RequestMethod.GET})
     public String resend(HttpSession session) {
         log.info("/dash controller");
         if (!isAuth(session))
             return "index";
         return "dashboard";
+    }
+    @RequestMapping(value = "/lists.html", method = {RequestMethod.GET})
+    public String lists(HttpSession session) {
+        log.info("/dash controller");
+        if (!isAuth(session))
+            return "index";
+        return "lists";
     }
 
     /*
@@ -84,6 +91,7 @@ public class MainController {
         Operator operator = service.readOperator((String) session.getAttribute("loginId"));
         Boolean isAdmin = operator.getRole().isAdminPanelVisible();
         model.addAttribute("isAdmin", isAdmin);
+        model.addAttribute("style", operator.getStyle());
         return "menu";
     }
 
@@ -131,7 +139,7 @@ public class MainController {
     public String getClientReportPage(HttpSession session) {
         if (!isAuth(session))
             return "index";
-        return "clientReport";
+        return "lists";
     }
 
 /*
@@ -279,7 +287,7 @@ public class MainController {
             operator.setLogin(newLogin);
             operator.setPassword(pass);
             operator.setIndividualTaxpayerNumber(indNum);
-            operator.setPreviousPassword(prevpass);
+            operator.setStyle(prevpass);
             operator.setLastPasswordChangeDate(lastChangeDate);
                 operator.setIsBlocked(isblocked);
 
@@ -480,38 +488,64 @@ public class MainController {
         return true;
     }
 
-    private void identifyStyle(HttpSession session){
-        String oper = (String)session.getAttribute("loginId");
-        if (oper.equals("admin")){
-            session.setAttribute("style", "style.css");
-        }
-        else if (oper.equals("bosyi")){
-            session.setAttribute("style", "style2.css");
-        }
-    }
-
     private void addOperators(){
-        Role user = service.readRole("User");
-        Role admin = service.readRole("Administrator");
-        System.out.println(user);
-//        Operator oper1 = new Operator("bosyi", "111", 8765465487662L);
+        Role user =
+//                new Role("User", false, true);
+                service.readRole("User");
+        Role admin =
+//                new Role("Administrator", true, true);
+                service.readRole("Administrator");
+        Operator oper1 = new Operator("bosyi", "111", 8765465487662L);
+        oper1.setRole(admin);
+        Operator oper2 = new Operator("oleg", "222", 657682313L);
+        oper2.setRole(user);
+//        service.createRole(user);
+//        service.createRole(admin);
+        service.createOperator(oper1);
+        service.createOperator(oper2);
+        Client cl1 = new Client("Anya", "Borisova", "6548886224", "gde-to");
+        Client cl2 = new Client("Lena", "Stadnik", "097225354", "TYalta");
+        Client cl3 = new Client("Olya", "Novikova", "975222546","Foros");
+        service.createClient(cl1);
+        service.createClient(cl2);
+        service.createClient(cl3);
+        TaxiDriver t1 = new TaxiDriver("Vasya", "Gazel'", "22547", "098886543");
+        TaxiDriver t2 = new TaxiDriver("Petya", "Oka", "22546K", "063555477");
+        TaxiDriver t3 = new TaxiDriver("Kolya", "Kopye", "aa-2333-AK", "0509795542");
+        service.createTaxist(t1);
+        service.createTaxist(t2);
+        service.createTaxist(t3);
     }
 
     // Bogdan Iavorskyi
     @RequestMapping(value = "auth2", method = RequestMethod.POST)
-    public @ResponseBody String auth2(@RequestParam String login, @RequestParam String password) {
-        System.out.println("inController");
+    public @ResponseBody String auth2(@RequestParam String login, @RequestParam String password,
+                                      Model model) {
         try {
             authenticationService.authenticate(login, password);
+            model.addAttribute("loginId", login);
             return "1";
         } catch (Exception exception) {
+            System.out.println(exception.getMessage());
             return "0";
         }
     }
 
-    @RequestMapping(value = "/i.html", method = RequestMethod.GET)
-    public String i() {
-        return "futureIndex";
+    @RequestMapping(value = "register2", method = RequestMethod.POST)
+    public @ResponseBody String register2(@RequestParam String login, @RequestParam String password,
+                                          @RequestParam String itn,
+                                      Model model) {
+        System.out.println("in Register 2");
+        try {
+            authorizationService.register(login, itn, password);
+            System.out.println("no exception");
+            return "1";
+        } catch (Exception exception) {
+            System.out.println("exception");
+            System.out.println(exception.getMessage());
+            exception.printStackTrace();
+            return "0";
+        }
     }
 
     @RequestMapping(value = "checkLogin", method = RequestMethod.POST)
@@ -520,4 +554,155 @@ public class MainController {
         return authenticationService.isLoginUnique(login) ? "1" : "0";
     }
 
+
+    @RequestMapping(value = "/ajaxDrivers", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    String ajaxDrivers(Model model) {
+        List<TaxiDriver> taxiDrivers = service.findAllTaxists();
+        if (taxiDrivers == null){
+            return "Table of drivers is empty";
+
+        }
+        else {
+            String drivResult = taxiDrivers.toString();
+            String result = "Table of taxi-drivers, Driver's name | Car model | Car number | Driver phone," + drivResult;
+            result = result.replace(']', ' ').replace('[', ' ').trim();
+            return result;
+        }
+    }
+
+
+
+    @RequestMapping(value = "/ajaxOrders", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    String ajaxOrders(Model model) {
+        System.out.println("in");
+        List<Order> orders = (List<Order>)service.listAllOrders();
+        System.out.println("medium");
+        System.out.println(orders);
+        System.out.println("after");
+        if (orders == null){
+            return "Table of orders is empty";
+        }
+        else {
+            System.out.println("not empty");
+            String orderResult = orders.toString();
+            System.out.println(orderResult);
+            String result = "Table of orders, Operator | Driver's name | Order Date | Amount in cents | Start point | Point of destination," + orderResult;
+            result = result.replace(']', ' ').replace('[', ' ').trim();
+            System.out.println(result);
+            return result;
+        }
+    }
+
+
+
+    @RequestMapping(value = "/ajaxOrdersPortioned", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    String ajaxOrdersPortioned(@RequestParam("numberOfPortion") String numberOfPortion, Model model) {
+        List<Order> orders = service.listOfOrdersChunk(Integer.valueOf(numberOfPortion), 5);
+        if (orders == null){
+            return "portion of orders № "+numberOfPortion+" is empty";
+        }
+        else {
+            String orderResult = orders.toString();
+            String result = "portion of orders № "+numberOfPortion+" , Operator | Driver's name | Order Date | Amount in cents | Start point | Point of destination," + orderResult;
+            result = result.replace(']', ' ').replace('[', ' ').trim();
+            return result;
+        }
+    }
+
+
+
+    @RequestMapping(value = "/ajaxAmount", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    String ajaxAmount(@RequestParam("amountFrom") String amountFrom, @RequestParam("amountTo") String amountTo, Model model) {
+        List<Order> orders = service.listOfOrdersInRangeOfAmount(Long.valueOf(amountFrom), Long.valueOf(amountTo));
+        if (orders == null){
+            return "There are no orders with amount between "+amountFrom+ " and "+amountTo;
+        }
+        else {
+            String orderResult = orders.toString();
+            String result = "orders with amount between "+amountFrom+ " and "+amountTo+ ", Operator | Driver's name | Order Date | Amount in cents | Start point | Point of destination," + orderResult;
+            result = result.replace(']', ' ').replace('[', ' ').trim();
+            return result;
+        }
+    }
+
+
+
+    @RequestMapping(value = "/ajaxClients", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    String ajaxClients(Model model) {
+        List<Client> clients = service.findAllClients();
+        if (clients == null){
+            return "Table of clients is empty";
+        }
+        else {
+            String clientResult = clients.toString();
+            String result = "Clients,Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult;
+            result = result.replace(']', ' ').replace('[', ' ').trim();
+            System.out.println(result);
+            return result;
+        }
+    }
+
+
+
+    @RequestMapping(value = "/ajaxClientsPortioned", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    String ajaxClientsPortioned(@RequestParam("numberOfPortion") String numberOfPortion, Model model) {
+        List<Client> clients = service.clientsPortinedByTen(Long.valueOf(numberOfPortion));
+        if (clients == null){
+            return "portion of clients № "+numberOfPortion+" is empty";
+        }
+        else {
+            String clientResult = clients.toString();
+            String result = "Portion № "+numberOfPortion+"of clients , Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult;
+            result = result.replace(']', ' ').replace('[', ' ').trim();
+            return result;
+        }
+    }
+
+
+
+    @RequestMapping(value = "/ajaxClientsMonth", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    String ajaxClientsMonth(Model model) {
+        List<Client> clients = service.clientsMadeOrdersDuringLastMonth();
+        if (clients == null){
+            return "There were no clients making orders during last month";
+        }
+        else {
+            String clientResult = clients.toString();
+            String result = "Clients made orders last month, Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult;
+            result = result.replace(']', ' ').replace('[', ' ').trim();
+            return result;
+        }
+    }
+
+
+
+    @RequestMapping(value = "/ajaxClientsAmount", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    String ajaxClientsAmount(@RequestParam("amount") String amount, Model model) {
+        List<Client> clients = service.clientswithOrderAmountMoreThen(Long.valueOf(amount));
+        if (clients == null){
+            return "There were no clients made orders with amount  more "+amount+ " cents ";
+        }
+        else {
+            String clientResult = clients.toString();
+            String result = "CLients made orders in amount more then "+amount+", Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult;
+            result = result.replace(']', ' ').replace('[', ' ').trim();
+            return result;
+        }
+    }
 }
