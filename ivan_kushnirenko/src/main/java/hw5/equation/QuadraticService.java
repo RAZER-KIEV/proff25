@@ -63,6 +63,10 @@ public class QuadraticService {
         }
     }
 
+    public void solve(int a, int b, int c, int d, int e, int f) {
+
+    }
+
     public static void main(String[] args) {
         new QuadraticService().createDecision();
     }
