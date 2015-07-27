@@ -26,7 +26,7 @@ public class FileService {
         System.out.println("INFO: New FileServiceManager was created.");
     }
 
-    public List findAll(String fileName, String dirName) throws FileNotFoundException {
+    public List searchFile(String fileName, String dirName) throws FileNotFoundException {
         File searchDirectory = new File(dirName);
         if (!searchDirectory.isDirectory()) {
             throw new FileNotFoundException("'" + dirName + "' is not a directory.");
@@ -58,5 +58,8 @@ public class FileService {
     public static void main(String[] args) {
     }
 
+    public void findAll(){
+
+    }
 
 }
