@@ -43,13 +43,21 @@ public class AuthenticationController {
     @RequestMapping(value = "/", method = {RequestMethod.GET,RequestMethod.POST, RequestMethod.HEAD})
     public String great() {
         log.info("/index controller");
-        return "index";
+        return "cw2707";
     }
+
+    @RequestMapping(value = "/111", method = {RequestMethod.GET,RequestMethod.POST})
+    public String great111() {
+        log.info("/index controller111");
+        return "index2.jsp";
+    }
+
+
 
     @RequestMapping(value = "/auth", method = RequestMethod.POST)
     public String auth(@RequestParam("login") String login, @RequestParam("password") String password, Model model, HttpSession session) throws AuthenticationException {
        if(authenticationService.authenticate(login, password)){
-           log.debug("Its Ok Operator found");
+           log.debug("Its Ok, Operator found");
            Operator operator = authenticationService.searchByLogin(login);
            session.setAttribute("operator",operator);
            session.setAttribute("operlogin", login);

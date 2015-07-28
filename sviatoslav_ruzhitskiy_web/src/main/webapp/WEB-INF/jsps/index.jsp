@@ -23,7 +23,7 @@ Logining retry: <%=count%>
 <form id="regForm1" action="/register" method="post">
   <input type="submit" name="register" value="Registeration">
 </form>
-</body>
+<!--</body>
 <script src="js/script.js">
 </script>
 <span id="spn">
@@ -35,7 +35,7 @@ Logining retry: <%=count%>
 
 <script src="js/script.js">
     </script>
-</html>
+</html>-->
 <center>
   <h2 style="color:white">Authentication!</h2>
   <form name ="myAuthForm" action="/auth" method="post">
