@@ -7,7 +7,7 @@
 <html>
 <head>
     <title>ind</title>
-    <script src="JS/script.js">var vector =[1,2,3,4,5];
+    <script src="JS/ajax.js">var vector =[1,2,3,4,5];
        var razmer = vector.length;
     var vect =[razmer];
     var j=0;
