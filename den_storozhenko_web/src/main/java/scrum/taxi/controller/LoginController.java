@@ -3,10 +3,7 @@ package scrum.taxi.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 import scrum.taxi.domain.Driver;
 import scrum.taxi.service.DriverService;
 import scrum.taxi.service.UserService;
@@ -32,15 +29,15 @@ public class LoginController {
 
     @RequestMapping(value = "/",method = {RequestMethod.GET, RequestMethod.HEAD})
     public String index1(){
-        return "index";
+        return "index1";
     }
 
-    @RequestMapping(value = "/index",method = RequestMethod.GET)
+    @RequestMapping(value = "/index1",method = RequestMethod.GET)
     public String index(){
-        return "index";
+        return "index1";
     }
 
-    @RequestMapping(value = "/login",method = RequestMethod.POST)
+    /*@RequestMapping(value = "/login",method = RequestMethod.POST)
     public String login(@RequestParam String login, @RequestParam String password, Model model){
         if (userService.authenticate(login,password)){
             System.out.println("AUTH!");
@@ -52,5 +49,22 @@ public class LoginController {
             model.addAttribute("info", "Login or password incorrect.");
             return "index";
         }
+    }*/
+
+    @RequestMapping(value = "/ajaxlogin",method = RequestMethod.POST)
+    public
+    @ResponseBody
+    List login(@RequestParam String login, @RequestParam String password){
+        if (userService.authenticate(login,password)){
+            String res = "";
+//            for (Driver driver:(List<Driver>)driverService.findAll()){
+//                res+=driver.getSurname()+"|";
+//            }
+            return driverService.findAll();
+        }
+        else{
+            return null;
+        }
+
     }
 }

@@ -35,7 +35,7 @@ html {
 #wrapper {
     /* Center wrapper perfectly */
     width: 300px;
-    height: 400px;
+    /*height: 400px;*/
     margin: 70px auto;
 }
 
@@ -92,7 +92,7 @@ LOGIN FORM
     position: relative;
 
     background: #f3f3f3;
-    border: 1px solid #fff;
+    /*border: 1px solid #fff;*/
     border-radius: 5px;
 
     box-shadow: 0 1px 3px rgba(0,0,0,0.5);
@@ -105,7 +105,7 @@ HEADER
 *******************/
 
 .login-form .header {
-    padding: 40px 30px 30px 30px;
+    padding: 40px 30px 10px 30px;
 }
 
 .login-form .header h1 {
@@ -115,7 +115,7 @@ HEADER
     line-height:34px;
     color: #414848;
     text-shadow: 1px 1px 0 rgba(256,256,256,1.0);
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .login-form .header span {
@@ -131,6 +131,7 @@ CONTENT
 
 .login-form .content {
     padding: 0 30px 25px 30px;
+    background-color: #f3f3f3;
 }
 
 /* Input field */
@@ -155,7 +156,7 @@ CONTENT
 
 /* Second input field */
 .login-form .content .password, .login-form .content .pass-icon {
-    margin-top: 25px;
+    margin-top: 15px;
 }
 
 .login-form .content .input:hover {

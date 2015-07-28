@@ -5,15 +5,13 @@
     <link rel="stylesheet" href="css/dashboard.css"/>
 </head>
 <body>
-<h1 align="center"><font color="YELLOW"> AUTHENTICATION SUCCESS<br> ${hello}</font></h1>
+<h1 align="center"><font color="RED">${hello}</font></h1>
 <font color="BLUE">${info}</font>
 <font color="RED">${error}</font>
 <table>
         <tr>
             <td>
-                <form action="/regCl" method="GET">
-                    <input type="submit" value="Register client"/>
-                </form>
+                <input type="button"  value="Register client" onclick="location.href='/registerClient.html'"/>
             </td>
         </tr>
         <tr>
@@ -37,7 +35,7 @@
         </tr>
         <tr>
             <td>
-                <form action="/editOrder1" method="GET">
+                <form action="/editOrder" method="GET">
                     <input type="submit" value="Create/edit order"/>
                 </form>
             </td>

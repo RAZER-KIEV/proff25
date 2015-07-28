@@ -38,7 +38,7 @@ public class AuthenticationController {
 
         log.info("/dashboard.html controller");
         if (isAutorized(session)){
-            model.addAttribute("hello", "Hello, "+authenticationService.getOperator((Long)session.getAttribute("id")).getLogin()+"!");
+            model.addAttribute("hello", "Operator - "+authenticationService.getOperator((Long)session.getAttribute("id")).getLogin());
             return "dashboard";
         }
         else {
@@ -46,12 +46,12 @@ public class AuthenticationController {
         }
     }
 
-    @RequestMapping(value = "/dashboard", method = RequestMethod.POST)
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     public
+    @ResponseBody
     String login(@RequestParam("login") String login, @RequestParam("password") String password, Model model, HttpSession session) {
         log.info("/login.html controller");
         if (isAutorized(session)){
-            model.addAttribute("hello", "Hello, "+authenticationService.getOperator((Long)session.getAttribute("id")).getLogin()+"!");
             return "dashboard";
         }
         try {
@@ -68,14 +68,11 @@ public class AuthenticationController {
             if (role==UserRole.SUPERADMIN) {
                 model.addAttribute("role", "SUPERADMIN");
             }
-            model.addAttribute("hello", "Hello, " + login + "!");
             return "dashboard";
         } catch (AuthenticationException e) {
-            model.addAttribute("authenticateEx", e.getMessage());
-            return "index";
+            return e.getMessage();
         } catch (HibernateException e) {
-            model.addAttribute("error", "Database error.");
-            return "index";
+            return e.getMessage();
         } 
     }
 
@@ -109,7 +106,7 @@ public class AuthenticationController {
     public String root(Model model, HttpSession session) {
         log.info("/index controller");
         if (isAutorized(session)){
-            model.addAttribute("hello", "Hello, "+authenticationService.getOperator((Long)session.getAttribute("id")).getLogin()+"!");
+            model.addAttribute("hello", "Operator - "+authenticationService.getOperator((Long)session.getAttribute("id")).getLogin());
             return "dashboard";
         }
         return "index";
