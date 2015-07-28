@@ -9,15 +9,13 @@ import org.hibernate.HibernateException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
 
 @Controller
@@ -48,20 +46,17 @@ public class AdminController {
 
     @RequestMapping(value = "/submitEditOperator", method = RequestMethod.POST)
     public
+    @ResponseBody
     String submitEditOperator(@RequestParam String login, @RequestParam String newLogin, @RequestParam String password, @RequestParam String newRole,
-                              @RequestParam String ident, @RequestParam Integer countAttempts, @RequestParam String isBlocked,
-                              Model model, HttpSession session) {
+                              @RequestParam String ident, @RequestParam Integer countAttempts, @RequestParam String isBlocked) {
         log.info("/submitEditOperator controller");
         try{
             adminService.update(login, newLogin, password, newRole, ident, countAttempts, isBlocked);
-            model.addAttribute("info","Operator was edited.");
-            return "dashboard";
+            return "edited";
         } catch (OperatorEditingException e) {
-            model.addAttribute("error", e.getMessage());
-            return editOperator(model,session);
+            return e.getMessage();
         } catch (HibernateException e) {
-        model.addAttribute("error", "Database error.");
-        return "dashboard";
+        return "Database error.";
     }
     }
 
@@ -69,30 +64,27 @@ public class AdminController {
     public
     String unlockClear(Model model, HttpSession session) {
         log.info("/unlockClear controller");
-        if (session.getAttribute("role").equals("SUPERADMIN")){
-            model.addAttribute("operators", adminService.getUsersAndAdmins());
-        }else
-        if (session.getAttribute("role").equals("ADMIN")){
-            model.addAttribute("operators", adminService.getUsers());
+        if (session.getAttribute("role")!=null) {
+            if (session.getAttribute("role").equals("SUPERADMIN")) {
+                model.addAttribute("operators", adminService.getUsersAndAdmins());
+            } else if (session.getAttribute("role").equals("ADMIN")) {
+                model.addAttribute("operators", adminService.getUsers());
+            }
+            return "unlockClear";
         }
-        return "unlockClear";
+        return "/";
     }
 
     @RequestMapping(value = "/submitUnlockClear", method = RequestMethod.POST)
     public
-    String submitUnlockClear(@RequestParam String login, @RequestParam(value = "params[]") String[] params, Model model) {
+    @ResponseBody
+    String submitUnlockClear(@RequestParam String login, Model model) {
         log.info("/submitUnlockClear controller");
-        String inf="";
-        for (String param : params) {
-            if (param.equals("clearAttempts")) {
-                adminService.clearAttempts(login);
-                inf += "Attempts to enter wrong password for user \"" + login + "\" were cleared.<br>";
-            } else if (param.equals("unlock")) {
-                adminService.unlock(login);
-                inf += "User \"" + login + "\" was unlocked.<br>";
-            }
+        try {
+            adminService.unlockClear(login);
+            return "<font color=\"BLUE\">Attempts to enter wrong password for user \"" + login + "\" were cleared.<br>User \"" + login + "\" was unlocked.<br></font>";
+        }catch (Throwable e){
+            return "<font color=\"RED\""+"Error!"+"</font>";
         }
-        model.addAttribute("info",inf);
-        return "dashboard";
     }
 }

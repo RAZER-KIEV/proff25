@@ -3,9 +3,11 @@
  */
 
 $(document).ready(function() {
-    var el = $('#four');
-    el.append($('<p>Four from JQuery</p>'));
-    $('#four').append($('<p>Foru from JQuery</p>'))
+    $('#four').append($('<p>Foru from JQuery</p>'));
+    $('#tab').bind('click',function(){
+        send();
+
+    })
 });
 
 
@@ -76,7 +78,7 @@ ajax.onreadystatechange = function () {
             pass=inputSplit[2];
             stat=inputSplit[3];
         }
-
+        document.getElementById("tab").innerHTML=inputDate;
         //resp.innerHTML
         //name.innerText ='<p>'+ inputSplit[5]+'</p>';
         //logid.innerHTML = inputSplit[0];

@@ -13,6 +13,18 @@ public class IsValid {
         return true;
     }
 
+    public static boolean isValidPhone(String phone){
+        System.out.println(phone);
+        System.out.println(phone.length());
+        if (phone.length()!=12) return false;
+        for (int i=0;i<phone.length();i++){
+            if (!Character.isDigit(phone.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static boolean isValidPassword(String pass){
         if (pass.length()<8) return false;
         boolean flag = false;

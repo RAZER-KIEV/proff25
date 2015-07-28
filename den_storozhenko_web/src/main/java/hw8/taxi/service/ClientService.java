@@ -11,6 +11,7 @@ import java.util.List;
 public interface ClientService {
     Client getClient(Long id);
     Client getClientByName(String name, String surname);
+    Client getClientByPhone(String phone);
     boolean createClient(String name, String surname, String phone, String address) throws ClientException;
     void updateClient(Client client, Long amount);
     List findAll();

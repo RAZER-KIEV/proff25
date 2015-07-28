@@ -4,10 +4,11 @@
     <title></title>
     <link rel="stylesheet" href="css/index.css"/>
     <script src="js/scrum.js"></script>
+    <script src="js/jquery-1.11.1.js"></script>
 </head>
 <body>
 
-<div id="wrapper">
+<div id="wrapper" class="login-form">
     <table name="login-form" class="login-form">
         <div class="header">
             <h1>Operator Login</h1>
@@ -22,7 +23,7 @@
         </div>
 
         <div class="footer">
-            <button class="register" id="button" onclick="login()">Login</button>
+            <button class="register" id="button" onclick="check()">Login</button>
         </div>
 
     </table>
