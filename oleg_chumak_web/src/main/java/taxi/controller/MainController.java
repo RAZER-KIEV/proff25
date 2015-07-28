@@ -68,7 +68,10 @@ public class MainController {
             return "index";
         return "lists";
     }
-
+    @RequestMapping(value = "/test.html", method = {RequestMethod.GET})
+    public String test(HttpSession session) {
+        return "test";
+    }
     /*
     Autor: Aleksey Khalikov
     Загружает титульную строку в Dashboard
@@ -581,7 +584,11 @@ public class MainController {
         System.out.println("in");
         List<Order> orders = (List<Order>)service.listAllOrders();
         System.out.println("medium");
+        try{
         System.out.println(orders);
+        } catch (Throwable e){
+            e.printStackTrace();
+        }
         System.out.println("after");
         if (orders == null){
             return "Table of orders is empty";
@@ -647,6 +654,24 @@ public class MainController {
             String clientResult = clients.toString();
             String result = "Clients,Name | Surname | Phone number | Address | Total money spent | Date of last change," + clientResult;
             result = result.replace(']', ' ').replace('[', ' ').trim();
+            return result;
+        }
+    }
+
+
+    @RequestMapping(value = "/newajax", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    String newajax(Model model) {
+        List<TaxiDriver> taxists = service.findAllTaxists();
+        if (taxists == null){
+            return "Table of clients is empty";
+        }
+        else {
+            String result = new String();
+            for(TaxiDriver tax : taxists){
+                result = result + tax.getName()+",";
+            }
             System.out.println(result);
             return result;
         }

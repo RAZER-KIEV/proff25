@@ -51,4 +51,12 @@ public class HelloController {
         model.addAttribute("name", "al1");
         return "index";
     }
+    @RequestMapping(value = "/2", method = {RequestMethod.GET, RequestMethod.HEAD})
+    public String index2(Model model) {
+        log.info("/index2 controller");
+        model.addAttribute("name", "al1");
+        return "index2";
+
+    }
+
 }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Proff20 Android</string>
+    <string name="hello">Hello proff20_examples_android!</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello Andros</string>
+
+</resources>

@@ -11,6 +11,7 @@ public interface ClientDao {
     Long create(Client client);
     Client read(Long id);
     Client readByName(String name, String surname);
+    Client readByPhone(String phone);
     boolean update(Client client);
     boolean delete(Client client);
     List showClientsGtSum(int sum);

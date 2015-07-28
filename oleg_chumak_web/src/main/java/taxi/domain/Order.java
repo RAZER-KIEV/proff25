@@ -114,7 +114,7 @@ public class Order {
     public String toString() {
         return
                 client.getName() +
-                        '|' + operator.getLogin() +
+//                        '|' + operator.getLogin() +
                         '|' + taxiDriver.getName() +
                         '|' + orderDate +
                         '|' + amount +
