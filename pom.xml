@@ -38,6 +38,7 @@
         <module>den_storozhenko_android</module>
         <module>viktoria_mishchuk</module>
         <module>viktoria_mishchuk_web</module>
+        <module>viktoria_mishchuk_android</module>
         <module>evgeniy_fortuna</module>
         <module>sviatoslav_ruzhitskiy</module>
         <module>sviatoslav_ruzhitskiy_web</module>
@@ -49,12 +50,13 @@
         <module>julia_brendel</module>
         <module>svetlana_gazina</module>
         <module>svetlana_gazina_web</module>
+        <module>svetlana_gazina_android</module>
         <module>viktor_sokol</module>
         <module>viktor_sokol_web</module>
-
+        <module>viktor_sokol_android</module>
         <module>alexandr_omelchenko_android</module>
 
-        <module>viktor_sokol_web</module>
+
 
         <!--<module>viktor_sokol_web</module>-->
         <!--<module>anton_lipskiy_web</module>-->
