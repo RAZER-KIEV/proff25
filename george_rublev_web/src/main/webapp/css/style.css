@@ -1,5 +1,6 @@
 .bodyStyle {
-    background-image: url("http://localhost:8082/imeg/street_taxi.jpg"); /* Путь к фоновому изображению */
+    /*background-image: url("http://localhost:8082/imeg/street_taxi.jpg"); /!* Путь к фоновому изображению *!/*/
+    background-image: url("/imeg/street_taxi.jpg");
     vertical-align: middle;
     background-position: left, right;
 }
@@ -27,12 +28,12 @@ p {
                text-align: center;
 }
 
-/*.button {*/
-    /*text-align: center;*/
-    /*background: #DAA520;*/
-    /*border-radius: 3px 3px 3px 3px;*/
+.button {
+    text-align: center;
+    background: #DAA520;
+    border-radius: 3px 3px 3px 3px;
 
-/*}*/
+}
 .button4 {
     position: relative;
     display: inline-block;
@@ -93,4 +94,20 @@ legend {
     font-family: Arial,Helvetica,FreeSans,"Liberation Sans","Nimbus Sans L",sans-serif;
     font-weight: bold;
 
+}
+
+#one {
+    background-color: red;
+}
+
+#two {
+    font-weight: bold;
+    border-style: solid;
+    border-width: 1px;
+    border-color: red;
+
+}
+
+#three{
+    font-weight: bold;
 }

@@ -67,17 +67,17 @@ public class DashboardController {
     private String mneuOperator(String status) {
         if(status.equals("admin")){
             return "<table border=\"0\">" +
-                    "<tr><td><button class=\"button4\" onclick=\"menuButt('listDrivers')\">List Drivers</button></td></tr>" +
-                    "<tr><td><button class=\"button4\" onclick=\"menuButt('listOperators')\">List Operators</button></td></tr>" +
-                    "<tr><td><button class=\"button4\" onclick=\"menuButt('listClient')\">List Clients</button></td></tr>" +
-                    "<tr><td><button class=\"button4\" onclick=\"menuButt('listOrders')\">List Orders</button></td></tr>" +
+                    "<tr><td><button class=\"button\" onclick=\"menuButt('listDrivers')\">List Drivers</button></td></tr>" +
+                    "<tr><td><button class=\"button\" onclick=\"menuButt('listOperators')\">List Operators</button></td></tr>" +
+                    "<tr><td><button class=\"button\" onclick=\"menuButt('listClient')\">List Clients</button></td></tr>" +
+                    "<tr><td><button class=\"button\" onclick=\"menuButt('listOrders')\">List Orders</button></td></tr>" +
                     "</table>";
     }
         if(status.equals("operator")){
             return "<table border=\"0\">" +
-                    "<tr><td><button class=\"button4\" onclick=\"menuButt('listDrivers')\">List Drivers</button></td></tr>" +
-                    "<tr><td><button class=\"button4\" onclick=\"menuButt('listClient')\">List Clients</button></td></tr>" +
-                    "<tr><td><button class=\"button4\" onclick=\"menuButt('listOrders')\">List Orders</button></td></tr>" +
+                    "<tr><td><button class=\"button\" onclick=\"menuButt('listDrivers')\">List Drivers</button></td></tr>" +
+                    "<tr><td><button class=\"button\" onclick=\"menuButt('listClient')\">List Clients</button></td></tr>" +
+                    "<tr><td><button class=\"button\" onclick=\"menuButt('listOrders')\">List Orders</button></td></tr>" +
                     "</table>";
         }
         return null;
@@ -131,7 +131,7 @@ public class DashboardController {
                 return sb;
             case "listOrders":
                 List<Orders> orders = orderS.listOrder();
-                sb = "<table class=\"table\" border=\"1\"><tr><td colspan=\"3\">Orders</td></tr>" +
+                sb = "<table class=\"table\" border=\"1\"><tr><td colspan=\"4\">Orders</td></tr>" +
                         "<tr><td>ID</td><td>from</td><td>to</td><td>Price</td></tr>";
                 for (Orders d : orders){
                     sb = sb + "<tr><td>"+d.getId()+"</td><td>"+d.getMoveFrom()+"</td><td>"+d.getMoveTo()+"</td>" +

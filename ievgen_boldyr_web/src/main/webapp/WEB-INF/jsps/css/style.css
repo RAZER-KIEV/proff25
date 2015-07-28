@@ -1,0 +1,12 @@
+.bodyStyle {
+    background-image: url("http://localhost:8082/imeg/street_taxi.jpg"); /* Путь к фоновому изображению */
+    /*background-color: #c7b39b;*/
+}
+.bodyStyle {
+    vertical-align: middle;
+    /*background-color: cornsilk;*/
+}
+p {
+    font-weight: bold;
+    font-style: italic
+}

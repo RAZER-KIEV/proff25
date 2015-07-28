@@ -2,16 +2,20 @@
  * Created by Well on 21.07.2015.
  */
 
+$(document).ready(function() {
+    var el = $('#four');
+    el.append($('<p>Four from JQuery</p>'));
+    $('#four').append($('<p>Foru from JQuery</p>'))
+});
+
+
 var ajax = new XMLHttpRequest();
 
 ajax.onreadystatechange = function () {
     if (ajax.readyState === 4 && ajax.status === 200) {
         if (ajax.responseText !== 'false') {
-            //var div = document.getElementById('resp');
-            //div.innerHTML = ajax.responseText;//ajax.responseText.split('|');
             document.write(ajax.responseText);
             resp.innerHTML=ajax.responseText;
-
         } else {
             alert('Login or Password - FAILED!!!!');
         }
@@ -89,6 +93,7 @@ function send(butt) {
     ajax.open('POST', '/indexTaxi.html?login=' + login+'&&pass='+pass+'&status='+stat+'&buton='+but,true);
     console.log('/indexTaxi.html?login='+login+'&&pass='+pass+'&status='+stat+'&buton='+but,true);
     ajax.send();
+
 }
 
 function menuButt(butt){
@@ -101,3 +106,4 @@ function menuButt(butt){
 function reload(){
     location.reload();
 }
+
