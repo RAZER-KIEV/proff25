@@ -51,6 +51,13 @@ public class ClientDaoImpl implements ClientDao {
     }
 
     @Override
+    public Client readByPhone(String phone) {
+        Query query = factory.getCurrentSession().createQuery("from Client c where c.phone=:phone");
+        query.setParameter("phone",phone);
+        return (Client)query.uniqueResult();
+    }
+
+    @Override
     public boolean update(Client client) {
         factory.getCurrentSession().update(client);
         return true;

@@ -3,17 +3,17 @@
 <head>
     <title></title>
     <link rel="stylesheet" href="css/index.css"/>
-    <script src="js/scrum.js"></script>
     <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/scrum.js"></script>
 </head>
-<body>
+<body id="bd">
 
 <div id="wrapper" class="login-form">
     <table name="login-form" class="login-form">
         <div class="header">
-            <h1>Operator Login</h1>
+            <h1>Login</h1>
                 <span>
-                    <font color="BLUE">${info}</font>
+                    <font id="info" color="BLUE"></font>
                 </span>
         </div>
 
@@ -21,16 +21,24 @@
             <input id="login" type="text" class="input username" placeholder="Username" />
             <input id="password" type="password" class="input password" placeholder="Password" />
         </div>
-
         <div class="footer">
-            <button class="register" id="button" onclick="check()">Login</button>
+            <button class="button" id="button">Login</button>
         </div>
 
     </table>
 </div>
-<div id="table_div">
 
-</div>
+<%--<div id="Block1">adfasdfa sdffa<br>--%>
+    <%--afa<br>--%>
+     <%--dffa<br>--%>
+    <%--ad fa<br>--%>
+    <%--fa<br>--%>
+    <%--adsfadfasdfdsafasfdafa<br>--%>
+<%--</div>--%>
+
+<%--<div id="Block2">asdasdasaaadadaaasfa<br>asda</div>--%>
+
+<%--<div id="Block3">fadajlfljaldajffa<br>fjnfanfajnfalfa<br>aljkq</div>--%>
 
 </body>
 </html>

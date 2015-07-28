@@ -1,5 +1,6 @@
 package hw8.taxi.service;
 
+import hw8.taxi.IsValid;
 import hw8.taxi.dao.ClientDao;
 import hw8.taxi.domain.Client;
 import hw8.taxi.exception.ClientException;
@@ -44,7 +45,25 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
+    public Client getClientByPhone(String phone) {
+        return clientDao.readByPhone(phone);
+    }
+
+    @Override
     public boolean createClient(String name, String surname, String phone, String address) throws ClientException {
+        String err="";
+        if (name.isEmpty() || surname.isEmpty() || phone.isEmpty() || address.isEmpty()){
+            err+="All fields should not be empty.<br>";
+        }
+        if (!Character.isUpperCase(name.charAt(0)) || !Character.isUpperCase(surname.charAt(0))){
+            err+="Name and surname must begin from a capital letter.<br>";
+        }
+        if (!IsValid.isValidPhone(phone)){
+            err+="Phone must be in format \"381234567890\" and contains only digits.<br>";
+        }
+        if (!err.isEmpty()){
+            throw new ClientException(err);
+        }
         Long res = clientDao.create(new Client(name,surname,phone,address,0,null));
         return (res>0);
     }
