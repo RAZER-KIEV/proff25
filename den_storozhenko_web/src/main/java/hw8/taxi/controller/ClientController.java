@@ -16,10 +16,10 @@ public class ClientController {
     @Autowired
     private ClientService clientService;
 
-    @RequestMapping(value = "/regCl", method = RequestMethod.GET)
+    @RequestMapping(value = "/registerClient", method = RequestMethod.GET)
     public
     String registerCl() {
-        log.info("/regCl controller");
+        log.info("/registerClient controller");
         return "registerClient";
     }
 
@@ -30,28 +30,28 @@ public class ClientController {
         return "dashboard";
     }*/
 
-    @RequestMapping(value = "/submitRegisterClient", method = RequestMethod.GET)
-    public
-    String registerClient1() {
-        log.info("/registerClient controller");
-        return "dashboard";
-    }
+//    @RequestMapping(value = "/submitRegisterClient", method = RequestMethod.GET)
+//    public
+//    String registerClient1() {
+//        log.info("/registerClient controller");
+//        return "dashboard";
+//    }
 
     @RequestMapping(value = "/submitRegisterClient", method = RequestMethod.POST)
     public
+    @ResponseBody
     String registerClient(@RequestParam String name, @RequestParam String surname, @RequestParam String phone,
                  @RequestParam String address, Model model) {
-        log.info("/registerClient controller");
+        log.info("/submitRegisterClient controller");
         try {
-            clientService.createClient(name,surname,phone,address);
-            model.addAttribute("info","Client was created.");
-            return "dashboard";
+            clientService.createClient(name, surname, phone, address);
+            //model.addAttribute("info","Client was created.");
+            return "<span><font color=\"BLUE\">"+"Client was created."+"</font></span>";
         } catch (ClientException e) {
-            model.addAttribute("info", "Client wasn't created");
-            return "registerClient";
+            return "<span><font color=\"RED\">"+"Client wasn't created.<br>"+e.getMessage()+"</font></span>";
         } catch (HibernateException e){
-            model.addAttribute("error","Database error.");
-            return "registerClient";
+            //model.addAttribute("error","Database error.");
+            return "<span><font color=\"RED\">"+"Database error."+"</font></span>";
         }
     }
 
