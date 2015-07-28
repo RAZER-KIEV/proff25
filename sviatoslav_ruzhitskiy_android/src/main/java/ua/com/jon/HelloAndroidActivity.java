@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 
 public class HelloAndroidActivity extends Activity {
@@ -23,8 +24,16 @@ public class HelloAndroidActivity extends Activity {
             int i;
 
             public void onClick(View v) {
+
                 hello.setText("Hello");
                 //      text.setText("Button");
+            }
+        });
+        final EditText editText = (EditText) findViewById(R.id.editText2);
+        final Button newOne = (Button) findViewById(R.id.buttonNEW);
+        newOne.setOnClickListener(new OnClickListener() {
+            public void onClick(View view) {
+                editText.setText("NEW");
             }
         });
 

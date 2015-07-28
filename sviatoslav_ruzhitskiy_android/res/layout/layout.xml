@@ -11,7 +11,7 @@
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
-            android:layout_height="69dp" android:id="@+id/lin">
+            android:layout_height="69dp" android:id="@+id/lin" android:weightSum="1">
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -31,12 +31,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="NEW"
-                android:id="@+id/button" android:singleLine="false"/>
+                android:id="@+id/buttonNEW" android:singleLine="false"/>
         <ProgressBar
                 style="?android:attr/progressBarStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/progressBar" android:progress="4" android:max="10"/>
+        <AnalogClock
+                android:layout_width="131dp"
+                android:layout_height="match_parent"
+                android:id="@+id/analogClock"/>
     </LinearLayout>
     <LinearLayout
             android:layout_width="fill_parent"
