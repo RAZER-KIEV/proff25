@@ -29,9 +29,13 @@
         if (orderList != null) {
     %>
     <tbody>
+    <%--<tr><%out.print(orderList);%></tr>--%>
     <%
             for (Order or : orderList) {
     %>
+    <tr>
+        <%--<td><%out.print(or);%></td>--%>
+    </tr>
     <tr>
         <td><%out.print(or.getId());%></td>
         <td><%out.print("ID: "+or.getClient().getId() + "|NAME: " + or.getClient().getName() + " " + or.getClient().getSurname());%></td>
