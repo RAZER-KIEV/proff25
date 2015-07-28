@@ -7,10 +7,7 @@ import org.hibernate.HibernateException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 import java.util.Locale;
@@ -36,7 +33,7 @@ public class RegisterController {
     }
 
 
-    @RequestMapping(value = "/registersuccess", method = RequestMethod.POST)
+    /*@RequestMapping(value = "/registersuccess", method = RequestMethod.POST)
     public
     String register(@RequestParam String login, @RequestParam String password, @RequestParam String confirmPassword, @RequestParam String id, Model model) {
         log.info("/registersuccess controller");
@@ -53,6 +50,23 @@ public class RegisterController {
         } catch (HibernateException e){
             model.addAttribute("error","Database error.");
             return "register";
+        }
+    }*/
+
+    @RequestMapping(value = "/registerSuccess", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    String register(@RequestParam String login, @RequestParam String password, @RequestParam String confirmPassword, @RequestParam String ident, Model model) {
+        log.info("/registerSuccess controller");
+        try{
+            if (!authorizationService.register(login,password,confirmPassword,ident)){
+                return "<font color=\"RED\">Login "+login+" already exists. Enter other login.<font>";
+            }
+            return "<font color=\"BLUE\">User "+login+" registration is successful.<font>";
+        } catch (AuthorizationException authorizationException) {
+            return "<font color=\"RED\">"+authorizationException.getMessage()+"<font>";
+        } catch (HibernateException e){
+            return "<font color=\"RED\">Database error.<font>";
         }
     }
 }

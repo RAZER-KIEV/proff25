@@ -2,10 +2,9 @@
 <head>
     <title>Taxi Last Way</title>
     <link rel = "stylesheet" href="/css/style.css">
-    <script src="/js/taxi.js">
-        
-    </script>
     <script src="/js/jquery-1.11.3.js"></script>
+    <script src="/js/taxi.js"></script>
+
 </head>
 <body class="bodyStyle">
 
@@ -29,7 +28,6 @@
         </td>
 
         <td width="25%" id="logid">
-            <%--<form action="indexTaxi.html" method="POST" style="width: 300px; padding: 10px">--%>
                 <fieldset align="right" >
                     <legend align="center" >
                         <b class="title">  A u t h e n t i c a t i o n:  </b></legend>
@@ -53,7 +51,6 @@
                         </tr>
                     </table>
                 </fieldset>
-            <%--</form>--%>
     </tr>
     <tr>
         <td id="one">One</td>
@@ -66,6 +63,10 @@
         <td></td>
     </tr>
 </table>
+
+<p id="tab">
+TAB
+</p>
 
 </body>
 </html>

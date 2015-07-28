@@ -81,19 +81,12 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public void unlock(String login) {
+    public void unlockClear(String login) {
         Operator operator = operatorDao.getByLogin(login);
         operator.setIsBlocked(false);
-        operatorDao.update(operator);
-    }
-
-    @Override
-    public void clearAttempts(String login) {
-        Operator operator = operatorDao.getByLogin(login);
         operator.setCountWrongPass(0);
         operatorDao.update(operator);
     }
-
 
     @Override
     public List<Operator> getUsers() {

@@ -74,13 +74,13 @@ public class AuthenticationServiceImpl implements AuthenticationService{
     public boolean authenticate(String login, String pass) throws AuthenticationException{
         Operator operator = operatorDao.getByLogin(login);
         if (operator==null){
-            throw  new AuthenticationException("Operator with login "+login+" does not exist.");
+            throw  new AuthenticationException("Operator with login \""+login+"\" does not exist.");
         }
         if (operator.getIsBlocked()){
-            throw new AuthenticationException("Operator "+login+" is blocked.");
+            throw new AuthenticationException("Operator \""+login+"\" is blocked.");
         }
         if ((new Date().getTime()-operator.getPassDate().getTime())>=properties.getTimeOfAction()*3600000){ //время действия
-            throw new AuthenticationException("Time of action password for user "+ login+" expires. Follow <a href=\"/changepassword?login="+login+"\">link</a> to change password.");
+            throw new AuthenticationException("Time of action password for user \""+ login+"\" expires. Follow <a onclick=\"changePassword()\" >link</a> to change password.");
         }
         if (!operator.getPassword().equals(pass)){ //количество попыток
             Integer attemps = operator.getCountWrongPass();
@@ -99,10 +99,10 @@ public class AuthenticationServiceImpl implements AuthenticationService{
     public boolean changePassword(String login, String password, String newpass, String confirm) throws AuthenticationException{
         Operator operator = operatorDao.getByLogin(login);
         if (operator==null){
-            throw  new AuthenticationException("Operator with login "+login+" does not exist.");
+            throw  new AuthenticationException("Operator with login \""+login+"\" does not exist.");
         }
         if (operator.getIsBlocked()){
-            throw new AuthenticationException("Operator "+login+" is blocked.");
+            throw new AuthenticationException("Operator \""+login+"\" is blocked.");
         }
         if (!operator.getPassword().equals(password)){ //количество попыток
             Integer attemps = operator.getCountWrongPass();
@@ -130,3 +130,4 @@ public class AuthenticationServiceImpl implements AuthenticationService{
         return true;
     }
 }
+//href="/changepassword?login="+login+""
