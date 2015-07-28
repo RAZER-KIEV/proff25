@@ -54,6 +54,8 @@
         <module>anton_lipskiy_web</module>
         <module>alexandr_omelchenko_android</module>
 
+        <module>viktor_sokol_web</module>
+        <module>viktor_sokol_android</module>
         <!--<module>viktor_sokol_web</module>-->
         <!--<module>anton_lipskiy_web</module>-->
 
