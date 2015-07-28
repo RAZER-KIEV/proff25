@@ -39,6 +39,7 @@
         <module>evgeniy_fortuna</module>
         <module>sviatoslav_ruzhitskiy</module>
         <module>sviatoslav_ruzhitskiy_web</module>
+        <module>sviatoslav_ruzhitskiy_android</module>
         <module>george_rublev</module>
         <module>george_rublev_web</module>
         <module>inna_minchenkova</module>
@@ -47,8 +48,8 @@
         <module>svetlana_gazina</module>
         <module>svetlana_gazina_web</module>
         <module>viktor_sokol</module>
-        <module>viktor_sokol_web</module>
-        <module>anton_lipskiy_web</module>
+        <!--<module>viktor_sokol_web</module>-->
+        <!--<module>anton_lipskiy_web</module>-->
 
     </modules>
 

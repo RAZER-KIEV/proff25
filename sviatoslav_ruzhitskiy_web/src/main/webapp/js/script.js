@@ -2,13 +2,38 @@
  * Created by RAZER on 20.07.2015.
  */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 val = new Array(0,1,2,3,4,5,6,7,8,9);
 lav= new Array();
 for(var i = 9; i>= 0; i--){
     document.write(val[i]);
 }*/
-function check(){
+/*function check(){
   var node = document.getElementsByName('spn');
     var input1 = document.getElementsByName('text1');
     var input2 = document.getElementsByName('text2');
@@ -27,5 +52,5 @@ function check(){
         label.input.value='Yes';
     } else
         console.log('Say No');
+*/
 
-}
