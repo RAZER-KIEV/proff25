@@ -13,22 +13,22 @@
 <body>
 <form>
   <input type="button"
-         value="Вывести весь список клиентов"
+         value="List all clients"
          onclick="location.href='clientslistAll.html'"
          width="90%">
 <br/>
   <input type="button"
-         value="Вывести всех клиентов, делавших заказы за последний месяц"
+         value="List clients to make orders for the last month"
          onclick="location.href='ClientsMadeOrdersDuringLastMonth.html'"
          width="90%">
 </form>
 <form action="/clientsPortinedByTen.html", method="get">
     <input type="text" name="portion">
-    <input type="submit" value="Вывести всех клиентов указанной порцией">
+    <input type="submit" value="List clients by portions">
 </form>
 <form action="/ClientsWithOrderAmountMoreThen.html", method="get">
   <input type="text" name="value">
-  <input type="submit" value="Вывести всех клиентов наездивших на сумму больше указанной">
+  <input type="submit" value="List clients the amount of orders which are over">
 </form>
 </body>
 </html>
