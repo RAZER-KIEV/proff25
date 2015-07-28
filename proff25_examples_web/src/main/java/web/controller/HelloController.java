@@ -4,8 +4,11 @@ import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import web.domain.Employee;
 
 import javax.servlet.http.HttpSession;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -20,8 +23,8 @@ public class HelloController {
     @RequestMapping(value = "/ajax", method = RequestMethod.GET)
     public
     @ResponseBody
-    String ajax(@RequestParam("name") String name, Model model) {
-        return "hello " + name;
+    List<Employee> ajax(@RequestParam("name") String name, Model model) {
+        return Arrays.asList(new Employee("Pasha"), new Employee("Masha"));
     }
 
     @RequestMapping(value = "/hello.html", method = RequestMethod.GET)
