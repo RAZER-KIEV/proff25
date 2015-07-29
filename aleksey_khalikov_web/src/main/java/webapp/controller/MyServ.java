@@ -1,4 +1,4 @@
-package action;
+package main.java.webapp.controller;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -7,16 +7,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by GFalcon on 07.07.15.
+ * Created with IntelliJ IDEA.
+ * User: al1
+ * Date: 26.06.15
  */
-@WebServlet("/serv")
-public class Serv extends HttpServlet {
+@WebServlet("/myServ")
+public class MyServ extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        resp.getWriter().println("<html>" +
-                "<body>" +
-                "<h2>HelloServlet</h2>" +
-                "</body>" +
-                "</html>");
+        resp.setContentType("text/html");
+        resp.getWriter().println("<h2>Hello servlet</h2>");
     }
 }
