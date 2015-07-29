@@ -18,6 +18,8 @@ public class Order {
     private Date date;
     @ManyToOne
     private Client client;
+    @ManyToOne
+    private Driver driver;
     @Column(name = "AMOUNT")
     private Long amount;
     @Column(name = "ADDRESS_FROM")
@@ -31,6 +33,7 @@ public class Order {
     public Order(Date date, Client client, Long amount, String addressFrom, String addressTo) {
         this.date = date;
         this.client = client;
+        this.driver = null;
         this.amount = amount;
         this.addressFrom = addressFrom;
         this.addressTo = addressTo;
@@ -40,6 +43,7 @@ public class Order {
         this.id = id;
         this.date = date;
         this.client = client;
+        this.driver = null;
         this.amount = amount;
         this.addressFrom = addressFrom;
         this.addressTo = addressTo;
@@ -67,6 +71,14 @@ public class Order {
 
     public void setClient(Client client) {
         this.client = client;
+    }
+
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
     }
 
     public Long getAmount() {
@@ -99,6 +111,7 @@ public class Order {
                 "id=" + id +
                 ", date=" + date +
                 ", client=" + client.getFirstname() + " "+ client.getLastname() +
+                ", driver=" + driver.getPhone() + " "+ driver.getName() +
                 ", amount=" + amount +
                 ", addressFrom='" + addressFrom + '\'' +
                 ", addressTo='" + addressTo + '\'' +

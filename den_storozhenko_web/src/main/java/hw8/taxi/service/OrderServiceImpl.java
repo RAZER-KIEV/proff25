@@ -2,6 +2,7 @@ package hw8.taxi.service;
 
 import hw8.taxi.dao.OrderDao;
 import hw8.taxi.domain.Client;
+import hw8.taxi.domain.Driver;
 import hw8.taxi.domain.Order;
 import hw8.taxi.exception.OrderException;
 import org.hibernate.HibernateException;
@@ -87,6 +88,13 @@ public class OrderServiceImpl implements OrderService{
         catch (HibernateException e){
             throw new OrderException("Database error.");
         }
+    }
+
+    @Override
+    public void giveOrderToDriver(Long id, Driver driver) {
+        Order order = orderDao.read(id);
+        order.setDriver(driver);
+        orderDao.update(order);
     }
 
     @Override
