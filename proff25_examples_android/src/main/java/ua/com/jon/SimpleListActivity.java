@@ -39,7 +39,7 @@ public class SimpleListActivity extends ListActivity {
         final String item = adapter.getItem(position);
         final Handler handler = new Handler();
 
-/*
+
         Runnable runnable = new Runnable() {
             public void run() {
                 adapter.add(item);
@@ -47,7 +47,7 @@ public class SimpleListActivity extends ListActivity {
             }
         };
         handler.postDelayed(runnable, 1);
-*/
+
         new MyDownloadTask().execute();
         Toast.makeText(this, item + " selected", Toast.LENGTH_LONG).show();
 

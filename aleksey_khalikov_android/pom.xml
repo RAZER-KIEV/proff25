@@ -8,11 +8,11 @@
             <version>1.0-SNAPSHOT</version>
         </parent>-->
 
-    <groupId>roman_rudych_android</groupId>
-    <artifactId>roman_rudych_android</artifactId>
+    <groupId>aleksey_khalikov_android</groupId>
+    <artifactId>aleksey_khalikov_android</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>apk</packaging>
-    <name>roman_rudych_android</name>
+    <name>aleksey_khalikov_android</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
