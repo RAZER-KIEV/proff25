@@ -58,7 +58,7 @@
                     android:ems="10"
                     android:id="@+id/editText2" android:layout_below="@+id/button1"
                     android:layout_alignParentLeft="true"
-                    android:layout_alignParentRight="true" android:textColor="@color/colors"/>
+                    android:layout_alignParentRight="true" android:textColor="@color/black"/>
         </ScrollView>
     </LinearLayout>
     <LinearLayout
