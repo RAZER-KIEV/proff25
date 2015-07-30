@@ -113,4 +113,9 @@ public class OrderServiceImpl implements OrderService{
     public List<Order> showOrdersByPortion() {
         return orderDao.getOrdersByPortion();
     }
+
+    @Override
+    public List<Order> showFreeOrders() {
+        return orderDao.getFreeOrders();
+    }
 }

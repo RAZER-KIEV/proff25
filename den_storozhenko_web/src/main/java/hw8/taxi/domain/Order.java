@@ -111,7 +111,6 @@ public class Order {
                 "id=" + id +
                 ", date=" + date +
                 ", client=" + client.getFirstname() + " "+ client.getLastname() +
-                ", driver=" + driver.getPhone() + " "+ driver.getName() +
                 ", amount=" + amount +
                 ", addressFrom='" + addressFrom + '\'' +
                 ", addressTo='" + addressTo + '\'' +

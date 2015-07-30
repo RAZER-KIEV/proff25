@@ -16,4 +16,5 @@ public interface OrderService {
     List findAll();
     List showOrders(Long from, Long to);
     List showOrdersByPortion();
+    List showFreeOrders();
 }
