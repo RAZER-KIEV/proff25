@@ -2,7 +2,7 @@ $(document).ready(function(){
     $('#button').bind('click',function(){
         $.ajax({
                 url: '/showFreeOrders',
-                type: "GET",
+                type: "POST",
                 data: {phone: $('#login').val(), password: $('#password').val()},
                 success: function (res) {
                     if (res.length==0){
@@ -26,7 +26,7 @@ $(document).ready(function(){
     $("body").on('click', '#take', function(){
         $.ajax({
                 url: '/takeOrder',
-                type: "GET",
+                type: "POST",
                 data: {order: $('#order').val()},
                 success: function (res) {
                     if (res==="-"){

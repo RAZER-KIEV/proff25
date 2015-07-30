@@ -3,7 +3,7 @@ package session12.dao;
 /**
  * Created by just1ce on 23.06.2015.
  */
-import hw6.notes.domain.Notebook;
+
 import session12.domain.Company;
 
 import java.util.Date;

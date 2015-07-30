@@ -8,58 +8,22 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title></title>
+    <title>Регистрация клиента</title>
   <link rel="stylesheet" href="css/registerClient.css">
 </head>
 <body>
-<form name="registration" action="/client_register" method="post">
-  <table id="register_table">
-    <tbody>
-    <tr><td>
-      <table cellpadding="0" cellspacing="20" width="400">
-        <tbody>
-        <tr>
-          <td></td>
-          <td class="reg_title" colspan="2">Регистрация Клиента</td>
-        </tr>
-        <tr>
-          <td class="reg_title" colspan="2"><font color="RED">${info}</font> </td>
-        </tr>
-        <tr>
-          <td class="reg_cell_titles">Введите Имя</td>
-          <td class="reg_cell" width="100%">
-            <input name="name" style="width: 100%;" type="text"   />
-          </td>
-        </tr>
-        <tr>
-          <td class="reg_cell_titles">Введите Фамилию</td>
-          <td class="reg_cell">
-            <input name="surname" style="width: 100%;"  type="text" />
-          </td>
-        </tr>
-        <tr>
-          <td class="reg_cell_titles">Введите аддрес</td>
-          <td class="reg_cell">
-            <input name="address" style="width: 100%;"  type="text" />
-          </td>
-        </tr>
-        <tr>
-          <td class="reg_cell_titles">Введите телефон</td>
-          <td class="reg_cell">
-            <input name="phone" style="width: 100%;"  type="text" />
-          </td>
-        </tr>
-        <tr>
-          <td>
-          </td>
-          <td class="reg_submit" align="left">
-            <input value="Регистрация" name="submit" id="reg_submit_button" type="submit" />
-          </td>
-        </tr>
-        </tbody></table>
-    </td></tr>
-    </tbody>
-  </table>
-</form>
+<div id="register">
+  <p><font color="RED">${info}</font></p>
+  <form action="/client_register" id="reg" method="post">
+    <fieldset class="clearfix">
+      <p><span class="fontawesome-user"></span><input name="name" type="text" value="Имя" onBlur="if(this.value == '') this.value = 'Имя'" onFocus="if(this.value == 'Имя') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
+      <p><span class="fontawesome-user"></span><input name="surname" type="text" value="Фамилия" onBlur="if(this.value == '') this.value = 'Фамилия'" onFocus="if(this.value == 'Фамилия') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
+      <p><span class="fontawesome-user"></span><input name="address" type="text" value="Адресс" onBlur="if(this.value == '') this.value = 'Адресс'" onFocus="if(this.value == 'Адресс') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
+      <p><span class="fontawesome-user"></span><input name="phone" type="text" value="Телефон" onBlur="if(this.value == '') this.value = 'Телефон'" onFocus="if(this.value == 'Телефон') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
+      <p><input type="submit" value="РЕГИСТРАЦИЯ"></p>
+    </fieldset>
+  </form>
+  <p><a href="/">Назад</a><span class="fontawesome-arrow-right"></span></p>
+</div>
 </body>
 </html>

@@ -49,15 +49,7 @@ public class ClientController {
         }
     }
 
-
-
-    @RequestMapping(value = "/classwork",method = RequestMethod.GET)
-    public
-    String reg() {
-        return "classwork";
-    }
-
-    @RequestMapping(value = "/ajax",method = RequestMethod.GET)
+   /* @RequestMapping(value = "/ajax",method = RequestMethod.GET)
     public @ResponseBody
     String checkpass(@RequestParam("login") String login,
                      @RequestParam("pass") String pass) {
@@ -65,7 +57,7 @@ public class ClientController {
             return "Da";
         else
             return "Net";
-    }
+    }*/
 
 
 

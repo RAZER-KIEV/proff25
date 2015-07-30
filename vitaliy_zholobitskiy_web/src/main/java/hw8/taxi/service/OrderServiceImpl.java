@@ -34,7 +34,7 @@ public class OrderServiceImpl implements OrderService {
             order.setClient(client);
             order.setDate(new Date());
             order.setSum(Long.parseLong(amount));
-        orderDao.update(order);
+            orderDao.update(order);
 
     }
 
@@ -46,5 +46,10 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public List showOrdersByPortion() {
         return orderDao.showOrdersByPortion();
+    }
+
+    @Override
+    public List getAll() {
+        return orderDao.getAll();
     }
 }

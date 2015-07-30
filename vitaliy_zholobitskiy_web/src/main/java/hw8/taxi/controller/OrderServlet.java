@@ -29,6 +29,12 @@ public class OrderServlet {
         model.addAttribute("clients",clientService.findAll());
         return "order";
     }
+    @RequestMapping(value = "/editOrderPage", method = RequestMethod.GET)
+    String editOrderPage(Model model){
+        model.addAttribute("clients",clientService.findAll());
+        model.addAttribute("orders",orderService.getAll());
+        return "editOrder";
+    }
 
     @RequestMapping(value = "/showOrdersByPortion", method = RequestMethod.GET)
     public
@@ -69,15 +75,15 @@ public class OrderServlet {
     }
     @RequestMapping(value = "/editOrder", method = RequestMethod.POST)
     public
-    String  editOrder(@RequestParam("id1") String id,
-                      @RequestParam("client_id1") String client_id,
-                       @RequestParam("amount1") String amount,
-                       @RequestParam("addressFrom1") String addressFrom,
-                       @RequestParam("addressTo1") String addressTo,
+    String  editOrder(@RequestParam("order_id1") String order_id1,
+                      @RequestParam("client_id1") String client_id1,
+                       @RequestParam("amount1") String amount1,
+                       @RequestParam("addressFrom1") String addressFrom1,
+                       @RequestParam("addressTo1") String addressTo1,
                        Model model){
         try {
-            Client client = clientService.getClientByID(Long.parseLong(client_id));
-            orderService.editOrder(Long.parseLong(id),client,amount,addressFrom,addressTo);
+            Client client = clientService.getClientByID(Long.parseLong(client_id1));
+            orderService.editOrder(Long.parseLong(order_id1),client,amount1,addressFrom1,addressTo1);
             return "dashboard";
         }
         catch (OrderException ex){
