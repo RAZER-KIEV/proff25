@@ -14,7 +14,7 @@
 <body>
 
 <p> Message: <%= request.getAttribute("message") %></p>
-<fildset>
+<fieldset>
   <legend>Create/Edit Order</legend>
 <form action="/createEditOrder" method="post">
   <p>Order id: <input type="text" name="orderId"/></p>
@@ -25,6 +25,6 @@
   <input type="submit" name="submit" value="Create/Edit Order"/>
   <button formaction="/backToDashboard"  type="submit" formmethod="post" name="BacktoDASHBOARD" value="Back to DASHBOARD!">Back to DASHBOARD!</button>
 </form>
-  </fildset>
+  </fieldset>
 </body>
 </html>
