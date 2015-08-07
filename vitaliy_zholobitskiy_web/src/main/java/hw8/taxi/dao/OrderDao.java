@@ -15,4 +15,5 @@ public interface OrderDao {
     boolean delete(Order order);
     List showOrders(Long from, Long to);
     List showOrdersByPortion();
+    List getAll();
 }

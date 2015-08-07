@@ -65,6 +65,11 @@ public class OrderDaoImpl implements OrderDao {
     }
 
     @Override
+    public List<Order> getFreeOrders() {
+        return factory.getCurrentSession().createQuery("from Order o where o.driver=null").list();
+    }
+
+    @Override
     public List<Order> getOrdersByPortion() {
         return findAll();
     }

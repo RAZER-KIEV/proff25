@@ -23,7 +23,7 @@
         </div>
 
         <div class="footer">
-            <button class="register" id="button" onclick="check()">Login</button>
+            <button class="register" id="button">Login</button>
         </div>
 
     </table>

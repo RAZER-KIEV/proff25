@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
 
 import javax.servlet.http.HttpSession;
 
@@ -25,7 +26,7 @@ public class AuthenticationController {
     String great(@RequestParam("login") String login,
                  @RequestParam("password") String password,
                  Model model) throws AuthenticationException {
-
+        log.info("/auth.html controller");
         if(authenticationService.authenticate(login, password)){
             model.addAttribute("id",authenticationService.getIdByLogin(login));
             return "dashboard";
@@ -49,7 +50,15 @@ public class AuthenticationController {
     String register() {
         return "register";
     }
-
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public
+    String logout(HttpSession session,SessionStatus status) {
+        Long id = (Long)(session.getAttribute("id"));
+        if (id!=null){
+            status.setComplete();
+        }
+        return "index";
+    }
 
 
 
