@@ -13,4 +13,5 @@ public interface OrderService {
     void editOrder(Long id, Client client, String amount, String addressFrom, String addressTo) throws OrderException;
     List showOrders(Long from, Long to);
     List showOrdersByPortion();
+    List getAll();
 }

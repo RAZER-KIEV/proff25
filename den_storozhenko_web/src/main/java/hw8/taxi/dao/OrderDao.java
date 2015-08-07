@@ -10,6 +10,7 @@ public interface OrderDao {
     boolean update(Order order);
     boolean delete(Order order);
     List getOrdersBySum(Long from, Long to);
+    List getFreeOrders();
     List getOrdersByPortion();
     List getOrdersPorced(int start, int size);
     List findAll();

@@ -16,10 +16,10 @@
 <%! int count=0; %>
 
 <%
-    if(request.getAttribute("countAdd")!=null){
-  count+= (int)request.getAttribute("countAdd");}
+    if(request.getAttribute("attempts")!=null){
+  count+= (int)request.getAttribute("attempts");}
 %>
-Logining retry: <%=count%>
+Logining attempts: <%=count%>
 <form id="regForm1" action="/register" method="post">
   <input type="submit" name="register" value="Registeration">
 </form>

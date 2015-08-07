@@ -10,10 +10,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpSession;
@@ -48,7 +45,7 @@ public class RegisterController {
     }
 
 
-    @RequestMapping(value = "/goToRegisterClient", method = RequestMethod.POST)
+    @RequestMapping(value = "/goToRegisterClient", method = {RequestMethod.POST, RequestMethod.GET})
     public String goToRegisterClient(){
           return "registerClient";
     }
@@ -91,18 +88,21 @@ public class RegisterController {
         return "operator";
     }
 
-    @RequestMapping(value = "/registerOper", method = RequestMethod.POST)
-    public String addUser(@RequestParam("login")String login, @RequestParam("password")String password, @RequestParam("passwordConfirm")String passwordConfirm,
+    @RequestMapping(value = "/registerOper", method = {RequestMethod.POST, RequestMethod.GET})
+    public
+    @ResponseBody
+    String addUser(@RequestParam("login")String login, @RequestParam("password")String password, @RequestParam("passwordConfirm")String passwordConfirm,
                           @RequestParam("inn")String inn, HttpSession session){
         if(authenticationService.searchByLogin(login)==(null)&password.equals(passwordConfirm)){
             Operator opr = new Operator(login,password,inn);
             authenticationService.create(opr);
             session.setAttribute("login", login);
             session.setAttribute("operator", opr);
-            return "dashboard";
+            return "Success! Operator registered!";
 
         }else
-            return "index";
+            session.setAttribute("message","Error! Operator already exist");
+            return "register";
 
     }
 }

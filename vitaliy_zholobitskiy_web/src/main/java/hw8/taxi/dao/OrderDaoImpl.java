@@ -31,7 +31,7 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public Order readById(Long id) {
-        Order order = (Order) sessionFactory.getCurrentSession().createQuery("from Order ord where ord.id="+id.toString()).uniqueResult();
+        Order order = (Order) sessionFactory.getCurrentSession().createQuery("from Order ord where ord.orderId="+id.toString()).uniqueResult();
         if (order!=null)
             return order;
         return null;
@@ -72,5 +72,10 @@ public class OrderDaoImpl implements OrderDao {
             orders.addAll(getPortion(i, 5));
         }
         return orders;
+    }
+
+    @Override
+    public List getAll() {
+        return sessionFactory.getCurrentSession().createQuery("from Order").list();
     }
 }

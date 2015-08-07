@@ -42,14 +42,14 @@ public class AuthenticationController {
 
     @RequestMapping(value = "/", method = {RequestMethod.GET,RequestMethod.POST, RequestMethod.HEAD})
     public String great() {
-        log.info("/index controller");
-        return "cw2707";
+        log.info("/index controller works");
+        return "index";
     }
 
     @RequestMapping(value = "/111", method = {RequestMethod.GET,RequestMethod.POST})
     public String great111() {
         log.info("/index controller111");
-        return "index2.jsp";
+        return "cw2707";
     }
 
 

@@ -14,14 +14,13 @@
         <module>proff25_examples_web</module>
         <module>proff25_examples_android</module>
         <module>aleksey_khalikov</module>
-        <module>aleksey_khalikov_web</module>
-        <module>aleksey_khalikov_android</module>
         <module>nick_martyn</module>
         <module>ievgen_boldyr</module>
         <module>bogdan_iavorskyi</module>
         <module>bogdan_iavorskyi_web</module>
         <module>roman_rudych</module>
         <module>roman_rudych_web</module>
+        <module>roman_rudych_android</module>
         <module>alexandr_omelchenko</module>
         <module>alexandr_omelchenko_web</module>
         <module>sergey_bokkar</module>
@@ -40,7 +39,6 @@
         <module>den_storozhenko_android</module>
         <module>viktoria_mishchuk</module>
         <module>viktoria_mishchuk_web</module>
-        <module>viktoria_mishchuk_android</module>
         <module>evgeniy_fortuna</module>
         <module>sviatoslav_ruzhitskiy</module>
         <module>sviatoslav_ruzhitskiy_web</module>
@@ -52,15 +50,10 @@
         <module>julia_brendel</module>
         <module>svetlana_gazina</module>
         <module>svetlana_gazina_web</module>
-        <module>svetlana_gazina_android</module>
         <module>viktor_sokol</module>
         <module>viktor_sokol_web</module>
-        <module>viktor_sokol_android</module>
+
         <module>alexandr_omelchenko_android</module>
-
-
-
-        <!--<module>viktor_sokol_web</module>-->
         <!--<module>anton_lipskiy_web</module>-->
 
     </modules>
