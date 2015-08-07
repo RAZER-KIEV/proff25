@@ -96,7 +96,7 @@ public class ClientController {
     @RequestMapping(value = "/clients.html", method = RequestMethod.GET)
     public String clients (Model model) {
 
-        List<Client> list = service.showClientsByPortion(from, portion);
+        List<Client> list = service.showClientsByPortionFrom(from, portion);
         if(list.size() != 0) {
             model.addAttribute("list", list);
             if(list.size()<10) {

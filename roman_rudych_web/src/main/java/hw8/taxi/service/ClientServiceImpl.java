@@ -46,7 +46,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     @Transactional(readOnly = true)
-    public List showClientsByPortion(int from, int portionSize) {
+    public List showClientsByPortionFrom(int from, int portionSize) {
 
         return clientDao.findAll(from, portionSize);
     }

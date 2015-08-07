@@ -13,7 +13,7 @@ public interface ClientService {
     boolean createClient(String name, String surname, String phone, String address) throws OrderException;
     boolean registerClient(String name, String surname, String phone, String address, double sum, Date dateOrder) throws OrderException;
     List showClientsByPortion(int portionSize);
-    List showClientsByPortion(int from, int portionSize);
+    List showClientsByPortionFrom(int from, int portionSize);
     List showClientsGtSum(int sum);
     List showClientsLastMonth();
     Client findByPhoneNum(String phoneNum);
