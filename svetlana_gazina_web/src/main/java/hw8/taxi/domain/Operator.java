@@ -10,7 +10,6 @@ import java.util.Date;
  */
 @Entity
 @Component
-@Table(name="OPERATORS")
 public class Operator {
     @Id
     @SequenceGenerator(name = "sequence", sequenceName = "OPERATORS_SEQ", initialValue = 1, allocationSize = 1)
