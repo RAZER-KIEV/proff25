@@ -44,8 +44,8 @@ public class RegisterController {
     }
 
     @RequestMapping(value = "/createEditOperator", method = RequestMethod.POST)
-    public String createEditOperator(@RequestParam("id")String id,@RequestParam("login") String login, @RequestParam("inn") String inn, @RequestParam("password") String password,
-                                     @RequestParam("wrongPass") String wrongPass, Model model ) throws AuthorizationException {
+    public String createEditOperator(@RequestParam("login") String login, @RequestParam("inn") String inn, @RequestParam("password") String password,
+                                     Model model ) throws AuthorizationException {
 
         authorizationService.register(login, inn, password);
 

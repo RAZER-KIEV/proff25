@@ -21,7 +21,7 @@
     <input input id="password" type="password" name="password"  value="Password..." style="border-radius: 10px" onclick="this.value=''"/><br/>
     <label style="color: gold">Confirm your password: </label><br/>
     <input id="passwordConfirm" type="password" name="passwordConfirm"  value="Password..." style="border-radius: 10px" onclick="this.value=''"/><br/><br/>
-    <input id="authenticateButton" formaction="/" formmethod="post" css="" type="submit" value="register" style="border-radius: 5px" align="right"/>
+    <input id="authenticateButton" formaction="/createEditOperator" formmethod="post" css="" type="submit" value="register" style="border-radius: 5px" align="right"/>
 </form>
 </body>
 </html>
