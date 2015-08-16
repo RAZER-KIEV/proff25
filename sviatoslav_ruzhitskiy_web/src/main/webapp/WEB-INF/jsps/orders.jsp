@@ -15,7 +15,7 @@
   <link href="/css/hw8CSS.css" rel="stylesheet"/>
 </head>
 <body>
-<h1 align="center">Orders view</h1>
+<div class="wrapper">
 <form>
   <button formaction="/backToDashboard"  type="submit" formmethod="post" name="BacktoDASHBOARD" value="Back to DASHBOARD!">Back to DASHBOARD!</button>
 </form>
@@ -42,5 +42,6 @@
     </tr>
   </c:forEach>
 </table>
+  </div>
 </body>
 </html>

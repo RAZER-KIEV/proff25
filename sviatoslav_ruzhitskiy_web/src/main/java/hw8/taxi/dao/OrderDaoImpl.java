@@ -72,5 +72,15 @@ public class OrderDaoImpl implements OrderDao{
         return query.list();
     }
 
+    @Override
+    public List findInCompleteOrders() {
+        Query query = sessionFactory.getCurrentSession().createQuery("from Order o where o.isComplite=false");
+        List<Order> orderList = query.list();
+        for(Order or :orderList){
+            System.out.println(or);
+        }
+        return query.list();
+    }
+
 
 }

@@ -14,6 +14,7 @@
   <link href="/css/hw8CSS.css" rel="stylesheet"/>
 </head>
 <body>
+<div class="wrapper">
 <h1>CLIENT REGISTERATION PAGE</h1>
 <p>STATUS: <%= request.getAttribute("status") %></p>
 <fieldset>
@@ -27,5 +28,6 @@
   <button formaction="/backToDashboard"  type="submit" formmethod="post" name="BacktoDASHBOARD" value="Back to DASHBOARD!">Back to DASHBOARD!</button>
 </form>
 </fieldset>
+  </div>
 </body>
 </html>
