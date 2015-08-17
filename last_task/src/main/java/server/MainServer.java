@@ -11,15 +11,15 @@ import java.nio.channels.SocketChannel;
  */
 public class MainServer {
 
-    private static String request = "HTTP/1.1 200 OK\n" +
-            "Server: nginx/1.2.1\n" +
-            "Date: Sat, 08 Mar 2014 22:53:46 GMT\n" +
-            "Content-Type: application/octet-stream\n" +
-            "Content-Length: 227\n" +
-            "Last-Modified: Sat, 08 Mar 2014 22:53:30 GMT\n" +
-            "Connection: keep-alive\n" +
-            "Accept-Ranges: bytes\n" +
-            "\n" +
+    private static String request = "HTTP/1.1 200 OK\n\r" +
+            "Server: nginx/1.2.1\n\r" +
+            "Date: Sat, 08 Mar 2014 22:53:46 GMT\n\r" +
+            "Content-Type: text/html\n\r" +
+            "Content-Length: 7\n\r" +
+            "Last-Modified: Sat, 08 Mar 2014 22:53:30 GMT\n\r" +
+            "Connection: keep-alive\n\r" +
+            "Accept-Ranges: bytes\n\r" +
+            "\n\r" +
             "Wisdom";
 
     public static void main(String[] args) {
