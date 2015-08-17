@@ -9,8 +9,8 @@
 <html>
 <head>
     <title>MY CW 2707</title>
-  <script src="js/jquery-1.11.1.js"/>
-  <script src="js/js2707.js"/>
+  <script src="js/jquery-1.11.1.js"></script>>
+  <script src="js/js2707.js"></script>>
 </head>
 <body id ="oneBody">
 fgdkjlkmngjg,j

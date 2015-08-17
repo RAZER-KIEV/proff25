@@ -112,7 +112,7 @@ public class ClientGenerator {
             "Port Huron, MI 48060\n" +
             "579 Queen Street \n" +
             "Bristow, VA 20136\n" +
-            "564 MainTaxiTeser Street \n" +
+            "564 MainTaxiTester Street \n" +
             "Tiffin, OH 44883\n" +
             "891 Washington Avenue \n" +
             "Findlay, OH 45840\n" +
@@ -178,7 +178,7 @@ public class ClientGenerator {
             "Fort Worth, TX 76110\n" +
             "9 Franklin Street \n" +
             "Thornton, CO 80241\n" +
-            "989 MainTaxiTeser Street \n" +
+            "989 MainTaxiTester Street \n" +
             "Bethpage, NY 11714\n" +
             "613 Sunset Drive \n" +
             "Bluffton, SC 29910\n" +
@@ -260,7 +260,7 @@ public class ClientGenerator {
             "East Brunswick, NJ 08816\n" +
             "941 Atlantic Avenue \n" +
             "Lawndale, CA 90260\n" +
-            "113 MainTaxiTeser Street West \n" +
+            "113 MainTaxiTester Street West \n" +
             "Rapid City, SD 57701\n" +
             "261 Mill Road \n" +
             "Piqua, OH 45356\n" +

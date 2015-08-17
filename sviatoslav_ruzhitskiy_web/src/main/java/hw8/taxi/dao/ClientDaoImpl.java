@@ -104,4 +104,10 @@ public class ClientDaoImpl implements ClientDao{
         query.setParameter("date",date);
         return query.list();
     }
+
+    @Override
+    public Long getCliensQuantity() {
+        Query query = sessionFactory.getCurrentSession().createQuery("SELECT count (c.id) from Client c");
+        return (Long)query.uniqueResult();
+    }
 }

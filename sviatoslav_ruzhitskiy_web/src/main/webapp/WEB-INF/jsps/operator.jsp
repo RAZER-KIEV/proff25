@@ -12,12 +12,13 @@
   <link href="/css/hw8CSS.css" rel="stylesheet"/>
 </head>
 <body>
+<div class="wrapper">
 <%
   String  message = (String)request.getAttribute("message");
 %>
 <p>System Message:  <%= message %> </p>
 <p> Message: <%= request.getAttribute("message") %></p>
-<fildset>
+<fieldset>
   <legend>Create/Edit Operator</legend>
 <form action="/createEditOperator" method="post">
   <p>Operator Id: <input type="text" name="id"/></p>
@@ -30,6 +31,7 @@
   <input type="submit" name="submit" value="Create/Edit Operator"/>
   <button formaction="/backToDashboard"  type="submit" formmethod="post" name="BacktoDASHBOARD" value="Back to DASHBOARD!">Back to DASHBOARD!</button>
 </form>
-  </fildset>
+  </fieldset>
+  </div>
 </body>
 </html>
