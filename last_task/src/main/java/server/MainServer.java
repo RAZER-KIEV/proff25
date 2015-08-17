@@ -1,5 +1,8 @@
 package server;
 
+import request.RequestParst;
+import request.exceptions.BadRequestException;
+
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
@@ -43,6 +46,9 @@ public class MainServer {
                 if (bytesRead != -1) {
                     String str = new String(buffer.array(), 0, bytesRead);
                     System.out.println(str);
+
+                    RequestParst requestParst = new RequestParst();
+                    String filePath = requestParst.requestParst(str);
 
                     byte[] req1 = request.getBytes();
                     System.out.println(req1.length);
@@ -93,6 +99,8 @@ public class MainServer {
 
 
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (BadRequestException e) {
             e.printStackTrace();
         }
     }
