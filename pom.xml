@@ -20,6 +20,7 @@
         <module>bogdan_iavorskyi_web</module>
         <module>roman_rudych</module>
         <module>roman_rudych_web</module>
+        <module>roman_rudych_android</module>
         <module>alexandr_omelchenko</module>
         <module>alexandr_omelchenko_web</module>
         <module>sergey_bokkar</module>
@@ -49,15 +50,13 @@
         <module>julia_brendel</module>
         <module>svetlana_gazina</module>
         <module>svetlana_gazina_web</module>
+        <module>svetlana_gazina_android</module>
         <module>viktor_sokol</module>
         <module>evgeniy_lukashevich_android</module>
         <module>viktor_sokol_web</module>
+        <module>viktor_sokol_android</module>
 
         <module>alexandr_omelchenko_android</module>
-
-        <module>viktor_sokol_web</module>
-
-        <!--<module>viktor_sokol_web</module>-->
         <!--<module>anton_lipskiy_web</module>-->
 
     </modules>

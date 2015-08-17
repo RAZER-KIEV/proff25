@@ -15,7 +15,9 @@
   <legend>SUPERADMIN PANEL</legend>
 <form>
   <p><button formaction="/showOperators" formmethod="post">Show Operators</button> <button formaction="/goToCreateUpdateOperator" formmethod="post">Create Edit Operator</button>
-    <button formaction="/createClientsInDB" formmethod="post">Generate random Clients In DB</button></p>
+    <button formaction="/createClientsInDB" formmethod="post">Generate random Clients In DB</button>
+    <button formaction="/createOrdersInDB" formmethod="post">Generate random Orders In DB</button>
+  </p>
 </form>
   </fieldset>
 </body>

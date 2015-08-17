@@ -14,6 +14,7 @@
 
 </head>
 <body>
+<div class="wrapper">
 <%! String login;
     String sysMessage;
     Operator operator;
@@ -28,8 +29,8 @@
     operator = (Operator) session.getAttribute("operator");
 %>
 <h1>YOU WELCOME ON DASHBOARD!</h1>
-<p>Your Login:  <%= login %> </p>
-<p>System Message:  <%= sysMessage %> </p>
+<h3>Your Login:  "<%= login %>",  System Message:  "<%= sysMessage %>"</h3>
+
 
    <% if(operator.getIsSuperAdmin()){ %>
 <jsp:include page="superAdminPanel.jsp" />
@@ -40,15 +41,16 @@
 <form action="/showClientsGtSum" method="post">
     <p><button formaction="/goToRegisterClient" formmethod="post">Register new Client</button></p>
     <p></p>
-    <p><button formaction="/showClientsByPortion" formmethod="post">Show Clients By Portion</button></p>
+    <p><button formaction="/showClientsByPortion" formmethod="post">Show Clients</button></p>
     <p><input type="submit" name="submit" value="Show Clients Gt Sum"> <input name="sum" type="text"/> Set minimal sum</p>
     <p><button formaction="/showClientsLastMonth" formmethod="post">Show Clients Last Month</button></p>
     <p><button formaction="/goToCreateOrder" formmethod="post">Create/Edit Order</button></p>
     <p><input formaction="/showOrders" type="submit" name="submit" value="Show Orders"> <input name="from" type="text"/> <input name="to" type="text"/> Set Diapason(From-To)</p>
-    <p><button formaction="/showOrdersByPortion" formmethod="post">Show Orders By Portion </button></p>
+    <p><button formaction="/showOrdersByPortion" formmethod="post">Show Orders By Portion </button> Works slowly, because there are lot of requests to DataBase</p>
 
 
 </form>
     </fieldset>
+    </div>
 </body>
 </html>

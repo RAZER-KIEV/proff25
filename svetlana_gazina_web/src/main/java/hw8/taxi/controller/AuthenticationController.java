@@ -5,10 +5,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 import javax.naming.AuthenticationException;
@@ -42,6 +39,22 @@ public class AuthenticationController {
         return "index";
     }
 
+    @RequestMapping(value = "/index", method = {RequestMethod.GET, RequestMethod.POST})
+    public String indexDirect(){
+        return "index";
+    }
+
+    @RequestMapping(value = "/index_two", method = {RequestMethod.GET, RequestMethod.POST})
+    public String index2Direct(){
+        return "index2";
+    }
+    @RequestMapping(value = "/tutorial", method = {RequestMethod.GET, RequestMethod.POST})
+    public String tutorialDirect(){
+        return "tutorial";
+    }
+
+
+
     @RequestMapping(value = "/auth", method = RequestMethod.POST)
     public String auth(@RequestParam("login") String login, @RequestParam("password") String password, Model model, HttpSession session) throws AuthenticationException, hw8.taxi.exception.AuthenticationException {
         if(authenticationService.authenticate(login, password)){
@@ -49,5 +62,11 @@ public class AuthenticationController {
             return "dashboard";
         }
         return "index";
+    }
+    @RequestMapping(value = "/ajax", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    String ajax(@RequestParam("login") String login, @RequestParam("pass") String pass, Model model) {
+        return "hello " + login;
     }
 }

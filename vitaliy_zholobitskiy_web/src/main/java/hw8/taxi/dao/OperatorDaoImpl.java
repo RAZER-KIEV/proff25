@@ -84,6 +84,7 @@ public class OperatorDaoImpl implements OperatorDao {
         if (getByLogin(login)!=null)
             return false;
         Long id = (Long) sessionFactory.getCurrentSession().save(new Operator(login, pass, date));
+
         return (id>0);
     }
 

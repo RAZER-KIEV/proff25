@@ -37,6 +37,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/progressBar" android:progress="4" android:max="10"/>
+        <AnalogClock
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/analogClock"/>
     </LinearLayout>
     <LinearLayout
             android:layout_width="fill_parent"
@@ -54,7 +58,7 @@
                     android:ems="10"
                     android:id="@+id/editText2" android:layout_below="@+id/button1"
                     android:layout_alignParentLeft="true"
-                    android:layout_alignParentRight="true" android:textColor="@color/colors"/>
+                    android:layout_alignParentRight="true" android:textColor="@color/colors" android:editable="false"/>
         </ScrollView>
     </LinearLayout>
     <LinearLayout

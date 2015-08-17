@@ -19,4 +19,5 @@ public interface ClientDao {
     List showClientsByPortion(int start, int portionSize);
     List showClientsGtSum(int sum);
     List showClientsLastMonth();
+    Object getCliensQuantity();
 }
