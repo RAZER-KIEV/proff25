@@ -80,7 +80,7 @@ public class AuthenticationServiceImpl implements AuthenticationService{
             throw new AuthenticationException("Operator \""+login+"\" is blocked.");
         }
         if ((new Date().getTime()-operator.getPassDate().getTime())>=properties.getTimeOfAction()*3600000){ //время действия
-            throw new AuthenticationException("Time of action password for user \""+ login+"\" expires. Follow <a onclick=\"changePassword()\" >link</a> to change password.");
+            throw new AuthenticationException("Time of action password for user \""+ login+"\" expires. Follow <a href=\"javascript:void(0)\" onclick=\"changePassword()\">link</a> to change password.");
         }
         if (!operator.getPassword().equals(pass)){ //количество попыток
             Integer attemps = operator.getCountWrongPass();
