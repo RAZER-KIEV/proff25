@@ -18,7 +18,7 @@
                 android:text="Fill"
                 android:id="@+id/button1"
                 android:layout_alignParentTop="true"
-                android:layout_toRightOf="@+id/textView" android:textSize="40dp"/>
+                android:layout_toRightOf="@+id/textView" android:textSize="40dp" android:textColor="@color/red"/>
         <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

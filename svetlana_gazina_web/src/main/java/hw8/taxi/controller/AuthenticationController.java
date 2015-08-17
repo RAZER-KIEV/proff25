@@ -39,6 +39,22 @@ public class AuthenticationController {
         return "index";
     }
 
+    @RequestMapping(value = "/index", method = {RequestMethod.GET, RequestMethod.POST})
+    public String indexDirect(){
+        return "index";
+    }
+
+    @RequestMapping(value = "/index_two", method = {RequestMethod.GET, RequestMethod.POST})
+    public String index2Direct(){
+        return "index2";
+    }
+    @RequestMapping(value = "/tutorial", method = {RequestMethod.GET, RequestMethod.POST})
+    public String tutorialDirect(){
+        return "tutorial";
+    }
+
+
+
     @RequestMapping(value = "/auth", method = RequestMethod.POST)
     public String auth(@RequestParam("login") String login, @RequestParam("password") String password, Model model, HttpSession session) throws AuthenticationException, hw8.taxi.exception.AuthenticationException {
         if(authenticationService.authenticate(login, password)){

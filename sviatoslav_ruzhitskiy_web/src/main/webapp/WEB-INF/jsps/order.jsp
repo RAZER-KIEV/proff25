@@ -12,6 +12,7 @@
   <link href="/css/hw8CSS.css" rel="stylesheet"/>
 </head>
 <body>
+<div class="wrapper">
 
 <p> Message: <%= request.getAttribute("message") %></p>
 <fieldset>
@@ -26,5 +27,6 @@
   <button formaction="/backToDashboard"  type="submit" formmethod="post" name="BacktoDASHBOARD" value="Back to DASHBOARD!">Back to DASHBOARD!</button>
 </form>
   </fieldset>
+</div>
 </body>
 </html>

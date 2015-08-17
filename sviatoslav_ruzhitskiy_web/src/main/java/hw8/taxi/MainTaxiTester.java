@@ -11,7 +11,7 @@ import java.util.Random;
  * Created by ПК on 16.07.2015.
  */
 @Deprecated
-public class MainTaxiTeser {
+public class MainTaxiTester {
     private static long ONE_YEAR_AS_MILLISECONDS = 365L*24L*60L*60L*1000L;
     private static long TWENTY_FIVE_YEARS_AS_MILLISECONDS = 25L*ONE_YEAR_AS_MILLISECONDS;
     private static long FIFTY_YEARS_AS_MILLISECONDS = 50L*ONE_YEAR_AS_MILLISECONDS;

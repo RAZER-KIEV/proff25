@@ -1,7 +1,8 @@
 body{
-    background: url(/image/taxi2.jpg);
-    margin: 40px 40px 40px 40px;
+    background: url(../image/ava7patterns_wallpaper_1920x1080_468.png);
+    /*margin: 5%;*/
     font: large Verdana,sans-serif;
+
 }
 form {
     align-content: center;
@@ -11,13 +12,18 @@ form {
    /* padding: 15px;*/
 
 }
-table, td {
+table, td, th {
     background-color: gold;
     border: medium solid aqua;
+    margin: 2%;
+    align-content: center;
+    padding: 3px;
+
 
 }
 
 button, input {
+    background-color: #FFFF01;
     padding: 10px;
     margin-right: 8px;
     margin-bottom:10px;
@@ -31,9 +37,46 @@ button, input {
     overflow: visible;
     cursor: pointer;
     border-radius: 4px;
-    -moz-border-radius: 4px;
     -webkit-border-radius:4px;
     box-shadow:1px 1px 2px 0 #DFE158;
-    -moz-box-shadow: 1px 1px 2px 0 #DFE158;
     -webkit-box-shadow: 1px 1px 2px 0 #DFE158;
+
+}
+
+.wrapper {
+    background: url(/image/taxi3.jpg);
+    margin: 3%;
+    background-repeat: repeat-y;
+    width: 1140px;
+    border: solid;
+
+
+}
+h1 {
+    color: #3AE2CE;
+    text-align: center;
+}
+
+
+p, legend {
+    color: #3AE2CE;
+    text-align: left;
+}
+
+h3 {
+    color: #3AE2CE;
+    margin: 10px;
+}
+
+fieldset {
+    margin: 2%;
+}
+
+.reg {
+    font-size: medium;
+    text-align: left;
+    color: #3AE2CE;
+}
+#indexFS  p {
+    text-align: center;
 }

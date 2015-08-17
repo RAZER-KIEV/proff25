@@ -1,6 +1,7 @@
 package hw8.taxi.service;
 
 
+import hw8.taxi.domain.Operator;
 import hw8.taxi.exception.AuthenticationException;
 
 /**

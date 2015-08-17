@@ -25,6 +25,7 @@ public class Order {
     private Double orderSum;
     private String departureAddress;
     private String destinationAddress;
+    private Boolean isComplite;
 
     public Order() {
     }
@@ -36,6 +37,7 @@ public class Order {
         this.orderSum = orderSum;
         this.departureAddress = departureAddress;
         this.destinationAddress = destinationAddress;
+        isComplite=true;
     }
 
     public Order(Date orderDay, Client client, Double orderSum, String departureAddress, String destinationAddress) {
@@ -44,6 +46,15 @@ public class Order {
         this.orderSum = orderSum;
         this.departureAddress = departureAddress;
         this.destinationAddress = destinationAddress;
+        isComplite=true;
+    }
+
+    public Boolean getIsComplite() {
+        return isComplite;
+    }
+
+    public void setIsComplite(Boolean isComplite) {
+        this.isComplite = isComplite;
     }
 
     public Long getId() {

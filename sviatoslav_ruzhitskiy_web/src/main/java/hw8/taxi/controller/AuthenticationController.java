@@ -8,14 +8,11 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
+
 import javax.annotation.PostConstruct;
 import javax.naming.AuthenticationException;
 import javax.servlet.http.HttpSession;
-import java.io.PrintWriter;
 import java.util.Locale;
 
 /**
@@ -57,15 +54,34 @@ public class AuthenticationController {
     @RequestMapping(value = "/auth", method = RequestMethod.POST)
     public String auth(@RequestParam("login") String login, @RequestParam("password") String password, Model model, HttpSession session) throws AuthenticationException {
        if(authenticationService.authenticate(login, password)){
-           log.debug("Its Ok, Operator found");
-           Operator operator = authenticationService.searchByLogin(login);
-           session.setAttribute("operator",operator);
-           session.setAttribute("operlogin", login);
-           return "dashboard";
-       }else{
-           session.setAttribute("countAdd", 1);
-           log.debug("Something wrong Operator not found");
-           return "index";
+                log.debug("Its Ok, Operator found");
+                 Operator operator = authenticationService.searchByLogin(login);
+                 session.setAttribute("operator",operator);
+                 session.setAttribute("operlogin", login);
+                 return "dashboard";
+            }else{
+                 session.setAttribute("countAdd", 1);
+                 log.debug("Something wrong Operator not found");
+                 return "index";
+            }
        }
+
+    @RequestMapping(value = "/authAndroid", method = {RequestMethod.POST, RequestMethod.GET})
+    public
+    @ResponseBody
+    String authAndroid(@RequestParam("login") String login, @RequestParam("password") String password) throws AuthenticationException {
+        try {
+            if(authenticationService.authenticate(login, password)){
+                log.debug("Its Ok, Operator found");
+                return "Auth_Success";
+            }else {
+                return "Auth_Error";
+                }
+            } catch (Exception e) {
+                 log.debug("Something wrong Operator not found");
+                 e.printStackTrace();
+            return "Auth_Error";
+        }
+
     }
 }
