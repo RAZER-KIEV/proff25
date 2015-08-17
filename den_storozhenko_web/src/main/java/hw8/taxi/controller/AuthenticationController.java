@@ -77,27 +77,32 @@ public class AuthenticationController {
     }
 
     @RequestMapping(value = "/changepassword", method = RequestMethod.GET)
-    public String changePass(@RequestParam("login") String login, Model model){
+    public @ResponseBody String changePass(@RequestParam("login") String login){
         log.info("changepassword.html controller");
-        model.addAttribute("login",login);
-        return "changepass";
+        return login;
+//      model.addAttribute("login",login);
+//      return "changepass";
     }
 
     @RequestMapping(value = "/changepass.html", method = RequestMethod.POST)
-    public String changePassword(@RequestParam String login, @RequestParam String password, @RequestParam String newPassword,
+    public @ResponseBody String changePassword(@RequestParam String login, @RequestParam String password, @RequestParam String newPassword,
                                @RequestParam String confirmPassword, Model model){
         log.info("changepass.html controller");
         model.addAttribute("login",login);
         try {
             authenticationService.changePassword(login, password, newPassword, confirmPassword);
-            model.addAttribute("info","Password for the user "+login+" has been changed successfully.<br>");
-            return "index";
+            //model.addAttribute("info","Password for the user "+login+" has been changed successfully.<br>");
+            return "success";
+           // return "Password for the user "+login+" has been changed successfully.<br>";
+           // return "index";
         } catch (AuthenticationException e) {
-            model.addAttribute("authenticateEx",e.getMessage());
-            return "changepass";
+            //model.addAttribute("authenticateEx",e.getMessage());
+            //return "changepass";
+            return e.getMessage();
         } catch (HibernateException e){
-            model.addAttribute("error","Database error.");
-            return "changepass";
+           // model.addAttribute("error","Database error.");
+           // return "changepass";
+            return e.getMessage();
         }
 
     }
