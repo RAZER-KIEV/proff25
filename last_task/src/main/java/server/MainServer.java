@@ -15,7 +15,7 @@ public class MainServer {
             "Server: nginx/1.2.1\n" +
             "Date: Sat, 08 Mar 2014 22:53:46 GMT\n" +
             "Content-Type: application/octet-stream\n" +
-            "Content-Length: 7\n" +
+            "Content-Length: 227\n" +
             "Last-Modified: Sat, 08 Mar 2014 22:53:30 GMT\n" +
             "Connection: keep-alive\n" +
             "Accept-Ranges: bytes\n" +
@@ -32,13 +32,35 @@ public class MainServer {
         try {
             ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
             serverSocketChannel.socket().bind(new InetSocketAddress(port));
+            SocketChannel socketChannel;
             while (true) {
-                SocketChannel socketChannel = serverSocketChannel.accept();
+                System.out.println("q");
+                socketChannel = serverSocketChannel.accept();
                 ByteBuffer buffer = ByteBuffer.allocate(1280);
+                ByteBuffer requestBuffer = ByteBuffer.allocate(1280000);
                 int bytesRead;
                 bytesRead = socketChannel.read(buffer);
-                String str = new String(buffer.array(), 0, bytesRead);
-                System.out.println(str);
+                if (bytesRead != -1) {
+                    String str = new String(buffer.array(), 0, bytesRead);
+                    System.out.println(str);
+
+                    byte[] req1 = request.getBytes();
+                    System.out.println(req1.length);
+                    requestBuffer.put(req1);
+                    requestBuffer.flip();
+                    try {
+                        while (requestBuffer.hasRemaining()) {
+                            socketChannel.write(requestBuffer);
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    socketChannel.close();
+                }
+
+
+
                 /*while ((bytesRead = socketChannel.read(buffer)) > 0) {
                     String str = new String(buffer.array(), 0, bytesRead);
                     System.out.println(str);
