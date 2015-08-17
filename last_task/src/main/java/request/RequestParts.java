@@ -1,5 +1,7 @@
-import exceptions.BadRequestException;
-import exceptions.TooLongException;
+package request;
+
+//import exception.*;
+import request.exceptions.*;
 
 /**
  * Created by george on 17.08.15.
