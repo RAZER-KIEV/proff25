@@ -28,6 +28,8 @@ public class NewServer implements Runnable {
     }
 
 
+
+
     public class SocketThread extends  Thread{
         SocketChannel socketChannel;
 

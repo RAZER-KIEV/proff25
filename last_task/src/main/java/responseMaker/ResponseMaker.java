@@ -23,18 +23,23 @@ public class ResponseMaker {
         this.request = request;
     }
 
-    public String send() throws IOException {
+    public String send(){
         return makeResponse(request);
     }
 
-    private String makeResponse(String request) throws IOException {
+    private String makeResponse(String request){
         switch (request) {
             case "400":
                 return buildBadRequest();
             case "404":
                 return buildFileNotFound();
             default:
-                return buildFileContent();
+                try {
+                    return buildFileContent();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    return buildFileNotFound();
+                }
         }
     }
 
