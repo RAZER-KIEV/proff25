@@ -1,4 +1,4 @@
-package service;
+package main;
 
 
 
@@ -28,9 +28,9 @@ public class FileFindService implements FileFindServiceInteface {
 
             fileSystem = FileSystems.getDefault();
             Files.walkFileTree(fileSystem.getPath("\\Users\\RAZER\\workspace"),
-                    new SimpleFileVisitor<java.nio.file.Path>() {
+                    new SimpleFileVisitor<Path>() {
                         @Override
-                        public FileVisitResult visitFile(java.nio.file.Path path, BasicFileAttributes attrs) {
+                        public FileVisitResult visitFile(Path path, BasicFileAttributes attrs) {
                             String tmp = String.valueOf(path.getFileName());
                             if (tmp.equals(searchedFile)) {
                                 System.out.println(" path = " + path);
