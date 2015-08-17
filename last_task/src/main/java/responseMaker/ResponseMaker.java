@@ -1,11 +1,16 @@
 package responseMaker;
 
+import sun.misc.BASE64Encoder;
+
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Date;
+import java.util.Scanner;
 
 public class ResponseMaker {
     private String request;
@@ -62,31 +67,57 @@ public class ResponseMaker {
             }
             case "jpeg":{
                 result.append("Content-Type: image/jpeg\r\n");
-
-
+                BufferedImage img = ImageIO.read(new File(request));
+                String content = encodeToString(img, "jpeg");
+                result.append("Content-Length: ").append(content.length()).append("\n\r\n\r");
+                result.append(content);
                 return result.toString();
             }
             case "gif":{
                 result.append("Content-Type: image/gif\r\n");
-                File file = new File(request);
-                FileInputStream imageInFile = new FileInputStream(file);
-                byte imageData[] = new byte[(int) file.length()];
-                imageInFile.read(imageData);
-
+                BufferedImage img = ImageIO.read(new File(request));
+                String content = encodeToString(img, "gif");
+                result.append("Content-Length: ").append(content.length()).append("\n\r\n\r");
+                result.append(content);
                 return result.toString();
             }
             case "bmp":{
                 result.append("Content-Type: image/x-xbitmap\r\n");
-
-
+                BufferedImage img = ImageIO.read(new File(request));
+                String content = encodeToString(img, "bmp");
+                result.append("Content-Length: ").append(content.length()).append("\n\r\n\r");
+                result.append(content);
                 return result.toString();
             }
             default:{
                 result.append("Content-Type: text/plain\r\n");
-
-
+                Scanner scanner = new Scanner(new File(request));
+                StringBuilder content = new StringBuilder();
+                while (scanner.hasNext()){
+                    content.append(scanner.next());
+                }
+                result.append("Content-Length: ").append(content.length()).append("\n\r\n\r");
+                result.append(content);
                 return result.toString();
             }
         }
+    }
+
+    private String encodeToString(BufferedImage image, String type) {
+        String imageString = null;
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+
+        try {
+            ImageIO.write(image, type, bos);
+            byte[] imageBytes = bos.toByteArray();
+
+            BASE64Encoder encoder = new BASE64Encoder();
+            imageString = encoder.encode(imageBytes);
+
+            bos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return imageString;
     }
 }
