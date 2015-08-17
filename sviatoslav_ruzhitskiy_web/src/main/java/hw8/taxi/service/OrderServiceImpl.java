@@ -122,7 +122,7 @@ public class OrderServiceImpl implements OrderService {
             "Port Huron, MI 48060 " +
             "579 Queen Street  " +
             "Bristow, VA 20136 " +
-            "564 MainTaxiTeser Street  " +
+            "564 MainTaxiTester Street  " +
             "Tiffin, OH 44883 " +
             "891 Washington Avenue  " +
             "Findlay, OH 45840 " +
@@ -188,7 +188,7 @@ public class OrderServiceImpl implements OrderService {
             "Fort Worth, TX 76110 " +
             "9 Franklin Street  " +
             "Thornton, CO 80241 " +
-            "989 MainTaxiTeser Street  " +
+            "989 MainTaxiTester Street  " +
             "Bethpage, NY 11714 " +
             "613 Sunset Drive  " +
             "Bluffton, SC 29910 " +
@@ -270,7 +270,7 @@ public class OrderServiceImpl implements OrderService {
             "East Brunswick, NJ 08816" +
             "941 Atlantic Avenue " +
             "Lawndale, CA 90260" +
-            "113 MainTaxiTeser Street West " +
+            "113 MainTaxiTester Street West " +
             "Rapid City, SD 57701" +
             "261 Mill Road " +
             "Piqua, OH 45356" +
