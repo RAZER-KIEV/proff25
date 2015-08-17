@@ -1,9 +1,12 @@
-import exceptions.BadRequestException;
-import exceptions.TooLongException;
+package request;
+
+
+import request.exceptions.BadRequestException;
+import request.exceptions.TooLongException;
 
 /**
  * Created by george on 17.08.15.
  */
 public interface RequestParts {
-    public String requestParst(String request) throws BadRequestException, TooLongException;
+    String requestParst(String request) throws BadRequestException;
 }
