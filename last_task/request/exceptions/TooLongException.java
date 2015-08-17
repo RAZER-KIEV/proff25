@@ -6,6 +6,6 @@ package exceptions;
  */
 public class TooLongException extends Exception {
     public  TooLongException (String msg){
-        super(msg);
+        super("Sorry your request too long! Try again");
     }
 }
