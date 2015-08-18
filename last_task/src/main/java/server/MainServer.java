@@ -1,7 +1,9 @@
 package server;
 
+import main.FileFindService;
 import request.RequestParst;
 import request.exceptions.BadRequestException;
+import responseMaker.ResponseMaker;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -27,7 +29,7 @@ public class MainServer {
 
     public static void main(String[] args) {
         new Thread(() -> {
-            startServer(8080);
+            startServer(8085);
         }).start();
     }
 
@@ -36,73 +38,43 @@ public class MainServer {
             ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
             serverSocketChannel.socket().bind(new InetSocketAddress(port));
             SocketChannel socketChannel;
-            while (true) {
-                System.out.println("q");
-                socketChannel = serverSocketChannel.accept();
-                ByteBuffer buffer = ByteBuffer.allocate(1280);
-                ByteBuffer requestBuffer = ByteBuffer.allocate(1280000);
-                int bytesRead;
-                bytesRead = socketChannel.read(buffer);
-                if (bytesRead != -1) {
-                    String str = new String(buffer.array(), 0, bytesRead);
-                    System.out.println(str);
-
-                    RequestParst requestParst = new RequestParst();
-                    String filePath = requestParst.requestParst(str);
-
-                    byte[] req1 = request.getBytes();
+            String result;
+            String filePath;
+            String file;
+            RequestParst requestParst = new RequestParst();
+            FileFindService fileFindService = new FileFindService();
+            ResponseMaker maker = new ResponseMaker();
+            socketChannel = serverSocketChannel.accept();
+            ByteBuffer buffer = ByteBuffer.allocate(1280);
+            ByteBuffer requestBuffer = ByteBuffer.allocate(1280);
+            int bytesRead;
+            bytesRead = socketChannel.read(buffer);
+            if (bytesRead != -1) {
+                String str = new String(buffer.array(), 0, bytesRead);
+                System.out.println(str);
+                try {
+                    filePath = requestParst.requestParst(str);
+                    System.out.println(filePath);
+                    file = fileFindService.findFile(filePath);
+                    System.out.println(file);
+                    maker.setRequest(file);
+                } catch (BadRequestException e) {
+                    maker.setRequest("404");
+                } finally {
+                    result = maker.send();
+                    System.out.println(result);
+                    byte[] req1 = result.getBytes();
                     System.out.println(req1.length);
                     requestBuffer.put(req1);
                     requestBuffer.flip();
-                    try {
-                        while (requestBuffer.hasRemaining()) {
-                            socketChannel.write(requestBuffer);
-                        }
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-                    socketChannel.close();
-                }
-
-
-
-                /*while ((bytesRead = socketChannel.read(buffer)) > 0) {
-                    String str = new String(buffer.array(), 0, bytesRead);
-                    System.out.println(str);
-                    buffer.clear();
-                }*/
-                System.out.println("111");
-            }
-            /*SocketChannel socketChannel = serverSocketChannel.accept();
-            ByteBuffer buffer = ByteBuffer.allocate(128);
-            ByteBuffer requestBuffer = ByteBuffer.allocate(1280000);*/
-
-
-            /*int bytesRead;
-            while ((bytesRead = socketChannel.read(buffer)) > 0) {
-                String str = new String(buffer.array(), 0, bytesRead);
-                System.out.println(str);
-                buffer.clear();
-                byte[] req1 = request.getBytes();
-                System.out.println(req1.length);
-                requestBuffer.put(req1);
-                requestBuffer.flip();
-                try {
                     while (requestBuffer.hasRemaining()) {
                         socketChannel.write(requestBuffer);
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
+                    socketChannel.close();
                 }
-            }*/
-
-
+            }
         } catch (IOException e) {
-            e.printStackTrace();
-        } catch (BadRequestException e) {
             e.printStackTrace();
         }
     }
-
 }
