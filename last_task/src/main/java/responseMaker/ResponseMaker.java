@@ -12,17 +12,26 @@ import java.nio.file.Paths;
 import java.util.Date;
 import java.util.Scanner;
 
-public class ResponseMaker {
+public class ResponseMaker implements ResponseMakerInterface {
     private String request;
+
+    public ResponseMaker() {
+
+    }
+
+    public String getRequest() {
+        return request;
+    }
 
     /**
      *
      * @param request "404"||"400"||fullPathToFile
      */
-    public ResponseMaker(String request) {
+    public void setRequest(String request) {
         this.request = request;
     }
 
+    @Override
     public String send(){
         return makeResponse(request);
     }
