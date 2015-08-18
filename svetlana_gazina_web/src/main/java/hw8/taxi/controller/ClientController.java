@@ -36,8 +36,13 @@ public class ClientController {
     ClientController() {
     }
     @RequestMapping(value = "/dashboard", method = {RequestMethod.GET, RequestMethod.POST})
-    public String dashboard(Model model){
-        return "dashboard";
+    public String dashboard(@RequestParam("password")String pass, Model model){
+        if (pass.equals("hello")) {
+            return "dashboard";
+        }
+        else{
+            return "registerClient";
+        }
     }
 
     @RequestMapping(value = "/registerClient", method = {RequestMethod.GET, RequestMethod.POST})

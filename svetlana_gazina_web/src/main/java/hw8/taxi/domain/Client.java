@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Sveta on 8/11/2015.
@@ -24,6 +25,16 @@ public class Client {
     private String adress;
     private Double sum;
     private Date lastOrderDay;
+    @OneToMany
+    List<Order> orders;
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
 
     public Client() {
     }
@@ -69,6 +80,7 @@ public class Client {
     public void setSecondName(String secondName) {
         this.secondName = secondName;
     }
+
 
     public String getPhone() {
         return phone;
