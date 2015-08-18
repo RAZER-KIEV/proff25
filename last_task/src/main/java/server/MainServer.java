@@ -1,6 +1,6 @@
 package server;
 
-import main.FileFindService;
+import fileFinder.FileFinder;
 import request.RequestParst;
 import request.exceptions.BadRequestException;
 import responseMaker.ResponseMaker;
@@ -11,8 +11,10 @@ import java.nio.ByteBuffer;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 
-/**
- * Created by bosyi on 17.08.15.
+/*
+ * Examples:
+ * http://localhost:8085/F:/asd.html
+ * http://localhost:8085/C:/Users/storo_000/Documents/asd.html
  */
 public class MainServer {
 
@@ -42,20 +44,23 @@ public class MainServer {
             String filePath;
             String file;
             RequestParst requestParst = new RequestParst();
-            FileFindService fileFindService = new FileFindService();
+            //FileFindService fileFindService = new FileFindService();
+            FileFinder fileFinder = new FileFinder();
             ResponseMaker maker = new ResponseMaker();
             socketChannel = serverSocketChannel.accept();
-            ByteBuffer buffer = ByteBuffer.allocate(1280);
-            ByteBuffer requestBuffer = ByteBuffer.allocate(1280);
+            ByteBuffer buffer = ByteBuffer.allocate(1280000);
+            ByteBuffer requestBuffer = ByteBuffer.allocate(1280000);
             int bytesRead;
             bytesRead = socketChannel.read(buffer);
             if (bytesRead != -1) {
                 String str = new String(buffer.array(), 0, bytesRead);
                 System.out.println(str);
                 try {
-                    filePath = requestParst.requestParst(str);
+                    filePath = requestParst.requestParst(str).substring(1);
                     System.out.println(filePath);
-                    file = fileFindService.findFile(filePath);
+                    //file = fileFindService.findFile(filePath);
+                    fileFinder.setPathToSearch(filePath);
+                    file = fileFinder.findFile();
                     System.out.println(file);
                     maker.setRequest(file);
                 } catch (BadRequestException e) {

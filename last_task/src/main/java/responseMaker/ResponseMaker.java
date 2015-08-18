@@ -1,12 +1,11 @@
 package responseMaker;
 
+
 import sun.misc.BASE64Encoder;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Date;
@@ -81,9 +80,12 @@ public class ResponseMaker implements ResponseMakerInterface {
             }
             case "jpeg":{
                 result.append("Content-Type: image/jpeg\r\n");
+                //result.append("Content-Type: text/html\r\n");
                 BufferedImage img = ImageIO.read(new File(request));
                 String content = encodeToString(img, "jpeg");
+                //String content = imageToString(img,request);
                 result.append("Content-Length: ").append(content.length()).append("\n\r\n\r");
+                //result.append("<a href=\""+request+"\"\\>");
                 result.append(content);
                 return result.toString();
             }
@@ -108,7 +110,7 @@ public class ResponseMaker implements ResponseMakerInterface {
                 Scanner scanner = new Scanner(new File(request));
                 StringBuilder content = new StringBuilder();
                 while (scanner.hasNext()){
-                    content.append(scanner.next());
+                    content.append(scanner.next()).append("\n\r");
                 }
                 result.append("Content-Length: ").append(content.length()).append("\n\r\n\r");
                 result.append(content);
@@ -133,5 +135,15 @@ public class ResponseMaker implements ResponseMakerInterface {
             e.printStackTrace();
         }
         return imageString;
+    }
+
+    private String imageToString(BufferedImage bImage, String path) throws IOException {
+        String formatName = path.substring(path.lastIndexOf('.')+1, path.length());
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ImageIO.write(bImage, formatName, baos);
+        baos.flush();
+        byte[] imageAsRawBytes = baos.toByteArray();
+        baos.close();
+        return new String(imageAsRawBytes);
     }
 }
