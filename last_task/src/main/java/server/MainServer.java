@@ -67,7 +67,6 @@ public class MainServer {
                     maker.setRequest("404");
                 } finally {
                     result = maker.send();
-                    System.out.println(result);
                     byte[] req1 = result.getBytes();
                     System.out.println(req1.length);
                     requestBuffer.put(req1);
