@@ -1,2 +1,0 @@
-Some text is here. I try to read it by SeekablebyteChannel in my Idea 14.
-After that i have to calculate frequency of each word in this text.
