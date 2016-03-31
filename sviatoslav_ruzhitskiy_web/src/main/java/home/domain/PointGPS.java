@@ -3,7 +3,7 @@ package home.domain;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * Created by ПК on 03.12.2015.
@@ -12,23 +12,42 @@ import java.time.LocalDateTime;
 @Component
 public class PointGPS {
     @Id
-    @SequenceGenerator(name = "sequence", sequenceName = "PointGPS", initialValue = 1, allocationSize = 1)
+    @SequenceGenerator(name = "sequence", sequenceName = "PointGPS_Seq", initialValue = 1, allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
     @Column(name = "PointGPS_ID")
     private Long id;
     private Long emplId;
+    private String title;
     private Double latitude;
     private Double longitude;
-    private LocalDateTime localDateTime;
+    private Date dateTime;
 
     public PointGPS() {
     }
 
-    public PointGPS(Long emplId, Double latitude, Double longitude, LocalDateTime localDateTime) {
+    public PointGPS(Double longitude, Double latitude, Long emplId) {
+        this.longitude = longitude;
+        this.latitude = latitude;
         this.emplId = emplId;
+        dateTime = new Date();
+        title ="new Point";
+
+    }
+
+    public PointGPS(Long emplId, String title, Double latitude, Double longitude) {
+        this.emplId = emplId;
+        this.title = title;
         this.latitude = latitude;
         this.longitude = longitude;
-        this.localDateTime = localDateTime;
+        this.dateTime =new Date();
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public Long getId() {
@@ -63,12 +82,12 @@ public class PointGPS {
         this.longitude = longitude;
     }
 
-    public LocalDateTime getLocalDateTime() {
-        return localDateTime;
+    public Date getDate() {
+        return dateTime;
     }
 
-    public void setLocalDateTime(LocalDateTime localDateTime) {
-        this.localDateTime = localDateTime;
+    public void setDate(Date date) {
+        this.dateTime = date;
     }
 
     @Override
@@ -76,9 +95,10 @@ public class PointGPS {
         return "PointGPS{" +
                 "id=" + id +
                 ", emplId=" + emplId +
+                ", title='" + title + '\'' +
                 ", latitude=" + latitude +
                 ", longitude=" + longitude +
-                ", localDateTime=" + localDateTime +
+                ", publishDate=" + dateTime +
                 '}';
     }
 }

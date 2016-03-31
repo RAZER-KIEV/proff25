@@ -23,7 +23,7 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="packagesToScan">
             <list>
-                <value>hw8.taxi.domain</value>
+                <value>home.domain</value>
             </list>
         </property>
         <property name="hibernateProperties">

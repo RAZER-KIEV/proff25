@@ -1,13 +1,11 @@
 package home.service;
 
 
-import home.dao.AdminDao;
-import home.domain.Admin;
+import home.dao.EmployeeDao;
+import home.domain.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import javax.naming.AuthenticationException;
 import java.util.List;
 
 /**
@@ -21,52 +19,54 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
    private Integer maxWrongPasses=5;
 
-   @Autowired
-   private AdminDao operatorDao;
+    @Autowired
+    private EmployeeDao employeeDao;
 
     @Override
-    public boolean authenticate(String login, String pass) throws AuthenticationException {
+    public boolean authenticate(String login, String pass)  {
 
-        Admin opr = operatorDao.searchByLogin(login);
-        if (!opr.getIsBlocked() & opr.getPassword().equals(pass)) {
+        Employee employee = employeeDao.searchByLogin(login);
+        if(employee!=null){
+        if (!employee.getBlocked() & employee.getPassword().equals(pass)) {
             return true;
         } else {
-            opr.setWrongPass(opr.getWrongPass() + 1);
-            if(opr.getWrongPass()>= maxWrongPasses) {
-                opr.setIsBlocked(true);
-                operatorDao.update(opr);
+            employee.setWrongPass(employee.getWrongPass() + 1);
+            if(employee.getWrongPass()>= maxWrongPasses) {
+                employee.setBlocked(true);
+                employeeDao.update(employee);
+                }
             }
-            return false;
         }
+        return false;
     }
     @Override
-    public Long create(Admin operator) {
-        return operatorDao.create(operator);
-    }
-
-    @Override
-    public Admin read(Long id) {
-        return operatorDao.read(id);
+    public Long create(Employee employee) {
+        return employeeDao.create(employee);
     }
 
     @Override
-    public boolean update(Admin operator) {
-        return operatorDao.update(operator);
+    public Employee read(Long id) {
+        return employeeDao.read(id);
     }
 
     @Override
-    public boolean delete(Admin operator) {
-        return operatorDao.delete(operator);
+    public boolean update(Employee employee) {
+        return employeeDao.update(employee);
     }
 
     @Override
-    public Admin searchByLogin(String login) {
-        return operatorDao.searchByLogin(login);
+    public boolean delete(Employee employee) {
+        return employeeDao.delete(employee);
+    }
+
+    @Override
+    public Employee searchByLogin(String login) {
+        return employeeDao.searchByLogin(login);
     }
 
     @Override
     public List findAll() {
-        return operatorDao.findAll();
+        return employeeDao.findAll();
     }
 
 

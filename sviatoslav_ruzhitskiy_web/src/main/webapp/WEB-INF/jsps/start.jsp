@@ -11,6 +11,10 @@
     <title></title>
 </head>
 <body>
-Hello!
+<h1>
+Hello! This server in development process.
+Powered by NetMaster ISP.
+  <p>Fall in Love with my Smarty  - Anastasia! ;)</p>
+</h1>
 </body>
 </html>
